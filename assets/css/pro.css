@@ -93,3 +93,5 @@ html body .ixw-hero.ixw-hero .ixw-frame{border-radius:4px!important;box-shadow:0
 @media (hover:hover){.post-card:hover h2 a,.post-card:hover h3 a{color:var(--cx-blue);text-decoration:underline;text-underline-offset:4px}}
 .faq details{border-radius:2px}
 .field input,.field select,.field textarea{border-radius:2px}
+/* 961-1100px: the header button is icon-sized (site.css), so its label goes to screen readers only */
+@media (max-width:1100px){.header .header-cta .btn.hdr-contact span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
