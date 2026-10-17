@@ -1,0 +1,54 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /free-website-with-odoo: the offer lander. Reuses get-started.css (focused header, hero + form, steps) and adds the
+   "what's free" pair, the website-to-invoice flow, the hire-vs-TechNext comparison and the TechNext Care tiers. */
+.fw-page .sec-head--center .lead{max-width:60ch;margin:12px auto 0}
+.fw-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.fw-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;color:var(--body)}
+.fw-list .ic{flex:none;width:18px;height:18px;margin-top:2px;color:var(--blue);stroke-width:2.6}
+
+.fw-free{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto}
+.fw-free-card{padding:30px}
+.fw-free-card h3{font-size:1.3rem;margin:14px 0 6px}
+.fw-free-card>p{margin:0}
+
+.fw-why{align-items:center;gap:56px}
+.fw-why h2{margin:10px 0 14px}
+.fw-flow{list-style:none;padding:0;margin:0;display:grid;gap:0;counter-reset:fw}
+.fw-flow li{position:relative;display:grid;grid-template-columns:48px 1fr;column-gap:16px;align-items:center;padding:14px 0}
+.fw-flow li:not(:last-child)::after{content:"";position:absolute;left:23px;top:62px;bottom:-14px;width:2px;background:linear-gradient(var(--blue),#CBD8F0)}
+.fw-flow-ic{grid-row:1/span 2;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#FFFFFF;border:2px solid var(--blue);color:var(--blue)}
+.fw-flow-ic .ic{width:22px;height:22px}
+.fw-flow b{font:600 1.02rem/1.35 var(--font-display);color:var(--ink)}
+.fw-flow small{font-size:13px;color:var(--muted);letter-spacing:.02em}
+
+.fw-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto}
+.fw-col{border-radius:var(--r);padding:28px;border:1px solid var(--line);background:var(--paper)}
+.fw-col h3{font-size:1.2rem;margin:0 0 14px}
+.fw-col ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.fw-col li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5}
+.fw-col .ic{flex:none;width:18px;height:18px;margin-top:2px;stroke-width:2.6}
+.fw-col--diy{background:#F6F7FA}
+.fw-col--diy li{color:var(--muted)}
+.fw-col--diy .ic{color:#B4BCCB}
+.fw-col--tn{border-color:var(--blue);box-shadow:0 14px 32px -22px rgba(31,63,130,.32)}
+.fw-col--tn .ic{color:var(--blue)}
+
+.fw-care{align-items:stretch}
+.fw-tier{padding:28px;display:flex;flex-direction:column}
+.fw-tier h3{font-size:1.2rem;margin:4px 0 0}
+.fw-tier-name{display:flex;align-items:center;gap:8px;margin:0;font:700 13px/1 var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.fw-tier-name span{font:600 11px/1 var(--font-body);letter-spacing:.02em;text-transform:none;color:#FFFFFF;background:var(--blue);padding:4px 8px;border-radius:999px}
+.fw-tier--pick{border:2px solid var(--blue)}
+
+.fw-steps{grid-template-columns:repeat(4,1fr)}
+.fw-faq{max-width:820px;margin:0 auto}
+
+@media (max-width:1000px){
+  .fw-steps{grid-template-columns:1fr 1fr}
+  .fw-why{gap:32px}
+}
+@media (max-width:720px){
+  .fw-free,.fw-compare{grid-template-columns:1fr;gap:16px}
+  .fw-free-card,.fw-col,.fw-tier{padding:22px 18px}
+  .fw-steps{grid-template-columns:1fr}
+}

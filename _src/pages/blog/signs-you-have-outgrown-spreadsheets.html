@@ -1,0 +1,85 @@
+<!--meta {"title": "Seven signs your business has outgrown spreadsheets", "desc": "Seven signs a growing company has outgrown spreadsheets and disconnected tools, and what to do about it. A practical checklist from TechNext, an Odoo Partner.", "out": "blog/signs-you-have-outgrown-spreadsheets.html", "nav": "company", "article": {"h1": "Seven signs your business has outgrown spreadsheets", "cat": "erp", "date": "2026-09-27", "order": 2, "lede": "Spreadsheets are how most companies start, and for a while they work. These are the signs the business has quietly outgrown them, and what a sensible next step looks like.", "card": "Typing data twice, stock nobody trusts, a week-long month-end: seven signs it is time for one system.", "cover": "business_intelligence/dashboard.webp"}, "scripts": ["assets/js/demo-kit.js", "assets/js/demo-selfcheck.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-selfcheck.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">The short version</p>
+  <p style="margin:0">If three or more of the signs below sound familiar, the spreadsheets are costing more than they save. The fix is rarely "buy everything at once": map how orders, stock and money move, then put the busiest part on one system first.</p>
+</div>
+
+<p>Nobody decides to run a company on spreadsheets. It happens one sensible file at a time: a price list, a stock count, an order tracker, a commission sheet. Each one solves a real problem. Then the company grows, and the files start working against each other. Many of the companies TechNext works with come to us at exactly this point. Here are seven signs to look for.</p>
+
+<h2>1. The same data is typed in more than once</h2>
+<p>An order arrives by email, goes into the order sheet, then into the accounting software as an invoice, then into the stock file. Every re-entry is time spent, and a chance to get a number wrong. If the same customer, product or amount is keyed in two or three places, the business is paying people to be the integration.</p>
+
+<h2>2. Nobody trusts the stock number</h2>
+<p>When the answer to "do we have it?" is "let me check the shelf", the stock file is behind reality. Oversold orders, surprise stock-outs and emergency purchases follow. Real stock tracking needs every sale, receipt and adjustment to update the same record, the moment it happens.</p>
+
+<h2>3. Month-end takes a week</h2>
+<p>If closing the month means matching bank statements to invoices by hand, chasing missing bills and reconciling the sales sheet against the books, finance is doing clean-up, not accounting. With connected systems, most of that matching is done as transactions happen, and month-end becomes a review.</p>
+
+<h2>4. Reports mean someone stays late</h2>
+<p>Management asks a simple question: which products made money last quarter? Answering it takes a day of copying data from three files into a fourth. When reports are that expensive, they get produced less often, and decisions get made without them.</p>
+
+{{SHOT:business_intelligence/dashboard.webp|An Odoo dashboard running on live data, instead of a monthly spreadsheet (screenshot: odoo.com)}}
+
+<h2>5. One person holds the key file</h2>
+<p>Every spreadsheet-run business has one: the file with the formulas only its author understands. When that person is on leave, or leaves, part of the business stops. That is a risk, not a filing preference.</p>
+
+<h2>6. Growth adds people, not output</h2>
+<p>If every jump in orders needs another admin hire to keep up with data entry, the process does not scale. Growth should mostly add volume to the same system, not headcount to feed it.</p>
+
+<h2>7. Customers ask questions you can't answer quickly</h2>
+<p>"Has my order shipped?" "Did you get my payment?" "What did we order last time?" When answering means searching inboxes and asking a colleague, customers notice. In one system, the answer is on the customer's record.</p>
+
+<h2>A quick self-check</h2>
+<div class="table-wrap" data-sfc-table><table>
+  <thead><tr><th>Question</th><th>If the answer is yes</th></tr></thead>
+  <tbody>
+    <tr><td>Is any order or invoice typed in more than one place?</td><td>Connect sales, stock and invoicing</td></tr>
+    <tr><td>Do stock counts regularly disagree with the file?</td><td>Track stock on every movement</td></tr>
+    <tr><td>Does month-end take more than a few days?</td><td>Automate bank reconciliation</td></tr>
+    <tr><td>Does a key report depend on one person?</td><td>Move reporting onto live data</td></tr>
+  </tbody>
+</table></div>
+
+<figure class="sfc-fig" aria-label="Interactive: the seven-sign self-check">
+  <div class="dm dm-selfcheck reveal" data-demo="selfcheck">
+    <div class="dm-head">
+      <div class="dm-title"><b>The seven-sign self-check</b><small>Tick each sign that sounds familiar</small></div>
+      <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Clear</button>
+    </div>
+    <div class="sfc-body">
+      <div class="sfc-list" role="group" aria-label="The seven signs"></div>
+      <div class="sfc-side">
+        <div class="sfc-gauge" aria-hidden="true"><svg class="sfc-svg" viewBox="0 0 220 128"></svg><div class="sfc-score"><b data-score>0</b><small>of 7 signs</small></div></div>
+        <p class="sfc-band" data-band></p>
+        <p class="sfc-verdict" data-verdict aria-live="polite"></p>
+      </div>
+      <div class="sfc-more">
+        <div class="sfc-fixes" data-fixes hidden><p class="sfc-h">{{icon:target}}What fixes it</p><ul></ul></div>
+        <div class="sfc-next" data-next hidden><p class="sfc-h">{{icon:arrow}}The way in</p><ol></ol></div>
+      </div>
+    </div>
+    <div class="dm-static">
+      <p>Seven signs: the same data typed more than once, a stock number nobody trusts, a week-long month-end, reports that mean someone stays late, one person holding the key file, growth that adds people rather than output, and customer questions you can't answer quickly.</p>
+      <p>If three or more sound familiar, the spreadsheets are costing more than they save.</p>
+    </div>
+  </div>
+  <figcaption class="dm-note">{{icon:check}} The threshold of three and every fix come from this article. The check works in your browser only; nothing is sent.</figcaption>
+</figure>
+
+
+<h2>What to do instead</h2>
+<p>The answer is usually an ERP, but the way in matters more than the choice of software. Three rules keep it manageable:</p>
+<ol>
+  <li><strong>Map before you buy.</strong> Write down how an order becomes cash, and how a purchase becomes a paid bill. The map shows where the pain really is.</li>
+  <li><strong>Start where money and stock move.</strong> For most companies that is accounting, sales and inventory. Everything else can follow.</li>
+  <li><strong>Clean data on the way in.</strong> Migrating a messy customer list just moves the mess. Fix duplicates and codes before go-live.</li>
+</ol>
+<p>This is how TechNext runs Odoo projects: a <a href="{{ROOT}}odoo/discovery.html">discovery session</a> that maps your processes, a first phase built on <a href="{{ROOT}}odoo/apps/accountant.html">Accounting</a>, <a href="{{ROOT}}odoo/apps/sale.html">Sales</a> and <a href="{{ROOT}}odoo/apps/stock.html">Inventory</a>, and data migrated and reconciled on a staging copy before anyone switches over. If you are new to the topic, start with <a href="{{ROOT}}blog/what-is-erp.html">What is ERP?</a></p>
+
+<h2>Common questions</h2>
+<div class="faq">
+  <details><summary>When should a small business move from spreadsheets to an ERP? {{icon:chevron}}</summary><div class="faq-a"><p>When the spreadsheets create more work than they save: data typed twice, stock you can't trust, slow month-ends, or reports that depend on one person. The trigger is friction, not company size.</p></div></details>
+  <details><summary>Do we have to replace everything at once? {{icon:chevron}}</summary><div class="faq-a"><p>No. With a modular ERP such as Odoo you can start with the apps where money and stock move, usually Accounting, Sales and Inventory, and add others later on the same database.</p></div></details>
+  <details><summary>Can our existing spreadsheet data be imported? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Customers, vendors, products and opening balances can be imported. TechNext cleans and loads them on a staging database and reconciles balances before go-live.</p></div></details>
+</div>

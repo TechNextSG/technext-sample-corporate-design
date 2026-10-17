@@ -1,0 +1,252 @@
+<!--meta {"title": "Odoo CRM Customization — Pipelines & Lead Routing", "desc": "Odoo CRM customization in Singapore and the Philippines: pipelines, lead routing and follow-ups shaped around how you sell, so no enquiry goes cold.", "out": "odoo/crm-development.html", "nav": "odoo", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-pipeline.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/crm-dev.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-pipeline.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/crm-dev.css?v={ASSET_V}\">", "body": "ixw ixw--crm-dev ow-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="crm-dev" data-home="915,-22" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Odoo</span><span>Customization</span><span>CRM Development</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Odoo CRM</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo crm customization</span>Every lead followed up, automatically.</h1>
+      <p class="lead"><span class="m-full">Odoo 20 CRM out of the box is a good pipeline. We adapt stages, routing, scoring and hand-offs to your sales process, and connect it to Sales so a won deal becomes a quotation without re-entry.</span><span class="m-short">Stages, routing, scoring and hand-offs shaped to your sales, with won deals turning into quotations.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Every lead is a runner. Tap one, the crowd, the team or the last-lap bell.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="tn" data-near="250,-58" data-who="TechNext consultant" data-role="TechNext · illustration" data-say="On your marks: every lead **starts here**, whichever channel it came from." style="--x:240;--y:358;--w:90;--h:230" aria-label="Say hi to the TechNext consultant at the start (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Consultant</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="rook" data-near="250,-58" data-who="New sales rep" data-role="Client team · illustration" data-say="Warming up: in training I run the pipeline on **real data** first." style="--x:-224;--y:378;--w:84;--h:190" aria-label="Say hi to the new sales rep warming up (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>New rep</b><i>warming up</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="rep1" data-near="530,185" data-who="Lead router" data-role="Client team · illustration" data-say="New leads land on **my** screen, already routed and scored." style="--x:372;--y:330;--w:84;--h:100" aria-label="Say hi to the lead router (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Lead router</b></span></button>
+      <button class="ixw-cast" type="button" data-cast="rep2" data-near="530,185" data-who="Sales rep" data-role="Client team · illustration" data-say="WhatsApp lead in. Calling them **now**!" style="--x:572;--y:330;--w:84;--h:100" aria-label="Say hi to a sales rep on a call (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Sales rep</b><i>on a call</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="mgr" data-near="915,-22" data-who="Sales manager" data-role="Client team · the coach" data-say="Our stages, in **our** words. Finally a pipeline we trust." style="--x:682;--y:358;--w:96;--h:230" aria-label="Say hi to the sales manager (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Manager</b><i>the coach</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="sal" data-near="915,-22" data-who="Sales admin" data-role="Client team · Odoo Sales" data-say="Won deal in, quotation out. I don't **re-type** a thing." style="--x:916;--y:300;--w:84;--h:150" aria-label="Say hi to the sales admin at the quotation desk (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Sales desk</b></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="sources" data-nx="250,-58" data-pose="present" data-rec="Lead sources · web, email, WhatsApp, social" data-say="Leads arrive from the **web, email, WhatsApp and social**, straight onto the track." style="--x:242;--y:111;--w:172;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:globe}}<b>Lead sources</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="routing" data-nx="530,185" data-pose="point-left" data-rec="Routing · the right lead to the right rep" data-say="**Routing** rules send each lead to the right rep or team: see the SG and PH tags." style="--x:445;--y:352;--w:64;--h:56" aria-pressed="false"><span class="ixw-hot-lab">{{icon:users}}<b>Routing</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="stages" data-nx="915,-22" data-pose="point-left" data-rec="Stages · New → Qualified → Proposition → Won" data-say="**Stages** named the way your team sells, from New to Won. The board mirrors the track." style="--x:580;--y:-100;--w:440;--h:34" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:crm:18}}<b>Stages</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="scoring" data-nx="250,-58" data-pose="point-right" data-rec="Scoring · stars tuned to how your deals close" data-say="**Scoring** puts the deals most likely to close up front: three stars run first." style="--x:580;--y:12;--w:420;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:star}}<b>Scoring</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="won" data-nx="915,-22" data-pose="point-left" data-rec="Won · the hand-off to Sales" data-say="**Won!** The deal breaks the tape and the hand-off to Sales is automatic." style="--x:770;--y:128;--w:104;--h:80" aria-pressed="false"><span class="ixw-hot-lab">{{icon:check}}<b>Won</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="quote" data-nx="915,-22" data-pose="present" data-rec="Quotation · customer, products and pricelist carried over" data-say="The baton becomes a **quotation** in Odoo Sales: customer, products and pricelist carried over, nothing re-typed." style="--x:916;--y:155;--w:152;--h:112" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:sale:18}}<b>Quotation</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="bell" data-near="915,-22" data-pose="celebrate" data-say="Ding ding! **Deal won**, and the whole stand does the wave." style="--x:742;--y:212;--w:46;--h:54" aria-label="Ring the last-lap bell"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Ring the bell</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:915;--ny:-50" data-reacts="wow::A new lead on the track, **already scored**!|love::Won deal, quotation ready. **Love it**.|celebrate::Ding ding! **Deal won**!|think::Hmm… which stage do your deals get **stuck** in?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:crm-dev}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **pipeline relay**: every lead runs your stages, from the start to a won quotation." data-outro="Your stages, your routing, your scoring, and quotations with **no re-typing**. That's CRM development.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:crm-dev}}<b data-for="tn" style="--c:#3167CA">T</b><b data-for="rook" style="--c:#E9B949">N</b><b data-for="rep1" style="--c:#21B799">L</b><b data-for="rep2" style="--c:#F08A24">R</b><b data-for="mgr" style="--c:#1E3A6E">M</b><b data-for="sal" style="--c:#714B67">S</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · Odoo CRM">assistant · Odoo CRM</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>pipeline relay</b>: every lead runs your stages, from the start to a won quotation.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: lead sources"></button><button type="button" data-ixw-dot aria-label="Stop 3: routing"></button><button type="button" data-ixw-dot aria-label="Stop 4: stages"></button><button type="button" data-ixw-dot aria-label="Stop 5: scoring"></button><button type="button" data-ixw-dot aria-label="Stop 6: won"></button><button type="button" data-ixw-dot aria-label="Stop 7: quotation"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:layers}}Built on</dt><dd>Odoo CRM</dd></div><div><dt>{{icon:check}}Hands off to</dt><dd>Sales: quotation, no re-entry</dd></div><div><dt>{{icon:globe}}Lead sources</dt><dd>Web · email · WhatsApp · social</dd></div><div><dt>{{icon:calendar}}Delivery</dt><dd>Discovery → Build → Train → Support</dd></div><div><dt>{{icon:users}}Teams</dt><dd>Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec cr-brief-sec">
+  <div class="container"><div class="answer-box cr-brief reveal"><span class="cr-flag" aria-hidden="true"></span><p class="answer-h">In one paragraph</p><p>Odoo CRM customization by TechNext adapts the pipeline stages, lead routing, scoring and hand-offs in Odoo CRM to the way your sales team actually sells. Leads arrive from the web, email, WhatsApp and social channels, and a won deal becomes a quotation in Odoo Sales without anyone re-typing it.</p></div></div>
+</section>
+
+<section class="section demo-sec cr-demo-sec" id="lead-routing">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">watch the pipeline</span><h2>Odoo CRM customisation, live: lead routing, the pipeline and the forecast.</h2><p class="lead">Leads arrive from five channels. The scoring and assignment rules TechNext configures in Odoo CRM route each one to a team and a salesperson; the pipeline moves them from New to Won, schedules the next activity and flags anything going stale; a won deal opens its quotation in Sales. Switch rules off, change the team view, or add a lead from any channel.</p></div>
+    <div class="cr-tron reveal">
+      <div class="cr-tron-top" aria-hidden="true"><span class="cr-live">Live</span><b>CRM · Pipeline</b><span class="cr-tron-lanes"><i>New</i><i>Qualified</i><i>Proposition</i><i>Won</i></span></div>
+    <div class="dm dm-pipeline" data-demo="pipeline">
+      <div class="dm-head">
+        <div class="dm-title"><b>Lead routing and pipeline</b><small>Sample sales teams · SGD · day <span data-k="day">1</span></small></div>
+        <div class="dm-seg" role="group" aria-label="Team view">
+          <button type="button" data-team="all" aria-pressed="true">All teams</button>
+          <button type="button" data-team="sg" aria-pressed="false"><i class="dm-sw" style="--c:var(--blue)"></i>Singapore</button>
+          <button type="button" data-team="ph" aria-pressed="false"><i class="dm-sw" style="--c:var(--tok-pay)"></i>Philippines</button>
+          <button type="button" data-team="pj" aria-pressed="false"><i class="dm-sw" style="--c:var(--tok-make)"></i>Projects</button>
+        </div>
+        <button class="dm-btn ppl-play" type="button" data-play aria-pressed="true"><i class="ppl-pz" aria-hidden="true"></i>{{icon:play}}<span>Pause</span></button>
+        <button class="dm-btn" type="button" data-day>{{icon:calendar}}Next day</button>
+      </div>
+      <div class="ppl-wrap">
+        <div class="ppl-route">
+          <p class="ppl-h"><i>1</i>Leads arrive <small>click a channel to add one</small></p>
+          <div class="ppl-ch" role="group" aria-label="Add a lead from a channel">
+            <button type="button" data-ch="web">{{icon:globe}}<span><b>Web form</b><small data-n="web">0</small></span></button>
+            <button type="button" data-ch="mail">{{icon:mail}}<span><b>Email alias</b><small data-n="mail">0</small></span></button>
+            <button type="button" data-ch="wa">{{icon:whatsapp}}<span><b>WhatsApp</b><small data-n="wa">0</small></span></button>
+            <button type="button" data-ch="evt">{{icon:calendar}}<span><b>Event list</b><small data-n="evt">0</small></span></button>
+            <button type="button" data-ch="li">{{icon:briefcase}}<span><b>LinkedIn</b><small data-n="li">0</small></span></button>
+          </div>
+          <p class="ppl-h"><i>2</i>Rules score and route them</p>
+          <div class="ppl-rules" role="group" aria-label="Scoring and assignment rules: switch each on or off">
+            <button type="button" role="switch" aria-checked="true" data-rule="score"><span><b>Lead scoring</b><small>Probability and priority from fit</small></span><em data-o="score"></em></button>
+            <button type="button" role="switch" aria-checked="true" data-rule="terr"><span><b>Territory</b><small>SG, MY, ID to Singapore · PH to Philippines</small></span><em data-o="terr"></em></button>
+            <button type="button" role="switch" aria-checked="true" data-rule="line"><span><b>Product line</b><small>Warehouse systems to Projects</small></span><em data-o="line"></em></button>
+            <button type="button" role="switch" aria-checked="true" data-rule="rr"><span><b>Round-robin</b><small>Next salesperson with capacity</small></span><em data-o="rr"></em></button>
+          </div>
+          <p class="ppl-h"><i>3</i>Teams and salespeople</p>
+          <div class="ppl-teams">
+            <div class="ppl-team" data-t="sg"><b>Singapore</b><span class="ppl-mem"><i data-m="Alex">AL</i><i data-m="Rina">RI</i></span></div>
+            <div class="ppl-team" data-t="ph"><b>Philippines</b><span class="ppl-mem"><i data-m="Jo">JO</i><i data-m="Mara">MA</i></span></div>
+            <div class="ppl-team" data-t="pj"><b>Projects</b><span class="ppl-mem"><i data-m="Ken">KE</i></span></div>
+          </div>
+        </div>
+        <div class="ppl-board">
+          <div class="ppl-cols" role="group" aria-label="Pipeline stages">
+            <div class="ppl-col" data-s="0"><p class="ppl-ct"><b>New</b><span data-sum="0">S$ 0</span></p><div class="ppl-list"></div><p class="ppl-more"></p></div>
+            <div class="ppl-col" data-s="1"><p class="ppl-ct"><b>Qualified</b><span data-sum="1">S$ 0</span></p><div class="ppl-list"></div><p class="ppl-more"></p></div>
+            <div class="ppl-col" data-s="2"><p class="ppl-ct"><b>Proposition</b><span data-sum="2">S$ 0</span></p><div class="ppl-list"></div><p class="ppl-more"></p></div>
+            <div class="ppl-col ppl-col--won" data-s="3"><p class="ppl-ct"><b>Won</b><span data-sum="3">S$ 0</span></p><div class="ppl-list"></div><p class="ppl-more"></p></div>
+          </div>
+          <div class="ppl-lost"><b>Lost</b><span>archived with a reason</span><ol class="ppl-lostl"></ol></div>
+          <div class="ppl-quote" aria-live="polite">{{odoo:sale:26}}<span><b data-q="no">Quotation</b><small data-q="txt">A won deal opens its quotation here.</small></span></div>
+        </div>
+      </div>
+      <div class="ppl-foot">
+        <div class="ppl-kl">
+          <dl class="dm-kpis">
+            <div><dt>Open pipeline</dt><dd data-k="open">S$ 0</dd></div>
+            <div><dt>Weighted forecast</dt><dd data-k="wf">S$ 0</dd></div>
+            <div class="dm-ok"><dt>Won</dt><dd data-k="won">S$ 0</dd></div>
+            <div><dt>Stale leads</dt><dd data-k="stale">0</dd></div>
+          </dl>
+          <ol class="dm-log ppl-log" aria-label="Pipeline activity"></ol>
+        </div>
+        <div class="ppl-chart ppl-conv"><p class="ppl-cht">Stage conversion <small>since day 1</small></p><div class="ppl-fun"></div></div>
+        <div class="ppl-chart ppl-fc"><p class="ppl-cht">Weighted forecast <small>expected revenue × probability</small></p><div class="ppl-bars"></div></div>
+      </div>
+      <div class="dm-static">
+        <p><b>Leads arrive</b> from a website form, an email alias, WhatsApp, an event attendee list and LinkedIn, and become leads in Odoo CRM.</p>
+        <p><b>Rules route them:</b> scoring sets a probability and a priority; a territory rule sends Singapore, Malaysia and Indonesia leads to the Singapore team and Philippine leads to the Philippines team; a product-line rule sends warehouse projects to the Projects team; round-robin gives each lead to the next salesperson with capacity.</p>
+        <p><b>The pipeline</b> runs New, Qualified, Proposition, Won, with lost deals archived with a reason. Each stage schedules the next activity; a lead with no owner or no progress is flagged as stale and the team lead is alerted. A won deal opens a quotation in Sales with the customer and products carried over.</p>
+        <p><b>Reports:</b> conversion from stage to stage, and a weighted forecast of expected revenue times probability.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample leads, values and odds. Real routing rules, stages and scoring are set up with your team in discovery.</p>
+  </div>
+</section>
+
+
+<section class="section cr-bibs-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>From first contact to signed quotation.</h2>
+      <p class="lead">We adapt the pipeline, the way leads arrive and get assigned, the follow-ups and the reports — then wire it into Sales so nothing is typed twice.</p>
+    </div>
+    <div class="cr-bibs">
+      <article class="cr-bib reveal" style="--i:0;--c:#21B799"><span class="cr-bib-top">Leg 01 · the track</span><b class="cr-bib-n" aria-hidden="true">01</b><div class="card-ic">{{odoo:crm}}</div><h3>Pipelines and stages</h3><p>Stages per sales team or product line, with the required fields and checklists each stage needs to move forward.</p></article>
+      <article class="cr-bib reveal" style="--i:1;--c:#3167CA"><span class="cr-bib-top">Leg 02 · the start</span><b class="cr-bib-n" aria-hidden="true">02</b><div class="card-ic">{{icon:mail}}</div><h3>Lead capture and routing</h3><p>Website forms, email aliases, WhatsApp and social leads created automatically and assigned by your rules.</p></article>
+      <article class="cr-bib reveal" style="--i:2;--c:#F08A24"><span class="cr-bib-top">Leg 03 · the lanes</span><b class="cr-bib-n" aria-hidden="true">03</b><div class="card-ic">{{icon:usercheck}}</div><h3>Assignment and activities</h3><p>Round-robin or rule-based assignment, plus scheduled activities so no opportunity goes quiet.</p></article>
+      <article class="cr-bib reveal" style="--i:3;--c:#E9B949"><span class="cr-bib-top">Leg 04 · the stars</span><b class="cr-bib-n" aria-hidden="true">04</b><div class="card-ic">{{icon:star}}</div><h3>Scoring and prioritisation</h3><p>Priority by fit and engagement, so the team works the opportunities most likely to close.</p></article>
+      <article class="cr-bib reveal" style="--i:4;--c:#714B67"><span class="cr-bib-top">Leg 05 · the baton</span><b class="cr-bib-n" aria-hidden="true">05</b><div class="card-ic">{{odoo:sale}}</div><h3>Quotation hand-off</h3><p>A won opportunity opens a quotation with the customer, products and pricelist already set — no re-entry.</p></article>
+      <article class="cr-bib reveal" style="--i:5;--c:#E0456B"><span class="cr-bib-top">Leg 06 · the scoreboard</span><b class="cr-bib-n" aria-hidden="true">06</b><div class="card-ic">{{icon:bars}}</div><h3>Forecasting and reports</h3><p>Pipeline value, conversion by source and stage, and forecast against target — all on live data.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cr-relay-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how we build it</span>
+      <h2>Your process first, then the configuration.</h2>
+      <p class="lead">We start from how you actually sell, build the pipeline to match, test it with your team, and support it after go-live.</p>
+    </div>
+    <div class="cr-relay reveal">
+      <div class="cr-relay-track" aria-hidden="true"><span>Start</span><span>Finish</span></div>
+      <ol class="cr-legs">
+        <li class="cr-leg reveal" style="--i:0"><span class="cr-leg-n">1</span><h3>Map the pipeline</h3><p>We walk through your recent deals: the stages, who owns each one, what has to be true to advance, and where leads come from.</p></li>
+        <li class="cr-leg reveal" style="--i:1"><span class="cr-leg-n">2</span><h3>Build and connect</h3><p>We configure stages, routing and scoring, wire up lead capture, and link the pipeline to Sales for the quotation hand-off.</p></li>
+        <li class="cr-leg reveal" style="--i:2"><span class="cr-leg-n">3</span><h3>Train the team</h3><p>Sales runs its own pipeline on real data, learns the activities and reports, and keeps written steps.</p></li>
+        <li class="cr-leg reveal" style="--i:3"><span class="cr-leg-n">4</span><h3>Go live and refine</h3><p>We switch it on, watch the first opportunities move through with you, and adjust stages, rules and reports as the team settles in.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section cr-medal-sec">
+  <div class="container">
+    <div class="two two--top cr-medal">
+      <div class="reveal cr-medal-l">
+        <span class="hand">what you get</span>
+        <h2>A pipeline your team actually uses.</h2>
+        <p class="lead">Configured around your process, connected to Sales, and reporting on live data — so the forecast reflects reality, not a spreadsheet exported last week.</p>
+      </div>
+      <ul class="spec-cols cr-checks reveal" style="margin:0">
+        <li>{{icon:check}}<span>Pipeline stages per team or product line, with required fields.</span></li>
+        <li>{{icon:check}}<span>Lead capture from web forms, email aliases, WhatsApp and social.</span></li>
+        <li>{{icon:check}}<span>Assignment rules — round-robin or by territory, product or value.</span></li>
+        <li>{{icon:check}}<span>Scheduled activities so every opportunity has a next step.</span></li>
+        <li>{{icon:check}}<span>Lead scoring by fit and engagement to focus the team.</span></li>
+        <li>{{icon:check}}<span>A won opportunity that opens the quotation with no re-entry.</span></li>
+        <li>{{icon:check}}<span>One customer record from first lead to paid invoice.</span></li>
+        <li>{{icon:check}}<span>Customer portal for quotations, orders and invoices.</span></li>
+        <li>{{icon:check}}<span>Forecasting and team reports on live data, not exports.</span></li>
+        <li>{{icon:check}}<span>Optional AI-drafted follow-ups and enriched contacts, reviewed before sending — see <a href="{{ROOT}}odoo/ai-integration.html">AI Integration</a>.</span></li>
+        <li>{{icon:check}}<span>Role-based training and written steps your team keeps.</span></li>
+        <li>{{icon:check}}<span>A support plan for changes as your process evolves.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cr-stands-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">questions we hear</span>
+      <h2>Before you decide.</h2>
+    </div>
+    <div class="faq cr-faq reveal">
+      <details><summary>Isn't Odoo CRM fine out of the box? {{icon:chevron}}</summary><div class="faq-a"><p>It's a solid pipeline as-is. The value is in matching it to how you actually sell — your stages, your routing, your fields — and connecting it to Sales so nothing gets re-keyed.</p></div></details>
+      <details><summary>Where do leads come from? {{icon:chevron}}</summary><div class="faq-a"><p>Website forms, email aliases, WhatsApp and social can all create leads automatically. We set up capture for the channels you use and route each lead by your rules.</p></div></details>
+      <details><summary>How are leads assigned? {{icon:chevron}}</summary><div class="faq-a"><p>By whatever rule fits — round-robin, territory, product or deal value. Scheduled activities then make sure every opportunity has an owner and a next step.</p></div></details>
+      <details><summary>What happens when a deal is won? {{icon:chevron}}</summary><div class="faq-a"><p>The won opportunity opens a quotation with the customer, products and pricelist already filled in. From there it flows into Sales, Inventory and Accounting on the same record.</p></div></details>
+      <details><summary>Can we use AI in the pipeline? {{icon:chevron}}</summary><div class="faq-a"><p>Yes, optionally. Odoo can draft follow-ups and enrich contacts for your team to review before anything is sent. See <a href="{{ROOT}}odoo/ai-integration.html">AI Integration</a>.</p></div></details>
+      <details><summary>How is this priced? {{icon:chevron}}</summary><div class="faq-a"><p>It depends on your pipeline, lead sources and integrations, so it's scoped and quoted. Walk us through your last ten deals and we'll come back with a plan — pricing is <a href="{{ROOT}}quotation.html">on quotation</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section cr-tickets-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>What this connects to.</h2>
+    </div>
+    <div class="grid-3 cr-tickets">
+      <a class="card cr-ticket reveal" style="--i:0;--c:#3167CA" href="{{ROOT}}solutions/odoo-erp.html"><div class="card-ic">{{icon:grid}}</div><h3>Odoo ERP</h3><p>The full implementation the CRM plugs into: Accounting, Sales and Inventory on one database.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card cr-ticket reveal" style="--i:1;--c:#714B67" href="{{ROOT}}odoo/apps/sales.html"><div class="card-ic">{{odoo:sale}}</div><h3>Sales app</h3><p>Quotations, orders and invoicing that a won deal flows straight into — no re-entry.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card cr-ticket reveal" style="--i:2;--c:#21B799" href="{{ROOT}}odoo/discovery.html"><div class="card-ic">{{icon:search}}</div><h3>Discovery</h3><p>A structured look at your sales process before anything is configured or built.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cr-finish-sec">
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="hand">next step</span>
+        <h2>Walk us through your last ten deals.</h2>
+        <p>That's usually enough to design the pipeline. Tell us how you sell and we'll show you the setup.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

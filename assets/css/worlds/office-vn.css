@@ -1,0 +1,248 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: office-vn (/offices/vietnam) — the Ho Chi Minh City AI lab on a bright day, in light mode. White, sky blue, lab
+   teal and sunset orange. The title card is a light code editor; the caption is the assistant's chat bubble; buttons are
+   lit keys with a teal edge; the four AI disciplines are editor tabs; how AI joins a project is a light terminal log; the
+   FAQ is a prompt. */
+.ixw--office-vn{--vn-ink:#1B1F3B;--vn-navy:#2B2D6E;--vn-cy:#0EA5B7;--vn-cy-l:#E3F7F9;--vn-or:#E0761A;--vn-vi:#7B5CD6;
+  --w-alt:#F2F7FB;--lab-bg:#FFFFFF;--lab-bd:1.5px solid #0EA5B7;--lab-lip:#BFE9EE;--lab-tail:#FFFFFF;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#EAF5FC,#CFE6F7 60%,#FFE9D2);--ii-ink:#1B1F3B;--ii-b:#E0761A;--ii-accent:#0EA5B7;--ii-lip:#BFE9EE;--ii-ep-bg:#0EA5B7;--ii-ep-fg:#FFFFFF}
+.ixw--office-vn .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#EEF1F8 12%,#6FAEEA 12%,#A9D2F5 40%,#E4F2FB 60%,#EEF2F7 62%,#DCE3EC 100%)}
+.ixw--office-vn .ixw-hot-lab{color:var(--vn-ink)}.ixw--office-vn .ixw-hot-lab i{color:#5C6B7A}.ixw--office-vn .ixw-hot-lab .ic{color:var(--vn-cy)}
+
+/* ---------- the title card: a light code editor ---------- */
+.ixw--office-vn .ixw-copy{position:relative;max-width:480px;margin-top:20px;padding:58px 30px 26px;border-radius:14px;background:#FFFFFF;color:var(--vn-ink);
+  box-shadow:0 0 0 1.5px #D5DEE9,0 0 0 6px rgba(14,165,183,.10),0 40px 80px -34px rgba(30,60,110,.35)}
+.ixw--office-vn .ixw-copy::before{content:"~/ai-lab/ho-chi-minh-city";position:absolute;left:0;right:0;top:0;height:40px;display:flex;align-items:center;padding-left:78px;border-radius:14px 14px 0 0;
+  background:radial-gradient(circle at 22px 50%,#FF6F61 5px,transparent 5.5px),radial-gradient(circle at 40px 50%,#FFC94A 5px,transparent 5.5px),radial-gradient(circle at 58px 50%,#2BC48A 5px,transparent 5.5px),#F1F5F9;
+  border-bottom:1.5px solid #E3E9F0;font:600 12px/1 ui-monospace,Consolas,monospace;color:#5C6B7A}
+.ixw--office-vn .ixw-copy h1{color:var(--vn-ink);max-width:14ch}
+.ixw--office-vn .ixw-copy .h1-hand::before{content:"$ ";font:700 .9em/1 ui-monospace,Consolas,monospace;color:var(--vn-cy)}
+.ixw--office-vn .ixw-copy .hand{color:var(--vn-or)}
+.ixw--office-vn .ixw-copy .lead{color:#4A5568}
+.ixw--office-vn .ixw-copy .crumbs,.ixw--office-vn .ixw-copy .crumbs a,.ixw--office-vn .ixw-ep{color:#5C6B7A}
+.ixw--office-vn .ixw-copy .crumbs span{color:#8A96A8}
+.ixw--office-vn .ixw-ep-tag{background:var(--vn-cy);color:#FFFFFF;box-shadow:0 3px 0 #0B7F8D}.ixw--office-vn .ixw-ep-tag .ic{background:#FFFFFF;color:var(--vn-cy)}
+.ixw--office-vn .ixw-hint{color:#5C6B7A}.ixw--office-vn .ixw-hint .ic{color:var(--vn-or)}
+.ixw--office-vn .ixw-hint::after{content:"";display:inline-block;width:8px;height:15px;margin-left:4px;background:var(--vn-cy);animation:vnCaret 1s steps(1) infinite}
+@keyframes vnCaret{50%{opacity:0}}
+@media (max-width:767px){.ixw--office-vn .ixw-copy{padding:54px 20px 22px}.ixw--office-vn .ixw-copy::before{font-size:10.5px;padding-left:72px}}
+
+/* ---------- the caption: the assistant's chat bubble ---------- */
+.ixw--office-vn .ixw-cap{background:#FFFFFF;border:1.5px solid #CFE3EA;border-radius:22px 22px 22px 6px;box-shadow:0 0 0 5px rgba(14,165,183,.08),0 28px 50px -26px rgba(30,60,110,.35)}
+.ixw--office-vn .ixw-cap-who b{color:#0B7F8D}.ixw--office-vn .ixw-cap-who small{color:#5C6B7A}
+.ixw--office-vn .ixw-cap-txt{color:var(--vn-ink)}.ixw--office-vn .ixw-cap-txt b{color:var(--vn-or)}
+.ixw--office-vn .ixw-caret{background:var(--vn-cy)}
+.ixw--office-vn .ixw-cap-av{background:var(--vn-cy-l);box-shadow:0 0 0 2px var(--vn-cy)}
+.ixw--office-vn .ixw-cap-rec{background:var(--vn-cy-l);color:#0B5F69;border:1px dashed #7FD3DD}
+
+/* ---------- buttons: lit keys with a teal edge ---------- */
+.ixw--office-vn main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:10px;border:1.5px solid currentColor;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease,background-color .2s ease}
+.ixw--office-vn main .btn-primary,.ixw--office-vn main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#FFA04A,#E0761A);border-color:#FFC98A;box-shadow:0 0 0 1px #E0761A,0 10px 22px -8px rgba(240,138,36,.55),0 4px 0 #A9520E}
+.ixw--office-vn main .btn-primary:hover{translate:0 -2px;box-shadow:0 0 0 1px #E0761A,0 14px 28px -8px rgba(240,138,36,.7),0 6px 0 #A9520E}
+.ixw--office-vn main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--office-vn main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:#0B7F8D;background:#FFFFFF;border-color:var(--vn-cy);box-shadow:0 0 0 3px rgba(14,165,183,.12),0 4px 0 #9ED9E1}
+.ixw--office-vn main :is(.btn-ghost,.ixw-cta .btn-white):hover{translate:0 -2px;background:var(--vn-cy-l);box-shadow:0 0 0 4px rgba(14,165,183,.18),0 6px 0 #9ED9E1}
+.ixw--office-vn main .btn-ghost::before{display:none}.ixw--office-vn main .btn-ghost .ic{color:var(--vn-cy)}
+.ixw--office-vn main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--office-vn .ixw-cta .btn-outline-white,.ixw--office-vn .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.85);box-shadow:none}
+.ixw--office-vn main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--office-vn .ixw-ibtn{background:#FFFFFF;border:1.5px solid #CFE3EA;color:var(--vn-ink);box-shadow:0 3px 0 #CFE3EA}
+.ixw--office-vn .ixw-ibtn:hover{color:#0B7F8D;border-color:var(--vn-cy);box-shadow:0 4px 0 #9ED9E1}
+.ixw--office-vn .ixw-ibtn--play,.ixw--office-vn .ixw-ibtn--play:hover{color:#FFFFFF;background:var(--vn-cy);border-color:var(--vn-cy);box-shadow:0 3px 0 #0B7F8D}
+.ixw--office-vn .ixw-dots button{background:#CFD8E3}.ixw--office-vn .ixw-dots button.is-on{background:var(--vn-cy);box-shadow:0 0 0 3px rgba(14,165,183,.2)}
+.ixw--office-vn .ixw-peek{background:#FFFFFF;color:var(--vn-ink);border-color:var(--vn-cy);box-shadow:0 3px 0 #9ED9E1}
+.ixw--office-vn .ixw-peek[aria-pressed="true"]{background:var(--vn-cy);color:#FFFFFF}
+.ixw--office-vn main .btn-link{color:#0B7F8D}
+
+/* ============================== below the hero: the lab in daylight ==============================
+   An editor status bar (glance), the assistant's message with its sources (Nexi), four editor windows with code and silk
+   lanterns overhead (disciplines), the project's terminal over the city's skyline and the scooter road (how AI joins),
+   pings to the other offices as API responses, a route to the lab (visit), a chat with the assistant (FAQ), and the end card
+   as daylight over the river. Light mode throughout. */
+.ixw--office-vn{--vn-mono:ui-monospace,Consolas,monospace}
+
+/* ---------- the glance strip: the editor's status bar ---------- */
+.ixw--office-vn .vn-strip{position:relative;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:44px;border-top:0;background:linear-gradient(180deg,#F1F5F9 0 30px,#FFFFFF 30px);
+  box-shadow:0 0 0 1.5px #D5DEE9,0 0 0 7px rgba(14,165,183,.08),0 30px 50px -32px rgba(30,60,110,.3)}
+.ixw--office-vn .vn-strip::before{content:"";position:absolute;left:18px;top:11px;width:46px;height:9px;background:radial-gradient(circle,#FF6F61 4px,transparent 4.5px) 0 50%/9px 9px no-repeat,radial-gradient(circle,#FFC94A 4px,transparent 4.5px) 16px 50%/9px 9px no-repeat,radial-gradient(circle,#2BC48A 4px,transparent 4.5px) 32px 50%/9px 9px no-repeat}
+.ixw--office-vn .vn-strip::after{content:"ai-lab \00B7  UTF-8 \00B7  ICT +7 \00B7  \25CF  live";position:absolute;right:20px;top:10px;font:700 11px/1 var(--vn-mono);color:#0B7F8D}
+.ixw--office-vn .vn-strip>div{position:relative}
+.ixw--office-vn .vn-strip dt{font-family:var(--vn-mono);font-size:11.5px;color:#5C6B7A}
+.ixw--office-vn .vn-strip>div+div::before{content:"";position:absolute;left:-17px;top:20px;bottom:4px;width:1px;background:linear-gradient(#BFE9EE,#F7C99A)}
+@media (max-width:991px){.ixw--office-vn .vn-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--office-vn .vn-strip>div:nth-child(3)::before{display:none}}
+@media (max-width:767px){.ixw--office-vn .vn-strip::after{font-size:9.5px;right:12px}}
+
+/* ---------- Nexi's paragraph: the assistant's message, with its sources ---------- */
+.ixw--office-vn .vn-intro-sec .ixw-say{position:relative;border-radius:22px 22px 22px 6px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE3EA,0 0 0 6px rgba(14,165,183,.07),0 26px 44px -28px rgba(30,60,110,.35);padding-bottom:50px}
+.ixw--office-vn .vn-intro-sec .ixw-say::after{content:"¹3  answered from: TechNext offices";position:absolute;left:92px;bottom:16px;padding:5px 10px;border-radius:999px;background:var(--vn-cy-l);font:700 11px/1 var(--vn-mono);color:#0B5F69}
+@media (max-width:640px){.ixw--office-vn .vn-intro-sec .ixw-say::after{left:16px}}
+
+/* ---------- the prompt above a section head ---------- */
+.vn-prompt{display:inline-block;margin-bottom:12px;padding:6px 12px;border-radius:8px;background:#F1F5F9;box-shadow:inset 0 0 0 1.5px #E3E9F0;font:700 12.5px/1 var(--vn-mono,monospace);color:#0B7F8D}
+.vn-prompt::after{content:"";display:inline-block;width:7px;height:13px;margin:0 0 -2px 4px;background:#0EA5B7;animation:vnCaret 1s steps(1) infinite}
+
+/* ---------- the four disciplines: editor windows under silk lanterns ---------- */
+.ixw--office-vn .vn-lab{position:relative;overflow:hidden;background:radial-gradient(800px 380px at 85% 0,rgba(255,236,190,.55),transparent 70%),linear-gradient(180deg,#FFFFFF,#F2F7FB)}
+.ixw--office-vn .vn-lab::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(14,165,183,.12) 1.4px,transparent 1.6px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.vn-lanterns{position:absolute;right:max(24px,calc((100% - 1200px) / 2));top:0;display:flex;gap:26px;pointer-events:none}
+.vn-lanterns i{position:relative;display:block;width:34px;height:44px;margin-top:var(--d,40px);border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(255,255,255,.35),transparent 40%),var(--c,#E2453C);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 10px 24px -6px color-mix(in srgb,var(--c,#E2453C) 60%,transparent);transform-origin:50% calc(-1 * var(--d,40px));animation:vnSway 4s ease-in-out infinite}
+.vn-lanterns i::before{content:"";position:absolute;left:50%;bottom:100%;width:1.5px;height:var(--d,40px);background:#9AA6BC}
+.vn-lanterns i::after{content:"";position:absolute;left:50%;top:100%;width:12px;height:14px;margin-left:-6px;background:repeating-linear-gradient(90deg,#F2B233 0 1.5px,transparent 1.5px 3px)}
+.vn-lanterns i:nth-child(1){--c:#E2453C;--d:30px}.vn-lanterns i:nth-child(2){--c:#F2B233;--d:62px;animation-delay:-1.2s}.vn-lanterns i:nth-child(3){--c:#F08A24;--d:18px;animation-delay:-2.1s}.vn-lanterns i:nth-child(4){--c:#E2453C;--d:48px;animation-delay:-.6s}
+@keyframes vnSway{0%,100%{rotate:-4deg}50%{rotate:4deg}}
+.ixw--office-vn .vn-lab .container{position:relative}
+.vn-disc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.vn-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:0 0 0;border-radius:14px;background:#FFFFFF;color:var(--vn-ink,#1B1F3B);text-decoration:none;overflow:hidden;
+  box-shadow:0 0 0 1.5px #D5DEE9,0 26px 44px -30px rgba(30,60,110,.35);transition:transform .3s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.vn-card:hover{transform:translateY(-6px);box-shadow:0 0 0 1.5px var(--c),0 0 0 7px color-mix(in srgb,var(--c) 14%,transparent),0 30px 50px -30px rgba(30,60,110,.45);color:var(--vn-ink,#1B1F3B);text-decoration:none}
+.vn-card:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.vn-card-top{display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;background:#F1F5F9;border-bottom:2px solid var(--c)}
+.vn-card-top i{width:8px;height:8px;border-radius:50%;background:#CFD8E3}.vn-card-top i:nth-child(1){background:#FF6F61}.vn-card-top i:nth-child(2){background:#FFC94A}.vn-card-top i:nth-child(3){background:#2BC48A}
+.vn-card-top b{margin-left:8px;padding:5px 10px;border-radius:6px 6px 0 0;background:#FFFFFF;font:600 12px/1 var(--vn-mono);color:#5C6B7A;align-self:flex-end}
+.vn-code{display:grid;gap:5px;margin:4px 20px 0;padding:10px 0 10px 30px;border-radius:8px;background:linear-gradient(90deg,#F6F8FB 0 24px,#FFFFFF 24px);box-shadow:inset 0 0 0 1px #EEF2F7;counter-reset:ln;position:relative}
+.vn-code i{position:relative;display:block;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--c) 0 22%,transparent 22% 26%,#C9D3E3 26% 62%,transparent 62% 66%,#F7C99A 66% 80%,transparent 80%)}
+.vn-code i:nth-child(2){width:78%;margin-left:12px;background:linear-gradient(90deg,#7B5CD6 0 30%,transparent 30% 34%,#C9D3E3 34% 100%)}
+.vn-code i:nth-child(3){width:56%;margin-left:12px;background:linear-gradient(90deg,#2BC48A 0 40%,transparent 40% 44%,#C9D3E3 44% 100%)}
+.vn-code i::before{counter-increment:ln;content:counter(ln);position:absolute;left:-24px;top:-3px;font:600 9px/1 var(--vn-mono);color:#AAB4C4}
+.vn-code i:nth-child(n+2)::before{left:-36px}
+.vn-card-ic{display:grid;place-items:center;width:46px;height:46px;margin:8px 20px 0;border-radius:12px;background:color-mix(in srgb,var(--c) 14%,#FFFFFF);color:color-mix(in srgb,var(--c) 80%,#1B1F3B)}
+.vn-card-ic .ic{width:22px;height:22px}
+.vn-card h3{margin:0 20px;color:var(--vn-ink,#1B1F3B);font-size:1.15rem}.vn-card p{margin:0 20px;font-size:14.5px;line-height:1.55;color:#4A5568}
+.ixw--office-vn .vn-card .btn-link{margin:auto 0 0;padding:12px 20px;border-top:1px solid #EEF2F7;background:#FAFCFE;color:color-mix(in srgb,var(--c) 75%,#1B1F3B);border-radius:0}
+@media (max-width:1100px){.vn-disc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.vn-disc{grid-template-columns:minmax(0,1fr)}.vn-lanterns{display:none}}
+@media (prefers-reduced-motion:reduce){.vn-lanterns i,.vn-prompt::after{animation:none}}
+
+/* ---------- how AI joins: the project's terminal, over the city and its scooter road ---------- */
+.vn-band{position:relative;overflow:hidden;padding-bottom:150px;background:linear-gradient(180deg,#EAF5FC,#F4F9FD 55%,#FFF3E6)}
+.vn-band .container{position:relative;z-index:1}
+.vn-term{border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D5DEE9,0 0 0 8px rgba(255,255,255,.6),0 30px 60px -34px rgba(30,60,110,.45);overflow:hidden}
+.vn-term-bar{display:flex;align-items:center;gap:6px;margin:0;height:38px;padding:0 14px;background:#F1F5F9;border-bottom:1.5px solid #E3E9F0}
+.vn-term-bar i{width:10px;height:10px;border-radius:50%;background:#FF6F61}.vn-term-bar i:nth-child(2){background:#FFC94A}.vn-term-bar i:nth-child(3){background:#2BC48A}
+.vn-term-bar span{margin-left:10px;font:600 12px/1 var(--vn-mono);color:#5C6B7A}
+.vn-log{counter-reset:tl;margin:0;padding:18px 20px 6px 54px;list-style:none;display:grid;gap:14px;background:linear-gradient(90deg,#F6F8FB 0 38px,transparent 38px)}
+.vn-log li{position:relative;counter-increment:tl;display:grid;gap:4px}
+.vn-log li::before{content:counter(tl);position:absolute;left:-40px;top:2px;width:24px;text-align:right;font:600 11px/1.4 var(--vn-mono);color:#AAB4C4}
+.vn-log code{font:700 13.5px/1.4 var(--vn-mono);color:#0B7F8D;background:none;padding:0}
+.vn-log li:nth-child(3) code{color:#C25E0C}
+.vn-log span{font:500 14px/1.5 var(--font-body);color:#4A5568;padding-left:18px;position:relative}
+.vn-log span::before{content:"\2713";position:absolute;left:0;color:#1E9E6A;font-weight:800}
+.vn-term-run{display:flex;align-items:center;gap:8px;margin:0;padding:8px 20px 18px 54px;font:700 13.5px/1 var(--vn-mono);color:#0B7F8D}
+.vn-term-run i{width:8px;height:15px;background:#0EA5B7;animation:vnCaret 1s steps(1) infinite}
+.vn-city{position:absolute;left:0;right:0;bottom:0;height:150px;color:#BFD0E3;pointer-events:none}
+.vn-city svg{position:absolute;left:0;bottom:34px;width:100%;height:110px}
+.vn-road{position:absolute;left:0;right:0;bottom:0;height:34px;background:linear-gradient(180deg,#C3CFDA 0 22px,#9FC6E6 22px);overflow:hidden}
+.vn-road::before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:repeating-linear-gradient(90deg,#FFFFFF 0 16px,transparent 16px 34px)}
+.vn-road i{position:absolute;top:2px;left:-40px;width:18px;height:8px;border-radius:4px 4px 2px 2px;background:var(--c,#E0456B);box-shadow:-5px 9px 0 -2px #2A3550,6px 9px 0 -2px #2A3550,0 -6px 0 -1px #F2B233;animation:vnRide var(--s,14s) linear infinite;animation-delay:var(--dl,0s)}
+.vn-road i:nth-child(2){--c:#3167CA;--s:11s;--dl:-4s;top:12px}.vn-road i:nth-child(3){--c:#14A38B;--s:17s;--dl:-9s}.vn-road i:nth-child(4){--c:#F08A24;--s:13s;--dl:-2s;top:12px}.vn-road i:nth-child(5){--c:#7B5CD6;--s:15s;--dl:-12s}.vn-road i:nth-child(6){--c:#E0456B;--s:12s;--dl:-7s;top:12px}
+.vn-road i:nth-child(even){animation-direction:reverse}
+@keyframes vnRide{from{left:-40px}to{left:calc(100% + 40px)}}
+@media (prefers-reduced-motion:reduce){.vn-road i,.vn-term-run i{animation:none}}
+
+/* ---------- the other offices: pings, answered as API responses ---------- */
+.ixw--office-vn .vn-net{background:linear-gradient(180deg,#FFFFFF,#F4F8FC)}
+.ixw--office-vn .vn-net .co-city{border:0;border-radius:14px;box-shadow:0 0 0 1.5px #D5DEE9,0 0 0 7px rgba(14,165,183,.06),0 26px 44px -30px rgba(30,60,110,.35)}
+.ixw--office-vn .vn-net .co-city:hover{box-shadow:0 0 0 1.5px var(--o),0 0 0 7px color-mix(in srgb,var(--o) 14%,transparent),0 30px 50px -30px rgba(30,60,110,.45)}
+.ixw--office-vn .vn-net .co-city::before{content:"200 OK \00B7  office.json";position:relative;z-index:1;display:flex;align-items:center;height:32px;padding:0 14px;background:#F1F5F9;border-bottom:1.5px solid #E3E9F0;font:700 11.5px/1 var(--vn-mono);color:#1E9E6A}
+.ixw--office-vn .vn-net .co-city-art{border-bottom:2px solid var(--o)}
+.ixw--office-vn .vn-net .co-otag{border:0;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D5DEE9;font-family:var(--vn-mono);text-transform:none;letter-spacing:0}
+.ixw--office-vn .vn-net .co-time{border-radius:6px;background:#FFFFFF;color:#0B7F8D;box-shadow:0 0 0 1.5px #BFE9EE;font-family:var(--vn-mono)}.ixw--office-vn .vn-net .co-time .ic{color:#F08A24}
+.ixw--office-vn .vn-net .co-city-h::before{content:"\"office\": ";font:600 12px/1 var(--vn-mono);color:#7B5CD6;vertical-align:middle}
+
+/* ---------- visit: the route to the lab ---------- */
+.ixw--office-vn .vn-visit-sec{background:linear-gradient(180deg,#F2F7FB,#EAF3FA)}
+.vn-addr{position:relative;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:34px 30px 30px 74px;border-radius:16px;background:#FFFFFF;color:var(--vn-ink,#1B1F3B);box-shadow:0 0 0 1.5px #D5DEE9,0 30px 50px -32px rgba(30,60,110,.35);border-top:4px solid #0EA5B7;overflow:hidden}
+.vn-route{position:absolute;left:30px;top:30px;bottom:30px;width:20px;pointer-events:none}
+.vn-route::before{content:"";position:absolute;left:9px;top:10px;bottom:22px;width:2px;background:repeating-linear-gradient(180deg,#0EA5B7 0 6px,transparent 6px 11px)}
+.vn-route::after{content:"";position:absolute;left:3px;top:0;width:14px;height:14px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 3px #0EA5B7}
+.vn-route i{position:absolute;left:0;bottom:0;width:20px;height:20px;border-radius:50% 50% 50% 0;rotate:-45deg;background:#F08A24;box-shadow:inset 0 0 0 5px #F08A24,inset 0 0 0 8px #FFFFFF}
+.vn-addr-top{margin:0;font:800 12px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#0B7F8D}
+.vn-addr address{font:600 15px/1.6 var(--font-body);font-style:normal;color:var(--vn-ink,#1B1F3B)}
+.vn-addr .actions{display:flex;flex-wrap:wrap;gap:12px}
+.ixw--office-vn .vn-visit .map{border-radius:16px;border:0;box-shadow:0 0 0 1.5px #D5DEE9,0 0 0 7px rgba(14,165,183,.07)}
+
+/* ---------- FAQ: a chat with the assistant (your question on the right, the answer on the left) ---------- */
+.ixw--office-vn .vn-faq{gap:18px}
+.ixw--office-vn .vn-faq details{border:0;border-radius:0;background:none;box-shadow:none;overflow:visible}
+.ixw--office-vn .vn-faq details:hover{translate:none}
+.ixw--office-vn .vn-faq summary{margin-left:auto;max-width:620px;padding:14px 18px;border-radius:20px 20px 6px 20px;background:linear-gradient(135deg,#0EA5B7,#0B8FA0);color:#FFFFFF;box-shadow:0 12px 24px -16px rgba(14,165,183,.7);flex-direction:row-reverse}
+.ixw--office-vn .vn-faq summary::before{content:"you";width:auto;height:auto;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.2);color:#FFFFFF;font:700 11px/1 var(--vn-mono)}
+.ixw--office-vn .vn-faq details[open] summary::before{content:"you";background:#FFFFFF;color:#0B7F8D;transform:none}
+.ixw--office-vn .vn-faq summary .ic{margin-left:0;margin-right:auto;background:rgba(255,255,255,.2);color:#FFFFFF}
+.ixw--office-vn .vn-faq .faq-a{position:relative;max-width:640px;margin-top:10px;padding:16px 18px 16px 58px;border-radius:20px 20px 20px 6px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE3EA,0 16px 30px -22px rgba(30,60,110,.35)}
+.ixw--office-vn .vn-faq .faq-a::before{content:"AI";position:absolute;left:14px;top:14px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#F08A24,#E0761A);color:#FFFFFF;font:800 11px/1 var(--font-body)}
+@media (max-width:767px){.ixw--office-vn .vn-faq summary{max-width:none}.ixw--office-vn .vn-faq .faq-a{padding-left:16px;padding-top:52px}.ixw--office-vn .vn-faq .faq-a::before{top:12px}}
+
+/* ---------- the end card: daylight over the river, the skyline along the bottom ---------- */
+.ixw--office-vn .vn-cta{background:linear-gradient(120deg,#3167CA,#0EA5B7 55%,#F08A24);box-shadow:0 34px 60px -34px rgba(30,60,110,.55)}
+.ixw--office-vn .vn-cta::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cg fill='%23FFFFFF' fill-opacity='.16'%3E%3Cpath d='M0 120V96h40V84h36v12h30V78h44v42zM170 120V88h34V70h28v50zM300 120V82h40v-8h30v46zM610 120V86h44V66h30v54zM880 120V84h40v-10h34v46zM1000 120V90h40V76h30v44zM1100 120V82h44v38z'/%3E%3Cpath d='M720 120V52h38v68zM725 52V30h28v22zM731 30V14h16v16z'/%3E%3Cpath d='M520 120q-4-58 8-80l12-7q8 38 5 87z'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(transparent 0 85%,rgba(255,255,255,.12) 85%);
+  background-size:100% 46%,100% 100%;background-repeat:no-repeat;background-position:bottom,0 0;-webkit-mask-image:none;mask-image:none}
+.ixw--office-vn .vn-cta .hand{color:#FFF1C9}
+@media (prefers-reduced-motion:reduce){.ixw--office-vn .ixw-hint::after{animation:none}}
+@media (max-width:767px){.ixw--office-vn .vn-cta>div:first-of-type{padding-top:34px}}
+
+/* ============================== hero controls (audit round): the terminal ==============================
+   The CTAs are commands (52px; the primary carries a prompt chip that blinks its caret on hover; the ghost is an outlined
+   command with a cyan glow); the tour controls are terminal keys; "View the scene" toggles like a flag. */
+.ixw--office-vn .ixw-copy .actions{gap:14px}
+.ixw--office-vn .ixw-copy .actions .btn-lg{height:52px;padding:0 22px;font:800 16px/1 var(--font-display);overflow:visible}
+.ixw--office-vn .ixw-copy .actions .btn-primary .ic{width:30px;height:30px;padding:7px;margin:0 -10px 0 4px;border-radius:8px;background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.ixw--office-vn .ixw-copy .actions .btn-primary:hover .ic{background:#FFFFFF;color:#E0761A}
+.ixw--office-vn .ixw-copy .actions .btn-ghost{border-width:2px}
+.ixw--office-vn .ixw-copy .actions .btn-ghost .ic{width:20px;height:20px}
+.ixw--office-vn .ixw-copy .actions .btn-ghost::after{content:"_";position:absolute;right:10px;bottom:13px;font:800 14px/1 ui-monospace,Consolas,monospace;color:var(--vn-cy);opacity:0;transform:none;background:none;inset:auto 10px 13px auto;transition:none}
+.ixw--office-vn .ixw-copy .actions .btn-ghost:hover::after{opacity:1;animation:vnCaret 1s steps(2) infinite}
+@keyframes vnCaret{50%{opacity:0}}
+.ixw--office-vn .ixw-cap .ixw-ibtn{width:40px;height:40px;border-radius:10px}
+.ixw--office-vn .ixw-cap .ixw-ibtn--play{width:46px;height:46px;border-radius:12px}
+.ixw--office-vn .ixw-ibtn{transition:translate .2s var(--w-spring),box-shadow .2s ease,color .2s ease}
+.ixw--office-vn .ixw-ibtn:hover{translate:0 -2px}
+.ixw--office-vn .ixw-ibtn:active{translate:0 3px;box-shadow:0 0 0 #CFE3EA;transition-duration:.06s}
+.ixw--office-vn .ixw-ibtn:focus-visible,.ixw--office-vn .ixw-peek:focus-visible,.ixw--office-vn .ixw-dots button:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--office-vn .ixw-dots button:hover{background:#9ED9E1}
+.ixw--office-vn .ixw-peek{height:44px;padding:0 18px 0 14px;border-width:2px;font-size:13.5px;transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw--office-vn .ixw-peek:hover{translate:0 -2px;box-shadow:0 0 0 4px rgba(14,165,183,.16),0 5px 0 #9ED9E1}
+.ixw--office-vn .ixw-peek:active{translate:0 3px;box-shadow:0 0 0 #9ED9E1}
+@media (max-width:767px){.ixw--office-vn .ixw-copy .actions .btn-lg{height:50px}}
+@media (prefers-reduced-motion:reduce){.ixw--office-vn .ixw-copy .actions .btn-ghost:hover::after{animation:none}}
+/* ---------- audit round: the FAQ is a chat window with the lab's assistant; the address card reads bigger ---------- */
+.ixw--office-vn .vn-faq{position:relative;max-width:900px;padding:62px 26px 26px;border-radius:20px;background:radial-gradient(rgba(14,165,183,.07) 1.2px,transparent 1.4px) 0 0/18px 18px,#F7FBFD;box-shadow:0 0 0 1.5px #D5E6EC,0 30px 50px -34px rgba(30,60,110,.35)}
+.ixw--office-vn .vn-faq::before{content:"assistant \00B7  AI lab, Ho Chi Minh City";position:absolute;left:0;right:0;top:0;height:42px;display:flex;align-items:center;padding-left:74px;border-radius:20px 20px 0 0;
+  background:radial-gradient(circle at 22px 50%,#FF6B5E 5px,transparent 5.5px),radial-gradient(circle at 38px 50%,#FFC94A 5px,transparent 5.5px),radial-gradient(circle at 54px 50%,#2BC48A 5px,transparent 5.5px),#FFFFFF;
+  border-bottom:1.5px solid #E1ECF1;font:700 12px/1 var(--vn-mono,ui-monospace,Consolas,monospace);color:#5C6B7A}
+.ixw--office-vn .vn-faq::after{content:"online";position:absolute;right:20px;top:13px;display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 22px;border-radius:999px;background:radial-gradient(circle at 11px 50%,#2BC48A 3.5px,transparent 4px),#E6F6F2;font:700 11px/1 var(--font-body);color:#0E7A50}
+.ixw--office-vn .vn-faq summary{transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--office-vn .vn-faq summary:hover{translate:-3px 0;box-shadow:0 14px 26px -14px rgba(14,165,183,.85)}
+.ixw--office-vn .vn-faq summary:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.vn-addr address{font-size:17px;line-height:1.55}
+.vn-addr::after{content:"AI LAB";position:absolute;right:-4px;bottom:-18px;font:800 84px/1 var(--font-display);letter-spacing:-.04em;color:rgba(14,165,183,.07);pointer-events:none}
+@media (max-width:767px){.ixw--office-vn .vn-faq{padding:56px 12px 14px}.ixw--office-vn .vn-faq::before{padding-left:68px;font-size:10.5px}.ixw--office-vn .vn-faq::after{display:none}.vn-addr::after{font-size:60px}}
+.ixw--office-vn .vn-faq details,.ixw--office-vn .vn-faq details[open]{background:none!important;box-shadow:none!important;border:0!important}
+
+/* ---------- section join (fix round): Nexi's answer box sits whole above the next section, with room under it ---------- */
+.ixw--office-vn .ix-intro-sec{position:relative;z-index:2;padding-bottom:64px}
+@media (max-width:767px){.ixw--office-vn .ix-intro-sec{padding-bottom:44px}}
+/* the lanterns hang from a rail along the top of the lab section, not from thin air */
+.ixw--office-vn .vn-lab{padding-top:clamp(84px,9vw,120px)}
+.vn-lanterns{top:0}
+.vn-lanterns::before{content:"";position:absolute;left:-26px;right:-26px;top:0;height:6px;border-radius:3px;background:linear-gradient(180deg,#C9A27A,#A9825C);box-shadow:0 2px 0 rgba(0,0,0,.08)}
+
+/* ============================== CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the Ho Chi Minh City AI lab ==============================
+   Accent: lab cyan. Themed touches kept: the editor tabs on the discipline cards, the project terminal, a faint skyline under
+   "how AI joins", the route line on the address card, a small "AI" mark on each FAQ answer. Lanterns and prompts are gone. */
+body.ixw--office-vn{--calm-accent:#0EA5B7;--calm-accent-ink:#0B7F8D;--calm-accent-line:#BFE6EC;--calm-accent-wash:#F2F9FB}
+body.ixw--office-vn .vn-city{opacity:.45}
+body.ixw--office-vn .vn-road{display:none}
+body.ixw--office-vn .vn-addr{box-shadow:var(--calm-shadow);border:1px solid var(--calm-line);border-top:3px solid #0EA5B7}
+body.ixw--office-vn .vn-faq{gap:12px}
+body.ixw--office-vn .vn-faq details{background:#FFFFFF!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;overflow:hidden}
+body.ixw--office-vn .vn-faq summary{margin:0;max-width:none;border-radius:0;background:none!important;color:var(--ink)!important;box-shadow:none!important;flex-direction:row;justify-content:space-between;text-align:left}
+body.ixw--office-vn .vn-faq summary::before,body.ixw--office-vn .vn-faq details[open] summary::before{content:none!important;display:none!important}
+body.ixw--office-vn .vn-faq summary .ic{margin-left:auto;margin-right:0;background:#EEF3FB;color:#3167CA}
+body.ixw--office-vn .vn-faq .faq-a{max-width:none;margin:0;border-radius:0;box-shadow:none;background:none;padding:0 18px 16px 58px}
+body.ixw--office-vn .vn-faq .faq-a::before{top:0;width:28px;height:28px;font-size:10px;background:#E3F7F9;color:#0B7F8D}
+@media (max-width:767px){body.ixw--office-vn .vn-faq .faq-a{padding:40px 16px 16px}}
+body.ixw--office-vn .vn-route{display:none}
+body.ixw--office-vn .vn-addr{padding:34px 30px}
+body.ixw--office-vn .vn-faq{padding:0!important;background:none!important;border:0!important;box-shadow:none!important}

@@ -1,0 +1,269 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: office-sg (/offices/singapore) — Singapore HQ. Brand blue, warm wood and brushed steel. The title card is the unit's
+   door plate (#03-36) and sits on the RIGHT, the scene on the left; the caption is the visitor sign-in tablet; buttons are lift
+   call buttons with a lit ring; rooms are meeting-room door signs with status lights; the address is a steel plate. */
+.ixw--office-sg{--sg-ink:#1B1F3B;--sg-blue:#3167CA;--sg-steel:linear-gradient(180deg,#F4F6FA,#D9DFE8);--sg-wood:#C9A27A;
+  --w-alt:#F6F2EA;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#F7F3EC,#E6EEFB);--ii-ink:#1B1F3B;--ii-b:#3167CA;--ii-accent:#3167CA;--ii-lip:#1B1F3B;--ii-ep-bg:#1B1F3B;--ii-ep-fg:#FFFFFF}
+.ixw--office-sg .ixw-hero{background:linear-gradient(180deg,#DCEBFF 0%,#F3F7FF 60%,#EADFCC 60%,#D8C6AA 100%)}
+
+/* ---------- the layout: title card right, scene left (desktop) ---------- */
+@media (min-width:1200px){
+  .ixw--office-sg .ixw-copy{margin-left:auto}
+  .ixw--office-sg .ixw-set{right:auto;left:max(24px,calc((100vw - 1200px) / 2 - 40px))}
+  .ixw--office-sg .ixw-cap{left:46cqw}
+  .ixw--office-sg .ixw-peek{right:auto;left:max(24px,calc((100vw - 1200px) / 2 - 40px))}
+}
+
+/* ---------- the title card: the unit's door plate ---------- */
+.ixw--office-sg .ixw-copy{position:relative;max-width:470px;margin-top:18px;padding:66px 30px 26px;border-radius:14px;background:#FFFFFF;
+  box-shadow:0 0 0 2px #C9D1DD,0 0 0 9px #F1F3F7,0 0 0 11px #B9C3D1,0 40px 70px -30px rgba(20,40,90,.45)}
+.ixw--office-sg .ixw-copy::before{content:"#03-36  \00B7  TECHNEXT PTE. LTD.";position:absolute;left:0;right:0;top:0;height:46px;display:flex;align-items:center;justify-content:center;border-radius:14px 14px 0 0;
+  background:linear-gradient(180deg,#2A3366,#1B1F3B);font:800 12px/1 var(--font-body);letter-spacing:.24em;color:#E8EEF8}
+.ixw--office-sg .ixw-copy::after{content:"";position:absolute;inset:-6px;border-radius:18px;pointer-events:none;
+  background:radial-gradient(circle,#E3E8EF 3px,#8E99AC 3.6px,transparent 4.2px) 8px 8px/10px 10px no-repeat,radial-gradient(circle,#E3E8EF 3px,#8E99AC 3.6px,transparent 4.2px) calc(100% - 8px) 8px/10px 10px no-repeat,
+  radial-gradient(circle,#E3E8EF 3px,#8E99AC 3.6px,transparent 4.2px) 8px calc(100% - 8px)/10px 10px no-repeat,radial-gradient(circle,#E3E8EF 3px,#8E99AC 3.6px,transparent 4.2px) calc(100% - 8px) calc(100% - 8px)/10px 10px no-repeat}
+.ixw--office-sg .ixw-copy h1{font-size:clamp(2rem,3.1vw,2.8rem);max-width:15ch}
+.ixw--office-sg .ixw-copy .lead{font-size:1rem}
+.ixw--office-sg .ixw-hint .ic{color:var(--sg-wood)}
+@media (max-width:767px){.ixw--office-sg .ixw-copy{padding:60px 20px 22px}.ixw--office-sg .ixw-copy::before{font-size:10px;letter-spacing:.14em}}
+
+/* ---------- the caption: the visitor sign-in tablet ---------- */
+.ixw--office-sg .ixw-cap{border:10px solid #1B1F3B;border-radius:24px;box-shadow:0 30px 50px -24px rgba(20,40,90,.55)}
+.ixw--office-sg .ixw-cap::after{content:"";position:absolute;right:-7px;top:50%;width:4px;height:26px;margin-top:-13px;border-radius:2px;background:#3A4458}
+.ixw--office-sg .ixw-cap-who b{color:var(--sg-ink)}
+.ixw--office-sg .ixw-cap-txt b{color:var(--sg-blue)}
+.ixw--office-sg .ixw-cap-av{border-radius:12px}
+
+/* ---------- buttons: lift call buttons (brushed steel, a ring that lights up) ---------- */
+.ixw--office-sg main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:0;border-radius:12px;box-shadow:inset 0 0 0 2px #8E99AC,inset 0 0 0 5px #F4F6FA,inset 0 0 0 7px rgba(49,103,202,.0),0 4px 0 #8E99AC,0 14px 24px -14px rgba(20,40,90,.5);
+  transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease}
+.ixw--office-sg main .btn-primary,.ixw--office-sg main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA 70%);box-shadow:inset 0 0 0 2px #1E4691,inset 0 0 0 5px #5C90EA,inset 0 0 0 7px #9FC4FF,0 4px 0 #1E4691,0 14px 24px -12px rgba(49,103,202,.7)}
+.ixw--office-sg main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--office-sg main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--sg-ink);background:var(--sg-steel)}
+.ixw--office-sg main .btn-ghost::before{display:none}
+.ixw--office-sg main :is(.btn-ghost,.ixw-cta .btn-white):hover{box-shadow:inset 0 0 0 2px #8E99AC,inset 0 0 0 5px #F4F6FA,inset 0 0 0 7px #FFC94A,0 6px 0 #8E99AC,0 18px 26px -14px rgba(20,40,90,.5)}
+.ixw--office-sg main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--office-sg main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--office-sg main .btn-primary:active{box-shadow:inset 0 0 0 2px #1E4691,inset 0 0 0 5px #5C90EA,inset 0 0 0 9px #FFE08A,0 1px 0 #1E4691}
+.ixw--office-sg .ixw-cta .btn-outline-white,.ixw--office-sg .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 2px rgba(255,255,255,.8),0 4px 0 rgba(0,0,0,.25)}
+.ixw--office-sg main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--office-sg .ixw-ibtn{border:0;background:radial-gradient(circle at 50% 40%,#FFFFFF,#D9DFE8 75%);box-shadow:inset 0 0 0 2px #8E99AC,0 3px 0 #8E99AC;color:var(--sg-ink)}
+.ixw--office-sg .ixw-ibtn:hover{box-shadow:inset 0 0 0 2px #8E99AC,inset 0 0 0 5px #FFE08A,0 5px 0 #8E99AC}
+.ixw--office-sg .ixw-ibtn--play,.ixw--office-sg .ixw-ibtn--play:hover{color:#FFFFFF;background:radial-gradient(circle at 50% 40%,#5C90EA,#2756B0 75%);box-shadow:inset 0 0 0 2px #1E4691,inset 0 0 0 5px #9FC4FF,0 3px 0 #1E4691}
+.ixw--office-sg .ixw-dots button.is-on{background:var(--sg-blue)}
+.ixw--office-sg .ixw-peek{border:0;border-radius:12px;background:var(--sg-steel);box-shadow:inset 0 0 0 2px #8E99AC,0 3px 0 #8E99AC}
+.ixw--office-sg .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA)}
+.ixw--office-sg .ixw-ep-tag{border-radius:6px}
+.ixw--office-sg main .btn-link{color:#2756B0}
+.ixw--office-sg main .btn-link:hover{color:var(--sg-ink)}
+
+/* ============================== below the hero: one walk through level 3 ==============================
+   The building directory (glance), a note on the reception desk (Nexi), the corridor of meeting-room doors (what happens
+   here), the Discovery Room's whiteboard and its booking panel (first meeting), the lift lobby's destination screens (other
+   offices), the steel unit plate and the lift call panel (visit), the lift's floor panel (FAQ), the feature wall (end card). */
+.ixw--office-sg{--sg-brass:linear-gradient(180deg,#F1D58A,#C9A040);--sg-screw:radial-gradient(circle,#E3E8EF 2.6px,#8E99AC 3.2px,transparent 3.8px)}
+
+/* ---------- the glance strip: the building directory ---------- */
+.ixw--office-sg .sg-strip{position:relative;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:42px;background:linear-gradient(180deg,#252B4C,#1B1F3B);
+  box-shadow:0 0 0 3px #C9D1DD,0 0 0 9px #EEF1F6,0 0 0 11px #B9C3D1,0 30px 54px -30px rgba(20,40,90,.55)}
+.ixw--office-sg .sg-strip::before{content:"LEVEL 03  \00B7  BUILDING DIRECTORY";position:absolute;left:26px;top:16px;font:800 10.5px/1 var(--font-body);letter-spacing:.24em;color:#FFD84A}
+.ixw--office-sg .sg-strip::after{content:"";position:absolute;right:26px;top:15px;width:40px;height:12px;background:radial-gradient(circle,#2BC48A 3px,transparent 3.6px) 0 50%/13px 12px repeat-x;animation:sgBlink 2.4s steps(2) infinite}
+@keyframes sgBlink{50%{opacity:.35}}
+.ixw--office-sg .sg-strip>div{padding:14px 0 0 16px;border-left:1px dashed rgba(255,255,255,.16)}
+.ixw--office-sg .sg-strip>div:first-child{padding-left:0;border-left:0}
+.ixw--office-sg .sg-strip dt{color:#AFC0DD;text-transform:uppercase;font-size:11px;letter-spacing:.12em;font-weight:800}.ixw--office-sg .sg-strip dt .ic{color:#FFD84A}
+.ixw--office-sg .sg-strip dd{color:#FFFFFF}.ixw--office-sg .sg-strip dd a{color:#9FC4FF}
+@media (max-width:991px){.ixw--office-sg .sg-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--office-sg .sg-strip>div:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:767px){.ixw--office-sg .sg-strip{padding-top:38px}.ixw--office-sg .sg-strip::before{left:18px;font-size:9.5px;letter-spacing:.16em}}
+
+/* ---------- Nexi's paragraph: a note clipped to the reception desk ---------- */
+.ixw--office-sg .sg-intro-sec .ixw-say{position:relative;margin-top:14px;border-radius:16px;background:linear-gradient(180deg,#FFFFFF,#FAFBFE);box-shadow:0 0 0 1.5px #DCE3EE,0 6px 0 #DCE3EE,0 30px 50px -32px rgba(20,40,90,.45)}
+.ixw--office-sg .sg-intro-sec .ixw-say::after{content:"";position:absolute;left:50%;top:-13px;width:70px;height:24px;margin-left:-35px;border-radius:6px 6px 12px 12px;background:var(--sg-brass);box-shadow:inset 0 -4px 0 rgba(0,0,0,.14),0 3px 6px -2px rgba(80,60,0,.4)}
+.ixw--office-sg .ixw-say .ix-intro-h{background:#1B1F3B;color:#FFD84A;letter-spacing:.14em}
+
+/* ---------- the kicker: a small door sign above a section head ---------- */
+.sg-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;padding:5px 16px 5px 5px;border-radius:999px;background:linear-gradient(180deg,#F7F9FC,#D9DFE8);box-shadow:inset 0 0 0 1.5px #B9C3D1,0 3px 0 #B9C3D1;
+  font:800 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#1B1F3B}
+.sg-kicker i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#5C90EA,#2756B0 75%);color:#FFFFFF;font:800 11px/1 var(--font-body);font-style:normal;letter-spacing:0;box-shadow:0 0 0 3px #FFE08A}
+
+/* ---------- four rooms: the corridor of meeting-room doors (wood, a frosted glass panel, a brass number, a handle, a kick plate) ---------- */
+.sg-corridor{position:relative;overflow:hidden;background:linear-gradient(180deg,#F6F9FE 0,#EEF3FB calc(100% - 128px),#1E4691 calc(100% - 128px),#1E4691 calc(100% - 120px),#EADFCC calc(100% - 120px),#D8C6AA 100%)}
+.sg-corridor::before{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 138px,rgba(120,80,40,.13) 138px 140px),linear-gradient(180deg,rgba(255,255,255,.25),transparent)}
+.sg-corridor::after{content:"";position:absolute;left:0;right:0;top:0;height:10px;pointer-events:none;background:linear-gradient(180deg,#DCE3EE,#F4F7FC);box-shadow:0 1px 0 #C9D1DD,0 14px 34px 4px rgba(255,248,220,.55)}
+.sg-corridor .container{position:relative;z-index:1}
+.sg-rooms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;align-items:end;padding-top:40px;perspective:1400px}
+.sg-room{position:relative;display:flex;flex-direction:column;min-height:446px;padding:16px 36px 0 16px;border-radius:12px 12px 3px 3px;text-decoration:none;color:var(--ink);transform-origin:left center;
+  background:linear-gradient(90deg,rgba(0,0,0,.08),transparent 9%,transparent 90%,rgba(0,0,0,.1)),repeating-linear-gradient(90deg,#C9A27A 0 7px,#C29A70 7px 10px,#CDA77F 10px 19px,#C59D74 19px 23px);
+  box-shadow:0 0 0 8px #F4F6FA,0 0 0 10px #B9C3D1,0 32px 40px -26px rgba(60,40,20,.6);transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease}
+.sg-room:hover{transform:rotateY(-9deg);text-decoration:none;color:var(--ink);box-shadow:0 0 0 8px #F4F6FA,0 0 0 10px #3167CA,22px 32px 44px -24px rgba(60,40,20,.55)}
+.sg-room:focus-visible{outline:3px solid #FFC94A;outline-offset:14px}
+/* the occupancy sign over the door */
+.sg-room::after{content:attr(data-status);position:absolute;left:50%;top:-44px;transform:translateX(-50%);display:inline-flex;align-items:center;height:24px;padding:0 12px 0 26px;border-radius:999px;white-space:nowrap;
+  background:radial-gradient(circle at 13px 50%,#2BC48A 4.5px,rgba(43,196,138,.25) 7px,transparent 8px),#1B1F3B;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF}
+.sg-room[data-status="In use"]::after{background:radial-gradient(circle at 13px 50%,#FF5A4F 4.5px,rgba(255,90,79,.3) 7px,transparent 8px),#1B1F3B;animation:sgUse 1.6s ease-in-out infinite}
+.sg-room[data-status="Out on-site"]::after{background:radial-gradient(circle at 13px 50%,#FFB547 4.5px,rgba(255,181,71,.3) 7px,transparent 8px),#1B1F3B}
+@keyframes sgUse{50%{box-shadow:0 0 0 4px rgba(255,90,79,.18)}}
+/* the handle */
+.sg-room::before{content:"";position:absolute;right:9px;top:52%;width:17px;height:50px;border-radius:9px;background:linear-gradient(90deg,#F4F6FA,#AEB8C8);box-shadow:0 3px 0 #8E99AC,inset 0 0 0 1.5px #8E99AC;transition:transform .3s ease}
+.sg-room:hover::before{transform:rotate(-14deg)}
+.sg-room-glass{position:relative;display:flex;flex-direction:column;gap:10px;flex:1;padding:18px 18px 22px;border-radius:7px;
+  background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(238,245,255,.94));box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),inset 0 0 0 5px rgba(150,110,70,.35),0 1px 0 rgba(255,255,255,.4)}
+.sg-room-glass::after{content:"";position:absolute;inset:5px;border-radius:4px;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 38%,transparent 46%);opacity:0;transition:opacity .4s ease}
+.sg-room:hover .sg-room-glass::after{opacity:1}
+.sg-room-no{align-self:flex-start;position:relative;padding:6px 14px;border-radius:4px;background:var(--sg-screw) 3px 50%/8px 8px no-repeat,var(--sg-screw) calc(100% - 3px) 50%/8px 8px no-repeat,var(--sg-brass);
+  color:#3A2A08;font:800 10.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 2px 0 #9C7A26}
+.sg-room-ic{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#FFFFFF,#DCE3EE 75%);color:#3167CA;box-shadow:inset 0 0 0 2px #B9C3D1,0 4px 10px -6px rgba(20,40,90,.5)}
+.sg-room-ic .ic{width:22px;height:22px}
+.sg-room h3{margin:0;font-size:1.2rem}.sg-room p{margin:0;font-size:14.5px;line-height:1.55;color:var(--body)}
+.sg-room .btn-link{margin-top:auto;align-self:flex-start}
+.sg-room-kick{display:block;height:44px;margin:16px -36px 0 -16px;border-radius:0 0 3px 3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.35) 0 1px,transparent 1px 3px),linear-gradient(180deg,#EEF1F6,#BFC8D6);box-shadow:inset 0 2px 0 rgba(255,255,255,.7)}
+/* the lift: brushed steel doors, no handle, its lobby button */
+.sg-room--lift{background:linear-gradient(90deg,#CCD4DF,#F2F5F9 46%,#9AA6BC 49.5%,#9AA6BC 50.5%,#F2F5F9 54%,#CCD4DF);box-shadow:0 0 0 8px #E9EDF3,0 0 0 10px #8E99AC,0 32px 40px -26px rgba(30,40,60,.5)}
+.sg-room--lift::before{right:7px;top:46%;width:20px;height:44px;border-radius:10px;background:radial-gradient(circle at 50% 30%,#FFB547 4px,#FFF1D6 5px,#E3E8EF 6px,transparent 6.5px),radial-gradient(circle at 50% 72%,#E3E8EF 5px,transparent 6px),#1B1F3B;box-shadow:none}
+.sg-room--lift .sg-room-no{background:#0E1230;color:#FFB547;box-shadow:none;font-family:ui-monospace,Consolas,monospace}
+@media (max-width:991px){.sg-rooms{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:72px}}
+@media (max-width:560px){.sg-rooms{grid-template-columns:minmax(0,1fr)}.sg-room{min-height:0}.sg-room:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.sg-room,.sg-room::before{transition:none}.sg-room:hover{transform:none}.sg-room[data-status="In use"]::after,.ixw--office-sg .sg-strip::after{animation:none}}
+
+/* ---------- the first meeting: the Discovery Room whiteboard and its booking panel ---------- */
+.ixw--office-sg .sg-meet{position:relative;overflow:hidden;background:radial-gradient(circle at 0 0,rgba(49,103,202,.08),transparent 40%),linear-gradient(180deg,#F6F2EA,#F2ECE1)}
+.ixw--office-sg .sg-meet::before{content:"";position:absolute;right:-60px;top:-40px;width:420px;height:420px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(201,162,122,.14) 0 2px,transparent 2px 18px);pointer-events:none}
+.sg-wb{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin:24px 0 30px;padding:18px 22px 22px;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 6px #C9D1DD,0 0 0 8px #AAB4C4,0 24px 40px -26px rgba(20,40,90,.45)}
+.sg-wb::after{content:"";position:absolute;left:28px;right:28px;bottom:-16px;height:8px;border-radius:0 0 6px 6px;background:linear-gradient(90deg,#3167CA 0 22px,transparent 22px 30px,#E0456B 30px 52px,transparent 52px) 18px 0/80px 4px no-repeat,#AAB4C4}
+.sg-wb span{position:relative;display:grid;place-items:center;width:84px;height:62px;background:var(--c);transform:rotate(var(--r));font:800 13.5px/1 var(--font-display);color:#1B1F3B;box-shadow:0 8px 12px -8px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.34,1.45,.64,1)}
+.sg-wb span::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:rgba(0,0,0,.05)}
+.sg-wb span+span::after{content:"\2192";position:absolute;left:-19px;top:50%;transform:translateY(-50%) rotate(calc(var(--r) * -1));font:800 16px/1 var(--font-body);color:#E0456B}
+.sg-meet-copy:hover .sg-wb span{transform:rotate(0) translateY(-3px)}
+.sg-invite{position:relative;border-radius:28px;background:#FFFFFF;border:13px solid #1B1F3B;overflow:hidden;box-shadow:0 0 0 2px #3A4458,0 46px 70px -36px rgba(20,40,90,.6)}
+.sg-invite-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:18px 22px;background:linear-gradient(90deg,#3167CA,#2756B0);color:#FFFFFF}
+.sg-invite-top span{display:inline-flex;align-items:center;gap:8px;font:800 15px/1 var(--font-display)}.sg-invite-top .ic{width:17px;height:17px}
+.sg-invite-top b{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.14);font:700 12px/1 var(--font-body)}
+.sg-invite-top b::before{content:"";width:7px;height:7px;border-radius:50%;background:#2BE09A;box-shadow:0 0 0 3px rgba(43,224,154,.3)}
+.sg-agenda{counter-reset:ag;margin:0;padding:12px 22px 6px;list-style:none}
+.sg-agenda li{position:relative;counter-increment:ag;display:grid;grid-template-columns:46px 88px minmax(0,1fr);align-items:baseline;gap:10px;padding:16px 0;border-bottom:1px dashed #DCE3EE}
+.sg-agenda li:last-child{border-bottom:0}
+.sg-agenda li::before{content:"0" counter(ag);display:grid;place-items:center;width:34px;height:34px;align-self:center;border-radius:50%;background:#EEF4FE;box-shadow:inset 0 0 0 2px #3167CA;font:800 12.5px/1 var(--font-body);color:#1E4691}
+.sg-agenda li:not(:last-child)::after{content:"";position:absolute;left:16px;top:calc(50% + 18px);bottom:calc(-50% + 18px);width:2px;background:repeating-linear-gradient(180deg,#3167CA 0 4px,transparent 4px 8px);opacity:.4}
+.sg-agenda b{font:800 16px/1.3 var(--font-display)}.sg-agenda span{font-size:14.5px;line-height:1.5;color:var(--body)}
+.sg-invite-foot{display:flex;align-items:center;gap:10px;margin:0;padding:14px 22px 18px;background:#F6F9FE;border-top:1px solid #E3EAF4;font:600 13.5px/1.4 var(--font-body);color:var(--muted)}
+.sg-invite-foot .ic{width:16px;height:16px;color:#14A38B}
+.sg-dots{display:inline-flex}.sg-dots i{width:22px;height:22px;margin-right:-7px;border-radius:50%;border:2.5px solid #FFFFFF;background:#3167CA}.sg-dots i:nth-child(2){background:#14A38B}.sg-dots i:nth-child(3){background:#F08A24;margin-right:4px}
+@media (max-width:560px){.sg-agenda li{grid-template-columns:40px minmax(0,1fr)}.sg-agenda li span{grid-column:2}.sg-wb{gap:16px}.sg-wb span{width:68px;height:52px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){.sg-wb span{transition:none}}
+
+/* ---------- the other offices: the lift lobby's destination screens ---------- */
+.ixw--office-sg .sg-lobby{position:relative;background:linear-gradient(180deg,#FFFFFF 0,#F1F5FB 100%)}
+.ixw--office-sg .sg-lobby .co-cities{gap:34px}
+.ixw--office-sg .sg-lobby .co-city{border:0;border-radius:20px;box-shadow:0 0 0 2px #B9C3D1,0 0 0 10px #EEF1F6,0 0 0 12px #B9C3D1,0 34px 50px -30px rgba(20,40,90,.5)}
+.ixw--office-sg .sg-lobby .co-city:hover{box-shadow:0 0 0 2px #3167CA,0 0 0 10px #EEF1F6,0 0 0 12px #3167CA,0 40px 56px -30px rgba(20,40,90,.55)}
+.ixw--office-sg .sg-lobby .co-city-art{border-bottom:0;background:linear-gradient(180deg,color-mix(in srgb,var(--o) 24%,#EAF3FF),#F7FAFF)}
+.ixw--office-sg .sg-lobby .co-city-art::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent calc(50% - 3px),#FFFFFF calc(50% - 3px) calc(50% + 3px),transparent calc(50% + 3px)),linear-gradient(115deg,transparent 35%,rgba(255,255,255,.4) 42%,transparent 50%)}
+.ixw--office-sg .sg-lobby .co-otag{border:0;border-radius:4px;background:var(--sg-brass);color:#3A2A08;box-shadow:0 2px 0 #9C7A26}
+.ixw--office-sg .sg-lobby .co-time{border-radius:6px;background:#0E1230;color:#FFB547;font-family:ui-monospace,Consolas,monospace;box-shadow:inset 0 0 0 1.5px #3A4458}
+.ixw--office-sg .sg-lobby .co-city-b{position:relative;padding-top:30px;background:linear-gradient(180deg,#1B1F3B 0 6px,#FFFFFF 6px)}
+.ixw--office-sg .sg-lobby .co-city-b::before{content:"\25B2  NEXT STOP";position:absolute;left:22px;top:14px;font:800 10px/1 var(--font-body);letter-spacing:.2em;color:#3167CA}
+
+/* ---------- visit: the steel unit plate, its lift call panel, the map in a steel frame ---------- */
+.sg-visit{align-items:stretch}
+.sg-plate{position:relative;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:40px 34px;border-radius:18px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 1px,transparent 1px 3px),linear-gradient(160deg,#F7F9FC,#D2DAE5);
+  box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 1.5px #B9C3D1,0 6px 0 #B9C3D1,0 34px 54px -30px rgba(20,40,90,.5)}
+.sg-plate::before{content:"";position:absolute;inset:12px;pointer-events:none;background:var(--sg-screw) 0 0/10px 10px no-repeat,var(--sg-screw) 100% 0/10px 10px no-repeat,var(--sg-screw) 0 100%/10px 10px no-repeat,var(--sg-screw) 100% 100%/10px 10px no-repeat}
+.sg-plate-unit{margin:0;font:800 clamp(3.2rem,6.4vw,5rem)/1 var(--font-display);letter-spacing:-.03em;color:#1B1F3B;text-shadow:0 2px 0 #FFFFFF,0 -1px 0 rgba(20,30,60,.25)}
+.sg-plate-name{margin:0;font:800 1.2rem/1.2 var(--font-display);color:#3167CA}
+.sg-plate address{font:600 15px/1.55 var(--font-body);font-style:normal;color:var(--ink)}
+.sg-plate .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.sg-call{position:absolute;right:30px;top:30px;display:grid;justify-items:center;gap:8px;padding:10px 10px 12px;border-radius:30px;background:linear-gradient(180deg,#E9EDF3,#C9D1DD);box-shadow:inset 0 0 0 1.5px #8E99AC,0 3px 0 #8E99AC}
+.sg-call b{display:grid;place-items:center;width:40px;height:26px;border-radius:5px;background:#0E1230;color:#FFB547;font:800 14px/1 ui-monospace,Consolas,monospace;letter-spacing:.06em}
+.sg-call i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFFFFF,#D9DFE8 75%);box-shadow:inset 0 0 0 2px #8E99AC;font:800 10px/1 var(--font-body);font-style:normal;color:#5C6B7A}
+.sg-call i:first-of-type{color:#B26B00;box-shadow:inset 0 0 0 2px #8E99AC,0 0 0 3px #FFB547;animation:sgCall 2s ease-in-out infinite}
+@keyframes sgCall{50%{box-shadow:inset 0 0 0 2px #8E99AC,0 0 0 6px rgba(255,181,71,.25)}}
+.ixw--office-sg .sg-visit .map{border-radius:18px;border:0;box-shadow:0 0 0 2px #B9C3D1,0 0 0 10px #EEF1F6,0 0 0 12px #B9C3D1,0 34px 54px -30px rgba(20,40,90,.5)}
+@media (max-width:560px){.sg-plate{padding:34px 22px 28px}.sg-call{right:18px;top:18px;transform:scale(.85);transform-origin:top right}}
+@media (prefers-reduced-motion:reduce){.sg-call i:first-of-type{animation:none}}
+
+/* ---------- FAQ: the lift's floor panel ---------- */
+.ixw--office-sg .sg-faq{position:relative;counter-reset:fl;gap:12px;padding:56px 26px 26px;border-radius:24px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 1px,transparent 1px 3px),linear-gradient(160deg,#F2F5F9,#D6DDE7);box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 1.5px #B9C3D1,0 6px 0 #B9C3D1,0 34px 54px -32px rgba(20,40,90,.45)}
+.ixw--office-sg .sg-faq::before{content:"TECHNEXT  \00B7  #03-36  \00B7  PRESS A FLOOR";position:absolute;left:26px;top:22px;font:800 10.5px/1 var(--font-body);letter-spacing:.2em;color:#5C6B7A}
+.ixw--office-sg .sg-faq::after{content:"\25B2  03";position:absolute;right:26px;top:16px;display:grid;place-items:center;width:62px;height:24px;border-radius:5px;background:#0E1230;box-shadow:inset 0 0 0 1.5px #3A4458;font:800 12px/1 ui-monospace,Consolas,monospace;color:#FFB547}
+.ixw--office-sg .sg-faq details{counter-increment:fl;border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #C9D1DD,0 4px 0 #C9D1DD}
+.ixw--office-sg .sg-faq details[open]{box-shadow:0 0 0 2px #3167CA,0 4px 0 #1E4691}
+.ixw--office-sg .sg-faq summary::before{content:"L" counter(fl);width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFFFFF,#D9DFE8 75%);color:#1B1F3B;box-shadow:inset 0 0 0 2px #8E99AC;font-size:12px}
+.ixw--office-sg .sg-faq details[open] summary::before{content:"L" counter(fl);background:radial-gradient(circle at 50% 40%,#5C90EA,#2756B0 75%);color:#FFFFFF;transform:none;box-shadow:inset 0 0 0 2px #1E4691,0 0 0 4px #FFE08A}
+@media (max-width:767px){.ixw--office-sg .sg-faq{padding:50px 14px 16px}.ixw--office-sg .sg-faq::before{left:16px;font-size:9px;letter-spacing:.12em}.ixw--office-sg .sg-faq::after{display:none}}
+
+/* ---------- the end card: the feature wall, with the logo's plane and the unit plate ---------- */
+.ixw--office-sg .sg-cta{background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 12px,transparent 12px 28px),linear-gradient(120deg,#2756B0,#3A72D6);box-shadow:inset 0 -10px 0 #1E4691,0 34px 60px -34px rgba(20,40,90,.6)}
+.ixw--office-sg .sg-cta::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Cpath d='M-10.5-2.2 10.5-10 5.9 10.4.7 3.3-3.4 7.8-3 1.5z' fill='%23FFFFFF' fill-opacity='.09'/%3E%3C/svg%3E");background-size:340px 340px;background-repeat:no-repeat;background-position:62% 40%;-webkit-mask-image:none;mask-image:none}
+.ixw--office-sg .sg-cta .hand{color:#FFE08A}
+.ixw--office-sg .sg-cta>div:first-of-type{position:relative;padding-top:38px}
+.ixw--office-sg .sg-cta>div:first-of-type::before{content:"#03-36";position:absolute;left:0;top:0;padding:6px 12px;border-radius:5px;background:var(--sg-screw) 3px 50%/8px 8px no-repeat,var(--sg-screw) calc(100% - 3px) 50%/8px 8px no-repeat,linear-gradient(180deg,#F4F6FA,#C9D1DD);color:#1B1F3B;font:800 12px/1 var(--font-body);letter-spacing:.14em}
+
+/* ============================== hero controls (audit round): the lift's call panel ==============================
+   The two CTAs sit side by side like a pair of call buttons (52px, a lit ring that turns amber on hover, a press that sinks
+   into the panel); the arrow is the lit button itself; the tour controls are round steel buttons; "View the scene" is the
+   panel's door-open button. */
+@media (min-width:768px){.ixw--office-sg .ixw-copy .actions{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;margin-top:26px}}
+.ixw--office-sg .ixw-copy .actions .btn-lg{height:52px;padding:0 16px;font:800 15.5px/1 var(--font-display);justify-content:center;overflow:visible;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--office-sg .ixw-copy .actions .btn-primary .ic{width:30px;height:30px;padding:7px;margin:0 -8px 0 4px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#6E9DEE,#2756B0 75%);box-shadow:0 0 0 2px #9FC4FF,0 0 0 4px #1E4691}
+.ixw--office-sg .ixw-copy .actions .btn-primary:hover .ic{background:radial-gradient(circle at 50% 40%,#FFE08A,#F2B233 75%);color:#1B1F3B;box-shadow:0 0 0 2px #FFF1C2,0 0 0 4px #B98A12,0 0 14px 2px rgba(255,201,74,.6)}
+.ixw--office-sg .ixw-copy .actions .btn-ghost .ic{width:22px;height:22px;padding:3px;border-radius:50%;background:#FFFFFF;color:#3167CA;box-shadow:0 0 0 1.5px #B9C3D1}
+.ixw--office-sg .ixw-copy .actions .btn-ghost:hover .ic{color:#B26B00;box-shadow:0 0 0 1.5px #B9C3D1,0 0 0 4px #FFE08A}
+.ixw--office-sg .ixw-cap .ixw-ibtn{width:40px;height:40px;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw--office-sg .ixw-cap .ixw-ibtn--play{width:46px;height:46px}
+.ixw--office-sg .ixw-ibtn:hover{translate:0 -2px}
+.ixw--office-sg .ixw-ibtn:active{translate:0 3px;box-shadow:inset 0 0 0 2px #8E99AC,inset 0 0 0 5px #FFE08A,0 0 0 #8E99AC;transition-duration:.06s}
+.ixw--office-sg .ixw-ibtn:focus-visible,.ixw--office-sg .ixw-peek:focus-visible,.ixw--office-sg .ixw-dots button:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--office-sg .ixw-dots button{border-radius:3px}.ixw--office-sg .ixw-dots button:hover{background:#AFC0DD}
+.ixw--office-sg .ixw-peek{height:44px;padding:0 18px 0 14px;gap:9px;font-size:13.5px;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw--office-sg .ixw-peek:hover{translate:0 -2px;box-shadow:inset 0 0 0 2px #8E99AC,0 5px 0 #8E99AC}
+.ixw--office-sg .ixw-peek:active{translate:0 3px;box-shadow:inset 0 0 0 2px #8E99AC,0 0 0 #8E99AC}
+@media (max-width:767px){.ixw--office-sg .ixw-copy .actions .btn-lg{height:50px}}
+
+/* ---------- section join (fix round): Nexi's answer box sits whole above the next section, with room under it ---------- */
+.ixw--office-sg .ix-intro-sec{position:relative;z-index:2;padding-bottom:64px}
+@media (max-width:767px){.ixw--office-sg .ix-intro-sec{padding-bottom:44px}}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+
+/* ============================== CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% Singapore HQ ==============================
+   Accent: HQ brass/wood, used thinly. Themed touches kept: the brass room plates on plain room cards, the whiteboard sticky
+   notes (flat), the meeting invite (thin bezel), the lift call panel on the address plate, the floor numbers in the FAQ. */
+body.ixw--office-sg{--calm-accent:#3167CA;--calm-accent-ink:#1E4691;--calm-accent-line:#D9C6AE;--calm-accent-wash:#F7F5F1}
+body.ixw--office-sg .sg-rooms{gap:20px;padding-top:0;perspective:none;align-items:stretch}
+body.ixw--office-sg .sg-room{min-height:0;padding:0;border-radius:16px;background:#FFFFFF;border:1px solid var(--calm-line);border-top:3px solid var(--sg-wood);box-shadow:var(--calm-shadow)!important;transform:none!important}
+body.ixw--office-sg .sg-room:hover{box-shadow:var(--calm-shadow-h)!important;translate:0 -2px}
+body.ixw--office-sg .sg-room::before,body.ixw--office-sg .sg-room::after,body.ixw--office-sg .sg-room-kick,body.ixw--office-sg .sg-room-glass::after{display:none!important}
+body.ixw--office-sg .sg-room-glass{padding:22px 22px 24px;background:none!important;border:0!important;box-shadow:none!important}
+body.ixw--office-sg .sg-room-no{padding:5px 10px;border-radius:6px;font-size:10.5px;box-shadow:none}
+body.ixw--office-sg .sg-room-ic{width:44px;height:44px;border-radius:12px;background:#EEF3FB;box-shadow:none;color:#3167CA}
+body.ixw--office-sg .sg-room--lift{background:#FFFFFF;border-top-color:#9AA6BC}
+body.ixw--office-sg .sg-room--lift .sg-room-no{background:#EEF1F6;color:#3A4458;font-family:var(--font-body)}
+@media (max-width:991px){body.ixw--office-sg .sg-rooms{row-gap:20px}}
+body.ixw--office-sg .sg-wb{margin:24px 0 0;padding:16px 18px;gap:18px;box-shadow:none;border:1px solid var(--calm-line)}
+body.ixw--office-sg .sg-wb::after{display:none}
+body.ixw--office-sg .sg-wb span{transform:none;box-shadow:none;border-radius:6px;width:78px;height:54px}
+body.ixw--office-sg .sg-wb span::before{display:none}
+body.ixw--office-sg .sg-invite{border:1px solid var(--calm-line);border-radius:20px;box-shadow:var(--calm-shadow)}
+body.ixw--office-sg .sg-agenda li{grid-template-columns:46px 80px minmax(0,1fr);border-bottom:1px solid #E9EEF5}
+body.ixw--office-sg .sg-agenda li:not(:last-child)::after{display:none}
+body.ixw--office-sg .sg-plate{box-shadow:var(--calm-shadow)!important;border:1px solid var(--calm-line)}
+body.ixw--office-sg .sg-plate::before{display:none}
+body.ixw--office-sg .sg-plate-unit{text-shadow:none;font-size:clamp(2.6rem,5vw,4rem)}
+body.ixw--office-sg .sg-call{box-shadow:inset 0 0 0 1px #C9D1DD}
+body.ixw--office-sg .sg-call i:first-of-type{box-shadow:inset 0 0 0 2px #8E99AC}
+body.ixw--office-sg .sg-faq{padding:0;background:none;box-shadow:none;border:0}
+body.ixw--office-sg .sg-faq::before,body.ixw--office-sg .sg-faq::after{display:none}
+body.ixw--office-sg .sg-faq details{box-shadow:none!important}
+body.ixw--office-sg .sg-faq summary::before{width:30px;height:30px;box-shadow:inset 0 0 0 1.5px #C9D1DD;font-size:11px}
+body.ixw--office-sg .sg-faq details[open] summary::before{box-shadow:none;background:#3167CA}
+body.ixw--office-sg .sg-cta>div:first-of-type{padding-top:0}
+body.ixw--office-sg .sg-cta>div:first-of-type::before{display:none}
+body.ixw--office-sg .sg-corridor{background:#FFFFFF!important}
+body.ixw--office-sg .sg-agenda li{grid-template-columns:84px minmax(0,1fr)}
+body.ixw--office-sg .sg-agenda li::before{display:none}
+body.ixw--office-sg .sg-lobby .co-city{box-shadow:var(--calm-shadow)!important;border:1px solid var(--calm-line)}
+body.ixw--office-sg .sg-lobby .co-city-art{border-bottom:3px solid var(--o)!important}
+@media (max-width:767px){body.ixw--office-sg .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%;justify-content:center}}

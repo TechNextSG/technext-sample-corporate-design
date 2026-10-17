@@ -1,0 +1,225 @@
+<!--meta {"title": "Office Network & Wi-Fi Setup — Singapore & PH", "desc": "Office network and Wi-Fi setup in Singapore and the Philippines: planned, installed and looked after by TechNext, so nobody in your office has to manage it.", "out": "solutions/networks.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-netsim.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-net.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-netsim.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-net.css?v={ASSET_V}\">", "body": "ixw ixw--sol-net sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-net" data-home="900,-58" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>Technology</span><span>Networks</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Networks</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">office networks & wi-fi</span>Office Wi-Fi and networks that just work.</h1>
+      <p class="lead"><span class="m-full">Office networks, Wi-Fi, firewalls and remote access, planned for how many people and devices you have, installed tidily, documented and supported, so the connection is simply there when your team needs it.</span><span class="m-short">Office networks, Wi-Fi, firewalls and remote access: planned, installed tidily, documented and supported.</span></p>
+      <div class="wtw-badges"><span>{{icon:wifi}}Wi-Fi coverage</span><span>{{icon:shield}}Firewall and VPN</span><span class="is-ok">{{icon:check}}Documented</span></div>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#net-live">{{icon:play}}See it run</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Your network is the plumbing. Tap the crew, a pipe, the towers or the big red valve.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast wtw-side" type="button" data-cast="feng" data-near="-150,180" data-who="TechNext field engineer" data-role="TechNext · illustration" data-say="I check the provider's handover first. **Good pressure at the street**, good network inside." style="--x:-305;--y:360;--w:84;--h:200" aria-label="Say hi to the field engineer"></button>
+      <button class="ixw-cast" type="button" data-cast="eng" data-near="700,-62" data-who="TechNext network engineer" data-role="TechNext · the plant room · illustration" data-say="Every valve, every port **labelled**, and every change written in the log." style="--x:422;--y:324;--w:84;--h:222" aria-label="Say hi to the TechNext network engineer in the plant room (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Network engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="mgr" data-near="900,-58" data-who="Office manager" data-role="Client team · holds the diagram · illustration" data-say="The **network diagram and device list** are ours now, with admin access recorded and shared." style="--x:560;--y:362;--w:84;--h:222" aria-label="Say hi to the office manager with the network diagram (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Office manager</b><i>the diagram</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="staff" data-near="430,-70" data-who="Staff member" data-role="Client team · on staff Wi-Fi · illustration" data-say="Shared drives open in a blink: the **file server** is one pipe away." style="--x:652;--y:378;--w:86;--h:190" aria-label="Say hi to the staff member at the desk (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Staff</b><i>staff Wi-Fi</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="surv" data-near="430,-70" data-who="TechNext Wi-Fi surveyor" data-role="TechNext · coverage check · illustration" data-say="Coverage checked **room by room**, where people actually sit." style="--x:808;--y:362;--w:80;--h:222" aria-label="Say hi to the TechNext Wi-Fi surveyor (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Wi-Fi surveyor</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="guest" data-near="700,-62" data-who="Visitor" data-role="Guest pass · guest Wi-Fi · illustration" data-say="Fast internet for me, and your files **stay out of reach**." style="--x:945;--y:378;--w:86;--h:190" aria-label="Say hi to the visitor in the guest lounge (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Visitor</b><i>guest Wi-Fi</i></span></button>
+
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="internet" data-nx="640,-62" data-pose="point-left" data-rec="Internet · main line and backup" data-say="The **internet** arrives like the water mains: a main line, with a backup tower beside it." style="--x:192;--y:-84;--w:132;--h:112" aria-pressed="false"><span class="ixw-hot-lab">{{icon:globe}}<b>Internet</b></span></button>
+      <button class="ixw-hot ixw-hot--right" type="button" data-hot="firewall" data-nx="640,-62" data-pose="point-left" data-rec="Firewall · rules reviewed, junk turned away" data-say="The **firewall** is the filter at the gate: traffic nobody asked for is caught and turned away, and the rules are reviewed." style="--x:287;--y:326;--w:62;--h:250" aria-pressed="false"><span class="ixw-hot-lab">{{icon:shield}}<b>Firewall</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="switch" data-nx="700,-62" data-pose="point-left" data-rec="Office switch · every port labelled" data-say="The **office switch** is the manifold: every valve and port labelled and every change logged, so changes are made safely." style="--x:360;--y:200;--w:88;--h:176" aria-pressed="false"><span class="ixw-hot-lab">{{icon:network}}<b>Office switch</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="wifi" data-nx="430,-70" data-pose="point-right" data-rec="Wi-Fi · access points where people sit" data-say="**Wi-Fi** access points are the sprinklers: placed where people actually sit, with coverage checked room by room." style="--x:665;--y:58;--w:300;--h:74" aria-pressed="false"><span class="ixw-hot-lab">{{icon:wifi}}<b>Wi-Fi</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="guest" data-nx="700,-62" data-pose="point-right" data-rec="Guest Wi-Fi · internet only" data-say="**Guest Wi-Fi** runs on its own orange pipe: guests get the internet, never the file server." style="--x:938;--y:128;--w:120;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:wifi}}<b>Guest Wi-Fi</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="vpn" data-nx="640,-62" data-pose="point-left" data-rec="VPN · secure remote access from home" data-say="Remote staff come in through the **VPN**: a sealed, encrypted pipe from home, limited to what they need." style="--x:190;--y:424;--w:88;--h:96" aria-pressed="false"><span class="ixw-hot-lab">{{icon:lock}}<b>VPN</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="valve" data-near="640,-62" data-pose="wow" data-say="Whoosh! A surge through the main, and the filter turns away **every bit of junk**." style="--x:238;--y:440;--w:44;--h:44" aria-label="Turn the big red valve on the main"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Turn the valve</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:900;--ny:-58" data-reacts="wow::Full bars in **every room**!|love::Guests online, files **safely apart**. Love it.|celebrate::Every port **labelled**!|think::Hmm… where does **your** Wi-Fi run dry?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-net}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **office waterworks**: your network is the plumbing, and TechNext keeps every pipe running to the right tap." data-outro="Mains with a backup, a filter at the gate, labelled valves, Wi-Fi where people sit and guests kept apart: **a network nobody has to think about**.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-net}}<b data-for="eng" style="--c:#3167CA">E</b><b data-for="mgr" style="--c:#7A5CD6">M</b><b data-for="staff" style="--c:#1C9AD6">S</b><b data-for="surv" style="--c:#2FB57C">W</b><b data-for="guest" style="--c:#F28C28">V</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · Networks">assistant · Networks</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>office waterworks</b>: your network is the plumbing, and TechNext keeps every pipe running to the right tap.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: internet"></button><button type="button" data-ixw-dot aria-label="Stop 3: firewall"></button><button type="button" data-ixw-dot aria-label="Stop 4: office switch"></button><button type="button" data-ixw-dot aria-label="Stop 5: Wi-Fi"></button><button type="button" data-ixw-dot aria-label="Stop 6: guest Wi-Fi"></button><button type="button" data-ixw-dot aria-label="Stop 7: VPN"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:network}}Discipline</dt><dd>Office networks and Wi-Fi</dd></div><div><dt>{{icon:shield}}Covers</dt><dd>Internet, firewall, Wi-Fi, devices</dd></div><div><dt>{{icon:lock}}Remote work</dt><dd>Secure access from anywhere</dd></div><div><dt>{{icon:file}}Handed over</dt><dd>Diagram and device list</dd></div><div><dt>{{icon:lifebuoy}}After set-up</dt><dd>Support and changes</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec wtw-tag-sec">
+  <div class="container"><div class="answer-box wtw-tag reveal"><p class="answer-h">In one paragraph</p><p>Network services cover everything that connects your people and devices: the internet line, router and firewall, switches and cabling, Wi-Fi and remote access. TechNext plans the network for your office, installs and labels it, keeps staff, guest and device traffic apart, documents how it is set up and supports it afterwards, so changes are made safely and there is someone to call when something stops working.</p></div></div>
+</section>
+
+<section class="section demo-sec wtw-demo-sec" id="net-live">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">watch the traffic</span><h2>An office network that lets the right traffic through.</h2><p class="lead">Staff reach the file server, guests get the internet and nothing else, remote staff come in through the VPN, and the firewall turns away unasked-for traffic from outside. Switch a safeguard off to see what slips through, change the size of the office, and hover any device.</p></div>
+    <div class="wtw-panel reveal">
+      <div class="wtw-panel-top" aria-hidden="true"><span class="wtw-flow">Flowing</span><b>Control room · office network</b><span class="wtw-gauges"><i style="--v:.72;--c:#3167CA">Staff</i><i style="--v:.38;--c:#F28C28">Guest</i><i style="--v:.55;--c:#2FB57C">Devices</i><i style="--v:.3;--c:#7A5CD6">VPN</i></span></div>
+    <div class="dm dm-net" data-demo="netsim">
+      <div class="dm-head">
+        <div class="dm-title"><b>Office network · sample office</b><small>Simulated traffic, sped up</small></div>
+        <div class="dm-seg" role="group" aria-label="Office size">
+          <button type="button" data-size="10" aria-pressed="false">{{icon:users}}10 people</button>
+          <button type="button" data-size="25" aria-pressed="true">{{icon:users}}25 people</button>
+          <button type="button" data-size="60" aria-pressed="false">{{icon:users}}60 people</button>
+        </div>
+        <button class="dm-btn nsm-play" type="button" data-play aria-label="Pause the traffic">{{icon:pause}}{{icon:play}}<span>Pause</span></button>
+      </div>
+      <div class="nsm-wrap">
+        <div class="nsm-map" role="img" aria-label="Network map: home office, internet and outside traffic on the left, the firewall and switch in the middle, the server, printer, staff Wi-Fi and guest Wi-Fi on the right">
+          <svg class="nsm-svg" aria-hidden="true"></svg>
+          <div class="nsm-nodes">
+            <button type="button" class="nsm-n" data-n="home">{{icon:monitor}}<span><b>Home office</b><small>Remote staff</small></span></button>
+            <button type="button" class="nsm-n" data-n="net">{{icon:globe}}<span><b>Internet</b><small>Main line</small></span></button>
+            <button type="button" class="nsm-n" data-n="scan">{{icon:search}}<span><b>Outside traffic</b><small>Unknown sources</small></span></button>
+            <button type="button" class="nsm-n nsm-n--core" data-n="fw">{{icon:shield}}<span><b>Firewall</b><small>Rules and VPN</small></span></button>
+            <button type="button" class="nsm-n nsm-n--core" data-n="sw">{{icon:network}}<span><b>Office switch</b><small data-ports>32 ports in use</small></span></button>
+            <button type="button" class="nsm-n" data-n="srv">{{icon:database}}<span><b>File server</b><small>Shared drives</small></span></button>
+            <button type="button" class="nsm-n" data-n="prn">{{icon:file}}<span><b>Printer</b><small>Own segment</small></span></button>
+            <button type="button" class="nsm-n" data-n="staff">{{icon:wifi}}<span><b>Staff Wi-Fi</b><small data-aps>2 access points</small></span></button>
+            <button type="button" class="nsm-n nsm-n--guest" data-n="guest">{{icon:wifi}}<span><b>Guest Wi-Fi</b><small data-gtag>Internet only</small></span></button>
+          </div>
+        </div>
+        <div class="nsm-side">
+          <div class="nsm-card"><p class="nsm-h">{{icon:shield}}<b>Safeguards</b><small>tap to switch</small></p>
+            <div class="nsm-tg">
+              <button type="button" data-g="guest" aria-pressed="true"><i></i><span><b>Guest Wi-Fi kept apart</b><small>Guests get the internet only</small></span></button>
+              <button type="button" data-g="vpn" aria-pressed="true"><i></i><span><b>VPN for remote staff</b><small>An encrypted way in from outside</small></span></button>
+              <button type="button" data-g="fw" aria-pressed="true"><i></i><span><b>Firewall rules</b><small>Unasked-for traffic turned away</small></span></button>
+            </div>
+          </div>
+          <div class="nsm-card"><p class="nsm-h">{{icon:file}}<b>Network log</b><small data-clock>09:00</small></p><ol class="dm-log nsm-log" aria-live="polite"></ol></div>
+        </div>
+      </div>
+      <dl class="dm-kpis nsm-kpis"><div><dt>Devices online</dt><dd data-k="dev">0</dd></div><div><dt>Wi-Fi access points</dt><dd data-k="ap">0</dd></div><div><dt>Switch ports in use</dt><dd data-k="ports">0</dd></div><div class="dm-ok"><dt>Blocked attempts</dt><dd data-k="blk">0</dd></div></dl>
+      <div class="dm-static">
+        <p><b>The map:</b> the internet, a home office and unknown outside traffic on the left; the firewall and the office switch in the middle; the file server, printer, staff Wi-Fi and guest Wi-Fi on the right.</p>
+        <p><b>Safeguards:</b> guest Wi-Fi on its own network reaches the internet but not the server; remote staff come in through an encrypted VPN; firewall rules turn away traffic nobody asked for.</p>
+        <p><b>Office size:</b> more people means more access points and switch ports, placed so Wi-Fi covers every room.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Simulated traffic, sped up. Your design, equipment and rules are worked out from a survey of your office.</p>
+  </div>
+</section>
+
+<section class="section wtw-taps-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>From the internet line to the last desk.</h2>
+      <p class="lead">Six taps on one supply: each part of the network fed, labelled and kept on its own pipe.</p>
+    </div>
+    <div class="wtw-taps">
+      <article class="wtw-tap reveal" style="--i:0;--c:#1C9AD6"><div class="card-ic">{{icon:network}}</div><h3>Network design</h3><p>Layout, equipment and addressing planned for your people, your devices and the next hire.</p></article>
+      <article class="wtw-tap reveal" style="--i:1;--c:#3167CA"><div class="card-ic">{{icon:wifi}}</div><h3>Wi-Fi</h3><p>Access points placed for coverage where people actually sit, with separate staff and guest networks.</p></article>
+      <article class="wtw-tap reveal" style="--i:2;--c:#D9483A"><div class="card-ic">{{icon:shield}}</div><h3>Firewall and remote access</h3><p>A firewall at the edge and a VPN or secure remote access for people working away from the office.</p></article>
+      <article class="wtw-tap reveal" style="--i:3;--c:#C9A24A"><div class="card-ic">{{icon:plug}}</div><h3>Installation</h3><p>Equipment, cabling and racks installed tidily, with every port and device labelled.</p></article>
+      <article class="wtw-tap reveal" style="--i:4;--c:#2FB57C"><div class="card-ic">{{icon:monitor}}</div><h3>Devices on the network</h3><p>Laptops, printers, storage and servers set up with the right access, and nothing more.</p></article>
+      <article class="wtw-tap reveal" style="--i:5;--c:#7A5CD6"><div class="card-ic">{{icon:lifebuoy}}</div><h3>Support</h3><p>Changes, troubleshooting and upkeep, with the documentation kept up to date.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt wtw-main-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how we deliver</span>
+      <h2>Survey, plan, install, hand over.</h2>
+    </div>
+    <div class="wtw-main reveal">
+      <ol class="wtw-valves">
+        <li class="wtw-valve reveal" style="--i:0"><span class="wtw-wheel" aria-hidden="true"><b>1</b></span><h3>Site survey</h3><p>Rooms, people, devices and the systems you run, plus what works badly today.</p></li>
+        <li class="wtw-valve reveal" style="--i:1"><span class="wtw-wheel" aria-hidden="true"><b>2</b></span><h3>Design and quote</h3><p>Equipment list, layout and security settings, with a fixed scope before anything is ordered.</p></li>
+        <li class="wtw-valve reveal" style="--i:2"><span class="wtw-wheel" aria-hidden="true"><b>3</b></span><h3>Install and test</h3><p>Installed and labelled, with Wi-Fi coverage and speeds checked room by room.</p></li>
+        <li class="wtw-valve reveal" style="--i:3"><span class="wtw-wheel" aria-hidden="true"><b>4</b></span><h3>Document and support</h3><p>A network diagram and device list handed over, and support for the changes that follow.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section wtw-patch-sec">
+  <div class="container">
+    <div class="two two--top wtw-patch">
+      <div class="reveal wtw-patch-l">
+        <span class="hand">what you get</span>
+        <h2>Fast where you work, closed where it matters.</h2>
+        <p class="lead">Good Wi-Fi in the meeting room and a guest network that cannot see your files are two sides of the same job. We set up both, write down how, and keep it that way as the team grows.</p>
+      </div>
+      <ul class="spec-cols wtw-ports reveal" style="margin:0">
+        <li>{{icon:check}}<span>A survey of rooms, people and devices</span></li>
+        <li>{{icon:check}}<span>An equipment list and network diagram</span></li>
+        <li>{{icon:check}}<span>Staff, guest and device networks kept apart</span></li>
+        <li>{{icon:check}}<span>Firewall rules set and reviewed</span></li>
+        <li>{{icon:check}}<span>Secure remote access for your team</span></li>
+        <li>{{icon:check}}<span>Wi-Fi placed for coverage and checked</span></li>
+        <li>{{icon:check}}<span>Cabling and ports labelled</span></li>
+        <li>{{icon:check}}<span>Network settings backed up</span></li>
+        <li>{{icon:check}}<span>Admin access recorded and shared with you</span></li>
+        <li>{{icon:check}}<span>Changes logged</span></li>
+        <li>{{icon:check}}<span>Support when something breaks</span></li>
+        <li>{{icon:check}}<span>Clear pricing on quotation</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt wtw-orders-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">questions</span>
+      <h2>What teams ask before they start.</h2>
+    </div>
+    <div class="faq wtw-faq reveal">
+      <details><summary>Can you work with our existing equipment? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. We review what you have, keep what is sound and replace only what is holding you back.</p></div></details>
+      <details><summary>Do you set up remote access? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. A VPN or other secure remote access lets people reach office systems from home or on the road, with access limited to what they need.</p></div></details>
+      <details><summary>Can guests use our Wi-Fi without reaching our files? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Guest Wi-Fi runs on its own network, kept apart from staff computers, servers and printers.</p></div></details>
+      <details><summary>Do you support the network after set-up? {{icon:chevron}}</summary><div class="faq-a"><p>Yes, through a support plan: changes, troubleshooting and regular checks, with the documentation kept current.</p></div></details>
+      <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to your office, the equipment needed and the support you want. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section wtw-outlets-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>Pairs well with these.</h2>
+    </div>
+    <div class="grid-3 wtw-outlets">
+      <a class="card wtw-outlet reveal" style="--i:0;--c:#2FB57C" href="{{ROOT}}solutions/iot.html"><div class="card-ic">{{icon:cpu}}</div><h3>IoT Solutions</h3><p>Sensors and devices that report over the network to live dashboards and Odoo.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card wtw-outlet reveal" style="--i:1;--c:#3167CA" href="{{ROOT}}solutions/app-development.html"><div class="card-ic">{{icon:tablet}}</div><h3>App Development</h3><p>Mobile and web apps your team uses over the network, connected to Odoo.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card wtw-outlet reveal" style="--i:2;--c:#1C9AD6" href="{{ROOT}}solutions/technology.html"><div class="card-ic">{{icon:layers}}</div><h3>Technology overview</h3><p>See how networks work together with IoT and apps.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section wtw-cta-sec">
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <span class="hand">next step</span>
+        <h2>Tell us about your office.</h2>
+        <p>How many people, rooms and devices, and what is not working today. We'll come back with a plan and an estimate.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

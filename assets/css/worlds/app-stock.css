@@ -1,0 +1,288 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: app-stock (/odoo/apps/inventory) — Odoo Inventory, a bright warehouse. Safety yellow, rack blue, amber stock. The
+   title card is a shipping label (a barcode strip, a FROM/TO header); the caption is the scanner's readout; buttons carry a
+   short barcode on their left; the glance strip is the floor's yellow safety line. */
+.ixw--app-stock{--ow-c:#F2A33A;--sk-ink:#1B1F3B;--sk-amb:#F2A33A;--sk-amb-l:#FFF4E0;--sk-blue:#3167CA;--sk-y:#FFD84A;
+  --w-alt:#F7F8FB;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:4px;
+  
+  --ii-bg:linear-gradient(160deg,#F7F8FB,#FFEFC9 60%,#E2EBFA);--ii-ink:#1B1F3B;--ii-b:#C47A12;--ii-accent:#3167CA;--ii-lip:#1B1F3B;--ii-ep-bg:#1B1F3B;--ii-ep-fg:#FFFFFF}
+.ixw--app-stock .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#F7F8FB 18%,#EBEEF4 62%,#DDE2EA 62%,#C9D0DB 100%)}
+
+/* ---------- the title card: a shipping label ---------- */
+.ixw--app-stock .ixw-copy{position:relative;max-width:520px;margin-top:20px;padding:48px 30px 74px;border-radius:4px;background:#FFFFFF;
+  box-shadow:0 0 0 2px #1B1F3B,0 40px 70px -30px rgba(30,40,70,.4)}
+.ixw--app-stock .ixw-copy::before{content:"FROM  WH/STOCK   \2192   TO  YOUR CUSTOMER";position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;padding-left:20px;
+  background:repeating-linear-gradient(-45deg,#FFD84A 0 12px,#1B1F3B 12px 24px) 0 100%/100% 5px no-repeat,#FFFFFF;border-bottom:2px solid #1B1F3B;font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.06em;color:#1B1F3B}
+.ixw--app-stock .ixw-copy::after{content:"";position:absolute;left:30px;right:30px;bottom:18px;height:40px;
+  background:repeating-linear-gradient(90deg,#1B1F3B 0 2px,transparent 2px 4px,#1B1F3B 4px 7px,transparent 7px 9px,#1B1F3B 9px 10px,transparent 10px 13px,#1B1F3B 13px 16px,transparent 16px 18px)}
+.ixw--app-stock .ixw-copy h1{max-width:15ch}
+.ixw--app-stock .ixw-copy .hand{color:#C47A12}
+.ixw--app-stock .ixw-hint .ic{color:var(--sk-amb)}
+@media (max-width:767px){.ixw--app-stock .ixw-copy{padding:44px 20px 66px}.ixw--app-stock .ixw-copy::before{font-size:9px;padding-left:12px}.ixw--app-stock .ixw-copy::after{left:20px;right:20px}}
+
+/* ---------- the caption: the scanner's readout ---------- */
+.ixw--app-stock .ixw-cap{border-radius:10px;border:0;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,0 6px 0 #1B1F3B,0 26px 44px -22px rgba(30,40,70,.4)}
+.ixw--app-stock .ixw-cap::before{content:"\25AE\25AE\25AF\25AE  SCANNED";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:4px;background:var(--sk-y);color:#1B1F3B;font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.06em;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--app-stock .ixw-cap-who b{color:var(--sk-blue)}.ixw--app-stock .ixw-cap-txt b{color:#C47A12}
+.ixw--app-stock .ixw-cap-rec{background:var(--sk-amb-l);border:1px dashed #F5C77E;color:#7A4A12;font-family:ui-monospace,Consolas,monospace}
+
+/* ---------- buttons: a short barcode on the left ---------- */
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:4px;border:0;padding-left:44px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";position:absolute;left:14px;top:12px;bottom:12px;width:18px;
+  background:repeating-linear-gradient(90deg,currentColor 0 2px,transparent 2px 3.5px,currentColor 3.5px 4.5px,transparent 4.5px 6px);opacity:.75}
+.ixw--app-stock main .btn-primary,.ixw--app-stock main .btn-primary:hover{color:#1B1F3B;background:var(--sk-y);box-shadow:0 0 0 2px #1B1F3B,0 4px 0 2px #1B1F3B}
+.ixw--app-stock main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-stock main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:#1B1F3B;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,0 4px 0 2px #1B1F3B}
+.ixw--app-stock main .btn-ghost::before{display:none}.ixw--app-stock main .btn-ghost .ic{color:var(--sk-blue)}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;box-shadow:0 0 0 2px #1B1F3B;transition-duration:.06s}
+.ixw--app-stock .ixw-cta .btn-outline-white,.ixw--app-stock .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:transparent;box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #3167CA;outline-offset:4px}
+.ixw--app-stock .ixw-ibtn{border:2px solid var(--sk-ink);box-shadow:0 3px 0 var(--sk-ink)}
+.ixw--app-stock .ixw-ibtn--play,.ixw--app-stock .ixw-ibtn--play:hover{background:var(--sk-y);color:#1B1F3B}
+.ixw--app-stock .ixw-dots button.is-on{background:var(--sk-amb);box-shadow:0 0 0 1.5px var(--sk-ink)}
+.ixw--app-stock .ixw-peek{border-color:var(--sk-ink);box-shadow:0 3px 0 var(--sk-ink)}.ixw--app-stock .ixw-peek[aria-pressed="true"]{background:var(--sk-y)}
+
+/* ---------- the glance strip: the floor's safety line ---------- */
+.ixw--app-stock .ow-strip{border-radius:4px;box-shadow:0 0 0 2px #1B1F3B,0 24px 44px -30px rgba(30,40,70,.35);background:repeating-linear-gradient(-45deg,#FFD84A 0 12px,#1B1F3B 12px 24px) 0 0/100% 6px no-repeat,#FFFFFF}
+.ixw--app-stock .ow-strip dt .ic{color:var(--sk-blue)}
+
+/* ---------- the end card ---------- */
+.ixw--app-stock main .cta{background:repeating-linear-gradient(-45deg,rgba(255,216,74,.08) 0 14px,transparent 14px 28px),linear-gradient(120deg,#1B1F3B,#3167CA)}
+
+.ixw--app-stock .ixw-copy .app-sub{margin:8px 0 10px}
+
+/* =====================================================================================================================
+   The sections below the hero: the logistics hub. Concrete floors with a faint grid, hazard tape between sections, yellow
+   floor-sign badges, a shipping label for the answer, an airport departures board for the six stations, control-room
+   monitors for the videos, crated screenshots, container-coloured gallery tags, a route map for the steps, shipping
+   containers for the company facts. Scoped to body.ixw--app-stock.
+   ===================================================================================================================== */
+.ixw--app-stock main .aw-sec{position:relative;background:linear-gradient(rgba(40,60,90,.045) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(40,60,90,.045) 1px,transparent 1px) 0 0/40px 40px,#F4F6F9}
+.ixw--app-stock main .aw-sec.section--alt,.ixw--app-stock main .aw-band{background:linear-gradient(rgba(40,60,90,.05) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(40,60,90,.05) 1px,transparent 1px) 0 0/40px 40px,#E8ECF2}
+.ixw--app-stock main .aw-sec+.aw-sec::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(-45deg,#FFD84A 0 14px,#1B1F3B 14px 28px)}
+.ixw--app-stock main .aw-sec .hand{color:#C47A12}
+.ixw--app-stock main .aw-sec .sec-head h2::after,.ixw--app-stock main [data-aw="impl"] h2::after{content:"";display:block;width:110px;height:8px;margin-top:14px;border-radius:2px;background:repeating-linear-gradient(-45deg,#FFD84A 0 8px,#1B1F3B 8px 16px)}
+.ixw--app-stock main .aw-sec .sec-head--row h2::after{display:none}
+.ixw--app-stock .aw-badge{display:inline-grid;place-items:center;width:40px;height:40px;margin:0 12px 0 0;vertical-align:-12px;border-radius:8px;color:#1B1F3B;background:#FFD84A;box-shadow:0 0 0 2px #1B1F3B,3px 3px 0 2px #1B1F3B;transition:translate .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-stock .aw-badge .ic{width:20px;height:20px}
+.ixw--app-stock .sec-head:hover .aw-badge{translate:0 -3px}
+.ixw--app-stock .cta .aw-badge{display:none}
+
+/* in one paragraph: a shipping label with a barcode spine */
+.ixw--app-stock main .answer-box{max-width:none;padding:22px 26px 22px 84px;border:0;border-radius:4px;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,6px 6px 0 2px #1B1F3B}
+.ixw--app-stock main .answer-box::before{content:"";position:absolute;left:18px;top:18px;bottom:18px;width:44px;background:repeating-linear-gradient(180deg,#1B1F3B 0 3px,transparent 3px 5px,#1B1F3B 5px 6px,transparent 6px 9px,#1B1F3B 9px 13px,transparent 13px 15px)}
+.ixw--app-stock main .answer-h{background:#1B1F3B;color:#FFD84A;border-radius:3px;font-family:ui-monospace,Consolas,monospace}
+.ixw--app-stock main .answer-box p:not(.answer-h){font-size:14.5px;color:#2B3245}
+.ixw--app-stock main .answer-note .ic{color:#F2A33A}
+
+/* the departures board */
+.ixw--app-stock .aw-board{border-radius:12px;overflow:hidden;background:#1B2236;box-shadow:0 0 0 6px #2A3142,0 0 0 8px #FFD84A,0 40px 70px -40px rgba(20,30,60,.7)}
+.ixw--app-stock .aw-board-head,.ixw--app-stock .aw-gate{display:grid;grid-template-columns:64px minmax(170px,.8fr) minmax(0,2fr) 120px;align-items:center;gap:0 18px;padding:0 22px}
+.ixw--app-stock .aw-board-head{height:46px;background:#FFD84A;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase;color:#1B1F3B}
+.ixw--app-stock .aw-board-head span:first-child::before{content:"\2708  "}
+.ixw--app-stock .aw-gates{margin:0;padding:0;list-style:none}
+.ixw--app-stock .aw-gate{min-height:68px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ixw--app-stock .aw-gate:nth-child(even){background:rgba(255,255,255,.03)}
+.ixw--app-stock .aw-gate.reveal{transform:perspective(600px) rotateX(-70deg);transform-origin:50% 0}
+.ixw--app-stock .aw-gate.reveal.is-in{transform:none;transition:opacity .5s ease,transform .6s cubic-bezier(.34,1.45,.64,1);transition-delay:calc(var(--i,0)*110ms)}
+.ixw--app-stock .aw-no{display:grid;place-items:center;width:44px;height:34px;border-radius:5px;background:#2A3142;box-shadow:inset 0 -17px 0 rgba(0,0,0,.18);font:800 15px/1 ui-monospace,Consolas,monospace;color:#FFD84A}
+.ixw--app-stock .aw-st{display:flex;align-items:center;gap:10px;color:#FFD84A}.ixw--app-stock .aw-st .ic{width:20px;height:20px;flex:none}
+.ixw--app-stock .aw-st b{font:800 15px/1.25 ui-monospace,Consolas,monospace;letter-spacing:.02em;text-transform:uppercase;color:#FFFFFF}
+.ixw--app-stock .aw-say{font-size:14.5px;line-height:1.5;color:#C9D2E3}.ixw--app-stock .aw-say b{color:#FFD84A}
+.ixw--app-stock .aw-stat{justify-self:end;padding:6px 10px;border-radius:4px;background:#1E9E6A;color:#FFFFFF;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em}
+.ixw--app-stock .aw-gate:nth-child(3) .aw-stat{background:#3167CA}.ixw--app-stock .aw-gate:nth-child(4) .aw-stat{background:#F2A33A;color:#1B1F3B;animation:awBlink 1.4s steps(2) infinite}
+.ixw--app-stock .aw-gate:nth-child(2) .aw-stat{background:#714B67}
+@keyframes awBlink{50%{opacity:.45}}
+.ixw--app-stock .aw-total{margin:0;padding:16px 22px;background:#2A3142;color:#FFFFFF;font:700 14.5px/1.4 var(--font-body);border-top:2px solid #FFD84A}
+.ixw--app-stock .aw-total b{color:#FFD84A}
+@media (max-width:860px){.ixw--app-stock .aw-board-head{display:none}.ixw--app-stock .aw-gate{grid-template-columns:52px minmax(0,1fr);gap:8px 12px;padding:16px 18px}.ixw--app-stock .aw-say{grid-column:2}.ixw--app-stock .aw-stat{grid-column:2;justify-self:start}}
+
+/* the lifecycle demo: a hard-edged dock terminal */
+.ixw--app-stock main [data-aw="life"] .dm{border:2px solid #1B1F3B;border-radius:10px;box-shadow:8px 8px 0 #FFD84A,8px 8px 0 2px #1B1F3B}
+.ixw--app-stock main [data-aw="life"] .dm-head{background:repeating-linear-gradient(-45deg,#FFD84A 0 12px,#1B1F3B 12px 24px) 0 100%/100% 5px no-repeat,#FFF6D8;border-bottom:2px solid #1B1F3B}
+.ixw--app-stock main [data-aw="life"] .dm-title b{font-family:ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.02em}
+.ixw--app-stock main [data-aw="life"] .dm-note .ic{color:#F2A33A}
+
+/* official videos: control-room monitors */
+.ixw--app-stock main [data-aw="watch"] .video{border:0;border-radius:8px;box-shadow:0 0 0 9px #2A3142,0 0 0 11px #1B1F3B,0 30px 50px -24px rgba(20,30,60,.6);position:relative}
+.ixw--app-stock main [data-aw="watch"] .videos{padding:14px;gap:36px}
+.ixw--app-stock main [data-aw="watch"] .video::after{content:"CAM";position:absolute;z-index:3;right:10px;top:10px;padding:4px 8px;border-radius:3px;background:#E2453C;color:#FFFFFF;font:800 10px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;pointer-events:none;animation:awBlink 2s steps(2) infinite}
+.ixw--app-stock main .yt-play{background:#FFD84A;color:#1B1F3B;box-shadow:0 0 0 3px #1B1F3B,0 14px 34px -10px rgba(20,30,60,.7)}
+.ixw--app-stock main .yt:hover .yt-play{background:#F2A33A}
+
+/* section by section: crated screenshots, the kicker as a bay sign */
+.ixw--app-stock main [data-aw="what"] .feats{gap:64px}
+.ixw--app-stock main [data-aw="what"] .feat-media{position:relative;border:0;border-radius:6px;padding:22px 12px 12px;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,8px 8px 0 2px #C9A27A}
+.ixw--app-stock main [data-aw="what"] .feat-media::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;border-radius:6px 6px 0 0;background:repeating-linear-gradient(-45deg,#FFD84A 0 10px,#1B1F3B 10px 20px)}
+.ixw--app-stock main [data-aw="what"] .feat-media .zoom{display:block;overflow:hidden;border-radius:3px}
+.ixw--app-stock main [data-aw="what"] .card-kicker{display:inline-block;padding:7px 10px;border-radius:4px;background:#1B1F3B;color:#FFD84A;font-family:ui-monospace,Consolas,monospace}
+.ixw--app-stock main [data-aw="what"] .feat-copy h3{font-size:1.6rem}
+.ixw--app-stock main [data-aw="what"] .checks .ic,.ixw--app-stock main [data-aw="impl"] .checks .ic{color:#3167CA}
+.ixw--app-stock main [data-aw="what"] .card{border:0;border-radius:4px;padding:34px 28px 28px;background:linear-gradient(180deg,#1B1F3B 0 6px,transparent 6px),#F1E2C9;box-shadow:0 0 0 2px #B8916A,0 24px 44px -28px rgba(80,60,30,.5)}
+.ixw--app-stock main [data-aw="what"] .card::after{content:"\2191\2191";position:absolute;right:16px;top:16px;font:800 18px/1 var(--font-body);color:#8A6440;letter-spacing:-2px}
+.ixw--app-stock main [data-aw="what"] .card:hover{transform:translateY(-4px)}
+
+/* inside the app: tagged like containers */
+.ixw--app-stock main [data-aw="screens"] .shots{padding:8px 8px 22px;gap:22px}
+.ixw--app-stock main [data-aw="screens"] .shot{border:0;border-radius:4px;box-shadow:0 0 0 2px #1B1F3B,6px 6px 0 2px #1B1F3B;border-top:16px solid #E2453C;transition:translate .25s ease}
+.ixw--app-stock main [data-aw="screens"] .shot:nth-child(4n+2){border-top-color:#3167CA}.ixw--app-stock main [data-aw="screens"] .shot:nth-child(4n+3){border-top-color:#F2A33A}.ixw--app-stock main [data-aw="screens"] .shot:nth-child(4n){border-top-color:#1E9E6A}
+.ixw--app-stock main [data-aw="screens"] .shot:hover{translate:0 -4px}
+.ixw--app-stock main [data-aw="screens"] .shot figcaption{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:#1B1F3B;background:#F4F6F9;border-top:2px solid #1B1F3B}
+
+/* how TechNext implements it: a route map */
+.ixw--app-stock main .aw-steps{counter-reset:st;gap:0;margin:0;padding:0 0 0 4px;position:relative}
+.ixw--app-stock main .aw-steps::before{content:"";position:absolute;left:21px;top:18px;bottom:18px;width:4px;background:repeating-linear-gradient(180deg,#1B1F3B 0 10px,transparent 10px 18px)}
+.ixw--app-stock main .aw-steps li{counter-increment:st;position:relative;align-items:center;gap:16px;padding:12px 0}
+.ixw--app-stock main .aw-steps li::before{content:counter(st);position:relative;z-index:1;flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:#FFD84A;box-shadow:0 0 0 3px #1B1F3B;font:800 15px/1 ui-monospace,Consolas,monospace;color:#1B1F3B}
+.ixw--app-stock main .aw-steps li:last-child::before{background:#1E9E6A;color:#FFFFFF}
+.ixw--app-stock main .aw-steps li .ic{display:none}
+.ixw--app-stock main .aw-steps li{background:none}
+.ixw--app-stock main .aw-steps li > *{min-width:0}
+
+/* who runs your go-live: shipping containers */
+.ixw--app-stock .aw-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px;margin:0;padding:0;list-style:none}
+.ixw--app-stock .aw-fact{position:relative;display:grid;gap:6px;padding:22px 24px 22px 30px;border-radius:3px;color:#FFFFFF;background:repeating-linear-gradient(90deg,rgba(0,0,0,.1) 0 3px,transparent 3px 12px),#E2453C;box-shadow:inset 0 4px 0 rgba(255,255,255,.2),inset 0 -4px 0 rgba(0,0,0,.18),0 18px 30px -22px rgba(20,30,60,.7);transition:translate .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-stock .aw-fact:nth-child(6n+2){background-color:#3167CA}.ixw--app-stock .aw-fact:nth-child(6n+3){background-color:#1E9E6A}.ixw--app-stock .aw-fact:nth-child(6n+4){background-color:#714B67}.ixw--app-stock .aw-fact:nth-child(6n+5){background-color:#F2A33A}.ixw--app-stock .aw-fact:nth-child(6n){background-color:#3FA9E0}
+.ixw--app-stock .aw-fact::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:8px;border-radius:2px;background:rgba(0,0,0,.18)}
+.ixw--app-stock .aw-fact:hover{translate:0 -5px}
+.ixw--app-stock .aw-fact b{font:800 1.4rem/1.1 var(--font-display);color:#FFFFFF}
+.ixw--app-stock .aw-fact span{font:700 13.5px/1.4 ui-monospace,Consolas,monospace;color:rgba(255,255,255,.92)}
+.ixw--app-stock .aw-fact:nth-child(6n+5) b,.ixw--app-stock .aw-fact:nth-child(6n+5) span{color:#1B1F3B}
+@media (max-width:860px){.ixw--app-stock .aw-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ixw--app-stock .aw-facts{grid-template-columns:1fr}}
+
+/* works with: dock doors */
+.ixw--app-stock main [data-aw="works"] .app{border:0;border-radius:4px;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,4px 4px 0 2px #1B1F3B;border-top:6px solid #FFD84A}
+.ixw--app-stock main [data-aw="works"] .app:hover{transform:translate(-2px,-2px);box-shadow:0 0 0 2px #1B1F3B,7px 7px 0 2px #1B1F3B}
+.ixw--app-stock main [data-aw="works"] .app > .ic{color:#1B1F3B}
+
+/* the end card: hazard tape and a shipping label */
+.ixw--app-stock main .cta{padding-top:70px;background:repeating-linear-gradient(-45deg,#FFD84A 0 14px,#1B1F3B 14px 28px) 0 0/100% 14px no-repeat,repeating-linear-gradient(-45deg,rgba(255,216,74,.08) 0 14px,transparent 14px 28px),linear-gradient(120deg,#1B1F3B,#3167CA)}
+.ixw--app-stock main .cta .hand{color:#FFD84A}
+.ixw--app-stock main .cta .btn-white{color:#1B1F3B;background:#FFD84A;border:0;box-shadow:0 4px 0 #C47A12}
+.ixw--app-stock main .cta .btn-outline-white{color:#FFFFFF;border:2px solid #FFFFFF}
+.ixw--app-stock .aw-cta-art{position:absolute;right:31%;top:40px;z-index:0;pointer-events:none;rotate:-6deg}
+.ixw--app-stock .aw-label{display:grid;gap:5px;width:130px;padding:12px;border-radius:4px;background:#FFFFFF;box-shadow:0 0 0 2px #1B1F3B,0 14px 24px -10px rgba(0,0,0,.5);animation:awPrint 4.2s ease-in-out infinite}
+.ixw--app-stock .aw-label b{font:800 10px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#1B1F3B}
+.ixw--app-stock .aw-label i{font:700 12px/1.2 var(--font-body);font-style:normal;color:#3167CA}
+.ixw--app-stock .aw-bars{height:26px;background:repeating-linear-gradient(90deg,#1B1F3B 0 2px,transparent 2px 4px,#1B1F3B 4px 7px,transparent 7px 9px,#1B1F3B 9px 10px,transparent 10px 13px)}
+.ixw--app-stock .aw-label em{font:800 9.5px/1 ui-monospace,Consolas,monospace;font-style:normal;color:#1E9E6A}
+@keyframes awPrint{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@media (max-width:1100px){.ixw--app-stock .aw-cta-art{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--app-stock .aw-label,.ixw--app-stock .aw-stat,.ixw--app-stock [data-aw="watch"] .video::after{animation:none}.ixw--app-stock .aw-gate.reveal{transform:none}}
+
+/* section heads: the badge beside the handwriting (no watermark decorations beside the heads) */
+.ixw--app-stock main .aw-sec>.container{position:relative}
+.ixw--app-stock main .aw-badge+.hand{display:inline-block;vertical-align:middle}
+.ixw--app-stock main [data-aw="what"] .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ixw--app-stock main [data-aw="watch"] .videos--one{margin-inline:auto}
+/* ======== round 4: section fixes ======== */
+@media (min-width:900px){.ixw--app-stock main [data-aw="works"] .apps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ======== round 4: the hero controls: shipping-label buttons with a barcode stub, pills and caption controls ======== */
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){overflow:hidden;height:52px;padding:0 20px 0 50px;border:0;border-radius:5px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";inset:auto;left:12px;top:13px;bottom:13px;width:26px;height:auto;border-radius:2px;opacity:1;transform:none;transition:none;
+  background:repeating-linear-gradient(90deg,#1B1F3B 0 2px,transparent 2px 3.5px,#1B1F3B 3.5px 4.5px,transparent 4.5px 6.5px,#1B1F3B 6.5px 9px,transparent 9px 10.5px) 3px 3px/calc(100% - 6px) calc(100% - 6px) no-repeat,#FFFFFF;box-shadow:inset 0 0 0 1px rgba(27,31,59,.2)}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover::after{transform:none}
+.ixw--app-stock main .btn-primary,.ixw--app-stock main .btn-primary:hover{color:#1B1F3B;background:#FFC93C;box-shadow:inset 0 0 0 2px #1B1F3B,0 4px 0 #1B1F3B}
+.ixw--app-stock main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-stock main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:#1B1F3B;background:#FFFFFF;box-shadow:inset 0 0 0 2px #1B1F3B,0 4px 0 #1B1F3B}
+.ixw--app-stock main .ixw-cta .btn-outline-white,.ixw--app-stock main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:transparent;box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--app-stock main .ixw-cta .btn-outline-white::after{background:repeating-linear-gradient(90deg,#FFFFFF 0 2px,transparent 2px 3.5px,#FFFFFF 3.5px 4.5px,transparent 4.5px 6.5px) 3px 3px/calc(100% - 6px) calc(100% - 6px) no-repeat,transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost):hover{box-shadow:inset 0 0 0 2px #1B1F3B,0 6px 0 #1B1F3B,0 16px 20px -10px rgba(27,31,59,.35)}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost):active{box-shadow:inset 0 0 0 2px #1B1F3B,0 1px 0 #1B1F3B}
+.ixw--app-stock main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #3167CA;outline-offset:4px}
+.ixw--app-stock main .btn-primary .ic{width:26px;height:26px;padding:5px;border-radius:50%;background:rgba(27,31,59,.1)}
+.ixw--app-stock main .btn-ghost .ic{color:#3167CA}
+.ixw--app-stock .ixw-copy .actions{gap:12px}
+
+.ixw--app-stock .ixw-ep-tag{height:30px;padding:0 13px 0 6px;box-shadow:0 3px 0 #0B0B22;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-stock .ixw-ep-tag:hover{translate:0 -2px;box-shadow:0 5px 0 #0B0B22}
+.ixw--app-stock .ixw-ep-tag:active{translate:0 2px;box-shadow:0 1px 0 #0B0B22;transition-duration:.06s}
+.ixw--app-stock .ixw-ep-tag:focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.ixw--app-stock .ixw-ep>span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#FFF4CF;box-shadow:inset 0 0 0 1.5px #C47A1233;font:800 12.5px/1 var(--font-body);color:#1B1F3B}
+.ixw--app-stock .ixw-cap .ixw-ibtn{width:38px;height:38px;border:2px solid #1B1F3B;background:#FFFFFF;color:#1B1F3B;box-shadow:0 3px 0 #1B1F3B;transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .18s ease,color .18s ease}
+.ixw--app-stock .ixw-cap .ixw-ibtn:hover{translate:0 -2px;background:#FFF4CF;color:#1B1F3B;border-color:#1B1F3B;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-stock .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-stock .ixw-cap .ixw-ibtn:focus-visible,.ixw--app-stock .ixw-dots button:focus-visible,.ixw--app-stock .ixw-peek:focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.ixw--app-stock .ixw-cap .ixw-ibtn--play,.ixw--app-stock .ixw-cap .ixw-ibtn--play:hover{width:46px;height:46px;background:#FFC93C;color:#1B1F3B}
+.ixw--app-stock .ixw-cap .ixw-ibtn--play:hover{filter:brightness(1.06)}
+.ixw--app-stock .ixw-dots{gap:6px;padding:4px 2px}
+.ixw--app-stock .ixw-dots button{width:9px;height:9px;background:#D5DCE6;box-shadow:inset 0 0 0 1px rgba(27,31,59,.06);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,translate .2s ease}
+.ixw--app-stock .ixw-dots button:hover{background:#C47A12;translate:0 -1px}
+.ixw--app-stock .ixw-dots button.is-on{width:26px;background:#F2A33A;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--app-stock .ixw-peek{height:40px;padding:0 16px 0 13px;border:2px solid #1B1F3B;color:#1B1F3B;background:#FFFFFF;box-shadow:0 3px 0 #1B1F3B}
+.ixw--app-stock .ixw-peek::before{color:#C47A12}
+.ixw--app-stock .ixw-peek:hover{translate:0 -2px;background:#FFF4CF;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-stock .ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-stock .ixw-peek[aria-pressed="true"]{background:#FFC93C}
+.ixw--app-stock .ixw-peek[aria-pressed="true"]::before{color:#1B1F3B}
+@media (prefers-reduced-motion:reduce){.ixw--app-stock :is(.ixw-ep-tag,.ixw-ibtn,.ixw-peek,.ixw-dots button,.btn){transition:none}}
+
+/* ======== CALM LAYER (9 Oct 2026): 50% TechNext base, 50% the port-side hub. One quiet accent (#E08A12), white cards, no tilts,
+   tape, pins, rings or lips; each section keeps one or two themed touches (a hazard-yellow rule under the heads, the dark departures board, gate numbers on the steps). ======== */
+body.ixw--app-stock{--calm-accent:#E08A12;--calm-accent-ink:#9A5B05;--calm-accent-line:#F2D3A6;--calm-accent-wash:#FBF8F2;--calm-card-rule:3px solid #E08A12}
+body.ixw--app-stock main .aw-sec,body.ixw--app-stock main .aw-sec:nth-of-type(odd){background:#FFFFFF!important}
+body.ixw--app-stock main .aw-sec.section--alt,body.ixw--app-stock main .aw-band{background:#FBF8F2!important}
+body.ixw--app-stock main .aw-sec::before,body.ixw--app-stock main .aw-sec+.aw-sec::before,body.ixw--app-stock main .aw-sec.section--alt::before{display:none!important}
+body.ixw--app-stock main .aw-badge{display:none!important}
+body.ixw--app-stock main .aw-sec .sec-head h2::after,body.ixw--app-stock main [data-aw="impl"] h2::after{content:""!important;display:block!important;width:56px!important;height:4px!important;margin-top:16px!important;background:#FFD84A!important;border-radius:2px}
+body.ixw--app-stock main [data-aw="cta"] h2::after,body.ixw--app-stock main .aw-sec .sec-head--row h2::after{display:none!important}
+/* in one paragraph: a plain white card with the accent on its left edge */
+body.ixw--app-stock main .answer-box{padding:22px 26px!important;border:1px solid var(--calm-line)!important;border-left:3px solid #E08A12!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-stock main .answer-box::before,body.ixw--app-stock main .answer-box::after{display:none!important}
+body.ixw--app-stock main .answer-h{background:#FBF8F2!important;color:#9A5B05!important;box-shadow:none!important;border:0!important}
+/* the lifecycle demo: one clean panel, a thin accent rule on top */
+body.ixw--app-stock main [data-aw="life"] .dm{border:1px solid var(--calm-line)!important;border-top:3px solid #E08A12!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+body.ixw--app-stock main [data-aw="life"] .dm-head{background:#FFFFFF!important;border-bottom:1px solid var(--calm-line)!important}
+body.ixw--app-stock main [data-aw="life"] .dm-title b{color:#1B1F3B!important}body.ixw--app-stock main [data-aw="life"] .dm-title small{color:#5C6B7A!important}
+/* official videos: plain rounded frames */
+body.ixw--app-stock main [data-aw="watch"] .video{border:1px solid var(--calm-line)!important;border-radius:14px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;translate:none!important;overflow:hidden}
+body.ixw--app-stock main [data-aw="watch"] .video::before,body.ixw--app-stock main [data-aw="watch"] .video::after{display:none!important}
+body.ixw--app-stock main [data-aw="watch"] .videos{gap:24px!important;padding:0!important}
+body.ixw--app-stock main .yt-play{background:#3167CA!important;box-shadow:0 10px 24px -10px rgba(31,63,130,.6)!important}
+/* section by section: screenshots in a plain white frame, the kicker as a small accent label */
+body.ixw--app-stock main [data-aw="what"] .feat-media{rotate:none!important;padding:10px!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-stock main [data-aw="what"] .feat-media::before,body.ixw--app-stock main [data-aw="what"] .feat-media::after{display:none!important}
+body.ixw--app-stock main [data-aw="what"] .card-kicker{display:inline-block!important;padding:0!important;border:0!important;background:none!important;rotate:none!important;clip-path:none!important;color:#9A5B05!important;font:800 12px/1.4 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase}
+body.ixw--app-stock main [data-aw="what"] .card-kicker::before,body.ixw--app-stock main [data-aw="what"] .card-kicker::after{display:none!important}
+body.ixw--app-stock main [data-aw="what"] .feat-copy h3{font-size:1.45rem!important}
+body.ixw--app-stock main [data-aw="what"] .card{padding:28px 26px!important;background:#FFFFFF!important;rotate:none!important}
+body.ixw--app-stock main [data-aw="what"] .card::before,body.ixw--app-stock main [data-aw="what"] .card::after{display:none!important}
+body.ixw--app-stock main [data-aw="what"] .card:hover{transform:translateY(-2px)!important}
+body.ixw--app-stock main :is([data-aw="what"],[data-aw="impl"]) .checks .ic{color:#E08A12!important}
+/* inside the app: a straight row of framed screenshots */
+body.ixw--app-stock main [data-aw="screens"] .shots{padding:0!important;gap:20px!important}
+body.ixw--app-stock main [data-aw="screens"] .shot{rotate:none!important;translate:none!important;padding:10px 10px 0!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-stock main [data-aw="screens"] .shot::before,body.ixw--app-stock main [data-aw="screens"] .shot::after{display:none!important}
+body.ixw--app-stock main [data-aw="screens"] .shot figcaption{border-top:1px solid var(--calm-line)!important;font:500 12.5px/1.4 var(--font-body)!important;color:#5C6B7A!important;background:none!important}
+/* how TechNext implements it: a white list card, numbered in the accent */
+body.ixw--app-stock main .aw-steps{padding:6px 0!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important;clip-path:none!important}
+body.ixw--app-stock main .aw-steps::before,body.ixw--app-stock main .aw-steps::after{display:none!important}
+body.ixw--app-stock main .aw-steps li{border-bottom:1px solid var(--calm-line)!important;padding:16px 22px!important;background:none!important}
+body.ixw--app-stock main .aw-steps li:last-child{border-bottom:0!important}
+body.ixw--app-stock main .aw-steps li::before{display:none!important}
+body.ixw--app-stock main .aw-steps .aw-n{display:grid;place-items:center;flex:none;min-width:48px;height:28px;padding:0 8px;border-radius:8px;background:#FBF8F2;color:#9A5B05;font:800 12px/1 var(--font-body);letter-spacing:.04em}
+body.ixw--app-stock main .aw-steps li .ic{order:3;margin-left:auto;width:20px!important;height:20px!important;padding:0!important;background:none!important;color:#E08A12!important}
+/* works with: plain app cards with a thin accent edge */
+body.ixw--app-stock main [data-aw="works"] .app{border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;border-left:3px solid #E08A12!important;box-shadow:none!important;rotate:none!important;clip-path:none!important}
+body.ixw--app-stock main [data-aw="works"] .app::before,body.ixw--app-stock main [data-aw="works"] .app::after{display:none!important}
+body.ixw--app-stock main [data-aw="works"] .app:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow)!important}
+/* the end card: the TechNext band, no rings */
+body.ixw--app-stock main .cta{box-shadow:0 30px 60px -36px rgba(30,70,145,.6)!important}
+body.ixw--app-stock main .cta .btn-white{box-shadow:none!important}body.ixw--app-stock main .cta .btn-outline-white{border:1px solid rgba(255,255,255,.7)!important}
+body.ixw--app-stock main [data-aw="cta"] .hand{color:#FFFFFF!important}
+/* buttons: the kit's flat buttons, without the world's tag / binding / barcode shapes */
+body.ixw--app-stock .btn{padding:0 22px!important;margin:0!important;clip-path:none!important;filter:none!important;rotate:none!important;translate:none!important;overflow:visible!important}
+body.ixw--app-stock .btn::before,body.ixw--app-stock .btn::after{display:none!important}
+body.ixw--app-stock .btn-primary .ic{width:18px!important;height:18px!important;padding:0!important;background:none!important}
+
+/* themed touch: the departures board stays dark with its yellow header, minus the rings and the flip-in */
+body.ixw--app-stock .aw-board{box-shadow:var(--calm-shadow)!important;border-radius:16px!important}
+body.ixw--app-stock .aw-board-head{font:800 11px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--app-stock .aw-board-head span:first-child::before{content:none!important}
+body.ixw--app-stock .aw-gate.reveal,body.ixw--app-stock .aw-gate.reveal.is-in{transform:none!important}
+body.ixw--app-stock .aw-stat{font:800 11px/1 var(--font-body)!important}
+body.ixw--app-stock .aw-no{font:800 13px/1 var(--font-body)!important}
+body.ixw--app-stock main .aw-steps{counter-reset:gt}body.ixw--app-stock main .aw-steps li{counter-increment:gt}

@@ -1,0 +1,74 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo Online vs Odoo.sh vs on-premise (blog): questions, three options, reasons and who runs what (demo-hosting.js) */
+.hc-fig{margin:1.8em 0 2.2em;font:500 12px/1.4 var(--font-body)}
+.hc-fig ul,.hc-fig ol{margin:0;padding:0;list-style:none}
+.hc-fig li{margin:0}
+.hc-fig p{margin:0}
+.hc-qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px 14px 4px}
+.hc-q{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 10px 9px 12px;border-radius:12px;border:1px solid var(--line);background:#fff}
+.hc-q:not(.is-big){flex-direction:column;align-items:flex-start;justify-content:space-between}
+.hc-q.is-big{grid-column:1/-1;border-color:var(--blue-100);background:linear-gradient(90deg,var(--blue-050),#fff 70%);box-shadow:inset 3px 0 0 var(--blue)}
+.hc-qt{display:grid;gap:2px;min-width:0}
+.hc-qt b{font:700 12.5px/1.3 var(--font-display);color:var(--ink)}
+.hc-qt small{font:500 11px/1.4 var(--font-body);color:var(--muted)}
+.hc-q.is-big .hc-qt b::after{content:"the deciding question";margin-left:8px;padding:2px 7px;border-radius:999px;background:#fff;border:1px solid var(--blue-100);font:600 9.5px/1 var(--font-body);color:var(--blue-700);vertical-align:2px;white-space:nowrap}
+.hc-yn{flex:none}
+.hc-yn button{height:26px;padding:0 12px}
+.hc-yn button[data-v="true"][aria-pressed="true"]{background:var(--blue)}
+.hc-cards{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:12px 14px}
+.hc-slide{position:absolute;left:0;top:0;border-radius:14px;background:var(--blue-050);box-shadow:0 0 0 2px var(--blue),0 16px 30px -20px rgba(49,103,202,.7);transition:transform .6s var(--spring),width .4s ease,height .4s ease;pointer-events:none;z-index:0}
+.hc-card{position:relative;z-index:1;display:grid;justify-items:start;gap:3px;padding:11px 12px;border-radius:14px;border:1px solid var(--line);background:#fff;transition:background-color .3s ease,border-color .3s ease,opacity .3s ease,transform .45s var(--spring)}
+.hc-card .ic{width:20px;height:20px;color:var(--muted);margin-bottom:2px;transition:color .3s ease}
+.hc-card b{font:700 13px/1.2 var(--font-display);color:var(--ink)}
+.hc-card small{font:500 10.5px/1.35 var(--font-body);color:var(--muted)}
+.hc-card em{margin-top:4px;padding:3px 8px;border-radius:999px;font:700 10px/1.2 var(--font-body);font-style:normal;background:var(--alt);color:var(--muted);border:1px solid var(--line)}
+.hc-card.is-rec{background:transparent;border-color:transparent;transform:translateY(-2px)}
+.hc-card.is-rec .ic{color:var(--blue)}
+.hc-card.is-rec em{background:var(--blue);border-color:var(--blue);color:#fff}
+.hc-card.is-also em{background:var(--amber-050);border-color:#EFD7A8;color:#7A4E00}
+.hc-card.is-no{opacity:.72}
+.hc-out{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:12px 14px 16px;border-top:1px solid var(--line);background:rgba(250,249,251,.75)}
+.hc-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px;font:700 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hc-h span{display:flex;gap:6px;letter-spacing:0;text-transform:none}
+.hc-h span i{font:600 9.5px/1 var(--font-body);font-style:normal;padding:3px 6px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--body)}
+.hc-why ul{display:grid;gap:5px}
+.hc-why li{position:relative;padding:0 0 0 16px;font:500 11.5px/1.45 var(--font-body);color:var(--body)}
+.hc-why li::before{content:"";position:absolute;left:2px;top:6px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.hc-why ul.is-in li{animation:hcIn .45s var(--spring) both;animation-delay:calc(var(--k) * 60ms)}
+@keyframes hcIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.hc-layers{display:grid;gap:7px}
+.hc-layer{display:grid;grid-template-columns:92px minmax(0,1fr);align-items:center;gap:8px}
+.hc-ll{font:600 10.5px/1.25 var(--font-body);color:var(--ink)}
+.hc-track{position:relative;display:block;height:24px;border-radius:999px;background:linear-gradient(90deg,rgba(49,103,202,.1),rgba(113,75,103,.1));box-shadow:inset 0 0 0 1px var(--line)}
+.hc-chip{position:absolute;left:0;top:2px;height:20px;padding:0 9px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--blue-100),0 4px 10px -6px rgba(31,31,61,.4);font:700 10px/20px var(--font-body);color:var(--ink);white-space:nowrap;transition:transform .6s var(--spring),opacity .3s ease}
+.hc-layer.is-na .hc-chip{color:var(--muted);box-shadow:0 0 0 1px var(--line);background:var(--alt)}
+.hc-layer.is-na .hc-track{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(31,31,61,.04) 6px 12px);box-shadow:inset 0 0 0 1px var(--line)}
+.prose [data-hc-table] .hc-col{background:var(--blue-050);transition:background-color .35s ease}
+.prose [data-hc-table] th.hc-col{background:var(--blue-100);color:var(--blue-700)}
+.prose [data-hc-table] td.hc-col{color:var(--ink);font-weight:600}
+.prose [data-hc-table] .hc-col-also{background:#FFFAF0}
+@media (max-width:640px){
+  .hc-qs{grid-template-columns:minmax(0,1fr);padding:12px 12px 2px}
+  .hc-q:not(.is-big){flex-direction:row;align-items:center}
+  .hc-q{flex-wrap:wrap}
+  .hc-q.is-big .hc-qt b::after{display:none}
+  .hc-cards{padding:10px 12px;gap:6px}
+  .hc-card{padding:9px 9px}
+  .hc-card small{display:none}
+  .hc-card b{font-size:12px}
+  .hc-card em{font-size:9.5px;padding:3px 6px}
+  .hc-out{grid-template-columns:minmax(0,1fr);padding:12px}
+  .hc-layer{grid-template-columns:80px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.hc-slide,.hc-chip,.hc-card{transition:none}.hc-why ul.is-in li{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .hc-q.is-big .hc-qt b::after,
+  .hc-card small,
+  .hc-card em,
+  .hc-h,
+  .hc-h span i,
+  .hc-ll,
+  .hc-chip{font-size:11px}
+}

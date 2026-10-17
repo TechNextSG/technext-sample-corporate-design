@@ -1,0 +1,31 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Upcoming Odoo events article: event timeline with filters (demo-evcal.js) */
+.dec-fig{margin:24px 0 32px}
+.dec-fig figcaption{margin-top:8px;font:500 12.5px/1.4 var(--font-body);color:var(--muted)}
+.dec-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 14px;border-bottom:1px solid var(--line);background:rgba(250,249,251,.85)}
+.dec-next{display:flex;align-items:baseline;gap:8px;min-width:0;margin-right:auto;font:500 12.5px/1.35 var(--font-body);color:var(--body)}
+.dec-next b{flex:none;padding:3px 9px;border-radius:999px;background:var(--blue);color:#fff;font:700 11px/1.3 var(--font-body)}
+.dec-next span{min-width:0}
+.dec-filters{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px 0}
+.dec-filters .dm-seg button{height:26px;padding:0 10px;font-size:11.5px}
+.dec-body{position:relative;padding:18px 14px 12px}
+.dec-strip{position:relative;height:74px;border-radius:12px;background:linear-gradient(180deg,var(--alt),#fff);border:1px solid var(--line)}
+.dec-strip::before{content:"";position:absolute;left:3%;right:3%;top:26px;height:2px;background:var(--blue-100);border-radius:2px}
+.dec-ticks{position:relative;height:18px;margin-top:6px}
+.dec-tick{position:absolute;transform:translateX(-50%);font:700 10px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dec-dot{--row:0;--c:var(--blue);position:absolute;top:calc(18px + var(--row) * 20px);width:18px;height:18px;margin-left:-9px;padding:0;border-radius:50%;border:3px solid #fff;background:var(--c);box-shadow:0 0 0 1px var(--c),0 6px 12px -6px rgba(31,31,61,.5);cursor:pointer;transition:transform .25s var(--spring),opacity .25s ease}
+.dec-dot:hover,.dec-dot:focus-visible{transform:scale(1.25);outline:none;box-shadow:0 0 0 1px var(--c),0 0 0 5px rgba(49,103,202,.18)}
+.dec-dot.is-off{opacity:.15;pointer-events:none}
+.dec-dot--sg{--c:#D2433B}.dec-dot--ph{--c:#3167CA}.dec-dot--vn{--c:#E0A13A}.dec-dot--online{--c:#0E9384}
+.dec-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 0;padding:0;list-style:none;font:600 11px/1 var(--font-body);color:var(--muted)}
+.dec-legend li{display:inline-flex;align-items:center;gap:6px}
+.dec-legend i{width:9px;height:9px;border-radius:50%}
+.dec-count{font:700 11px/1 var(--font-body);color:var(--ink)}
+li.ev.dec-hit{animation:decHit 1.6s ease-out}
+@keyframes decHit{0%,35%{background:var(--blue-050);box-shadow:0 0 0 3px rgba(49,103,202,.25)}100%{background:transparent;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){li.ev.dec-hit{animation:none}.dec-dot{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .dec-tick{font-size:11px}
+}

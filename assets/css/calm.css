@@ -1,0 +1,188 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* ======================================================================================================================
+   CALM LAYER (hand-written half). Loaded LAST on every page, after calm-gen.css (the generated half, see _src/calm_css.py).
+   Client feedback 9 Oct 2026: "overwhelming ... cartoons and comic-y style ... I forget I am looking at an IT company's
+   website ... I don't know where to start". The direction (qa/company/BRIEF_CALM.md): TechNext brand first, content first,
+   one primary button, static framed illustration, no intros, no stickers / lips / tilts / loops, one floating helper.
+   Everything is reversible: CALM = False in _src/build.py stops loading this file and calm-gen.css.
+   ====================================================================================================================== */
+/* ACCENT HOOKS (CALM_BALANCE.md: 50% TechNext base, 50% the page's theme). A world sets these on its body class, e.g.
+   .ixw--discovery{--calm-accent:#E2453C;--calm-accent-wash:#FBF6EE;--calm-accent-line:#E9D3B4;--calm-accent-ink:#9E2A23}
+   --calm-accent       icon tints, card top rules, kicker mark tint      (default brand blue)
+   --calm-accent-ink   secondary (outline) button text, small accent text (default blue-700)
+   --calm-accent-line  secondary button border, card rule                 (default #C9D7F1)
+   --calm-accent-wash  the alternate section wash and the hero wash       (default #F7F9FD)
+   --calm-card-rule    a card's top rule, e.g. 3px solid var(--calm-accent) (default none)
+   Primary buttons, the header and the CTA band stay TechNext blue on every page. */
+:root{--calm-accent:var(--blue);--calm-accent-ink:var(--blue-700);--calm-accent-line:#C9D7F1;--calm-accent-wash:#F7F9FD;--calm-card-rule:0 solid transparent;
+  --calm-wash:var(--calm-accent-wash);--calm-line:#E4E8F0;--calm-shadow:0 1px 2px rgba(31,31,61,.05),0 14px 32px -22px rgba(31,63,130,.32);
+  --calm-shadow-h:0 1px 2px rgba(31,31,61,.06),0 20px 40px -22px rgba(31,63,130,.4);--font-hand:var(--font-display);
+  --calm-plane:url("../img/logo-plane.png");--calm-grad:linear-gradient(120deg,#3167CA 0%,#2A5BB8 55%,#1E4691 100%)}
+body{--font-hand:var(--font-display)}
+
+/* ---------------------------------------------------------------- kickers: the calm label with the paper-plane mark */
+.hand,.h1-hand,body .ixw .hand,main .hand{display:inline-flex!important;align-items:center;gap:8px;margin:0 0 14px!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;
+  font:700 12.5px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--blue)!important;transform:none!important;rotate:none!important;font-style:normal!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.hand::before,main .hand::before{content:""!important;display:block!important;position:static!important;flex:none;width:16px!important;height:14px!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important;
+  background:var(--calm-plane) center/contain no-repeat!important;opacity:1!important;animation:none!important}
+.hand::after,main .hand::after{content:none!important;display:none!important}
+h1 .h1-hand{display:flex!important;width:fit-content}
+.cta .hand{color:#DDE7F8!important}
+.cta .hand::before{filter:brightness(0) invert(1);opacity:.85!important}
+.eyebrow{color:var(--blue)!important;letter-spacing:.12em}
+
+/* ---------------------------------------------------------------- headings and text */
+main h1,main h2,main h3,main h4{font-family:var(--font-display)!important;font-style:normal!important;text-shadow:none!important;-webkit-text-stroke:0!important;transform:none!important;rotate:none!important;letter-spacing:-.015em}
+main h2{color:var(--ink)}
+main .sec-head h2,main section > .container > h2{font-size:clamp(1.7rem,2.6vw,2.35rem)!important;line-height:1.15!important}
+main .sec-head p,main .sec-head .lead{max-width:70ch}
+main p{text-shadow:none}
+
+/* ---------------------------------------------------------------- buttons: solid brand blue primary, outline secondary */
+.btn,body .ixw .btn,main .btn{height:48px;padding:0 22px;border-radius:12px!important;font:600 15px/1 var(--font-body)!important;letter-spacing:0!important;text-transform:none!important;
+  box-shadow:none!important;transform:none!important;rotate:none!important;translate:none!important;filter:none!important;animation:none!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.btn-lg,main .btn-lg{height:48px;padding:0 24px;font-size:16px!important}
+.btn-sm,main .btn-sm{height:40px;padding:0 16px;font-size:14px!important}
+.btn::before,.btn::after,main .btn::before,main .btn::after{content:none!important;display:none!important}
+.btn > i:not(.ic),.btn > b:empty,.btn > span:empty{display:none!important}
+.btn-primary,main .btn-primary,body .ixw .btn-primary{background:var(--blue)!important;color:#fff!important;border:1px solid var(--blue)!important}
+.btn-primary:hover,main .btn-primary:hover{background:var(--blue-700)!important;border-color:var(--blue-700)!important;box-shadow:0 10px 22px -12px rgba(49,103,202,.6)!important}
+.btn-ghost,main .btn-ghost,body .ixw .btn-ghost{background:#fff!important;color:var(--calm-accent-ink)!important;border:1px solid var(--calm-accent-line)!important}
+.btn-ghost:hover,main .btn-ghost:hover{background:var(--calm-accent-wash)!important;border-color:var(--calm-accent)!important;color:var(--calm-accent-ink)!important}
+.btn-white,main .btn-white{background:#fff!important;color:var(--blue-700)!important;border:1px solid #fff!important}
+.btn-white:hover,main .btn-white:hover{background:var(--blue-050)!important}
+.btn-outline-white,main .btn-outline-white{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.7)!important}
+.btn-outline-white:hover,main .btn-outline-white:hover{background:rgba(255,255,255,.12)!important;border-color:#fff!important}
+.btn .ic{color:currentColor!important;background:none!important;width:18px!important;height:18px!important;padding:0!important;margin:0!important;border-radius:0!important;box-shadow:none!important}
+.btn:hover .ic{transform:translateX(3px)}
+.btn:active{transform:scale(.98)!important}
+@media (prefers-reduced-motion:reduce){.btn:hover .ic{transform:none}}
+
+/* ======================================================================================================================
+   THE HERO: a clean two-column hero. Left: crumbs, calm kicker, H1, lead, two buttons. Right: the scene as ONE framed,
+   static illustration (industry-world.js paints it once into .ixw-frame). Phones: text, then the image, then the facts.
+   ====================================================================================================================== */
+body .ixw-hero,body[class*="ixw--"] .ixw-hero{min-height:0!important;height:auto!important;padding:calc(var(--header-box,72px) + 36px) 0 56px!important;overflow:visible!important;isolation:auto;
+  background:linear-gradient(180deg,var(--calm-wash) 0%,#FFFFFF 100%)!important;background-image:linear-gradient(180deg,var(--calm-wash) 0%,#FFFFFF 100%)!important;border:0!important;box-shadow:none!important}
+body .ixw-hero::before,body .ixw-hero::after{content:none!important;display:none!important}
+body .ixw-hero .ixw-hero-in{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,46%);gap:clamp(32px,4.5vw,72px);align-items:center;pointer-events:auto;position:relative;z-index:1}
+body .ixw-hero .ixw-copy,body[class*="ixw--"] .ixw-hero .ixw-copy{position:relative!important;max-width:580px!important;width:auto!important;margin:0!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;transform:none!important;rotate:none!important;translate:none!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important;outline:0!important;opacity:1!important;visibility:visible!important;filter:none!important;backdrop-filter:none!important}
+body .ixw-hero .ixw-copy::before,body .ixw-hero .ixw-copy::after,body .ixw-hero .ixw-hero-in::before,body .ixw-hero .ixw-hero-in::after{content:none!important;display:none!important}
+body .ixw-hero .ixw-copy h1{font:800 clamp(2.15rem,3.5vw,3.25rem)/1.08 var(--font-display)!important;color:var(--ink)!important;max-width:18ch!important;margin:0!important;letter-spacing:-.025em!important;background:none!important;padding:0!important;border:0!important}
+body .ixw-hero .ixw-copy h1 *:not(.hand):not(.sr-only){color:inherit}
+body .ixw-hero .ixw-copy h1 b,body .ixw-hero .ixw-copy h1 em,body .ixw-hero .ixw-copy h1 mark{background:none!important;color:var(--blue)!important;font-style:normal;padding:0!important;box-shadow:none!important;transform:none!important}
+body .ixw-hero .ixw-copy .lead,body .ixw-hero .ixw-copy .app-sub{max-width:52ch!important;margin:18px 0 0!important;font:400 1.08rem/1.65 var(--font-body)!important;color:var(--body)!important;background:none!important;padding:0!important;border:0!important;box-shadow:none!important;transform:none!important}
+body .ixw-hero .ixw-copy .app-sub{font:600 1.1rem/1.4 var(--font-display)!important;color:var(--blue-700)!important;margin-top:14px!important}
+body .ixw-hero .ixw-copy .app-sub + .lead{margin-top:8px!important}
+body .ixw-hero .ixw-copy .actions{display:flex!important;flex-wrap:wrap;gap:12px!important;margin:30px 0 0!important;padding:0!important;background:none!important;border:0!important;transform:none!important}
+body .ixw-hero .ixw-copy .crumbs{margin:0 0 22px!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;font:500 13px/1.3 var(--font-body)!important;color:var(--muted)!important;transform:none!important}
+body .ixw-hero .ixw-copy .crumbs a{color:var(--muted)!important;background:none!important;padding:0!important;border:0!important;box-shadow:none!important}
+body .ixw-hero .ixw-copy .crumbs a:hover{color:var(--blue)!important}
+body .ixw-hero .ixw-copy .crumbs > *{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;transform:none!important;color:var(--muted)!important;font:inherit!important}
+body .ixw-hero .ixw-copy .crumbs span::before{content:"/"!important;display:inline!important;position:static!important;margin-right:8px;color:#C4C9D6!important;background:none!important;width:auto;height:auto;border:0!important}
+body .ixw-hero .ixw-copy .crumbs span:last-child{color:var(--body)!important}
+body .ixw-hero .ixw-copy .tag,body .ixw-hero .ixw-copy [class*="pill"]:not(.pill-row),body .ixw-hero .ixw-copy [class*="badges"] > *{transform:none!important;rotate:none!important;box-shadow:none!important;font-family:var(--font-body)!important}
+body .ixw-hero .ixw-copy .pill-row,body .ixw-hero .ixw-copy [class*="-pills"],body .ixw-hero .ixw-copy [class*="-badges"],body .ixw-hero .ixw-copy [class*="-tags"]{margin-top:22px!important;transform:none!important}
+/* the Odoo walkthrough's step rail */
+body .ixw-hero .ow-rail{margin:0 0 20px!important;transform:none!important;box-shadow:none!important;background:none!important}
+body .ixw-hero .ow-rail li,body .ixw-hero .ow-rail a{box-shadow:none!important;transform:none!important;rotate:none!important;font-family:var(--font-body)!important}
+body .ixw-hero .ow-rail li.is-on{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important}
+/* the framed illustration */
+body .ixw-hero .ixw-frame{position:relative;width:100%;aspect-ratio:5/4;max-height:480px;justify-self:end;border-radius:20px;overflow:hidden;background:var(--calm-wash);
+  border:1px solid var(--calm-line);box-shadow:0 1px 2px rgba(31,31,61,.05),0 30px 60px -36px rgba(31,63,130,.42);isolation:isolate;contain:paint}
+body .ixw-hero .ixw-frame .ixw-cv{position:absolute!important;left:-24px!important;top:-24px!important;z-index:0;pointer-events:none;display:block}
+body .ixw-hero .ixw-frame .ixw-set{position:absolute!important;margin:0!important;left:0;top:0;width:100%;right:auto!important;bottom:auto!important;aspect-ratio:1000/600;pointer-events:none;z-index:1;translate:none!important}
+body .ixw-hero .ixw-cap,body .ixw-hero .ixw-peek,body .ixw-hero .ixw-drag,body .ixw-hero .ixw-hint,body .ixw-hero .ixw-ep,body .ixw-hero .ixw-nexi{display:none!important}
+@media (max-width:1099px){body .ixw-hero .ixw-hero-in{grid-template-columns:minmax(0,1fr) minmax(0,44%);gap:32px}}
+@media (max-width:860px){
+  body .ixw-hero .ixw-hero-in{grid-template-columns:minmax(0,1fr)}
+  body .ixw-hero .ixw-frame{justify-self:stretch;aspect-ratio:4/3;max-height:none}
+}
+@media (max-width:767px){
+  body .ixw-hero,body[class*="ixw--"] .ixw-hero{padding:calc(var(--header-box,64px) + 20px) 0 32px!important}
+  body .ixw-hero .ixw-hero-in{gap:26px}
+  body .ixw-hero .ixw-copy h1{font-size:clamp(1.9rem,8vw,2.4rem)!important}
+  body .ixw-hero .ixw-copy .lead{font-size:1rem!important}
+  body .ixw-hero .ixw-copy .actions{margin-top:24px!important}
+  body .ixw-hero .ixw-copy .actions .btn{flex:1 1 calc(50% - 6px);min-width:150px}
+  body .ixw-hero .ixw-frame{border-radius:16px}
+}
+
+/* ---------------------------------------------------------------- the facts strip under the hero: a plain row */
+body .ixw-credits-wrap{margin-top:0!important;margin-bottom:0!important;padding-top:0!important;position:relative;z-index:1;background:none!important;transform:none!important}
+body .ixw-credits-wrap::before,body .ixw-credits-wrap::after{content:none!important;display:none!important}
+body .ixw-credits,body .ixw .ixw-credits,body[class*="ixw--"] .ixw-credits,body .glance.ixw-credits{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))!important;gap:20px 28px!important;margin:0!important;padding:22px 0 26px!important;
+  background:none!important;border:0!important;border-top:1px solid var(--calm-line)!important;border-bottom:1px solid var(--calm-line)!important;border-radius:0!important;box-shadow:none!important;transform:none!important;rotate:none!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important;filter:none!important}
+body .ixw-credits::before,body .ixw-credits::after,body .ixw-credits > div::before,body .ixw-credits > div::after,body .ixw-credits dt::before,body .ixw-credits dt::after,body .ixw-credits dd::before,body .ixw-credits dd::after{content:none!important;display:none!important}
+body .ixw-credits > div{display:block!important;padding:0!important;margin:0!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;transform:none!important;rotate:none!important;min-width:0}
+body .ixw-credits > div + div{border-left:0!important}
+body .ixw-credits dt{display:flex!important;align-items:center;gap:7px;margin:0 0 6px!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;font:600 12px/1.2 var(--font-body)!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:var(--label,#5C5C73)!important;transform:none!important}
+body .ixw-credits dt .ic,body .ixw-credits dt .oi{width:17px!important;height:17px!important;flex:none;color:var(--calm-accent)!important;background:none!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important}
+body .ixw-credits dd{margin:0!important;padding:0!important;background:none!important;border:0!important;font:600 15px/1.45 var(--font-display)!important;color:var(--ink)!important;transform:none!important}
+body .ixw-credits dd *{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;color:inherit!important;font:inherit!important;transform:none!important}
+@media (max-width:767px){body .ixw-credits,body .ixw .ixw-credits,body[class*="ixw--"] .ixw-credits{grid-template-columns:1fr 1fr!important;gap:16px 18px!important;padding:18px 0 20px!important}
+  body .ixw-credits > div:last-child:nth-child(odd){grid-column:1/-1}}
+
+/* ======================================================================================================================
+   THE SECTION KIT. Same rhythm on every page: 96px between sections (56px on phones), white and #F7F9FD alternating,
+   one accent (brand blue). World dressing (textures, edge decorations, tilted / taped / stamped cards) is removed here
+   and in calm-gen.css; each section keeps its content and order.
+   ====================================================================================================================== */
+main > section:not(.ixw-hero),main > .section{padding:96px 0!important;background:#FFFFFF!important;background-image:none!important;border:0!important;box-shadow:none!important;transform:none!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important;margin:0!important}
+main > section.section--tight:not(.ixw-hero){padding:64px 0!important}
+main > section.section--alt:not(.ixw-hero){background:var(--calm-wash)!important}
+main > section:not(.ixw-hero)::before,main > section:not(.ixw-hero)::after,main > section:not(.ixw-hero) > .container::before,main > section:not(.ixw-hero) > .container::after{content:none!important;display:none!important}
+@media (max-width:767px){main > section:not(.ixw-hero),main > .section{padding:56px 0!important}main > section.section--tight:not(.ixw-hero){padding:44px 0!important}}
+/* section heads */
+main .sec-head{margin-bottom:44px}
+main .sec-head > *,main [class*="-head"] > h2{transform:none!important;rotate:none!important}
+main section h2{color:var(--ink)!important;background:none!important;box-shadow:none!important;padding-left:0;padding-right:0}
+main section h2 b,main section h2 em,main section h2 mark{color:var(--blue)!important;background:none!important;font-style:normal;box-shadow:none!important}
+/* cards */
+main .card{background:#fff!important;border:1px solid var(--calm-line)!important;border-top:var(--calm-card-rule)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;transform:none!important;rotate:none!important}
+main .card:hover{box-shadow:var(--calm-shadow-h)!important;transform:translateY(-2px)!important}
+main .card-ic,main .card-ic .ic{color:var(--calm-accent)!important}
+/* the generic hover jiggles become a quiet lift */
+main [class]:hover{rotate:none}
+/* tags and chips */
+main .tag{transform:none!important;rotate:none!important;box-shadow:none!important;font-family:var(--font-body)!important;border-radius:999px!important}
+/* the "Nexi in one paragraph" box: plain answer card */
+main .ix-intro,main .answer,main [class*="answer-"]:not(section){transform:none!important;rotate:none!important}
+/* Nexi is a helper (the floating "Ask Nexi"), not in every section; pure decoration goes. ONLY aria-hidden or empty
+   decorations are listed here (scanned over all pages with qa/company/calm_hide_scan.py: none carries text, links,
+   headings, list items or controls). Never hide by a bare class substring: "-stamp" / "-deco" also name real content
+   (solutions/ai-automation .sor-stamp cards, the discovery / training "ask us" asides, demo SVG labels .v-stamp). */
+main .ixw-cta-nexi,main .ixw-pose,
+main [aria-hidden="true"]:is([class*="-deco"],[class*="-stamp"],[class*="-tape"],[class*="cta-art"],[class*="cta-nexi"],[class*="bunting"]),
+main :is(.dc-cta-pin,.dc-cta-lens,.dc-cta-note,.dc-cta-str,.dc-pin,.aw-pin,.lf-pin,.mkg-pin,.mkg-clip,.dc-strings,.lg-string,.f-tape,.cu-ladder-tape,.cu-form-tape){display:none!important}
+
+/* ---------------------------------------------------------------- the CTA band: solid brand gradient, white text, two buttons */
+main .cta,main .ixw-cta,body[class*="ixw--"] main .cta{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center;gap:28px 40px!important;padding:52px 56px!important;margin:0!important;
+  background:var(--calm-grad)!important;background-image:var(--calm-grad)!important;color:#fff!important;border:0!important;border-radius:24px!important;box-shadow:0 30px 60px -36px rgba(30,70,145,.6)!important;
+  transform:none!important;rotate:none!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important;overflow:hidden;filter:none!important;min-height:0!important}
+main .cta::before,main .cta::after,main .ixw-cta::before,main .ixw-cta::after{content:none!important;display:none!important}
+main .cta h2,main .cta h3{color:#fff!important;max-width:24ch;margin:0 0 10px!important;font-size:clamp(1.6rem,2.4vw,2.2rem)!important;line-height:1.18!important}
+main .cta p{color:rgba(255,255,255,.88)!important;max-width:56ch;margin:0!important;font:400 1.04rem/1.6 var(--font-body)!important;background:none!important}
+main .cta > div{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;transform:none!important;min-width:0}
+main .cta .actions{display:flex!important;flex-wrap:wrap;gap:12px!important;margin:0!important;justify-content:flex-end}
+main .cta > *:not(div):not(.actions){display:none!important}
+main section:has(> .container > .cta){background:#fff!important}
+@media (max-width:860px){main .cta,main .ixw-cta,body[class*="ixw--"] main .cta{grid-template-columns:1fr!important;padding:36px 26px!important;border-radius:20px!important}main .cta .actions{justify-content:flex-start}
+  main .cta .actions .btn{flex:1 1 calc(50% - 6px)}}
+
+/* ---------------------------------------------------------------- FAQ accordion */
+main .faq details,main details.faq-item,main .faq > *{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;box-shadow:none!important;transform:none!important;rotate:none!important;clip-path:none!important}
+main .faq summary{font-family:var(--font-display)!important;color:var(--ink)!important;background:none!important}
+main .faq details[open]{border-color:#C9D7F1!important}
+
+/* ---------------------------------------------------------------- demos: keep the logic, calm the frame */
+main [data-demo]{transform:none!important;rotate:none!important;clip-path:none!important}
+main .demo-sec .dm,main [data-demo].dm{border-radius:18px}
+
+/* ---------------------------------------------------------------- motion: one quiet reveal, nothing loops */
+main .reveal{transition-duration:.5s!important}
+main .reveal:not(.is-in){transform:translateY(12px)}
+@media (prefers-reduced-motion:reduce){main .reveal{transform:none!important}}
+/* the CTA confetti burst */
+.ixw-conf{display:none!important}

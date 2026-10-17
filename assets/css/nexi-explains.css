@@ -1,0 +1,995 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /nexi-explains: the animated series starring Nexi, drawn in the series' own comic look (the YouTube thumbnails
+   and channel art): deep TechNext blue, sunburst rays, halftone dots, navy ink outlines with hard offset shadows,
+   chunky white + yellow type and stickers. The header turns transparent over the dark hero (body.is-nxe) and
+   white again once the page scrolls or a menu opens.
+   Hero = a living comic book in four spreads (Series / Quick Tips / Cast / Specials) with a burst transition, a
+   halftone sky and comic page chrome (header button, side tabs, WhatsApp, cookie notice: this page only); then
+   seasons as tabs, arcs of episode cards (comic panels that pop in), a Quick Tips rail per season, sidekicks peeking
+   in down the page and a YouTube player dialog.
+   Prefix nxe- (site.css owns .nx- for /nexi). Behaviour: assets/js/nexi-explains.js. Comic display font: Bangers
+   (Google Fonts, this page only) for stickers, labels and sound words. */
+.is-nxe{--ink-c:#101C45;--yel:#FFD23F;--yel-700:#F2B705;--red:#DB3A2A;--deep:#0B1D52;--comic:"Bangers","Plus Jakarta Sans",system-ui,sans-serif}
+
+/* ---------- transparent header over the dark hero ---------- */
+.is-nxe .header{transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+.is-nxe .header:not(.is-scrolled):not(.is-open){background:transparent;border-bottom-color:transparent}
+.is-nxe .header:not(.is-scrolled):not(.is-open) .brand img{filter:brightness(0) invert(1)}
+.is-nxe .header:not(.is-scrolled):not(.is-open) .nav-link{color:#fff}
+.is-nxe .header:not(.is-scrolled):not(.is-open) .nav-link:hover{background:rgba(255,255,255,.12);color:#fff}
+.is-nxe .header:not(.is-scrolled):not(.is-open) .nav-chev .ic{color:rgba(255,255,255,.75)}
+.is-nxe main{margin-top:calc(var(--header-box) * -1)}
+
+/* ---------- comic helpers ---------- */
+.nxe-mark{position:relative;z-index:0;white-space:nowrap}
+.nxe-mark::before{content:"";position:absolute;z-index:-1;left:-6px;right:-6px;bottom:4%;height:42%;background:var(--yel);border-radius:6px;transform:skew(-8deg) rotate(-1.5deg)}
+
+/* ---------- hero: a living comic book ----------
+   Four spreads (Series / Quick Tips / Cast / Specials) share one grid cell, so the hero never changes height.
+   Each spread is a set of tilted ink panels sized in container units (cqw), so it scales from 1920 to 360 px.
+   Static tilts use `rotate`, idle loops use `translate`/`scale`, entrances and exits use `transform`: the three
+   compose, so a panel can float, keep its tilt and still slam in. Behaviour: assets/js/nexi-explains-hero.js. */
+.nxe-hero{position:relative;z-index:1;overflow:hidden;color:#fff;padding:calc(var(--header-box) + 30px) 0 96px;background:var(--deep);clip-path:polygon(0 0,100% 0,100% calc(100% - 52px),0 100%)}
+.nxe-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.nxe-sprite symbol{overflow:visible}   /* a symbol clips to its viewBox by default: the clouds' tops were cut */
+
+/* the sky: four gradient layers cross-fade with the slide (opacity only, so the change is composited) */
+.nxe-sky{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.nxe-sky-fill,.nxe-sky-fill i{position:absolute;inset:0}
+.nxe-sky-fill i{opacity:0;transition:opacity .9s ease}
+.nxe-sky-fill i:nth-child(1){opacity:1;background:radial-gradient(1200px 760px at 70% 44%,#3E74DE 0%,#2352B4 32%,#143585 62%,#0B1D52 100%)}
+.nxe-sky-fill i:nth-child(2){background:radial-gradient(1200px 760px at 70% 44%,#5466EE 0%,#2E44C2 32%,#1A2A8E 62%,#0D1554 100%)}
+.nxe-sky-fill i:nth-child(3){background:radial-gradient(1200px 760px at 64% 40%,#3B8BEA 0%,#1F5CC0 34%,#123E8C 64%,#0A2156 100%)}
+.nxe-sky-fill i:nth-child(4){background:radial-gradient(1200px 760px at 70% 40%,#6A55D8 0%,#3E2FA6 32%,#241B6E 62%,#110B3B 100%)}
+.nxe-hero:not([data-slide="series"]) .nxe-sky-fill i:nth-child(1){opacity:0}
+.nxe-hero[data-slide="tips"] .nxe-sky-fill i:nth-child(2),.nxe-hero[data-slide="cast"] .nxe-sky-fill i:nth-child(3),.nxe-hero[data-slide="specials"] .nxe-sky-fill i:nth-child(4){opacity:1}
+.nxe-rays{position:absolute;left:70%;top:420px;width:2200px;height:2200px;margin:-1100px 0 0 -1100px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.075) 0 6deg,transparent 6deg 15deg);-webkit-mask-image:radial-gradient(closest-side,#000 6%,transparent 64%);mask-image:radial-gradient(closest-side,#000 6%,transparent 64%);animation:nxeSpin 110s linear infinite}
+.nxe-hero[data-slide="tips"] .nxe-rays{animation-duration:40s}
+.nxe-dotfield{position:absolute;inset:0;width:100%;height:100%}
+.nxe-speed{position:absolute;inset:0;background:repeating-linear-gradient(104deg,transparent 0 46px,rgba(255,255,255,.045) 46px 48px);-webkit-mask-image:linear-gradient(90deg,#000,transparent 50%);mask-image:linear-gradient(90deg,#000,transparent 50%)}
+/* the page's panel gutters: two faint ink-white lines, as if the hero were one page of the comic */
+.nxe-gutter{position:absolute;inset:0;background:linear-gradient(94deg,transparent calc(45% - 2px),rgba(255,255,255,.06) calc(45% - 2px) calc(45% + 2px),transparent calc(45% + 2px)),linear-gradient(178deg,transparent calc(86% - 2px),rgba(255,255,255,.05) calc(86% - 2px) calc(86% + 2px),transparent calc(86% + 2px))}
+@keyframes nxeSpin{to{transform:rotate(360deg)}}
+/* puffy comic clouds drifting across */
+.nxe-cloud{position:absolute;display:block;transition:translate .6s var(--ease-out)}
+.nxe-cloud svg{display:block;width:100%;height:auto;fill:rgba(255,255,255,.08);stroke:rgba(255,255,255,.2);stroke-width:2.5;overflow:visible;animation:nxeCloud var(--cd,46s) ease-in-out infinite alternate}
+.nxe-cloud--1{left:-3%;top:calc(var(--header-h) + 6%);width:300px}
+.nxe-cloud--2{right:-4%;bottom:10%;width:380px;--cd:58s}
+.nxe-cloud--3{left:36%;top:58%;width:200px;--cd:38s}
+@keyframes nxeCloud{to{transform:translateX(70px)}}
+/* floating Odoo apps: flat icons (no tile), a hard ink shadow, drifting (the pointer adds parallax) */
+.nxe-fl{position:absolute;width:40px;height:40px;transition:translate .6s var(--ease-out);animation:nxeDrift var(--fd,6s) ease-in-out infinite}
+.nxe-fl img,.nxe-fl svg{display:block;width:100%;height:100%;filter:drop-shadow(3px 4px 0 rgba(5,12,40,.5));animation:nxeFloat var(--fd,6s) ease-in-out infinite}
+.nxe-fl--1{left:43%;top:calc(var(--header-h) + 56px);--fd:6.5s;rotate:-8deg}
+.nxe-fl--2{right:3%;top:21%;--fd:7.2s;rotate:9deg}
+.nxe-fl--3{left:2.5%;bottom:24%;--fd:5.8s;rotate:6deg}
+.nxe-fl--4{right:5%;bottom:20%;--fd:6.8s;rotate:-6deg}
+.nxe-fl--5{left:56%;bottom:7%;--fd:7.6s;rotate:5deg;width:34px;height:34px}
+.nxe-fl--6{left:46.6%;top:57%;--fd:6.1s;rotate:-4deg;width:32px;height:32px}
+.nxe-fl--7{left:27%;top:calc(var(--header-h) + 18px);--fd:7s;rotate:7deg;width:30px;height:30px}
+.nxe-fl--8{right:24%;bottom:6%;--fd:6.4s;rotate:-9deg;width:30px;height:30px}
+@keyframes nxeDrift{50%{transform:translateY(-14px)}}
+@keyframes nxeFloat{50%{transform:rotate(7deg)}}
+/* doodles: sparkles, a bolt, a heart, a bang and a swirl, drawn as one sprite */
+.nxe-dd{position:absolute;overflow:visible;transition:translate .6s var(--ease-out)}
+.nxe-dd--spark{width:22px;height:22px;fill:var(--yel);filter:drop-shadow(0 0 8px rgba(255,210,63,.6));animation:nxeTw 3s ease-in-out infinite}
+.nxe-dd--1{left:7%;top:24%}
+.nxe-dd--2{left:31%;top:39%;width:13px;height:13px;fill:#fff;animation-delay:-1s}
+.nxe-dd--3{right:29%;top:calc(var(--header-h) + 22px);width:16px;height:16px;animation-delay:-2s}
+.nxe-dd--4{right:13%;bottom:33%;width:26px;height:26px;fill:#fff;animation-delay:-.6s}
+.nxe-dd--5{left:52%;bottom:26%;width:14px;height:14px;animation-delay:-1.8s}
+.nxe-dd--6{left:18%;bottom:9%;width:18px;height:18px;animation-delay:-2.4s}
+.nxe-dd--bolt{width:20px;height:27px;fill:var(--yel);stroke:var(--ink-c);stroke-width:1.6;left:5%;top:calc(var(--header-h) + 32px);rotate:14deg;animation:nxeZap 3.8s ease-in-out infinite}
+.nxe-dd--heart{width:22px;height:20px;fill:#FF8FA8;stroke:var(--ink-c);stroke-width:1.6;right:42%;bottom:10%;animation:nxeBeat 1.6s ease-in-out infinite}
+.nxe-dd--bang{width:9px;height:26px;fill:#fff;stroke:var(--ink-c);stroke-width:1.4;right:2%;top:47%;rotate:12deg;animation:nxeZap 3.1s ease-in-out -1.2s infinite}
+.nxe-dd--swirl{width:38px;height:38px;fill:none;stroke:rgba(255,255,255,.35);stroke-width:3;left:36%;bottom:6%;animation:nxeSpin 14s linear infinite}
+@keyframes nxeTw{0%,100%{opacity:.35;transform:scale(.7) rotate(0deg)}50%{opacity:1;transform:scale(1.15) rotate(25deg)}}
+@keyframes nxeZap{0%,100%{transform:scale(1)}8%{transform:scale(1.35) rotate(-10deg)}16%{transform:scale(1)}}
+@keyframes nxeBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+/* the TechNext paper plane loops through the sky now and then (transform keyframes only: composited) */
+.nxe-plane{position:absolute;left:0;top:0;width:54px;opacity:0;animation:nxePlane 19s linear 3s infinite}
+.nxe-plane img{display:block;width:100%;height:auto;filter:drop-shadow(3px 4px 0 rgba(5,12,40,.45))}
+.nxe-plane::after{content:"";position:absolute;right:88%;top:60%;width:140px;height:3px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 10px,transparent 10px 18px);-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
+@keyframes nxePlane{
+  0%{opacity:0;transform:translate(-8vw,15vh) rotate(-10deg)}
+  3%{opacity:1}
+  10%{transform:translate(10vw,9vh) rotate(-8deg)}
+  20%{transform:translate(25vw,6vh) rotate(0deg)}
+  26%{transform:translate(35vw,8vh) rotate(24deg)}
+  31%{transform:translate(39vw,15vh) rotate(105deg)}
+  35%{transform:translate(35vw,20vh) rotate(195deg)}
+  39%{transform:translate(30.5vw,14vh) rotate(285deg)}
+  43%{transform:translate(34vw,7vh) rotate(352deg)}
+  55%{transform:translate(60vw,5vh) rotate(364deg)}
+  68%{opacity:1;transform:translate(106vw,2vh) rotate(362deg)}
+  69%,100%{opacity:0;transform:translate(106vw,2vh) rotate(362deg)}}
+/* comic sound-word stickers */
+.nxe-boom{position:absolute;display:grid;place-items:center;padding:16px 20px;font:400 30px/1 var(--comic);letter-spacing:.04em;color:var(--ink-c);background:var(--yel);clip-path:polygon(50% 0,61% 22%,86% 8%,78% 34%,100% 42%,79% 57%,92% 82%,64% 74%,52% 100%,40% 76%,13% 90%,21% 62%,0 50%,21% 37%,9% 12%,38% 22%);filter:drop-shadow(4px 4px 0 var(--ink-c));transition:translate .6s var(--ease-out)}
+.nxe-boom--1{left:34%;top:calc(var(--header-h) + 14px);rotate:-12deg;animation:nxeBoom 4.5s ease-in-out infinite}
+.nxe-boom--2{right:5.5%;bottom:9%;rotate:10deg;font-size:24px;background:#fff;animation:nxeBoom 5.2s ease-in-out -2s infinite}
+@keyframes nxeBoom{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+/* the splash slide centres its title under the sky's top stickers: they step aside */
+.nxe-boom--1,.nxe-fl--1,.nxe-fl--7{transition:opacity .4s ease,translate .6s var(--ease-out)}
+.nxe-hero[data-slide="cast"] .nxe-boom--1,.nxe-hero[data-slide="cast"] .nxe-fl--1,.nxe-hero[data-slide="cast"] .nxe-fl--7,
+html[data-nxe-first="cast"] .nxe-boom--1,html[data-nxe-first="cast"] .nxe-fl--1,html[data-nxe-first="cast"] .nxe-fl--7{opacity:0}
+/* each slide's weather */
+.nxe-wx{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+.nxe-hero[data-slide="tips"] .nxe-wx--tips,.nxe-hero[data-slide="cast"] .nxe-wx--cast,.nxe-hero[data-slide="specials"] .nxe-wx--specials{opacity:1}
+.nxe-clockrain{position:absolute;left:-100%;top:0;width:300%;height:100%;background:repeating-linear-gradient(172deg,transparent 0 90px,rgba(255,210,63,.13) 90px 93px,transparent 93px 170px,rgba(255,255,255,.08) 170px 172px);animation:nxeRush 1.6s linear infinite}
+.nxe-clockrain--b{opacity:.6;animation-duration:2.6s;background-size:auto;transform:scaleY(-1)}
+@keyframes nxeRush{to{translate:33.333% 0}}
+.nxe-search{position:absolute;bottom:-10%;width:46vw;height:130%;background:linear-gradient(90deg,transparent,rgba(255,236,170,.13) 40%,rgba(255,236,170,.18) 50%,rgba(255,236,170,.13) 60%,transparent);clip-path:polygon(44% 100%,56% 100%,100% 0,0 0);transform-origin:50% 100%;animation:nxeSweep 7s ease-in-out infinite alternate}
+.nxe-search--l{left:6%;rotate:-18deg}
+.nxe-search--r{right:4%;rotate:18deg;animation-delay:-3.5s}
+@keyframes nxeSweep{to{transform:rotate(26deg)}}
+.nxe-search--r{animation-name:nxeSweepR}
+@keyframes nxeSweepR{to{transform:rotate(-26deg)}}
+.nxe-moon{position:absolute;left:41%;top:calc(var(--header-h) + 3%);width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 34% 36%,rgba(214,170,40,.4) 0 9%,transparent 10%),radial-gradient(circle at 64% 62%,rgba(214,170,40,.35) 0 12%,transparent 13%),radial-gradient(circle at 40% 72%,rgba(214,170,40,.3) 0 6%,transparent 7%),#FFE38A;border:3px solid var(--ink-c);box-shadow:0 0 60px rgba(255,227,138,.55),5px 5px 0 rgba(5,12,40,.4)}
+.nxe-stars{position:absolute;inset:0;background:radial-gradient(1.6px 1.6px at 12% 18%,#fff,transparent),radial-gradient(1.4px 1.4px at 32% 8%,#fff,transparent),radial-gradient(2px 2px at 58% 14%,#FFE38A,transparent),radial-gradient(1.4px 1.4px at 74% 30%,#fff,transparent),radial-gradient(1.8px 1.8px at 88% 52%,#fff,transparent),radial-gradient(1.4px 1.4px at 22% 62%,#fff,transparent),radial-gradient(2px 2px at 46% 80%,#FFE38A,transparent),radial-gradient(1.4px 1.4px at 66% 90%,#fff,transparent);animation:nxeTwinkle 3.4s ease-in-out infinite}
+@keyframes nxeTwinkle{50%{opacity:.45}}
+.nxe-flybat{position:absolute;width:46px;height:22px;fill:#0A0626;stroke:rgba(255,255,255,.3);stroke-width:1;left:0;top:0;animation:nxeBatFly 13s linear infinite}
+.nxe-flybat--2{width:32px;height:15px;animation-duration:17s;animation-delay:-7s}
+@keyframes nxeBatFly{0%{transform:translate(-6vw,30vh) scaleY(1)}10%{transform:translate(8vw,24vh) scaleY(.4)}20%{transform:translate(22vw,30vh) scaleY(1)}30%{transform:translate(36vw,20vh) scaleY(.4)}40%{transform:translate(50vw,26vh) scaleY(1)}50%{transform:translate(64vw,16vh) scaleY(.4)}60%{transform:translate(78vw,22vh) scaleY(1)}70%{transform:translate(92vw,12vh) scaleY(.4)}80%,100%{transform:translate(108vw,14vh) scaleY(1)}}
+
+/* ---------- the deck: four slides, one grid cell ---------- */
+.nxe-deck{position:relative;z-index:2;display:grid}
+.nxe-slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:24px 36px;align-items:center;min-width:0}
+.nxe-js .nxe-slide:not(.is-on):not(.is-leave){visibility:hidden;pointer-events:none}
+html:not(.nxe-js) .nxe-slide:not(:first-child),html:not(.nxe-js) .nxe-ctl{display:none}
+.nxe-copy{position:relative;z-index:2;min-width:0}
+.nxe-hero .crumbs,.nxe-hero .crumbs a{color:rgba(255,255,255,.72)}
+.nxe-hero .crumbs span::before{color:rgba(255,255,255,.35)}
+.nxe-title{margin:0 0 20px;color:#fff;font:800 clamp(3rem,6.4vw,5.6rem)/.92 var(--font-display);letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
+.nxe-title .hand{color:var(--yel);text-transform:none;letter-spacing:0;font-size:1.6rem;margin-bottom:12px}
+.nxe-hand{margin:0 0 10px;color:var(--yel);font-size:1.6rem}
+.nxe-t1,.nxe-t2{display:inline-block;text-shadow:3px 0 0 var(--ink-c),-3px 0 0 var(--ink-c),0 3px 0 var(--ink-c),0 -3px 0 var(--ink-c),2.2px 2.2px 0 var(--ink-c),-2.2px 2.2px 0 var(--ink-c),2.2px -2.2px 0 var(--ink-c),-2.2px -2.2px 0 var(--ink-c),0 8px 0 var(--ink-c)}
+.nxe-t1{rotate:-3deg}
+.nxe-t2{color:var(--yel);rotate:-1.5deg;translate:0 4px}
+.nxe-copy .lead{max-width:56ch;color:rgba(255,255,255,.9);margin-bottom:26px;text-wrap:pretty}
+.nxe-copy .actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+/* comic buttons: ink outline, a lip the button presses into */
+.nxe-hero .btn,.nxe-shows .nxe-season-act .btn,.nxe-cta .btn,.nxe-recast{border:3px solid var(--ink-c);box-shadow:0 6px 0 var(--ink-c);transition:transform .2s var(--spring),box-shadow .2s ease,background-color .2s ease}
+.nxe-hero .btn:hover,.nxe-shows .nxe-season-act .btn:hover,.nxe-cta .btn:hover,.nxe-recast:hover{transform:translateY(-2px) rotate(-1.5deg);box-shadow:0 8px 0 var(--ink-c)}
+.nxe-hero .btn:active,.nxe-shows .nxe-season-act .btn:active,.nxe-cta .btn:active,.nxe-recast:active{transform:translateY(4px);box-shadow:0 2px 0 var(--ink-c)}
+.nxe-hero .btn-primary,.nxe-shows .nxe-season-act .btn-primary,.nxe-cta .btn-white{background:var(--yel);color:var(--ink-c)}
+.nxe-hero .btn-primary:hover,.nxe-shows .nxe-season-act .btn-primary:hover,.nxe-cta .btn-white:hover{background:#FFDC5E;color:var(--ink-c)}
+.nxe-hero .btn-ghost,.nxe-cta .btn-outline-white{background:#fff;color:var(--ink-c)}
+.nxe-hero .btn-ghost::before,.nxe-cta .btn-outline-white::before{display:none}
+.nxe-hero .btn:focus-visible,.nxe-recast:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.nxe-stats{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.nxe-stats li{display:inline-flex;align-items:baseline;gap:6px;padding:7px 12px;border-radius:12px;background:#fff;border:2.5px solid var(--ink-c);box-shadow:3px 3px 0 var(--ink-c);font:600 13.5px/1 var(--font-body);color:var(--ink-c)}
+.nxe-stats li:nth-child(odd){rotate:-2deg}
+.nxe-stats li:nth-child(even){rotate:1.5deg}
+.nxe-stats b{font:400 19px/1 var(--comic);letter-spacing:.03em;color:var(--blue)}
+
+/* ---------- spreads: shared parts ---------- */
+.nxe-spread{position:relative;z-index:1;aspect-ratio:6/5;container-type:inline-size;min-width:0}
+.nxe-pn{position:absolute;background:#fff;border:.7cqw solid var(--ink-c);border-radius:3cqw;box-shadow:1.6cqw 1.6cqw 0 rgba(5,12,40,.55)}
+/* Nexi on every spread: a sticker (white rim + hard ink shadow); tap her for a reaction (nexi-explains-hero.js) */
+.nxe-hero-nexi{position:absolute;z-index:4;display:block;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;rotate:var(--lean,0deg);transition:rotate .5s var(--ease-out)}
+.nxe-hero-nexi img{display:block;height:100%;width:auto;max-width:none;filter:drop-shadow(.5cqw 0 0 #fff) drop-shadow(-.5cqw 0 0 #fff) drop-shadow(0 .5cqw 0 #fff) drop-shadow(0 -.5cqw 0 #fff) drop-shadow(1.2cqw 1.5cqw 0 rgba(5,12,40,.5));animation:nxeBob 3.4s ease-in-out infinite;transform-origin:50% 100%}
+.nxe-hero-nexi:hover img{scale:1.04}
+.nxe-hero-nexi:focus-visible{outline:3px solid var(--yel);outline-offset:6px;border-radius:40px}
+.nxe-hero-nexi.is-hop img{animation:nxeHop .65s var(--spring)}
+.nxe-hero-nexi.is-poof img{animation:nxePoof .55s var(--spring)}
+@keyframes nxeBob{50%{translate:0 -3.5%}}
+@keyframes nxeHop{35%{transform:translateY(-14%) scale(1.06,.95)}70%{transform:translateY(0) scale(.95,1.06)}}
+@keyframes nxePoof{0%{transform:scale(.4) rotate(-12deg);opacity:0}60%{transform:scale(1.08) rotate(3deg);opacity:1}}
+/* the speech bubble, inked */
+.nxe-say{position:absolute;z-index:5;max-width:44cqw;padding:1.6cqw 2.4cqw;border-radius:2.6cqw;background:#fff;color:var(--blue);border:.55cqw solid var(--ink-c);box-shadow:.8cqw .8cqw 0 var(--ink-c);font:800 clamp(12.5px,2.75cqw,17px)/1.25 var(--font-display);text-wrap:balance;rotate:-3deg;transform-origin:80% 100%}
+.nxe-say::before,.nxe-say::after{content:"";position:absolute;clip-path:polygon(0 0,100% 0,30% 100%)}
+.nxe-say::before{right:18%;bottom:-3.4cqw;width:4.2cqw;height:3.4cqw;background:var(--ink-c)}
+.nxe-say::after{right:calc(18% + .9cqw);bottom:-2.3cqw;width:2.6cqw;height:2.4cqw;background:#fff}
+.nxe-say.is-pop{animation:nxeSay .55s var(--spring)}
+@keyframes nxeSay{0%{opacity:0;transform:rotate(-10deg) scale(.4)}60%{opacity:1;transform:rotate(-2deg) scale(1.08)}100%{transform:none}}
+/* sidekicks you can tap */
+.nxe-kid{position:absolute;z-index:3;display:block;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nxe-kid img{display:block;height:100%;width:auto;max-width:none;filter:drop-shadow(.35cqw 0 0 #fff) drop-shadow(-.35cqw 0 0 #fff) drop-shadow(0 -.35cqw 0 #fff) drop-shadow(.8cqw 1cqw 0 rgba(5,12,40,.45));transform-origin:50% 100%;animation:nxeKid var(--kd,2.8s) ease-in-out var(--kdl,0s) infinite}
+.nxe-kid:hover img{scale:1.06}
+.nxe-kid:focus-visible{outline:3px solid var(--yel);outline-offset:4px;border-radius:16px}
+.nxe-kid.is-hop img{animation:nxeHop .6s var(--spring)}
+@keyframes nxeKid{50%{scale:1.03 .97}}
+/* a sound word that pops out of whatever was tapped */
+.nxe-word{position:absolute;z-index:7;font:400 clamp(24px,5.4cqw,38px)/1 var(--comic);letter-spacing:.04em;color:var(--yel);pointer-events:none;white-space:nowrap;text-shadow:2.5px 0 0 var(--ink-c),-2.5px 0 0 var(--ink-c),0 2.5px 0 var(--ink-c),0 -2.5px 0 var(--ink-c),2px 2px 0 var(--ink-c),-2px 2px 0 var(--ink-c),2px -2px 0 var(--ink-c),-2px -2px 0 var(--ink-c),0 5px 0 var(--ink-c);animation:nxeWord 1.1s var(--ease-out) forwards}
+
+@keyframes nxeWord{0%{opacity:0;transform:translate(0,0) scale(.3) rotate(var(--r,-10deg))}25%{opacity:1;transform:translate(var(--x,0),-30px) scale(1.15) rotate(var(--r,-10deg))}100%{opacity:0;transform:translate(var(--x,0),-70px) scale(1) rotate(var(--r,-10deg))}}
+.nxe-sticker{display:grid;place-items:center;padding:1.6cqw 2.2cqw;font:400 clamp(16px,4cqw,26px)/1 var(--comic);letter-spacing:.04em;color:var(--ink-c);background:var(--yel);clip-path:polygon(50% 0,61% 22%,86% 8%,78% 34%,100% 42%,79% 57%,92% 82%,64% 74%,52% 100%,40% 76%,13% 90%,21% 62%,0 50%,21% 37%,9% 12%,38% 22%);filter:drop-shadow(.6cqw .6cqw 0 var(--ink-c))}
+
+/* ---------- 1 · Series: Nexi bursts out of the ON AIR panel ---------- */
+.nxe-sp--series .nxe-impact{position:absolute;right:-12%;top:8%;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,210,63,.32),transparent 70%),repeating-conic-gradient(rgba(255,255,255,.22) 0 2.5deg,transparent 2.5deg 11deg);-webkit-mask-image:radial-gradient(closest-side,transparent 22%,#000 30%,transparent 72%);mask-image:radial-gradient(closest-side,transparent 22%,#000 30%,transparent 72%);animation:nxeSpin 30s linear infinite}
+.nxe-pn--tv{left:0;top:9%;width:71%;padding:1.8cqw;rotate:-2.5deg;animation:nxePanelFloat 6s ease-in-out infinite}
+@keyframes nxePanelFloat{50%{translate:0 -1.2cqw}}
+.nxe-tv{display:block;color:inherit;text-decoration:none}
+.nxe-screen{position:relative;display:block;aspect-ratio:16/9;border-radius:2cqw;overflow:hidden;background:#0B1F4A;border:.5cqw solid var(--ink-c)}
+.nxe-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity .6s ease,transform 3.4s var(--ease-out)}
+.nxe-screen img.is-on{opacity:1;transform:none}
+.nxe-screen::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 2px,transparent 2px 4px);pointer-events:none}
+.nxe-tvcap{display:flex;align-items:baseline;gap:1.6cqw;margin-top:1.5cqw;padding:1.1cqw 2cqw;border-radius:1.6cqw;background:var(--yel);border:.45cqw solid var(--ink-c);color:var(--ink-c);font:800 clamp(12px,2.6cqw,16px)/1.2 var(--font-display);white-space:nowrap;overflow:hidden}
+.nxe-tvcap b{font:400 clamp(14px,3.2cqw,20px)/1 var(--comic);letter-spacing:.05em;color:#1E4691}
+.nxe-tvcap span{overflow:hidden;text-overflow:ellipsis}
+.nxe-tvcap.is-swap{animation:nxeCap .45s var(--spring)}
+@keyframes nxeCap{from{transform:translateY(40%) rotate(-2deg);opacity:0}}
+.nxe-tvplay{position:absolute;left:50%;top:calc(1.8cqw + 21cqw);display:grid;place-items:center;width:11cqw;height:11cqw;margin:-5.5cqw 0 0 -5.5cqw;border-radius:50%;background:var(--yel);border:.55cqw solid var(--ink-c);color:var(--ink-c);box-shadow:.6cqw .6cqw 0 var(--ink-c);transition:transform .3s var(--spring)}
+.nxe-tvplay .ic{width:45%;height:45%;margin-left:8%}
+.nxe-tv:hover .nxe-tvplay,.nxe-tv:focus-visible .nxe-tvplay{transform:scale(1.12) rotate(-8deg)}
+.nxe-tv:focus-visible{outline:3px solid var(--yel);outline-offset:6px;border-radius:2cqw}
+.nxe-onair{position:absolute;left:3.5cqw;top:-3.6cqw;display:inline-flex;align-items:center;gap:1.2cqw;padding:1cqw 2cqw .8cqw 1.6cqw;border-radius:1.6cqw;background:var(--red);border:.5cqw solid var(--ink-c);color:#fff;font:400 clamp(14px,3.2cqw,20px)/1 var(--comic);letter-spacing:.08em;text-transform:uppercase;box-shadow:.5cqw .5cqw 0 var(--ink-c);rotate:-5deg}
+.nxe-onair::before{content:"";width:1.4cqw;height:1.4cqw;border-radius:50%;background:#fff;animation:nxeBlinkDot 1.4s ease-in-out infinite}
+@keyframes nxeBlinkDot{50%{opacity:.25}}
+/* the torn hole in the panel's right edge that Nexi bursts through, and the paper shards flying off it */
+.nxe-rip{position:absolute;right:-4.4cqw;top:8%;width:15cqw;height:80%;overflow:visible;fill:#0E2466;stroke:var(--ink-c);stroke-width:4;stroke-linejoin:round;filter:drop-shadow(-.4cqw 0 0 #fff)}
+.nxe-shards{position:absolute;right:-4cqw;top:46%;width:1px;height:1px}
+.nxe-shards i{position:absolute;left:0;top:0;width:3.2cqw;height:2.6cqw;background:#fff;clip-path:polygon(0 0,100% 30%,30% 100%);filter:drop-shadow(.3cqw .3cqw 0 var(--ink-c));animation:nxeShard 2.6s cubic-bezier(.2,.7,.3,1) infinite;opacity:0}
+.nxe-shards i:nth-child(1){--sx:14cqw;--sy:-16cqw;--sr:220deg}
+.nxe-shards i:nth-child(2){--sx:19cqw;--sy:-4cqw;--sr:-160deg;animation-delay:-.4s;width:2.4cqw;height:2cqw}
+.nxe-shards i:nth-child(3){--sx:16cqw;--sy:9cqw;--sr:300deg;animation-delay:-.9s}
+.nxe-shards i:nth-child(4){--sx:9cqw;--sy:-22cqw;--sr:-260deg;animation-delay:-1.3s;width:2cqw;height:1.8cqw}
+.nxe-shards i:nth-child(5){--sx:22cqw;--sy:14cqw;--sr:200deg;animation-delay:-1.8s;width:2.6cqw}
+.nxe-shards i:nth-child(6){--sx:12cqw;--sy:20cqw;--sr:-200deg;animation-delay:-2.2s;width:1.8cqw;height:1.6cqw}
+@keyframes nxeShard{0%{opacity:0;transform:translate(0,0) rotate(0)}12%{opacity:1}80%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy)) rotate(var(--sr))}}
+.nxe-spread.is-shake .nxe-shards i{animation-duration:.9s}
+.nxe-sp--series .nxe-hero-nexi{right:-6%;top:21%;height:65%}
+.nxe-sp--series .nxe-say{right:-1%;top:3%}
+.nxe-kid--olive{left:43%;top:-9%;height:20%;--kd:2.4s}
+.nxe-kid--dot{left:47%;bottom:15.5%;height:12%;--kd:1.9s;--kdl:-.6s}
+/* next premiere: the caption panel under the TV */
+.nxe-pn--next{left:2%;bottom:1%;width:66%;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:.8cqw 2cqw;padding:1.8cqw 2.4cqw;border-radius:2.4cqw;border-width:.55cqw;box-shadow:1cqw 1cqw 0 rgba(5,12,40,.55);rotate:1.2deg;color:var(--ink-c)}
+.nxe-next-tag{display:inline-flex;align-items:center;gap:1.1cqw;padding:.8cqw 1.6cqw .6cqw 1.3cqw;border-radius:1.4cqw;background:var(--red);border:.4cqw solid var(--ink-c);color:#fff;font:400 clamp(12px,2.6cqw,16px)/1 var(--comic);letter-spacing:.06em;rotate:-3deg}
+.nxe-next-tag::before{content:"";width:1.1cqw;height:1.1cqw;border-radius:50%;background:#fff;animation:nxeBlinkDot 1.4s ease-in-out infinite}
+.nxe-next b{font:800 clamp(12.5px,2.7cqw,16px)/1.25 var(--font-display);color:var(--ink-c)}
+.nxe-next-when{flex-basis:100%;font-size:clamp(12px,2.35cqw,14.5px);line-height:1.35;color:#3D4A6E}
+.nxe-next-when strong{color:var(--blue);font-weight:800}
+.nxe-next .btn-link{font-size:clamp(12px,2.35cqw,14px)}
+.nxe-next .btn-link .ic{width:1.1em;height:1.1em}
+
+/* ---------- 2 · Quick Tips, "pit lane": the race on the left, the copy on the right, a conveyor of every tip below ---------- */
+.nxe-fmt-race{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);grid-template-areas:"stage copy" "belt belt";gap:20px 40px}
+.nxe-fmt-race>.nxe-spread{grid-area:stage}
+.nxe-fmt-race>.nxe-copy{grid-area:copy}
+.nxe-fmt-race>.nxe-belt{grid-area:belt}
+.nxe-spread.nxe-sp--tips{aspect-ratio:6/3.6}
+.nxe-zoom{position:absolute;right:-16%;top:6%;width:70%;height:78%;background:repeating-linear-gradient(180deg,transparent 0 16px,rgba(255,255,255,.3) 16px 19px,transparent 19px 30px,rgba(255,210,63,.32) 30px 32px,transparent 32px 46px);-webkit-mask-image:radial-gradient(60% 50% at 60% 50%,#000,transparent 75%);mask-image:radial-gradient(60% 50% at 60% 50%,#000,transparent 75%);animation:nxeZoom .45s linear infinite}
+@keyframes nxeZoom{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+/* a chequered flag waving behind Nexi */
+.nxe-flag{position:absolute;right:3%;top:-2%;width:15%;aspect-ratio:1.3;border:.5cqw solid var(--ink-c);border-radius:1cqw;background:conic-gradient(var(--ink-c) 25%,#fff 0 50%,var(--ink-c) 0 75%,#fff 0) 0 0/25% 33.4%;box-shadow:.8cqw .8cqw 0 rgba(5,12,40,.45);transform-origin:0 50%;rotate:-8deg;animation:nxeFlag 1.1s ease-in-out infinite alternate}
+.nxe-flag::before{content:"";position:absolute;left:-1.4cqw;top:-.8cqw;width:1cqw;height:34cqw;border-radius:1cqw;background:#fff;border:.4cqw solid var(--ink-c)}
+@keyframes nxeFlag{to{transform:skewY(-7deg) scaleX(.94)}}
+.nxe-watch{position:absolute;z-index:4;left:0;top:0;width:31%;padding:0;border:0;background:none;cursor:pointer;rotate:-9deg;-webkit-tap-highlight-color:transparent;animation:nxeWobble 2s ease-in-out infinite}
+.nxe-watch svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(1cqw 1cqw 0 rgba(5,12,40,.55))}
+.nxe-watch-crown,.nxe-watch-stem,.nxe-watch-btn{fill:var(--red);stroke:var(--ink-c);stroke-width:4;stroke-linejoin:round}
+.nxe-watch-body{fill:var(--yel);stroke:var(--ink-c);stroke-width:5}
+.nxe-watch-face{fill:#fff;stroke:var(--ink-c);stroke-width:3.5}
+.nxe-watch-ticks{stroke:var(--ink-c);stroke-width:4;stroke-linecap:round}
+.nxe-watch-hand{transform-origin:60px 78px;animation:nxeSpin 2s steps(30) infinite}
+.nxe-watch-hand path{stroke:var(--red);stroke-width:5;stroke-linecap:round}
+.nxe-watch-hand circle{fill:var(--ink-c)}
+.nxe-watch-t{position:absolute;left:0;right:0;top:67%;text-align:center;font:400 clamp(13px,3.2cqw,20px)/1 var(--comic);letter-spacing:.05em;color:var(--ink-c);pointer-events:none}
+.nxe-watch:hover{animation-duration:.5s}
+.nxe-watch:focus-visible{outline:3px solid var(--yel);outline-offset:4px;border-radius:50%}
+.nxe-watch.is-spin .nxe-watch-hand{animation:nxeSpin .25s linear infinite}
+@keyframes nxeWobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+.nxe-sfx{position:absolute;z-index:5;font:400 clamp(16px,3.8cqw,26px)/1 var(--comic);letter-spacing:.05em;color:#fff;pointer-events:none;text-shadow:2px 0 0 var(--ink-c),-2px 0 0 var(--ink-c),0 2px 0 var(--ink-c),0 -2px 0 var(--ink-c),0 4px 0 var(--ink-c);animation:nxeTick 2s steps(1) infinite}
+.nxe-sfx--tick{left:25%;top:50%;rotate:-14deg;color:var(--yel)}
+.nxe-sfx--tock{left:3%;top:60%;rotate:10deg;animation-delay:-1s}
+@keyframes nxeTick{0%{opacity:1;transform:scale(1.15)}50%,100%{opacity:0;transform:scale(.8)}}
+/* Cosmo runs in his wheel, on a little stand */
+.nxe-wheel{position:absolute;z-index:3;left:37%;top:26%;width:20%;aspect-ratio:1}
+.nxe-wheel::after{content:"";position:absolute;left:30%;right:30%;bottom:-16%;height:22%;background:var(--red);border:.45cqw solid var(--ink-c);border-radius:.8cqw .8cqw .4cqw .4cqw;clip-path:polygon(30% 0,70% 0,100% 100%,0 100%);z-index:-1}
+.nxe-wheel svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--ink-c);stroke-width:3;animation:nxeSpin 1.1s linear infinite;filter:drop-shadow(.6cqw .6cqw 0 rgba(5,12,40,.4))}
+.nxe-wheel svg circle:first-child{fill:rgba(255,255,255,.92);stroke-width:5}
+.nxe-wheel svg path{stroke:#9AA9D6;stroke-width:2.5}
+.nxe-wheel img{position:absolute;left:50%;bottom:9%;height:56%;width:auto;max-width:none;translate:-50% 0;animation:nxeRun .28s ease-in-out infinite alternate}
+@keyframes nxeRun{to{transform:translateY(-6%) rotate(4deg)}}
+/* the readout: the tip on the finish line */
+.nxe-readout{left:0;bottom:0;width:66%;z-index:4;display:flex;align-items:center;gap:1.6cqw;padding:1.8cqw 2.2cqw;border-radius:2.2cqw;border-width:.55cqw;box-shadow:1cqw 1cqw 0 rgba(5,12,40,.55);rotate:-1.2deg;color:var(--ink-c);text-decoration:none;font:800 clamp(12.5px,2.8cqw,16.5px)/1.2 var(--font-display);transition:transform .25s var(--spring)}
+.nxe-readout:hover{transform:translateY(-3px) rotate(-1deg)}
+.nxe-readout:focus-visible{outline:3px solid var(--yel);outline-offset:4px}
+.nxe-readout b{flex:none;padding:.8cqw 1.5cqw .6cqw;border-radius:1.2cqw;background:var(--yel);border:.4cqw solid var(--ink-c);font:400 clamp(13px,3cqw,19px)/1 var(--comic);letter-spacing:.05em;rotate:-3deg}
+.nxe-readout span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nxe-readout em{flex:none;font:700 clamp(11px,2.3cqw,13px)/1 var(--font-body);font-style:normal;padding:.8cqw 1.2cqw;border-radius:1cqw;background:var(--ink-c);color:#fff}
+.nxe-readout.is-new{animation:nxeCap .4s var(--spring)}
+.nxe-sp--tips .nxe-hero-nexi{right:2%;top:4%;height:80%}
+.nxe-sp--tips .nxe-hero-nexi img{animation:nxeDash 1.4s ease-in-out infinite}
+@keyframes nxeDash{0%,100%{translate:0 0;rotate:-2deg}50%{translate:-3% -3%;rotate:2deg}}
+.nxe-sp--tips .nxe-say{right:30%;top:-9%;max-width:36cqw}
+/* the conveyor: every tip rides past the chequered finish line; drag it, tap a tip, or spin the stopwatch */
+.nxe-belt{position:relative;z-index:2;min-width:0;padding:14px 0 22px;border-radius:20px;background:linear-gradient(180deg,#1A2766,#0E1748);border:3px solid var(--ink-c);box-shadow:0 7px 0 var(--ink-c),inset 0 2px 0 rgba(255,255,255,.12);overflow:hidden;touch-action:pan-y;cursor:grab}
+.nxe-belt.is-drag{cursor:grabbing}
+.nxe-belt::after{content:"";position:absolute;left:0;right:-22px;bottom:5px;height:9px;will-change:transform;background:radial-gradient(circle at 50% 50%,#9AA9D6 0 3px,var(--ink-c) 3.5px 4.5px,transparent 5px) 0 50%/22px 9px repeat-x;animation:nxeRoll .5s linear infinite;opacity:.8}
+@keyframes nxeRoll{to{transform:translateX(-22px)}}   /* the rollers turn by sliding one tile (a background-position change repainted the belt) */
+.nxe-belt-track{display:flex;gap:16px;width:max-content;padding:4px 0;will-change:transform}
+.nxe-tipc{position:relative;flex:none;width:176px;padding:5px;border-radius:13px;background:#fff;border:3px solid var(--ink-c);box-shadow:4px 4px 0 rgba(5,12,40,.6);cursor:pointer;transition:transform .3s var(--spring),box-shadow .2s ease,background-color .2s ease;-webkit-tap-highlight-color:transparent}
+.nxe-tipc:nth-child(odd){rotate:-2deg}
+.nxe-tipc:nth-child(even){rotate:1.6deg}
+.nxe-tipc img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;border:2px solid var(--ink-c);pointer-events:none;-webkit-user-drag:none}
+.nxe-tipc b{position:absolute;left:-6px;top:-8px;padding:4px 7px 3px;border-radius:8px;background:var(--yel);border:2.5px solid var(--ink-c);color:var(--ink-c);font:400 16px/1 var(--comic);letter-spacing:.04em;rotate:-6deg}
+.nxe-tipc:hover,.nxe-tipc:focus-visible{transform:translateY(-6px) scale(1.04)}
+.nxe-tipc:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+.nxe-tipc.is-hit{background:var(--yel);transform:translateY(-6px) scale(1.07);box-shadow:5px 7px 0 var(--ink-c)}
+.nxe-belt-line{position:absolute;z-index:3;left:50%;top:0;bottom:0;width:14px;margin-left:-7px;background:conic-gradient(var(--ink-c) 25%,#fff 0 50%,var(--ink-c) 0 75%,#fff 0) 0 0/14px 14px;opacity:.85;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0 12%,transparent 12% 88%,#000 88%);mask-image:linear-gradient(180deg,#000 0 12%,transparent 12% 88%,#000 88%)}
+
+/* ---------- 3 · Cast, "splash page": a big centred title, one wide stage with a narrator box, buttons below ---------- */
+.nxe-fmt-splash{grid-template-columns:minmax(0,1fr);grid-template-areas:"top" "stage" "foot";gap:16px;justify-items:center}
+.nxe-copy--top{grid-area:top;text-align:center}
+.nxe-copy--top .nxe-title{margin:0}
+.nxe-copy--top .nxe-hand{margin-bottom:4px}
+.nxe-fmt-splash>.nxe-spread{grid-area:stage;width:100%}
+.nxe-narrator{grid-area:stage;z-index:6;align-self:start;justify-self:start;max-width:min(330px,30%);margin:3.2% 0 0 2.6%;padding:12px 15px;background:#FFF6D4;border:3px solid var(--ink-c);border-radius:4px;box-shadow:5px 5px 0 var(--ink-c);color:var(--ink-c);font:600 14.5px/1.45 var(--font-body);rotate:-1.2deg;text-wrap:pretty}
+.nxe-copy--foot{grid-area:foot;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 26px}
+.nxe-copy--foot .actions,.nxe-copy--foot .nxe-stats{margin:0}
+.nxe-spread.nxe-sp--cast{aspect-ratio:1152/372}
+.nxe-pn--stage{inset:0;overflow:hidden;background:#173171;rotate:-.6deg;border-radius:2cqw}
+.nxe-wall{position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 36%,#2C56B8,#173171 70%),#173171}
+.nxe-wall::after{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1.3px,transparent 1.8px) 0 0/14px 14px;-webkit-mask-image:radial-gradient(70% 70% at 50% 35%,transparent 30%,#000);mask-image:radial-gradient(70% 70% at 50% 35%,transparent 30%,#000)}
+.nxe-floor{position:absolute;left:-10%;right:-10%;bottom:0;height:34%;background:repeating-linear-gradient(90deg,rgba(60,30,10,.28) 0 2px,transparent 2px 6%),linear-gradient(180deg,#E8A35A,#C97B36);border-top:.35cqw solid var(--ink-c);transform:perspective(300px) rotateX(24deg);transform-origin:50% 100%}
+.nxe-beam{position:absolute;top:-10%;width:26%;height:125%;background:linear-gradient(180deg,rgba(255,240,180,.42),rgba(255,240,180,.05));clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);mix-blend-mode:screen;transform-origin:50% 0;animation:nxeBeam 5s ease-in-out infinite alternate}
+.nxe-beam--l{left:8%;rotate:-16deg}
+.nxe-beam--c{left:37%;animation-duration:3.6s}
+.nxe-beam--r{right:8%;rotate:16deg;animation-name:nxeBeamR;animation-delay:-2.5s}
+@keyframes nxeBeam{to{transform:rotate(14deg)}}
+@keyframes nxeBeamR{to{transform:rotate(-14deg)}}
+.nxe-curtain{position:absolute;z-index:5;top:0;bottom:0;width:7%;background:repeating-linear-gradient(90deg,#C8283C 0 30%,#9E1528 30% 46%,#D8394C 46% 100%);background-size:2.2cqw 100%;border:.3cqw solid var(--ink-c);border-top:0;border-bottom:0}
+.nxe-curtain--l{left:-.5%;clip-path:polygon(0 0,100% 0,62% 100%,0 100%);transform-origin:0 50%}
+.nxe-curtain--r{right:-.5%;clip-path:polygon(0 0,100% 0,100% 100%,38% 100%);transform-origin:100% 50%}
+.nxe-valance{position:absolute;z-index:5;left:-1%;right:-1%;top:0;height:10%;background:radial-gradient(circle at 50% 0,#D8394C 0 68%,var(--ink-c) 69% 76%,transparent 77%) 0 0/3.4cqw 100% repeat-x}
+.nxe-podium{position:absolute;left:50%;bottom:7%;width:20%;height:12%;translate:-50% 0;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#FFE38A,#F2B705 70%);border:.35cqw solid var(--ink-c);box-shadow:0 .7cqw 0 rgba(5,12,40,.4)}
+.nxe-troupe{position:absolute;inset:0}
+.nxe-troupe .nxe-kid{height:32%}
+.nxe-spot-1{left:6%;bottom:3%;height:38%!important}
+.nxe-spot-2{left:16%;bottom:30%;height:28%!important}
+.nxe-spot-3{left:23%;bottom:1%;height:33%!important}
+.nxe-spot-4{left:31.5%;bottom:22%;height:30%!important}
+.nxe-spot-5{right:31.5%;bottom:22%;height:30%!important}
+.nxe-spot-6{right:23%;bottom:1%;height:33%!important}
+.nxe-spot-7{right:16%;bottom:30%;height:28%!important}
+.nxe-spot-8{right:6%;bottom:3%;height:38%!important}
+.nxe-troupe .nxe-kid.is-drop img{animation:nxeDrop .7s var(--spring) both;animation-delay:var(--dd,0s)}
+.nxe-troupe .nxe-kid.is-gone{animation:nxeGone .32s ease-in forwards}
+.nxe-troupe .nxe-kid.is-spot img{filter:drop-shadow(.35cqw 0 0 #fff) drop-shadow(-.35cqw 0 0 #fff) drop-shadow(0 -.35cqw 0 #fff) drop-shadow(0 0 2cqw rgba(255,236,150,.9))}
+@keyframes nxeDrop{0%{transform:translateY(-160%) scale(.9,1.1);opacity:0}55%{transform:translateY(4%) scale(1.12,.86);opacity:1}75%{transform:translateY(-6%) scale(.96,1.04)}100%{transform:none}}
+@keyframes nxeGone{to{transform:scale(.2) rotate(30deg);opacity:0}}
+.nxe-sp--cast .nxe-hero-nexi{left:50%;bottom:11%;height:76%;translate:-50% 0}
+.nxe-sp--cast .nxe-say{right:2%;top:-9%;max-width:26cqw;font-size:clamp(12.5px,1.7cqw,17px)}
+.nxe-tag{position:absolute;z-index:7;padding:.7cqw 1.2cqw;border-radius:1cqw;background:var(--yel);border:3px solid var(--ink-c);box-shadow:3px 3px 0 var(--ink-c);color:var(--ink-c);font:800 clamp(11.5px,1.4cqw,14.5px)/1.25 var(--font-display);white-space:nowrap;translate:-50% -100%;pointer-events:none;animation:nxeSay .45s var(--spring)}
+.nxe-tag b{font:400 1.25em/1 var(--comic);letter-spacing:.04em;margin-right:.4em;color:#1E4691}
+.nxe-recast{position:absolute;z-index:7;left:50%;bottom:-16px;translate:-50% 0;display:inline-flex;align-items:center;gap:8px;height:auto;padding:8px 16px;border-radius:12px;background:#fff;color:var(--ink-c);font:400 17px/1 var(--comic);letter-spacing:.05em;cursor:pointer}
+.nxe-recast .ic{width:1.1em;height:1.1em;transition:transform .5s var(--spring)}
+.nxe-recast:hover .ic{transform:rotate(180deg)}
+.nxe-puff{position:absolute;z-index:8;width:9cqw;height:9cqw;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle at 30% 40%,#fff 0 30%,transparent 31%),radial-gradient(circle at 68% 38%,#fff 0 28%,transparent 29%),radial-gradient(circle at 50% 66%,#fff 0 34%,transparent 35%);filter:drop-shadow(2px 2px 0 var(--ink-c));pointer-events:none;animation:nxePuff .6s ease-out forwards}
+@keyframes nxePuff{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- 4 · Specials, "banner + triptych": copy across the top, three tall panels; the open one is wide ---------- */
+.nxe-fmt-strip{grid-template-columns:minmax(0,1fr);grid-template-areas:"banner" "trip";gap:22px}
+.nxe-copy--banner{grid-area:banner;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:10px 44px;align-items:end}
+.nxe-copy--banner .nxe-title{margin:0}
+.nxe-copy--banner .lead{margin-bottom:16px}
+.nxe-copy--banner .actions{margin:0}
+.nxe-fmt-strip>.nxe-spread{grid-area:trip}
+.nxe-spread.nxe-sp--specials{aspect-ratio:1152/350}
+.nxe-trip{position:absolute;inset:0;display:flex;gap:1.6cqw}
+.nxe-hs{position:relative;flex:1 1 0;min-width:0;height:100%;padding:.55cqw;overflow:hidden;color:inherit;text-decoration:none;border-radius:1.6cqw;border-width:.3cqw;box-shadow:.8cqw .8cqw 0 rgba(5,12,40,.55);transition:flex-grow .6s var(--ease-out),rotate .4s var(--spring),box-shadow .3s ease}
+.nxe-hs img{display:block;width:100%;height:100%;object-fit:cover;border-radius:1.1cqw;border:.25cqw solid var(--ink-c)}
+.nxe-hs--1{rotate:-1.6deg}
+.nxe-hs--2{rotate:1.2deg}
+.nxe-hs--3{rotate:-1deg}
+.nxe-hs.is-front{flex-grow:2.6;rotate:0deg;box-shadow:1.2cqw 1.2cqw 0 rgba(5,12,40,.6);z-index:2}
+.nxe-hs:focus-visible{outline:3px solid var(--yel);outline-offset:4px}
+.nxe-hs-name{position:absolute;z-index:2;left:1.6cqw;bottom:1.4cqw;font:400 clamp(18px,2.8cqw,36px)/1 var(--comic);letter-spacing:.05em;color:#fff;text-shadow:2.5px 0 0 var(--ink-c),-2.5px 0 0 var(--ink-c),0 2.5px 0 var(--ink-c),0 -2.5px 0 var(--ink-c),2px 2px 0 var(--ink-c),-2px 2px 0 var(--ink-c),0 5px 0 var(--ink-c);rotate:-4deg;transform-origin:0 100%;transition:transform .5s var(--spring)}
+.nxe-hs:not(.is-front) .nxe-hs-name{transform:rotate(-86deg) translate(10%,30%)}
+.nxe-stamp{position:absolute;right:1.4cqw;top:1.4cqw;z-index:2;padding:.6cqw 1.1cqw .5cqw;border-radius:.9cqw;border:.25cqw solid var(--ink-c);background:var(--red);color:#fff;font:400 clamp(12px,1.5cqw,17px)/1 var(--comic);letter-spacing:.06em;box-shadow:.35cqw .35cqw 0 var(--ink-c);rotate:6deg;transition:opacity .3s ease}
+.nxe-hs:not(.is-front) .nxe-stamp{opacity:0}
+.nxe-hs--2 .nxe-stamp{background:#17874C}
+.nxe-hs--3 .nxe-stamp{background:var(--yel);color:var(--ink-c)}
+.nxe-hsfx{position:absolute;inset:.55cqw;z-index:1;overflow:hidden;border-radius:1.1cqw;pointer-events:none}
+.nxe-hsfx i{position:absolute;display:block}
+.nxe-hsfx--bats i{left:calc(var(--i) * 11%);top:calc(8% + var(--i) * 6%);width:3.2cqw;height:1.5cqw;background:#160B2E;clip-path:polygon(0 30%,18% 0,32% 34%,44% 18%,50% 36%,56% 18%,68% 34%,82% 0,100% 30%,84% 70%,66% 52%,56% 100%,50% 76%,44% 100%,34% 52%,16% 70%);opacity:.85;animation:nxeBat 2.4s ease-in-out calc(var(--i) * -.37s) infinite}
+@keyframes nxeBat{0%,100%{transform:translate(0,0) scaleY(1)}25%{transform:translate(1cqw,-.7cqw) scaleY(.35)}50%{transform:translate(2cqw,0) scaleY(1)}75%{transform:translate(1cqw,.7cqw) scaleY(.35)}}
+.nxe-hsfx--snow i{left:calc(var(--i) * 11.5% + 2%);top:-6%;width:.8cqw;height:.8cqw;border-radius:50%;background:#fff;box-shadow:0 0 .5cqw rgba(255,255,255,.8);animation:nxeSnow calc(3s + var(--i) * .27s) linear calc(var(--i) * -.53s) infinite}
+@keyframes nxeSnow{to{transform:translate(1.6cqw,34cqw)}}
+.nxe-hsfx--confetti i{left:calc(var(--i) * 11% + 3%);top:-8%;width:.9cqw;height:.5cqw;background:var(--yel);animation:nxeConf calc(2.4s + var(--i) * .21s) linear calc(var(--i) * -.41s) infinite}
+.nxe-hsfx--confetti i:nth-child(3n+1){background:#FF5A47}
+.nxe-hsfx--confetti i:nth-child(3n+2){background:#6FA0F5}
+@keyframes nxeConf{to{transform:translate(-1.4cqw,34cqw) rotate(720deg)}}
+.nxe-hs.is-front .nxe-hsfx i{animation-duration:1.4s}
+/* Nexi hops to the open panel; her bubble rides with her */
+/* moves along the strip with translate (cqw of the spread), not left: a left change repainted her drop-shadow filters every frame */
+.nxe-sp--specials .nxe-hero-nexi{left:0;bottom:-5%;height:58%;translate:calc(var(--nxn,24) * 1cqw - 50%) 0;transition:translate .6s var(--spring),rotate .5s var(--ease-out)}
+.nxe-sp--specials .nxe-say{left:calc(var(--nx,24%) + 6%);bottom:42%;max-width:24cqw;font-size:clamp(12.5px,1.6cqw,17px);transition:left .6s var(--spring)}
+.nxe-sp--specials .nxe-say::before{right:auto;left:14%;clip-path:polygon(0 0,100% 0,70% 100%)}
+.nxe-sp--specials .nxe-say::after{right:auto;left:calc(14% + .9cqw)}
+.nxe-confetti{position:absolute;inset:0;z-index:6;pointer-events:none}
+.nxe-confetti i{position:absolute;left:var(--x0);top:var(--y0);width:12px;height:7px;background:var(--c);border:1.5px solid var(--ink-c);animation:nxeBlast 1.2s cubic-bezier(.15,.7,.4,1) forwards}
+@keyframes nxeBlast{0%{transform:translate(0,0) rotate(0);opacity:1}70%{opacity:1}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--dr));opacity:0}}
+
+/* the slide picked in the head (random first slide) shows before the script takes over */
+html[data-nxe-first] .nxe-slide{visibility:hidden;pointer-events:none}
+html[data-nxe-first="series"] #nxe-s-series,html[data-nxe-first="tips"] #nxe-s-tips,html[data-nxe-first="cast"] #nxe-s-cast,html[data-nxe-first="specials"] #nxe-s-specials{visibility:visible;pointer-events:auto}
+html[data-nxe-first]:not([data-nxe-first="series"]) .nxe-sky-fill i:nth-child(1){opacity:0}
+html[data-nxe-first="tips"] .nxe-sky-fill i:nth-child(2),html[data-nxe-first="cast"] .nxe-sky-fill i:nth-child(3),html[data-nxe-first="specials"] .nxe-sky-fill i:nth-child(4),
+html[data-nxe-first="tips"] .nxe-wx--tips,html[data-nxe-first="cast"] .nxe-wx--cast,html[data-nxe-first="specials"] .nxe-wx--specials{opacity:1}
+
+/* ---------- entrances and exits (slide change) ---------- */
+.nxe-slide.is-enter .nxe-copy>*{animation:nxeUp .6s var(--ease-out) both;animation-delay:calc(var(--n,0) * 70ms + 120ms)}
+.nxe-slide.is-enter .nxe-copy>:nth-child(1){--n:0}.nxe-slide.is-enter .nxe-copy>:nth-child(2){--n:1}.nxe-slide.is-enter .nxe-copy>:nth-child(3){--n:2}.nxe-slide.is-enter .nxe-copy>:nth-child(4){--n:3}.nxe-slide.is-enter .nxe-copy>:nth-child(5){--n:4}
+.nxe-slide.is-enter .nxe-t1,.nxe-slide.is-enter .nxe-t2{animation:nxeSlamWord .7s var(--spring) both}
+.nxe-slide.is-enter .nxe-t1{animation-delay:.14s}
+.nxe-slide.is-enter .nxe-t2{animation-delay:.26s}
+.nxe-slide.is-enter .nxe-spread>*{animation:nxeSlam .7s var(--spring) both;animation-delay:calc(var(--n,0) * 80ms + 60ms)}
+.nxe-slide.is-enter .nxe-spread>:nth-child(2){--n:1}.nxe-slide.is-enter .nxe-spread>:nth-child(3){--n:2}.nxe-slide.is-enter .nxe-spread>:nth-child(4){--n:3}.nxe-slide.is-enter .nxe-spread>:nth-child(5){--n:4}.nxe-slide.is-enter .nxe-spread>:nth-child(6){--n:5}.nxe-slide.is-enter .nxe-spread>:nth-child(n+7){--n:6}
+.nxe-slide.is-leave .nxe-copy{animation:nxeOutL .3s ease-in both}
+.nxe-slide.is-leave .nxe-spread{animation:nxeOutR .3s ease-in both}
+@keyframes nxeUp{from{opacity:0;transform:translateY(24px)}}
+@keyframes nxeSlamWord{0%{opacity:0;transform:scale(1.9) rotate(-8deg)}60%{opacity:1;transform:scale(.94)}100%{transform:none}}
+@keyframes nxeSlam{0%{opacity:0;transform:scale(1.35) rotate(-5deg)}60%{opacity:1;transform:scale(.96) rotate(1deg)}100%{transform:none}}
+@keyframes nxeOutL{to{opacity:0;transform:translateX(-40px) skewX(6deg)}}
+@keyframes nxeOutR{to{opacity:0;transform:scale(.86) rotate(4deg)}}
+.nxe-slide.is-enter .nxe-narrator{animation:nxeUp .6s var(--ease-out) .35s both}
+.nxe-fmt-race.is-enter .nxe-belt{animation:nxeBeltIn .8s var(--ease-out) .15s both}
+@keyframes nxeBeltIn{from{opacity:0;transform:translateX(16%)}}
+.nxe-fmt-splash.is-enter .nxe-curtain{animation:nxeCurtain 1.1s var(--ease-out) .2s both}
+@keyframes nxeCurtain{from{transform:scaleX(7.6)}}
+.nxe-fmt-strip.is-enter .nxe-spread>.nxe-trip{animation:none}
+.nxe-fmt-strip.is-enter .nxe-hs{animation:nxeDropPanel .75s var(--spring) both}
+.nxe-fmt-strip.is-enter .nxe-hs--2{animation-delay:.1s}
+.nxe-fmt-strip.is-enter .nxe-hs--3{animation-delay:.2s}
+@keyframes nxeDropPanel{0%{opacity:0;transform:translateY(-60%) rotate(-8deg)}60%{opacity:1;transform:translateY(4%) rotate(1deg)}100%{transform:none}}
+.nxe-slide.is-leave .nxe-belt,.nxe-slide.is-leave .nxe-narrator{animation:nxeOutL .3s ease-in both}
+.nxe-hero.is-shake .nxe-deck{animation:nxeShake .42s linear}
+@keyframes nxeShake{20%{transform:translate(-6px,3px)}40%{transform:translate(5px,-4px)}60%{transform:translate(-4px,2px)}80%{transform:translate(3px,-1px)}}
+.nxe-spread.is-shake .nxe-pn--tv{animation:nxeShake .4s linear}
+
+/* ---------- the BAM transition ---------- */
+.nxe-bam{position:absolute;z-index:8;left:var(--bx,70%);top:var(--by,50%);width:min(1000px,130vw);aspect-ratio:1;margin:calc(min(1000px,130vw) / -2) 0 0 calc(min(1000px,130vw) / -2);display:grid;place-items:center;pointer-events:none;opacity:0;transform:scale(0)}
+.nxe-bam svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.nxe-bam svg use{fill:var(--bam,var(--yel));stroke:var(--ink-c);stroke-width:2.5}
+.nxe-bam svg .nxe-bam-tone{fill:url(#nxe-g-tone);stroke:none}
+.nxe-bam b{position:relative;font:400 clamp(60px,11vw,160px)/1 var(--comic);letter-spacing:.04em;color:#fff;rotate:-8deg;text-shadow:5px 0 0 var(--ink-c),-5px 0 0 var(--ink-c),0 5px 0 var(--ink-c),0 -5px 0 var(--ink-c),4px 4px 0 var(--ink-c),-4px 4px 0 var(--ink-c),4px -4px 0 var(--ink-c),-4px -4px 0 var(--ink-c),0 12px 0 var(--ink-c)}
+
+/* ---------- controls: chapter tabs, arrows, pause ---------- */
+.nxe-ctl{position:relative;z-index:3;display:flex;align-items:center;gap:12px;margin-top:30px}
+.nxe-chapters{display:flex;gap:10px;min-width:0}
+.nxe-chap{position:relative;overflow:hidden;display:inline-flex;align-items:center;height:44px;padding:0 16px 3px;border-radius:12px;background:#fff;border:3px solid var(--ink-c);box-shadow:0 4px 0 var(--ink-c);color:var(--ink-c);font:400 18px/1 var(--comic);letter-spacing:.05em;cursor:pointer;transition:transform .25s var(--spring),box-shadow .2s ease,background-color .2s ease}
+.nxe-chap b{font-weight:400;position:relative;z-index:1}
+.nxe-chap i{position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ink-c);transform:scaleX(0);transform-origin:0 50%}
+.nxe-chap:hover{transform:translateY(-2px) rotate(-1.5deg);box-shadow:0 6px 0 var(--ink-c)}
+.nxe-chap[aria-selected="true"]{background:var(--yel);transform:rotate(-2deg)}
+.nxe-chap[aria-selected="true"] i{animation:nxeFill var(--dur,9s) linear forwards}
+.nxe-ctl.is-held .nxe-chap[aria-selected="true"] i,.nxe-hero.is-paused .nxe-chap[aria-selected="true"] i{animation-play-state:paused}
+.nxe-hero.is-paused .nxe-chap[aria-selected="true"] i{animation:none;transform:scaleX(1);opacity:.25}
+@keyframes nxeFill{to{transform:scaleX(1)}}
+.nxe-chap:focus-visible,.nxe-arrow:focus-visible,.nxe-pp:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.nxe-arrow,.nxe-pp{flex:none;display:grid;place-items:center;width:46px;height:46px;padding:0;border-radius:50%;background:var(--yel);border:3px solid var(--ink-c);box-shadow:0 4px 0 var(--ink-c);color:var(--ink-c);cursor:pointer;transition:transform .25s var(--spring),box-shadow .2s ease}
+.nxe-arrow .ic,.nxe-pp .ic{width:22px;height:22px}
+.nxe-arrow--prev .ic{transform:rotate(90deg)}
+.nxe-arrow--next .ic{transform:rotate(-90deg)}
+.nxe-arrow:hover{transform:scale(1.1) rotate(-8deg)}
+.nxe-arrow:active,.nxe-pp:active,.nxe-chap:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink-c)}
+.nxe-pp{background:#fff;margin-left:4px}
+.nxe-pp .ic+.ic,.nxe-hero.is-paused .nxe-pp .ic:first-child{display:none}
+.nxe-hero.is-paused .nxe-pp .ic+.ic{display:block}
+
+/* ---------- comic page chrome on this page only: header button, side tabs, WhatsApp, cookie notice ----------
+   site.css keeps these flat on every other page with !important; these selectors are more specific on purpose. */
+body.is-nxe .header .header-cta .btn.hdr-contact{background:var(--yel)!important;color:var(--ink-c)!important;border:3px solid var(--ink-c)!important;border-radius:12px!important;box-shadow:0 4px 0 var(--ink-c)!important;font:400 19px/1 var(--comic)!important;letter-spacing:.05em;transition:transform .2s var(--spring),box-shadow .2s ease,background-color .2s ease!important}
+body.is-nxe .header .header-cta .btn.hdr-contact:hover{background:#FFDC5E!important;transform:translateY(-2px) rotate(-2deg)!important;box-shadow:0 6px 0 var(--ink-c)!important}
+body.is-nxe .header .header-cta .btn.hdr-contact:active{transform:translateY(3px)!important;box-shadow:0 1px 0 var(--ink-c)!important}
+body.is-nxe .header .header-cta .btn.hdr-contact .ic{width:20px;height:20px}
+body.is-nxe .header .header-cta .btn.hdr-contact:hover .ic{transform:rotate(-12deg) scale(1.1)}
+body.is-nxe .nav-bubble .nb-bg{filter:drop-shadow(2px 0 0 var(--ink-c)) drop-shadow(-2px 0 0 var(--ink-c)) drop-shadow(0 2px 0 var(--ink-c)) drop-shadow(0 -2px 0 var(--ink-c)) drop-shadow(0 4px 0 var(--ink-c))}
+body.is-nxe .nav-bubble{font:400 17px/1 var(--comic);letter-spacing:.05em;color:var(--ink-c)}
+body.is-nxe .menu-btn{background:#fff!important;color:var(--ink-c)!important;border:3px solid var(--ink-c)!important;box-shadow:0 3px 0 var(--ink-c)!important;border-radius:12px}
+/* side tabs: inked comic labels (the tab is turned 180deg, so its shadow offsets read mirrored) */
+body.is-nxe .side-tabs .side-tab{border:3px solid var(--ink-c)!important;border-left-width:0!important;box-shadow:4px -4px 0 var(--ink-c)!important;color:var(--ink-c)!important;font:400 18px/1 var(--comic)!important;letter-spacing:.07em!important;transition:translate .25s var(--spring),box-shadow .2s ease,background-color .2s ease!important}
+body.is-nxe .side-tabs .meet-tab,body.is-nxe .side-tabs .meet-tab:active{background:#3DDC84!important}
+body.is-nxe .side-tabs .meet-tab:hover{background:#5BE89A!important}
+body.is-nxe .side-tabs .talk-tab,body.is-nxe .side-tabs .talk-tab:active{background:var(--yel)!important}
+body.is-nxe .side-tabs .talk-tab:hover{background:#FFDC5E!important}
+body.is-nxe .side-tabs .nexi-tab,body.is-nxe .side-tabs .nexi-tab:active{background:#fff!important;color:var(--blue)!important}
+body.is-nxe .side-tabs .nexi-tab:hover{background:#EAF1FF!important}
+body.is-nxe .side-tabs .side-tab:hover{translate:-5px 0!important;box-shadow:6px -6px 0 var(--ink-c)!important}
+body.is-nxe .side-tabs .side-tab:hover .ic{animation:nxeZap .6s ease-in-out!important}
+body.is-nxe .side-tabs .side-tab:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+body.is-nxe .side-fab{background:var(--yel)!important;color:var(--ink-c)!important;border:3px solid var(--ink-c)!important;box-shadow:0 4px 0 var(--ink-c)!important}
+body.is-nxe .side-fab:hover{background:#FFDC5E!important}
+/* WhatsApp: a green speech balloon with an ink outline that nudges now and then */
+body.is-nxe .wa-float{border:3px solid var(--ink-c)!important;box-shadow:4px 5px 0 var(--ink-c)!important;transition:translate .25s var(--spring),box-shadow .2s ease,background-color .2s ease,opacity .25s ease,scale .3s var(--spring);animation:nxeNudge 9s ease-in-out 4s infinite}
+body.is-nxe .wa-float .ic{filter:drop-shadow(1.5px 1.5px 0 var(--ink-c))}
+body.is-nxe .wa-float::before{width:14px;height:14px;background:var(--yel);border:2.5px solid var(--ink-c)}
+body.is-nxe .wa-float::after{content:"";position:absolute;left:-7px;bottom:-4px;width:18px;height:16px;background:var(--ink-c);clip-path:polygon(100% 0,100% 60%,0 100%);z-index:-1}
+body.is-nxe .wa-float:hover{translate:0 -3px;box-shadow:5px 8px 0 var(--ink-c)!important}
+body.is-nxe .wa-float:hover .ic{animation:nxeZap .6s ease-in-out}
+body.is-nxe .wa-float-tip{background:#fff;color:var(--ink-c);border:3px solid var(--ink-c);box-shadow:3px 3px 0 var(--ink-c);font:400 16px/1 var(--comic);letter-spacing:.05em;border-radius:12px}
+@keyframes nxeNudge{0%,88%,100%{rotate:0deg}90%{rotate:-12deg}92%{rotate:10deg}94%{rotate:-7deg}96%{rotate:4deg}}
+/* the cookie notice as a comic caption box */
+body.is-nxe #tn-cookie-banner{background:#fff!important;color:var(--ink-c)!important;border:3px solid var(--ink-c);border-radius:18px!important;box-shadow:8px 8px 0 rgba(5,12,40,.6)!important}
+body.is-nxe #tn-cookie-banner strong{color:var(--ink-c)!important;font:400 19px/1.1 var(--comic)!important;letter-spacing:.05em}
+body.is-nxe #tn-cookie-banner p{color:#3D4A6E!important}
+body.is-nxe #tn-cookie-banner a{color:var(--blue)!important}
+body.is-nxe #tn-cookie-banner button{height:40px!important;border-radius:12px!important;border:3px solid var(--ink-c)!important;box-shadow:0 3px 0 var(--ink-c);font:400 16px/1 var(--comic)!important;letter-spacing:.06em;transition:transform .2s var(--spring),box-shadow .2s ease!important}
+body.is-nxe #tn-cookie-accept{background:var(--yel)!important;color:var(--ink-c)!important}
+body.is-nxe #tn-cookie-decline{background:#fff!important;color:var(--ink-c)!important}
+body.is-nxe #tn-cookie-banner button:hover{transform:translateY(-2px) rotate(-1.5deg)}
+body.is-nxe #tn-cookie-banner button:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink-c)}
+/* the Let's Talk drawer's buttons */
+body.is-nxe .talk-panel .btn-primary{background:var(--yel);color:var(--ink-c);border:3px solid var(--ink-c);box-shadow:0 5px 0 var(--ink-c);font:400 19px/1 var(--comic);letter-spacing:.05em}
+body.is-nxe .talk-panel .btn-primary:hover{background:#FFDC5E;transform:translateY(-2px) rotate(-1deg)}
+body.is-nxe .talk-panel .icon-btn{border:3px solid var(--ink-c);box-shadow:0 3px 0 var(--ink-c);border-radius:12px;background:#fff;color:var(--ink-c)}
+::selection{background:var(--yel);color:var(--ink-c)}
+
+/* ---------- seasons ---------- */
+/* the hero's slanted bottom edge cuts straight onto this section: it tucks up under the hero by the slant's height,
+   so no white page shows in the wedge (hero z-index 1 sits on top) */
+.nxe-hero{z-index:1}
+.nxe-shows{position:relative;margin-top:-52px;padding-top:116px;background:#F4F7FE}
+.nxe-shows::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(49,103,202,.13) 1.3px,transparent 1.8px) 0 0/18px 18px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 45%,transparent 70%,#000);mask-image:linear-gradient(180deg,#000,transparent 45%,transparent 70%,#000)}
+.nxe-shows>.container{position:relative}
+.nxe-tabs{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.nxe-tab{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:180px;padding:13px 20px;border-radius:16px;border:3px solid var(--ink-c);background:#fff;box-shadow:5px 5px 0 var(--ink-c);color:var(--ink-c);text-align:left;cursor:pointer;transition:transform .3s var(--spring),box-shadow .2s ease,background-color .2s ease}
+.nxe-tab b{font:400 24px/1 var(--comic);letter-spacing:.04em;color:inherit}
+.nxe-tab small{font:600 12.5px/1.2 var(--font-body);color:#4A5478}
+.nxe-tab:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink-c)}
+.nxe-tab[aria-selected="true"]{background:var(--yel);transform:rotate(-2deg);box-shadow:7px 7px 0 var(--ink-c)}
+.nxe-tab[aria-selected="true"] small{color:var(--ink-c)}
+.nxe-tab:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.nxe-js .nxe-panel{display:none}
+.nxe-js .nxe-panel.is-on{display:block;animation:nxeIn .45s var(--ease-out)}
+@keyframes nxeIn{from{opacity:0;transform:translateY(10px)}}
+.nxe-panel:focus{outline:none}
+.nxe-panel + .nxe-panel{margin-top:72px}
+.nxe-js .nxe-panel + .nxe-panel{margin-top:0}
+.nxe-season-head{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:end;padding:30px 32px;margin-bottom:44px;border-radius:22px;background:#fff;border:3px solid var(--ink-c);box-shadow:8px 8px 0 var(--ink-c)}
+.nxe-season-head::before{content:"";position:absolute;right:-180px;top:-260px;width:560px;height:560px;border-radius:50%;background:repeating-conic-gradient(rgba(255,210,63,.32) 0 7deg,transparent 7deg 18deg);-webkit-mask-image:radial-gradient(closest-side,#000 20%,transparent 70%);mask-image:radial-gradient(closest-side,#000 20%,transparent 70%);pointer-events:none}
+.nxe-season-head>*{position:relative}
+.nxe-season-head h2{margin:14px 0 10px;font-size:clamp(1.6rem,2.8vw,2.3rem);color:var(--ink-c)}
+.nxe-sn{display:inline-block;margin:0 10px 8px 0;padding:5px 12px 3px;border-radius:9px;background:var(--yel);border:2.5px solid var(--ink-c);font:400 20px/1 var(--comic);letter-spacing:.06em;color:var(--ink-c);transform:rotate(-2deg);vertical-align:middle}
+.nxe-season-head p{max-width:64ch;margin-bottom:16px}
+.nxe-status{display:inline-flex;align-items:center;gap:7px;padding:6px 12px 4px;border-radius:9px;background:#fff;border:2.5px solid var(--ink-c);color:var(--ink-c);font:400 17px/1 var(--comic);letter-spacing:.06em;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink-c)}
+.nxe-status.is-live{background:var(--red);color:#fff}
+.nxe-status.is-live::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:nxeBlinkDot 1.4s ease-in-out infinite}
+.nxe-facts{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;color:var(--body)}
+.nxe-facts b{font:400 26px/1 var(--comic);letter-spacing:.03em;color:var(--blue);margin-right:4px}
+.nxe-season-act{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.nxe-shows .nxe-season-act .btn-ghost{background:#fff;color:var(--ink-c)}
+.nxe-shows .nxe-season-act .btn-ghost::before{display:none}
+.nxe-arc{margin-bottom:48px}
+.nxe-arc-h{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.nxe-arc-h h3{margin:0;padding:7px 15px 6px;border-radius:11px;background:#fff;border:3px solid var(--ink-c);box-shadow:4px 4px 0 var(--ink-c);font-size:1.15rem;color:var(--ink-c);transform:rotate(-1.5deg)}
+.nxe-arc-h span{flex:none;padding:5px 10px 3px;border-radius:8px;background:var(--blue);color:#fff;border:2px solid var(--ink-c);font:400 16px/1 var(--comic);letter-spacing:.06em;transform:rotate(2deg)}
+.nxe-arc-h::after{content:"";flex:1;height:4px;background:radial-gradient(circle,var(--ink-c) 1.6px,transparent 2px) 0 50%/10px 4px repeat-x;opacity:.35}
+.nxe-grid,.nxe-rail{list-style:none;margin:0}
+.nxe-grid{padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px 24px}
+.nxe-grid--3{grid-template-columns:repeat(3,1fr)}
+
+/* ---------- cards: comic panels ---------- */
+.nxe-card{display:flex;flex-direction:column;min-width:0}
+.nxe-anim .nxe-card{opacity:0;transform:translateY(22px) scale(.93) rotate(-2deg)}
+.nxe-anim .nxe-card.is-in{animation:nxePopIn .6s var(--spring) both;animation-delay:var(--k,0ms)}
+@keyframes nxePopIn{from{opacity:0;transform:translateY(22px) scale(.93) rotate(-2deg)}to{opacity:1;transform:none}}
+.nxe-thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:3px solid var(--ink-c);border-radius:16px;overflow:hidden;background:var(--blue-050);box-shadow:6px 6px 0 var(--ink-c);transition:transform .35s var(--spring),box-shadow .25s ease}
+button.nxe-thumb{cursor:pointer}
+.nxe-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.nxe-thumb::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(9,20,48,.5));pointer-events:none}
+.nxe-card:hover .nxe-thumb{transform:translate(-3px,-3px) rotate(-1.2deg);box-shadow:9px 9px 0 var(--ink-c)}
+.nxe-len{position:absolute;right:9px;bottom:9px;z-index:2;padding:4px 7px;border-radius:7px;background:var(--ink-c);color:#fff;font:700 12px/1 var(--font-body)}
+.nxe-state{position:absolute;left:9px;bottom:9px;z-index:2;padding:5px 9px 4px;border-radius:8px;background:#fff;border:2px solid var(--ink-c);color:var(--ink-c);font:400 14px/1 var(--comic);letter-spacing:.05em;transform:rotate(-2deg)}
+.nxe-thumb[data-nxe-premiere] .nxe-state{background:var(--yel)}
+.nxe-thumb.is-live .nxe-state{background:var(--red);color:#fff}
+.nxe-playic{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:var(--yel);border:3px solid var(--ink-c);color:var(--ink-c);box-shadow:3px 3px 0 var(--ink-c);transform:scale(.88);transition:transform .3s var(--spring)}
+.nxe-playic .ic{width:22px;height:22px;margin-left:3px}
+.nxe-thumb:hover .nxe-playic,.nxe-thumb:focus-visible .nxe-playic{transform:scale(1.08) rotate(-8deg)}
+.nxe-thumb:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.nxe-body{padding:16px 4px 0}
+.nxe-kick{display:inline-block;margin-bottom:6px;font:400 17px/1 var(--comic);letter-spacing:.06em;color:var(--blue)}
+.nxe-body h4{margin:0 0 6px;font-size:1.05rem;line-height:1.3;color:var(--ink-c)}
+.nxe-body p{margin:0;font-size:14.5px;line-height:1.55;color:var(--body)}
+.nxe-more{display:inline-flex;align-items:center;gap:5px;min-height:44px;margin-top:4px;padding:0 2px;font:700 13.5px/1.2 var(--font-body)}
+.nxe-more .ic{width:15px;height:15px;transition:transform .25s var(--spring)}
+.nxe-more:hover .ic{transform:translateX(3px)}
+
+/* Season 2 cards are drawn until the season's thumbnails are made: halftone + rays, an inked number */
+.nxe-drawn{position:absolute;inset:0;display:block;overflow:hidden;container-type:inline-size;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.nxe-drawn::before{content:"";position:absolute;right:-30%;top:-60%;width:120%;aspect-ratio:1;border-radius:50%;background:repeating-conic-gradient(rgba(255,255,255,.18) 0 8deg,transparent 8deg 20deg);-webkit-mask-image:radial-gradient(closest-side,#000 25%,transparent 75%);mask-image:radial-gradient(closest-side,#000 25%,transparent 75%)}
+.nxe-drawn::after{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.22) 1.2px,transparent 1.7px) 0 0/12px 12px;-webkit-mask-image:linear-gradient(200deg,transparent 40%,#000);mask-image:linear-gradient(200deg,transparent 40%,#000)}
+.nxe-tone-0{--c1:#2F5FC4;--c2:#79A6F6}
+.nxe-tone-1{--c1:#F0624A;--c2:#FFB287}
+.nxe-tone-2{--c1:#14907F;--c2:#6BD6C2}
+.nxe-tone-3{--c1:#6450F0;--c2:#B0A5FF}
+.nxe-drawn-ep{position:absolute;left:5.5cqw;top:5cqw;z-index:1;display:flex;flex-direction:column;color:var(--yel);font:400 22cqw/.82 var(--comic);letter-spacing:.02em;text-shadow:.8cqw 0 0 var(--ink-c),-.8cqw 0 0 var(--ink-c),0 .8cqw 0 var(--ink-c),0 -.8cqw 0 var(--ink-c),.6cqw .6cqw 0 var(--ink-c),-.6cqw .6cqw 0 var(--ink-c),.6cqw -.6cqw 0 var(--ink-c),-.6cqw -.6cqw 0 var(--ink-c),0 1.8cqw 0 var(--ink-c)}
+.nxe-drawn-ep small{font:400 5cqw/1 var(--comic);letter-spacing:.1em;color:#fff;margin-bottom:1.6cqw;text-shadow:.4cqw .4cqw 0 var(--ink-c)}
+.nxe-drawn-psych{position:absolute;left:5.5cqw;top:33cqw;z-index:2;max-width:64%;padding:1.5cqw 3cqw;border-radius:2.6cqw;background:#fff;border:.7cqw solid var(--ink-c);color:var(--ink-c);font:700 3.9cqw/1.2 var(--font-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:rotate(-2deg)}
+.nxe-drawn-nexi{position:absolute!important;right:4%;bottom:-6%;z-index:1;width:auto!important;height:96%!important;object-fit:contain!important;filter:drop-shadow(.6cqw 0 0 #fff) drop-shadow(-.6cqw 0 0 #fff) drop-shadow(0 -.6cqw 0 #fff) drop-shadow(1.6cqw 1.6cqw 0 rgba(9,20,48,.4));transition:transform .4s var(--spring)}
+.nxe-card:hover .nxe-drawn-nexi{transform:translateY(-6px) rotate(-5deg)}
+
+/* Quick Tips rail */
+.nxe-tips{margin-top:8px;padding:30px 0 6px;border-top:3px dashed rgba(16,28,69,.18)}
+.nxe-tips-sub{margin:-8px 0 18px;font-size:14.5px;color:var(--body)}
+.nxe-rail-wrap{position:relative}
+.nxe-rail{display:grid;grid-auto-flow:column;grid-auto-columns:240px;gap:22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:0 4px;padding:6px 10px 22px 4px;scrollbar-width:thin;scrollbar-color:var(--blue-100) transparent}
+.nxe-rail:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:12px}
+.nxe-rail > li{scroll-snap-align:start}
+.nxe-card--tip .nxe-thumb{box-shadow:5px 5px 0 var(--ink-c)}
+.nxe-card--tip .nxe-body h4{font-size:.96rem}
+.nxe-card--tip .nxe-body p{font-size:13.5px}
+.nxe-rail-btn{position:absolute;top:calc(240px * 9 / 16 / 2 - 14px);z-index:3;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:3px solid var(--ink-c);background:var(--yel);color:var(--ink-c);box-shadow:3px 3px 0 var(--ink-c);cursor:pointer;transition:transform .25s var(--spring),opacity .2s ease}
+.nxe-rail-btn .ic{width:22px;height:22px}
+.nxe-rail-btn--prev{left:-16px}
+.nxe-rail-btn--prev .ic{transform:rotate(90deg)}
+.nxe-rail-btn--next{right:-16px}
+.nxe-rail-btn--next .ic{transform:rotate(-90deg)}
+.nxe-rail-btn:hover{transform:scale(1.1) rotate(-6deg)}
+.nxe-rail-btn:disabled{opacity:0;pointer-events:none}
+.nxe-note{display:flex;align-items:center;gap:10px;margin:-12px 0 38px;padding:14px 18px;border-radius:14px;background:#FFF6D4;border:3px solid var(--ink-c);box-shadow:5px 5px 0 var(--ink-c);color:var(--ink-c);font-weight:700;font-size:15px;transform:rotate(-.6deg)}
+.nxe-note .ic{width:22px;height:22px;flex:none;color:var(--blue)}
+
+/* ---------- the comic carries on down the page ----------
+   Slow sunbursts and doodles in the margins (they drift with the scroll: nexi-explains-hero.js), sidekicks that
+   peek in (Paige over the category tabs, Ribbit by the heading, Turbo crawling along the bottom) and Nexi waving
+   over the CTA panel. Doodles only where there is margin to spare, so they never sit under text. */
+.nxe-shows{overflow:hidden}
+.nxe-shows>.container{z-index:1}
+.nxe-paper{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.nxe-paper-rays{position:absolute;width:1400px;height:1400px;border-radius:50%;-webkit-mask-image:radial-gradient(closest-side,#000 10%,transparent 68%);mask-image:radial-gradient(closest-side,#000 10%,transparent 68%);animation:nxeSpin 140s linear infinite}
+.nxe-paper-rays--a{right:-700px;top:-560px;background:repeating-conic-gradient(rgba(255,210,63,.2) 0 6deg,transparent 6deg 16deg)}
+.nxe-paper-rays--b{left:-760px;bottom:-640px;background:repeating-conic-gradient(rgba(49,103,202,.09) 0 6deg,transparent 6deg 16deg);animation-direction:reverse}
+.nxe-pd,.nxe-pf,.nxe-pboom{position:absolute;display:none;transition:translate .2s linear}
+@media (min-width:1360px){.nxe-pd,.nxe-pf,.nxe-pboom{display:block}}
+.nxe-pd{overflow:visible;stroke:var(--ink-c);stroke-width:1.6}
+.nxe-pd--1,.nxe-pd--4,.nxe-pd--7{width:26px;height:26px;fill:var(--yel);animation:nxeTw 3.2s ease-in-out infinite}
+.nxe-pd--2{width:22px;height:30px;fill:var(--yel);animation:nxeZap 3.8s ease-in-out infinite}
+.nxe-pd--3,.nxe-pd--8{width:24px;height:22px;fill:#FF8FA8;animation:nxeBeat 1.8s ease-in-out infinite}
+.nxe-pd--5{width:40px;height:40px;fill:none;stroke:rgba(49,103,202,.4);stroke-width:3;animation:nxeSpin 16s linear infinite}
+.nxe-pd--6{width:10px;height:28px;fill:#fff;animation:nxeZap 3.1s ease-in-out -1s infinite}
+.nxe-pd--1{left:calc(50% - 668px);top:12%}
+.nxe-pd--2{right:calc(50% - 664px);top:20%;rotate:14deg}
+.nxe-pd--3{left:calc(50% - 660px);top:36%}
+.nxe-pd--4{right:calc(50% - 670px);top:44%;animation-delay:-1.2s}
+.nxe-pd--5{left:calc(50% - 676px);top:58%}
+.nxe-pd--6{right:calc(50% - 650px);top:66%;rotate:12deg}
+.nxe-pd--7{left:calc(50% - 650px);top:80%;animation-delay:-2s}
+.nxe-pd--8{right:calc(50% - 660px);top:88%}
+.nxe-pf{width:36px;height:36px;animation:nxeDrift 6.5s ease-in-out infinite}
+.nxe-pf img{display:block;width:100%;height:100%;filter:drop-shadow(3px 4px 0 rgba(16,28,69,.25))}
+.nxe-pf--1{left:calc(50% - 684px);top:26%;rotate:-8deg}
+.nxe-pf--2{right:calc(50% - 690px);top:32%;rotate:9deg;animation-delay:-2s}
+.nxe-pf--3{left:calc(50% - 690px);top:70%;rotate:6deg;animation-delay:-1s}
+.nxe-pf--4{right:calc(50% - 684px);top:76%;rotate:-6deg;animation-delay:-3s}
+.nxe-pboom{padding:12px 15px;font:400 20px/1 var(--comic);letter-spacing:.04em;color:var(--ink-c);background:var(--yel);clip-path:polygon(50% 0,61% 22%,86% 8%,78% 34%,100% 42%,79% 57%,92% 82%,64% 74%,52% 100%,40% 76%,13% 90%,21% 62%,0 50%,21% 37%,9% 12%,38% 22%);filter:drop-shadow(3px 3px 0 var(--ink-c));animation:nxeBoom 4.6s ease-in-out infinite}
+.nxe-pboom--1{left:calc(50% - 712px);top:47%;rotate:-12deg}
+.nxe-pboom--2{right:calc(50% - 716px);top:55%;rotate:10deg;background:#fff;animation-delay:-2s}
+/* sidekicks that peek in */
+.nxe-peek{position:absolute;z-index:2;display:block;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nxe-peek img{display:block;width:auto;height:100%;max-width:none;filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(4px 5px 0 rgba(16,28,69,.3));transform-origin:50% 100%}
+.nxe-peek:hover img{scale:1.06}
+.nxe-peek:focus-visible{outline:3px solid var(--blue);outline-offset:4px;border-radius:14px}
+.nxe-peek.is-hop img{animation:nxeHop .6s var(--spring)}
+.nxe-peekrow{position:relative;height:0}
+.nxe-peek--paige{right:2%;top:-58px;height:60px;z-index:3}
+.nxe-peek--paige img{animation:nxeInch 2.4s ease-in-out infinite}
+@keyframes nxeInch{50%{scale:1.06 .92}}
+.nxe-peek--ribbit{right:calc(50% - 560px);top:118px;height:96px}
+.nxe-peek--ribbit img{animation:nxeRibbit 4s ease-in-out infinite}
+@keyframes nxeRibbit{0%,70%,100%{translate:0 0}78%{translate:0 -26px;scale:.94 1.08}86%{translate:0 0;scale:1.1 .9}92%{scale:1}}
+.nxe-peek--turbo{left:3%;bottom:-4px;height:62px;animation:nxeCrawl 80s linear infinite}
+@keyframes nxeCrawl{0%{translate:0 0;scale:1 1}48%{translate:calc(94vw - 140px) 0;scale:1 1}50%{translate:calc(94vw - 140px) 0;scale:-1 1}98%{translate:0 0;scale:-1 1}100%{translate:0 0;scale:1 1}}
+@media (max-width:1240px){.nxe-peek--ribbit{right:3%}}
+@media (max-width:900px){.nxe-peek--ribbit{display:none}}
+/* Nexi waves over the top edge of the CTA panel (she stands behind it) */
+.nxe-cta .container{position:relative}
+.nxe-cta .cta{z-index:1}
+.nxe-cta-nexi{right:13%;top:-118px;height:190px;z-index:0}
+.nxe-cta-nexi img{animation:nxeBob 3.4s ease-in-out infinite;filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(6px 7px 0 rgba(16,28,69,.3))}
+@media (max-width:760px){.nxe-cta-nexi{right:8%;top:-92px;height:150px}.nxe-peek--paige{top:-50px;height:50px}}
+@media (prefers-reduced-motion:reduce){.nxe-paper *,.nxe-peek,.nxe-peek img{animation:none!important}}
+
+/* ---------- CTA: a deep-blue comic panel ---------- */
+.nxe-cta{background:#F4F7FE}
+.nxe-cta .cta{background:radial-gradient(900px 500px at 85% 20%,#3E74DE,#1D47A6 55%,var(--deep));border:3px solid var(--ink-c);box-shadow:10px 10px 0 var(--ink-c)}
+.nxe-cta .cta::after{right:-200px;top:-260px;width:620px;height:620px;background:repeating-conic-gradient(rgba(255,255,255,.08) 0 7deg,transparent 7deg 18deg);-webkit-mask-image:radial-gradient(closest-side,#000 15%,transparent 70%);mask-image:radial-gradient(closest-side,#000 15%,transparent 70%)}
+.nxe-cta .cta .hand{color:var(--yel)}
+
+/* ---------- player ---------- */
+.nxe-player{width:min(980px,94vw);max-width:none;max-height:94vh;padding:0;border:4px solid var(--ink-c);border-radius:22px;background:#fff;box-shadow:12px 12px 0 rgba(5,12,40,.6);overflow:hidden}
+.nxe-player::backdrop{background:rgba(11,29,82,.78);backdrop-filter:blur(4px)}
+.nxe-player[open]{animation:nxePlayer .45s var(--spring)}
+@keyframes nxePlayer{from{opacity:0;transform:translateY(16px) scale(.94) rotate(-1deg)}}
+.nxe-player-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 12px 20px;border-bottom:3px solid var(--ink-c);background:var(--yel)}
+.nxe-player-t{font:400 22px/1.2 var(--comic);letter-spacing:.04em;color:var(--ink-c)}
+.nxe-player-x{display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:12px;border:3px solid var(--ink-c);background:#fff;color:var(--ink-c);box-shadow:2px 2px 0 var(--ink-c);cursor:pointer}
+.nxe-player-x:hover{background:var(--blue-050)}
+.nxe-player-x .ic{width:20px;height:20px}
+.nxe-player-frame{aspect-ratio:16/9;background:#0B0F1E}
+.nxe-player-frame iframe{display:block;width:100%;height:100%;border:0}
+.nxe-player-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-top:3px solid var(--ink-c)}
+.nxe-player-foot .btn{border:2.5px solid var(--ink-c);box-shadow:0 3px 0 var(--ink-c);color:var(--ink-c)}
+.nxe-player-foot .btn::before{display:none}
+.nxe-player-foot .btn .ic{width:16px;height:16px}
+.nxe-player-foot [data-nxe-prev] .ic{transform:rotate(90deg)}
+.nxe-player-foot [data-nxe-next-ep] .ic{transform:rotate(-90deg)}
+.nxe-player-foot .btn:disabled{opacity:.4;cursor:default}
+
+
+/* ---------- responsive ---------- */
+@media (min-width:1101px){.nxe-hero{display:flex;flex-direction:column;justify-content:center;min-height:clamp(780px,100svh,1000px)}.nxe-hero>.container{width:100%}}
+@media (max-width:1100px){
+  .nxe-slide{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:14px;align-content:stretch}
+  .nxe-spread{width:100%;max-width:620px;margin:40px auto 0;align-self:end}   /* room above the panels for Olive, the stopwatch and the stamps */
+  .nxe-fl--1,.nxe-fl--2,.nxe-fl--6,.nxe-fl--7,.nxe-cloud--3{display:none}
+  .nxe-ctl{justify-content:center}
+  .nxe-gutter{display:none}
+  .nxe-boom--1{left:auto;right:4%;top:calc(var(--header-h) + 8px);font-size:22px;padding:12px 15px}
+  .nxe-fmt-race{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "stage" "belt"}
+  .nxe-fmt-splash{grid-template-areas:"top" "narr" "stage" "foot"}
+  .nxe-narrator{grid-area:narr;justify-self:center;max-width:620px;margin:0;rotate:-.6deg}
+  .nxe-fmt-splash>.nxe-spread,.nxe-fmt-strip>.nxe-spread{max-width:none;margin-top:14px}
+  .nxe-fmt-race{grid-template-rows:auto 1fr auto}
+  .nxe-fmt-splash{grid-template-rows:auto auto 1fr auto}
+  .nxe-fmt-strip{grid-template-rows:auto 1fr}
+  /* the stage and the triptych take whatever height the tallest slide leaves (no gap above them) */
+  .nxe-spread.nxe-sp--cast,.nxe-spread.nxe-sp--specials{aspect-ratio:auto;align-self:stretch;min-height:clamp(290px,46vw,440px)}
+  .nxe-copy--banner{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .nxe-spread.nxe-sp--cast{aspect-ratio:1/1;align-self:end;min-height:0}
+  .nxe-spread.nxe-sp--specials{aspect-ratio:1/1.15;align-self:end;min-height:0}
+  .nxe-spot-2,.nxe-spot-7{display:none}
+  .nxe-spot-1{left:1%}.nxe-spot-8{right:1%}.nxe-spot-3{left:17%}.nxe-spot-6{right:17%}.nxe-spot-4{left:25%}.nxe-spot-5{right:25%}
+  .nxe-sp--cast .nxe-hero-nexi{height:58cqw;bottom:9%}
+  .nxe-troupe .nxe-kid{height:24cqw!important}
+  .nxe-troupe .nxe-spot-1,.nxe-troupe .nxe-spot-8{height:27cqw!important}
+  .nxe-spot-4,.nxe-spot-5{bottom:16%!important}
+  .nxe-podium{bottom:6%;width:34%}
+  .nxe-sp--cast .nxe-say{max-width:46cqw;font-size:13px;top:-13%}
+  .nxe-curtain{width:9%}
+  .nxe-valance{background-size:6cqw 100%}
+  .nxe-tag{font-size:12px}
+  .nxe-recast{font-size:15px;padding:6px 12px;bottom:-14px}
+  .nxe-sp--specials .nxe-hero-nexi{height:44cqw;bottom:-3%}
+  .nxe-sp--specials .nxe-say{max-width:46cqw;font-size:13px;bottom:46%;left:calc(var(--nx,24%) - 8%)}
+  .nxe-hs-name{font-size:17px}
+  .nxe-stamp{font-size:11.5px}
+  .nxe-tipc{width:128px}
+  .nxe-tipc b{font-size:14px}
+  .nxe-belt{padding:12px 0 20px}
+  .nxe-copy--foot{gap:14px}
+  .nxe-hero{padding:calc(var(--header-box) + 22px) 0 78px;clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),0 100%)}
+  .nxe-shows{margin-top:-30px;padding-top:94px}
+  .nxe-title{font-size:clamp(2.6rem,12.5vw,4rem)}
+  .nxe-title .hand,.nxe-hand{font-size:1.35rem}
+  .nxe-copy .lead{margin-bottom:20px}
+  .nxe-copy .actions{margin-bottom:20px}
+  .nxe-boom--1{left:auto;right:4%;top:calc(var(--header-h) + 8px);font-size:22px;padding:12px 15px}
+  .nxe-plane{display:none}
+  .nxe-boom--2,.nxe-fl--3,.nxe-fl--5,.nxe-dd--1,.nxe-dd--2,.nxe-dd--3,.nxe-dd--5,.nxe-dd--swirl,.nxe-dd--bolt,.nxe-dd--bang,.nxe-moon{display:none}
+  .nxe-fl--4{bottom:10%}
+  .nxe-spread{margin-top:34px}
+  .nxe-arrow{display:none}
+  .nxe-ctl{gap:8px;margin-top:22px}
+  .nxe-chapters{flex:1;gap:6px}
+  .nxe-chap{flex:1 1 0;justify-content:center;height:40px;padding:0 4px 3px;font-size:16px;letter-spacing:.03em;white-space:nowrap}
+  .nxe-chap-x{display:none}
+  .nxe-pp{width:40px;height:40px;margin-left:0}
+  .nxe-season-head{grid-template-columns:1fr;padding:24px 20px;box-shadow:6px 6px 0 var(--ink-c)}
+  .nxe-season-act{flex-direction:row;flex-wrap:wrap}
+  .nxe-grid,.nxe-grid--3{grid-template-columns:repeat(2,1fr);gap:26px 16px}
+  .nxe-tab{min-width:0;flex:1 1 140px;padding:11px 14px}
+  .nxe-tab b{font-size:20px}
+  .nxe-rail-btn{display:none}
+  .nxe-rail{grid-auto-columns:72%}
+  .nxe-cta .cta{box-shadow:6px 6px 0 var(--ink-c)}
+}
+@media (max-width:520px){
+  .nxe-spread{aspect-ratio:1/1}
+  .nxe-spread.nxe-sp--tips{aspect-ratio:6/4.8}
+  .nxe-sp--tips .nxe-say{right:24%;top:-12%;max-width:46cqw;font-size:13px}
+  .nxe-pn--next{width:80%;bottom:0}
+  .nxe-kid--dot{display:none}
+  .nxe-sp--series .nxe-hero-nexi{top:24%;height:54%;right:-7%}
+  .nxe-sp--series .nxe-say{top:6%}
+  .nxe-grid,.nxe-grid--3{grid-template-columns:1fr}
+  .nxe-copy .actions .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .nxe-hero *,.nxe-hero *::before,.nxe-hero *::after{animation:none!important;transition:none!important}
+  .nxe-plane,.nxe-shards{display:none}
+  body.is-nxe .wa-float{animation:none}
+  .nxe-status.is-live::before{animation:none}
+  .nxe-js .nxe-panel.is-on,.nxe-player[open]{animation:none}
+  .nxe-anim .nxe-card{opacity:1;transform:none}
+  .nxe-card:hover .nxe-thumb,.nxe-card:hover .nxe-drawn-nexi{transform:none}
+}
+
+/* ---------- categories: Series / Specials / Comics / Characters ----------
+   Four comic "channel buttons" (ARIA tabs, deep links #series #specials #comics #characters), each category a
+   panel; Series and Characters carry a season filter (pill chips, aria-pressed). */
+.nxe-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.nxe-cats .nxe-tab{position:relative;min-width:0;padding:14px 18px 14px 62px;min-height:74px;justify-content:center}
+.nxe-tab-n{position:absolute;left:12px;top:50%;display:grid;place-items:center;width:38px;height:38px;margin-top:-19px;border-radius:50%;border:2.5px solid var(--ink-c);background:var(--blue);color:#fff;font:400 18px/1 var(--comic);letter-spacing:.03em;transition:transform .35s var(--spring)}
+.nxe-tab--specials .nxe-tab-n{background:var(--red)}
+.nxe-tab--comics .nxe-tab-n{background:#14907F}
+.nxe-tab--characters .nxe-tab-n{background:#6450F0}
+.nxe-cats .nxe-tab[aria-selected="true"] .nxe-tab-n{transform:rotate(-10deg) scale(1.08)}
+.nxe-cats .nxe-tab:nth-child(even)[aria-selected="true"]{transform:rotate(1.6deg)}
+.nxe-js .nxe-cat{display:none}
+.nxe-js .nxe-cat.is-on{display:block}
+.nxe-cat:focus{outline:none}
+.nxe-cat + .nxe-cat{margin-top:72px}
+.nxe-js .nxe-cat + .nxe-cat{margin-top:0}
+.nxe-js .nxe-group{display:none}
+.nxe-js .nxe-group.is-on{display:block;animation:nxeIn .45s var(--ease-out)}
+.nxe-group + .nxe-group{margin-top:56px}
+.nxe-js .nxe-group + .nxe-group{margin-top:0}
+
+/* season filter */
+.nxe-filter{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 30px;padding:10px 12px;border-radius:16px;background:#fff;border:2.5px dashed rgba(16,28,69,.28)}
+.nxe-filter-l{font:400 16px/1 var(--comic);letter-spacing:.08em;color:#4A5478;padding:0 4px}
+.nxe-chip{display:inline-flex;align-items:baseline;gap:8px;padding:9px 15px 8px;border-radius:999px;border:2.5px solid var(--ink-c);background:#fff;color:var(--ink-c);cursor:pointer;box-shadow:3px 3px 0 var(--ink-c);transition:transform .25s var(--spring),background-color .2s ease}
+.nxe-chip b{font:400 18px/1 var(--comic);letter-spacing:.05em;color:inherit}
+.nxe-chip small{font:600 12px/1 var(--font-body);color:#4A5478}
+.nxe-chip:hover{transform:translate(-1px,-2px)}
+.nxe-chip[aria-pressed="true"]{background:var(--blue);color:#fff}
+.nxe-chip[aria-pressed="true"] small{color:#DCE7FF}
+.nxe-chip:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* characters: trading cards */
+.nxe-chars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 22px}
+.nxe-ch{display:flex;flex-direction:column;min-width:0;border-radius:18px;background:#fff;border:3px solid var(--ink-c);box-shadow:6px 6px 0 var(--ink-c);overflow:hidden;transition:transform .35s var(--spring),box-shadow .25s ease}
+.nxe-ch:hover{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:9px 9px 0 var(--ink-c)}
+.nxe-anim .nxe-ch{opacity:0;transform:translateY(22px) scale(.93) rotate(-2deg)}
+.nxe-anim .nxe-ch.is-in{animation:nxePopIn .6s var(--spring) both;animation-delay:var(--k,0ms)}
+.nxe-ch-art{position:relative;height:200px;border-bottom:3px solid var(--ink-c);background:linear-gradient(150deg,var(--c1),var(--c2));overflow:hidden}
+.nxe-ch-art::before{content:"";position:absolute;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:repeating-conic-gradient(rgba(255,255,255,.2) 0 8deg,transparent 8deg 20deg);-webkit-mask-image:radial-gradient(closest-side,#000 20%,transparent 72%);mask-image:radial-gradient(closest-side,#000 20%,transparent 72%)}
+.nxe-ch-art::after{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.24) 1.2px,transparent 1.7px) 0 0/12px 12px;-webkit-mask-image:linear-gradient(200deg,transparent 45%,#000);mask-image:linear-gradient(200deg,transparent 45%,#000);pointer-events:none}
+.nxe-ch-art img{position:absolute;left:50%;bottom:-8px;z-index:1;height:90%;width:auto;translate:-50% 0;filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(6px 6px 0 rgba(9,20,48,.35));transition:transform .4s var(--spring)}
+.nxe-ch:not(.nxe-ch--cos):hover .nxe-ch-art img,.nxe-ch:hover .nxe-ch-cv{transform:translateY(-6px) rotate(-4deg)}
+.nxe-ch-cv{position:absolute;inset:0;z-index:1;width:100%;height:100%;transition:transform .4s var(--spring)}
+.nxe-ch-letter{position:absolute;left:50%;top:50%;z-index:1;display:grid;place-items:center;width:104px;height:104px;margin:-60px 0 0 -52px;border-radius:50% 50% 50% 12%;background:#fff;border:3px solid var(--ink-c);box-shadow:5px 5px 0 var(--ink-c);transform:rotate(-6deg)}
+.nxe-ch-letter b{font:400 58px/1 var(--comic);color:var(--ink-c);transform:rotate(6deg) translateY(3px)}
+.nxe-ch-soon{position:absolute;left:12px;bottom:12px;z-index:2;padding:4px 9px 3px;border-radius:8px;background:var(--yel);border:2px solid var(--ink-c);color:var(--ink-c);font:400 13.5px/1 var(--comic);letter-spacing:.05em;transform:rotate(-2deg)}
+.nxe-ch-body{display:flex;flex-direction:column;align-items:flex-start;flex:1;padding:16px 18px 18px}
+.nxe-ch-body h4{margin:0 0 6px;font-size:1.1rem;line-height:1.25;color:var(--ink-c)}
+.nxe-ch-line{margin:0;font-size:14.5px;line-height:1.5;color:var(--body);font-style:italic}
+.nxe-ch-eps{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0}
+.nxe-ch-eps li{padding:4px 8px 3px;border-radius:7px;background:var(--blue-050);border:2px solid var(--ink-c);color:var(--ink-c);font:400 13px/1 var(--comic);letter-spacing:.06em}
+.nxe-ch-body .nxe-more{margin-top:auto;padding-top:6px}
+/* industry costumes: each card in its industry's own accent (worlds.SHOW_SKIN, the menu badge + world colour), two poses */
+.nxe-ch--cos .nxe-ch-art{background:radial-gradient(120% 90% at 50% 100%,var(--c2) 0 38%,transparent 70%),linear-gradient(160deg,var(--c1),color-mix(in srgb,var(--c1) 70%,var(--ci)))}
+.nxe-ch--cos .nxe-kick{color:var(--ci)}
+.nxe-ch--cos .nxe-ch-body{border-top:6px solid var(--c1)}
+.nxe-ch--cos .nxe-ch-art .nxe-ch-p2{opacity:0;transform:translateY(10px) scale(.94)}
+.nxe-ch--cos .nxe-ch-art img{transition:opacity .3s ease,transform .45s var(--spring)}
+@media (hover:hover){
+  .nxe-ch--cos:hover .nxe-ch-p1{opacity:0;transform:translateY(10px) scale(.94)}
+  .nxe-ch--cos:hover .nxe-ch-p2{opacity:1;transform:translateY(-4px) rotate(-3deg)}
+}
+/* revised Season 1 sidekicks (painted from the films) and the Season 1 wardrobe (3D renders) */
+.nxe-ch-art img[src*="/cast/"]{height:80%;bottom:10px;max-width:88%;object-fit:contain}
+.nxe-ch--wd .nxe-ch-art img{height:92%;bottom:-4px}
+.nxe-ch--wd .nxe-kick{color:#4A5478}
+
+/* comics: coming soon */
+.nxe-soonbox{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:center;padding:32px;border-radius:22px;background:#fff;border:3px solid var(--ink-c);box-shadow:8px 8px 0 var(--ink-c)}
+.nxe-soonbox::before{content:"";position:absolute;right:-200px;top:-240px;width:560px;height:560px;border-radius:50%;background:repeating-conic-gradient(rgba(255,210,63,.32) 0 7deg,transparent 7deg 18deg);-webkit-mask-image:radial-gradient(closest-side,#000 20%,transparent 70%);mask-image:radial-gradient(closest-side,#000 20%,transparent 70%);pointer-events:none}
+.nxe-soonbox>*{position:relative}
+.nxe-soon-panels{display:grid;grid-template-columns:1fr 1.25fr;grid-template-rows:150px 120px;gap:12px;transform:rotate(-1.5deg)}
+.nxe-sp{position:relative;overflow:hidden;display:grid;place-items:center;border:3px solid var(--ink-c);border-radius:10px;box-shadow:4px 4px 0 var(--ink-c);background:#F4F7FE}
+.nxe-sp--1{background:var(--red)}
+.nxe-sp--1 i{font:400 44px/1 var(--comic);font-style:normal;color:var(--yel);letter-spacing:.04em;transform:rotate(-8deg);text-shadow:3px 3px 0 var(--ink-c);animation:nxeSoonPow 2.6s var(--spring) infinite}
+@keyframes nxeSoonPow{0%,70%,100%{transform:rotate(-8deg) scale(1)}80%{transform:rotate(-4deg) scale(1.14)}}
+.nxe-sp--2{grid-row:span 2;background:linear-gradient(150deg,#2F5FC4,#79A6F6)}
+.nxe-sp--2::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.25) 1.2px,transparent 1.7px) 0 0/12px 12px}
+.nxe-sp--2 img{position:absolute;bottom:-6px;left:50%;height:92%;width:auto;translate:-50% 0;filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)}
+.nxe-sp--3{background:var(--yel)}
+.nxe-sp--3 b{font:400 22px/1.1 var(--comic);letter-spacing:.05em;color:var(--ink-c);text-align:center;padding:0 10px}
+.nxe-soon-copy h2{margin:14px 0 10px;font-size:clamp(1.6rem,2.8vw,2.3rem);color:var(--ink-c)}
+.nxe-soon-copy p{max-width:52ch;margin-bottom:20px}
+.nxe-soon-copy .actions{display:flex;flex-wrap:wrap;gap:12px}
+.nxe-shows .nxe-soon-copy .btn-ghost{background:#fff;color:var(--ink-c);border:2.5px solid var(--ink-c);box-shadow:3px 3px 0 var(--ink-c)}
+.nxe-shows .nxe-soon-copy .btn-ghost::before{display:none}
+
+@media (max-width:900px){
+  .nxe-cats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .nxe-soonbox{grid-template-columns:1fr;padding:24px 20px}
+}
+@media (max-width:760px){
+  .nxe-cats .nxe-tab{padding:11px 12px 11px 54px;min-height:66px;flex:none}
+  .nxe-tab-n{width:32px;height:32px;margin-top:-16px;left:11px;font-size:15px}
+  .nxe-cats .nxe-tab small{font-size:11.5px}
+  .nxe-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:9px 10px}
+  .nxe-filter::-webkit-scrollbar{display:none}
+  .nxe-chip{flex:none;padding:8px 12px 7px}
+  .nxe-chars{grid-template-columns:repeat(2,1fr);gap:18px 14px}
+  .nxe-ch-art{height:150px}
+  .nxe-ch-body{padding:12px 12px 14px}
+  .nxe-ch-body h4{font-size:.98rem}
+  .nxe-ch-line{font-size:13.5px}
+  .nxe-ch-letter{width:80px;height:80px;margin:-46px 0 0 -40px}
+  .nxe-ch-letter b{font-size:44px}
+  .nxe-soon-panels{grid-template-rows:120px 96px}
+}
+@media (max-width:420px){
+  .nxe-chip small{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .nxe-anim .nxe-ch{opacity:1;transform:none}
+  .nxe-js .nxe-group.is-on,.nxe-sp--1 i{animation:none}
+  .nxe-ch:hover,.nxe-ch:hover .nxe-ch-art img,.nxe-ch:hover .nxe-ch-cv{transform:none}
+}
+
+/* ---------- phones: compact + tidy (2026-10-12: "too big and scattered") ----------
+   Smaller type, no floating decor over the copy, stats hidden (the season tabs below repeat them),
+   one shared stage height so the four slides do not leave gaps, episode cards as compact rows. */
+@media (max-width:600px){
+  .nxe-hero{padding:calc(var(--header-box) + 10px) 0 58px}
+  .nxe-hero .crumbs{margin-bottom:6px}
+  .nxe-title{font-size:clamp(2.15rem,10.4vw,2.9rem)}
+  .nxe-title .hand,.nxe-hand{font-size:1.1rem}
+  .nxe-copy .lead{font-size:15px;line-height:1.5;margin-bottom:14px}
+  .nxe-copy .actions{gap:10px;margin-bottom:0}
+  .nxe-copy .actions .btn-lg{min-height:46px;padding-top:10px;padding-bottom:10px;font-size:15px}
+  .nxe-hero .nxe-stats{display:none}
+  .nxe-narrator{font-size:14px;line-height:1.45;padding:10px 14px}
+  /* flicker on phones (owner 2026-10-13): no tilt, and its own GPU layer so the orbiting cast never repaints it */
+  .nxe-narrator{rotate:none;z-index:8;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+  .nxe-troupe .nxe-kid{will-change:translate}
+  .nxe-copy--foot{gap:10px}
+  .nxe-copy--foot .actions{width:100%}
+  /* decor that drifted over the copy or the controls */
+  .nxe-fl,.nxe-dd,.nxe-flybat,.nxe-kid--olive,.nxe-cloud--2{display:none}
+  .nxe-boom--1{font-size:17px;padding:9px 11px;top:calc(var(--header-h) + 4px)}
+  /* one stage height for every slide */
+  .nxe-spread,.nxe-spread.nxe-sp--tips,.nxe-spread.nxe-sp--cast,.nxe-spread.nxe-sp--specials{aspect-ratio:auto;height:auto;min-height:min(78vw,300px);margin-top:16px;align-self:stretch}
+  .nxe-spread.nxe-sp--tips{min-height:min(62vw,240px)}
+  .nxe-ctl{margin-top:16px}
+  .nxe-shows{padding-top:72px}
+
+  /* episodes: a compact row per card (thumbnail left, title right) */
+  .nxe-arc{margin-bottom:34px}
+  .nxe-arc-h{margin-bottom:16px}
+  .nxe-arc-h h3{font-size:1rem;padding:6px 12px 5px;box-shadow:3px 3px 0 var(--ink-c)}
+  .nxe-arc-h span{font-size:14px}
+  .nxe-shows .nxe-grid{grid-template-columns:1fr;gap:16px}
+  .nxe-shows .nxe-grid .nxe-card{display:grid;grid-template-columns:46% minmax(0,1fr);gap:12px;align-items:center}
+  .nxe-grid .nxe-thumb{border-width:2.5px;border-radius:11px;box-shadow:4px 4px 0 var(--ink-c)}
+  .nxe-grid .nxe-state{left:5px;top:5px;bottom:auto;max-width:calc(100% - 10px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px 6px 2px;font-size:10.5px;border-width:1.5px}
+  .nxe-grid .nxe-len{right:5px;bottom:5px;padding:3px 5px;font-size:10px}
+  .nxe-grid .nxe-playic{width:34px;height:34px;margin:-17px 0 0 -17px;border-width:2.5px}
+  .nxe-grid .nxe-playic .ic{width:15px;height:15px;margin-left:2px}
+  .nxe-grid .nxe-body{padding:0}
+  .nxe-grid .nxe-kick{font-size:14px;margin-bottom:3px}
+  .nxe-grid .nxe-body h4{font-size:.95rem;line-height:1.25;margin-bottom:3px}
+  .nxe-grid .nxe-body p{font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .nxe-grid .nxe-more{display:none}
+  .nxe-anim .nxe-card{transform:translateY(14px)}
+  .nxe-anim .nxe-card.is-in{animation:nxeRowIn .4s var(--ease-out) both;animation-delay:min(var(--k,0ms),160ms)}
+  /* smoother slide changes on phones: no whole-deck shake, the burst alone sells it */
+  .nxe-hero.is-shake .nxe-deck,.nxe-spread.is-shake .nxe-pn--tv{animation:none}
+  /* cast: all eight sidekicks circle Nexi on a ring that slowly orbits (owner 2026-10-12).
+     --spin is a registered angle animated on the troupe; each kid sits at its own --a on the ring. */
+  .nxe-sp--cast .nxe-say{top:2%;left:auto;right:3%;translate:none;max-width:34cqw;z-index:7}
+  .nxe-sp--cast .nxe-hero-nexi{height:44cqw;bottom:calc(50% - 21cqw)}
+  .nxe-podium{bottom:calc(50% - 24cqw);width:26%}
+  .nxe-sp--cast .nxe-troupe{z-index:6;animation:nxeOrbit 48s linear infinite;animation-play-state:paused}
+  .nxe-slide.is-on .nxe-sp--cast .nxe-troupe{animation-play-state:running}
+  .nxe-sp--cast:hover .nxe-troupe,.nxe-sp--cast:focus-within .nxe-troupe{animation-play-state:paused}
+  .nxe-troupe .nxe-kid,.nxe-troupe .nxe-spot-1,.nxe-troupe .nxe-spot-8{height:18cqw!important}
+  .nxe-troupe .nxe-kid{z-index:6;left:50%!important;right:auto!important;top:auto!important;bottom:calc(50% + 1cqw)!important;
+    translate:calc(-50% + cos(var(--a) + var(--spin)) * 37cqw) calc(50% + sin(var(--a) + var(--spin)) * 33cqw)}
+  .nxe-troupe .nxe-spot-2,.nxe-troupe .nxe-spot-7{display:block}
+  .nxe-troupe .nxe-spot-1{--a:180deg}.nxe-troupe .nxe-spot-2{--a:225deg}.nxe-troupe .nxe-spot-3{--a:270deg}.nxe-troupe .nxe-spot-4{--a:315deg}
+  .nxe-troupe .nxe-spot-5{--a:0deg}.nxe-troupe .nxe-spot-6{--a:45deg}.nxe-troupe .nxe-spot-7{--a:90deg}.nxe-troupe .nxe-spot-8{--a:135deg}
+  .nxe-rail{grid-auto-columns:62%}
+  .nxe-season-head{padding:20px 16px}
+}
+@keyframes nxeRowIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@property --spin{syntax:'<angle>';inherits:true;initial-value:0deg}
+@keyframes nxeOrbit{to{--spin:360deg}}
+@media (prefers-reduced-motion:reduce){.nxe-sp--cast .nxe-troupe{animation:none}}
+
+/* locked until the premiere (nexi-explains.js toggles .is-wait every 30 s): no play button, no hover lift; a tap wiggles the tag */
+.nxe-thumb.is-wait{cursor:default}
+.nxe-thumb.is-wait .nxe-playic{display:none}
+.nxe-card:hover .nxe-thumb.is-wait{transform:none;box-shadow:6px 6px 0 var(--ink-c)}
+.nxe-thumb.is-wait .nxe-state{background:#fff}
+.nxe-state.is-nudge{animation:nxeNudge .45s var(--spring)}
+@keyframes nxeNudge{0%,100%{translate:0}20%{translate:-5px 0}40%{translate:5px 0}60%{translate:-3px 0}80%{translate:3px 0}}
+@media (prefers-reduced-motion:reduce){.nxe-state.is-nudge{animation:none}}

@@ -1,0 +1,41 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Careers page demo: find your role (demo-rolematch.js) */
+.drm-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.drm-left{padding:16px;border-right:1px solid var(--line)}
+.drm-h{margin:0 0 10px;font:700 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.drm-chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+.drm-chips button{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 12.5px/1.25 var(--font-body);color:var(--ink);cursor:pointer;text-align:left;transition:border-color .2s ease,background-color .2s ease,color .2s ease}
+.drm-chips button .ic{width:15px;height:15px;color:var(--blue);flex:none}
+.drm-chips button:hover{border-color:var(--blue-300)}
+.drm-chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.drm-chips button[aria-pressed="true"] .ic{color:#fff}
+.drm-chips button:focus-visible,.drm-row button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.drm-rank{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.drm-row{--v:0;display:grid;grid-template-columns:minmax(0,1fr) 46px auto;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:#fff;position:relative;overflow:hidden;transition:border-color .3s ease}
+.drm-row::before{content:"";position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--v));background:linear-gradient(90deg,var(--blue-050),rgba(234,240,251,.4));transition:transform .6s var(--ease-expo);z-index:0}
+.drm-row>*{position:relative;z-index:1}
+.drm-row b{display:block;font:700 12.5px/1.25 var(--font-display);color:var(--ink)}
+.drm-row small{display:block;font:500 10.5px/1.3 var(--font-body);color:var(--muted)}
+.drm-pc{font:800 13px/1 var(--font-display);color:var(--blue-700);text-align:right;font-variant-numeric:tabular-nums}
+.drm-row button{height:28px;padding:0 10px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 11px/1 var(--font-body);color:var(--ink);cursor:pointer;white-space:nowrap}
+.drm-row button:hover{border-color:var(--blue-300);background:var(--blue-050)}
+.drm-row.is-top{border-color:var(--blue-300);box-shadow:0 0 0 3px rgba(49,103,202,.1)}
+.drm-right{padding:16px;background:rgba(250,249,251,.75)}
+.drm-ft{margin:0 0 12px;font:700 15px/1.3 var(--font-display);color:var(--ink)}
+.drm-flow{position:relative;display:grid;gap:10px;margin:0;padding:0 0 0 4px;list-style:none}
+.drm-flow::before{content:"";position:absolute;left:17px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--blue-300),var(--blue-100))}
+.drm-flow li{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:center;animation:dmLog .5s var(--spring) both;animation-delay:calc(var(--i) * 90ms)}
+.drm-flow li i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid var(--blue);font:800 11px/1 var(--font-display);font-style:normal;color:var(--blue);z-index:1}
+.drm-flow li span{padding:9px 12px;border-radius:10px;background:#fff;border:1px solid var(--line);font:500 12.5px/1.4 var(--font-body);color:var(--body)}
+.drm-empty{display:grid;place-items:center;min-height:170px;border:1px dashed var(--line);border-radius:12px;font:500 12.5px/1.5 var(--font-body);color:var(--muted);text-align:center;padding:16px}
+.dm-rolematch.has-top .drm-empty{display:none}
+#role-list .job.is-matched{animation:drmHi 1.8s ease-out}
+@keyframes drmHi{0%,40%{box-shadow:0 0 0 4px rgba(49,103,202,.35),0 20px 40px -20px rgba(49,103,202,.6)}100%{box-shadow:none}}
+@media (max-width:860px){.drm-wrap{grid-template-columns:minmax(0,1fr)}.drm-left{border-right:0;border-bottom:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){.drm-flow li{animation:none}.drm-row::before{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .drm-h,
+  .drm-row small{font-size:11px}
+}

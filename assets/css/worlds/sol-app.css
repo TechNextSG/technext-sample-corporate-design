@@ -1,0 +1,256 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-app (/solutions/app-development) — "The Ride Workshop". Carnival coral, ride teal, sunshine yellow, ink navy.
+   The title card is an attraction sign under a striped scalloped awning; the caption is a ride ticket with punched notches;
+   buttons are chunky ride-control buttons; the glance strip carries a string of marquee bulbs. Below the hero the page is
+   the park: an info sign, the ride-control console round the demo, a park map of six kiosks, the test track with four
+   stations, an all-access pass beside a punch card, the guest-services desk, wooden direction arrows and the opening day. */
+.ixw--sol-app{--tp-coral:#FF6B57;--tp-coral-d:#D9483A;--tp-coral-l:#FFE9E4;--tp-teal:#14B1C4;--tp-teal-d:#0B7F8E;--tp-teal-l:#E2F6F9;--tp-sun:#FFC93C;--tp-sun-d:#E0A419;--tp-ink:#1C2340;--tp-cream:#FFF7EA;--tp-mint:#35C08E;
+  --tp-stripe:repeating-linear-gradient(90deg,var(--tp-coral) 0 26px,#FFFFFF 26px 52px);
+  --tp-bulbs:radial-gradient(circle,#FFE27A 3px,rgba(255,226,122,.35) 4.5px,transparent 5.5px);
+  --w-alt:#FFF5EC;--w-dot:rgba(255,107,87,.10);--lab-bd:2px solid #1C2340;--lab-lip:#1C2340;--lab-tail:#1C2340;--lab-r:10px;
+  
+  --ii-bg:linear-gradient(160deg,#FFF7EA,#FFE4DC 55%,#D9F4F8);--ii-ink:#1C2340;--ii-b:#FF6B57;--ii-accent:#14B1C4;--ii-lip:#1C2340;--ii-ep-bg:#FF6B57;--ii-ep-fg:#FFFFFF;
+  --ii-pattern:radial-gradient(rgba(255,107,87,.16) 2px,transparent 2.4px) 0 0/22px 22px}
+.ixw--sol-app .ixw-hero{background:linear-gradient(180deg,#7CC8F2 0,#CDEBFB 22%,#EAF8FE 34%,#BFE3BE 34%,#BFE3BE 37%,#F3E5D2 37%,#F1DFC8 100%)}
+
+/* ---------- the title card: an attraction sign under a striped awning ---------- */
+.ixw--sol-app .ixw-copy{position:relative;max-width:500px;margin-top:26px;padding:50px 30px 28px;border-radius:6px 6px 20px 20px;background:#FFFFFF;
+  box-shadow:0 0 0 2px var(--tp-ink),0 7px 0 var(--tp-ink),0 44px 70px -34px rgba(40,30,60,.45)}
+.ixw--sol-app .ixw-copy::before{content:"";position:absolute;left:-10px;right:-10px;top:-14px;height:42px;border-radius:8px 8px 0 0;background:repeating-linear-gradient(90deg,var(--tp-teal) 0 26px,#FFFFFF 26px 52px);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 13px) no-repeat,radial-gradient(circle 13px at 50% 0,#000 97%,#0000) bottom/26px 13px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 13px) no-repeat,radial-gradient(circle 13px at 50% 0,#000 97%,#0000) bottom/26px 13px repeat-x}
+.ixw--sol-app .ixw-copy::after{content:"NOW BOARDING";position:absolute;right:22px;top:-30px;padding:7px 12px;border-radius:999px;background:var(--tp-sun);box-shadow:0 0 0 2px var(--tp-ink),0 3px 0 var(--tp-ink);
+  font:800 10.5px/1 var(--font-body);letter-spacing:.14em;color:var(--tp-ink)}
+.ixw--sol-app .ixw-copy h1{max-width:13ch}
+.ixw--sol-app .ixw-copy .hand{color:var(--tp-coral-d)}
+.ixw--sol-app .ixw-ep-tag{background:var(--tp-ink)}.ixw--sol-app .ixw-ep-tag .ic{background:var(--tp-sun)}
+.ixw--sol-app .tpk-badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.ixw--sol-app .tpk-badges span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 8px;border-radius:999px;background:var(--tp-teal-l);box-shadow:inset 0 0 0 1.5px #9EDDE6;font:800 12px/1 var(--font-body);color:#0B5E69}
+.ixw--sol-app .tpk-badges .ic{width:15px;height:15px;color:var(--tp-teal-d)}
+.ixw--sol-app .tpk-badges .is-ok{background:#E3F6EE;box-shadow:inset 0 0 0 1.5px #A6E3C8;color:#16704C}.ixw--sol-app .tpk-badges .is-ok .ic{color:var(--tp-mint)}
+.ixw--sol-app .ixw-copy .actions{margin-top:22px}
+.ixw--sol-app .ixw-hint .ic{color:var(--tp-coral)}
+@media (max-width:767px){.ixw--sol-app .ixw-copy{padding:42px 20px 22px}.ixw--sol-app .ixw-copy::after{right:14px}}
+
+/* ---------- the caption: a ride ticket with two punched notches ---------- */
+.ixw--sol-app .ixw-cap{border-radius:16px;background:radial-gradient(circle at 0 50%,transparent 11px,#FFFFFF 11.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 11px,#FFFFFF 11.5px) right/51% 100% no-repeat;
+  box-shadow:none;filter:drop-shadow(0 0 1.5px var(--tp-ink)) drop-shadow(0 5px 0 var(--tp-ink)) drop-shadow(0 22px 26px rgba(40,30,60,.22))}
+.ixw--sol-app .ixw-cap::before{content:"\2605  RIDE ANNOUNCEMENT";position:absolute;left:22px;top:-13px;padding:5px 11px;border-radius:999px;background:var(--tp-coral);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em}
+.ixw--sol-app .ixw-cap-who b{color:var(--tp-coral-d)}.ixw--sol-app .ixw-cap-txt b{color:var(--tp-teal-d)}
+.ixw--sol-app .ixw-cap-rec{background:var(--tp-cream);border:1.5px dashed #F3B7A9;color:#8A3A2C}
+.ixw--sol-app .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2.5px var(--tp-sun)}
+
+/* ---------- buttons: chunky ride-control buttons ---------- */
+.ixw--sol-app main :is(.btn-primary,.btn-ghost,.tpk-open-sec .btn-white,.tpk-open-sec .btn-outline-white){border:2px solid var(--tp-ink);border-radius:14px;box-shadow:0 5px 0 var(--tp-ink);transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-app main .btn-primary,.ixw--sol-app main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#FF8574,#FF6B57 55%,#F25A45)}
+.ixw--sol-app main .btn-primary .ic{color:#FFFFFF}
+.ixw--sol-app main :is(.btn-ghost,.tpk-open-sec .btn-white),.ixw--sol-app main :is(.btn-ghost,.tpk-open-sec .btn-white):hover{color:var(--tp-ink);background:var(--tp-cream)}
+.ixw--sol-app main .btn-ghost::before{display:none}.ixw--sol-app main .btn-ghost .ic{color:var(--tp-coral)}
+.ixw--sol-app main :is(.btn-primary,.btn-ghost,.tpk-open-sec .btn-white,.tpk-open-sec .btn-outline-white):hover{translate:0 -2px;box-shadow:0 7px 0 var(--tp-ink)}
+.ixw--sol-app main :is(.btn-primary,.btn-ghost,.tpk-open-sec .btn-white,.tpk-open-sec .btn-outline-white):active{translate:0 4px;box-shadow:0 1px 0 var(--tp-ink);transition-duration:.06s}
+.ixw--sol-app main :is(.btn-primary,.btn-ghost,.tpk-open-sec .btn-white,.tpk-open-sec .btn-outline-white):focus-visible{outline:3px solid var(--tp-sun);outline-offset:4px}
+.ixw--sol-app .ixw-ibtn{border:2px solid var(--tp-ink);box-shadow:0 3px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-ibtn--play,.ixw--sol-app .ixw-ibtn--play:hover{background:var(--tp-coral);color:#FFFFFF}
+.ixw--sol-app .ixw-dots button.is-on{background:var(--tp-teal);box-shadow:0 0 0 1.5px var(--tp-ink)}
+.ixw--sol-app .ixw-peek{border-color:var(--tp-ink);box-shadow:0 3px 0 var(--tp-ink)}.ixw--sol-app .ixw-peek[aria-pressed="true"]{background:var(--tp-cream)}
+
+/* ---------- the glance strip: a sign board with a string of marquee bulbs ---------- */
+.ixw--sol-app .ow-strip{position:relative;padding-top:22px;border-radius:16px;background:var(--tp-bulbs) 12px 7px/26px 12px repeat-x,linear-gradient(180deg,var(--tp-ink) 0 20px,#FFFFFF 20px);box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-ink),0 30px 50px -30px rgba(40,30,60,.4);animation:tpBulbs 1.6s steps(2) infinite}
+@keyframes tpBulbs{50%{background-position:25px 7px,0 0}}
+.ixw--sol-app .ow-strip>div{position:relative}
+.ixw--sol-app .ow-strip>div+div::before{content:"";position:absolute;left:-17px;top:20px;bottom:4px;border-left:2px dotted #F3C2B6}
+.ixw--sol-app .ow-strip dt .ic{color:var(--tp-coral)}
+.ixw--sol-app .ow-strip>div:nth-child(2n) dt .ic{color:var(--tp-teal-d)}
+@media (max-width:1100px){.ixw--sol-app .ow-strip>div+div::before{display:none}}
+
+/* ============================== below the hero: the park ============================== */
+/* the one-paragraph answer: a park information sign */
+.ixw--sol-app .tpk-info{max-width:980px;padding:26px 30px 26px 118px;border:0;border-radius:20px;background:#FFFFFF;box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-ink),0 30px 50px -34px rgba(40,30,60,.4);overflow:hidden}
+.ixw--sol-app .tpk-info::before{content:"";position:absolute;left:0;top:0;bottom:0;width:88px;background:repeating-linear-gradient(180deg,var(--tp-teal) 0 22px,#14A2B4 22px 44px)}
+.ixw--sol-app .tpk-info-ic{position:absolute;left:18px;top:50%;display:grid;place-items:center;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 3px var(--tp-ink),0 4px 0 3px var(--tp-ink);color:var(--tp-coral);animation:tpBob 3s ease-in-out infinite}
+.ixw--sol-app .tpk-info-ic .ic{width:24px;height:24px}
+@keyframes tpBob{0%,100%{transform:translateY(-3px)}50%{transform:translateY(3px)}}
+.ixw--sol-app .tpk-info .answer-h{background:var(--tp-sun);color:var(--tp-ink)}
+.ixw--sol-app .tpk-info p:not(.answer-h){font-size:15px;color:#3D4560}
+@media (max-width:640px){.ixw--sol-app .tpk-info{padding:22px 18px 22px 82px}.ixw--sol-app .tpk-info::before{width:60px}.ixw--sol-app .tpk-info-ic{left:8px;width:44px;height:44px;margin-top:-22px}}
+
+/* the demo: the ride-control console, a coral frame lined with marquee bulbs */
+.ixw--sol-app .tpk-demo-sec{background:linear-gradient(180deg,#FFFFFF 0,#FFF5EC 100%)}
+.ixw--sol-app .tpk-console{position:relative;padding:14px;border-radius:30px;background:var(--tp-bulbs) 14px 8px/28px 16px repeat-x,var(--tp-bulbs) 14px calc(100% - 2px)/28px 16px repeat-x,linear-gradient(180deg,#FF7A67,#F2563F);
+  box-shadow:0 0 0 2.5px var(--tp-ink),0 8px 0 var(--tp-ink),0 50px 80px -46px rgba(120,40,30,.55);animation:tpBulbs2 1.4s steps(2) infinite}
+@keyframes tpBulbs2{50%{background-position:28px 8px,28px calc(100% - 2px),0 0}}
+.ixw--sol-app .tpk-console-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 10px 14px;color:#FFFFFF;font:800 13px/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase}
+.ixw--sol-app .tpk-live{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--tp-sun);color:var(--tp-ink);font-size:10.5px}
+.ixw--sol-app .tpk-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tp-mint);box-shadow:0 0 0 2px rgba(255,255,255,.7);animation:tpBlink 1.1s steps(2,start) infinite}
+@keyframes tpBlink{to{visibility:hidden}}
+.ixw--sol-app .tpk-console-st{display:flex;gap:6px;margin-left:auto;counter-reset:st}
+.ixw--sol-app .tpk-console-st i{counter-increment:st;display:inline-flex;align-items:center;gap:5px;padding:5px 10px 5px 5px;border-radius:999px;background:rgba(255,255,255,.18);font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.06em}
+.ixw--sol-app .tpk-console-st i::before{content:counter(st);display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#FFFFFF;color:var(--tp-coral-d);font-size:9.5px}
+.ixw--sol-app .tpk-console .dm{border-radius:20px;box-shadow:0 0 0 2px var(--tp-ink)}
+@media (max-width:960px){.ixw--sol-app .tpk-console-st{display:none}}
+@media (max-width:767px){.ixw--sol-app .tpk-console{padding:9px;border-radius:22px}}
+
+/* what's included: the park map, six kiosks under striped awnings on a dotted path */
+.ixw--sol-app .tpk-map-sec{background-color:#FBF4E8;background-image:radial-gradient(circle,rgba(53,192,142,.18) 7px,transparent 7.5px),radial-gradient(rgba(255,107,87,.18) 1.6px,transparent 1.8px);background-size:180px 160px,18px 18px;background-position:40px 60px,0 0}
+.ixw--sol-app .tpk-map{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 30px;padding-top:14px}
+.ixw--sol-app .tpk-map::before{content:"";position:absolute;left:8%;right:8%;top:50%;height:0;border-top:4px dashed rgba(255,107,87,.35);z-index:0}
+.ixw--sol-app .tpk-kiosk{position:relative;z-index:1;padding:66px 26px 26px;border-radius:8px 8px 18px 18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-ink),0 30px 40px -30px rgba(40,30,60,.45);transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-kiosk::before{content:"";position:absolute;left:-8px;right:-8px;top:-10px;height:40px;border-radius:8px 8px 0 0;background:repeating-linear-gradient(90deg,var(--c) 0 22px,#FFFFFF 22px 44px);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 11px) no-repeat,radial-gradient(circle 11px at 50% 0,#000 97%,#0000) bottom/22px 11px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 11px) no-repeat,radial-gradient(circle 11px at 50% 0,#000 97%,#0000) bottom/22px 11px repeat-x;transform-origin:50% 0;transition:transform .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-kiosk:hover{transform:translateY(-6px)}.ixw--sol-app .tpk-kiosk:hover::before{transform:scaleY(1.12) rotate(-1deg)}
+.ixw--sol-app .tpk-kiosk-n{position:absolute;right:16px;top:40px;padding:4px 9px;border-radius:999px;background:color-mix(in srgb,var(--c) 14%,#FFFFFF);color:color-mix(in srgb,var(--c) 70%,#1C2340);font:800 10px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--sol-app .tpk-kiosk .card-ic{position:absolute;left:22px;top:22px;display:grid;place-items:center;width:54px;height:54px;min-height:0;margin:0;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 2.5px var(--tp-ink),0 4px 0 2.5px var(--tp-ink);color:var(--c)}
+.ixw--sol-app .tpk-kiosk .card-ic .ic{width:24px;height:24px}
+.ixw--sol-app .tpk-kiosk h3{margin:22px 0 8px;font-size:1.16rem}
+.ixw--sol-app .tpk-kiosk p{margin:0;font-size:15px;line-height:1.6;color:#4A5268}
+@media (max-width:960px){.ixw--sol-app .tpk-map{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--sol-app .tpk-map::before{display:none}}
+@media (max-width:640px){.ixw--sol-app .tpk-map{grid-template-columns:minmax(0,1fr);gap:40px}}
+
+/* how we build one: the test track, a car running along the rail past four stations */
+.ixw--sol-app .tpk-ride-sec{background-color:#EAF8FB;background-image:radial-gradient(rgba(20,177,196,.14) 1.6px,transparent 1.8px);background-size:22px 22px}
+.ixw--sol-app .tpk-ride{position:relative;padding-top:64px}
+.ixw--sol-app .tpk-rail{position:absolute;left:-8px;right:-8px;top:18px;height:16px;border-radius:999px;background:linear-gradient(180deg,#5C6B8A 0 5px,#3F4B66 5px 11px,#5C6B8A 11px);box-shadow:0 0 0 2px var(--tp-ink),0 10px 20px -12px rgba(20,40,70,.5)}
+.ixw--sol-app .tpk-rail::before{content:"";position:absolute;left:14px;right:14px;top:5px;height:4px;background:repeating-linear-gradient(90deg,var(--tp-sun) 0 14px,transparent 14px 30px)}
+.ixw--sol-app .tpk-car{position:absolute;left:0;top:-30px;width:70px;height:46px;animation:tpRide 9s cubic-bezier(.6,0,.3,1) infinite}
+.ixw--sol-app .tpk-car::before{content:"";position:absolute;left:4px;right:4px;top:0;height:36px;border-radius:9px;background:linear-gradient(180deg,#FFFFFF 0 40%,var(--tp-coral) 40%);box-shadow:0 0 0 2px var(--tp-ink),0 4px 0 2px var(--tp-ink)}
+.ixw--sol-app .tpk-car::after{content:"";position:absolute;left:14px;top:30px;width:42px;height:16px;background:radial-gradient(circle,var(--tp-ink) 6px,transparent 6.5px) 0 50%/21px 16px repeat-x}
+.ixw--sol-app .tpk-car i{position:absolute;top:-12px;width:16px;height:16px;border-radius:50%;background:#F0CBA8;box-shadow:inset 0 5px 0 #241A16,0 0 0 2px var(--tp-ink)}
+.ixw--sol-app .tpk-car i:first-child{left:16px}.ixw--sol-app .tpk-car i:last-child{left:38px;background:#DDAE86}
+@keyframes tpRide{0%,6%{left:0}22%,30%{left:calc(33% - 35px)}46%,54%{left:calc(66% - 35px)}70%,82%{left:calc(100% - 70px)}100%{left:calc(100% - 70px);opacity:0}}
+.ixw--sol-app .tpk-stations{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.ixw--sol-app .tpk-station{position:relative;padding:58px 22px 24px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-ink);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-station::before{content:"";position:absolute;left:50%;top:-48px;width:4px;height:48px;margin-left:-2px;background:repeating-linear-gradient(180deg,#9AA6BC 0 6px,#C9D3DE 6px 10px)}
+.ixw--sol-app .tpk-station:hover{transform:translateY(-5px) rotate(-.6deg)}
+.ixw--sol-app .tpk-station-n{position:absolute;left:50%;top:-24px;display:grid;place-items:center;width:48px;height:48px;margin-left:-24px;border-radius:50%;background:var(--tp-coral);box-shadow:0 0 0 3px var(--tp-ink),0 4px 0 3px var(--tp-ink);font:800 21px/1 var(--font-display);color:#FFFFFF}
+.ixw--sol-app .tpk-station:nth-child(2) .tpk-station-n{background:var(--tp-teal)}.ixw--sol-app .tpk-station:nth-child(3) .tpk-station-n{background:var(--tp-sun);color:var(--tp-ink)}.ixw--sol-app .tpk-station:nth-child(4) .tpk-station-n{background:var(--tp-mint)}
+.ixw--sol-app .tpk-station-k{display:block;margin-bottom:6px;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--tp-coral-d);text-align:center}
+.ixw--sol-app .tpk-station h3{margin:0 0 8px;font-size:1.1rem;text-align:center}
+.ixw--sol-app .tpk-station p{margin:0;font-size:14.5px;line-height:1.6;color:#4A5268;text-align:center}
+@media (max-width:960px){.ixw--sol-app .tpk-stations{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:62px}.ixw--sol-app .tpk-rail{display:none}.ixw--sol-app .tpk-station::before{display:none}.ixw--sol-app .tpk-ride{padding-top:30px}}
+@media (max-width:640px){.ixw--sol-app .tpk-stations{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: the all-access pass beside a punch card of twelve punched items */
+.ixw--sol-app .tpk-pass-sec{background:#FFFFFF}
+@media (min-width:961px){.ixw--sol-app .tpk-pass{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--sol-app .tpk-ticket{position:relative;display:grid;gap:4px;max-width:340px;margin-top:34px;padding:22px 24px 22px 30px;border-radius:16px;color:#FFFFFF;background:radial-gradient(circle at 100% 50%,transparent 12px,transparent 12.5px),linear-gradient(120deg,var(--tp-coral),#FF8A5B 60%,var(--tp-sun));
+  box-shadow:0 0 0 2.5px var(--tp-ink),0 7px 0 var(--tp-ink),0 30px 40px -24px rgba(120,40,30,.5);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-ticket:hover{transform:rotate(0) translateY(-4px)}
+.ixw--sol-app .tpk-ticket::before{content:"";position:absolute;right:74px;top:10px;bottom:10px;border-left:2.5px dashed rgba(255,255,255,.7)}
+.ixw--sol-app .tpk-ticket::after{content:"\2605";position:absolute;right:26px;top:50%;margin-top:-18px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#FFFFFF;color:var(--tp-coral);font-size:18px;box-shadow:0 0 0 2px var(--tp-ink)}
+.ixw--sol-app .tpk-ticket-k{font:800 10.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.ixw--sol-app .tpk-ticket b{font:800 1.7rem/1.1 var(--font-display);letter-spacing:-.01em}
+.ixw--sol-app .tpk-ticket small{font:700 12px/1.3 var(--font-body);opacity:.92}
+.ixw--sol-app .tpk-ticket-bc{display:block;width:150px;height:22px;margin-top:8px;border-radius:3px;background:repeating-linear-gradient(90deg,#FFFFFF 0 2px,transparent 2px 4px,#FFFFFF 4px 7px,transparent 7px 9px,#FFFFFF 9px 10px,transparent 10px 13px);opacity:.9}
+.ixw--sol-app .tpk-punch{position:relative;padding:28px 30px 18px 46px;border-radius:20px;background:var(--tp-cream);box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-ink)}
+.ixw--sol-app .tpk-punch::before{content:"";position:absolute;left:14px;top:18px;bottom:18px;width:12px;background:radial-gradient(circle,#FFFFFF 4.5px,var(--tp-ink) 5px,var(--tp-ink) 6px,transparent 6.5px) 50% 0/12px 26px repeat-y}
+.ixw--sol-app .tpk-punch li{align-items:center}
+.ixw--sol-app .tpk-punch li .ic{width:24px;height:24px;padding:4px;margin-top:0;border-radius:50%;background:var(--tp-coral);color:#FFFFFF;box-shadow:0 0 0 2px var(--tp-ink);transition:transform .35s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-punch li:nth-child(3n+2) .ic{background:var(--tp-teal)}.ixw--sol-app .tpk-punch li:nth-child(3n) .ic{background:var(--tp-sun);color:var(--tp-ink)}
+.ixw--sol-app .tpk-punch li:hover .ic{transform:rotate(-14deg) scale(1.12)}
+.ixw--sol-app .tpk-punch li span{color:#3D4560}
+
+/* the FAQ: the guest-services desk, each question a ticket with a numbered stub */
+.ixw--sol-app .tpk-desk-sec{background-color:#FFF5EC;background-image:linear-gradient(90deg,rgba(255,107,87,.07) 50%,transparent 50%);background-size:60px 100%}
+.ixw--sol-app .tpk-faq{counter-reset:q;max-width:900px}
+.ixw--sol-app .tpk-faq details{counter-increment:q;position:relative;border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 2px var(--tp-ink),0 4px 0 var(--tp-ink);transition:transform .3s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease;overflow:visible}
+.ixw--sol-app .tpk-faq details:hover{transform:translateX(4px)}
+.ixw--sol-app .tpk-faq details[open]{box-shadow:0 0 0 2px var(--tp-ink),0 6px 0 var(--tp-coral)}
+.ixw--sol-app .tpk-faq summary{justify-content:flex-start;gap:18px;padding-left:0}
+.ixw--sol-app .tpk-faq summary::before{content:"Q" counter(q,decimal-leading-zero);flex:none;align-self:stretch;display:grid;place-items:center;width:70px;height:auto;margin:-18px 0;transform:none;border-radius:14px 0 0 14px;border-right:2.5px dashed #F3B7A9;background:var(--tp-coral-l);color:var(--tp-coral-d);font:800 13px/1 var(--font-body);letter-spacing:.06em}
+.ixw--sol-app .tpk-faq details[open] summary::before{content:"Q" counter(q,decimal-leading-zero);background:var(--tp-coral);color:#FFFFFF;border-radius:14px 0 0 0;transform:none}
+.ixw--sol-app .tpk-faq summary .ic{margin-left:auto;color:var(--tp-coral)}
+.ixw--sol-app .tpk-faq .faq-a{padding:14px 24px 20px 92px}
+.ixw--sol-app .tpk-faq .faq-a a{color:var(--tp-coral-d);font-weight:700}
+@media (max-width:640px){.ixw--sol-app .tpk-faq summary::before{width:52px}.ixw--sol-app .tpk-faq .faq-a{padding-left:22px}}
+
+/* related services: wooden direction arrows on a signpost */
+.ixw--sol-app .tpk-post-sec{background:linear-gradient(180deg,#FFFFFF 0,#FFFFFF 70%,#F3E5D2 70%,#F1DFC8 100%)}
+.ixw--sol-app .tpk-posts{gap:26px}
+.ixw--sol-app .tpk-arrow{padding:26px 64px 30px 26px;border:0;border-radius:14px;background:var(--tp-ink);clip-path:polygon(0 0,calc(100% - 34px) 0,100% 50%,calc(100% - 34px) 100%,0 100%);box-shadow:none;transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .tpk-arrow::after{content:"";position:absolute;left:2.5px;top:2.5px;right:3.5px;bottom:2.5px;z-index:0;border-radius:12px;clip-path:polygon(0 0,calc(100% - 33px) 0,100% 50%,calc(100% - 33px) 100%,0 100%);
+  background:linear-gradient(180deg,#FFFFFF calc(100% - 9px),color-mix(in srgb,var(--c) 30%,#FFFFFF) calc(100% - 9px))}
+.ixw--sol-app .tpk-arrow>*{position:relative;z-index:1}
+.ixw--sol-app .tpk-arrow::before{content:"";position:absolute;z-index:2;right:24px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#C9A27A;box-shadow:0 0 0 2px var(--tp-ink)}
+.ixw--sol-app .tpk-arrow:hover{transform:translateX(8px) rotate(-1deg);border:0}
+.ixw--sol-app .tpk-arrow .card-ic{display:grid;place-items:center;width:52px;height:52px;min-height:0;border-radius:14px;background:color-mix(in srgb,var(--c) 14%,#FFFFFF);box-shadow:0 0 0 2px var(--tp-ink);color:var(--c)}
+.ixw--sol-app .tpk-arrow .card-ic .ic{width:26px;height:26px}.ixw--sol-app .tpk-arrow .card-ic .oi{width:34px;height:34px}
+.ixw--sol-app .tpk-arrow .btn-link{color:color-mix(in srgb,var(--c) 75%,#1C2340)}
+
+/* the end card: opening day, bulbs round the frame */
+.ixw--sol-app .tpk-open-sec .cta{padding-top:70px;border:2.5px solid var(--tp-ink);box-shadow:0 8px 0 var(--tp-ink);background:var(--tp-bulbs) 16px 10px/30px 18px repeat-x,radial-gradient(circle at 88% 22%,rgba(255,201,60,.5),transparent 42%),linear-gradient(120deg,var(--tp-teal-d),var(--tp-teal) 55%,#3FC7D6);animation:tpBulbs3 1.5s steps(2) infinite}
+@keyframes tpBulbs3{50%{background-position:31px 10px,0 0,0 0}}
+.ixw--sol-app .tpk-open-sec .cta::before{content:"";position:absolute;left:0;right:0;top:28px;height:30px;background:var(--tp-stripe);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 13px) no-repeat,radial-gradient(circle 13px at 50% 0,#000 97%,#0000) bottom/26px 13px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 13px) no-repeat,radial-gradient(circle 13px at 50% 0,#000 97%,#0000) bottom/26px 13px repeat-x}
+.ixw--sol-app .tpk-open-sec .cta .hand{color:#FFE7A8}
+.ixw--sol-app .tpk-open-sec .cta .btn-outline-white,.ixw--sol-app .tpk-open-sec .cta .btn-outline-white:hover{color:var(--tp-ink);background:var(--tp-sun)}
+@media (prefers-reduced-motion:reduce){.ixw--sol-app :is(.ow-strip,.tpk-console,.tpk-car,.tpk-info-ic,.tpk-open-sec .cta){animation:none}}
+.ixw--sol-app .ixwi-card::after{display:none}
+
+/* ============================== audit round: hero controls, the user-testing tent ============================== */
+/* ride-control buttons: one height, a domed top light, the icon chip on the centre line, a hard press */
+.ixw--sol-app .ixw-copy .actions{gap:14px;margin-top:22px}
+.ixw--sol-app .ixw-copy .actions .btn{height:50px;padding:0 22px;font-size:15.5px;font-weight:700;overflow:visible}
+.ixw--sol-app .ixw-copy .btn-primary .ic{width:26px;height:26px;padding:5px;margin-right:-8px;border-radius:9px;background:rgba(28,35,64,.18);transition:translate .2s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-app .ixw-copy .btn-primary:hover .ic{translate:3px 0}
+.ixw--sol-app .ixw-copy .btn-ghost .ic{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--tp-coral-l);color:var(--tp-coral)}
+.ixw--sol-app .ixw-copy .btn-ghost:hover{background:#FFFFFF}
+/* the ride badges: a tilt and a lift on hover */
+.ixw--sol-app .tpk-badges span{height:32px;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-app .tpk-badges span:hover{translate:0 -2px;box-shadow:inset 0 0 0 1.5px var(--tp-teal),0 6px 12px -8px rgba(11,95,105,.5)}
+/* caption controls: chunky keys with ink lips, coral when lit */
+.ixw--sol-app .ixw-ibtn{background:#FFFFFF;color:var(--tp-ink);transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .2s ease}
+.ixw--sol-app .ixw-ibtn:hover{translate:0 -2px;border-color:var(--tp-ink);color:var(--tp-coral-d);background:var(--tp-cream);box-shadow:0 5px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-ibtn--play,.ixw--sol-app .ixw-ibtn--play:hover{background:linear-gradient(180deg,rgba(255,255,255,.3) 0 40%,transparent 40%),var(--tp-coral);color:#FFFFFF;border-color:var(--tp-ink)}
+.ixw--sol-app .ixw-ibtn--play:hover{box-shadow:0 5px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-ibtn:focus-visible,.ixw--sol-app .ixw-dots button:focus-visible,.ixw--sol-app .ixw-peek:focus-visible{outline:3px solid var(--tp-sun);outline-offset:3px}
+.ixw--sol-app .ixw-dots{gap:6px}
+.ixw--sol-app .ixw-dots button{width:9px;height:9px;background:#F6D3CC;box-shadow:inset 0 0 0 1.5px rgba(28,35,64,.25);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,scale .2s ease}
+.ixw--sol-app .ixw-dots button:hover{background:var(--tp-sun);scale:1.25}
+.ixw--sol-app .ixw-dots button.is-on{width:24px;background:var(--tp-teal);box-shadow:0 0 0 1.5px var(--tp-ink)}
+/* "View the scene": an admission ticket with punched notches */
+.ixw--sol-app .ixw-peek{height:40px;padding:0 18px 0 14px;border:2px solid var(--tp-ink);border-radius:10px;background:radial-gradient(circle at 0 50%,transparent 6px,var(--tp-cream) 6.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 6px,var(--tp-cream) 6.5px) right/51% 100% no-repeat;
+  color:var(--tp-ink);font-weight:800;box-shadow:0 4px 0 var(--tp-ink);transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease}
+.ixw--sol-app .ixw-peek:hover{translate:0 -2px;box-shadow:0 6px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-peek:active{translate:0 3px;box-shadow:0 1px 0 var(--tp-ink)}
+.ixw--sol-app .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:radial-gradient(circle at 0 50%,transparent 6px,var(--tp-coral) 6.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 6px,var(--tp-coral) 6.5px) right/51% 100% no-repeat}
+@media (min-width:1200px){.ixw--sol-app .ixw-hero:not(.is-peek) .tpk-side{visibility:hidden}}
+
+/* ============ fix round: the FAQ uses the full width ============ */
+.ixw--sol-app .tpk-faq{max-width:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;align-items:start}
+.ixw--sol-app .tpk-faq details:last-child{grid-column:1/-1}
+@media (max-width:960px){.ixw--sol-app .tpk-faq{grid-template-columns:1fr}}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the theme park. One coral accent.
+   Themed touches kept: "Attraction 0x" labels on the six cards, the ride-stage words (storyboard, prototype, test rides,
+   opening day) on the steps, the "Test ride" console bar over the demo.
+   =================================================================================================================== */
+.ixw--sol-app{--calm-accent:#E8574A;--calm-accent-ink:#B9392D;--calm-accent-line:#F4CFC9;--calm-accent-wash:#FCF8F6;--calm-wash:#FCF8F6}
+html body.ixw--sol-app main .tpk-info{max-width:900px;padding:24px 28px 24px 92px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-app main .tpk-info::before,html body.ixw--sol-app main .tpk-info::after{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-info-ic{box-shadow:none!important;border:0!important;background:#FDEDEA!important;color:var(--calm-accent)!important}
+html body.ixw--sol-app main .tpk-info p{color:var(--body)!important}
+@media (max-width:640px){html body.ixw--sol-app main .tpk-info{padding:22px 18px!important}}
+html body.ixw--sol-app main .tpk-console{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-app main .tpk-console::before,html body.ixw--sol-app main .tpk-console::after{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-console-top{padding:12px 18px!important;background:#FCF1EE!important;border-bottom:1px solid var(--calm-line);color:var(--ink)!important}
+html body.ixw--sol-app main .tpk-console .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+html body.ixw--sol-app main .tpk-map::before{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-kiosk{border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-app main .tpk-kiosk::before,html body.ixw--sol-app main .tpk-kiosk::after{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-kiosk .card-ic{box-shadow:none!important;border:0!important;background:color-mix(in srgb,var(--c) 12%,#fff)!important}
+html body.ixw--sol-app main .tpk-ride{padding-top:0!important}
+html body.ixw--sol-app main .tpk-station{padding:24px 22px!important;text-align:left!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-app main .tpk-station::before,html body.ixw--sol-app main .tpk-station::after{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-station-n{position:static!important;margin:0 0 12px!important;transform:none!important;translate:none!important;box-shadow:none!important;width:34px!important;height:34px!important;font-size:15px!important}
+html body.ixw--sol-app main .tpk-pass-sec ul,html body.ixw--sol-app main .tpk-pass-sec .spec-cols{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-app main .tpk-faq details{box-shadow:none!important}
+html body.ixw--sol-app main .tpk-faq summary{padding-left:20px!important}
+html body.ixw--sol-app main .tpk-arrow{border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-app main .tpk-arrow::before,html body.ixw--sol-app main .tpk-arrow::after{content:none!important;display:none!important}
+html body.ixw--sol-app main .tpk-arrow .card-ic{box-shadow:none!important;border:0!important}
+
+html body.ixw--sol-app main .tpk-punch{padding:26px 28px 18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-app main .tpk-station{text-align:left!important}
+html body.ixw--sol-app main .tpk-station *{text-align:left!important}

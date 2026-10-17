@@ -1,0 +1,61 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Technology overview demo (demo-techflow.js): one situation travels sensor, network, app, Odoo; switch a service off to see it stall. */
+.tfl-wrap{display:grid;gap:14px;padding:16px}
+.tfl-svc{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tfl-svc-l{margin-right:4px;font:700 10.5px/1 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.tfl-svc button{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 13px;border-radius:999px;border:1.5px solid #9FD5B7;background:var(--ok-050);color:var(--ok);font:700 12px/1 var(--font-body);cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.tfl-svc button .ic{width:15px;height:15px}
+.tfl-svc button::after{content:"On";margin-left:2px;padding:3px 6px;border-radius:999px;background:#fff;font:800 9.5px/1 var(--font-body);letter-spacing:.04em;text-transform:uppercase}
+.tfl-svc button[aria-pressed="false"]{border-color:#E8B8B3;background:#FDF1F0;color:#B42318}
+.tfl-svc button[aria-pressed="false"]::after{content:"Off"}
+.tfl-svc button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.tfl-pipe{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tfl-st{position:relative;display:grid;gap:6px;align-content:start;justify-items:start;min-height:156px;padding:14px;border-radius:16px;background:#fff;border:1.5px solid var(--line);transition:border-color .3s ease,background-color .3s ease,opacity .3s ease}
+.tfl-st::after{content:"";position:absolute;inset:-1.5px;border-radius:inherit;border:2px solid var(--blue);opacity:0;pointer-events:none}
+.tfl-st.is-on::after{animation:tflOn .9s ease-in-out infinite}
+@keyframes tflOn{50%{opacity:1}}
+.tfl-ic{display:grid;place-items:center;width:42px;height:42px;margin:0 0 2px;border-radius:12px;background:var(--blue-050);color:var(--blue);transition:background-color .3s ease,color .3s ease}
+.tfl-ic .ic{width:20px;height:20px}
+.tfl-ic .oi{width:26px;height:26px}
+.tfl-st b{font:800 15px/1.2 var(--font-display);color:var(--ink)}
+.tfl-st span{font:500 12.5px/1.45 var(--font-body);color:var(--muted)}
+.tfl-st.is-done{border-color:#BFE3CE;background:#F6FBF8}
+.tfl-st.is-done span{color:var(--ink)}
+.tfl-st.is-done .tfl-ic{background:#DDF1E5;color:var(--ok)}
+.tfl-st.is-broken{border-color:#F1B4AE;background:#FFF7F6}
+.tfl-st.is-broken .tfl-ic{background:#FDECEA;color:#B42318}
+.tfl-st.is-broken span{color:#B42318;font-weight:700}
+.tfl-st.is-missing{border-style:dashed}
+.tfl-st.is-off{opacity:.5}
+.tfl-rail{grid-column:1 / -1;grid-row:2;position:relative;height:18px}
+.tfl-rail::before{content:"";position:absolute;top:8px;left:var(--x1,12%);width:var(--w,76%);height:2px;border-radius:2px;background:var(--edge)}
+.tfl-pk{position:absolute;top:2px;left:-7px;width:14px;height:14px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(49,103,202,.18);transition:transform .44s var(--ease-expo),background-color .3s ease,box-shadow .3s ease}
+.tfl-pk.is-stall{background:#D2433B;box-shadow:0 0 0 5px rgba(210,67,59,.2)}
+.tfl-pk.is-ok{background:var(--ok);box-shadow:0 0 0 5px rgba(19,122,74,.18)}
+.tfl-out{display:grid;gap:3px;margin:0;padding:12px 14px;border-radius:12px;background:var(--bg);border:1px solid var(--line);transition:background-color .3s ease,border-color .3s ease}
+.tfl-out b{font:700 13.5px/1.25 var(--font-display);color:var(--ink)}
+.tfl-out span{font:500 13px/1.45 var(--font-body);color:var(--body)}
+.tfl-out.is-bad{background:#FFF7F6;border-color:#F1B4AE}
+.tfl-out.is-bad b{color:#B42318}
+.tfl-out.is-good{background:var(--ok-050);border-color:#CDEBD9}
+.tfl-out.is-good b{color:var(--ok)}
+.tfl-kpis{padding:0 16px 16px}
+@media (max-width:960px){
+  .tfl-pipe{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tfl-rail{display:none}
+  .tfl-st{min-height:0}
+}
+@media (max-width:640px){
+  .tfl-wrap{padding:12px}
+  .tfl-pipe{gap:10px}
+  .tfl-st{padding:12px}
+  .tfl-st span{font-size:12px}
+  .tfl-kpis{padding:0 12px 12px}
+}
+@media (prefers-reduced-motion:reduce){.tfl-st.is-on::after{animation:none;opacity:1}.tfl-pk{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .tfl-svc-l,
+  .tfl-svc button::after{font-size:11px}
+}

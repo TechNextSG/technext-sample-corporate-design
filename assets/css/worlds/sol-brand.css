@@ -1,0 +1,306 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-brand (/solutions/brand-assets) — "The Print & Type Studio". Paper, press-red, ink and the four process
+   colours, on white-painted brick. The title card is a proof sheet (crop marks, a registration target, a colour bar); the
+   caption is a proof note; buttons are square letterpress blocks with a misregistered offset shadow; the glance strip is a
+   printer's control strip. Below the hero: a specimen sheet, the demo on a cutting mat, six swatch chips, four press plates
+   that add one ink each, the brand guide as an open book, the FAQ as type-case drawers, business cards and a halftone
+   poster for the end card. Prefix: .lpr- */
+.ixw--sol-brand{--lp-ink:#1D1F2A;--lp-red:#E8452C;--lp-red-d:#B9301C;--lp-red-l:#FDE7E2;--lp-paper:#FFFDF7;--lp-kraft:#D9B98C;--lp-kraft-d:#B8955F;--lp-c:#00A3E0;--lp-m:#E6007E;--lp-y:#FFD100;--lp-teal:#1F7A8C;--lp-must:#E9B949;--lp-brick:#F4F0E8;
+  --lp-cmyk:linear-gradient(90deg,#00A3E0 0 12.5%,#E6007E 12.5% 25%,#FFD100 25% 37.5%,#1D1F2A 37.5% 50%,#3167CA 50% 62.5%,#E8452C 62.5% 75%,#1F7A8C 75% 87.5%,#E9B949 87.5%);
+  --w-alt:#F7F4EE;--lab-bg:#FFFDF7;--lab-bd:2px solid #1D1F2A;--lab-lip:#1D1F2A;--lab-tail:#1D1F2A;--lab-r:3px;
+  
+  --ii-bg:linear-gradient(160deg,#FFFDF7,#FBE3DD 55%,#E3F3FA);--ii-ink:#1D1F2A;--ii-b:#E8452C;--ii-accent:#FFD100;--ii-lip:#1D1F2A;--ii-ep-bg:#1D1F2A;--ii-ep-fg:#FFFFFF;--ii-pill-r:4px}
+.ixw--sol-brand .ixw-hero{background:linear-gradient(180deg,#F7F7F4 0,#F7F7F4 6%,#9FD8F7 7%,#E2F4FD 18%,#F4F0E8 19%,#F4F0E8 62%,#E6E0D5 62%,#D3CBBD 100%)}
+
+/* ---------- the title card: a proof sheet ---------- */
+.ixw--sol-brand .ixw-copy{position:relative;max-width:500px;margin-top:30px;padding:34px 30px 40px;border-radius:2px;background:var(--lp-paper);
+  box-shadow:0 0 0 1px #E6DFD2,6px 8px 0 rgba(29,31,42,.07),0 40px 70px -34px rgba(40,30,20,.4)}
+.ixw--sol-brand .ixw-copy::before{content:"";position:absolute;inset:-16px;pointer-events:none;
+  background:linear-gradient(#1D1F2A,#1D1F2A) 0 16px/12px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 16px 0/1px 12px no-repeat,
+  linear-gradient(#1D1F2A,#1D1F2A) 100% 16px/12px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 16px) 0/1px 12px no-repeat,
+  linear-gradient(#1D1F2A,#1D1F2A) 0 calc(100% - 16px)/12px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 16px 100%/1px 12px no-repeat,
+  linear-gradient(#1D1F2A,#1D1F2A) 100% calc(100% - 16px)/12px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 16px) 100%/1px 12px no-repeat}
+.ixw--sol-brand .ixw-copy::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--lp-cmyk)}
+.ixw--sol-brand .lpr-tab{display:none}
+.ixw--sol-brand .ixw-copy .crumbs{padding-right:56px}
+.ixw--sol-brand .ixw-copy h1{max-width:none;font-size:clamp(2rem,3.1vw,2.75rem)}
+.ixw--sol-brand .ixw-copy .hand{color:var(--lp-red)}
+.ixw--sol-brand .ixw-ep-tag{background:var(--lp-ink);box-shadow:3px 3px 0 var(--lp-red);border-radius:3px}
+.ixw--sol-brand .ixw-ep-tag .ic{background:var(--lp-y)}
+.ixw--sol-brand .lpr-pills{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.ixw--sol-brand .lpr-pills span{display:inline-flex;align-items:center;gap:5px;height:25px;padding:0 9px 0 7px;border-radius:2px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px var(--lp-ink),2px 2px 0 var(--c,#00A3E0);font:800 11.5px/1 var(--font-body);color:var(--lp-ink)}
+.ixw--sol-brand .lpr-pills span:nth-child(2){--c:#E6007E}.ixw--sol-brand .lpr-pills span:nth-child(3){--c:#FFD100}.ixw--sol-brand .lpr-pills span:nth-child(4){--c:#E8452C}.ixw--sol-brand .lpr-pills span:nth-child(5){--c:#1F7A8C}
+.ixw--sol-brand .lpr-pills .ic{width:14px;height:14px;color:var(--lp-red)}
+/* the registration target in the card's corner */
+.ixw--sol-brand .ixw-copy .crumbs::after{content:"";position:absolute;right:20px;top:24px;width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(#1D1F2A,#1D1F2A) 50% 0/1.5px 100% no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 0 50%/100% 1.5px no-repeat,radial-gradient(circle,transparent 9px,#1D1F2A 9.5px 11px,transparent 11.5px);animation:lpReg 8s linear infinite}
+@keyframes lpReg{to{transform:rotate(360deg)}}
+@media (max-width:767px){.ixw--sol-brand .ixw-copy{padding:30px 20px 36px}.ixw--sol-brand .ixw-copy::before{inset:-10px}.ixw--sol-brand .lpr-pills{display:none}}
+
+/* ---------- the caption: a proof note ---------- */
+.ixw--sol-brand .ixw-cap{border-radius:3px;background:var(--lp-paper);box-shadow:0 0 0 1.5px var(--lp-ink),5px 5px 0 var(--lp-c),0 26px 44px -22px rgba(40,30,20,.35)}
+.ixw--sol-brand .ixw-cap::before{content:"\2295  PROOF NOTE";position:absolute;left:16px;top:-12px;padding:5px 10px;border-radius:2px;background:var(--lp-red);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.14em}
+.ixw--sol-brand .ixw-cap-who b{color:var(--lp-red-d)}.ixw--sol-brand .ixw-cap-txt b{color:var(--lp-teal)}
+.ixw--sol-brand .ixw-cap-rec{border-radius:2px;background:#F7F4EE;border:1px dashed #C9BCA6;color:var(--lp-ink)}
+.ixw--sol-brand .ixw-cap-av{box-shadow:inset 0 0 0 2px #fff,0 0 0 2px var(--lp-ink)}
+
+/* ---------- buttons: square letterpress blocks, a misregistered shadow ---------- */
+.ixw--sol-brand main :is(.btn-primary,.btn-ghost,.lpr-cta .btn-white,.lpr-cta .btn-outline-white){border:0;border-radius:3px;transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease}
+.ixw--sol-brand main .btn-primary,.ixw--sol-brand main .btn-primary:hover{color:#FFFFFF;background:var(--lp-red);box-shadow:4px 4px 0 var(--lp-ink)}
+.ixw--sol-brand main .btn-ghost,.ixw--sol-brand main .btn-ghost:hover{color:var(--lp-ink);background:var(--lp-paper);box-shadow:inset 0 0 0 2px var(--lp-ink),4px 4px 0 var(--lp-c)}
+.ixw--sol-brand main .btn-ghost::before{display:none}
+.ixw--sol-brand main :is(.btn-primary,.btn-ghost):hover{translate:-2px -2px}
+.ixw--sol-brand main .btn-primary:hover{box-shadow:6px 6px 0 var(--lp-ink)}.ixw--sol-brand main .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--lp-ink),6px 6px 0 var(--lp-c)}
+.ixw--sol-brand main :is(.btn-primary,.btn-ghost,.lpr-cta .btn-white,.lpr-cta .btn-outline-white):active{translate:3px 3px;box-shadow:0 0 0 var(--lp-ink);transition-duration:.06s}
+.ixw--sol-brand main :is(.btn-primary,.btn-ghost,.lpr-cta .btn-white,.lpr-cta .btn-outline-white):focus-visible{outline:3px dashed var(--lp-c);outline-offset:5px}
+.ixw--sol-brand .ixw-ibtn{border:2px solid var(--lp-ink);border-radius:4px;box-shadow:3px 3px 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-ibtn--play,.ixw--sol-brand .ixw-ibtn--play:hover{background:var(--lp-red);color:#FFFFFF}
+.ixw--sol-brand .ixw-dots button{border-radius:1px}
+.ixw--sol-brand .ixw-dots button.is-on{background:var(--lp-red);box-shadow:0 0 0 1.5px var(--lp-ink)}
+.ixw--sol-brand .ixw-peek{border-color:var(--lp-ink);border-radius:4px;box-shadow:3px 3px 0 var(--lp-ink)}.ixw--sol-brand .ixw-peek[aria-pressed="true"]{background:var(--lp-y)}
+
+/* ---------- the glance strip: a printer's control strip ---------- */
+.ixw--sol-brand .lpr-strip{position:relative;padding-top:24px;border-radius:3px;background:var(--lp-cmyk) 0 0/100% 9px no-repeat,var(--lp-paper);box-shadow:0 0 0 1.5px #E6DFD2,5px 5px 0 rgba(29,31,42,.08),0 26px 44px -30px rgba(40,30,20,.3)}
+.ixw--sol-brand .lpr-strip dt{color:var(--lp-ink);font-family:ui-monospace,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase}
+.ixw--sol-brand .lpr-strip dt .ic{color:var(--lp-red)}
+.ixw--sol-brand .lpr-strip>div{position:relative}
+.ixw--sol-brand .lpr-strip>div+div::before{content:"";position:absolute;left:-18px;top:20px;bottom:4px;border-left:1.5px dashed #C9BCA6}
+
+/* ============================== below the hero ============================== */
+.ixw--sol-brand main .section--alt{background-color:var(--w-alt)}
+.ixw--sol-brand .sec-head .hand{color:var(--lp-red)}
+
+/* the one-paragraph answer: a specimen sheet with crop marks and a big Aa */
+.ixw--sol-brand .lpr-proof-sec{padding-top:58px}
+.ixw--sol-brand .lpr-proof{display:block;max-width:960px;padding:30px 230px 30px 34px;border:0;border-radius:2px;background:var(--lp-paper);box-shadow:0 0 0 1px #E6DFD2,6px 6px 0 rgba(29,31,42,.06),0 24px 40px -30px rgba(40,30,20,.35);overflow:visible}
+.ixw--sol-brand .lpr-crop{position:absolute;inset:-14px;pointer-events:none;
+  background:linear-gradient(#1D1F2A,#1D1F2A) 0 14px/10px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 14px 0/1px 10px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 100% 14px/10px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 14px) 0/1px 10px no-repeat,
+  linear-gradient(#1D1F2A,#1D1F2A) 0 calc(100% - 14px)/10px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 14px 100%/1px 10px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 100% calc(100% - 14px)/10px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 14px) 100%/1px 10px no-repeat}
+.ixw--sol-brand .lpr-aa{position:absolute;right:34px;top:50%;translate:0 -50%;font:800 112px/1 var(--font-display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px #C9BCA6;background:linear-gradient(90deg,var(--lp-red) 0 50%,transparent 50%);-webkit-background-clip:text;background-clip:text}
+.ixw--sol-brand .lpr-proof .answer-h{display:inline-block;margin-bottom:10px;border-radius:2px;background:var(--lp-red-l);color:var(--lp-red-d)}
+.ixw--sol-brand .lpr-proof p:not(.answer-h){font-size:16px;line-height:1.65;color:#3D3F4C}
+@media (max-width:767px){.ixw--sol-brand .lpr-proof{padding:24px 20px}.ixw--sol-brand .lpr-aa{display:none}.ixw--sol-brand .lpr-crop{inset:-8px}}
+
+/* the demo: on the cutting mat (self-healing green, a grid, a ruler along the top) */
+.ixw--sol-brand .lpr-demo-sec{background-color:#FFFFFF;background-image:radial-gradient(circle,rgba(232,69,44,.16) 1.6px,transparent 2px);background-size:14px 14px;background-position:0 0}
+.ixw--sol-brand .lpr-demo-sec{background-image:radial-gradient(circle at 100% 0,rgba(255,255,255,0) 0,#FFFFFF 520px),radial-gradient(circle,rgba(232,69,44,.18) 1.6px,transparent 2px);background-size:auto,14px 14px}
+.ixw--sol-brand .lpr-mat{position:relative;padding:34px 14px 16px;border-radius:14px;background-color:#2F7D5B;
+  background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:60px 60px,60px 60px,12px 12px,12px 12px;box-shadow:0 0 0 3px #256A4C,0 10px 0 #1E5A40,0 50px 80px -44px rgba(20,50,30,.55)}
+.ixw--sol-brand .lpr-ruler{position:absolute;left:40px;right:40px;top:-14px;height:24px;border-radius:3px;background:repeating-linear-gradient(90deg,#1D1F2A 0 1px,transparent 1px 12px) 0 100%/100% 7px no-repeat,repeating-linear-gradient(90deg,#1D1F2A 0 1.5px,transparent 1.5px 60px) 0 100%/100% 13px no-repeat,linear-gradient(180deg,#E6E9EE,#C9CFD8);box-shadow:0 3px 0 #9AA6BC,0 8px 14px -6px rgba(0,0,0,.3)}
+.ixw--sol-brand .lpr-mat-top{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;padding:4px 8px 12px;color:#FFFFFF;font:800 12px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.ixw--sol-brand .lpr-mat-inks{display:flex;gap:6px;margin-left:auto}
+.ixw--sol-brand .lpr-mat-inks i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px rgba(255,255,255,.85);color:#FFFFFF;font:800 10px/1 var(--font-body);font-style:normal}
+.ixw--sol-brand .lpr-mat-inks i:nth-child(3){color:#1D1F2A}
+.ixw--sol-brand .lpr-mat .dm{border-radius:10px;box-shadow:none}
+@media (max-width:767px){.ixw--sol-brand .lpr-mat{padding:28px 8px 10px;border-radius:10px}.ixw--sol-brand .lpr-ruler{left:16px;right:16px}.ixw--sol-brand .lpr-mat-inks{display:none}}
+
+/* what we design: six swatch chips, the colour on top with its code */
+.ixw--sol-brand .lpr-chips-sec{background:linear-gradient(180deg,#FFFFFF,var(--lp-brick))}
+.ixw--sol-brand .lpr-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.ixw--sol-brand .lpr-chip{position:relative;padding:0 24px 26px;border-radius:4px;background:#FFFFFF;box-shadow:0 0 0 1px #E6DFD2,5px 5px 0 rgba(29,31,42,.06),0 22px 34px -28px rgba(40,30,20,.4);overflow:hidden;transform-origin:50% 120%;transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-brand .lpr-chip:hover{transform:rotate(calc((var(--i) - 2.5) * 1.2deg)) translateY(-6px)}
+.ixw--sol-brand .lpr-chip-top{display:flex;justify-content:space-between;align-items:flex-end;margin:0 -24px 22px;height:84px;padding:0 18px 10px;background:var(--c);color:#FFFFFF}
+.ixw--sol-brand .lpr-chip-top b{font:800 15px/1 ui-monospace,Consolas,monospace;letter-spacing:.06em}
+.ixw--sol-brand .lpr-chip-top i{font:600 1.1rem/1 var(--font-hand);font-style:normal;opacity:.92}
+.ixw--sol-brand .lpr-chip .card-ic{position:absolute;right:18px;top:58px;display:grid;place-items:center;width:52px;height:52px;margin:0;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 3px var(--c),0 6px 12px -4px rgba(0,0,0,.25);color:var(--c)}
+.ixw--sol-brand .lpr-chip .card-ic .ic{width:24px;height:24px}
+.ixw--sol-brand .lpr-chip h3{margin:0 0 8px;padding-right:56px;font-size:1.12rem}
+.ixw--sol-brand .lpr-chip p{margin:0;font-size:15px;line-height:1.6;color:#4A4C58}
+@media (max-width:960px){.ixw--sol-brand .lpr-chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ixw--sol-brand .lpr-chips{grid-template-columns:minmax(0,1fr);gap:18px}}
+
+/* how it runs: four press plates on a paper feed; each plate adds one ink (C, M, Y, K) */
+.ixw--sol-brand .lpr-run-sec{background-color:var(--w-alt);background-image:linear-gradient(rgba(160,140,110,.12) 1.3px,transparent 1.3px),linear-gradient(90deg,rgba(160,140,110,.12) 1.3px,transparent 1.3px);background-size:44px 14px,44px 14px}
+.ixw--sol-brand .lpr-run{position:relative;padding-top:62px}
+.ixw--sol-brand .lpr-feed{position:absolute;left:0;right:0;top:12px;height:30px;background:repeating-linear-gradient(90deg,transparent 0 40px,rgba(29,31,42,.06) 40px 42px),linear-gradient(180deg,#FFFFFF,#EFE9DF);box-shadow:0 0 0 1px #E6DFD2;animation:lpFeed 3s linear infinite}
+.ixw--sol-brand .lpr-feed::before,.ixw--sol-brand .lpr-feed::after{content:"";position:absolute;top:-10px;width:50px;height:50px;border-radius:50%;background:radial-gradient(circle,#59607A 0 5px,#2F4F5F 5.5px 22px,#22394A 22.5px);box-shadow:0 4px 0 rgba(0,0,0,.15)}
+.ixw--sol-brand .lpr-feed::before{left:-14px}.ixw--sol-brand .lpr-feed::after{right:-14px}
+@keyframes lpFeed{to{background-position:42px 0,0 0}}
+.ixw--sol-brand .lpr-plates{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.ixw--sol-brand .lpr-plate{position:relative;padding:28px 22px 24px;border-radius:2px;background:var(--lp-paper);box-shadow:0 0 0 1px #E6DFD2,5px 5px 0 rgba(29,31,42,.07);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-brand .lpr-plate:hover{transform:translateY(-5px)}
+.ixw--sol-brand .lpr-plate::before{content:"";position:absolute;right:12px;top:12px;width:22px;height:22px;border-radius:50%;background:linear-gradient(#1D1F2A,#1D1F2A) 50% 0/1px 100% no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 0 50%/100% 1px no-repeat,radial-gradient(circle,transparent 5px,#1D1F2A 5.5px 6.5px,transparent 7px);opacity:.6}
+.ixw--sol-brand .lpr-inks{display:flex;gap:6px;margin:0 0 14px}
+.ixw--sol-brand .lpr-inks i{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--k);background:transparent}
+.ixw--sol-brand .lpr-inks i:nth-child(1){--k:var(--lp-c)}.ixw--sol-brand .lpr-inks i:nth-child(2){--k:var(--lp-m)}.ixw--sol-brand .lpr-inks i:nth-child(3){--k:var(--lp-y)}.ixw--sol-brand .lpr-inks i:nth-child(4){--k:var(--lp-ink)}
+.ixw--sol-brand .lpr-plate:nth-child(n+1) .lpr-inks i:nth-child(1),.ixw--sol-brand .lpr-plate:nth-child(n+2) .lpr-inks i:nth-child(2),.ixw--sol-brand .lpr-plate:nth-child(n+3) .lpr-inks i:nth-child(3),.ixw--sol-brand .lpr-plate:nth-child(n+4) .lpr-inks i:nth-child(4){background:var(--k)}
+.ixw--sol-brand .lpr-plate.is-in .lpr-inks i{animation:lpInk .6s cubic-bezier(.34,1.45,.64,1) both}
+.ixw--sol-brand .lpr-plate.is-in .lpr-inks i:nth-child(2){animation-delay:.1s}.ixw--sol-brand .lpr-plate.is-in .lpr-inks i:nth-child(3){animation-delay:.2s}.ixw--sol-brand .lpr-plate.is-in .lpr-inks i:nth-child(4){animation-delay:.3s}
+@keyframes lpInk{from{transform:scale(0)}}
+.ixw--sol-brand .lpr-pn{display:block;margin:0 0 8px;font:700 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;color:#8A8C98}
+.ixw--sol-brand .lpr-plate h3{margin:0 0 8px;font-size:1.16rem}
+.ixw--sol-brand .lpr-plate p{margin:0;font-size:14.5px;line-height:1.6;color:#4A4C58}
+@media (max-width:960px){.ixw--sol-brand .lpr-plates{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--sol-brand .lpr-feed{display:none}}
+@media (max-width:640px){.ixw--sol-brand .lpr-plates{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: the brand guide, open at the spread */
+.ixw--sol-brand .lpr-book-sec{background:#FFFFFF}
+.ixw--sol-brand .lpr-book{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);border-radius:6px;background:var(--lp-paper);box-shadow:0 0 0 1px #E6DFD2,0 8px 0 -2px #E9E2D4,0 14px 0 -4px #DDD4C3,0 40px 60px -40px rgba(40,30,20,.45)}
+.ixw--sol-brand .lpr-book::after{content:"";position:absolute;left:42.5%;top:0;bottom:0;width:60px;margin-left:-30px;background:linear-gradient(90deg,rgba(0,0,0,0),rgba(40,30,20,.12) 46%,rgba(40,30,20,.2) 50%,rgba(40,30,20,.08) 54%,rgba(0,0,0,0));pointer-events:none}
+.ixw--sol-brand .lpr-page{position:relative;padding:44px 44px 54px}
+.ixw--sol-brand .lpr-page h2{max-width:14ch}
+.ixw--sol-brand .lpr-folio{position:absolute;bottom:20px;font:700 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#9A9CA8}
+.ixw--sol-brand .lpr-page--l .lpr-folio{left:44px}.ixw--sol-brand .lpr-page--r .lpr-folio{right:44px}
+.ixw--sol-brand .lpr-files{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ixw--sol-brand .lpr-files span{position:relative;display:grid;place-items:center;width:70px;height:84px;padding-bottom:14px;border-radius:4px 16px 4px 4px;background:var(--c);color:#FFFFFF;font:800 13px/1 var(--font-display);box-shadow:3px 3px 0 var(--lp-ink);transition:transform .35s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-brand .lpr-files span:hover{transform:translateY(-5px) rotate(-3deg)}
+.ixw--sol-brand .lpr-files small{position:absolute;left:0;right:0;bottom:9px;font:700 9px/1 var(--font-body);text-align:center;opacity:.9}
+.ixw--sol-brand .lpr-list{margin:0;column-gap:30px}
+.ixw--sol-brand .lpr-list li{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #EEE7DA;color:#3D3F4C}
+.ixw--sol-brand .lpr-list li .ic{width:20px;height:20px;padding:3px;margin-top:0;border-radius:3px;background:var(--lp-ink);color:#FFFFFF}
+.ixw--sol-brand .lpr-list li:nth-child(3n+2) .ic{background:var(--lp-red)}.ixw--sol-brand .lpr-list li:nth-child(3n) .ic{background:var(--lp-teal)}
+@media (max-width:960px){.ixw--sol-brand .lpr-book{grid-template-columns:minmax(0,1fr)}.ixw--sol-brand .lpr-book::after{display:none}.ixw--sol-brand .lpr-page--l{border-bottom:1px dashed #DDD4C3}}
+@media (max-width:640px){.ixw--sol-brand .lpr-page{padding:30px 20px 46px}.ixw--sol-brand .lpr-list{columns:1}.ixw--sol-brand .lpr-page--l .lpr-folio{left:20px}.ixw--sol-brand .lpr-page--r .lpr-folio{right:20px}}
+
+/* the FAQ: the type case, one wooden drawer per question with a brass label holder */
+.ixw--sol-brand .lpr-case-sec{background-color:#F3EEE5;background-image:linear-gradient(90deg,rgba(176,122,74,.08) 1px,transparent 1px);background-size:36px 100%}
+.ixw--sol-brand .lpr-drawers{counter-reset:q;max-width:900px;gap:12px;padding:16px;border-radius:10px;background:#8A5A34;box-shadow:inset 0 0 0 3px #6E4428,0 8px 0 #5A3620,0 30px 50px -30px rgba(60,30,10,.5)}
+.ixw--sol-brand .lpr-drawers details{counter-increment:q;border-radius:5px;background:linear-gradient(180deg,#E0B485,#D3A06C);box-shadow:inset 0 -4px 0 rgba(90,54,32,.22),0 3px 0 #6E4428}
+.ixw--sol-brand .lpr-drawers details:hover{translate:0 -2px}
+.ixw--sol-brand .lpr-drawers details[open]{box-shadow:inset 0 -4px 0 rgba(90,54,32,.22),0 0 0 2px var(--lp-y),0 3px 0 #6E4428}
+.ixw--sol-brand .lpr-drawers summary{color:#2A1A0E}
+.ixw--sol-brand .lpr-drawers summary::before{content:counter(q,upper-alpha);width:36px;height:28px;border-radius:3px;background:linear-gradient(180deg,#F2D48A,#C9962E);box-shadow:inset 0 0 0 2px #9A7020,inset 0 0 0 5px #F7E7B5;color:#3A2A0A;font:800 14px/28px ui-monospace,Consolas,monospace}
+.ixw--sol-brand .lpr-drawers details[open] summary::before{content:counter(q,upper-alpha);background:linear-gradient(180deg,#F2D48A,#C9962E);color:#3A2A0A;transform:none}
+.ixw--sol-brand .lpr-drawers summary .ic{background:rgba(255,253,247,.6);color:#6E4428}
+.ixw--sol-brand .lpr-drawers .faq-a{margin:0 14px 14px;padding:16px 18px 16px 52px;border-radius:3px;background:var(--lp-paper);box-shadow:inset 0 2px 0 rgba(0,0,0,.06);color:#3D3F4C}
+.ixw--sol-brand .lpr-drawers .faq-a a{color:var(--lp-red-d);font-weight:700}
+@media (max-width:640px){.ixw--sol-brand .lpr-drawers{padding:10px}.ixw--sol-brand .lpr-drawers .faq-a{padding-left:18px;margin:0 8px 10px}}
+
+/* related services: business cards, fanned, crop marks at the corners */
+.ixw--sol-brand .lpr-cards-sec{background:linear-gradient(180deg,#FFFFFF,var(--lp-brick))}
+.ixw--sol-brand .lpr-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;padding:10px 6px}
+.ixw--sol-brand .lpr-bcard{position:relative;display:block;padding:30px 28px 26px 34px;border-radius:3px;background:linear-gradient(90deg,var(--c) 0 8px,#FFFFFF 8px);color:inherit;text-decoration:none;
+  box-shadow:0 0 0 1px #E6DFD2,6px 6px 0 rgba(29,31,42,.08),0 26px 40px -30px rgba(40,30,20,.45);transform:rotate(calc((var(--i) - 1) * 1.6deg));transition:transform .45s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--sol-brand .lpr-bcard::before{content:"";position:absolute;inset:-12px;pointer-events:none;opacity:0;transition:opacity .3s ease;
+  background:linear-gradient(#1D1F2A,#1D1F2A) 0 12px/8px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 12px 0/1px 8px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 100% 12px/8px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 12px) 0/1px 8px no-repeat,
+  linear-gradient(#1D1F2A,#1D1F2A) 0 calc(100% - 12px)/8px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 12px 100%/1px 8px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) 100% calc(100% - 12px)/8px 1px no-repeat,linear-gradient(#1D1F2A,#1D1F2A) calc(100% - 12px) 100%/1px 8px no-repeat}
+.ixw--sol-brand .lpr-bcard:hover{transform:rotate(0) translateY(-6px);text-decoration:none;box-shadow:0 0 0 1px #E6DFD2,8px 8px 0 var(--c),0 30px 44px -30px rgba(40,30,20,.5)}
+.ixw--sol-brand .lpr-bcard:hover::before{opacity:.7}
+.ixw--sol-brand .lpr-bcard .card-ic{position:absolute;right:22px;top:24px;display:grid;place-items:center;width:44px;height:44px;margin:0;min-height:0;border-radius:50%;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);color:var(--c)}
+.ixw--sol-brand .lpr-bcard .card-ic .ic{width:22px;height:22px}
+.ixw--sol-brand .lpr-bcard h3{margin:0 0 8px;padding-right:52px;font-size:1.1rem;color:var(--lp-ink)}
+.ixw--sol-brand .lpr-bcard p{margin:0;font-size:15px;line-height:1.6;color:#4A4C58}
+.ixw--sol-brand .lpr-bcard .btn-link{margin-top:16px;color:var(--c);font-size:14px}
+@media (max-width:960px){.ixw--sol-brand .lpr-cards{grid-template-columns:minmax(0,1fr);max-width:560px;gap:24px}.ixw--sol-brand .lpr-bcard{transform:none}}
+
+/* the end card: a halftone poster with registration marks */
+.ixw--sol-brand .lpr-cta{overflow:hidden;border-radius:4px;background:radial-gradient(circle at 85% 20%,rgba(255,209,0,.35),transparent 40%),linear-gradient(120deg,var(--lp-red-d),var(--lp-red) 55%,#F06A4F)}
+.ixw--sol-brand .lpr-cta::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.22) 2.4px,transparent 2.8px);background-size:13px 13px;-webkit-mask:linear-gradient(110deg,transparent 30%,#000 90%);mask:linear-gradient(110deg,transparent 30%,#000 90%)}
+.ixw--sol-brand .lpr-cta::after{content:"";position:absolute;left:0;right:0;bottom:0;top:auto;width:auto;height:10px;border-radius:0;background:var(--lp-cmyk);transform:none}
+.ixw--sol-brand .lpr-reg{position:absolute;width:28px;height:28px;border-radius:50%;background:linear-gradient(#FFFFFF,#FFFFFF) 50% 0/1.5px 100% no-repeat,linear-gradient(#FFFFFF,#FFFFFF) 0 50%/100% 1.5px no-repeat,radial-gradient(circle,transparent 7px,#FFFFFF 7.5px 9px,transparent 9.5px);opacity:.8}
+.ixw--sol-brand .lpr-reg--a{left:18px;top:18px}.ixw--sol-brand .lpr-reg--b{right:18px;top:18px}
+.ixw--sol-brand .lpr-cta .hand{color:#FFE38A}
+.ixw--sol-brand .lpr-cta .btn-white,.ixw--sol-brand .lpr-cta .btn-white:hover{color:var(--lp-ink);background:#FFFFFF;box-shadow:4px 4px 0 var(--lp-ink)}
+.ixw--sol-brand .lpr-cta .btn-outline-white,.ixw--sol-brand .lpr-cta .btn-outline-white:hover{color:var(--lp-ink);background:var(--lp-y);box-shadow:4px 4px 0 var(--lp-ink)}
+.ixw--sol-brand .lpr-cta :is(.btn-white,.btn-outline-white):hover{translate:-2px -2px}
+@media (prefers-reduced-motion:reduce){.ixw--sol-brand .ixw-copy .crumbs::after,.ixw--sol-brand .lpr-feed,.ixw--sol-brand .lpr-plate.is-in .lpr-inks i{animation:none}}
+
+/* ---------- hero buttons (audit round): letterpress blocks — 52px, an offset ink shadow, an ink-chip icon, registration-mark focus ---------- */
+.ixw--sol-brand .ixw-copy .actions{align-items:center;gap:14px}
+.ixw--sol-brand .ixw-copy .actions .btn-lg{height:52px;gap:10px;font-size:15px;overflow:visible}
+.ixw--sol-brand .ixw-copy .actions .btn-lg::after{border-radius:inherit}
+.ixw--sol-brand .ixw-copy .btn-primary{padding:0 10px 0 22px}
+.ixw--sol-brand .ixw-copy .btn-primary .ic{width:30px;height:30px;padding:7px;border-radius:2px;background:var(--lp-ink);color:var(--lp-y)}
+.ixw--sol-brand .ixw-copy .btn-ghost{padding:0 22px 0 18px}
+.ixw--sol-brand .ixw-copy .btn-ghost .ic{width:20px;height:20px;color:var(--lp-red)}
+.ixw--sol-brand main .ixw-copy .btn-ghost:hover{background:#FFF8E0}
+.ixw--sol-brand main .ixw-copy .btn-ghost:hover .ic{transform:none}
+.ixw--sol-brand .lpr-pills{gap:8px}
+.ixw--sol-brand .lpr-pills span{height:28px;padding:0 11px 0 8px;transition:translate .15s ease,box-shadow .15s ease}
+.ixw--sol-brand .lpr-pills span:hover{translate:-1px -1px;box-shadow:inset 0 0 0 1.5px var(--lp-ink),3px 3px 0 var(--c,#00A3E0)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn{background:#FFFFFF;color:var(--lp-ink)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn:hover{translate:-1px -1px;background:var(--lp-paper);color:var(--lp-red);border-color:var(--lp-ink);box-shadow:4px 4px 0 var(--lp-c)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn:active{translate:2px 2px;box-shadow:0 0 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn--play,.ixw--sol-brand .ixw-cap .ixw-ibtn--play:hover{border:2px solid var(--lp-ink);border-radius:4px;background:var(--lp-red);color:#FFFFFF;box-shadow:3px 3px 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn--play:hover{box-shadow:4px 4px 0 var(--lp-ink),0 0 0 5px rgba(255,209,0,.35)}
+.ixw--sol-brand .ixw-cap .ixw-ibtn:focus-visible,.ixw--sol-brand .ixw-peek:focus-visible{outline:3px dashed var(--lp-c);outline-offset:4px}
+.ixw--sol-brand .ixw-dots{gap:5px}
+.ixw--sol-brand .ixw-dots button{width:10px;height:8px;background:#E4E0D8;box-shadow:inset 0 0 0 1.5px rgba(29,31,42,.25)}
+.ixw--sol-brand .ixw-dots button:nth-child(4n+1):hover{background:var(--lp-c)}.ixw--sol-brand .ixw-dots button:nth-child(4n+2):hover{background:var(--lp-m)}.ixw--sol-brand .ixw-dots button:nth-child(4n+3):hover{background:var(--lp-y)}.ixw--sol-brand .ixw-dots button:nth-child(4n):hover{background:var(--lp-ink)}
+.ixw--sol-brand .ixw-dots button.is-on{width:28px;background:var(--lp-cmyk);box-shadow:0 0 0 1.5px var(--lp-ink)}
+.ixw--sol-brand .ixw-peek{height:40px;padding:0 18px 0 14px;border:2px solid var(--lp-ink);background:var(--lp-paper);color:var(--lp-ink);font-weight:800;box-shadow:3px 3px 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-peek::after{content:"";position:absolute;left:10px;right:10px;bottom:-9px;height:4px;background:var(--lp-cmyk)}
+.ixw--sol-brand .ixw-peek:hover{translate:-2px -2px;box-shadow:5px 5px 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-peek:active{translate:2px 2px;box-shadow:0 0 0 var(--lp-ink)}
+.ixw--sol-brand .ixw-peek[aria-pressed="true"]{background:var(--lp-y)}
+@media (max-width:640px){.ixw--sol-brand .ixw-copy .actions{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}.ixw--sol-brand .ixw-copy .actions .btn{width:100%;justify-content:center}}
+
+/* ---------- below the hero (audit round) ---------- */
+/* the FAQ cabinet beside its heading and a type-case tray of letters (no empty half at desktop widths) */
+@media (min-width:1000px){.ixw--sol-brand .lpr-case-sec .container{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:56px;align-items:start}
+  .ixw--sol-brand .lpr-case-sec .sec-head{position:sticky;top:120px;margin:0;padding-bottom:140px}
+  .ixw--sol-brand .lpr-case-sec .sec-head::after{content:"";position:absolute;left:0;bottom:0;width:200px;height:120px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 26 200 94'%3E%3Crect x='4' y='30' width='192' height='84' rx='6' fill='%23B07A4A'/%3E%3Cg fill='%23C98E5A'%3E%3Crect x='12' y='38' width='42' height='34' rx='3'/%3E%3Crect x='60' y='38' width='42' height='34' rx='3'/%3E%3Crect x='108' y='38' width='38' height='34' rx='3'/%3E%3Crect x='152' y='38' width='36' height='34' rx='3'/%3E%3Crect x='12' y='76' width='66' height='30' rx='3'/%3E%3Crect x='84' y='76' width='50' height='30' rx='3'/%3E%3Crect x='140' y='76' width='48' height='30' rx='3'/%3E%3C/g%3E%3Cg font-family='Georgia,serif' font-weight='700' text-anchor='middle'%3E%3Ctext x='33' y='64' font-size='24' fill='%231D1F2A'%3EA%3C/text%3E%3Ctext x='81' y='64' font-size='24' fill='%23E8452C'%3Ea%3C/text%3E%3Ctext x='127' y='64' font-size='22' fill='%231D1F2A'%3E%26amp;%3C/text%3E%3Ctext x='170' y='64' font-size='22' fill='%2300A3E0'%3EB%3C/text%3E%3Ctext x='45' y='99' font-size='20' fill='%23E6007E'%3ER%3C/text%3E%3Ctext x='109' y='99' font-size='20' fill='%231D1F2A'%3E?%3C/text%3E%3C/g%3E%3Crect x='148' y='84' width='32' height='14' rx='2' fill='%23FFD100'/%3E%3C/svg%3E") 0 100%/contain no-repeat}
+  .ixw--sol-brand .lpr-drawers{max-width:none}}
+.ixw--sol-brand .lpr-drawers summary:focus-visible{outline:3px dashed var(--lp-c);outline-offset:3px}
+/* the plate label sat behind the round icon: keep it clear of it */
+.ixw--sol-brand .lpr-chip-top i{margin-right:64px}
+
+/* fix round: FAQ in one column — heading row with its drawing on the right, questions full width below (nothing under the side tabs) */
+@media (min-width:1000px){.ixw--sol-brand .lpr-case-sec .container{display:block}
+  .ixw--sol-brand .lpr-case-sec .sec-head{position:relative;top:auto;max-width:920px;margin:0 0 30px;padding:0 200px 0 0;min-height:100px}
+  .ixw--sol-brand .lpr-case-sec .sec-head::after{left:auto;right:0;bottom:-8px;width:170px;height:100px}
+  .ixw--sol-brand .lpr-drawers{max-width:920px}}
+/* TN cards: light labels, level headers, the round icon inside the header (not straddling its edge) */
+.ixw--sol-brand .lpr-chip-top b,.ixw--sol-brand .lpr-chip-top i{color:#FFFFFF}
+.ixw--sol-brand .lpr-chip-top i{margin-right:0}
+.ixw--sol-brand .lpr-chip,.ixw--sol-brand .lpr-chip:hover{rotate:none}
+.ixw--sol-brand .lpr-chip:hover{transform:translateY(-6px)}
+.ixw--sol-brand .lpr-chip .card-ic{top:14px;right:16px;width:44px;height:44px;box-shadow:0 0 0 3px rgba(255,255,255,.35),0 6px 12px -4px rgba(0,0,0,.25)}
+.ixw--sol-brand .lpr-chip .card-ic .ic{width:22px;height:22px}
+.ixw--sol-brand .lpr-chip h3{padding-right:0}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+.ixw--sol-brand .ixw-credits-wrap + .section{padding-top:14px!important}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the print studio. One magenta-ink accent.
+   Themed touches kept: the "TN 0x · identity" swatch label on the six cards, CMYK ink dots + "plate 1 / 4" on the
+   steps, the open brand-guide spread, the coloured spine of the business cards in related.
+   =================================================================================================================== */
+.ixw--sol-brand{--calm-accent:#C0367A;--calm-accent-ink:#9E2A63;--calm-accent-line:#EBC6D8;--calm-accent-wash:#FBF8F7;--calm-wash:#FBF8F7}
+html body.ixw--sol-brand main .lpr-proof-sec{padding-top:64px!important}
+html body.ixw--sol-brand main .lpr-proof{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-brand main .lpr-proof::before,html body.ixw--sol-brand main .lpr-proof::after{content:none!important;display:none!important}
+html body.ixw--sol-brand main .lpr-proof p{color:var(--body)!important}
+/* demo */
+html body.ixw--sol-brand main .lpr-mat{padding:0!important;border-radius:18px!important;background:#fff!important;background-image:none!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-brand main .lpr-mat::before,html body.ixw--sol-brand main .lpr-mat::after{content:none!important;display:none!important}
+html body.ixw--sol-brand main .lpr-mat-top{padding:12px 18px!important;background:#2F7D5B!important}
+html body.ixw--sol-brand main .lpr-mat .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* six cards: white, a thin coloured rule, the swatch label as small text */
+html body.ixw--sol-brand main .lpr-chip{padding:24px 26px 26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-brand main .lpr-chip:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-brand main .lpr-chip-top{height:auto!important;margin:0 0 14px!important;padding:0!important;background:none!important;align-items:center!important;color:var(--c)!important}
+html body.ixw--sol-brand main .lpr-chip-top b{color:var(--c)!important;font:700 12px/1 var(--font-body)!important;letter-spacing:.1em}
+html body.ixw--sol-brand main .lpr-chip-top i{color:#9AA3B5!important;font:500 12px/1 var(--font-body)!important}
+html body.ixw--sol-brand main .lpr-chip .card-ic{position:static!important;margin:0 0 14px!important;box-shadow:none!important}
+html body.ixw--sol-brand main .lpr-chip p{color:var(--body)!important}
+/* steps */
+html body.ixw--sol-brand main .lpr-plate{padding:24px 22px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-brand main .lpr-plate::before,html body.ixw--sol-brand main .lpr-plate::after{content:none!important;display:none!important}
+html body.ixw--sol-brand main .lpr-pn{font-family:var(--font-body)!important;color:#9AA3B5!important}
+html body.ixw--sol-brand main .lpr-plate p{color:var(--body)!important}
+/* what you get: the spread, white pages and a soft gutter */
+html body.ixw--sol-brand main .lpr-book{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-brand main .lpr-book::before{content:none!important;display:none!important}
+html body.ixw--sol-brand main .lpr-book::after{width:1px!important;margin-left:0!important;background:var(--calm-line)!important}
+html body.ixw--sol-brand main .lpr-page li{border-bottom:1px solid var(--calm-line)!important;color:var(--body)!important}
+/* FAQ: plain rows; the letter tag stays small */
+html body.ixw--sol-brand main .lpr-case-sec{background:var(--calm-wash)!important;background-image:none!important}
+html body.ixw--sol-brand main .lpr-drawers{max-width:860px!important;padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+html body.ixw--sol-brand main .lpr-drawers details{background:#fff!important;box-shadow:none!important;translate:none!important}
+html body.ixw--sol-brand main .lpr-drawers summary::before{width:28px!important;height:24px!important;border-radius:6px!important;background:#F8E6EF!important;box-shadow:none!important;color:var(--calm-accent-ink)!important;font:700 12px/24px var(--font-body)!important;text-align:center}
+html body.ixw--sol-brand main .lpr-drawers summary .ic{background:#F6F7FA!important;color:var(--calm-accent-ink)!important}
+html body.ixw--sol-brand main .lpr-drawers .faq-a{margin:0!important;padding:0 20px 18px 62px!important;background:none!important;box-shadow:none!important;color:var(--body)!important}
+@media (max-width:640px){html body.ixw--sol-brand main .lpr-drawers .faq-a{padding-left:20px!important}}
+/* related: business cards, straight, with their coloured spine */
+html body.ixw--sol-brand main .lpr-cards-sec{background:#fff!important}
+html body.ixw--sol-brand main .lpr-cards{gap:24px!important;padding:0!important}
+html body.ixw--sol-brand main .lpr-bcard{border-radius:16px!important;border:1px solid var(--calm-line)!important;border-left:5px solid var(--c)!important;background:#fff!important;box-shadow:var(--calm-shadow)!important;transform:none!important;rotate:none!important}
+html body.ixw--sol-brand main .lpr-bcard::before,html body.ixw--sol-brand main .lpr-bcard::after{content:none!important;display:none!important}
+html body.ixw--sol-brand main .lpr-bcard:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-brand main .lpr-run{padding-top:0!important}
+
+@media (max-width:480px){html body.ixw--sol-brand main .ixw-copy .actions{flex-wrap:wrap}html body.ixw--sol-brand main .ixw-copy .actions .btn{white-space:normal;flex:1 1 auto;min-width:0;justify-content:center;text-align:center}}

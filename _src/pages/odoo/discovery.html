@@ -1,0 +1,228 @@
+<!--meta {"title": "Odoo Consultant — Singapore & Philippines", "desc": "Odoo consultation in Singapore and the Philippines: TechNext maps how your business runs and what to set up first, before any configuration starts.", "out": "odoo/discovery.html", "nav": "odoo", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-asis.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/discovery.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-asis.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/discovery.css?v={ASSET_V}\">", "body": "ixw ixw--discovery ow-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="discovery" data-home="1000,120" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Odoo</span><span>Walkthrough</span><span>Discovery</span></nav>
+      <ol class="ow-rail" aria-label="Step 1 of 4"><li class="is-on"><b>1</b>Discovery</li><li><a href="{{ROOT}}odoo/training.html"><b>2</b>Training</a></li><li><a href="{{ROOT}}odoo/integration.html"><b>3</b>Integration</a></li><li><a href="{{ROOT}}odoo/support.html"><b>4</b>Support</a></li></ol>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo consultant · step 1 of 4</span>Know what to set up before you spend.</h1>
+      <p class="lead"><span class="m-full">We sit with the people who do the work (finance, sales, warehouse) and map how an order, a stock movement and a payment travel through the company today. Then we match each step to an Odoo 20 app and write it down, so the scope follows the problem instead of a demo.</span><span class="m-short">We map how orders, stock and money move today, match each step to an Odoo 20 app and write the scope down.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap the team, a lane on the case board, the clues, the magnifier or the case file.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="con" data-near="1000,120" data-who="TechNext consultant" data-role="Discovery workshop · illustration" data-say="Walk me through **one real order**, from the quote to the payment." style="--x:880;--y:358;--w:96;--h:230" aria-label="Say hi to the TechNext consultant (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Consultant</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="fin" data-near="1000,120" data-who="Finance" data-role="Client team · illustration" data-say="Month-end takes us a week. Most of it is **reconciling by hand**." style="--x:448;--y:322;--w:80;--h:76" aria-label="Say hi to finance (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Finance</b></span></button>
+      <button class="ixw-cast" type="button" data-cast="sal" data-near="1000,120" data-who="Sales" data-role="Client team · illustration" data-say="Quotes live in Excel, then we **re-type** them as orders." style="--x:572;--y:322;--w:80;--h:76" aria-label="Say hi to sales (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Sales</b></span></button>
+      <button class="ixw-cast" type="button" data-cast="wh" data-near="1000,120" data-who="Warehouse" data-role="Client team · illustration" data-say="We find out stock is short **when we pick** the order." style="--x:696;--y:322;--w:80;--h:76" aria-label="Say hi to the warehouse (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Warehouse</b></span></button>
+
+      <button class="ixw-cast" type="button" data-cast="ana" data-near="1000,120" data-who="TechNext analyst" data-role="Discovery workshop · illustration" data-say="Finance at half nine, sales at eleven, the warehouse after lunch. **Everyone gets heard.**" style="--x:1108;--y:352;--w:90;--h:236" aria-label="Say hi to the TechNext analyst (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Analyst</b><i>TechNext</i></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="o2c" data-nx="1000,120" data-pose="point-left" data-rec="Order-to-cash · Quote → Order → Deliver → Invoice → Paid" data-say="**Order-to-cash**: from the quote to the payment, step by step, as it happens today." style="--x:514;--y:-38;--w:480;--h:52" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:sale:18}}<b>Order-to-cash</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="p2p" data-nx="1000,120" data-pose="point-left" data-rec="Procure-to-pay · Request → PO → Receive → Bill → Pay" data-say="**Procure-to-pay**: what you buy, how it arrives, how the supplier gets paid." style="--x:514;--y:36;--w:480;--h:52" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:purchase:18}}<b>Procure-to-pay</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="r2r" data-nx="1000,120" data-pose="point-left" data-rec="Record-to-report · Journal → Reconcile → Close → Report" data-say="**Record-to-report**: how the books close each month, and who waits for what." style="--x:514;--y:110;--w:480;--h:52" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:accountant:18}}<b>Record-to-report</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="gaps" data-nx="1000,120" data-pose="point-left" data-rec="Gaps · noted before anything is built" data-say="Every **gap** is a clue on a red note: re-typing, missing reserves, manual reconciling." style="--x:812;--y:36;--w:96;--h:248" aria-pressed="false"><span class="ixw-hot-lab">{{icon:search}}<b>Gaps</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="apps" data-nx="1000,190" data-pose="present" data-rec="App map · each step matched to an Odoo 20 app" data-say="The app line-up: each step is matched to an **Odoo 20 app**, so the scope follows the work." style="--x:980;--y:-20;--w:212;--h:188" aria-pressed="false"><span class="ixw-hot-lab">{{icon:grid}}<b>App map</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="scope" data-nx="1000,120" data-pose="point-left" data-rec="Written scope · process map, app map, gaps, quotation" data-say="You leave with a **written scope** and a quotation, not a demo." style="--x:257;--y:353;--w:150;--h:70" aria-pressed="false"><span class="ixw-hot-lab">{{icon:file}}<b>Case file · scope</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="sticky" data-near="1000,120" data-pose="wow" data-say="Another one for the board: **gap noted**." style="--x:720;--y:118;--w:72;--h:46" aria-label="Add a clue note"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Add a clue</b></span></button>
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="lens" data-near="1000,120" data-pose="wow" data-say="Under the magnifier: every **step** of every lane, one at a time." style="--x:585;--y:164;--w:66;--h:40" aria-label="Sweep the magnifier over the board"><span class="ixw-hot-lab" aria-hidden="true">{{icon:search}}<b>Magnifier</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="printer" data-near="1000,190" data-pose="wow" data-say="Hot off the printer: **interview notes** for the case file." style="--x:997;--y:374;--w:106;--h:52" aria-label="Print the interview notes"><span class="ixw-hot-lab" aria-hidden="true">{{icon:file}}<b>Printer</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:1000;--ny:120" data-reacts="wow::That's a lot of **clues**!|love::I love a good **process map**.|celebrate::Case closed: **scope written**!|think::Hmm… which step do you **re-type** today?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:discovery}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **case room**: we investigate how your work really moves today. Tap around!" data-outro="Map first, then the apps, then a **written scope**. Case closed: that's discovery.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:discovery}}<b data-for="con" style="--c:#3167CA">C</b><b data-for="fin" style="--c:#E0456B">F</b><b data-for="sal" style="--c:#F08A24">S</b><b data-for="wh" style="--c:#14A38B">W</b><b data-for="ana" style="--c:#5B8DEF">A</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · Odoo discovery">assistant · Odoo discovery</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>case room</b>: we investigate how your work really moves today. Tap around!</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: order-to-cash"></button><button type="button" data-ixw-dot aria-label="Stop 3: procure-to-pay"></button><button type="button" data-ixw-dot aria-label="Stop 4: record-to-report"></button><button type="button" data-ixw-dot aria-label="Stop 5: gaps"></button><button type="button" data-ixw-dot aria-label="Stop 6: app map"></button><button type="button" data-ixw-dot aria-label="Stop 7: written scope"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:layers}}Phase</dt><dd>Step 1 of 4</dd></div><div><dt>{{icon:search}}We map</dt><dd><span class="ow-nb">Order-to-cash</span> · <span class="ow-nb">Procure-to-pay</span> · <span class="ow-nb">Record-to-report</span></dd></div><div><dt>{{icon:file}}You leave with</dt><dd>Process map · App map · Scope · Quotation</dd></div><div><dt>{{icon:trend}}Track record</dt><dd>11+ enterprise clients · 10+ countries</dd></div><div><dt>{{icon:users}}Teams</dt><dd>Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec dc-answer">
+  <div class="container"><div class="answer-box reveal"><p class="answer-h">In one paragraph</p><p>Odoo discovery is the first step of a TechNext implementation. We sit with finance, sales and the warehouse, map how an order, a stock movement and a payment travel through the company today, match each step to an Odoo app and hand you a written scope, so the project follows the problem rather than a demo.</p></div></div>
+</section>
+
+<section class="section demo-sec dc-exhibit" id="process-map">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">before and after</span><h2>Odoo discovery as a process map: one order today, and in Odoo.</h2><p class="lead">Discovery is business process mapping done with the people who do the work. TechNext maps how an order really moves today, through WhatsApp, spreadsheets, paper delivery orders and re-typing, then how the same order runs on one Odoo database. Switch between the two, hover a numbered pain point to see its fix, or play the walk-through of the method.</p></div>
+    <div class="dc-cork">
+    <i class="dc-pin dc-pin--l" aria-hidden="true"></i><i class="dc-pin dc-pin--r" aria-hidden="true"></i>
+    <div class="dm dm-asis reveal" data-demo="asis">
+      <div class="dm-head">
+        <div class="dm-title"><b>One order through a sample distributor</b><small>Illustrative map · order to cash, with restocking</small></div>
+        <div class="dm-seg" role="group" aria-label="Show the process">
+          <button type="button" data-state="0" aria-pressed="true"><i class="dm-sw" style="--c:var(--tok-late)"></i>Today</button>
+          <button type="button" data-state="1" aria-pressed="false"><i class="dm-sw" style="--c:var(--blue)"></i>With Odoo</button>
+        </div>
+        <button class="dm-btn dm-btn--primary asis-go" type="button" data-walk aria-pressed="false">{{icon:play}}<i class="asis-pz" aria-hidden="true"></i><span>Walk-through</span></button>
+      </div>
+      <div class="asis-wrap">
+        <div class="asis-stage" role="group" aria-label="Process map of one order">
+          <svg class="asis-svg" aria-hidden="true"></svg>
+          <div class="asis-nodes" aria-hidden="true">
+            <div class="asis-node" data-n="cust"><div class="asis-card"><div class="asis-fa">{{icon:users}}<span><b>Customer</b><small>WhatsApp, email, phone</small></span></div><div class="asis-fb">{{odoo:website_sale:22}}<span><b>Customer portal</b><small>Orders, signs quotes online</small></span></div></div></div>
+            <div class="asis-node" data-n="chat"><div class="asis-card"><div class="asis-fa">{{icon:whatsapp}}<span><b>Team chat</b><small>Orders as screenshots</small></span></div><div class="asis-fb">{{odoo:crm:22}}<span><b>CRM</b><small>Every request, one record</small></span></div></div></div>
+            <div class="asis-node" data-n="price"><div class="asis-card"><div class="asis-fa">{{icon:grid}}<span><b>Prices.xlsx</b><small>Copied into each quote</small></span></div></div></div>
+            <div class="asis-node" data-n="quote"><div class="asis-card"><div class="asis-fa">{{icon:file}}<span><b>Quote.docx</b><small>Typed, saved as PDF</small></span></div><div class="asis-fb">{{odoo:sale:22}}<span><b>Sales</b><small>Pricelist and stock on the line</small></span></div></div></div>
+            <div class="asis-node" data-n="boss"><div class="asis-card"><div class="asis-fa">{{icon:mail}}<span><b>Manager's inbox</b><small>Discount approvals</small></span></div><div class="asis-fb">{{odoo:approvals:22}}<span><b>Approval</b><small>Over the limit, in Odoo</small></span></div></div></div>
+            <div class="asis-node" data-n="log"><div class="asis-card"><div class="asis-fa">{{icon:grid}}<span><b>Order log.xlsx</b><small>Re-typed for the warehouse</small></span></div></div></div>
+            <div class="asis-node" data-n="dockt"><div class="asis-card"><div class="asis-fa">{{icon:file}}<span><b>Paper DO</b><small>Handwritten, signed</small></span></div></div></div>
+            <div class="asis-node" data-n="stock"><div class="asis-card"><div class="asis-fa">{{icon:grid}}<span><b>Stock.xlsx</b><small>Updated at day end</small></span></div><div class="asis-fb">{{odoo:stock:22}}<span><b>Inventory</b><small>Barcode, stock live</small></span></div></div></div>
+            <div class="asis-node" data-n="po"><div class="asis-card"><div class="asis-fa">{{icon:mail}}<span><b>PO by email</b><small>When a shelf looks empty</small></span></div><div class="asis-fb">{{odoo:purchase:22}}<span><b>Purchase</b><small>RFQ from a reorder rule</small></span></div></div></div>
+            <div class="asis-node" data-n="sup"><div class="asis-card"><div class="asis-fa">{{icon:truck}}<span><b>Supplier</b><small>Bill sent on paper</small></span></div><div class="asis-fb">{{icon:truck}}<span><b>Supplier</b><small>PO from Odoo, bill digitised</small></span></div></div></div>
+            <div class="asis-node" data-n="acc"><div class="asis-card"><div class="asis-fa">{{icon:calculator}}<span><b>Accounts package</b><small>Invoices keyed by hand</small></span></div><div class="asis-fb">{{odoo:accountant:22}}<span><b>Accounting</b><small>Invoice, bills, GST 9%</small></span></div></div></div>
+            <div class="asis-node" data-n="bank"><div class="asis-card"><div class="asis-fa">{{icon:bank}}<span><b>Bank PDF</b><small>Ticked off by hand</small></span></div><div class="asis-fb">{{icon:bank}}<span><b>Bank feed</b><small>Matched by rules</small></span></div></div></div>
+            <div class="asis-node" data-n="rep"><div class="asis-card"><div class="asis-fa">{{icon:bars}}<span><b>Month-end.xlsx</b><small>Rebuilt from exports</small></span></div></div></div>
+            <div class="asis-db">{{icon:database}}<span><b>One database</b><small>Entered once, used by every app</small></span></div>
+          </div>
+          <div class="asis-pills" aria-hidden="true"></div>
+          <div class="asis-badges" role="group" aria-label="Numbered pain points on the map"></div>
+        </div>
+        <aside class="asis-side" aria-label="Counts and pain points">
+          <dl class="dm-kpis">
+            <div><dt>Manual hand-offs</dt><dd data-k="h">0</dd></div>
+            <div><dt>Fields re-keyed</dt><dd data-k="k">0</dd></div>
+            <div><dt>Days waiting</dt><dd data-k="w">0</dd></div>
+          </dl>
+          <p class="asis-sh asis-sh--k">Illustrative, counted on this map · <span data-k="lbl">today</span></p>
+          <ol class="asis-pains" aria-label="Pain points and their fixes"></ol>
+          <div class="asis-scope">
+            <p class="asis-sh">{{icon:file}}Written scope · sample</p>
+            <ol>
+              <li style="--i:0"><b>Apps, in order</b><span class="asis-apps">{{odoo:crm:16}}{{odoo:sale:16}}{{odoo:stock:16}}{{odoo:purchase:16}}{{odoo:accountant:16}}</span><span>CRM, Sales, Inventory, Purchase, Accounting</span></li>
+              <li style="--i:1"><b>Configuration</b><span>Customer pricelists, approval limit, reordering rules</span></li>
+              <li style="--i:2"><b>Integration</b><span>Bank feed</span></li>
+              <li style="--i:3"><b>Custom</b><span>Quarterly volume rebates, sized separately</span></li>
+              <li style="--i:4"><b>Data</b><span>Customers, products, opening stock, open invoices</span></li>
+              <li style="--i:5"><b>Training</b><span>Sales, warehouse and finance, on your own data</span></li>
+            </ol>
+            <p class="asis-sf" style="--i:6">{{icon:check}}Then a quotation, priced against this scope.</p>
+          </div>
+        </aside>
+      </div>
+      <div class="asis-foot">
+      <p class="asis-cap"><b></b><span></span></p>
+      <div class="asis-walk" role="group" aria-label="Discovery method: jump to a step">
+        <button type="button" class="asis-ws" data-s="0"><i>1</i><span>Interviews</span></button>
+        <button type="button" class="asis-ws" data-s="1"><i>2</i><span>Process map</span></button>
+        <button type="button" class="asis-ws" data-s="2"><i>3</i><span>App mapping</span></button>
+        <button type="button" class="asis-ws" data-s="3"><i>4</i><span>Gaps</span></button>
+        <button type="button" class="asis-ws" data-s="4"><i>5</i><span>Written scope</span></button>
+      </div>
+      </div>
+      <div class="dm-static">
+        <p><b>Today, at a sample distributor:</b> orders arrive on WhatsApp, by email and by phone; prices are copied from a spreadsheet into a quote document; discount approvals wait in the manager's inbox; the confirmed order is re-typed into an order log for the warehouse; delivery orders are handwritten and the signed copy comes back days later; invoices and supplier bills are keyed by hand into a separate accounting package; bank lines are ticked off a PDF; month-end reports are rebuilt in Excel.</p>
+        <p><b>With Odoo:</b> requests land in CRM; the quotation takes the customer's pricelist and shows stock on each line; an approval rule routes over-limit discounts to the manager; confirming the order creates the delivery; deliveries are validated by barcode; the invoice comes from delivered quantities with GST 9%; reordering rules raise purchase requests; bills are matched to the order and the receipt; the bank feed is reconciled by rules and reports read live.</p>
+        <p><b>The method:</b> interviews, process maps, app mapping, gaps flagged as configuration, integration, custom work or data, and a written scope with a quotation.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Illustrative sample distributor. The counts are read off this map for one order and its restock, not measured at a client.</p>
+  </div>
+</section>
+
+
+<section class="section dc-ev-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what discovery covers</span><h2>We follow the work, not the software.</h2></div>
+    <div class="grid-3 dc-evidence">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{icon:users}}</div><h3>Process interviews</h3><p>We sit with finance, sales, warehouse and operations and capture each flow as it actually runs today — including the spreadsheets and workarounds nobody documents.</p></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{icon:receipt}}</div><h3>Order-to-cash</h3><p>Quotation to order to delivery to invoice to payment — every hand-off, approval and delay marked, so we know where the re-keying happens.</p></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{icon:cart}}</div><h3>Procure-to-pay</h3><p>Purchase request to order to receipt to vendor bill to payment, with the checks that should stop a wrong bill before it posts.</p></article>
+      <article class="card reveal" style="--i:3"><div class="card-ic">{{icon:calculator}}</div><h3>Record-to-report</h3><p>How transactions reach the ledger and how the month closes today — reconciliations, tax and the reports leadership actually reads.</p></article>
+      <article class="card reveal" style="--i:4"><div class="card-ic">{{icon:layers}}</div><h3>App mapping</h3><p>Each step assigned to a standard Odoo app. Gaps are flagged clearly as configuration, integration or custom development — not left as surprises.</p></article>
+      <article class="card reveal" style="--i:5"><div class="card-ic">{{icon:database}}</div><h3>Data &amp; systems review</h3><p>What data must migrate and from where, and which systems stay and need connecting rather than replacing.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt dc-time-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">how discovery runs</span><h2>From walk-through to written scope.</h2></div>
+    <div class="steps dc-steps reveal">
+      <div class="step reveal" style="--i:0"><div class="step-n">1</div><div><span class="dc-step-ic" aria-hidden="true">{{icon:users}}</span><h3>Kick-off</h3><p>Agree which flows and teams to cover, and who signs the scope off at the end.</p></div></div>
+      <div class="step reveal" style="--i:1"><div class="step-n">2</div><div><span class="dc-step-ic" aria-hidden="true">{{icon:search}}</span><h3>Process walk-through</h3><p>Order-to-cash, procure-to-pay and record-to-report as they run now, workarounds included.</p></div></div>
+      <div class="step reveal" style="--i:2"><div class="step-n">3</div><div><span class="dc-step-ic" aria-hidden="true">{{icon:layers}}</span><h3>App mapping &amp; gaps</h3><p>Match each step to an Odoo app; flag configuration, integration and custom work separately.</p></div></div>
+      <div class="step reveal" style="--i:3"><div class="step-n">4</div><div><span class="dc-step-ic" aria-hidden="true">{{icon:file}}</span><h3>Scope &amp; quotation</h3><p>Sequence the apps, list the data and integrations, plan training and hosting, then price it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dc-file-sec">
+  <div class="container">
+    <div class="two two--top dc-dossier">
+      <div class="reveal dc-flap"><span class="hand">you leave with</span><h2>A document you can act on — with us or without.</h2><p class="lead">Discovery ends with a written scope you own. The number follows the problem, so you can decide the sequence, the budget and the partner with your eyes open.</p></div>
+      <ul class="spec-cols dc-sheet" style="margin:0">
+        <li>{{icon:check}}Current-process map for order-to-cash</li>
+        <li>{{icon:check}}Current-process map for procure-to-pay</li>
+        <li>{{icon:check}}Record-to-report and month-end close map</li>
+        <li>{{icon:check}}Process-to-app mapping against standard Odoo</li>
+        <li>{{icon:check}}Gaps flagged as configuration, integration or custom</li>
+        <li>{{icon:check}}Data migration list — what moves and from where</li>
+        <li>{{icon:check}}Integration list — systems that stay and must connect</li>
+        <li>{{icon:check}}Recommended app sequence — what to switch on first</li>
+        <li>{{icon:check}}Training plan by team and role</li>
+        <li>{{icon:check}}Hosting recommendation — Odoo Online, Odoo.sh or on-premise</li>
+        <li>{{icon:check}}A written scope you keep and own</li>
+        <li>{{icon:check}}A quotation priced against that scope</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt dc-faq-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">common questions</span><h2>Discovery, answered.</h2></div>
+    <div class="faq dc-faq reveal">
+      <details><summary>Do we have to commit to a full implementation to do discovery? {{icon:chevron}}</summary><div class="faq-a"><p>No. The scope and quotation are yours to act on — with us, with another Odoo partner, or in your own time. Discovery stands on its own.</p></div></details>
+      <details><summary>Who needs to be in the sessions? {{icon:chevron}}</summary><div class="faq-a"><p>The people who do the work: finance, sales, warehouse and operations, plus whoever signs the scope off. We want the real process, not the org chart.</p></div></details>
+      <details><summary>On-site or remote? {{icon:chevron}}</summary><div class="faq-a"><p>Either. We run sessions on-site in Singapore and remotely for teams in other locations.</p></div></details>
+      <details><summary>What if a step doesn't fit standard Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>It gets flagged as configuration, integration or custom development, and priced separately — so you can decide whether it is worth building or whether the process should change instead.</p></div></details>
+      <details><summary>Will you touch our data or systems? {{icon:chevron}}</summary><div class="faq-a"><p>We review what has to migrate and which systems stay, but nothing changes during discovery. It is a mapping exercise, not a cut-over.</p></div></details>
+      <details><summary>How much does discovery cost? {{icon:chevron}}</summary><div class="faq-a"><p>On quotation, sized to the flows and teams in scope. Tell us what you run and we will come back with a number — <a href="{{ROOT}}quotation.html">request a quotation</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section dc-rel-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">related services</span><h2>Where discovery leads.</h2></div>
+    <div class="grid-3 dc-folders">
+      <a class="card reveal" style="--i:0" href="{{ROOT}}solutions/odoo-erp.html"><span class="dc-ftab" aria-hidden="true">Implementation</span><div class="card-ic">{{icon:layers}}</div><h3>Odoo ERP Development</h3><p>The implementation discovery leads into — configure, migrate, train and support on one database.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card reveal" style="--i:1" href="{{ROOT}}odoo/training.html"><span class="dc-ftab" aria-hidden="true">Step 2 of 4</span><div class="card-ic">{{icon:graduation}}</div><h3>Odoo Training</h3><p>Role-based sessions on your own data, once the system is configured for how you work.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card reveal" style="--i:2" href="{{ROOT}}odoo/support.html"><span class="dc-ftab" aria-hidden="true">Step 4 of 4</span><div class="card-ic">{{icon:lifebuoy}}</div><h3>Odoo Support</h3><p>After go-live: fixes, month-end help, version upgrades and the small changes a business keeps needing.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt dc-cta-sec">
+  <div class="container">
+    <div class="cta reveal">
+      <div><span class="hand">next step</span><h2>Start by mapping how work moves today.</h2><p>Tell us which flows hurt most — quoting, stock, month-end. We will scope the review and come back with a quotation.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a><a class="btn btn-outline-white btn-lg" href="#talk">Talk to us</a></div>
+    </div>
+  </div>
+</section>

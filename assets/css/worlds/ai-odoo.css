@@ -1,0 +1,293 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: ai-odoo (/odoo/ai-integration) — AI inside Odoo as a professional kitchen: the AI sous-chef preps, a person approves
+   every plate at the pass, every ticket is logged. White subway tile, brushed steel, AI violet, heat-lamp amber, herb and
+   approval green. The title card is an order ticket clipped to the rail; the caption is a ticket on the pass; buttons shimmer
+   like steel; the glance strip is the ticket rail; sections are a menu, the line's tickets, kitchen-rule clipboards, questions
+   on the spike, chalkboard specials and an end card under the heat lamps. */
+.ixw--ai-odoo{--ow-c:#7B5CD6;--ai-ink:#1B1F3B;--ai-v:#7B5CD6;--ai-v-d:#4B3A8A;--ai-v-l:#F1EDFC;--ai-pur:#714B67;--ai-ok:#1E9E6A;--ai-amb:#FFB347;--ai-steel:#C9D1DC;--ai-steel-l:#EEF2F6;--ai-steel-d:#97A3B4;--ai-herb:#3FA66B;--ai-tom:#E2553D;--ai-chalk:#2F3D38;
+  --w-alt:#F5F7FA;--w-dot:rgba(123,92,214,.08);--w-hand:#7B5CD6;--lab-bg:#FFFFFF;--lab-bd:2px solid #1B1F3B;--lab-lip:#7B5CD6;--lab-tail:#1B1F3B;--lab-r:6px;
+  
+  --ii-bg:linear-gradient(160deg,#FBFCFD,#ECEFF4 60%,#EFEAFB);--ii-ink:#1B1F3B;--ii-b:#7B5CD6;--ii-accent:#1E9E6A;--ii-lip:#1B1F3B;--ii-ep-bg:#7B5CD6;--ii-ep-fg:#FFFFFF}
+.ixw--ai-odoo .ixw-hero{background:linear-gradient(180deg,#EEF1F6 0,#FBFCFD 18%,#F4F6F9 62%,#DDE2E8 62%,#C9D0DA 100%)}
+
+/* ---------- the title card: an order ticket clipped to the rail ---------- */
+.ixw--ai-odoo .ixw-copy{position:relative;max-width:520px;margin-top:26px;padding:34px 30px 60px;border-radius:4px 4px 14px 14px;
+  background:radial-gradient(circle 6px at 10px 0,#E3E8EF 97%,transparent) 0 0/20px 12px repeat-x,#FFFFFF;box-shadow:0 0 0 1.5px #DDE3EB,0 40px 70px -30px rgba(40,40,90,.35)}
+.ixw--ai-odoo .ixw-copy::before{content:"ORDER \00B7  AI INSIDE ODOO";position:absolute;right:22px;top:18px;padding:5px 9px;border-radius:5px;background:var(--ai-ink);color:var(--ai-amb);font:800 10px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em}
+.ixw--ai-odoo .ixw-copy::after{content:"\2726  Prepared by AI \00B7  a person approves";position:absolute;left:0;right:0;bottom:0;height:42px;display:flex;align-items:center;padding-left:26px;border-radius:0 0 14px 14px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 2px,transparent 2px 14px),var(--ai-v);font:800 12.5px/1 var(--font-body);color:#FFFFFF;letter-spacing:.02em}
+.ixw--ai-odoo .ixw-copy h1{max-width:15ch;color:var(--ai-ink)}
+.ixw--ai-odoo :is(.ixwi-card,.hxs-card)::before{display:none}
+.ixw--ai-odoo .ixw-copy .hand{color:var(--ai-v)}
+.ixw--ai-odoo .ixw-badges{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 16px}
+.ixw--ai-odoo .ixw-badges span{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px 0 10px;border-radius:6px;background:var(--ai-steel-l);box-shadow:inset 0 0 0 1.5px var(--ai-steel);font:800 12px/1 var(--font-body);color:#3D4560}
+.ixw--ai-odoo .ixw-badges span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ai-ok);box-shadow:0 0 0 3px rgba(30,158,106,.18)}
+.ixw--ai-odoo .ixw-badges span+span::before{background:var(--ai-v);box-shadow:0 0 0 3px rgba(123,92,214,.18)}
+.ixw--ai-odoo .ixw-hint .ic{color:var(--ai-v)}
+@media (max-width:767px){.ixw--ai-odoo .ixw-copy{padding:30px 20px 56px}.ixw--ai-odoo .ixw-copy::before{display:none}.ixw--ai-odoo .ixw-copy::after{font-size:11px;padding-left:18px}}
+
+/* ---------- the caption: a ticket on the pass, warm under the lamps ---------- */
+.ixw--ai-odoo .ixw-cap{border-radius:10px;border:0;background:#FFFFFF;box-shadow:0 -4px 0 var(--ai-amb),0 0 0 1.5px #DDE3EB,0 0 30px -6px rgba(255,179,71,.45),0 26px 44px -22px rgba(40,40,90,.4)}
+.ixw--ai-odoo .ixw-cap::before{content:"\2726  PREPPED BY AI \00B7  YOU APPROVE";position:absolute;left:18px;top:-15px;padding:6px 10px;border-radius:5px;background:var(--ai-ink);color:var(--ai-amb);font:800 10.5px/1 var(--font-body);letter-spacing:.1em}
+.ixw--ai-odoo .ixw-cap-who b{color:var(--ai-v)}.ixw--ai-odoo .ixw-cap-txt b{color:var(--ai-pur)}
+.ixw--ai-odoo .ixw-cap-rec{background:var(--ai-v-l);border:1px dashed #C9BCF0;color:#4B3A8A}
+
+/* ---------- hero buttons: brushed steel and violet (52px), a shimmer sweeps across once on hover, a steel icon plate ---------- */
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){position:relative;overflow:hidden;height:52px;padding:0 24px;gap:12px;border-radius:10px;border:0;font:800 16px/1 var(--font-display);transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .22s ease}
+.ixw--ai-odoo main .btn-primary:has(.ic){padding-right:9px}.ixw--ai-odoo main .btn-ghost:has(.ic){padding-left:9px}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 48%,transparent 66%) -150% 0/250% 100% no-repeat;pointer-events:none;transform:none;transition:none}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover::after{animation:aiShine .8s ease-out}
+@keyframes aiShine{to{background-position:150% 0}}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost) .ic{width:34px;height:34px;padding:8px;margin:0;border-radius:8px;transition:transform .3s var(--w-spring)}
+.ixw--ai-odoo main .btn-primary,.ixw--ai-odoo main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(120deg,#8B6EE0,#6A4FC8 60%,#5E43B8);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 4px 0 #3D2D7A,0 16px 24px -16px rgba(94,67,184,.8)}
+.ixw--ai-odoo main .btn-primary .ic{background:linear-gradient(180deg,#FFFFFF,#E8EDF3);color:var(--ai-v);box-shadow:inset 0 0 0 1px rgba(151,163,180,.6)}
+.ixw--ai-odoo main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--ai-odoo main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--ai-ink);background:linear-gradient(180deg,#FFFFFF,#E8EDF3);box-shadow:inset 0 0 0 1.5px var(--ai-steel-d),0 4px 0 var(--ai-steel-d),0 16px 24px -18px rgba(27,31,59,.5)}
+.ixw--ai-odoo main .btn-ghost::before{display:none}.ixw--ai-odoo main .btn-ghost .ic{background:var(--ai-v-l);color:var(--ai-v);box-shadow:inset 0 0 0 1px #D9CFF6}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--ai-odoo main .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 6px 0 #3D2D7A,0 22px 28px -14px rgba(123,92,214,.75)}
+.ixw--ai-odoo main .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ai-v),0 6px 0 var(--ai-steel-d),0 22px 26px -16px rgba(123,92,214,.5)}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost):hover .ic{transform:translateX(3px)}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--ai-odoo main .btn-primary:active{box-shadow:0 1px 0 #3D2D7A}.ixw--ai-odoo main .btn-ghost:active{box-shadow:inset 0 0 0 1.5px var(--ai-steel-d),0 1px 0 var(--ai-steel-d)}
+.ixw--ai-odoo .ixw-cta .btn-outline-white,.ixw--ai-odoo .ixw-cta .btn-outline-white:hover{color:var(--ai-ink);background:var(--ai-amb);box-shadow:0 4px 0 #C9832A}
+.ixw--ai-odoo main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--ai-amb);outline-offset:4px}
+.ixw--ai-odoo .ixw-copy .actions{gap:14px}
+/* the partner badges and the episode tag: steel plates */
+.ixw--ai-odoo .ixw-badges span{height:30px}
+.ixw--ai-odoo .ixw-ep-tag{transition:translate .2s var(--w-spring),box-shadow .2s ease}.ixw--ai-odoo .ixw-ep-tag:hover{translate:0 -2px}.ixw--ai-odoo .ixw-ep-tag:focus-visible{outline:3px solid var(--ai-amb);outline-offset:3px}
+/* caption controls: steel knobs */
+.ixw--ai-odoo .ixw-ibtn{border:2px solid var(--ai-ink);box-shadow:0 3px 0 var(--ai-ink);color:var(--ai-ink);background:linear-gradient(180deg,#FFFFFF,#EEF2F6)}
+.ixw--ai-odoo .ixw-ibtn:hover{color:var(--ai-v);border-color:var(--ai-ink);box-shadow:0 5px 0 var(--ai-ink),0 10px 16px -8px rgba(123,92,214,.6)}
+.ixw--ai-odoo .ixw-ibtn:active{box-shadow:0 1px 0 var(--ai-ink)}
+.ixw--ai-odoo .ixw-ibtn:focus-visible{outline:3px solid var(--ai-amb);outline-offset:3px}
+.ixw--ai-odoo .ixw-ibtn--play,.ixw--ai-odoo .ixw-ibtn--play:hover{background:linear-gradient(180deg,#8B6EE0,#6A4FC8);color:#FFFFFF}
+.ixw--ai-odoo .ixw-dots{gap:6px}
+.ixw--ai-odoo .ixw-dots button{border-radius:2px;background:#D5DCE6}
+.ixw--ai-odoo .ixw-dots button:hover{background:#B9A9EC}
+.ixw--ai-odoo .ixw-dots button.is-on{width:24px;background:var(--ai-amb);box-shadow:0 0 0 1.5px var(--ai-ink)}
+/* "View the scene": top left over the pantry wall, clear of the order screen and the ticket rail */
+.ixw--ai-odoo .ixw-peek{left:max(24px,calc((100vw - 1200px) / 2 + 24px));right:auto;top:calc(var(--header-box) + 6px);height:40px;padding:0 16px 0 6px;gap:9px;border-radius:10px;border-color:var(--ai-ink);background:linear-gradient(180deg,#FFFFFF,#EEF2F6);box-shadow:0 3px 0 var(--ai-ink)}
+.ixw--ai-odoo .ixw-peek::before{width:28px;height:28px;border-radius:7px;background:var(--ai-v);-webkit-mask:none;mask:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-size:16px;background-position:center;background-repeat:no-repeat}
+.ixw--ai-odoo .ixw-peek:hover{box-shadow:0 5px 0 var(--ai-ink),0 12px 18px -10px rgba(123,92,214,.6)}
+.ixw--ai-odoo .ixw-peek:focus-visible{outline:3px solid var(--ai-amb)}
+.ixw--ai-odoo .ixw-peek[aria-pressed="true"]{background:var(--ai-v-l)}
+.ixw--ai-odoo .ixw-hot-lab .ic{color:var(--ai-v)}
+@media (prefers-reduced-motion:reduce){.ixw--ai-odoo main .btn::after{animation:none!important}}
+
+/* ---------- the glance strip: the ticket rail ---------- */
+.ixw--ai-odoo .ow-strip{position:relative;padding:20px 22px 26px;gap:0 14px;border-radius:14px;background:linear-gradient(180deg,#E8EDF3,#D5DCE6);box-shadow:inset 0 0 0 1.5px #C4CDD8,0 24px 44px -30px rgba(40,40,90,.35)}
+.ixw--ai-odoo .ow-strip::before{content:"";position:absolute;left:14px;right:14px;top:12px;height:8px;border-radius:4px;background:linear-gradient(180deg,#FFFFFF,var(--ai-steel-d))}
+.ixw--ai-odoo .ow-strip>div{position:relative;margin-top:6px;padding:16px 14px 18px;border-radius:3px;background:#FFFFFF;rotate:-.6deg;box-shadow:0 8px 14px -10px rgba(30,40,70,.35);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/12px 6px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/12px 6px repeat-x}
+.ixw--ai-odoo .ow-strip>div:nth-child(even){rotate:.7deg}
+.ixw--ai-odoo .ow-strip>div::before{content:"";position:absolute;left:50%;top:-1px;width:22px;height:8px;margin-left:-11px;border-radius:0 0 3px 3px;background:var(--ai-steel-d)}
+.ixw--ai-odoo .ow-strip dt{font:800 11.5px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.04em;text-transform:uppercase;color:#5C6B7A}.ixw--ai-odoo .ow-strip dt .ic{color:var(--ai-v)}
+.ixw--ai-odoo .ow-strip>div+div{border-left:0}
+
+/* ---------- the one-paragraph answer: the house rule, on an index card ---------- */
+.ixw--ai-odoo .answer-sec .answer-box{position:relative;max-width:920px;padding:24px 140px 22px 26px;border:0;border-radius:6px;
+  background:linear-gradient(var(--ai-tom),var(--ai-tom)) 0 12px/100% 1.5px no-repeat,repeating-linear-gradient(180deg,transparent 0 23px,rgba(49,103,202,.12) 23px 24px) 0 20px,#FFFFFF;box-shadow:0 0 0 1.5px #DDE3EB,0 18px 30px -22px rgba(40,40,90,.4)}
+.ixw--ai-odoo .answer-sec .answer-box::after{content:"APPROVED\A BY A PERSON";white-space:pre;position:absolute;right:22px;top:50%;translate:0 -50%;rotate:-10deg;padding:8px 10px;border:3px solid var(--ai-ok);border-radius:8px;text-align:center;
+  font:800 11px/1.25 ui-monospace,Consolas,monospace;letter-spacing:.08em;color:var(--ai-ok);opacity:.85}
+.ixw--ai-odoo .answer-sec .answer-h{background:var(--ai-ink);color:var(--ai-amb)}
+.ixw--ai-odoo .answer-sec .answer-box p:not(.answer-h){font-size:14.5px;line-height:24px;color:#2F3550}
+@media (max-width:640px){.ixw--ai-odoo .answer-sec .answer-box{padding:22px 20px 70px}.ixw--ai-odoo .answer-sec .answer-box::after{top:auto;bottom:14px;translate:0 0}}
+
+/* ---------- section heads and backgrounds: tiles and steel ---------- */
+.ixw--ai-odoo .section--alt{background-color:#F6F8FA;background-image:linear-gradient(#E6EBF1 1.5px,transparent 1.5px),linear-gradient(90deg,#E6EBF1 1.5px,transparent 1.5px);background-size:56px 28px}
+.ixw--ai-odoo :is(.ai-head,.demo-sec .sec-head,.ai-rules-copy,.ai-faq-side,.ai-menu-head) h2{color:var(--ai-ink)}
+.ixw--ai-odoo :is(.ai-head,.demo-sec .sec-head,.ai-rules-copy,.ai-faq-side) .hand::before{content:"\2726";display:inline-block;margin-right:8px;font:400 16px/1 var(--font-body);color:var(--ai-v)}
+.ixw--ai-odoo :is(.ai-head,.demo-sec .sec-head) h2::after{content:"";display:block;width:92px;height:6px;margin-top:14px;border-radius:3px;background:linear-gradient(90deg,var(--ai-v) 0 33%,var(--ai-amb) 33% 66%,var(--ai-ok) 66%)}
+
+/* ---------- the record demo, served on the pass ---------- */
+.ixw--ai-odoo .demo-sec{background:linear-gradient(180deg,#FFFFFF,#F4F6F9)}
+.ixw--ai-odoo .ai-demo-top{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:center;margin-bottom:34px}
+.ixw--ai-odoo .ai-demo-top .sec-head{margin-bottom:0;max-width:none}
+.ixw--ai-odoo .ai-pass-ill{position:relative;display:grid;gap:10px;padding:62px 22px 18px;border-radius:16px;background:linear-gradient(180deg,#F1F4F8,#DCE2EA);box-shadow:inset 0 0 0 1.5px #C4CDD8,0 30px 50px -30px rgba(40,40,90,.45)}
+.ixw--ai-odoo .ai-pass-lamps{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-around;padding:0 30px}
+.ixw--ai-odoo .ai-pass-lamps i{position:relative;width:54px;height:26px;margin-top:12px;border-radius:54px 54px 6px 6px;background:var(--ai-tom);box-shadow:0 4px 0 #B8402C}
+.ixw--ai-odoo .ai-pass-lamps i::before{content:"";position:absolute;left:50%;top:-12px;width:2px;height:12px;background:var(--ai-steel-d)}
+.ixw--ai-odoo .ai-pass-lamps i::after{content:"";position:absolute;left:50%;top:28px;width:110px;height:70px;margin-left:-55px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,179,71,.45),rgba(255,179,71,0));animation:aiLamp 3s ease-in-out infinite}
+@keyframes aiLamp{0%,100%{opacity:.8}50%{opacity:1}}
+.ixw--ai-odoo .ai-pass-plate{position:relative;z-index:1;display:flex;align-items:center;gap:10px;height:46px;padding:0 14px 0 8px;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 1.5px #DDE3EB,0 6px 10px -6px rgba(30,40,70,.3);
+  font:800 14px/1 var(--font-display);color:var(--ai-ink);animation:aiPlate 6s ease-in-out infinite;animation-delay:calc(var(--i) * 1s)}
+.ixw--ai-odoo .ai-pass-plate b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ai-v);color:#FFFFFF}
+.ixw--ai-odoo .ai-pass-plate:nth-of-type(2) b{background:var(--ai-ok)}.ixw--ai-odoo .ai-pass-plate:nth-of-type(3) b{background:#5C6B7A}
+.ixw--ai-odoo .ai-pass-plate .ic{width:16px;height:16px}
+@keyframes aiPlate{0%,10%{translate:-14px 0;opacity:.45}18%,80%{translate:0 0;opacity:1}92%,100%{translate:14px 0;opacity:.45}}
+.ixw--ai-odoo .ai-pass-shelf{margin-top:4px;padding:8px;border-radius:8px;background:var(--ai-ink);text-align:center;font:800 11px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--ai-amb)}
+.ixw--ai-odoo .demo-sec .dm{border:0;border-radius:18px;box-shadow:0 -6px 0 var(--ai-amb),0 0 0 1.5px #C4CDD8,0 0 0 10px #F1F4F8,0 0 0 11.5px #C4CDD8,0 40px 70px -40px rgba(40,40,90,.5)}
+.ixw--ai-odoo .demo-sec .dm-head{background:linear-gradient(180deg,#F7F9FB,#EEF2F6)}
+.ixw--ai-odoo .demo-sec .dm-note{margin-top:22px}.ixw--ai-odoo .demo-sec .dm-note .ic{color:var(--ai-ok)}
+
+/* ---------- what's included: the menu ---------- */
+.ixw--ai-odoo .ai-menu{position:relative;padding:54px 54px 46px;border-radius:10px;background:#FFFDF7;box-shadow:0 0 0 1.5px #E6DDC6,0 0 0 9px #FFFDF7,0 0 0 10.5px #E6DDC6,0 40px 70px -40px rgba(60,50,30,.45)}
+.ixw--ai-odoo .ai-menu::before{content:"";position:absolute;inset:14px;border:1px solid #E6DDC6;border-radius:6px;pointer-events:none}
+.ixw--ai-odoo .ai-menu-clip{position:absolute;left:50%;top:-22px;width:120px;height:30px;margin-left:-60px;border-radius:8px;background:linear-gradient(180deg,#F1F4F8,#AEB8C6);box-shadow:0 4px 8px -4px rgba(30,40,70,.4)}
+.ixw--ai-odoo .ai-menu-clip::after{content:"";position:absolute;left:50%;top:9px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#5C6B7A}
+.ixw--ai-odoo .ai-menu-head{text-align:center;margin:0 auto 34px;max-width:640px}
+.ixw--ai-odoo .ai-menu-head .hand{display:inline-block;color:var(--ai-v)}
+.ixw--ai-odoo .ai-menu-head h2{margin:0 0 12px}
+.ixw--ai-odoo .ai-menu-sub{display:inline-flex;align-items:center;gap:10px;margin:0;padding:8px 16px;border-top:1.5px solid #E6DDC6;border-bottom:1.5px solid #E6DDC6;font:800 12px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#7A6A48}
+.ixw--ai-odoo .ai-menu-sub i{font-style:normal;color:var(--ai-v)}
+.ixw--ai-odoo .ai-dishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 56px}
+.ixw--ai-odoo .ai-dish{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:start}
+.ixw--ai-odoo .ai-plate{position:relative;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#FFFFFF;color:var(--c);box-shadow:inset 0 0 0 8px #F4F1EA,inset 0 0 0 9.5px var(--c),0 8px 14px -8px rgba(60,50,30,.45);transition:rotate .6s cubic-bezier(.34,1.56,.64,1)}
+.ixw--ai-odoo .ai-plate .ic,.ixw--ai-odoo .ai-plate .oi{width:26px;height:26px}
+.ixw--ai-odoo .ai-dish:hover .ai-plate{rotate:-18deg}
+.ixw--ai-odoo .ai-dish-n{margin:4px 0 2px;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;color:var(--c)}
+.ixw--ai-odoo .ai-dish h3{display:flex;align-items:baseline;gap:10px;margin:0 0 6px;font-size:1.08rem;color:var(--ai-ink)}
+.ixw--ai-odoo .ai-dish h3::after{content:"";flex:1;min-width:20px;border-bottom:2px dotted #D9CFB4}
+.ixw--ai-odoo .ai-dish p:last-child{margin:0;font-size:14.5px;line-height:1.6;color:var(--body)}
+
+/* ---------- how we build one: four tickets on the line ---------- */
+.ixw--ai-odoo .ai-line{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:0;padding:34px 0 0;list-style:none}
+.ixw--ai-odoo .ai-line::before{content:"";position:absolute;left:-14px;right:-14px;top:10px;height:12px;border-radius:6px;background:linear-gradient(180deg,#FFFFFF,var(--ai-steel-d));box-shadow:0 4px 8px -4px rgba(30,40,70,.35)}
+.ixw--ai-odoo .ai-ticket{position:relative;padding:26px 22px 30px;background:#FFFFFF;rotate:calc((var(--i) - 1.5) * .7deg);transform-origin:50% 0;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/16px 8px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/16px 8px repeat-x;
+  filter:drop-shadow(0 10px 12px rgba(30,40,70,.12));translate:0 -30px;opacity:0;transition:translate .7s cubic-bezier(.34,1.56,.64,1),opacity .4s ease-out;transition-delay:calc(var(--i) * 160ms + .2s)}
+.ixw--ai-odoo .ai-line.is-in .ai-ticket{translate:0 0;opacity:1}
+.ixw--ai-odoo .ai-ticket::before{content:"";position:absolute;left:50%;top:0;width:30px;height:10px;margin-left:-15px;border-radius:0 0 4px 4px;background:var(--ai-steel-d)}
+.ixw--ai-odoo .ai-ticket-top{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding-bottom:12px;border-bottom:2px dashed #E3E8EF}
+.ixw--ai-odoo .ai-ticket-top b{display:grid;place-items:center;min-width:40px;height:30px;padding:0 6px;border-radius:6px;background:var(--ai-ink);color:var(--ai-amb);font:800 13px/1 ui-monospace,Consolas,monospace}
+.ixw--ai-odoo .ai-ticket-top span{font:600 1.45rem/1 var(--font-hand);color:var(--c)}
+.ixw--ai-odoo .ai-ticket-top .ic{width:34px;height:34px;margin-left:auto;padding:8px;border-radius:50%;background:var(--c);color:#FFFFFF}
+.ixw--ai-odoo .ai-ticket h3{margin:0 0 8px;font-size:1.06rem;color:var(--ai-ink)}
+.ixw--ai-odoo .ai-ticket p:last-child{margin:0;font-size:14.5px;line-height:1.6;color:var(--body)}
+
+/* ---------- what you get: the kitchen-rule clipboards ---------- */
+.ixw--ai-odoo .ai-rules{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:56px;align-items:start}
+.ixw--ai-odoo .ai-chain{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin:26px 0 0}
+.ixw--ai-odoo .ai-chain i{width:2px;height:16px;margin-left:24px;background:repeating-linear-gradient(180deg,var(--ai-steel-d) 0 4px,transparent 4px 7px)}
+.ixw--ai-odoo .ai-chip{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 18px 0 8px;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 1.5px #DDE3EB,0 6px 12px -8px rgba(30,40,70,.35);font:800 14px/1 var(--font-display);color:var(--ai-ink)}
+.ixw--ai-odoo .ai-chip .ic{width:30px;height:30px;padding:7px;border-radius:50%;color:#FFFFFF}
+.ixw--ai-odoo .ai-chip--ai .ic{background:var(--ai-v)}.ixw--ai-odoo .ai-chip--ok .ic{background:var(--ai-ok)}.ixw--ai-odoo .ai-chip--log .ic{background:#5C6B7A}
+.ixw--ai-odoo .ai-boards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.ixw--ai-odoo .ai-board{position:relative;padding:0 0 14px;border-radius:12px;background:linear-gradient(180deg,#FFFFFF,#F7F9FB);box-shadow:0 0 0 1.5px #DDE3EB,0 24px 40px -28px rgba(40,40,90,.45)}
+.ixw--ai-odoo .ai-board:first-child{grid-column:1/-1}.ixw--ai-odoo .ai-board:first-child ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.ixw--ai-odoo .ai-board::before{content:"";position:absolute;left:50%;top:-10px;width:70px;height:20px;margin-left:-35px;border-radius:6px;background:linear-gradient(180deg,#F1F4F8,#AEB8C6);box-shadow:0 3px 6px -3px rgba(30,40,70,.4)}
+.ixw--ai-odoo .ai-board-h{display:flex;align-items:center;gap:10px;margin:0 0 6px;padding:22px 20px 14px;border-bottom:3px solid var(--c);font:800 14px/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase;color:var(--ai-ink)}
+.ixw--ai-odoo .ai-board-h .ic{width:30px;height:30px;padding:7px;border-radius:8px;background:var(--c);color:#FFFFFF}
+.ixw--ai-odoo .ai-board ul{margin:0;padding:0 20px;list-style:none}
+.ixw--ai-odoo .ai-board li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #EEF2F6;font-size:14px;line-height:1.5;color:var(--body)}
+.ixw--ai-odoo .ai-board li:last-child{border-bottom:0}
+.ixw--ai-odoo .ai-board li .ic{width:20px;height:20px;padding:3px;margin-top:1px;border-radius:50%;flex:none;color:#FFFFFF;background:var(--c)}
+
+/* ---------- questions: tickets on the spike ---------- */
+.ixw--ai-odoo .ai-faq-wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
+.ixw--ai-odoo .ai-faq-side{position:sticky;top:110px}
+.ixw--ai-odoo .ai-spike{display:grid;place-items:center;margin:22px 0 14px;padding:12px 0 6px;border-radius:16px;background:radial-gradient(circle at 50% 80%,#FFFFFF,#E9EEF4 75%);box-shadow:0 0 0 1.5px #DDE3EB}
+.ixw--ai-odoo .ai-spike svg{max-width:100%;height:auto}
+.ixw--ai-odoo .ai-spike-t{animation:aiSpike 4s ease-in-out infinite;transform-origin:107px 150px}
+@keyframes aiSpike{0%,100%{rotate:0deg}50%{rotate:-3deg}}
+.ixw--ai-odoo .ai-faq-more{margin:0;font:600 14px/1.4 var(--font-body);color:var(--muted)}
+.ixw--ai-odoo .ai-faq-more a{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-weight:800;color:var(--ai-v)}.ixw--ai-odoo .ai-faq-more a .ic{width:15px;height:15px}
+.ixw--ai-odoo .ai-faq{max-width:none;counter-reset:q}
+.ixw--ai-odoo .ai-faq details{position:relative;border:0;border-radius:4px 12px 12px 4px;background:radial-gradient(circle at 0 50%,#F6F8FA 4px,transparent 4.5px) 0 0/10px 14px repeat-y,#FFFFFF;box-shadow:0 0 0 1.5px #DDE3EB,0 10px 22px -18px rgba(40,40,90,.4);counter-increment:q}
+.ixw--ai-odoo .ai-faq details[open]{box-shadow:inset 4px 0 0 var(--ai-v),0 0 0 1.5px #C9BCF0,0 18px 30px -20px rgba(60,40,120,.35)}
+.ixw--ai-odoo .ai-faq summary{padding-left:62px}
+.ixw--ai-odoo .ai-faq summary::before{content:"Q" counter(q);position:absolute;left:18px;top:15px;display:grid;place-items:center;width:32px;height:26px;border-radius:5px;background:var(--ai-ink);color:var(--ai-amb);font:800 11.5px/1 ui-monospace,Consolas,monospace}
+.ixw--ai-odoo .ai-faq details[open] summary::before{background:var(--ai-v);color:#FFFFFF}
+.ixw--ai-odoo .ai-faq summary .ic{color:var(--ai-v)}
+.ixw--ai-odoo .ai-faq .faq-a{padding-left:62px}
+
+/* ---------- related services: the specials on the chalkboard ---------- */
+.ixw--ai-odoo .ai-specials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.ixw--ai-odoo .ai-special{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:28px 26px 24px;border-radius:10px;color:#FFFFFF;text-decoration:none;
+  background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.08),transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(255,255,255,.05),transparent 50%),var(--ai-chalk);
+  box-shadow:0 0 0 7px #9A6B45,0 0 0 8.5px #7A5236,0 26px 44px -26px rgba(40,30,20,.6);transition:translate .3s cubic-bezier(.34,1.56,.64,1),opacity .38s ease-out,transform .38s ease-out}
+.ixw--ai-odoo .ai-special:hover{translate:0 -6px;text-decoration:none;color:#FFFFFF}
+.ixw--ai-odoo .ai-special-tag{margin-bottom:16px;padding:5px 10px;border-radius:999px;border:1.5px dashed var(--c);font:600 1.15rem/1 var(--font-hand);color:var(--c)}
+.ixw--ai-odoo .ai-special-ic{display:grid;place-items:center;width:46px;height:46px;margin-bottom:14px;border-radius:50%;border:2px solid rgba(255,255,255,.75);color:#FFFFFF}
+.ixw--ai-odoo .ai-special-ic .ic{width:22px;height:22px}
+.ixw--ai-odoo .ai-special h3{margin:0 0 8px;font-size:1.15rem;color:#FFFFFF}
+.ixw--ai-odoo .ai-special p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.82)}
+.ixw--ai-odoo .ai-special .btn-link{margin-top:auto;color:var(--c);font-weight:800}
+
+/* ---------- the end card: under the heat lamps ---------- */
+.ixw--ai-odoo main .ai-cta{background:linear-gradient(rgba(255,255,255,.05) 1.5px,transparent 1.5px) 0 0/48px 24px,linear-gradient(90deg,rgba(255,255,255,.05) 1.5px,transparent 1.5px) 0 0/48px 24px,linear-gradient(120deg,#2A2550,#4B3A8A 55%,#7B5CD6)}
+.ixw--ai-odoo main .ai-cta .hand{color:var(--ai-amb)}
+.ixw--ai-odoo .ai-cta-lamps{position:absolute;left:56px;top:-6px;display:flex;gap:38px;pointer-events:none}
+.ixw--ai-odoo .ai-cta-lamps i{position:relative;width:46px;height:22px;border-radius:46px 46px 6px 6px;background:var(--ai-tom);box-shadow:0 4px 0 #B8402C}
+.ixw--ai-odoo .ai-cta-lamps i::after{content:"";position:absolute;left:50%;top:24px;width:120px;height:90px;margin-left:-60px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,179,71,.4),rgba(255,179,71,0));animation:aiLamp 3s ease-in-out infinite}
+.ixw--ai-odoo .ai-cta-lamps i:nth-child(2)::after{animation-delay:-1s}.ixw--ai-odoo .ai-cta-lamps i:nth-child(3)::after{animation-delay:-2s}
+
+@media (max-width:1100px){.ixw--ai-odoo .ai-demo-top,.ixw--ai-odoo .ai-rules{grid-template-columns:1fr;gap:28px}.ixw--ai-odoo .ai-pass-ill{max-width:420px}
+  .ixw--ai-odoo .ai-line{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:30px}.ixw--ai-odoo .ai-specials{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ixw--ai-odoo .ai-faq-wrap{grid-template-columns:1fr;gap:28px}.ixw--ai-odoo .ai-faq-side{position:static}.ixw--ai-odoo .ai-spike{display:none}}
+@media (max-width:767px){.ixw--ai-odoo .ai-pass-ill{display:none}.ixw--ai-odoo .ai-menu{padding:44px 20px 30px}.ixw--ai-odoo .ai-dishes,.ixw--ai-odoo .ai-line,.ixw--ai-odoo .ai-specials,.ixw--ai-odoo .ai-boards{grid-template-columns:1fr}
+  .ixw--ai-odoo .ai-board:first-child{grid-column:auto}.ixw--ai-odoo .ai-board:first-child ul{grid-template-columns:1fr}.ixw--ai-odoo .ai-dish{grid-template-columns:56px minmax(0,1fr);gap:14px}.ixw--ai-odoo .ai-plate{width:56px;height:56px;box-shadow:inset 0 0 0 6px #F4F1EA,inset 0 0 0 7.5px var(--c)}
+  .ixw--ai-odoo .ai-menu-sub{letter-spacing:.08em;font-size:10.5px}.ixw--ai-odoo .ai-cta-lamps{left:24px;gap:24px}.ixw--ai-odoo .ow-strip{padding:18px 14px 22px;gap:12px 10px}}
+@media (prefers-reduced-motion:reduce){.ixw--ai-odoo .ai-ticket{transition:none;translate:0 0;opacity:1}.ixw--ai-odoo :is(.ai-pass-plate,.ai-pass-lamps i::after,.ai-spike-t,.ai-cta-lamps i::after){animation:none}}
+
+/* audit round: the boards share a height per row; the copy column stays beside them while they scroll */
+.ixw--ai-odoo .ai-boards{align-items:stretch}
+.ixw--ai-odoo .ai-board{display:flex;flex-direction:column}
+@media (min-width:1101px){.ixw--ai-odoo .ai-rules-copy{position:sticky;top:110px}}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base, 50% the AI kitchen: violet accent, the menu card kept as one light framed panel
+   with dish numbers and plates, station labels on the order tickets, colour headers on the three boards, the three-step
+   chain (AI prepares / person approves / logged). No pass illustration, clips, spikes, lamps or dark specials. */
+.ixw--ai-odoo{--calm-accent:#6A4FC9;--calm-accent-ink:#4B3A8A;--calm-accent-line:#D6CCF3;--calm-accent-wash:#F7F5FD}
+body.ixw--ai-odoo main :is(.ai-head,.demo-sec .sec-head,.ai-rules-copy,.ai-faq-side) .hand::before{content:""!important}
+body.ixw--ai-odoo main .ai-demo-top{display:block!important;margin-bottom:28px!important}
+/* the menu: one light panel with a thin inner rule */
+body.ixw--ai-odoo main .ai-menu{padding:48px 48px 40px!important;border-radius:20px!important;background:#FFFDF8!important;box-shadow:none!important;border:1px solid #EDE5D2}
+body.ixw--ai-odoo main .ai-menu::before{content:none!important;display:none!important}
+body.ixw--ai-odoo main .ai-menu-head .hand{display:inline-flex!important}
+body.ixw--ai-odoo main .ai-menu-sub{border-color:#EDE5D2!important;font:600 12px/1 var(--font-body)!important;color:var(--muted)!important}
+body.ixw--ai-odoo main .ai-plate{width:56px!important;height:56px!important;box-shadow:inset 0 0 0 1px #EDE5D2!important;background:#fff!important}
+body.ixw--ai-odoo main .ai-dish{grid-template-columns:56px minmax(0,1fr)!important}
+body.ixw--ai-odoo main .ai-dish:hover .ai-plate{rotate:none!important}
+body.ixw--ai-odoo main .ai-dish-n{font:700 11px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--ai-odoo main .ai-dish h3::after{border-bottom:1px dotted #E2D8C0!important}
+/* the line: four white order cards with a 3px station-colour rule */
+body.ixw--ai-odoo main .ai-line{padding-top:0!important;gap:24px!important}
+body.ixw--ai-odoo main .ai-line::before,body.ixw--ai-odoo main .ai-ticket::before,body.ixw--ai-odoo main .ai-ticket::after{content:none!important;display:none!important}
+body.ixw--ai-odoo main .ai-ticket{padding:22px 22px 24px!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;translate:none!important;opacity:1!important;clip-path:none!important;-webkit-mask:none!important;mask:none!important;background:#fff!important}
+body.ixw--ai-odoo main .ai-ticket-top{border-bottom:1px solid #EEF1F6!important}
+body.ixw--ai-odoo main .ai-ticket-top b{background:#F7F5FD!important;color:#4B3A8A!important;font:700 12px/1 var(--font-display)!important}
+body.ixw--ai-odoo main .ai-ticket-top span{font:700 1.02rem/1.1 var(--font-display)!important;color:var(--c)!important}
+body.ixw--ai-odoo main .ai-ticket-top .ic{width:30px!important;height:30px!important;padding:7px!important;background:color-mix(in srgb,var(--c) 12%,#fff)!important;color:var(--c)!important}
+/* what you get: copy static; chain chips plain; boards white with a colour header rule */
+body.ixw--ai-odoo main .ai-rules-copy{position:static!important}
+body.ixw--ai-odoo main .ai-chip{box-shadow:none!important;border:1px solid var(--calm-line);font-family:var(--font-body)!important}
+body.ixw--ai-odoo main .ai-board{border-radius:16px!important;background:#fff!important;box-shadow:var(--calm-shadow)!important;border:1px solid var(--calm-line)}
+body.ixw--ai-odoo main .ai-board::before{content:none!important;display:none!important}
+body.ixw--ai-odoo main .ai-board-h{border-bottom:2px solid var(--c)!important;font:700 13px/1 var(--font-body)!important;letter-spacing:.1em!important}
+body.ixw--ai-odoo main .ai-board-h .ic{background:color-mix(in srgb,var(--c) 12%,#fff)!important;color:var(--c)!important}
+body.ixw--ai-odoo main .ai-board li .ic{background:none!important;color:var(--c)!important;padding:0!important}
+/* FAQ: heading above, one column */
+body.ixw--ai-odoo main .ai-faq-wrap{display:block!important}
+body.ixw--ai-odoo main .ai-faq-side{position:static!important;margin-bottom:40px}
+body.ixw--ai-odoo main .ai-faq{max-width:860px}
+/* related: white kit cards; the special tag stays as one small chip */
+body.ixw--ai-odoo main .ai-specials{gap:24px!important}
+body.ixw--ai-odoo main .ai-special{border-radius:16px!important;background:#fff!important;background-image:none!important;color:var(--ink)!important;border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important;translate:none!important;rotate:none!important;transform:none!important}
+body.ixw--ai-odoo main .ai-special::before,body.ixw--ai-odoo main .ai-special::after{content:none!important;display:none!important}
+body.ixw--ai-odoo main .ai-special:hover{color:var(--ink)!important;box-shadow:var(--calm-shadow-h)!important}
+body.ixw--ai-odoo main .ai-special-tag{border:1px solid #D6CCF3!important;background:#F7F5FD;color:#4B3A8A!important;font:600 12px/1 var(--font-body)!important}
+body.ixw--ai-odoo main .ai-special-ic{border:0!important;background:#F1EDFC;color:#6A4FC9!important}
+body.ixw--ai-odoo main .ai-special h3{color:var(--ink)!important}
+body.ixw--ai-odoo main .ai-special p{color:var(--body)!important}
+body.ixw--ai-odoo main .ai-special .btn-link{color:var(--blue)!important}
+@media (max-width:767px){body.ixw--ai-odoo main .ai-menu{padding:32px 20px 26px!important}}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--ai-odoo main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--ai-odoo main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--ai-odoo main .answer-sec .answer-box::before,body.ixw--ai-odoo main .answer-sec .answer-box::after,body.ixw--ai-odoo main .answer-sec .answer-h::before,body.ixw--ai-odoo main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--ai-odoo main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--ai-odoo main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--ai-odoo main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--ai-odoo main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+body.ixw--ai-odoo main .ai-faq summary::before{content:"Q" counter(q)!important;font:700 12px/1 var(--font-body)!important;background:#F1EDFC!important;color:#4B3A8A!important}
+body.ixw--ai-odoo main .ai-faq details[open] summary::before{background:#6A4FC9!important;color:#fff!important}
+body.ixw--ai-odoo main .ai-faq details[open]{box-shadow:inset 3px 0 0 var(--calm-accent)!important}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:860px){html body.ixw--ai-odoo main .cta{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:480px){html body.ixw--ai-odoo main .cta .actions .btn,html body.ixw--ai-odoo .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}

@@ -1,0 +1,266 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* Calm layer for the eight industry pages (medical, travel, retail, ecommerce, construction, fnb, manufacturing,
+   health-wellness). CALM_BALANCE (owner, 9 Oct 2026): 50% the clean TechNext base, 50% each industry's own theme.
+   TechNext blue leads every primary button, link and control; the industry's colour is ONE accent (icon tints, a card
+   top rule, the section wash, the outline button) plus one or two quiet themed touches per page.
+   Everything here is scoped to the calm hero ([data-ixw-frame]), so build.py CALM = False brings the old pages back.
+   Kept out of the generated calm-gen.css on purpose (it lives outside assets/css/worlds). */
+
+/* ---------- the accent per industry ---------- */
+.ixw--medical{--ia:#21B799;--ia-ink:#12806B;--ia-line:#A8DFD2;--ia-wash:#F1F9F7}
+.ixw--travel{--ia:#1AA3D9;--ia-ink:#0B6E9A;--ia-line:#A9DCF1;--ia-wash:#F0F8FD}
+.ixw--retail{--ia:#D9785A;--ia-ink:#A84B2E;--ia-line:#EFC3B3;--ia-wash:#FCF5F0}
+.ixw--ecommerce{--ia:#6D5BD0;--ia-ink:#4E3DAE;--ia-line:#CBC3F1;--ia-wash:#F6F4FD}
+.ixw--construction{--ia:#F2B300;--ia-ink:#8A6100;--ia-line:#F3DB8E;--ia-wash:#FFF9E8}
+.ixw--fnb{--ia:#E2553D;--ia-ink:#B23A24;--ia-line:#F3B9AC;--ia-wash:#FDF4F1}
+.ixw--manufacturing{--ia:#FF7A1A;--ia-ink:#B04E06;--ia-line:#FFC9A0;--ia-wash:#FFF6EE}
+.ixw--health-wellness{--ia:#5E9C76;--ia-ink:#3D6B4F;--ia-line:#BCD9C6;--ia-wash:#F3F8F4}
+:root body.ixw.ixw:has([data-ixw-frame]){--calm-accent:var(--ia);--calm-accent-ink:var(--ia-ink);--calm-accent-line:var(--ia-line);--calm-accent-wash:var(--ia-wash);--calm-wash:var(--ia-wash);
+  --calm-card-rule:3px solid var(--ia);--ic-card:0 1px 2px rgba(16,24,40,.04),0 14px 34px -22px rgba(20,40,90,.22)}
+
+/* ---------- hero: the copy column is plain text; the scene sits in one framed card with an accent foot ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-copy{background:none;box-shadow:none;border:0;border-radius:0;padding:0;margin-top:0;max-width:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-copy::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-copy::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-hero .ixw-frame{border:1px solid var(--line);box-shadow:var(--ic-card)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-hero .ixw-frame::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--ia);z-index:3;pointer-events:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-credits dt .ic{color:var(--ia-ink)}
+
+/* ---------- section rhythm: white and the industry wash, alternating ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) main>section.section:not(.ixw-hero){background:#FFFFFF!important}
+:root body.ixw.ixw:has([data-ixw-frame]) main>section.section:is(.ixw-flow-sec,:has(.ixw-board),:has(.ix-ba-wrap),:has(.ix-media),:has(.ix-phases),:has(.post-cards)){background:var(--ia-wash)!important}
+:root body.ixw.ixw:has([data-ixw-frame]) main>section.ix-intro-sec{padding-bottom:0}
+
+/* ---------- in one paragraph: a plain card with an accent edge (Nexi's avatar is the page's one Nexi touch) ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say{max-width:880px;background:#FFFFFF;border:1px solid var(--line);border-left:4px solid var(--ia);border-radius:16px;box-shadow:var(--ic-card);transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say .ix-intro-h::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say .ix-intro-h::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say .ix-intro-h{display:block;width:auto;padding:0;margin:0 0 6px;background:none;border:0;box-shadow:none;color:var(--ia-ink);font:700 12px/1.4 var(--font-body);letter-spacing:.12em;text-transform:uppercase;transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-say .ixw-av{background:var(--ia-wash);box-shadow:none;border:1px solid var(--ia-line)}
+
+/* ---------- how it flows: the scene panel, the step card, a quiet route of numbered stops ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-rider,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-who .ixw-av,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-who b{display:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-who small{color:var(--ia-ink);font:700 12px/1.4 var(--font-body);letter-spacing:.1em;text-transform:uppercase}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenewrap{border-radius:16px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenes{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;box-shadow:var(--ic-card);overflow:hidden}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenes::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenes::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenewrap::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scenewrap::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scene-note{color:var(--muted)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-scene-note .ic{color:var(--ia-ink)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel{background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--ia);border-radius:16px;box-shadow:var(--ic-card);transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-meta>div{background:#F7F9FD;border:1px solid var(--line);border-radius:12px;box-shadow:none;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-meta>div::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-meta>div::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-panel-meta dt{color:var(--muted);font:700 11.5px/1.4 var(--font-body);letter-spacing:.1em;text-transform:uppercase}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-was dd span{text-decoration:none;color:var(--body)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-rec{background:#FFFFFF;border:1px solid var(--line);border-radius:10px;box-shadow:none;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-rec::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-rec::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-rec em{background:none;border:0;box-shadow:none;padding:0;color:var(--muted);font:600 11.5px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;transform:none;rotate:none}
+/* the route: a thin line, white stops, the current one ringed in the accent, numbers in brand blue */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road{background:var(--line);box-shadow:none;border:0;height:2px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road i{background:var(--ia);box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-done .ixw-pin,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop:hover .ixw-pin{background:#FFFFFF;border:1px solid var(--line);border-radius:50%;box-shadow:0 6px 16px -10px rgba(20,40,90,.35);transform:none;rotate:none;clip-path:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop:hover .ixw-pin{border-color:var(--ia-line)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-on .ixw-pin{background:var(--ia-wash);border:2px solid var(--ia);box-shadow:0 0 0 4px #FFFFFF,0 8px 20px -12px rgba(20,40,90,.4);transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin i,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-done .ixw-pin i,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-on .ixw-pin i{background:#FFFFFF;color:var(--ink);border:1px solid var(--line);box-shadow:none;font:700 11px/1 var(--font-body)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-on .ixw-pin i{background:var(--blue);border-color:var(--blue);color:#FFFFFF}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop-t{color:var(--body);font:600 13px/1.3 var(--font-body);background:none;box-shadow:none;border:0;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-on .ixw-stop-t{color:var(--ink);font-weight:700}
+/* the route, aligned: every stop is the same 56px circle sitting on the line (the worlds' own shapes, e.g. retail's
+   66x50 hanging signs and its rail at the top, are flattened above, so the line goes through the stops' centres) */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-track{padding-top:14px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-done .ixw-pin,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop.is-on .ixw-pin{width:56px;height:56px;border-radius:50%;translate:none;transform-origin:50% 50%}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop:hover .ixw-pin{width:56px;height:56px;border-radius:50%;translate:0 -2px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin .oi,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin .ix-ic{width:26px;height:26px;padding:0;border-radius:0;background:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-stop .ixw-pin i{left:auto;right:-4px;top:-4px;width:22px;height:22px;border-radius:50%;transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road{top:42px;margin-top:-1px;left:calc((100% - (var(--n) - 1) * 6px) / (2 * var(--n)));right:calc((100% - (var(--n) - 1) * 6px) / (2 * var(--n)));width:auto;border-radius:2px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-road i{border-radius:2px}
+@media (max-width:767px){
+  :root body.ixw.ixw:has([data-ixw-frame]) .ixw-track{padding-top:14px}
+  :root body.ixw.ixw:has([data-ixw-frame]) .ixw-road{top:42px;left:60px;right:auto;width:calc((var(--n) - 1) * 94px)}
+}
+/* step controls: plain round buttons, the play one in brand blue */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn:hover{background:#FFFFFF;border:1px solid var(--line);color:var(--ink);box-shadow:none;animation:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn:hover{border-color:var(--blue);color:var(--blue)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn--play,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn--play:hover,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn--play.is-on{background:var(--blue);border-color:var(--blue);color:#FFFFFF;animation:none}
+/* step controls: the same circles on every industry page (some worlds drew rounded squares or an inner ring) */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn{width:44px;height:44px;border-radius:50%;translate:none;rotate:none;outline:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn:focus-visible{outline:3px solid var(--blue-300);outline-offset:2px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn--play{width:52px;height:52px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-ibtn:hover{translate:0 -2px}
+/* the sample picker above the flow: a segmented control, brand blue when pressed */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-pick-b{background:#FFFFFF;border:1px solid var(--line);border-radius:999px;box-shadow:none;padding:4px}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-pick-b button{background:none;border:0;border-radius:999px;box-shadow:none;color:var(--body);transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-pick-b button[aria-pressed="true"]{background:var(--blue);color:#FFFFFF}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-pick-l{color:var(--muted);background:none;box-shadow:none;border:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-pick-l .ic{color:var(--ia-ink)}
+
+/* ---------- the demo: one plain panel under a browser bar ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-browser{background:#F7F9FD;border:1px solid var(--line);border-bottom:0;border-radius:16px 16px 0 0;box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-browser em{background:none;border:0;box-shadow:none;color:var(--muted);font-style:normal}
+:root body.ixw.ixw:has([data-ixw-frame]) .demo-sec .dm{border:1px solid var(--line);border-radius:0 0 16px 16px;box-shadow:var(--ic-card)}
+:root body.ixw.ixw:has([data-ixw-frame]) .demo-sec .dm::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .demo-sec .dm::after{content:none!important}
+
+/* ---------- three problems: white cards, the accent as a top rule and the icon tint ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board{background:none;border:0;box-shadow:none;padding:0;border-radius:0;gap:24px;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card:nth-child(n)::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card:nth-child(n)::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card:nth-child(n),
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card:hover{background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--ia);border-radius:16px;box-shadow:var(--ic-card);transform:none;rotate:none;padding:28px;clip-path:none;margin:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card h3{background:none;color:var(--ink);font:700 18px/1.3 var(--font-display);padding:0;margin:14px 0 6px;border:0;box-shadow:none;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-board .card-ic{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--ia-wash);color:var(--ia-ink);border:0;box-shadow:none;transform:none}
+
+/* ---------- the apps we switch on ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-tab,
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-tab:hover{background:#FFFFFF;border:1px solid var(--line);border-radius:12px;box-shadow:none;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-tab:hover{border-color:var(--ia-line)}
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-tab.is-active{background:#FFFFFF;border-color:var(--ia);box-shadow:inset 4px 0 0 var(--ia)}
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-panel{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;box-shadow:var(--ic-card);transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-panel::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-panel::after{content:none!important}
+/* only the hero and the closing band ask for a quotation */
+:root body.ixw.ixw:has([data-ixw-frame]) .sc-panel a.btn-primary[href*="quotation"]{display:none}
+
+/* ---------- before and after: one clean panel with the Today / With Odoo switch ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba-wrap{align-items:start}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba-wrap>div:first-child{position:static;padding-top:0;background:none;box-shadow:none;border:0;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba-wrap>div:first-child::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba-wrap>div:first-child::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba{background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--ia);border-radius:16px;box-shadow:var(--ic-card);padding:6px 24px;transform:none;rotate:none;gap:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-row::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-row::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba.is-js[data-state] .ix-row::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba.is-js[data-state] .ix-row::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-row,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba.is-js[data-state] .ix-row{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;padding:16px 0;margin:0;transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-row:last-child{border-bottom:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-task{color:var(--ink);font:700 14.5px/1.35 var(--font-display);background:none;box-shadow:none;border:0;padding:0;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-face{background:none;border:0;box-shadow:none;padding:0;color:var(--body);transform-origin:center}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-before .ic{background:#F1F3F7;color:#7A8499}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba .ix-after .ic{background:var(--ia-wash);color:var(--ia-ink)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-views{background:#FFFFFF;border:1px solid var(--line);box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch:has([data-ba="before"][aria-pressed="true"])::before{background:#5C6478;box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:var(--blue);box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch button{font:700 14px/1 var(--font-body);color:var(--body)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-switch button[aria-pressed="true"]{color:#FFFFFF}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-views button[aria-pressed="true"]{background:var(--blue);color:#FFFFFF;box-shadow:none}
+
+/* ---------- the numbers you'll see ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-dash-wrap .checks .ic{color:var(--ia-ink)}
+
+/* ---------- media: the video in a plain frame ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-video .yt{border:1px solid var(--line);border-radius:16px;box-shadow:var(--ic-card);transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-video::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-video::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-video .yt::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-video .yt::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-shot,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-media .shot{border-radius:14px;box-shadow:none;transform:none;rotate:none}
+
+/* ---------- new in Odoo 20: a white card, the accent on its top edge ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new{background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--ia);border-radius:16px;box-shadow:var(--ic-card);transform:none;overflow:hidden}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head{background:none;border:0;border-bottom:1px solid var(--line);box-shadow:none;color:var(--ink);transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head h2{color:var(--ink);text-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head .hand{color:var(--blue)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head .oi{background:#FFFFFF;border:1px solid var(--line);box-shadow:none;transform:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new .checks .ic{color:var(--ia-ink);background:var(--ia-wash)}
+
+/* ---------- rollout: phase cards, the phase label a quiet accent pill ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;box-shadow:var(--ic-card);transform:none;rotate:none;clip-path:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase .ix-ph-n::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase .ix-ph-n::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase:nth-child(n) .ix-ph-n::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase:nth-child(n) .ix-ph-n::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase .ix-ph-n,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase:nth-child(n) .ix-ph-n{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:0;border-radius:999px;background:var(--ia-wash);color:var(--ia-ink);box-shadow:none;font:700 12px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;transform:none;rotate:none;clip-path:none;width:auto}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-phase .checks .ic{color:var(--ia-ink)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ints,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-int{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;box-shadow:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-chip{background:#F7F9FD;border:1px solid var(--line);box-shadow:none;transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-chip .ic{color:var(--ia-ink)}
+
+/* ---------- FAQ and the related links ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .faq summary::before{background:var(--ia-wash);color:var(--ia-ink);box-shadow:none;border:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a:hover{background:#FFFFFF;border:1px solid var(--line);box-shadow:none;transform:none;color:var(--ink)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a:hover{border-color:var(--blue);color:var(--blue)}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a .ic{color:var(--ia-ink);background:none}
+
+/* ---------- the closing band: TechNext's own, without Nexi ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta-nexi{display:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta>div:first-of-type{padding:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta>div:first-of-type::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta>div:first-of-type::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta::after{content:none!important}
+
+/* ---------- one themed touch per section head: the industry's own small motif under the heading ---------- */
+.ixw--medical{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M1 8h40l4-6 5 12 4-14 4 16 3-8h58' fill='none' stroke='%2321B799' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.ixw--travel{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M2 9h86' fill='none' stroke='%231AA3D9' stroke-width='2' stroke-linecap='round' stroke-dasharray='1 6'/%3E%3Cpath d='M96 9l14-5-3 5 3 5z' fill='%231AA3D9'/%3E%3Cpath d='M101 9l-4-6h3l6 6-6 6h-3z' fill='%231AA3D9'/%3E%3C/svg%3E")}
+.ixw--retail{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 2.5h120' stroke='%23C9B8A8' stroke-width='1.2'/%3E%3Cpath d='M2 2h12l-6 10z' fill='%23D9785A'/%3E%3Cpath d='M17 2h12l-6 10z' fill='%23E9B949'/%3E%3Cpath d='M32 2h12l-6 10z' fill='%235E9C8F'/%3E%3Cpath d='M47 2h12l-6 10z' fill='%23D9785A'/%3E%3Cpath d='M62 2h12l-6 10z' fill='%23E9B949'/%3E%3Cpath d='M77 2h12l-6 10z' fill='%235E9C8F'/%3E%3Cpath d='M92 2h12l-6 10z' fill='%23D9785A'/%3E%3Cpath d='M107 2h12l-6 10z' fill='%23E9B949'/%3E%3C/svg%3E")}
+.ixw--ecommerce{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Crect x='2' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='6' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='9' y='3' width='3' height='10' fill='%236D5BD0'/%3E%3Crect x='14' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='17' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='21' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='25' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='28' y='3' width='3' height='10' fill='%236D5BD0'/%3E%3Crect x='33' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='36' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='39' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='43' y='3' width='3' height='10' fill='%236D5BD0'/%3E%3Crect x='48' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='51' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='55' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='58' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='62' y='3' width='3' height='10' fill='%236D5BD0'/%3E%3Crect x='67' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='70' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='74' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='77' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3Crect x='80' y='3' width='3' height='10' fill='%236D5BD0'/%3E%3Crect x='85' y='3' width='2' height='10' fill='%236D5BD0'/%3E%3Crect x='89' y='3' width='1' height='10' fill='%236D5BD0'/%3E%3C/svg%3E")}
+.ixw--construction{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3CclipPath id='c'%3E%3Crect x='1' y='2' width='118' height='12' rx='3'/%3E%3C/clipPath%3E%3Cg clip-path='url%28%23c%29'%3E%3Crect width='120' height='16' fill='%23F2B300'/%3E%3Cpath d='M-2 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M13 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M28 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M43 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M58 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M73 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M88 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M103 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3Cpath d='M118 14l8-12h7l-8 12z' fill='%232A3550'/%3E%3C/g%3E%3C/svg%3E")}
+.ixw--fnb{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8h120' stroke='%23E8C9A0' stroke-width='1.2'/%3E%3Cpath d='M2 8l5-5 5 5-5 5z' fill='%23E2553D'/%3E%3Cpath d='M17 8l5-5 5 5-5 5z' fill='%231F4D3F'/%3E%3Cpath d='M32 8l5-5 5 5-5 5z' fill='%23E2553D'/%3E%3Cpath d='M47 8l5-5 5 5-5 5z' fill='%231F4D3F'/%3E%3Cpath d='M62 8l5-5 5 5-5 5z' fill='%23E2553D'/%3E%3Cpath d='M77 8l5-5 5 5-5 5z' fill='%231F4D3F'/%3E%3Cpath d='M92 8l5-5 5 5-5 5z' fill='%23E2553D'/%3E%3Cpath d='M107 8l5-5 5 5-5 5z' fill='%231F4D3F'/%3E%3C/svg%3E")}
+.ixw--manufacturing{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M2 8h20' stroke='%239AA6B2' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M30 3l5 5-5 5' fill='none' stroke='%23FF7A1A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M46 3l5 5-5 5' fill='none' stroke='%23FF7A1A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M62 3l5 5-5 5' fill='none' stroke='%23FF7A1A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M78 3l5 5-5 5' fill='none' stroke='%23FF7A1A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M94 3l5 5-5 5' fill='none' stroke='%23FF7A1A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.ixw--health-wellness{--ih:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M2 8c30-4 70 4 116 0' fill='none' stroke='%239CC3AA' stroke-width='1.6' stroke-linecap='round'/%3E%3Cellipse cx='14' cy='11' rx='5' ry='2.6' transform='rotate%2830 14 11%29' fill='%235E9C76'/%3E%3Cellipse cx='28' cy='5' rx='5' ry='2.6' transform='rotate%28-30 28 5%29' fill='%235E9C76'/%3E%3Cellipse cx='42' cy='11' rx='5' ry='2.6' transform='rotate%2830 42 11%29' fill='%235E9C76'/%3E%3Cellipse cx='56' cy='5' rx='5' ry='2.6' transform='rotate%28-30 56 5%29' fill='%235E9C76'/%3E%3Cellipse cx='70' cy='11' rx='5' ry='2.6' transform='rotate%2830 70 11%29' fill='%235E9C76'/%3E%3Cellipse cx='84' cy='5' rx='5' ry='2.6' transform='rotate%28-30 84 5%29' fill='%235E9C76'/%3E%3Cellipse cx='98' cy='11' rx='5' ry='2.6' transform='rotate%2830 98 11%29' fill='%235E9C76'/%3E%3C/svg%3E")}
+:root body.ixw.ixw:has([data-ixw-frame]) .sec-head h2::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-ba-wrap h2::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-dash-wrap h2::after{content:"";display:block;width:120px;height:16px;margin-top:14px;background:var(--ih) left center/120px 16px no-repeat;border:0;box-shadow:none;transform:none;rotate:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .sec-head--row h2::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-new-head h2::after,
+:root body.ixw.ixw:has([data-ixw-frame]) .cta h2::after{content:none!important}
+
+/* ---------- small fixes on the old world skins ---------- */
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta{outline:0}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta .actions{flex-direction:row!important;align-items:center}
+:root body.ixw.ixw:has([data-ixw-frame]) .ixw-cta .actions .btn{width:auto}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a{border-radius:999px;clip-path:none}
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a::before,
+:root body.ixw.ixw:has([data-ixw-frame]) .ix-others a::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) :is(.ix-switch,.ix-views,.sc-tab,.ixw-pick-b) :is(button,b,span){text-transform:none;letter-spacing:normal}
+/* buttons: no leftover world rings, inner frames or glosses (primary TechNext blue, secondary an accent outline) */
+:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white){outline:0;background-image:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-ghost,.btn-outline-white),:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-primary,.btn-white):not(:hover){box-shadow:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white)::before,
+:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white)::after{content:none!important}
+:root body.ixw.ixw:has([data-ixw-frame]) main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white) .ic{background:none!important;color:inherit!important;margin:0;padding:0;width:18px;height:18px}

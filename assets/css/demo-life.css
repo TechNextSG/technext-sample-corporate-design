@@ -1,0 +1,182 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo app pages: record lifecycle demo (demo-life.js). One engine, seven forms by app family:
+   rail (sales, supply chain) · ladder (finance) · ring (HR) · funnel (marketing) · lanes (services)
+   · hub (productivity) · journey (websites). */
+.dm-life{--c:var(--blue)}
+.dm-life[data-cat="finance"]{--c:var(--tok-pay)}
+.dm-life[data-cat="sales"]{--c:var(--blue)}
+.dm-life[data-cat="websites"]{--c:var(--tok-make)}
+.dm-life[data-cat="supply-chain"]{--c:var(--tok-buy)}
+.dm-life[data-cat="hr"]{--c:#C2417A}
+.dm-life[data-cat="marketing"]{--c:#D25A2C}
+.dm-life[data-cat="services"]{--c:#12806A}
+.dm-life[data-cat="productivity"]{--c:#5B4FD1}
+/* compact form: counters in one strip under the header, the stage sized to its own content, the
+   exceptions and configured automations in one footer row, and a side column (hand-offs + live log)
+   that fills the height the stage sets instead of stretching the panel */
+.lf-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line);background:#fff}
+.lf-kpis>div{flex-direction:row-reverse;justify-content:flex-end;align-items:baseline;gap:8px;padding:9px 16px;border:0;border-radius:0;border-right:1px solid var(--line);background:none}
+.lf-kpis>div:last-child{border-right:0}
+.lf-kpis dd{font-size:1.05rem}
+.lf-kpis .dm-ok{background:var(--ok-050)}
+.lf-body{display:grid;grid-template-columns:minmax(0,1fr) 272px}
+.lf-main{min-width:0;padding:12px 14px;min-height:calc(var(--hn,3) * 42px + 150px)}
+.lf-stage{position:relative;height:190px;margin:0 0 8px}
+.lf--ladder .lf-stage{height:calc(var(--n,5) * 56px + 16px)}
+.lf--ring .lf-stage,.lf--hub .lf-stage{height:330px}
+.lf--funnel .lf-stage{height:calc(var(--n,5) * 52px + 24px)}
+.lf--lanes .lf-stage{height:calc(46px + 6 * 27px + 4px)}
+.lf--journey .lf-stage{height:230px}
+.lf-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.lf-e{fill:none;stroke:var(--edge);stroke-width:1.7;stroke-linecap:round}
+.lf-e--b{stroke:#E4C9C6;stroke-dasharray:4 5}
+.lf-svg marker path{fill:#B9C8E6}
+.lf-core{fill:color-mix(in srgb,var(--c) 8%,#fff);stroke:color-mix(in srgb,var(--c) 35%,#fff);stroke-width:1.5}
+.lf-tok .lf-td{fill:var(--c);stroke:#fff;stroke-width:1.5}
+.lf-tok .lf-th{fill:var(--c);opacity:.18}
+.lf-tok{transition:opacity .4s ease}
+/* HTML record tokens (same look as the SVG ones: a 9 px halo at 18% and a 4.2 px dot with a 1.5 px white ring) */
+.lf-htoks{position:absolute;inset:0;z-index:0;pointer-events:none}
+.lf-htoks .lf-tok{position:absolute;left:-9px;top:-9px;width:18px;height:18px;display:block}
+.lf-htoks .lf-th{position:absolute;inset:0;border-radius:50%;background:var(--c);opacity:.18}
+.lf-htoks .lf-td{position:absolute;left:5.55px;top:5.55px;width:6.9px;height:6.9px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px #fff}
+.lf-tok.is-out{opacity:0}
+.lf-states{position:absolute;inset:0;margin:0;padding:0;list-style:none;z-index:2}
+.lf-states>li{position:absolute;transform:translate(-50%,-50%);width:112px;padding:8px 9px 7px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 22px -16px rgba(31,31,61,.5);text-align:center;cursor:default;transition:border-color .25s ease,box-shadow .25s ease,opacity .25s ease;outline:none}
+.lf-states>li b{display:block;font:700 11.5px/1.2 var(--font-display);color:var(--ink)}
+.lf-states>li small{display:block;margin-top:2px;font:500 9.5px/1.3 var(--font-body);color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lf-states>li:first-child{border-color:color-mix(in srgb,var(--c) 45%,var(--line))}
+.lf-states>li:hover,.lf-states>li.is-hot,.lf-states>li:focus-visible{border-color:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 16%,transparent),0 12px 24px -14px rgba(31,31,61,.5)}
+/* event flashes are overlays faded by opacity (composited): animating border-color, background or box-shadow
+   repainted the panel on every frame of each flash, and a busy demo nearly always has one running */
+.lf-states>li::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:1px solid color-mix(in srgb,var(--c) 55%,var(--line));opacity:0;pointer-events:none}
+.lf-states>li.is-pulse::after{animation:lfFlash .9s ease-out}
+@keyframes lfFlash{0%{opacity:1}100%{opacity:0}}
+.lf-n{position:absolute;top:-8px;right:-8px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c);color:#fff;font:700 9.5px/18px var(--font-body);font-style:normal;opacity:0;transition:opacity .3s ease;box-shadow:0 0 0 2px #fff}
+.lf-states>li.has-n .lf-n{opacity:1}
+.dm-life.is-peek .lf-states>li:not(.is-hot){opacity:.45}
+/* ladder (finance): a vertical close; cards left, branches loop out to the right */
+.lf--ladder .lf-states>li{width:220px;text-align:left;padding-left:12px;border-left:3px solid color-mix(in srgb,var(--c) 55%,var(--line))}
+.lf--ladder .lf-states>li small{-webkit-line-clamp:1}
+/* ring (HR) and hub (productivity) */
+.lf--ring .lf-states>li,.lf--hub .lf-states>li{width:118px}
+.lf-center{display:none}
+.lf--hub .lf-center{display:grid;place-items:center;position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:1;width:92px;text-align:center;font:700 10.5px/1.25 var(--font-display);color:var(--ink);pointer-events:none}
+.lf--hub .lf-center .oi{width:26px;height:26px;margin-bottom:3px}
+/* funnel (marketing): bands that narrow as records move down */
+.lf--funnel .lf-states>li{width:calc(var(--w,100%) * .62);border-radius:10px;padding:7px 12px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 7%,#fff),#fff 60%);display:flex;align-items:baseline;gap:10px;justify-content:center}
+.lf--funnel .lf-states>li small{-webkit-line-clamp:1;margin:0}
+/* lanes (services): a timeline in the spirit of Odoo's Gantt view. Stages are bands with their header on
+   top; every record owns a lane, and its bar grows along the stages (red while a loop pulls it back) */
+.lf--lanes .lf-states>li{top:0!important;transform:translateX(-50%);height:100%;width:calc(100% / var(--n,5));padding:7px 24px 0 8px;border:0;border-left:1px dashed #DCDFE8;border-radius:0;background:none;box-shadow:none}
+.lf--lanes .lf-states>li:first-child{border-left:0}
+.lf--lanes .lf-states>li:nth-child(odd){background:linear-gradient(180deg,color-mix(in srgb,var(--c) 5%,#fff),transparent 70%)}
+.lf--lanes .lf-states>li b{font-size:11px}
+.lf--lanes .lf-states>li small{-webkit-line-clamp:1}
+.lf--lanes .lf-states>li:hover,.lf--lanes .lf-states>li.is-hot{box-shadow:none;background:color-mix(in srgb,var(--c) 7%,#fff)}
+.lf--lanes .lf-states>li::after{inset:0;border:0;border-radius:0;background:color-mix(in srgb,var(--c) 9%,#fff);z-index:-1}
+.lf--lanes .lf-n{top:6px;right:6px}
+.lf-cards{position:absolute;inset:0;z-index:3;pointer-events:none}
+.lf-lane{position:absolute;left:0;right:0;height:18px;transition:opacity .5s ease}
+.lf-lane::before{content:"";position:absolute;left:10px;right:10px;top:8px;height:2px;border-radius:2px;background:rgba(31,31,61,.05)}
+/* the bar is scaled (scaleX), never resized: its rounded start is the static cap, its end sits under the knob */
+.lf-bar{position:absolute;left:15px;top:4px;height:10px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 22%,#fff),var(--c));transform-origin:0 50%;will-change:transform;transition:background-color .4s ease}
+.lf-cap{position:absolute;left:10px;top:4px;width:10px;height:10px;border-radius:50%;background:color-mix(in srgb,var(--c) 22%,#fff);animation:lfCapIn .12s ease .06s both}
+@keyframes lfCapIn{from{opacity:0}}
+/* the end knob rides on the record tag (x + 9), 11 px back from the bar's end and 3 px past it */
+.lf-tag::before{content:"";position:absolute;left:-21px;top:0;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 3px var(--c);pointer-events:none}
+.lf-tag{position:absolute;left:0;top:1px;padding:2px 6px;border-radius:6px;background:#fff;border:1px solid var(--line);font:700 9.5px/1.2 var(--font-body);color:var(--ink);white-space:nowrap;will-change:transform}
+.lf-lane.is-back .lf-bar{background:linear-gradient(90deg,#F4D5D1,var(--tok-late))}
+.lf-lane.is-back .lf-tag::before{box-shadow:inset 0 0 0 3px var(--tok-late)}
+.lf-lane.is-back .lf-cap{background:#F4D5D1}
+.lf-lane.is-back .lf-tag{border-color:#F1C6C1;color:#B02E25}
+.lf-lane.is-done .lf-bar{background:linear-gradient(90deg,#CDEBD9,var(--ok))}
+.lf-lane.is-done .lf-tag::before{box-shadow:inset 0 0 0 3px var(--ok)}
+.lf-lane.is-done .lf-cap{background:#CDEBD9}
+.lf-lane.is-out{opacity:0}
+/* journey (websites): a winding path */
+.lf--journey .lf-states>li{width:120px;border-radius:999px;padding:7px 12px}
+.lf--journey .lf-states>li small{-webkit-line-clamp:1}
+/* exceptions and loops */
+.lf-branches{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.lf-branch{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:999px;background:#fff;border:1px dashed #E0BDB9;font:500 11px/1.3 var(--font-body);color:var(--body)}
+.lf-branch i{width:7px;height:7px;border-radius:50%;background:var(--tok-late);flex:none}
+.lf-branch{position:relative;isolation:isolate}
+.lf-branch::before{content:"";position:absolute;inset:-1px;border-radius:inherit;background:#FDECEA;border:1px dashed var(--tok-late);opacity:0;z-index:-1;pointer-events:none}
+.lf-branch.is-take::before{animation:lfFlash 1s ease-out}
+.lf-bh{margin:0 0 7px;font:700 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lf-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px 20px;padding-top:10px;border-top:1px dashed var(--line)}
+.lf-fg{min-width:0}
+/* side panel */
+.lf-side{position:relative;min-width:0;border-left:1px solid var(--line);background:rgba(250,249,251,.75)}
+.lf-side-in{position:absolute;inset:0;display:flex;flex-direction:column;gap:7px;padding:12px 14px;overflow:hidden}
+.lf-h{margin:2px 0 0;font:700 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lf-hand,.lf-auto{display:grid;gap:5px;margin:0;padding:0;list-style:none}
+.lf-hand li{display:flex;align-items:center;gap:9px;padding:6px 9px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.lf-hand li .oi{width:22px;height:22px;flex:none}
+.lf-hand li span{display:grid;min-width:0}
+.lf-hand li b{font:700 11px/1.2 var(--font-display);color:var(--ink)}
+.lf-hand li small{font:500 10.5px/1.3 var(--font-body);color:var(--muted)}
+.lf-hand li{position:relative}
+.lf-hand li::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:1px solid var(--tok-pay);box-shadow:0 0 0 3px color-mix(in srgb,var(--tok-pay) 18%,transparent);opacity:0;pointer-events:none}
+.lf-hand li.is-fire::after{animation:lfFlash .9s ease-out}
+.lf-auto{gap:4px}
+.lf-auto li{display:flex;align-items:flex-start;gap:7px;font:500 11.5px/1.35 var(--font-body);color:var(--body)}
+.lf-auto li .ic{width:14px;height:14px;color:var(--c);flex:none;margin-top:2px}
+.lf-log{flex:1;min-height:0;overflow:hidden;align-content:start;-webkit-mask-image:linear-gradient(#000 calc(100% - 30px),transparent);mask-image:linear-gradient(#000 calc(100% - 30px),transparent)}
+.dm-life [data-exc].is-armed{border-color:var(--tok-late);color:var(--tok-late)}
+/* before the script runs (or without it) the states read as a plain ordered list */
+.dm-life:not(.is-js) .lf-stage{height:auto}
+.dm-life:not(.is-js) .lf-states{position:static;display:flex;flex-wrap:wrap;gap:8px}
+.dm-life:not(.is-js) .lf-states>li{position:static;transform:none}
+@media (max-width:1100px){.lf-body{grid-template-columns:minmax(0,1fr) 250px}}
+@media (max-width:860px){
+  .lf-body{grid-template-columns:minmax(0,1fr)}
+  .lf-main{min-height:0}
+  .lf-side{border-left:0;border-top:1px solid var(--line)}
+  .lf-side-in{position:static}
+  .lf-log{flex:none;max-height:124px}
+}
+@media (max-width:640px){
+  .lf-stage{height:calc(var(--n,5) * 58px + 16px)!important}
+  .lf-states>li,.lf--ladder .lf-states>li{width:150px;text-align:left}
+  .lf-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lf-kpis>div{padding:8px 12px}
+  .lf-kpis>div:nth-child(2){border-right:0}
+  .lf-kpis>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .lf-foot{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.lf-states>li.is-pulse::after,.lf-branch.is-take::before,.lf-hand li.is-fire::after{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .lf-states>li small,
+  .lf-n,
+  .lf--hub .lf-center,
+  .lf-tag,
+  .lf-bh,
+  .lf-h,
+  .lf-hand li small{font-size:11px}
+}
+
+/* ======== CALM LAYER (9 Oct 2026): the generated Odoo app pages (every odoo/apps page except the three world pages,
+   which carry body.ixw). This stylesheet loads only on odoo/apps pages, so it is the template-level home for them.
+   50% TechNext base (calm.css), 50% the app-window theme: the Odoo app window stays as the hero visual, Odoo purple is the
+   one quiet accent (answer card rule, section-by-section numbers, checks). ======== */
+/* hero: one primary and one secondary button (the contact page stays in the header and footer); the app window with one
+   caption chip, no floating launcher tile or second chip over the screenshot */
+body:not(.ixw) .page-hero--stage .actions :is(a[href$="/contact"],a[href$="contact.html"]){display:none}
+body:not(.ixw) .stage--app .aw-launch,body:not(.ixw) .stage--app .aw-c1{display:none}
+body:not(.ixw) .stage--app .aw-c2,body:not(.ixw) .stage--app .aw-rel{animation:none;box-shadow:0 8px 20px -14px rgba(31,63,130,.35)}
+body:not(.ixw) .stage--app .st-card{box-shadow:0 1px 2px rgba(31,31,61,.05),0 30px 60px -36px rgba(31,63,130,.42)}
+body:not(.ixw) .app-hero-head .hand{letter-spacing:.12em}
+/* in one paragraph: a white card with an Odoo purple rule */
+body:not(.ixw) main .answer-box{padding:22px 26px;border:1px solid #E4E8F0;border-left:3px solid #714B67;border-radius:14px;background:#FFFFFF;box-shadow:0 1px 2px rgba(31,31,61,.05),0 14px 32px -22px rgba(31,63,130,.32)}
+body:not(.ixw) main .answer-h{background:#F5EFF4;color:#714B67}
+body:not(.ixw) main .answer-note .ic{color:#714B67}
+/* section by section: the kicker numbers in Odoo purple, cards fill the row */
+body:not(.ixw) main .feat-copy .card-kicker{color:#714B67;letter-spacing:.12em}
+body:not(.ixw) main .feats + .grid-3,body:not(.ixw) main .grid-3:has(> .card:only-child),body:not(.ixw) main .grid-3:has(> .card:nth-child(2):last-child){grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+body:not(.ixw) main .feat-copy .checks .ic{color:#714B67}
+/* the lifecycle demo: one clean panel, a thin purple rule on top */
+body:not(.ixw) main .demo-sec .dm-life{border-top:3px solid #714B67}

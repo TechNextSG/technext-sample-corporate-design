@@ -1,0 +1,230 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: construction (Northline Builders, a sample contractor). Safety yellow, site navy, concrete and blueprint blue, out
+   on a building site: the copy is a drawing sheet with its title block, the caption carries hazard tape, the workflow stops
+   are diamond safety signs on a steel beam, the problems are site notices on the hoarding, the apps are bolted steel
+   plates, before/after is a blueprint, the video plays on the site camera, Odoo 20 is the site diary, the rollout climbs
+   three floor levels, the FAQ is the toolbox talk and the end card is the hoarding. Scoped to body.ixw--construction. */
+.ixw--construction{--w-vwall:#E4F1FA;--w-vwains:#CFDCE8;--w-vfloor:#E3D3BC;--w-vbase:#C2A47E;--w-alt:#F6F4EE;--w-dot:rgba(31,63,115,.09);--w-hand:#1F3F73;
+  --c-yellow:#FFC93C;--c-yellow-d:#E0A800;--c-navy:#1F3F73;--c-navy-d:#142B52;--c-blue:#2E5C9A;--c-concrete:#C9C5BC;--c-orange:#FF7A1A;--c-ink:#1E2A3A;--c-print:#1F4E8C;
+  --c-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,monospace;
+  --c-hazard:repeating-linear-gradient(-45deg,#1E2A3A 0 9px,#FFC93C 9px 18px)}
+.ixw--construction .ixw-vg .f-hhat{fill:#FFC93C}.ixw--construction .ixw-vg .f-hhat-l{fill:#FFF1C7}.ixw--construction .ixw-vg .f-navy{fill:#1F3F73}.ixw--construction .ixw-vg .f-brick{fill:#B35A40}
+.ixw--construction .ixw-vg .f-concrete{fill:#B3AFA6}.ixw--construction .ixw-vg .f-orange-c{fill:#FF7A1A}
+
+/* ---------- the hero: a building site; the copy is a drawing sheet ---------- */
+.ixw--construction .ixw-hero{background:linear-gradient(180deg,#86C6F0 0%,#E4F3FC 50%,#2E5C9A 50%,#2E5C9A 64%,#D5B791 64%,#BF9C72 100%)}
+.ixw--construction .ixw-copy{position:relative;max-width:468px;padding:24px 28px 58px;border-radius:6px;
+  background-color:#FFFFFF;background-image:linear-gradient(rgba(31,78,140,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(31,78,140,.07) 1px,transparent 1px);background-size:18px 18px;
+  box-shadow:inset 0 0 0 8px #FFFFFF,inset 0 0 0 9.5px var(--c-print),0 3px 0 #C8D3E0,0 34px 64px -34px rgba(20,40,80,.5)}
+.ixw--construction .ixw-copy::after{content:"DRG NB-001  \00B7  SCALE 1:100  \00B7  SAMPLE";position:absolute;left:9.5px;right:9.5px;bottom:9.5px;height:30px;display:flex;align-items:center;padding-left:16px;
+  border-top:1.5px solid var(--c-print);font:700 10px/1 var(--c-mono);letter-spacing:.12em;color:var(--c-print);background:linear-gradient(90deg,transparent calc(100% - 92px),rgba(31,78,140,.08) 0)}
+.ixw--construction .ixw-copy::before{content:"";position:absolute;right:9.5px;bottom:9.5px;width:92px;height:30px;border-left:1.5px solid var(--c-print);
+  background:var(--c-hazard);-webkit-mask:linear-gradient(#000,#000) center/70px 10px no-repeat;mask:linear-gradient(#000,#000) center/70px 10px no-repeat}
+.ixw--construction .ixw-credits dt .ic{color:var(--c-yellow-d)}
+.ixw--construction .ixw-credits{box-shadow:inset 0 8px 0 var(--c-yellow),0 3px 0 #E3E9F2,0 26px 50px -30px rgba(20,40,80,.4);padding-top:12px}
+/* the caption: hazard tape along its top */
+.ixw--construction .ixw-cap{border-radius:10px;padding-top:24px;box-shadow:0 2px 0 #D7DEE8,0 22px 44px -22px rgba(20,40,80,.5)}
+.ixw--construction .ixw-cap::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-radius:10px 10px 0 0;background:var(--c-hazard);pointer-events:none}
+.ixw--construction .ixw-cap-who b,.ixw--construction .ixw-cap-txt b{color:var(--c-navy)}
+.ixw--construction .ixw-caret{background:var(--c-yellow-d)}
+
+/* ---------- Nexi's paragraph: a site memo on a clipboard ---------- */
+.ixw--construction .ixw-say{border-radius:8px;box-shadow:inset 0 0 0 2px #E3E9F2,inset 0 7px 0 var(--c-navy),var(--w-card)}
+.ixw--construction .ixw-say .ix-intro-h{background:#FFF1C7;color:#7A5A00}
+
+/* ---------- the workflow: diamond safety signs on a steel beam ---------- */
+.ixw--construction .ixw-flow-sec{background:linear-gradient(180deg,#FFFFFF 0%,#F6F4EE 100%)}
+.ixw--construction .ixw-scenes{background:#E4F1FA;box-shadow:0 3px 0 #D7DEE8,0 30px 60px -36px rgba(20,40,80,.45)}
+.ixw--construction .ixw-scene-tag{color:var(--c-navy)}
+.ixw--construction .ixw-road{height:12px;margin-top:-6px;border-radius:2px;background:linear-gradient(180deg,#8A97A8 0 3px,#6B7A8F 3px 9px,#8A97A8 9px)}
+.ixw--construction .ixw-road i{border-radius:2px;background:var(--c-hazard)}
+.ixw--construction .ixw-pin{width:50px;height:50px;border-radius:8px;border:3px solid var(--c-ink);background:var(--c-yellow);rotate:45deg;box-shadow:4px 4px 0 var(--c-ink)}
+.ixw--construction .ixw-pin .oi,.ixw--construction .ixw-pin .ix-ic{rotate:-45deg;padding:2px;border-radius:5px;background:#FFFFFF}
+.ixw--construction .ixw-pin i{rotate:-45deg;right:auto;left:-10px;top:-10px;border-radius:4px;background:var(--c-navy)}
+.ixw--construction .ixw-stop:hover .ixw-pin{border-color:var(--c-ink);box-shadow:6px 6px 0 var(--c-ink)}
+.ixw--construction .ixw-stop.is-done .ixw-pin{border-color:var(--c-ink);background:#FFE58F;box-shadow:4px 4px 0 var(--c-ink)}
+.ixw--construction .ixw-stop.is-done .ixw-pin i{background:#1FA463}
+.ixw--construction .ixw-stop.is-on .ixw-pin{border-color:var(--c-ink);background:var(--c-orange);box-shadow:6px 6px 0 var(--c-ink),0 16px 26px -10px rgba(255,122,26,.6)}
+.ixw--construction .ixw-stop.is-on .ixw-pin i{background:var(--c-ink)}
+.ixw--construction .ixw-stop-t{margin-top:8px}
+.ixw--construction .ixw-panel{box-shadow:inset 0 7px 0 var(--c-yellow),0 3px 0 #E3E9F2,0 30px 60px -36px rgba(20,40,80,.4)}
+.ixw--construction .ixw-panel-meta>div{background:#F4F6F9}
+.ixw--construction .ixw-panel-who b{color:var(--c-navy)}
+.ixw--construction .ixw-rec{border-color:#D7DEE8;font-family:var(--c-mono);font-size:12px}
+.ixw--construction .ixw-pick-l::before{content:"";width:18px;height:18px;background:var(--c-yellow-d);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 18a9 9 0 0 1 18 0h1v3H2v-3zM10 5h4v6h-4z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 18a9 9 0 0 1 18 0h1v3H2v-3zM10 5h4v6h-4z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ---------- the three problems: site notices on the hoarding ---------- */
+.ixw--construction .ixw-board{background:var(--c-blue);background-image:linear-gradient(90deg,rgba(255,255,255,.08) 3px,transparent 3px);background-size:120px 100%;box-shadow:inset 0 10px 0 var(--c-yellow),inset 0 22px 0 #FFFFFF,0 24px 50px -34px rgba(20,40,80,.5);padding-top:58px}
+.ixw--construction .ixw-board .card{padding:60px 24px 24px;border-radius:4px;background:#FFFFFF;transform:rotate(0)}
+.ixw--construction .ixw-board .card:nth-child(n){background:#FFFFFF;box-shadow:0 0 0 3px var(--c-ink),0 22px 30px -16px rgba(10,20,40,.6)}
+.ixw--construction .ixw-board .card::before,.ixw--construction .ixw-board .card:nth-child(n)::before{content:"NOTICE";left:0;right:0;top:0;width:auto;height:40px;margin:0;border-radius:0;display:flex;align-items:center;justify-content:center;
+  background:var(--c-navy);color:#FFFFFF;font:800 15px/1 var(--font-display);letter-spacing:.24em;box-shadow:none}
+.ixw--construction .ixw-board .card:nth-child(2)::before{content:"CAUTION";background:var(--c-yellow);color:var(--c-ink)}
+.ixw--construction .ixw-board .card:nth-child(3)::before{content:"SITE RULE";background:#1FA463}
+.ixw--construction .ixw-board .card:hover{transform:translateY(-6px)}
+.ixw--construction .ixw-board .card-ic{color:var(--c-navy)}
+.ixw--construction .ixw-board .card h3{font-family:var(--font-display);text-transform:none}
+
+/* ---------- the apps: bolted steel plates ---------- */
+.ixw--construction .sc-tab{border:2px solid #A9B4C2;border-radius:4px;box-shadow:0 3px 0 #8A97A8;
+  background:radial-gradient(circle at 8px 8px,#8A97A8 2.6px,transparent 3px),radial-gradient(circle at calc(100% - 8px) 8px,#8A97A8 2.6px,transparent 3px),radial-gradient(circle at 8px calc(100% - 8px),#8A97A8 2.6px,transparent 3px),radial-gradient(circle at calc(100% - 8px) calc(100% - 8px),#8A97A8 2.6px,transparent 3px),linear-gradient(180deg,#F4F6F9,#E3E8EF)}
+.ixw--construction .sc-tab:hover{border-color:#8A97A8;box-shadow:0 5px 0 #6B7A8F}
+.ixw--construction .sc-tab.is-active{border-color:var(--c-ink);box-shadow:0 4px 0 var(--c-ink);background-color:#FFF1C7;
+  background-image:radial-gradient(circle at 8px 8px,#1E2A3A 2.6px,transparent 3px),radial-gradient(circle at calc(100% - 8px) 8px,#1E2A3A 2.6px,transparent 3px),radial-gradient(circle at 8px calc(100% - 8px),#1E2A3A 2.6px,transparent 3px),radial-gradient(circle at calc(100% - 8px) calc(100% - 8px),#1E2A3A 2.6px,transparent 3px),linear-gradient(180deg,#FFF6D8,#FFE9A8)}
+.ixw--construction .sc-tab::after{background:var(--c-hazard)}
+.ixw--construction .sc-panel::before{background:#E3E8EF radial-gradient(circle at 20px 18px,#FF7A1A 5.5px,transparent 6px) no-repeat,radial-gradient(circle at 38px 18px,#FFC93C 5.5px,transparent 6px) no-repeat}
+
+/* ---------- before / after: a blueprint ---------- */
+.ixw--construction .ix-ba{position:relative;gap:8px;padding:46px 14px 14px;border-radius:10px;background-color:var(--c-print);
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:16px 16px;box-shadow:0 3px 0 #13345F,0 30px 60px -36px rgba(10,30,60,.6)}
+.ixw--construction .ix-ba::before{content:"BLUEPRINT \00B7  TODAY \2192  WITH ODOO";position:absolute;left:20px;top:17px;font:700 11px/1 var(--c-mono);letter-spacing:.14em;color:#BFD7F2}
+.ixw--construction .ix-row{border:1.5px dashed rgba(255,255,255,.45);border-radius:4px;background:rgba(255,255,255,.06);box-shadow:none}
+.ixw--construction .ix-ba.is-js[data-state="after"] .ix-row{box-shadow:none;border-style:solid;border-color:rgba(255,201,60,.7)}
+.ixw--construction .ix-task{font:700 12.5px/1.35 var(--c-mono);text-transform:uppercase;letter-spacing:.04em;color:#FFFFFF}
+.ixw--construction .ix-face{color:#DCE9F7}
+.ixw--construction .ix-before .ic{background:rgba(255,122,26,.2);color:#FFB27A}
+.ixw--construction .ix-after .ic{background:rgba(255,201,60,.22);color:var(--c-yellow)}
+.ixw--construction .ix-after{color:#FFFFFF;font-weight:600}
+
+/* ---------- media: the site camera ---------- */
+.ixw--construction .ix-video{position:relative}
+.ixw--construction .ix-video .yt{border:12px solid #2A3550;border-radius:14px;box-shadow:0 3px 0 #1B2440,0 34px 60px -34px rgba(20,40,80,.55)}
+.ixw--construction .ix-video::before{content:"\25CF  REC  \00B7  SITE CAM 1";position:absolute;left:28px;top:26px;z-index:3;padding:5px 9px;border-radius:4px;background:rgba(0,0,0,.55);font:700 10.5px/1 var(--c-mono);letter-spacing:.1em;color:#FFFFFF;pointer-events:none}
+.ixw--construction .ix-video::after{content:"";position:absolute;left:24px;right:24px;top:24px;bottom:58px;z-index:2;pointer-events:none;
+  background:linear-gradient(#FFFFFF,#FFFFFF) left top/22px 3px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) left top/3px 22px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) right top/22px 3px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) right top/3px 22px no-repeat,
+  linear-gradient(#FFFFFF,#FFFFFF) left bottom/22px 3px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) left bottom/3px 22px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) right bottom/22px 3px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) right bottom/3px 22px no-repeat;opacity:.8}
+.ixw--construction .yt-play{background:var(--c-yellow);color:var(--c-ink);box-shadow:0 5px 0 var(--c-ink),0 18px 34px -10px rgba(224,168,0,.7)}
+
+/* ---------- new in Odoo 20: the site diary ---------- */
+.ixw--construction .ix-new{border-radius:8px}
+.ixw--construction .ix-new-head{background:var(--c-navy);box-shadow:inset 0 -8px 0 var(--c-yellow)}
+.ixw--construction .ix-new-head::after{content:"SITE DIARY";margin-left:auto;padding:6px 10px;border:2px solid #FFFFFF;border-radius:4px;font:700 10.5px/1 var(--c-mono);letter-spacing:.14em;color:#FFFFFF}
+.ixw--construction .ix-new .checks .ic{border-radius:4px;background:#FFF1C7;color:#7A5A00}
+@media (max-width:767px){.ixw--construction .ix-new-head::after{display:none}}
+
+/* ---------- rollout: three floor levels ---------- */
+.ixw--construction .ix-phases::before{background:linear-gradient(180deg,#8A97A8 0 3px,#6B7A8F 3px 9px,#8A97A8 9px);height:12px;top:41px;border-radius:2px;opacity:1}
+.ixw--construction .ix-ph-n{border-radius:4px;background:var(--c-concrete);color:var(--c-ink);box-shadow:0 3px 0 #A9A49A,0 0 0 6px var(--w-alt)}
+.ixw--construction .ix-ph-n::before{content:"L1 \00B7  ";font-family:var(--c-mono)}
+.ixw--construction .ix-phase:nth-child(2) .ix-ph-n{background:var(--c-yellow);box-shadow:0 3px 0 var(--c-yellow-d),0 0 0 6px var(--w-alt)}
+.ixw--construction .ix-phase:nth-child(2) .ix-ph-n::before{content:"L2 \00B7  "}
+.ixw--construction .ix-phase:nth-child(3) .ix-ph-n{background:var(--c-navy);color:#FFFFFF;box-shadow:0 3px 0 var(--c-navy-d),0 0 0 6px var(--w-alt)}
+.ixw--construction .ix-phase:nth-child(3) .ix-ph-n::before{content:"L3 \00B7  "}
+.ixw--construction .ix-phase{border-radius:8px;border-bottom:8px solid var(--c-concrete)}
+
+/* ---------- FAQ: the toolbox talk; integrations: cable tags ---------- */
+.ixw--construction .faq details{border-radius:8px;box-shadow:inset 6px 0 0 var(--c-yellow),0 2px 0 #E3E9F2,0 14px 28px -22px rgba(20,40,80,.35)}
+.ixw--construction .faq details[open]{box-shadow:inset 6px 0 0 var(--c-orange),0 3px 0 #D7DEE8,0 20px 36px -22px rgba(20,40,80,.4)}
+.ixw--construction .faq summary::before{border-radius:6px;rotate:45deg;background:var(--c-yellow);color:var(--c-ink);border:2px solid var(--c-ink)}
+.ixw--construction .faq details[open] summary::before{background:var(--c-orange);color:#FFFFFF;transform:none}
+.ixw--construction .faq summary .ic{color:var(--c-navy)}
+.ixw--construction .ix-chip{border-radius:4px;background:#FFFFFF;box-shadow:inset 6px 0 0 var(--c-yellow),inset 0 0 0 1.5px #D7DEE8;padding-left:16px}
+.ixw--construction .ix-chip .ic{color:var(--c-navy)}
+
+/* ---------- the end card: the hoarding ---------- */
+.ixw--construction .ixw-cta{background:var(--c-blue);background-image:linear-gradient(90deg,rgba(255,255,255,.07) 3px,transparent 3px);background-size:120px 100%;box-shadow:inset 0 12px 0 var(--c-yellow),inset 0 24px 0 #FFFFFF}
+.ixw--construction .ixw-cta::before{display:none}
+.ixw--construction .ixw-cta::after{content:"";display:block;position:absolute;left:0;right:0;bottom:0;height:14px;top:auto;width:auto;transform:none;border-radius:0 0 inherit inherit;background:var(--c-hazard);opacity:.9}
+.ixw--construction .ixw-cta .hand{color:var(--c-yellow)}
+
+/* ---------- buttons: hazard tape, drawings and bolted steel ----------
+   Like Nexi Explains' comic buttons (an ink outline and a hard lip you press the button onto), from the site: the primary
+   is safety yellow standing on a hazard-striped lip, the secondary is a drawing (blueprint grid, dashed border), the
+   controls are bolted steel plates, the switches are site signs. */
+.ixw--construction{--lab-bd:2px solid var(--c-ink);--lab-lip:var(--c-yellow);--lab-tail:var(--c-ink);--lab-r:4px}
+.ixw--construction main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:2.5px solid var(--c-ink);border-radius:6px}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white){box-shadow:none;margin-bottom:8px;overflow:visible}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white)::before{content:"";position:absolute;left:-2.5px;right:-2.5px;top:calc(100% - 2px);height:9px;border:2.5px solid var(--c-ink);border-top:0;border-radius:0 0 6px 6px;background:var(--c-hazard);z-index:-1;transition:height .2s var(--w-spring)}
+.ixw--construction main .btn-primary,.ixw--construction main .btn-primary:hover{color:var(--c-ink);background:linear-gradient(180deg,#FFD866,#FFC93C)}
+.ixw--construction main .ixw-cta .btn-white,.ixw--construction main .ixw-cta .btn-white:hover{color:var(--c-ink);background:#FFFFFF}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white):hover{border-color:var(--c-ink);translate:0 -3px}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white):hover::before{height:12px}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white):active{translate:0 6px;transition-duration:.07s}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white):active::before{height:3px}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white) .ic{width:30px;height:30px;margin-right:-8px;padding:6px;border-radius:6px;background:var(--c-ink);color:var(--c-yellow)}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white):hover .ic{transform:translateX(3px);background:var(--c-ink)}
+.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white) .ripple,.ixw--construction main :is(.btn-primary,.ixw-cta .btn-white)::after{display:none}
+.ixw--construction main :is(.btn-ghost,.ixw-cta .btn-outline-white){outline:1.5px dashed currentColor;outline-offset:-7px;box-shadow:0 5px 0 var(--c-ink)}
+.ixw--construction main .btn-ghost,.ixw--construction main .btn-ghost:hover{color:var(--c-print);background-color:#FFFFFF;
+  background-image:linear-gradient(rgba(31,78,140,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(31,78,140,.1) 1px,transparent 1px);background-size:10px 10px}
+.ixw--construction main .btn-ghost::before{background:rgba(31,78,140,.06)}
+.ixw--construction main .btn-ghost .ic{color:var(--c-print)}
+.ixw--construction main .ixw-cta .btn-outline-white,.ixw--construction main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.1)}
+.ixw--construction main :is(.btn-ghost,.ixw-cta .btn-outline-white):hover{border-color:var(--c-ink);translate:0 -2px;box-shadow:0 7px 0 var(--c-ink)}
+.ixw--construction main :is(.btn-ghost,.ixw-cta .btn-outline-white):active{translate:0 4px;transition-duration:.07s;box-shadow:0 1px 0 var(--c-ink)}
+.ixw--construction main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--c-orange);outline-offset:5px}
+/* the controls: bolted steel plates; play is the yellow one */
+.ixw--construction .ixw-ibtn{border:2.5px solid var(--c-ink);border-radius:8px;color:var(--c-ink);box-shadow:0 3px 0 var(--c-ink);
+  background:radial-gradient(circle at 6px 6px,#6B7A8F 1.8px,transparent 2.2px),radial-gradient(circle at calc(100% - 6px) 6px,#6B7A8F 1.8px,transparent 2.2px),radial-gradient(circle at 6px calc(100% - 6px),#6B7A8F 1.8px,transparent 2.2px),radial-gradient(circle at calc(100% - 6px) calc(100% - 6px),#6B7A8F 1.8px,transparent 2.2px),linear-gradient(180deg,#F4F6F9,#D7DEE8)}
+.ixw--construction .ixw-ibtn:hover{border-color:var(--c-ink);color:var(--c-navy);box-shadow:0 5px 0 var(--c-ink)}
+.ixw--construction .ixw-ibtn:active{box-shadow:0 1px 0 var(--c-ink)}
+.ixw--construction .ixw-ibtn--play,.ixw--construction .ixw-ibtn--play:hover{color:var(--c-ink);border-radius:50%;background:radial-gradient(circle at 50% 38%,#FFE38A,#FFC93C 60%,#E0A800)}
+.ixw--construction .ixw-ibtn--play.is-on{animation:cBeacon 1.6s ease-out infinite}
+@keyframes cBeacon{0%{box-shadow:0 3px 0 var(--c-ink),0 0 0 0 rgba(255,122,26,.5)}70%,100%{box-shadow:0 3px 0 var(--c-ink),0 0 0 12px rgba(255,122,26,0)}}
+.ixw--construction .ixw-dots button{background:#C3CDDA;border-radius:2px}
+.ixw--construction .ixw-dots button.is-on{width:24px;background:var(--c-hazard)}
+/* the episode tag: a site sign */
+.ixw--construction .ixw-ep-tag{border-radius:4px;background:var(--c-navy);box-shadow:0 3px 0 var(--c-navy-d)}
+.ixw--construction .ixw-ep-tag:hover{box-shadow:0 4px 0 var(--c-navy-d)}
+.ixw--construction .ixw-ep-tag .ic{border-radius:3px;background:var(--c-yellow);color:var(--c-ink)}
+/* switches and view toggles: a steel plate with a sliding yellow sign */
+.ixw--construction :is(.ix-switch,.ix-views){border:2.5px solid var(--c-ink);border-radius:6px;background:#E3E8EF;box-shadow:0 4px 0 var(--c-ink)}
+.ixw--construction :is(.ix-switch,.ix-views) button{border-radius:4px;font-family:var(--c-mono);text-transform:uppercase;letter-spacing:.04em;font-size:13px;white-space:nowrap}
+.ixw--construction .ix-switch::before{border-radius:4px;background:var(--c-ink);box-shadow:0 3px 0 #0B111A}
+.ixw--construction .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:var(--c-yellow);box-shadow:0 3px 0 var(--c-yellow-d)}
+.ixw--construction .ix-switch:has([data-ba="after"][aria-pressed="true"]) [data-ba="after"]{color:var(--c-ink)}
+.ixw--construction .ix-views button[aria-pressed="true"]{background:var(--c-yellow);color:var(--c-ink);box-shadow:0 2px 0 var(--c-yellow-d)}
+/* the sample picker: site signs */
+.ixw--construction .ixw-pick-b{border:2.5px solid var(--c-ink);border-radius:8px;box-shadow:0 4px 0 var(--c-ink)}
+.ixw--construction .ixw-pick-b button{border-radius:5px}
+.ixw--construction .ixw-pick-b button:hover{color:var(--c-navy);background:#FFF6D8}
+.ixw--construction .ixw-pick-b button[aria-pressed="true"]{background:var(--c-yellow);color:var(--c-ink);box-shadow:0 3px 0 var(--c-ink)}
+.ixw--construction .sc-tab.is-active b{color:var(--c-ink)}
+/* other industries: steel tags */
+.ixw--construction .ix-others a{border:2px solid var(--c-ink);border-radius:5px;box-shadow:0 3px 0 var(--c-ink)}
+.ixw--construction .ix-others a:hover{border-color:var(--c-ink);box-shadow:0 5px 0 var(--c-ink);background:#FFF6D8}
+.ixw--construction .ix-others a:active{box-shadow:0 1px 0 var(--c-ink)}
+.ixw--construction .ix-others a .ic{color:var(--c-navy)}
+/* text links: hazard tape underline */
+.ixw--construction main .btn-link{color:var(--c-navy);padding-bottom:10px;background:var(--c-hazard) 0 100%/100% 5px no-repeat}
+.ixw--construction main .btn-link::after{display:none}
+.ixw--construction main .btn-link:hover{color:var(--c-ink);animation:cTape 1s linear infinite}
+@keyframes cTape{to{background-position:25px 100%}}
+.ixw--construction main .btn-link{background-repeat:repeat-x;background-size:25.4px 5px}
+
+/* wide screens: the scene sits a little higher, so the caption clears the credits card */
+/* the side tabs and the header's Contact Us in this world's colours */
+.ixw--construction{}
+/* the entry intro in this world's colours */
+.ixw--construction{--ii-plate:#FFFFFF;--ii-plate-shadow:0 6px 0 #0E1A2E;--ii-bg:#1F3F73;--ii-pattern:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(rgba(255,255,255,.12) 1.5px,transparent 1.5px) 0 0/120px 120px,linear-gradient(90deg,rgba(255,255,255,.12) 1.5px,transparent 1.5px) 0 0/120px 120px;--ii-ink:#FFFFFF;--ii-sub:#CFE0F5;--ii-b:#E0650C;--ii-accent:#FFC93C;--ii-bar:repeating-linear-gradient(-45deg,#1E2A3A 0 10px,#FFC93C 10px 20px);--ii-lip:#0E1A2E;--ii-ep-bg:#FFC93C;--ii-ep-fg:#1E2A3A;--ii-pill-r:4px;--ii-pill-ink:#1E2A3A}
+/* "View the scene": a site sign edged in hazard tape; pressed, safety yellow */
+.ixw--construction .ixw-peek{border:2px solid var(--c-ink);border-radius:4px;color:var(--c-ink);box-shadow:0 3px 0 var(--c-yellow),0 5px 0 var(--c-ink);padding-bottom:4px;
+  background:repeating-linear-gradient(-45deg,var(--c-ink) 0 6px,var(--c-yellow) 6px 12px) bottom/100% 5px no-repeat,#FFFFFF}
+.ixw--construction .ixw-peek:hover{box-shadow:0 5px 0 var(--c-yellow),0 7px 0 var(--c-ink)}.ixw--construction .ixw-peek:active{box-shadow:0 1px 0 var(--c-yellow),0 2px 0 var(--c-ink)}
+.ixw--construction .ixw-peek[aria-pressed="true"]{background:repeating-linear-gradient(-45deg,var(--c-ink) 0 6px,var(--c-yellow) 6px 12px) bottom/100% 5px no-repeat,linear-gradient(180deg,#FFD866,#FFC93C)}
+@media (min-width:1500px){.ixw--construction .ixw-set{bottom:158px}}
+@media (prefers-reduced-motion:reduce){.ixw--construction .ixw-ibtn--play.is-on,.ixw--construction main .btn-link:hover{animation:none}}
+.ixw--construction .sc-tab:not(.is-active)::after{background:none}
+
+/* audit round: hero CTAs at 52px on desktop, matching the caption controls' rhythm */
+@media (min-width:768px){.ixw--construction .ixw-copy .btn-lg{height:52px}}
+/* audit round: before/after, the intro and switch stay in view beside the tall board instead of floating mid-way */
+@media (min-width:1024px){.ixw--construction .ix-ba-wrap{align-items:start}.ixw--construction .ix-ba-wrap>div:first-child{position:sticky;top:120px;padding-top:24px}}
+/* audit round: tablets, the glance strip clears the typed caption however long the line runs */
+@media (min-width:768px) and (max-width:1023px){.ixw--construction .ixw-credits{margin-top:48px}}
+
+/* fix round: segmented switches (Today / With Odoo, and the dashboard's view toggle). Two equal halves, the active
+   pill sits fully inside with the same 4px inset on every side and a concentric radius, its lip drawn inside it,
+   labels centred; the slide eases without overshoot. */
+.ixw--construction :is(.ix-switch,.ix-views){display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none;align-items:stretch;position:relative;padding:4px;border-radius:6px;overflow:hidden;isolation:isolate}
+.ixw--construction :is(.ix-switch,.ix-views) button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-width:0;margin:0;padding:0 20px;text-align:center;border-radius:calc(6px - 4px);background:transparent;box-shadow:none;transition:color .25s ease,background-color .25s ease}
+.ixw--construction .ix-switch button{height:42px}
+.ixw--construction .ix-views button{height:34px;padding:0 16px}
+.ixw--construction .ix-switch::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:calc(6px - 4px);z-index:0;transition:transform .42s cubic-bezier(.32,.72,.24,1),background-color .3s ease;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--construction .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{transform:translateX(100%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--construction .ix-switch button[aria-pressed="true"]{background:transparent}
+.ixw--construction .ix-views button[aria-pressed="true"]{box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--construction :is(.ix-switch,.ix-views) button[aria-pressed="false"]:hover{background:rgba(127,127,127,.12)}
+.ixw--construction :is(.ix-switch,.ix-views) button:active{transform:translateY(1px)}
+.ixw--construction :is(.ix-switch,.ix-views) button:focus-visible{outline:2px solid currentColor;outline-offset:-6px}
+@media (prefers-reduced-motion:reduce){.ixw--construction .ix-switch::before{transition:none}}

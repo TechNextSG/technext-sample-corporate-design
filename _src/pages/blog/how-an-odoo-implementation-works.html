@@ -1,0 +1,107 @@
+<!--meta {"title": "Odoo implementation process, step by step", "desc": "How TechNext implements Odoo: discovery, configuration and data migration on staging, training, integration, go-live and support. What happens at each step.", "out": "blog/how-an-odoo-implementation-works.html", "nav": "company", "article": {"h1": "How an Odoo implementation works, step by step", "cat": "technext-odoo", "date": "2026-09-27", "order": 8, "lede": "What actually happens between signing and go-live, and what your team needs to bring. This is how TechNext runs Odoo projects, from the first process map to support after launch.", "card": "Discovery, staging, data migration, training, integration and support: what happens at each step, and what your team brings.", "cover": "icons:icon:search,icon:gear,icon:graduation,icon:plug,icon:lifebuoy"}, "scripts": ["assets/js/demo-kit.js", "assets/js/demo-phases.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-phases.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">Key takeaways</p>
+  <ul>
+    <li>TechNext runs every Odoo project in four steps: <strong>Discovery, Training, Integration and Support</strong>, with configuration and data migration on a staging copy in between.</li>
+    <li>The first phase usually covers <strong>Accounting, Sales and Inventory</strong>. Other apps follow on the same database.</li>
+    <li>Nothing goes live until balances reconcile and the people who will use it have practised on their own data.</li>
+  </ul>
+</div>
+
+<p>An Odoo implementation is the work of fitting Odoo to how a company operates: deciding which apps to use, configuring them, moving data across, training people and connecting other tools. Odoo is quick to switch on, and that is exactly why implementations go wrong when they skip steps. Here is how TechNext, an Odoo Ready Partner, runs them.</p>
+
+<ol class="post-steps" aria-label="The implementation, step by step"><li><span>{{icon:search}}</span><b>Discovery</b><small>Map how orders, stock and money move</small></li><li><span>{{icon:gear}}</span><b>Configuration</b><small>On a staging copy, standard first</small></li><li><span>{{icon:database}}</span><b>Data migration</b><small>Cleaned, loaded and reconciled</small></li><li><span>{{icon:graduation}}</span><b>Training</b><small>Role-based, on your own data</small></li><li><span>{{icon:plug}}</span><b>Integration</b><small>Banks, payments, stores and email</small></li><li><span>{{icon:lifebuoy}}</span><b>Go-live and support</b><small>Planned cut-over, one tracked channel</small></li></ol>
+
+<h2>Step 1: Discovery</h2>
+<p>Every project starts by mapping how the business works today, before anyone opens Odoo. In <a href="{{ROOT}}odoo/discovery.html">discovery</a> we walk through three flows with the people who run them:</p>
+<ul>
+  <li><strong>Order-to-cash:</strong> quotation, order, delivery, invoice, payment.</li>
+  <li><strong>Procure-to-pay:</strong> purchase request, order, receipt, vendor bill, payment.</li>
+  <li><strong>Record-to-report:</strong> journals, reconciliation, month-end and reports.</li>
+</ul>
+<p>Each step is matched to an Odoo app, and anything Odoo does not do out of the box is flagged. You leave with a process map, an app map, a written scope and a quotation. This is also where we agree what goes into the first phase and what waits.</p>
+
+<h2>Configuration on a staging copy</h2>
+<p>Configuration happens on a <strong>staging database</strong>, never on the one you will go live with. For a typical first phase this includes:</p>
+<ul>
+  <li>the chart of accounts, taxes and journals, set up for how you close the month;</li>
+  <li>quotation templates, pricelists and approval rules;</li>
+  <li>warehouses, locations, routes and reordering rules modelled on your sites;</li>
+  <li>users and access rights by role.</li>
+</ul>
+<p>We follow a <a href="{{ROOT}}blog/standard-first-odoo-customisation.html">standard-first rule</a>: configure what Odoo already does before writing any custom code.</p>
+
+<h2>Data migration</h2>
+<p>Master data (customers, vendors, products, the chart of accounts) and open items (unpaid invoices, bills, opening stock and balances) are cleaned and loaded into staging from your spreadsheets or current system. Then they are <strong>reconciled</strong>: the trial balance, receivables, payables and stock value in Odoo must match your old system before cut-over. If day-one balances don't match, nothing else matters.</p>
+
+<h2>Step 2: Training</h2>
+<p><a href="{{ROOT}}odoo/training.html">Training</a> is role-based and runs on your own data in staging. The warehouse team practises receipts and picking, sales practises quotations, and finance runs a practice month-end. People learn faster on their own products and customers, and the practice run surfaces configuration gaps while they are still cheap to fix.</p>
+
+<h2>Step 3: Integration</h2>
+<p>Next, Odoo is connected to the tools around it: bank feeds, payment providers, online stores, marketplaces and email. We use Odoo's standard connectors first and build against the API only where no connector exists. The goal of <a href="{{ROOT}}odoo/integration.html">integration</a> is that nobody re-keys data between systems.</p>
+
+<h2>Go-live</h2>
+<p>Go-live is a planned cut-over, usually at a period boundary so the books start clean. Final open items are loaded, balances are checked one last time, and the old system becomes read-only. The first days are supported closely, because that is when real transactions find the last gaps.</p>
+
+<h2>Step 4: Support</h2>
+<p>After go-live, <a href="{{ROOT}}odoo/support.html">support</a> covers fixes, month-end help, small changes and version upgrades, through one tracked channel with a named team. This is also when phase two gets planned: the next apps to add, now that the core is running.</p>
+
+<figure class="phz-fig" aria-label="Interactive: the Odoo implementation, stage by stage">
+  <div class="dm dm-phases reveal" data-demo="phases">
+    <div class="dm-head">
+      <div class="dm-title"><b>From discovery to support</b><small>Seven stages, four named steps</small></div>
+      <button class="dm-btn" type="button" data-prev aria-label="Previous stage">{{icon:chevron}}</button>
+      <button class="dm-btn" type="button" data-next aria-label="Next stage">{{icon:chevron}}</button>
+      <button class="dm-btn dm-btn--primary" type="button" data-play>{{icon:play}}<span>Play</span></button>
+    </div>
+    <div class="phz-rail">
+      <div class="phz-stops" role="tablist" aria-label="Implementation stages"></div>
+      <div class="phz-lanes" aria-hidden="true">
+        <span class="phz-lane phz-lane--old"><b>Old system</b><em>read-only</em></span>
+        <span class="phz-lane phz-lane--stg"><b>Staging copy</b></span>
+        <span class="phz-lane phz-lane--live"><b>Live database</b></span>
+      </div>
+    </div>
+    <div class="phz-panel" role="tabpanel" aria-live="polite"></div>
+    <div class="phz-gate" role="group" aria-label="The go-live gate">
+      <span class="phz-lock" aria-hidden="true">{{icon:lock}}</span>
+      <span class="phz-gt"><b>Go-live gate</b><small data-gate-msg></small></span>
+      <button type="button" class="phz-chk" data-g="bal" aria-pressed="true"><i aria-hidden="true"></i>Balances reconcile</button>
+      <button type="button" class="phz-chk" data-g="trn" aria-pressed="true"><i aria-hidden="true"></i>Team practised on its own data</button>
+    </div>
+    <div class="phz-icons" hidden>{{icon:search}}{{icon:gear}}{{icon:database}}{{icon:graduation}}{{icon:plug}}{{icon:zap}}{{icon:lifebuoy}}</div>
+    <div class="dm-static">
+      <p>Discovery maps order-to-cash, procure-to-pay and record-to-report. Configuration and data migration happen on a staging copy, then role-based training on your own data, integration with banks, payments, stores and email, a planned go-live at a period boundary, and support through one tracked channel.</p>
+      <p>Nothing goes live until balances reconcile and the people who will use it have practised on their own data.</p>
+    </div>
+  </div>
+  <figcaption class="dm-note">{{icon:check}} Every stage, input and deliverable comes from this article; timelines are agreed in the written scope.</figcaption>
+</figure>
+
+
+<h2>What your team needs to bring</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>What</th><th>Why it matters</th></tr></thead>
+  <tbody>
+    <tr><td>A decision-maker</td><td>Scope questions get answered in days, not weeks</td></tr>
+    <tr><td>Process owners for sales, stock and finance</td><td>They know how the work really runs</td></tr>
+    <tr><td>Current data exports</td><td>Customers, products, open items and balances for migration</td></tr>
+    <tr><td>Time for training and testing</td><td>Practice on staging is what makes go-live calm</td></tr>
+  </tbody>
+</table></div>
+
+<h2>Common mistakes we help clients avoid</h2>
+<ul>
+  <li><strong>Customising before configuring.</strong> Recreating the old system's screens in Odoo adds cost at every upgrade.</li>
+  <li><strong>Migrating dirty data.</strong> Duplicates and wrong codes survive the move unless they are fixed first.</li>
+  <li><strong>Going live on every app at once.</strong> A focused first phase goes live sooner and teaches the team the system.</li>
+  <li><strong>Skipping the practice month-end.</strong> Finance should close a test month in staging before the real one.</li>
+</ul>
+
+<h2>Common questions</h2>
+<div class="faq">
+  <details><summary>How long does an Odoo implementation take? {{icon:chevron}}</summary><div class="faq-a"><p>It depends on the scope: the number of apps, companies, integrations and how clean your data is. TechNext agrees the timeline in the written scope at the end of discovery, and keeps the first phase focused so it goes live sooner.</p></div></details>
+  <details><summary>Can we start with just one Odoo app? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Odoo is modular, and Odoo's One App Free plan covers one app for unlimited users. Most TechNext projects start with Accounting, Sales and Inventory together, because that is where money and stock move.</p></div></details>
+  <details><summary>What does TechNext need from us to start? {{icon:chevron}}</summary><div class="faq-a"><p>A short description of how your process runs today, a decision-maker for scope questions, and later the people who run sales, stock and finance for discovery and training.</p></div></details>
+</div>

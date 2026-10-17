@@ -1,0 +1,78 @@
+<!--meta {"title": "BIR E-Invoicing with Odoo: Deadline & Setup Guide", "desc": "BIR e-invoicing explained by TechNext: the 31 December 2026 deadline, who is covered, the Permit to Issue, and how to get Odoo ready in the Philippines.", "out": "blog/bir-e-invoicing-odoo.html", "nav": "company", "article": {"h1": "BIR e-invoicing with Odoo: the deadline, who is covered, and how to prepare", "cat": "erp", "date": "2026-10-14", "order": 10, "lede": "The BIR wants covered taxpayers issuing electronic invoices by 31 December 2026. Here is who is covered, what the new rules ask for, and how to get your Odoo database ready in time.", "card": "Who must issue BIR electronic invoices by 31 December 2026, what a Permit to Issue is, and how to prepare Odoo.", "cover": "invoicing/invoicing-hero-image.webp"}, "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">Key takeaways</p>
+  <ul>
+    <li>Covered taxpayers must issue BIR-compliant <strong>electronic invoices on or before 31 December 2026</strong>, under RR 26-2025 and RMC 98-2026.</li>
+    <li>Covered now: e-commerce sellers (small, medium and large), Large Taxpayers Service accounts, large taxpayers, and businesses on <strong>CAS or CBA</strong> with invoicing software. <strong>Micro taxpayers are exempt.</strong></li>
+    <li>You need a <strong>Permit to Issue (PTI) Electronic Invoice</strong> first, then EIS Certification within six months of the PTI.</li>
+    <li>The rule covers your whole company: head office and every branch.</li>
+  </ul>
+</div>
+
+<p>The Philippines is moving invoices online. The Bureau of Internal Revenue (BIR) now requires covered businesses to issue electronic invoices, not just print them from a system. The deadline is close: <strong>31 December 2026</strong>. TechNext runs Odoo projects from our hub in Taguig City, so this date sits in every Philippine plan we write. This guide sets out what the rules say, and what it means if you run Odoo.</p>
+
+<h2>Where the rules come from</h2>
+<p>Three issuances matter. <strong>RR 11-2025</strong> set the framework for e-invoicing and electronic sales reporting. <strong>RR 26-2025</strong>, published on the BIR website on 16 October 2025, amended its transition rules and moved the deadline to 31 December 2026 (see <a href="https://kpmg.com/ph/en/insights/2025/10/special-intax-october-2025-issue-1-volume-2.html" target="_blank" rel="noopener">KPMG's summary</a>). Then on 22 September 2026, the BIR issued <strong>RMC 98-2026</strong> with the working guidelines, and kept the same date (see <a href="https://www.grantthornton.com.ph/technical-alerts/tax-alert/2026/bir-issues-guidelines-on-electronic-invoicing-retains-31-dec-2026-deadline/" target="_blank" rel="noopener">Grant Thornton's alert</a> and the <a href="https://tribune.net.ph/2026/09/23/bir-e-invoicing-deadline-slated" target="_blank" rel="noopener">Daily Tribune report</a>).</p>
+
+<h2>Who must comply by 31 December 2026</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Group</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Small, medium and large taxpayers selling through e-commerce or internet transactions</td><td>Covered by 31 Dec 2026</td></tr>
+    <tr><td>Taxpayers under the Large Taxpayers Service (LTS)</td><td>Covered by 31 Dec 2026</td></tr>
+    <tr><td>Large taxpayers under the Ease of Paying Taxes Act (RA 11976) and RR 8-2024</td><td>Covered by 31 Dec 2026</td></tr>
+    <tr><td>Taxpayers using a Computerized Accounting System (CAS) or Computerized Books of Accounts (CBA) with invoicing software</td><td>Covered by 31 Dec 2026</td></tr>
+    <tr><td>Exporters, incentive-registered enterprises, POS users and others</td><td>Later, once a separate regulation is issued</td></tr>
+    <tr><td>Micro taxpayers</td><td>Exempt</td></tr>
+  </tbody>
+</table></div>
+<p>The BIR Commissioner can add other taxpayers. If you are unsure which group you are in, check with your accountant or your BIR revenue district office.</p>
+
+<h2>What the new guidelines ask for</h2>
+<ul>
+  <li><strong>A Permit to Issue (PTI) Electronic Invoice</strong> before you issue any e-invoice. An existing CAS Acknowledgment Certificate or Permit to Use is not enough.</li>
+  <li><strong>EIS Certification</strong> (Electronic Invoicing and Sales Reporting) within six months of getting the PTI.</li>
+  <li><strong>A system that can transmit.</strong> A printed invoice is not an e-invoice unless your system can send the required sales data to the BIR.</li>
+  <li><strong>No edits after issue.</strong> You cannot delete or change an issued e-invoice. Use a credit note for a decrease, and a new e-invoice for an increase.</li>
+  <li><strong>A plan for downtime.</strong> If your system is down, you issue a BIR-authorised manual invoice. Later you replace it with an e-invoice that references it.</li>
+  <li><strong>Every branch.</strong> Head office and all branches must issue e-invoices. Different invoicing systems for different branches may need separate PTIs.</li>
+</ul>
+<p>Two points are still moving. Grant Thornton notes that electronic sales reporting is a separate duty, which applies once the BIR issues its own guidelines. Accreditation rules for e-invoicing solution providers are also to come separately. Watch for both, or <a href="https://www.grantthornton.com.ph/insights/articles-and-updates1/lets-talk-tax/the-ber-months-are-here-the-countdown-to-the-e-invoicing-deadline-on-31-december-2026/" target="_blank" rel="noopener">read Grant Thornton's countdown piece</a> for the detail.</p>
+
+<h2>What Odoo already does for the BIR</h2>
+<p>Odoo has a Philippine localisation. According to <a href="https://www.odoo.com/documentation/19.0/applications/finance/fiscal_localizations/philippines.html" target="_blank" rel="noopener">Odoo's documentation</a>, it includes:</p>
+<ul>
+  <li>a chart of accounts and default VAT rates (12%, zero-rated and exempt);</li>
+  <li>expanded, final and VAT withholding taxes;</li>
+  <li>the BIR 2550Q VAT summary;</li>
+  <li>SLSP, SAWT and QAP reports, with .DAT exports for the BIR's ReLiEf and Alpha tools;</li>
+  <li>a BIR 2307 export (as XLS, which you convert to DAT or PDF);</li>
+  <li>a check layout that follows local check standards.</li>
+</ul>
+<p>That is a solid base for day-to-day BIR work. The same documentation does not mention e-invoicing or EIS. So treat the e-invoicing link as project work, not a switch you turn on.</p>
+
+{{SHOT:invoicing/invoicing-hero-image.webp|Odoo Invoicing, where customer invoices and credit notes are issued (screenshot: odoo.com)}}
+
+<h2>How TechNext gets your Odoo ready</h2>
+<p>We connect Odoo to the EIS requirements as part of your implementation. In practice, that means:</p>
+<ol>
+  <li><strong>Confirm your group.</strong> We check with your accountant whether you are covered now, later, or exempt.</li>
+  <li><strong>Map your invoice flows.</strong> Customer invoices, credit notes, branch invoices, anything issued outside Odoo.</li>
+  <li><strong>Set up the localisation.</strong> Taxes, withholding, BIR reports and invoice layouts, tested on your real data.</li>
+  <li><strong>Build the BIR link.</strong> We work out how your Odoo version and hosting will send invoice data, and test it on a copy of your database.</li>
+  <li><strong>Support your PTI application.</strong> Your process flow and sample invoices come straight from the system you will use.</li>
+  <li><strong>Plan for downtime and corrections.</strong> Credit notes and manual-invoice catch-up are set up before go-live.</li>
+</ol>
+<p>You don't need to hire your own team. TechNext sets up Odoo for BIR e-invoicing and stays on after go-live, through our <a href="{{ROOT}}odoo/support.html">Odoo support</a>. Your website and brand can come with your Odoo too: see <a href="{{ROOT}}free-website-with-odoo.html">your website with Odoo</a>. For the bigger picture, read about <a href="{{ROOT}}odoo/philippines.html">Odoo in the Philippines</a>.</p>
+
+<div class="post-note"><p>Rules change. This article reflects RR 26-2025 and RMC 98-2026 as summarised by the sources linked above, as of October 2026. Always check the latest BIR issuances and confirm with your accountant or the BIR before acting.</p></div>
+
+<h2>Common questions about BIR e-invoicing</h2>
+<div class="faq">
+  <details><summary>What is the BIR e-invoicing deadline? {{icon:chevron}}</summary><div class="faq-a"><p>Covered taxpayers must issue compliant electronic invoices on or before 31 December 2026. RR 26-2025 set the date and RMC 98-2026 kept it.</p></div></details>
+  <details><summary>Are micro taxpayers covered? {{icon:chevron}}</summary><div class="faq-a"><p>No. The BIR's guidelines exempt micro taxpayers from the mandatory e-invoicing requirement.</p></div></details>
+  <details><summary>Is my CAS permit enough to issue e-invoices? {{icon:chevron}}</summary><div class="faq-a"><p>No. You need a Permit to Issue (PTI) Electronic Invoice first. A CAS Acknowledgment Certificate or Permit to Use is not enough. EIS Certification then follows within six months of the PTI.</p></div></details>
+  <details><summary>Does Odoo handle BIR e-invoicing out of the box? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo's Philippine localisation covers taxes, withholding and BIR reports such as 2550Q, SLSP, SAWT, QAP and a 2307 export. Its documentation does not mention EIS, so TechNext builds and tests the e-invoicing link as part of your project.</p></div></details>
+  <details><summary>Can TechNext help us before the deadline? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Our team in Taguig City confirms your group with your accountant, sets up Odoo for the BIR, tests the e-invoicing flow, and stays on after go-live.</p></div></details>
+</div>

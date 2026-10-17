@@ -1,0 +1,12 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* Plain pages of the company group (calm layer, 9 Oct 2026): case studies, quotation, 404 and the blog posts. The shared
+   stage hero loses its grid and aurora (a plain TechNext wash). Blog posts: the article reads as TechNext first; the blog's newsroom theme comes back as two quiet
+   touches only: a newsprint double rule under the byline and a red kicker rule on the "in one paragraph" key box. */
+.page-hero--stage .ph-grid,.page-hero--stage .ph-aurora,.page-hero--stage .ph-spot{display:none!important}
+.page-hero--stage{background:linear-gradient(180deg,#F7F9FD 0%,#FFFFFF 100%)!important}
+.page-hero--post .post-by{margin-top:22px;padding-top:16px;border-top:3px double #D9DEE8;max-width:70ch}
+.section--post .post-key{border-top:3px solid #E2453C!important;background:#FFFFFF!important;border-radius:14px!important}
+.section--post .post-key-h{color:#B5322B!important}
+.section--post .post-toc-h{color:#5C5C73}
+/* 404: one primary, one secondary, the other two destinations as quiet links */
+.nf-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0}

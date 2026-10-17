@@ -1,0 +1,94 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo 20 country packages (blog): stylised dot map, area rows per country and the side-by-side matrix (demo-locales.js) */
+.lc-fig{margin:1.8em 0 2.2em;font:500 12px/1.4 var(--font-body)}
+.lc-fig ul,.lc-fig ol{margin:0;padding:0;list-style:none}
+.lc-fig li{margin:0}
+.lc-fig p{margin:0}
+.lc-body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+.lc-map{padding:14px 8px 14px 14px}
+.lc-svg{display:block;width:100%;height:auto;overflow:visible}
+.lc-d{fill:#DEDBE4;transition:fill .45s ease,transform .45s var(--spring);transform-box:fill-box;transform-origin:center}
+.lc-d--ctx{fill:#EEECF1}
+.lc-d--sg.is-on{fill:var(--blue)}
+.lc-d--ph.is-on{fill:var(--tok-make)}
+.lc-d--vn.is-on{fill:var(--tok-pay)}
+.lc-d.is-on{transform:scale(1.15)}
+.lc-link{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-dasharray:3 4;opacity:0;transition:opacity .4s ease}
+.lc-links.is-on .lc-link{opacity:.55;animation:lcDash 1.2s linear infinite}
+@keyframes lcDash{to{stroke-dashoffset:-14}}
+.lc-pin .lc-ring{fill:none;stroke:var(--ink);stroke-width:1.2;opacity:0}
+.lc-pin .lc-core{fill:#fff;stroke:#A9A6B4;stroke-width:1.6;transition:stroke .3s ease,fill .3s ease}
+.lc-pin.is-on .lc-core{fill:var(--ink);stroke:#fff}
+.lc-pin.is-on .lc-ring{animation:lcRing 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes lcRing{0%{opacity:.7;transform:scale(.5)}100%{opacity:0;transform:scale(1.6)}}
+.lc-lab{font:700 8.5px/1 var(--font-body);fill:#8888A0;paint-order:stroke;stroke:#fff;stroke-width:3px}
+.lc-pin.is-on .lc-lab{fill:var(--ink)}
+.lc-panel{display:grid;gap:6px;align-content:start;padding:14px 14px 16px;border-left:1px solid var(--line);background:rgba(250,249,251,.75);min-height:100%}
+.lc-ph{display:grid;gap:2px;margin:0 0 4px}
+.lc-ph b{font:800 15px/1.2 var(--font-display);color:var(--ink)}
+.lc-ph small{font:500 10.5px/1.35 var(--font-body);color:var(--muted)}
+.lc-row{border-radius:11px;border:1px solid var(--line);background:#fff;overflow:hidden}
+.lc-rh{display:grid;grid-template-columns:74px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;padding:8px 10px;border:0;background:none;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.lc-rh:focus-visible{outline:2px solid var(--blue);outline-offset:-2px;border-radius:11px}
+.lc-area{font:700 10px/1.2 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lc-sum{font:600 11.5px/1.35 var(--font-body);color:var(--ink)}
+.lc-chip{padding:3px 7px;border-radius:999px;font:700 9.5px/1.1 var(--font-body);font-style:normal;white-space:nowrap}
+.lc-st--ok .lc-chip{background:var(--ok-050);color:var(--ok)}
+.lc-st--part .lc-chip{background:var(--amber-050);color:#7A4E00}
+.lc-st--none .lc-chip{background:var(--alt);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+.lc-st--gap .lc-chip{background:#FDECEA;color:#9E2B20}
+.lc-fig .lc-det{display:none;gap:4px;padding:0 10px 9px 92px}
+.lc-fig .lc-row.is-open .lc-det{display:grid}
+.lc-det li{position:relative;padding-left:11px;font:500 11px/1.45 var(--font-body);color:var(--body)}
+.lc-det li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;background:var(--cc,var(--blue))}
+[data-cc="sg"] .lc-panel{--cc:var(--blue)}
+[data-cc="ph"] .lc-panel{--cc:var(--tok-make)}
+[data-cc="vn"] .lc-panel{--cc:var(--tok-pay)}
+.lc-row.is-open{border-color:color-mix(in srgb,var(--cc,var(--blue)) 35%,var(--line));box-shadow:inset 3px 0 0 var(--cc,var(--blue))}
+.lc-mx{display:grid;grid-template-columns:62px repeat(3,minmax(0,1fr));gap:4px}
+.lc-mh{font:700 10px/1.2 var(--font-display);color:var(--ink);padding:2px 4px}
+.lc-mh--sg{color:var(--blue-700)}
+.lc-mh--ph{color:#5A34B0}
+.lc-mh--vn{color:#0B6B60}
+.lc-ma{font:700 9px/1.2 var(--font-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);align-self:center}
+.lc-mc{display:grid;grid-template-columns:8px minmax(0,1fr);gap:5px;align-items:start;padding:6px 7px;border-radius:9px;background:#fff;border:1px solid var(--line)}
+.lc-mc i{width:8px;height:8px;margin-top:3px;border-radius:50%}
+.lc-mc small{font:500 10px/1.35 var(--font-body);color:var(--ink)}
+.lc-mc.lc-st--ok i{background:var(--ok)}
+.lc-mc.lc-st--part i{background:#D97B12}
+.lc-mc.lc-st--none i{background:#CFCBD6}
+.lc-mc.lc-st--gap i{background:var(--tok-late)}
+.lc-mc.lc-st--none small{color:var(--muted)}
+.lc-note{margin-top:4px;font:500 11px/1.45 var(--font-body);color:var(--body)}
+.lc-panel.is-in>*{animation:lcIn .45s var(--spring) both}
+.lc-panel.is-in>:nth-child(2){animation-delay:40ms}.lc-panel.is-in>:nth-child(3){animation-delay:80ms}.lc-panel.is-in>:nth-child(4){animation-delay:120ms}.lc-panel.is-in>:nth-child(5){animation-delay:160ms}.lc-panel.is-in>:nth-child(6){animation-delay:200ms}
+@keyframes lcIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
+.prose [data-lc-table] .lc-col{background:var(--blue-050);transition:background-color .35s ease}
+.prose [data-lc-table] th.lc-col{background:var(--blue-100);color:var(--blue-700)}
+@media (max-width:640px){
+  .lc-body{grid-template-columns:minmax(0,1fr)}
+  .lc-map{padding:10px 30px 4px}
+  .lc-panel{border-left:0;border-top:1px solid var(--line);padding:12px}
+  .lc-rh{grid-template-columns:minmax(0,1fr) auto;row-gap:2px}
+  .lc-area{grid-column:1/-1}
+  .lc-fig .lc-det{padding:0 10px 9px 10px}
+  .lc-mx{grid-template-columns:58px repeat(3,minmax(0,1fr));gap:3px}
+  .lc-ma{font-size:8px;letter-spacing:0}
+  .lc-mc{grid-template-columns:minmax(0,1fr);padding:5px}
+  .lc-mc i{display:none}
+  .lc-mc.lc-st--ok{box-shadow:inset 0 3px 0 var(--ok)}
+  .lc-mc.lc-st--part{box-shadow:inset 0 3px 0 #D97B12}
+  .lc-mc.lc-st--gap{box-shadow:inset 0 3px 0 var(--tok-late)}
+  .lc-mc small{font-size:9.5px}
+}
+@media (prefers-reduced-motion:reduce){.lc-links.is-on .lc-link,.lc-pin.is-on .lc-ring,.lc-panel.is-in>*{animation:none}.lc-d{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .lc-ph small,
+  .lc-area,
+  .lc-chip,
+  .lc-mh,
+  .lc-ma,
+  .lc-mc small{font-size:11px}
+}

@@ -1,0 +1,286 @@
+<!--meta {"title": "Nexi Explains: Odoo, AI and tech videos by TechNext", "desc": "TechNext's animated series starring Nexi, our AI companion: every episode and Quick Tip, season by season. Odoo, AI and tech, made simple.", "out": "nexi-explains.html", "nav": "nexi-explains", "og_image": "https://technext.asia/assets/img/nexi-explains/og.jpg", "body": "is-nxe", "scripts": ["assets/js/nexi-explains.js", "assets/js/nexi-explains-hero.js", "assets/js/nexi-explains-cast.js"], "head": "<script>(function(){var d=document.documentElement;d.classList.add('nxe-js');try{var k=['series','tips','cast','specials'],q=location.search.match(/[?&]slide=([1-4])/),n;if(q)n=k[q[1]-1];else{if(/bot|crawl|spider|slurp|lighthouse|google|bing|yandex|baidu|duckduck|facebookexternalhit|linkedin|twitter|headless/i.test(navigator.userAgent||''))return;var l=null;try{l=localStorage.getItem('tn_nxe_first')}catch(e){}n=k[Math.floor(Math.random()*4)];if(n===l)n=k[(k.indexOf(n)+1+Math.floor(Math.random()*3))%4];try{localStorage.setItem('tn_nxe_first',n)}catch(e){}}d.setAttribute('data-nxe-first',n)}catch(e){}})()</script><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Bangers&display=swap\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/nexi-explains.css?v={ASSET_V}\">"} -->
+
+<section class="nxe-hero" data-nxe-hero data-slide="series">
+  <svg class="nxe-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="nxe-g-spark" viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></symbol>
+      <symbol id="nxe-g-bolt" viewBox="0 0 24 32"><path d="M15 1 3 18h8l-3 13 14-19h-8l4-11Z" stroke-linejoin="round"/></symbol>
+      <symbol id="nxe-g-heart" viewBox="0 0 24 22"><path d="M12 21C5 15.5 1 12 1 7.2 1 3.8 3.6 1.5 6.6 1.5c2.1 0 4 1.1 5.4 3 1.4-1.9 3.3-3 5.4-3 3 0 5.6 2.3 5.6 5.7C23 12 19 15.5 12 21Z" stroke-linejoin="round"/></symbol>
+      <symbol id="nxe-g-bang" viewBox="0 0 14 40"><path d="M3 2h8l-1.6 24H4.6Z" stroke-linejoin="round"/><circle cx="7" cy="34" r="4.2"/></symbol>
+      <symbol id="nxe-g-swirl" viewBox="0 0 40 40"><path d="M21 21c0-2.5-3.5-3-5-.8-2 3 .8 7 5 7 5 0 8.5-4.4 7.4-9.6C27 11.6 21 8.6 15.3 10.2 8.6 12 5.4 19.4 7.6 26 10 33 18 36.4 25.5 34" fill="none" stroke-linecap="round"/></symbol>
+      <symbol id="nxe-g-cloud" viewBox="4 -8 190 104"><path d="M38 88C18 88 8 76 10 63c2-12 13-19 25-17 1-17 16-29 33-26 7-14 24-19 38-12 9-12 28-13 39-2 13 1 23 13 21 26 15 1 24 14 20 27-3 11-14 16-26 14-6 8-17 10-26 5-9 9-24 10-34 2-10 8-24 8-33 0-6 5-11 8-17 8Z" stroke-linejoin="round"/></symbol>
+      <symbol id="nxe-g-burst" viewBox="0 0 200 200"><polygon points="100.0,5.2 111.4,35.2 131.3,14.0 132.4,43.8 159.5,29.0 152.4,56.0 184.4,51.3 165.9,76.0 196.1,83.0 169.2,100.0 195.8,116.9 161.2,122.3 181.2,146.9 156.6,147.5 162.2,174.1 133.3,157.7 131.4,186.2 113.1,174.2 100.0,192.2 88.1,167.7 69.8,182.9 67.7,155.9 42.5,168.5 48.3,143.4 16.4,148.3 38.5,122.4 6.5,116.5 26.2,100.0 5.3,83.3 33.3,75.7 20.7,54.2 47.5,56.0 40.5,29.1 67.6,43.9 66.7,8.5 88.5,34.5" stroke-linejoin="round"/></symbol>
+      <symbol id="nxe-g-bat" viewBox="0 0 64 30"><path d="M32 9c2-4 4-5 4-5l1 5c3-2 9-3 13-1 4 2 7 1 10-2-1 7-5 11-11 11 2 3 1 7-2 9-2-3-6-4-9-3-2 1-4 3-6 7-2-4-4-6-6-7-3-1-7 0-9 3-3-2-4-6-2-9-6 0-10-4-11-11 3 3 6 4 10 2 4-2 10-1 13 1l1-5s2 1 4 5Z"/></symbol>
+      <pattern id="nxe-g-tone" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="rgba(255,120,40,.35)"/></pattern>
+    </defs>
+  </svg>
+
+  <!-- the comic sky behind every slide: a living halftone (canvas), rays, speed lines, panel gutters, clouds,
+       floating Odoo apps, doodles and the TechNext paper plane; each slide adds its own weather -->
+  <div class="nxe-sky" aria-hidden="true">
+    <span class="nxe-sky-fill"><i></i><i></i><i></i><i></i></span>
+    <span class="nxe-rays"></span>
+    <canvas class="nxe-dotfield" data-nxe-dots></canvas>
+    <span class="nxe-speed"></span>
+    <span class="nxe-gutter"></span>
+    <span class="nxe-cloud nxe-cloud--1" data-depth=".25"><svg><use href="#nxe-g-cloud"/></svg></span>
+    <span class="nxe-cloud nxe-cloud--2" data-depth=".5"><svg><use href="#nxe-g-cloud"/></svg></span>
+    <span class="nxe-cloud nxe-cloud--3" data-depth=".35"><svg><use href="#nxe-g-cloud"/></svg></span>
+    <span class="nxe-fl nxe-fl--1" data-depth=".7">{{odoo:sale:40}}</span>
+    <span class="nxe-fl nxe-fl--2" data-depth="1">{{odoo:accountant:40}}</span>
+    <span class="nxe-fl nxe-fl--3" data-depth=".45">{{odoo:stock:40}}</span>
+    <span class="nxe-fl nxe-fl--4" data-depth=".85">{{odoo:crm:40}}</span>
+    <span class="nxe-fl nxe-fl--5" data-depth=".55">{{odoo:website:40}}</span>
+    <span class="nxe-fl nxe-fl--6" data-depth=".95">{{odoo:point_of_sale:40}}</span>
+    <span class="nxe-fl nxe-fl--7" data-depth=".6">{{odoo:project:40}}</span>
+    <span class="nxe-fl nxe-fl--8" data-depth=".8">{{odoo:mrp:40}}</span>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--1" data-depth=".3"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--2" data-depth=".6"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--3" data-depth=".4"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--4" data-depth=".9"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--5" data-depth=".5"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--spark nxe-dd--6" data-depth=".75"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-dd nxe-dd--bolt nxe-dd--7" data-depth=".65"><use href="#nxe-g-bolt"/></svg>
+    <svg class="nxe-dd nxe-dd--heart nxe-dd--8" data-depth=".55"><use href="#nxe-g-heart"/></svg>
+    <svg class="nxe-dd nxe-dd--bang nxe-dd--9" data-depth=".8"><use href="#nxe-g-bang"/></svg>
+    <svg class="nxe-dd nxe-dd--swirl nxe-dd--10" data-depth=".4"><use href="#nxe-g-swirl"/></svg>
+    <span class="nxe-plane"><img src="{{ROOT}}assets/img/logo-plane.png" alt="" width="160" height="136" loading="lazy" decoding="async"></span>
+    <span class="nxe-boom nxe-boom--1" data-depth=".35">NEW!</span>
+    <span class="nxe-boom nxe-boom--2" data-depth=".6">ZAP!</span>
+    <!-- per-slide weather -->
+    <span class="nxe-wx nxe-wx--tips"><i class="nxe-clockrain"></i><i class="nxe-clockrain nxe-clockrain--b"></i></span>
+    <span class="nxe-wx nxe-wx--cast"><i class="nxe-search nxe-search--l"></i><i class="nxe-search nxe-search--r"></i></span>
+    <span class="nxe-wx nxe-wx--specials"><i class="nxe-moon"></i><i class="nxe-stars"></i><svg class="nxe-flybat nxe-flybat--1"><use href="#nxe-g-bat"/></svg><svg class="nxe-flybat nxe-flybat--2"><use href="#nxe-g-bat"/></svg></span>
+  </div>
+
+  <div class="container nxe-deck" data-nxe-deck aria-roledescription="carousel" aria-label="Nexi Explains highlights">
+
+    <!-- 1 · Series: Nexi bursts out of the ON AIR panel -->
+    <article class="nxe-slide is-on" id="nxe-s-series" data-nxe-slide="series" role="tabpanel" aria-roledescription="slide" aria-labelledby="nxe-k-series">
+      <div class="nxe-copy">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Nexi Explains</span></nav>
+        <h1 class="nxe-title"><span class="hand h1-hand">odoo, ai &amp; tech, made simple</span><span class="nxe-t1">Nexi</span> <span class="nxe-t2">Explains</span></h1>
+        <p class="lead">Short animated episodes starring Nexi, TechNext’s AI companion. One idea per episode, told as a little story: what Odoo is, the apps companies start with, AI that does the busywork, and the people side of changing systems.</p>
+        <div class="actions">
+          <a class="btn btn-primary btn-lg" href="#episodes" data-nxe-pre>{{icon:play}}<span>See every episode</span></a>
+          <button class="btn btn-primary btn-lg" type="button" data-nxe-post hidden data-nxe-play="{{NXE_FIRST_YT}}" data-nxe-title="{{NXE_FIRST_TITLE}}" data-nxe-premiere="{{NXE_FIRST_PREMIERE}}">{{icon:play}}<span>Watch EP00</span></button>
+          <a class="btn btn-ghost btn-lg" href="{{NXE_SUBSCRIBE}}" target="_blank" rel="noopener">Subscribe on YouTube {{icon:arrow}}</a>
+        </div>
+        <ul class="nxe-stats">{{NXE_STATS}}</ul>
+      </div>
+      <div class="nxe-spread nxe-sp--series" data-nxe-spread>
+        <span class="nxe-impact" aria-hidden="true"></span>
+        <div class="nxe-pn nxe-pn--tv">
+          <a class="nxe-tv" href="#series" aria-label="See every Nexi Explains episode">
+            <span class="nxe-screen" data-nxe-reel>{{NXE_HERO_REEL}}</span>
+            <span class="nxe-tvcap" data-nxe-tvcap aria-hidden="true"><b>EP00</b><span>Meet Nexi</span></span>
+            <span class="nxe-tvplay" aria-hidden="true">{{icon:play}}</span>
+          </a>
+          <span class="nxe-onair" aria-hidden="true">On air</span>
+          <svg class="nxe-rip" viewBox="0 0 120 220" aria-hidden="true"><path d="M120 0 82 18 96 40 58 58 80 82 40 104 70 124 34 146 66 168 44 190 78 204 120 220Z"/></svg>
+          <span class="nxe-shards" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <button class="nxe-kid nxe-kid--olive" type="button" data-nxe-kid data-word="HOOT!" aria-label="Olive the owl: tap to say hi"><img src="{{ROOT}}assets/img/nexi-explains/cast/olive.webp" alt="" width="265" height="400" loading="lazy" decoding="async"></button>
+        <div class="nxe-pn nxe-pn--next nxe-next" data-nxe-next>
+          <span class="nxe-next-tag" data-nxe-next-tag>On YouTube</span>
+          <b data-nxe-next-title>New episodes on YouTube</b>
+          <span class="nxe-next-when" data-nxe-next-when>Subscribe so you never miss one</span>
+          <a class="btn-link" data-nxe-next-link href="{{NXE_CHANNEL}}" target="_blank" rel="noopener"><span data-nxe-next-cta>Open the channel</span> {{icon:arrow}}</a>
+        </div>
+        <button class="nxe-kid nxe-kid--dot" type="button" data-nxe-kid data-word="QUACK!" aria-label="Dot the duckling: tap to say hi"><img src="{{ROOT}}assets/img/nexi-explains/cast/dot.webp" alt="" width="296" height="400" loading="lazy" decoding="async"></button>
+        <button class="nxe-hero-nexi" type="button" data-nxe-nexi data-pose="burst" aria-label="Tap Nexi">
+          <img src="{{ROOT}}assets/img/nexi-explains/hero/nexi-burst.webp" alt="" width="590" height="600" decoding="async" fetchpriority="high">
+        </button>
+        <b class="nxe-say" data-nxe-say aria-live="polite">Hi! I’m Nexi. Grab a seat!</b>
+      </div>
+    </article>
+
+    <!-- 2 · Quick Tips, "pit lane": the race on the left, the copy on the right, every tip on a conveyor underneath -->
+    <article class="nxe-slide nxe-fmt-race" id="nxe-s-tips" data-nxe-slide="tips" role="tabpanel" aria-roledescription="slide" aria-labelledby="nxe-k-tips">
+      <div class="nxe-spread nxe-sp--tips" data-nxe-spread>
+        <span class="nxe-zoom" aria-hidden="true"></span>
+        <span class="nxe-flag" aria-hidden="true"></span>
+        <button class="nxe-watch" type="button" data-nxe-shuffle aria-label="Spin the stopwatch: the conveyor stops on a random Quick Tip">
+          <svg viewBox="0 0 120 136" aria-hidden="true">
+            <rect class="nxe-watch-crown" x="50" y="2" width="20" height="16" rx="4"/>
+            <rect class="nxe-watch-stem" x="56" y="14" width="8" height="10"/>
+            <rect class="nxe-watch-btn" x="92" y="20" width="16" height="12" rx="3" transform="rotate(40 100 26)"/>
+            <circle class="nxe-watch-body" cx="60" cy="78" r="54"/>
+            <circle class="nxe-watch-face" cx="60" cy="78" r="43"/>
+            <g class="nxe-watch-ticks"><path d="M60 39v8M60 109v8M21 78h8M91 78h8M32.4 50.4l5.6 5.6M82 100l5.6 5.6M32.4 105.6l5.6-5.6M82 56l5.6-5.6"/></g>
+            <g class="nxe-watch-hand"><path d="M60 78V44"/><circle cx="60" cy="78" r="5"/></g>
+          </svg>
+          <span class="nxe-watch-t" aria-hidden="true">SPIN!</span>
+        </button>
+        <span class="nxe-sfx nxe-sfx--tick" aria-hidden="true">TICK!</span>
+        <span class="nxe-sfx nxe-sfx--tock" aria-hidden="true">TOCK!</span>
+        <span class="nxe-wheel" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="36"/><path d="M50 6v88M6 50h88M19 19l62 62M81 19 19 81"/></svg>
+          <img src="{{ROOT}}assets/img/nexi-explains/cast/cosmo.webp" alt="" width="288" height="400" loading="lazy" decoding="async">
+        </span>
+        <a class="nxe-pn nxe-readout" href="#season-1-tips" data-nxe-readout aria-live="polite">{{NXE_HERO_READOUT}}</a>
+        <button class="nxe-hero-nexi" type="button" data-nxe-nexi data-pose="racer" aria-label="Tap Nexi">
+          <img src="{{ROOT}}assets/img/nexi-explains/hero/nexi-racer.webp" alt="" width="561" height="600" loading="lazy" decoding="async">
+        </button>
+        <b class="nxe-say" data-nxe-say aria-live="polite">One trick. Under two minutes!</b>
+      </div>
+      <div class="nxe-copy">
+        <p class="hand nxe-hand">one odoo trick, under two minutes</p>
+        <h2 class="nxe-title nxe-title--s"><span class="nxe-t1">Quick</span> <span class="nxe-t2">Tips</span></h2>
+        <p class="lead">{{NXE_HERO_N_TIPS}} bite-size Odoo tricks, posted between the episodes. Saved searches, bulk edits, exports to Excel: one shortcut per video, start to finish.</p>
+        <div class="actions">
+          <a class="btn btn-primary btn-lg" href="#season-1-tips">{{icon:zap}}<span>Browse the Quick Tips</span></a>
+          <a class="btn btn-ghost btn-lg" href="{{NXE_SUBSCRIBE}}" target="_blank" rel="noopener">Subscribe on YouTube {{icon:arrow}}</a>
+        </div>
+        <ul class="nxe-stats"><li><b>{{NXE_HERO_N_TIPS1}}</b> in Season 1</li><li><b>{{NXE_HERO_N_TIPS2}}</b> in Season 2</li><li><b>2:00</b> or less each</li></ul>
+      </div>
+      <div class="nxe-belt" data-nxe-belt data-root="{{ROOT}}assets/img/nexi-explains/">
+        <span class="nxe-belt-line" aria-hidden="true"></span>
+        <div class="nxe-belt-track" data-nxe-track role="group" aria-label="Every Quick Tip: drag or tap one">{{NXE_HERO_BELT}}</div>
+      </div>
+    </article>
+
+    <!-- 3 · Cast, "splash page": a big centred title, one wide stage, a narrator box, the buttons underneath -->
+    <article class="nxe-slide nxe-fmt-splash" id="nxe-s-cast" data-nxe-slide="cast" role="tabpanel" aria-roledescription="slide" aria-labelledby="nxe-k-cast">
+      <div class="nxe-copy nxe-copy--top">
+        <p class="hand nxe-hand">sidekicks, costumes &amp; one robot</p>
+        <h2 class="nxe-title nxe-title--s"><span class="nxe-t1">Meet the</span> <span class="nxe-t2">Cast</span></h2>
+      </div>
+      <p class="nxe-narrator">Every Season 1 episode gives Nexi a new sidekick and a new costume, from a pangolin in EP00 to a bookworm in the finale. Tap anyone on stage to say hi.</p>
+      <div class="nxe-spread nxe-sp--cast" data-nxe-spread>
+        <div class="nxe-pn nxe-pn--stage">
+          <span class="nxe-wall" aria-hidden="true"></span>
+          <span class="nxe-beam nxe-beam--l" aria-hidden="true"></span>
+          <span class="nxe-beam nxe-beam--c" aria-hidden="true"></span>
+          <span class="nxe-beam nxe-beam--r" aria-hidden="true"></span>
+          <span class="nxe-floor" aria-hidden="true"></span>
+          <span class="nxe-podium" aria-hidden="true"></span>
+          <div class="nxe-troupe" data-nxe-troupe data-root="{{ROOT}}assets/img/nexi-explains/" data-cast="{{NXE_HERO_CAST}}">{{NXE_HERO_STAGE}}</div>
+          <button class="nxe-hero-nexi" type="button" data-nxe-nexi data-pose="host" data-wardrobe="{{NXE_HERO_WARDROBE}}" aria-label="Tap Nexi for a new costume">
+            <img src="{{ROOT}}assets/img/nexi-explains/hero/nexi-host.webp" alt="" width="596" height="600" loading="lazy" decoding="async">
+          </button>
+          <span class="nxe-curtain nxe-curtain--l" aria-hidden="true"></span>
+          <span class="nxe-curtain nxe-curtain--r" aria-hidden="true"></span>
+          <span class="nxe-valance" aria-hidden="true"></span>
+        </div>
+        <b class="nxe-say" data-nxe-say aria-live="polite">Say hi to the gang!</b>
+        <span class="nxe-tag" data-nxe-tag aria-live="polite" hidden></span>
+        <button class="nxe-recast" type="button" data-nxe-recast>{{icon:refresh}}<span>Shuffle the cast</span></button>
+      </div>
+      <div class="nxe-copy nxe-copy--foot">
+        <div class="actions">
+          <a class="btn btn-primary btn-lg" href="#characters">{{icon:users}}<span>Meet every character</span></a>
+          <a class="btn btn-ghost btn-lg" href="#season-1">Watch Season 1 {{icon:arrow}}</a>
+        </div>
+        <ul class="nxe-stats"><li><b>{{NXE_HERO_N_CAST}}</b> sidekicks</li><li><b>{{NXE_HERO_N_WARDROBE}}</b> costumes</li><li><b>1</b> robot star</li></ul>
+      </div>
+    </article>
+
+    <!-- 4 · Specials, "banner + triptych": the copy runs across the top, three tall holiday panels below; the one
+         you point at (or the one the show is on) opens wide and Nexi hops in front of it -->
+    <article class="nxe-slide nxe-fmt-strip" id="nxe-s-specials" data-nxe-slide="specials" role="tabpanel" aria-roledescription="slide" aria-labelledby="nxe-k-specials">
+      <div class="nxe-copy nxe-copy--banner">
+        <div class="nxe-banner-h">
+          <p class="hand nxe-hand">three holiday stories</p>
+          <h2 class="nxe-title nxe-title--s"><span class="nxe-t1">Holiday</span> <span class="nxe-t2">Specials</span></h2>
+        </div>
+        <div class="nxe-banner-b">
+          <p class="lead">Standalone episodes that air while Season 1 runs. Season 1 lessons come back for Halloween, Christmas and the year-end countdown.</p>
+          <div class="actions">
+            <a class="btn btn-primary btn-lg" href="#specials">{{icon:star}}<span>See the specials</span></a>
+            <a class="btn btn-ghost btn-lg" href="{{NXE_SUBSCRIBE}}" target="_blank" rel="noopener">Subscribe on YouTube {{icon:arrow}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="nxe-spread nxe-sp--specials" data-nxe-spread>
+        <div class="nxe-trip" data-nxe-trip>{{NXE_HERO_SPECIALS}}</div>
+        <span class="nxe-confetti" data-nxe-confetti aria-hidden="true"></span>
+        <button class="nxe-hero-nexi" type="button" data-nxe-nexi data-pose="party" aria-label="Tap Nexi">
+          <img src="{{ROOT}}assets/img/nexi-explains/hero/nexi-party.webp" alt="" width="465" height="600" loading="lazy" decoding="async">
+        </button>
+        <b class="nxe-say" data-nxe-say aria-live="polite">The Haunted Office airs {{NXE_HERO_AIRS_HALLOWEEN}}!</b>
+      </div>
+    </article>
+  </div>
+
+  <!-- comic controls: one chapter tab per slide (its ink bar fills while the slide plays), arrows and pause -->
+  <div class="container nxe-ctl" data-nxe-ctl>
+    <button class="nxe-arrow nxe-arrow--prev" type="button" data-nxe-go="-1" aria-label="Previous slide">{{icon:chevron}}</button>
+    <div class="nxe-chapters" role="tablist" aria-label="Choose a slide">
+      <button class="nxe-chap" type="button" role="tab" id="nxe-k-series" aria-controls="nxe-s-series" aria-selected="true" data-nxe-to="0"><b>Series</b><i aria-hidden="true"></i></button>
+      <button class="nxe-chap" type="button" role="tab" id="nxe-k-tips" aria-controls="nxe-s-tips" aria-selected="false" tabindex="-1" data-nxe-to="1"><b><span class="nxe-chap-x">Quick </span>Tips</b><i aria-hidden="true"></i></button>
+      <button class="nxe-chap" type="button" role="tab" id="nxe-k-cast" aria-controls="nxe-s-cast" aria-selected="false" tabindex="-1" data-nxe-to="2"><b>Cast</b><i aria-hidden="true"></i></button>
+      <button class="nxe-chap" type="button" role="tab" id="nxe-k-specials" aria-controls="nxe-s-specials" aria-selected="false" tabindex="-1" data-nxe-to="3"><b>Specials</b><i aria-hidden="true"></i></button>
+    </div>
+    <button class="nxe-arrow nxe-arrow--next" type="button" data-nxe-go="1" aria-label="Next slide">{{icon:chevron}}</button>
+    <button class="nxe-pp" type="button" data-nxe-pp aria-pressed="false" aria-label="Pause the slides">{{icon:pause}}{{icon:play}}</button>
+  </div>
+
+  <!-- the slide change: a comic burst slams in, the page turns underneath, the burst blows apart -->
+  <div class="nxe-bam" data-nxe-bam aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#nxe-g-burst"/><use class="nxe-bam-tone" href="#nxe-g-burst"/></svg><b data-nxe-bam-word>BAM!</b></div>
+</section>
+
+<section class="section nxe-shows" id="episodes">
+  <!-- the comic carries on down the page: slow sunbursts, doodles drifting in the margins (scroll parallax) -->
+  <div class="nxe-paper" aria-hidden="true">
+    <span class="nxe-paper-rays nxe-paper-rays--a"></span>
+    <span class="nxe-paper-rays nxe-paper-rays--b"></span>
+    <svg class="nxe-pd nxe-pd--1" data-sdepth=".5"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-pd nxe-pd--2" data-sdepth=".25"><use href="#nxe-g-bolt"/></svg>
+    <svg class="nxe-pd nxe-pd--3" data-sdepth=".7"><use href="#nxe-g-heart"/></svg>
+    <svg class="nxe-pd nxe-pd--4" data-sdepth=".4"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-pd nxe-pd--5" data-sdepth=".6"><use href="#nxe-g-swirl"/></svg>
+    <svg class="nxe-pd nxe-pd--6" data-sdepth=".35"><use href="#nxe-g-bang"/></svg>
+    <svg class="nxe-pd nxe-pd--7" data-sdepth=".55"><use href="#nxe-g-spark"/></svg>
+    <svg class="nxe-pd nxe-pd--8" data-sdepth=".3"><use href="#nxe-g-heart"/></svg>
+    <span class="nxe-pf nxe-pf--1" data-sdepth=".45">{{odoo:sale:36}}</span>
+    <span class="nxe-pf nxe-pf--2" data-sdepth=".65">{{odoo:accountant:36}}</span>
+    <span class="nxe-pf nxe-pf--3" data-sdepth=".3">{{odoo:stock:36}}</span>
+    <span class="nxe-pf nxe-pf--4" data-sdepth=".55">{{odoo:crm:36}}</span>
+    <span class="nxe-pboom nxe-pboom--1" data-sdepth=".2">POW!</span>
+    <span class="nxe-pboom nxe-pboom--2" data-sdepth=".4">WOW!</span>
+  </div>
+  <button class="nxe-peek nxe-peek--ribbit" type="button" data-nxe-peek data-word="RIBBIT!" aria-label="Ribbit the frog: tap to say hi"><img src="{{ROOT}}assets/img/nexi-explains/cast/ribbit.webp" alt="" width="420" height="400" loading="lazy" decoding="async"></button>
+  <button class="nxe-peek nxe-peek--turbo" type="button" data-nxe-peek data-word="WHEE!" aria-label="Turbo the snail: tap to say hi"><img src="{{ROOT}}assets/img/nexi-explains/cast/turbo.webp" alt="" width="385" height="309" loading="lazy" decoding="async"></button>
+  <div class="container">
+    <div class="sec-head">
+      <span class="hand">every episode, season by season</span>
+      <h2>Pick a season. <span class="nxe-mark">Press play.</span></h2>
+      <p class="lead">Episodes play here once they premiere on YouTube. The rest are in the queue, so the list shows what is coming next.</p>
+    </div>
+    <div class="nxe-peekrow"><button class="nxe-peek nxe-peek--paige" type="button" data-nxe-peek data-word="NOM NOM!" aria-label="Paige the bookworm: tap to say hi"><img src="{{ROOT}}assets/img/nexi-explains/cast/paige.webp" alt="" width="440" height="245" loading="lazy" decoding="async"></button></div>
+    {{NXE_TABS}}
+  </div>
+</section>
+
+<section class="section nxe-cta">
+  <div class="container">
+    <button class="nxe-peek nxe-cta-nexi" type="button" data-nxe-peek data-word="HI!" aria-label="Nexi waves hello"><img src="{{ROOT}}assets/img/nexi-explains/hero/nexi-hi.webp" alt="" width="496" height="600" loading="lazy" decoding="async"></button>
+    <div class="cta">
+      <div>
+        <span class="hand">liked an episode?</span>
+        <h2>Ask Nexi, or ask the team that built her.</h2>
+        <p>Nexi answers questions about Odoo, AI and websites on her own page. For your company’s setup, the TechNext team writes a quotation.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}nexi.html">{{icon:bot}} Chat with Nexi</a>
+        <a class="btn btn-outline-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="nxe-player" id="nxe-player" aria-labelledby="nxe-player-t">
+  <div class="nxe-player-box">
+    <div class="nxe-player-top">
+      <b class="nxe-player-t" id="nxe-player-t"></b>
+      <button class="nxe-player-x" type="button" data-nxe-close aria-label="Close the video">{{icon:x}}</button>
+    </div>
+    <div class="nxe-player-frame" data-nxe-frame></div>
+    <div class="nxe-player-foot">
+      <button class="btn btn-ghost btn-sm" type="button" data-nxe-prev>{{icon:chevron}}<span>Previous</span></button>
+      <a class="btn-link" data-nxe-yt href="{{NXE_CHANNEL}}" target="_blank" rel="noopener">Open on YouTube {{icon:arrow}}</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-nxe-next-ep><span>Next</span>{{icon:chevron}}</button>
+    </div>
+  </div>
+</dialog>

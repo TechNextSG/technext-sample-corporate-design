@@ -1,0 +1,75 @@
+<!--meta {"title": "Odoo 20 Upgrade Checklist: What to Test First", "desc": "Planning an Odoo 20 upgrade from Odoo 19? A plain checklist from TechNext: how upgrades work per hosting type, what to test first, and how to go live safely.", "out": "blog/odoo-20-upgrade-checklist.html", "nav": "company", "article": {"h1": "Odoo 20 upgrade checklist: what to test before you go live", "cat": "odoo-news", "date": "2026-10-14", "order": 12, "lede": "Moving from Odoo 19 to Odoo 20 is not a button you press on a Monday morning. It is a test copy, a week of checks, and a planned go-live. Here is the checklist we use.", "card": "How the upgrade works on Odoo Online, Odoo.sh and on-premise, what to test first, and how to plan go-live.", "cover": "O20:acct_assistant"}, "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">Key takeaways</p>
+  <ul>
+    <li>Every Odoo upgrade starts with an <strong>upgraded test database</strong>. You test there, not on your live system.</li>
+    <li>How you get that test copy depends on hosting: the database manager on <strong>Odoo Online</strong>, a staging branch on <strong>Odoo.sh</strong>, or Odoo's upgrade script <strong>on-premise</strong>.</li>
+    <li>Test the changes first: Field Service moved into Planning, payroll work entries are gone, account groups became parent accounts, and AI features now use paid credits.</li>
+    <li>Custom modules must be ready for Odoo 20 before the database can be upgraded. Once production is upgraded, there is no going back.</li>
+  </ul>
+</div>
+
+<p>Odoo 20 is out, and many owners are asking the same thing: when should we move, and what could break? The honest answer is that it depends on what you use and where Odoo runs. The good news is that Odoo's own upgrade process is built around testing first. If you follow it, there are few surprises on go-live day.</p>
+
+<p>This checklist is based on Odoo's <a href="https://www.odoo.com/documentation/latest/administration/upgrade.html" target="_blank" rel="noopener">upgrade documentation</a> and the <a href="https://www.odoo.com/odoo-20-release-notes" target="_blank" rel="noopener">Odoo 20 release notes</a>. For the full list of what is new, read our <a href="{{ROOT}}blog/odoo-20-whats-new.html">Odoo 20 release notes summary</a>.</p>
+
+<h2>How an Odoo upgrade works, in four steps</h2>
+<p>Odoo's documentation describes the same process for every database:</p>
+<ol>
+  <li><strong>Get an upgraded test database.</strong> Odoo upgrades a copy of your data to the new version.</li>
+  <li><strong>Upgrade your custom modules.</strong> Any custom code must be ported to Odoo 20.</li>
+  <li><strong>Test, and report issues.</strong> Your team works in the test copy. Problems with the upgrade itself go back to Odoo.</li>
+  <li><strong>Upgrade production.</strong> Only when the test copy works do you plan the live upgrade.</li>
+</ol>
+
+<h2>Odoo 19 to 20 migration: Online, Odoo.sh or on-premise</h2>
+<p>The steps are the same everywhere. How you start them is not. If you are not sure which one you are on, our guide to <a href="{{ROOT}}blog/odoo-online-vs-odoo-sh-vs-on-premise.html">Odoo Online vs Odoo.sh vs on-premise</a> explains the difference.</p>
+<ul>
+  <li><strong>Odoo Online.</strong> In the database manager, choose your database, click <em>Manage</em>, then <em>Upgrade</em>. Pick the target version and keep the purpose set to <em>Test</em>. Odoo emails you when the test copy is ready.</li>
+  <li><strong>Odoo.sh.</strong> The upgrade runs from your project. Odoo sends the latest daily backup of production to its upgrade platform, and the upgraded copy lands on a <strong>staging branch</strong>. Your custom modules must be ready for Odoo 20 on that branch.</li>
+  <li><strong>On-premise.</strong> You run Odoo's upgrade script from the server that hosts the database. It sends the database to <a href="https://upgrade.odoo.com" target="_blank" rel="noopener">upgrade.odoo.com</a> and brings back an upgraded copy. Your team installs the new Odoo version and handles the server side.</li>
+</ul>
+
+<h2>The Odoo 20 upgrade checklist</h2>
+<p>Work through these in order. Each one is a reason we have seen upgrades slip.</p>
+<ol>
+  <li><strong>List what you use.</strong> Write down every app, Studio change, custom module and integration. This list becomes your test plan.</li>
+  <li><strong>Check what moved or went away in Odoo 20.</strong> The standalone Field Service app is discontinued and its features now sit in Planning. Payroll work entries, and the Planning-to-Payroll link, are removed. Account groups are replaced by parent accounts. If you rely on any of these, test them first.</li>
+  <li><strong>Get custom modules ready.</strong> Odoo's documentation is clear: a database with custom modules cannot be upgraded until those modules exist for the target version. Odoo's upgrade service covers standard apps and Studio customisations, not custom code without a maintenance contract.</li>
+  <li><strong>Request the test database.</strong> Use the route for your hosting type above.</li>
+  <li><strong>Know what is switched off in the test copy.</strong> Odoo disables scheduled actions and outgoing mail, sets payment providers and delivery carriers to test mode, and turns off bank synchronisation. So nothing from your test reaches a customer or a bank. It also means you must check those features on purpose.</li>
+  <li><strong>Run a normal week.</strong> Have the people who use Odoo daily repeat their usual work in the test copy: quotes, orders, deliveries, bills, payments.</li>
+  <li><strong>Close a test month.</strong> Ask finance to reconcile and run their reports in the test copy, using parent accounts instead of account groups.</li>
+  <li><strong>Decide on AI.</strong> Odoo's release notes say all AI features now need credits bought through IAP. Choose which ones to switch on and set a budget before people start using them.</li>
+  <li><strong>Rehearse, then go live.</strong> Odoo suggests a rehearsal the day before, a quiet time for the upgrade, and no edits to production while it runs. The database is unavailable during the upgrade, and once it is done you cannot revert to the old version.</li>
+</ol>
+
+<h2>What to test, app by app</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Area</th><th>What to test in the Odoo 20 copy</th></tr></thead>
+  <tbody>
+    <tr><td>Accounting</td><td>Chart of accounts after account groups become parent accounts, financial reports, reconciliation, invoice and bill printouts.</td></tr>
+    <tr><td>Payroll</td><td>A full test pay run without work entries, and anything that used the Planning-to-Payroll link.</td></tr>
+    <tr><td>Field service</td><td>Technician jobs, worksheets, travel fees and the request form, now in the Planning app.</td></tr>
+    <tr><td>Sales, Purchase, Inventory</td><td>Create and edit orders, deliveries and receipts. Check printed documents, reordering rules and saved search filters.</td></tr>
+    <tr><td>Website and email</td><td>Website pages, mail templates and saved translations. Remember outgoing mail is off in the test copy.</td></tr>
+    <tr><td>Automations</td><td>Automated actions, server actions and scheduled actions. Scheduled actions are disabled in the test copy, so run them by hand.</td></tr>
+    <tr><td>Integrations</td><td>Anything that talks to outside software through APIs or EDI, plus payment providers, carriers and bank feeds once back in live mode.</td></tr>
+    <tr><td>Custom modules and Studio</td><td>Every custom screen, field, report and workflow on your list from step one.</td></tr>
+  </tbody>
+</table></div>
+<p>Odoo's upgrade documentation suggests the same areas: reports, creating and editing records, website pages, mail templates, translations, filters, exports, integrations and cross-app workflows.</p>
+
+<h2>Should you upgrade to Odoo 20 now?</h2>
+<p>If you only use standard apps on Odoo Online, the test copy is quick to get, and the main work is your own checks. If you have custom modules, integrations or Payroll and Field Service in daily use, plan it like a small project. Either way, nothing goes live until the test copy has survived a normal week and a test month-end.</p>
+<p>You don't need to hire your own Odoo team to do this. TechNext runs the upgrade on a copy of your database first, ports and tests your custom modules, walks your team through the test week, and schedules go-live only when finance is happy. After go-live we stay on through <a href="{{ROOT}}odoo/support.html">TechNext Care</a>, our support plans, so the next upgrade is just as calm.</p>
+
+<h2>Common questions about upgrading to Odoo 20</h2>
+<div class="faq">
+  <details><summary>How do I upgrade from Odoo 19 to Odoo 20? {{icon:chevron}}</summary><div class="faq-a"><p>Request an upgraded test database first: through the database manager on Odoo Online, through a staging branch on Odoo.sh, or with Odoo's upgrade script on-premise. Upgrade any custom modules, test thoroughly, then plan the production upgrade.</p></div></details>
+  <details><summary>Can I undo an Odoo 20 upgrade? {{icon:chevron}}</summary><div class="faq-a"><p>No. Odoo's documentation says that once the production upgrade is complete, you cannot revert to the previous version. That is why all testing happens on a copy first.</p></div></details>
+  <details><summary>Will my custom modules work in Odoo 20? {{icon:chevron}}</summary><div class="faq-a"><p>Not automatically. Custom modules must be ported to Odoo 20 before the database can be upgraded. Odoo's upgrade service covers standard apps and Studio customisations, but not custom code unless it is under a maintenance contract.</p></div></details>
+  <details><summary>Will the test database send emails to my customers? {{icon:chevron}}</summary><div class="faq-a"><p>No. In the upgraded test database, Odoo disables outgoing mail servers and scheduled actions, puts payment providers and delivery carriers in test mode, and turns off bank synchronisation.</p></div></details>
+  <details><summary>Can TechNext run our Odoo 20 upgrade? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. TechNext upgrades a copy of your database first, tests your custom modules and a month-end close, then schedules the live upgrade and supports you afterwards through TechNext Care.</p></div></details>
+</div>

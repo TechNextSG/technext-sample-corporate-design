@@ -1,0 +1,217 @@
+<!--meta {"title": "Odoo Training on Your Own Data — SG & PH", "desc": "Odoo training in Singapore and the Philippines: each team learns its own screens on your own data, so go-live doesn't depend on hiring Odoo experts.", "out": "odoo/training.html", "nav": "odoo", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-curriculum.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/training.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-curriculum.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/training.css?v={ASSET_V}\">", "body": "ixw ixw--training ow-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="training" data-home="1010,110" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Odoo</span><span>Walkthrough</span><span>Training</span></nav>
+      <ol class="ow-rail" aria-label="Step 2 of 4"><li><a href="{{ROOT}}odoo/discovery.html"><b>1</b>Discovery</a></li><li class="is-on"><b>2</b>Training</li><li><a href="{{ROOT}}odoo/integration.html"><b>3</b>Integration</a></li><li><a href="{{ROOT}}odoo/support.html"><b>4</b>Support</a></li></ol>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo training · step 2 of 4</span>Your team, trained on your own records.</h1>
+      <p class="lead"><span class="m-full">Not a tour of every menu. Finance learns bank reconciliation and month-end; sales learns quotations and confirmations; the warehouse learns receipts, picking and counts, all on your own products and customers in Odoo 20, so day one after go-live feels familiar.</span><span class="m-short">Finance, sales and the warehouse each learn their own Odoo 20 screens, on a copy of your own data.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap a trainee in the simulator, the instructor, the guides or the wings.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="tr" data-near="1010,110" data-who="TechNext trainer" data-role="Odoo training · illustration" data-say="Same screens you'll use on **day one**, with your own customers in them. The simulator first, then the real thing." style="--x:650;--y:358;--w:100;--h:230" aria-label="Say hi to the TechNext trainer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Instructor</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="fin" data-near="1010,110" data-who="Finance" data-role="Trainee · illustration" data-say="Bank reconciliation, done in **minutes**. I can do this." style="--x:300;--y:300;--w:84;--h:92" aria-label="Say hi to finance (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Finance</b></span></button>
+      <button class="ixw-cast" type="button" data-cast="sal" data-near="1010,110" data-who="Sales" data-role="Trainee · illustration" data-say="Confirm, and the quotation becomes an **order**. Nice." style="--x:470;--y:300;--w:84;--h:92" aria-label="Say hi to sales (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Sales</b></span></button>
+      <button class="ixw-cast" type="button" data-cast="wh" data-near="1010,110" data-who="Warehouse" data-role="Trainee · illustration" data-say="Scan it in, validate. **That's** the receipt." style="--x:815;--y:300;--w:84;--h:92" aria-label="Say hi to the warehouse (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Warehouse</b></span></button>
+
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="finance" data-nx="1010,110" data-pose="point-left" data-rec="Finance · bank reconciliation, month-end" data-say="**Finance** learns bank reconciliation and month-end, on your own bank lines." style="--x:300;--y:404;--w:84;--h:40" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:accountant:18}}<b>Finance</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="sales" data-nx="1010,110" data-pose="point-left" data-rec="Sales · quotations and confirmations" data-say="**Sales** learns quotations and confirmations, with your products and prices." style="--x:470;--y:404;--w:84;--h:40" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:sale:18}}<b>Sales</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="warehouse" data-nx="1010,110" data-pose="point-left" data-rec="Warehouse · receipts, picking and counts" data-say="The **warehouse** learns receipts, picking and counts, with a scanner in hand." style="--x:815;--y:404;--w:84;--h:40" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:stock:18}}<b>Warehouse</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="database" data-nx="1010,110" data-pose="point-left" data-rec="Training database · a copy of your own data" data-say="The simulator runs on a **copy of your own data**, so nothing real can break." style="--x:580;--y:-87;--w:468;--h:30" aria-pressed="false"><span class="ixw-hot-lab">{{icon:database}}<b>Your data, copied</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="guides" data-nx="990,150" data-pose="point-left" data-rec="Quick-reference guides · one per task" data-say="Every task gets a **quick-reference guide**, yours to keep after go-live." style="--x:863;--y:111;--w:90;--h:134" aria-pressed="false"><span class="ixw-hot-lab">{{icon:file}}<b>Guides</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="schedule" data-nx="340,196" data-pose="point-left" data-rec="Schedule · on-site in Singapore, remote elsewhere" data-say="One flight strip per session, one team at a time: **on-site in Singapore**, remote everywhere else." style="--x:253;--y:38;--w:174;--h:244" aria-pressed="false"><span class="ixw-hot-lab">{{icon:calendar}}<b>Schedule</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="guide" data-near="990,150" data-pose="love" data-say="Here's your **guide**. Step by step, with screenshots of your screens." style="--x:1030;--y:349;--w:64;--h:32" aria-label="Hand out a guide"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Take a guide</b></span></button>
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="cert" data-near="1010,110" data-pose="celebrate" data-say="Training done: **wings** earned!" style="--x:863;--y:-22;--w:86;--h:96" aria-label="Celebrate the certificate"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Wings</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:1010;--ny:110" data-reacts="wow::Your own data, in the **simulator**!|love::I love a good **quick-reference guide**.|celebrate::Everyone trained. **Cleared for go-live!**|think::Hmm… which screen does **your team** use most?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:training}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to **flight school**: each team practises its own Odoo 20 screens in the simulator first. Tap around!" data-outro="Own screens, own data, a guide to keep, then **cleared for go-live**. That's training.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:training}}<b data-for="tr" style="--c:#714B67">T</b><b data-for="fin" style="--c:#2E9C7E">F</b><b data-for="sal" style="--c:#E46E78">S</b><b data-for="wh" style="--c:#F2A33A">W</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · Odoo training">assistant · Odoo training</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to <b>flight school</b>: each team practises its own Odoo 20 screens in the simulator first. Tap around!</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: finance"></button><button type="button" data-ixw-dot aria-label="Stop 3: sales"></button><button type="button" data-ixw-dot aria-label="Stop 4: warehouse"></button><button type="button" data-ixw-dot aria-label="Stop 5: your data"></button><button type="button" data-ixw-dot aria-label="Stop 6: guides"></button><button type="button" data-ixw-dot aria-label="Stop 7: schedule"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:layers}}Phase</dt><dd>Step 2 of 4</dd></div><div><dt>{{icon:users}}Format</dt><dd><span class="ow-nb">Role-based</span> · <span class="ow-nb">hands-on</span> · on your data</dd></div><div><dt>{{icon:smile}}Audiences</dt><dd>Administrators and <span class="ow-nb">end-users</span></dd></div><div><dt>{{icon:pin}}Delivery</dt><dd><span class="ow-nb">On-site</span> in Singapore · remote elsewhere</dd></div><div><dt>{{icon:file}}You keep</dt><dd>Quick-reference guides per task</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec fs-answer">
+  <div class="container"><div class="answer-box reveal"><p class="answer-h">In one paragraph</p><p>Odoo training from TechNext is role-based: each team learns its own screens on a copy of your own data. Finance learns bank reconciliation and month-end, sales learns quotations and confirmations, and the warehouse learns receipts, picking and counts, with written guides left behind for hand-over.</p></div></div>
+</section>
+
+<section class="section demo-sec fs-sim-sec" id="training-plan">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">build a plan</span><h2>A role-based Odoo training plan, session by session.</h2><p class="lead">Pick the roles going live. TechNext assembles the Odoo modules each role needs, a sandbox exercise for each one on a staging copy of your data, and a sign-off check that proves it. Key users go first, end users next, then train-the-trainer and UAT. Run the plan, drag the timeline, or open a module to see what gets practised.</p></div>
+    <div class="fs-bezel">
+    <p class="fs-bezel-h" aria-hidden="true"><i></i><i></i><i></i><span>Training database · a copy of your own data</span><b>SIM</b></p>
+    <div class="dm dm-curriculum reveal" data-demo="curriculum">
+      <div class="dm-head">
+        <div class="dm-title"><b>Training plan builder</b><small>Sample plan · six weeks to go-live · staging copy of your data</small></div>
+        <button class="dm-btn dm-btn--primary" type="button" data-run aria-pressed="false">{{icon:play}}<span>Run the plan</span></button>
+        <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Reset</button>
+      </div>
+      <div class="cur-roles">
+        <p class="cur-rolesh">Roles going live</p>
+        <div class="cur-chips" role="group" aria-label="Roles in the training plan">
+          <button type="button" data-role="acc" aria-pressed="true" style="--c:#0E9384">{{odoo:accountant:18}}<span>Accountant</span></button>
+          <button type="button" data-role="sal" aria-pressed="true" style="--c:#3167CA">{{odoo:sale:18}}<span>Sales</span></button>
+          <button type="button" data-role="wh" aria-pressed="true" style="--c:#D97B12">{{odoo:stock:18}}<span>Warehouse</span></button>
+          <button type="button" data-role="buy" aria-pressed="false" style="--c:#7447D6">{{odoo:purchase:18}}<span>Buyer</span></button>
+          <button type="button" data-role="mgr" aria-pressed="false" style="--c:#714B67">{{odoo:approvals:18}}<span>Manager</span></button>
+          <button type="button" data-role="adm" aria-pressed="false" style="--c:#475569">{{icon:gear}}<span>Admin</span></button>
+        </div>
+        <p class="cur-sum" aria-live="polite"></p>
+      </div>
+      <div class="cur-main">
+        <div class="cur-left">
+          <div class="cur-board" role="group" aria-label="Training path: modules per Odoo app. Select a module for its exercise and sign-off check"></div>
+          <div class="cur-detail" aria-live="polite"></div>
+          <ol class="dm-log cur-log" aria-label="Latest training events"></ol>
+        </div>
+        <aside class="cur-side" aria-label="Competency and go-live readiness">
+          <div class="cur-card">
+            <p class="cur-h">{{icon:target}} Competency by role</p>
+            <div class="cur-tabs" role="group" aria-label="Show the competency radar for a role"></div>
+            <svg class="cur-radar" viewBox="0 0 330 244" role="img" aria-label="Competency radar for the selected role"></svg>
+          </div>
+          <div class="cur-card cur-ready">
+            <p class="cur-h">{{icon:shield}} Go-live readiness</p>
+            <div class="cur-gauge"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="cur-gt" cx="50" cy="50" r="42"/><circle class="cur-gv" cx="50" cy="50" r="42"/></svg><span><b data-k="ready">0</b><small>%</small></span></div>
+            <p class="cur-verdict"></p>
+            <ul class="cur-gates"></ul>
+          </div>
+        </aside>
+      </div>
+      <div class="cur-tl">
+        <div class="cur-tlh"><p class="cur-h">{{icon:calendar}} Session timeline</p><ul class="dm-legend"><li><i class="dm-sw cur-sw-ku"></i>Key users</li><li><i class="dm-sw cur-sw-eu"></i>End users</li><li><i class="dm-sw cur-sw-rt"></i>Retake</li><li><i class="dm-sw cur-sw-sh"></i>Whole team</li></ul></div>
+        <div class="cur-tlw">
+          <div class="cur-tlin">
+            <div class="cur-weeks" aria-hidden="true"></div>
+            <div class="cur-grid">
+              <div class="cur-labels"></div>
+              <div class="cur-lane"><div class="cur-rows"></div><div class="cur-bands"></div><i class="cur-golive" aria-hidden="true"><b>Go-live</b></i><i class="cur-head" aria-hidden="true"></i></div>
+            </div>
+            <div class="cur-scrub"><span class="cur-day" aria-hidden="true">Week 1 &middot; day 1</span><input type="range" min="0" max="1000" step="1" value="0" aria-label="Plan timeline: drag to any day of the plan"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dm-static">
+        <p><b>How the plan is built:</b> each role (accountant, sales, warehouse, buyer, manager, administrator) brings its Odoo modules: invoices, vendor bills, bank reconciliation and month-end for finance; pipeline, quotations, order to invoice and the portal for sales; receipts, picking, adjustments, cycle counts and reordering for the warehouse.</p>
+        <p><b>Each module has three steps:</b> a session, a sandbox exercise on a staging copy of your own data, and a sign-off check the user must pass alone.</p>
+        <p><b>The order of sessions:</b> key users first, then end users, then train-the-trainer so key users can onboard new staff, then UAT and a go-live readiness check. A refresher follows the first month-end.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample plan. Durations, exercises and the readiness score are illustrative; your plan is sized to your teams and agreed before the first session.</p>
+  </div>
+</section>
+
+
+<section class="section fs-rate-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what training covers</span><h2>By audience, then by team.</h2></div>
+    <div class="grid-3 fs-ratings">
+      <article class="card reveal" style="--i:0;--rc:#3167CA"><div class="card-ic">{{icon:usercheck}}</div><h3>Administrators</h3><p>Users and access rights, company settings, numbering sequences, document templates and approval rules — the people who keep the system running.</p></article>
+      <article class="card reveal" style="--i:1;--rc:#714B67"><div class="card-ic">{{icon:users}}</div><h3>End-users</h3><p>The day-to-day screens each person actually uses, taught hands-on so they can do their own job from memory, not a manual.</p></article>
+      <article class="card reveal" style="--i:2;--rc:#2E9C7E"><div class="card-ic">{{odoo:accountant}}</div><h3>Finance sessions</h3><p>Customer and vendor invoices, bank feeds and reconciliation, tax returns and reports, and the month-end close.</p></article>
+      <article class="card reveal" style="--i:3;--rc:#E46E78"><div class="card-ic">{{odoo:sale}}</div><h3>Sales sessions</h3><p>CRM pipeline and activities, quotations and pricelists, order confirmation and invoicing, and the customer portal.</p></article>
+      <article class="card reveal" style="--i:4;--rc:#F2A33A"><div class="card-ic">{{odoo:stock}}</div><h3>Warehouse sessions</h3><p>Receipts and put-away, barcode picking and delivery, transfers and adjustments, and cycle counts.</p></article>
+      <article class="card reveal" style="--i:5;--rc:#5C6B7A"><div class="card-ic">{{icon:file}}</div><h3>Quick-reference guides</h3><p>A short written guide for each core task, so new staff can be onboarded later without us in the room.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt fs-path-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">how training runs</span><h2>Plan, practise, prove it's ready.</h2></div>
+    <div class="steps fs-steps reveal">
+      <div class="step reveal" style="--i:0"><div class="step-n">1</div><div><span class="fs-wpt" aria-hidden="true">WPT 1 · Plan</span><h3>Training plan</h3><p>Agree the roles, teams and the specific tasks each person must be able to do alone.</p></div></div>
+      <div class="step reveal" style="--i:1"><div class="step-n">2</div><div><span class="fs-wpt" aria-hidden="true">WPT 2 · Simulator</span><h3>Staging copy</h3><p>A copy of your database, so people learn on real products and customers, safely.</p></div></div>
+      <div class="step reveal" style="--i:2"><div class="step-n">3</div><div><span class="fs-wpt" aria-hidden="true">WPT 3 · Lessons</span><h3>Role-based sessions</h3><p>Administrators first, then each team on its own screens — short and hands-on.</p></div></div>
+      <div class="step reveal" style="--i:3"><div class="step-n">4</div><div><span class="fs-wpt" aria-hidden="true">WPT 4 · Check ride</span><h3>UAT &amp; readiness</h3><p>Users run their tasks end-to-end; we check go-live readiness before cut-over.</p></div></div>
+      <div class="fs-route" aria-hidden="true"><i class="fs-plane">{{icon:plane}}</i></div>
+    </div>
+  </div>
+</section>
+
+<section class="section fs-check-sec">
+  <div class="container">
+    <div class="two two--top fs-checklist">
+      <div class="reveal"><span class="hand">what you get</span><h2>Confident users, and guides you keep.</h2><p class="lead">Key users are trained first and help train the rest, so the knowledge stays in the building. Every session leaves written material behind.</p></div>
+      <div class="fs-panel">
+        <p class="fs-panel-h" aria-hidden="true"><span>Go-live checklist</span><b>12 / 12</b></p>
+        <ul class="spec-cols" style="margin:0">
+          <li>{{icon:check}}Training plan mapped to roles and teams</li>
+          <li>{{icon:check}}Administrator sessions — users, rights and settings</li>
+          <li>{{icon:check}}End-user sessions for finance, sales and warehouse</li>
+          <li>{{icon:check}}Hands-on practice on a staging copy of your data</li>
+          <li>{{icon:check}}A quick-reference guide for each core task</li>
+          <li>{{icon:check}}A common-error checklist per role</li>
+          <li>{{icon:check}}Support during user acceptance testing (UAT)</li>
+          <li>{{icon:check}}A go-live readiness check before cut-over</li>
+          <li>{{icon:check}}Key users trained first to help train the rest</li>
+          <li>{{icon:check}}A refresher session after the first month-end</li>
+          <li>{{icon:check}}Guides you keep for onboarding new staff</li>
+          <li>{{icon:check}}On-site in Singapore or remote for other locations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt fs-faq-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">common questions</span><h2>Training, answered.</h2></div>
+    <div class="faq fs-faq reveal">
+      <details><summary>Is training on a demo or on our own system? {{icon:chevron}}</summary><div class="faq-a"><p>On a staging copy of your database, not a demo. People learn on your real products, customers and layouts, so nothing looks unfamiliar on go-live day.</p></div></details>
+      <details><summary>On-site or remote? {{icon:chevron}}</summary><div class="faq-a"><p>Both. We run sessions on-site in Singapore and remotely for teams in other locations.</p></div></details>
+      <details><summary>Who should attend? {{icon:chevron}}</summary><div class="faq-a"><p>Administrators first, then each team for its own screens. We train key users deeply so they can help train the rest.</p></div></details>
+      <details><summary>What is UAT? {{icon:chevron}}</summary><div class="faq-a"><p>User acceptance testing: your team runs real tasks end-to-end before go-live, so questions and gaps surface while there is still time to fix them.</p></div></details>
+      <details><summary>Can we train new hires later? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. The quick-reference guides let you onboard without us, and we can run refresher sessions whenever the team grows or Odoo changes.</p></div></details>
+      <details><summary>How much does training cost? {{icon:chevron}}</summary><div class="faq-a"><p>On quotation, sized to the teams and sessions involved — <a href="{{ROOT}}quotation.html">request a quotation</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section fs-next-sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">related services</span><h2>Around training.</h2></div>
+    <div class="grid-3 fs-next">
+      <a class="card reveal" style="--i:0;--rc:#3167CA" href="{{ROOT}}odoo/discovery.html"><span class="fs-leg" aria-hidden="true"><b>Step 1</b><i></i><b>Step 2</b></span><div class="card-ic">{{icon:search}}</div><h3>Odoo Discovery</h3><p>Before training: how work moves today, mapped to Odoo apps and written into a scope.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card reveal" style="--i:1;--rc:#14A38B" href="{{ROOT}}odoo/support.html"><span class="fs-leg" aria-hidden="true"><b>Step 2</b><i></i><b>Step 4</b></span><div class="card-ic">{{icon:lifebuoy}}</div><h3>Odoo Support</h3><p>After go-live: fixes, month-end help, version upgrades and small changes from the same team.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card reveal" style="--i:2;--rc:#714B67" href="{{ROOT}}solutions/odoo-erp.html"><span class="fs-leg" aria-hidden="true"><b>Training</b><i></i><b>Full build</b></span><div class="card-ic">{{icon:layers}}</div><h3>Odoo ERP Development</h3><p>The full implementation that training is one step of — configure, migrate, train, support.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt fs-cta-sec">
+  <div class="container">
+    <div class="cta reveal">
+      <div><span class="hand">next step</span><h2>Get your team ready to run it.</h2><p>Tell us the teams and roles going live. We will plan the sessions and come back with a quotation.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a><a class="btn btn-outline-white btn-lg" href="#talk">Talk to us</a></div>
+    </div>
+  </div>
+</section>

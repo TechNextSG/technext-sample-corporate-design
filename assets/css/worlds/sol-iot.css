@@ -1,0 +1,267 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-iot (/solutions/iot) — the smart greenhouse: glass, leaves and a cold room that reports itself. Leaf green and
+   mint, sensor teal, frost blue for the cold room, alert amber, soil brown.
+   The title card is a sensor device (a status strip that says it is reporting, an antenna on the corner); buttons are soft
+   pills with a status LED; the caption is a live reading notification; the glance strip carries a sparkline.
+   Below the hero: a sensor tag, the control panel, plant stakes in a bed, a growth timeline, a readout board with a gauge,
+   alerts on a phone, seed packets and a glasshouse end card. New classes use the grh- prefix. */
+.ixw--sol-iot{--gh-ink:#14302A;--gh-leaf:#2E9A58;--gh-leaf-l:#E6F6EC;--gh-mint:#DDF3EE;--gh-teal:#14A3A3;--gh-frost:#7FC8F0;--gh-amber:#F5A524;--gh-soil:#8C6A4A;--gh-soil-d:#6E5238;
+  --w-alt:#F1F8F3;--w-dot:rgba(46,154,88,.1);--w-hand:#1E7A55;
+  --lab-bg:#FFFFFF;--lab-bd:1.5px solid #BFE3CD;--lab-lip:#BFE3CD;--lab-tail:#FFFFFF;--lab-r:12px;
+  
+  --ii-bg:linear-gradient(160deg,#F1FBF5,#DDF3EE 55%,#E6F4FD);--ii-ink:#14302A;--ii-b:#1E7A55;--ii-accent:#3FAE6A;--ii-lip:#14302A;--ii-pill-r:999px;
+  --ii-pattern:linear-gradient(90deg,rgba(255,255,255,.55) 0 3px,transparent 3px) 0 0/80px 100%,linear-gradient(rgba(255,255,255,.55) 0 3px,transparent 3px) 0 0/100% 120px}
+.ixw--sol-iot .ixw-hero{background:linear-gradient(180deg,#6FC0F2 0,#B3E1FA 30%,#CDEFE6 31%,#BFE3D2 58%,#E9E4DA 58%,#E9E4DA 68%,#D9DED8 68%,#C5CCC4 100%)}
+
+/* ---------- the title card: a sensor device that is reporting ---------- */
+.ixw--sol-iot .ixw-copy{position:relative;max-width:500px;margin-top:22px;padding:44px 30px 26px;border-radius:26px;background:#FFFFFF;
+  box-shadow:0 0 0 1.5px #CFE8DA,0 0 0 8px rgba(255,255,255,.6),0 40px 70px -30px rgba(20,70,50,.38)}
+.ixw--sol-iot .ixw-copy::before{content:"\25CF  REPORTING · EVERY MINUTE";position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;padding-left:26px;border-radius:26px 26px 0 0;
+  background:linear-gradient(90deg,var(--gh-leaf-l),#E7F6FB);border-bottom:1.5px solid #CFE8DA;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;color:#1E7A55}
+.ixw--sol-iot .ixw-copy::after{content:"";position:absolute;right:34px;top:-30px;width:4px;height:32px;border-radius:2px;background:#C9D3DE;box-shadow:0 -6px 0 2px var(--gh-teal)}
+.ixw--sol-iot .ixw-copy h1{max-width:18ch;font-size:clamp(2rem,3.1vw,2.75rem)}
+.ixw--sol-iot .ixw-copy .hand{color:#1E7A55}
+.ixw--sol-iot .ixw-hint .ic{color:var(--gh-amber)}
+.ixw--sol-iot .ixw-hint{margin-top:16px}
+.grh-pills{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.grh-pill{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px 0 7px;border-radius:999px;background:#F2F8F5;box-shadow:inset 0 0 0 1.5px #CFE8DA;font:700 12px/1 var(--font-body);color:var(--gh-ink)}
+.grh-pill .ic{width:16px;height:16px;color:var(--gh-teal)}
+.grh-pill--ok{background:var(--gh-leaf-l)}.grh-pill--ok .ic{color:var(--gh-leaf)}
+@media (max-width:767px){.ixw--sol-iot .ixw-copy{padding:40px 20px 22px}.ixw--sol-iot .ixw-copy::after{display:none}}
+
+/* ---------- the caption: a live reading notification ---------- */
+.ixw--sol-iot .ixw-cap{border-radius:22px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE8DA,0 0 0 7px rgba(230,246,236,.9),0 26px 44px -22px rgba(20,70,50,.35)}
+.ixw--sol-iot .ixw-cap::before{content:"\25CF  LIVE READING";position:absolute;left:22px;top:-12px;padding:6px 11px;border-radius:999px;background:var(--gh-leaf);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;box-shadow:0 3px 10px -3px rgba(46,154,88,.6)}
+.ixw--sol-iot .ixw-cap-who b{color:#1E7A55}.ixw--sol-iot .ixw-cap-txt b{color:#127A8A}
+.ixw--sol-iot .ixw-cap-rec{background:#EAF6FB;border:1px solid #BFE0EE;color:#0E5566}
+.ixw--sol-iot .ixw-cap-av{box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #BFE3CD}
+
+/* ---------- buttons: soft pills with a status LED ---------- */
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost,.grh-glass .btn-white,.grh-glass .btn-outline-white){border:0;border-radius:999px;padding-left:20px;transition:translate .25s var(--w-spring),box-shadow .25s ease,background-color .2s ease}
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost)::before{content:"";position:static;inset:auto;transform:none;z-index:auto;flex:none;display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:2px;background:#7DF0B0;box-shadow:0 0 0 3px rgba(125,240,176,.25);animation:grhLed 2s ease-in-out infinite}
+.ixw--sol-iot main .btn-primary,.ixw--sol-iot main .btn-primary:hover{color:#FFFFFF;background:var(--blue);box-shadow:0 10px 22px -10px rgba(49,103,202,.8),inset 0 -3px 0 rgba(0,0,0,.14)}
+.ixw--sol-iot main .btn-ghost,.ixw--sol-iot main .btn-ghost:hover{color:var(--gh-ink);background:#FFFFFF;box-shadow:inset 0 0 0 2px #BFE3CD,0 8px 18px -12px rgba(20,70,50,.5)}
+.ixw--sol-iot main .btn-ghost::before{background:var(--gh-leaf);box-shadow:0 0 0 3px rgba(46,154,88,.2)}
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost):hover{translate:0 -2px}
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost):active{translate:0 1px}
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost):focus-visible{outline:3px solid var(--gh-teal);outline-offset:4px}
+@keyframes grhLed{50%{box-shadow:0 0 0 6px rgba(125,240,176,0)}}
+.ixw--sol-iot .ixw-ibtn{border:1.5px solid #BFE3CD;box-shadow:0 3px 0 #BFE3CD}
+.ixw--sol-iot .ixw-ibtn--play,.ixw--sol-iot .ixw-ibtn--play:hover{background:var(--gh-leaf);color:#FFFFFF;border-color:var(--gh-leaf);box-shadow:0 3px 0 #1E7A55}
+.ixw--sol-iot .ixw-dots button.is-on{background:var(--gh-leaf)}
+.ixw--sol-iot .ixw-peek{border-color:var(--gh-ink);box-shadow:0 3px 0 var(--gh-ink)}.ixw--sol-iot .ixw-peek[aria-pressed="true"]{background:var(--gh-leaf-l)}
+@media (prefers-reduced-motion:reduce){.ixw--sol-iot main :is(.btn-primary,.btn-ghost)::before{animation:none}}
+
+/* ---------- the glance strip: sensor tiles under a sparkline ---------- */
+.ixw--sol-iot .grh-strip{border-radius:22px;padding-top:22px;box-shadow:0 0 0 1.5px #CFE8DA,0 26px 50px -30px rgba(20,70,50,.35);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 20' preserveAspectRatio='none'%3E%3Cpath d='M0 14 L30 12 L60 13 L90 9 L120 11 L150 6 L180 10 L210 8 L240 12 L270 5 L300 9 L330 7 L360 11 L400 8' fill='none' stroke='%232E9A58' stroke-width='2' stroke-opacity='.5' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0 2px/100% 18px no-repeat,#FFFFFF}
+.ixw--sol-iot .grh-strip dt .ic{width:24px;height:24px;padding:4px;border-radius:50%;background:var(--gh-leaf-l);color:var(--gh-leaf)}
+.ixw--sol-iot .grh-strip dd{font-variant-numeric:tabular-nums}
+
+/* ---------- the end card: a glasshouse panel ---------- */
+.ixw--sol-iot main .grh-glass{background:linear-gradient(90deg,rgba(255,255,255,.22) 0 3px,transparent 3px) 0 0/120px 100%,linear-gradient(rgba(255,255,255,.22) 0 3px,transparent 3px) 0 0/100% 90px,
+  linear-gradient(120deg,#1E7A55,#2E9A58 55%,#14A3A3);border-radius:30px 30px 18px 18px}
+.ixw--sol-iot main .grh-glass::after{right:-60px;top:-140px;width:420px;height:420px;background:radial-gradient(circle,rgba(255,246,200,.5),rgba(255,246,200,0) 60%)}
+.ixw--sol-iot main .grh-glass .hand{color:#DFF7B5}
+.ixw--sol-iot main .grh-glass .btn-white,.ixw--sol-iot main .grh-glass .btn-white:hover{background:#FFFFFF;color:var(--gh-ink)}
+.ixw--sol-iot main .grh-glass .btn-outline-white,.ixw--sol-iot main .grh-glass .btn-outline-white:hover{background:var(--gh-amber);border-color:var(--gh-amber);color:var(--gh-ink)}
+
+/* ============================== below the hero ============================== */
+.ixw--sol-iot main .sec-head .hand{display:inline-flex;align-items:center;gap:8px}
+.ixw--sol-iot main .sec-head .hand::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gh-leaf);box-shadow:0 0 0 4px rgba(46,154,88,.18)}
+
+/* the one-paragraph answer: a sensor tag hanging on its cord */
+.ixw--sol-iot .grh-tag{position:relative;max-width:980px;margin-top:20px;padding:56px 30px 26px;border:0;border-radius:22px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE8DA,0 30px 50px -30px rgba(20,70,50,.4)}
+.ixw--sol-iot .grh-tag::before{content:"";position:absolute;left:50%;top:-30px;width:2px;height:34px;background:#9AA6BC}
+.grh-tag-top{position:absolute;left:0;right:0;top:0;height:38px;display:flex;align-items:center;gap:12px;padding:0 22px;border-radius:22px 22px 0 0;background:linear-gradient(90deg,var(--gh-leaf-l),#E7F6FB);border-bottom:1.5px solid #CFE8DA}
+.grh-sig{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.grh-sig b{width:3px;border-radius:1px;background:var(--gh-leaf)}
+.grh-sig b:nth-child(1){height:5px}.grh-sig b:nth-child(2){height:8px}.grh-sig b:nth-child(3){height:11px}.grh-sig b:nth-child(4){height:14px;opacity:.35}
+.grh-tag-id{font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.14em;color:#1E7A55}
+.grh-tag-live,.grh-live{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #BFE3CD;font:800 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#1E7A55}
+.grh-tag-live{margin-left:auto}
+.grh-tag-live::before,.grh-live::before{content:"";width:7px;height:7px;border-radius:50%;background:#2BB673;animation:grhBlink 1.4s steps(2,start) infinite}
+@keyframes grhBlink{to{visibility:hidden}}
+.grh-bat{position:relative;width:24px;height:12px;border-radius:3px;box-shadow:inset 0 0 0 1.5px var(--gh-ink);background:linear-gradient(90deg,var(--gh-leaf) 0 70%,transparent 70%) 3px 3px/16px 6px no-repeat}
+.grh-bat::after{content:"";position:absolute;right:-4px;top:3px;width:3px;height:6px;border-radius:0 2px 2px 0;background:var(--gh-ink)}
+.ixw--sol-iot .grh-tag .answer-h{background:var(--gh-leaf-l);color:#1E7A55}
+.ixw--sol-iot .grh-tag p:not(.answer-h){font-size:15.5px;line-height:1.65;color:#2E4A42}
+@media (max-width:640px){.grh-tag-id{display:none}.ixw--sol-iot .grh-tag{padding:52px 18px 22px}}
+@media (prefers-reduced-motion:reduce){.grh-tag-live::before,.grh-live::before{animation:none}}
+
+/* the demo in the greenhouse control panel: frosted glass, mullions, a vent grille */
+.ixw--sol-iot .grh-demo-sec{background:linear-gradient(180deg,#FFFFFF,#F1F8F3)}
+.grh-panel{position:relative;padding:14px;border-radius:30px;background:linear-gradient(90deg,rgba(255,255,255,.7) 0 3px,transparent 3px) 0 0/96px 100%,linear-gradient(160deg,#DDF3EE,#E7F6FB);box-shadow:0 0 0 1.5px #BFE3CD,0 50px 80px -46px rgba(20,70,50,.5)}
+.grh-panel-top{display:flex;align-items:center;gap:12px;padding:4px 10px 14px;font:800 12.5px/1 var(--font-display);color:var(--gh-ink)}
+.grh-vent{display:inline-flex;gap:4px;margin-left:auto;padding:6px 8px;border-radius:8px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #BFE3CD}
+.grh-vent i{width:22px;height:4px;border-radius:2px;background:#C9D3DE}
+.ixw--sol-iot .grh-panel .dm{border-radius:20px;box-shadow:0 0 0 1.5px #CFE8DA}
+.ixw--sol-iot .cld-room{border-radius:16px}
+@media (max-width:640px){.grh-panel{padding:8px;border-radius:22px}.grh-vent{display:none}}
+
+/* what's included: plant stakes pushed into a soil bed */
+.grh-bed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 30px}
+.grh-stake{position:relative;isolation:isolate;margin-bottom:62px;padding:28px 24px 24px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE8DA,inset 0 7px 0 var(--c),0 22px 34px -26px rgba(20,70,50,.45);transition:translate .35s var(--w-spring),rotate .35s var(--w-spring)}
+.grh-stake::before{content:"";position:absolute;left:50%;top:100%;z-index:-1;width:18px;height:54px;margin-left:-9px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 70%,#000));clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%)}
+.grh-stake::after{content:"";position:absolute;left:10%;right:10%;top:calc(100% + 30px);height:30px;z-index:-1;border-radius:50% 50% 12px 12px / 100% 100% 12px 12px;
+  background:radial-gradient(rgba(40,25,10,.3) 1.2px,transparent 1.5px) 0 0/9px 7px,linear-gradient(180deg,var(--gh-soil),var(--gh-soil-d))}
+.grh-stake .card-ic{display:flex;align-items:center;justify-content:center;width:54px;height:54px;margin-bottom:16px;border-radius:50%;background:var(--c);color:#FFFFFF;box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 18%,#FFFFFF)}
+.grh-stake .card-ic .ic{width:26px;height:26px}.grh-stake .card-ic .oi{width:34px;height:34px;padding:3px;border-radius:9px;background:#FFFFFF}
+.grh-stake h3{margin-bottom:8px}.grh-stake p{font-size:15px;line-height:1.6;max-width:32ch;margin:0}
+.grh-stake:hover{translate:0 -6px}
+.grh-stake:nth-child(odd):hover{rotate:-1.2deg}.grh-stake:nth-child(even):hover{rotate:1.2deg}
+@media (max-width:960px){.grh-bed{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.grh-bed{grid-template-columns:1fr}}
+
+/* how we deliver: a plant growing along a soil line */
+.ixw--sol-iot .grh-grow{gap:26px}
+.ixw--sol-iot .grh-grow::before{top:124px;left:0;right:0;height:10px;border-radius:5px;background:linear-gradient(180deg,var(--gh-soil),var(--gh-soil-d))}
+.ixw--sol-iot .grh-stage{align-items:center;text-align:center;padding:0 6px}
+.grh-sprout{display:block;width:150px;max-width:100%;height:112px;margin-bottom:6px;transform-origin:50% 100%}
+.grh-sprout svg{display:block;width:100%;height:100%}
+.ixw--sol-iot .grh-stage.reveal.is-in .grh-sprout{animation:grhGrow .8s var(--w-spring) both;animation-delay:calc(var(--i) * 140ms + 200ms)}
+@keyframes grhGrow{from{transform:scale(.4);opacity:0}}
+.ixw--sol-iot .grh-stage:hover .grh-sprout{animation:grhSway 1.4s ease-in-out}
+@keyframes grhSway{30%{rotate:-4deg}70%{rotate:3deg}}
+.ixw--sol-iot .grh-stage .step-n{margin:12px auto 14px;width:44px;height:44px;border:0;background:var(--gh-leaf);color:#FFFFFF;box-shadow:0 0 0 6px var(--w-alt),0 0 0 8px #BFE3CD}
+.ixw--sol-iot .grh-stage:nth-child(2) .step-n{background:var(--gh-teal)}.ixw--sol-iot .grh-stage:nth-child(3) .step-n{background:#2E8FD0}.ixw--sol-iot .grh-stage:nth-child(4) .step-n{background:var(--gh-amber);color:var(--gh-ink)}
+.ixw--sol-iot .grh-stage p{max-width:28ch;margin:0 auto}
+@media (max-width:960px){.ixw--sol-iot .grh-grow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}.ixw--sol-iot .grh-grow::before{display:none}}
+@media (max-width:640px){.ixw--sol-iot .grh-grow{grid-template-columns:1fr;gap:26px}.ixw--sol-iot .grh-stage{display:flex;flex-direction:column;align-items:center;padding:0;border-bottom:0}.ixw--sol-iot .grh-stage>:not(.step-n){align-self:center}.ixw--sol-iot .grh-stage .step-n{margin:6px auto 12px;width:40px;height:40px}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-iot .grh-stage .grh-sprout{animation:none!important}}
+
+/* what you get: a gauge and a readout board of green LEDs */
+.ixw--sol-iot .grh-readout{align-items:center;gap:48px}
+.grh-gauge{display:flex;align-items:center;gap:18px;margin-top:28px}
+.grh-gauge-dial{position:relative;width:132px;height:72px;overflow:hidden}
+.grh-gauge-dial::before{content:"";position:absolute;left:0;top:0;width:132px;height:132px;border-radius:50%;background:conic-gradient(from -90deg,#E0456B 0 30deg,var(--gh-amber) 30deg 60deg,var(--gh-leaf) 60deg 150deg,var(--gh-amber) 150deg 180deg,transparent 180deg);
+  -webkit-mask:radial-gradient(circle,transparent 46px,#000 47px);mask:radial-gradient(circle,transparent 46px,#000 47px)}
+.grh-gauge-dial i{position:absolute;left:64px;bottom:0;width:4px;height:58px;border-radius:2px;background:var(--gh-ink);transform-origin:50% 100%;rotate:-6deg;animation:grhNeedle 4s ease-in-out infinite}
+.grh-gauge-dial i::after{content:"";position:absolute;left:-5px;bottom:-5px;width:14px;height:14px;border-radius:50%;background:var(--gh-ink)}
+@keyframes grhNeedle{50%{rotate:8deg}}
+.grh-gauge-cap b{display:block;font:800 1.2rem/1.1 var(--font-display);color:#1E7A55}.grh-gauge-cap small{font:600 12px/1 var(--font-body);color:var(--muted)}
+.grh-board{padding:0 0 18px;border-radius:24px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE8DA,0 30px 60px -36px rgba(20,70,50,.45);overflow:hidden}
+.grh-board-top{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:14px 20px;background:linear-gradient(90deg,var(--gh-leaf-l),#E7F6FB);border-bottom:1.5px solid #CFE8DA;font:800 13px/1 var(--font-display);color:var(--gh-ink)}
+.grh-board-n{margin-left:auto;padding:5px 9px;border-radius:999px;background:var(--gh-leaf);color:#FFFFFF;font:800 11px/1 ui-monospace,Consolas,monospace}
+.ixw--sol-iot .grh-leds{padding:0 20px;column-gap:28px}
+.ixw--sol-iot .grh-leds li{position:relative;align-items:center;margin-bottom:8px;padding:9px 10px;border-radius:10px;background:#F6FBF8;font-size:14.5px;color:var(--gh-ink)}
+.ixw--sol-iot .grh-leds li .ic{width:20px;height:20px;padding:3px;margin-top:0;border-radius:50%;background:var(--gh-leaf);color:#FFFFFF;box-shadow:0 0 0 3px rgba(46,154,88,.16)}
+@media (prefers-reduced-motion:reduce){.grh-gauge-dial i{animation:none}}
+
+/* the FAQ: questions arrive like alerts on a phone */
+.ixw--sol-iot .grh-qa{align-items:start;gap:44px}
+.grh-phone{position:relative;display:grid;gap:8px;width:210px;margin-top:26px;padding:34px 12px 18px;border-radius:30px;background:var(--gh-ink);box-shadow:0 0 0 4px #2A4A42,0 30px 40px -24px rgba(20,48,42,.6)}
+.grh-phone-notch{position:absolute;left:50%;top:10px;width:60px;height:12px;margin-left:-30px;border-radius:8px;background:#0B1B17}
+.grh-phone span{display:grid;gap:3px;padding:9px 11px;border-radius:14px;background:#FFFFFF;font:600 11.5px/1.2 var(--font-body);color:var(--muted)}
+.grh-phone span b{font:800 12px/1.2 var(--font-display);color:var(--gh-ink)}
+.grh-phone span:first-of-type{box-shadow:inset 3px 0 0 var(--gh-leaf)}
+.ixw--sol-iot .grh-alerts{max-width:none}
+.ixw--sol-iot .grh-alerts details{border-radius:20px;box-shadow:0 0 0 1.5px #CFE8DA,0 14px 28px -22px rgba(20,70,50,.4)}
+.ixw--sol-iot .grh-alerts summary::before{content:"";width:34px;height:34px;border-radius:11px;background:var(--gh-teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M5 9a10 10 0 0 1 14 0M8 12a6 6 0 0 1 8 0'/%3E%3Ccircle cx='12' cy='16' r='1.6' fill='white'/%3E%3C/svg%3E") center/20px no-repeat;color:transparent}
+.ixw--sol-iot .grh-alerts details[open] summary::before{content:"";background-color:var(--gh-leaf);transform:none}
+.ixw--sol-iot .grh-alerts summary::after{content:"now";order:2;margin-left:auto;font:600 11.5px/1 var(--font-body);color:var(--muted)}
+.ixw--sol-iot .grh-alerts summary .ic{order:3;margin-left:10px}
+.ixw--sol-iot .grh-alerts .faq-a{position:relative;margin:0 22px 18px 70px;padding:12px 16px;border-radius:4px 16px 16px 16px;background:#E6F6EC;color:var(--gh-ink)}
+@media (max-width:960px){.grh-phone{display:none}}
+@media (max-width:767px){.ixw--sol-iot .grh-alerts .faq-a{margin-left:18px}}
+
+/* related: seed packets with a crimped top */
+.ixw--sol-iot .grh-packets{gap:28px}
+.ixw--sol-iot .grh-packet{margin-top:12px;padding:50px 26px 26px;border:0;border-radius:0 0 18px 18px;background:#FFFFFF;box-shadow:0 0 0 1.5px #E3EAE6,0 24px 40px -28px rgba(20,70,50,.45);transition:translate .3s var(--w-spring)}
+.ixw--sol-iot .grh-packet::before{content:"";position:absolute;left:-1.5px;right:-1.5px;top:-12px;height:13px;background:linear-gradient(135deg,transparent 6px,#FFFFFF 6px) 0 0/12px 13px repeat-x,linear-gradient(-135deg,transparent 6px,#FFFFFF 6px) 6px 0/12px 13px repeat-x;filter:drop-shadow(0 -1.5px 0 #E3EAE6)}
+.grh-packet-band{position:absolute;left:0;right:0;top:10px;height:24px;background:repeating-linear-gradient(-45deg,var(--c) 0 10px,color-mix(in srgb,var(--c) 75%,#FFFFFF) 10px 20px);opacity:.9}
+.ixw--sol-iot .grh-packet .card-ic{width:52px;height:52px;justify-content:center;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 2px var(--c);margin-top:6px;color:var(--c)}
+.ixw--sol-iot .grh-packet:hover{transform:none;translate:0 -6px}
+.ixw--sol-iot .grh-packet .btn-link{color:#1E7A55}
+
+/* ============================== audit round: hero controls, the propagation corner ============================== */
+/* CTA pills: one height, the LED and the arrow chip on one centre line, a glow on hover, a soft press */
+.ixw--sol-iot .ixw-copy .actions{gap:14px;margin-top:24px}
+.ixw--sol-iot .ixw-copy .actions .btn{height:50px;padding:0 22px 0 20px;font-size:15.5px;font-weight:700;align-items:center}
+.ixw--sol-iot .ixw-copy .btn-primary .ic{width:26px;height:26px;padding:5px;margin-right:-8px;border-radius:50%;background:rgba(255,255,255,.2);transition:translate .25s var(--w-spring)}
+.ixw--sol-iot .ixw-copy .btn-primary:hover{background:#2A5DBB;box-shadow:0 14px 26px -12px rgba(49,103,202,.85),0 0 0 4px rgba(125,240,176,.28),inset 0 -3px 0 rgba(0,0,0,.14)}
+.ixw--sol-iot .ixw-copy .btn-primary:hover .ic{translate:3px 0}
+.ixw--sol-iot .ixw-copy .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--gh-leaf),0 12px 22px -12px rgba(20,70,50,.55)}
+.ixw--sol-iot main :is(.btn-primary,.btn-ghost):active{translate:0 1px;filter:brightness(.97)}
+/* status pills: a leaf border and a lift */
+.ixw--sol-iot .grh-pill{height:30px;padding:0 12px 0 8px;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw--sol-iot .grh-pill:hover{translate:0 -1px;box-shadow:inset 0 0 0 1.5px #8FD0AA,0 6px 12px -8px rgba(20,70,50,.45)}
+/* caption controls: frosted round keys, a leaf ring on hover, the play key glows */
+.ixw--sol-iot .ixw-ibtn{background:#FFFFFF;color:var(--gh-ink);transition:translate .2s var(--w-spring),box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+.ixw--sol-iot .ixw-ibtn:hover{translate:0 -2px;border-color:var(--gh-leaf);color:var(--gh-leaf);background:var(--gh-leaf-l);box-shadow:0 5px 0 #BFE3CD,0 0 0 4px rgba(46,154,88,.12)}
+.ixw--sol-iot .ixw-ibtn:active{translate:0 1px;box-shadow:0 1px 0 #BFE3CD}
+.ixw--sol-iot .ixw-ibtn--play:hover{background:#2A8C50;color:#FFFFFF;box-shadow:0 5px 0 #1E7A55,0 0 0 5px rgba(46,154,88,.18)}
+.ixw--sol-iot .ixw-ibtn:focus-visible,.ixw--sol-iot .ixw-dots button:focus-visible,.ixw--sol-iot .ixw-peek:focus-visible{outline:3px solid var(--gh-teal);outline-offset:3px}
+.ixw--sol-iot .ixw-dots{gap:6px}
+.ixw--sol-iot .ixw-dots button{width:9px;height:9px;background:#CFE8DA;transition:width .3s var(--w-spring),background-color .2s ease,scale .2s ease}
+.ixw--sol-iot .ixw-dots button:hover{background:var(--gh-teal);scale:1.25}
+.ixw--sol-iot .ixw-dots button.is-on{width:24px;background:var(--gh-leaf);box-shadow:0 0 0 3px rgba(46,154,88,.18)}
+/* "View the scene": a frosted sensor pill with its own status LED */
+.ixw--sol-iot .ixw-peek{height:40px;padding:0 16px 0 12px;border:1.5px solid #BFE3CD;border-radius:999px;background:rgba(255,255,255,.94);color:var(--gh-ink);font-weight:800;box-shadow:0 3px 0 #BFE3CD,0 10px 22px -12px rgba(20,70,50,.45);backdrop-filter:blur(6px);transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw--sol-iot .ixw-peek::after{content:"";width:8px;height:8px;margin-left:2px;border-radius:50%;background:#7DF0B0;box-shadow:0 0 0 3px rgba(125,240,176,.3);animation:grhLed 2s ease-in-out infinite}
+.ixw--sol-iot .ixw-peek:hover{translate:0 -2px;border-color:var(--gh-leaf);box-shadow:0 5px 0 #8FD0AA,0 14px 26px -12px rgba(20,70,50,.5)}
+.ixw--sol-iot .ixw-peek:active{translate:0 1px;box-shadow:0 1px 0 #8FD0AA}
+.ixw--sol-iot .ixw-peek[aria-pressed="true"]{background:var(--gh-leaf);border-color:var(--gh-leaf);color:#FFFFFF;box-shadow:0 3px 0 #1E7A55,0 10px 22px -12px rgba(20,70,50,.5)}
+.ixw--sol-iot .ixw-peek[aria-pressed="true"]::after{background:var(--gh-amber);box-shadow:0 0 0 3px rgba(245,165,36,.3)}
+@media (min-width:1200px){.ixw--sol-iot .ixw-hero:not(.is-peek) .grh-side{visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-iot .ixw-peek::after{animation:none}}
+
+/* ============ fix round: nothing floats alone ============ */
+/* the readout: the gauge lives in a card that fills the column beside the scope board */
+.ixw--sol-iot .grh-readout{align-items:stretch}
+.ixw--sol-iot .grh-readout-l{display:flex;flex-direction:column}
+.grh-gcard{flex:1;display:grid;align-content:space-between;gap:16px;margin-top:26px;padding:22px 24px;border-radius:22px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE8DA,0 18px 36px -26px rgba(20,70,50,.45);
+  background-image:radial-gradient(rgba(46,154,88,.10) 1.4px,transparent 1.6px);background-size:16px 16px}
+.grh-gcard .grh-gauge{margin-top:0}
+.grh-gcard-h{margin:0;font:800 11.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#1E7A55}
+.grh-trig{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.grh-trig li{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 10px;border-radius:999px;background:#F2F8F5;box-shadow:inset 0 0 0 1.5px #CFE8DA;font:700 13px/1 var(--font-body);color:var(--gh-ink)}
+.grh-trig i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
+.grh-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0}
+.grh-flow span{position:relative;padding:9px 6px;border-radius:10px;background:var(--gh-leaf-l);text-align:center;font:800 12px/1 var(--font-display);color:#1E7A55}
+.grh-flow span:not(:last-child)::after{content:"";position:absolute;right:-6px;top:50%;width:6px;height:2px;background:#8FD0AA}
+.grh-flow span:last-child{background:var(--gh-leaf);color:#FFFFFF}
+/* the FAQ: heading and the phone share a compact header row; the questions run full width below */
+.ixw--sol-iot .grh-qa{grid-template-columns:1fr;gap:28px}
+.ixw--sol-iot .grh-qa .sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:48px;align-items:center;max-width:none;margin-bottom:0}
+.ixw--sol-iot .grh-qa .sec-head>:not(.grh-phone){grid-column:1;justify-self:start}
+.ixw--sol-iot .grh-qa .grh-phone{grid-column:2;grid-row:1/span 3;margin-top:0;width:auto;grid-template-columns:repeat(3,minmax(150px,1fr));padding:16px 14px 14px 30px;border-radius:24px}
+.ixw--sol-iot .grh-qa .grh-phone-notch{left:12px;top:50%;width:10px;height:44px;margin:-22px 0 0}
+.ixw--sol-iot .grh-alerts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;align-items:start}
+.ixw--sol-iot .grh-alerts details:last-child{grid-column:1/-1}
+@media (max-width:1100px){.ixw--sol-iot .grh-qa .grh-phone{grid-template-columns:1fr;padding:30px 12px 14px}.ixw--sol-iot .grh-qa .grh-phone-notch{left:50%;top:9px;width:60px;height:12px;margin-left:-30px}}
+@media (max-width:960px){.ixw--sol-iot .grh-qa .sec-head{grid-template-columns:1fr}.ixw--sol-iot .grh-alerts{grid-template-columns:1fr}}
+@media (max-width:640px){.grh-gcard{padding:18px}.grh-flow span{font-size:11px;padding:8px 2px}}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the greenhouse. One leaf-green accent.
+   Themed touches kept: the "TAG 01 · IoT" sensor-tag header on the one-paragraph card, the coloured rule on each plant
+   label card, the growing seedlings above the four steps, the "Live · 12 / 12" readout board, the gauge card.
+   =================================================================================================================== */
+.ixw--sol-iot{--calm-accent:#2E9A58;--calm-accent-ink:#217544;--calm-accent-line:#C6E5D2;--calm-accent-wash:#F5FAF7;--calm-wash:#F5FAF7}
+html body.ixw--sol-iot main .grh-tag{max-width:900px;margin-top:0!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-iot main .grh-tag::before,html body.ixw--sol-iot main .grh-tag::after{content:none!important;display:none!important}
+html body.ixw--sol-iot main .grh-tag p{color:var(--body)!important}
+/* demo */
+html body.ixw--sol-iot main .grh-panel{padding:0!important;border-radius:18px!important;background:#fff!important;background-image:none!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-iot main .grh-panel::before,html body.ixw--sol-iot main .grh-panel::after{content:none!important;display:none!important}
+html body.ixw--sol-iot main .grh-panel-top{padding:12px 18px!important;background:#F5FAF7!important;border-bottom:1px solid var(--calm-line)}
+html body.ixw--sol-iot main .grh-vent{display:none!important}
+html body.ixw--sol-iot main .grh-panel .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* six cards: white, a coloured top rule; the stakes in the soil go */
+html body.ixw--sol-iot main .grh-bed{gap:24px!important}
+html body.ixw--sol-iot main .grh-stake{margin-bottom:0!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;translate:none!important;rotate:none!important}
+html body.ixw--sol-iot main .grh-stake::before,html body.ixw--sol-iot main .grh-stake::after{content:none!important;display:none!important}
+html body.ixw--sol-iot main .grh-stake:hover{translate:0 -2px!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-iot main .grh-stake .card-ic{width:48px!important;height:48px!important;background:color-mix(in srgb,var(--c) 12%,#fff)!important;box-shadow:none!important}
+html body.ixw--sol-iot main .grh-stake p{color:var(--body)!important}
+/* FAQ: plain rows, two columns, left-aligned */
+html body.ixw--sol-iot main .grh-alerts details{border-radius:14px!important;box-shadow:none!important}
+html body.ixw--sol-iot main .grh-alerts summary{justify-content:flex-start!important;text-align:left!important}
+html body.ixw--sol-iot main .grh-alerts summary::before,html body.ixw--sol-iot main .grh-alerts summary::after{content:none!important;display:none!important}
+html body.ixw--sol-iot main .grh-alerts summary .ic{margin-left:auto!important}
+html body.ixw--sol-iot main .grh-alerts .faq-a{margin:0!important;padding:0 20px 18px!important;border-radius:0!important;background:none!important;color:var(--body)!important}
+/* related: plain cards with a coloured top rule */
+html body.ixw--sol-iot main .grh-packet{margin-top:0!important;padding:26px!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;translate:none!important}
+html body.ixw--sol-iot main .grh-packet::before,html body.ixw--sol-iot main .grh-packet::after{content:none!important;display:none!important}
+html body.ixw--sol-iot main .grh-packet:hover{translate:0 -2px!important;box-shadow:var(--calm-shadow-h)!important}

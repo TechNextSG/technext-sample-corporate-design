@@ -1,0 +1,290 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: app-acc (/odoo/apps/accounting) — Odoo Accounting, month-end in a bright finance office. Ledger green, Odoo
+   purple, paid red. The title card is a ledger sheet (green-ruled, a red margin line, a debit/credit header); the caption
+   is a journal entry; buttons are posted entries with a tick; the glance strip is the ledger's totals line. */
+.ixw--app-acc{--ow-c:#2E9C7E;--ac-ink:#1B1F3B;--ac-grn:#2E9C7E;--ac-grn-l:#E8F5F0;--ac-pur:#714B67;--ac-red:#E2453C;
+  --w-alt:#F3F9F6;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:6px;
+  
+  --ii-bg:linear-gradient(160deg,#F5FAF8,#DCEFE7 60%,#EDE5F3);--ii-ink:#1B1F3B;--ii-b:#2E9C7E;--ii-accent:#714B67;--ii-lip:#1B1F3B;--ii-ep-bg:#2E9C7E;--ii-ep-fg:#FFFFFF}
+.ixw--app-acc .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#F5FAF8 18%,#E7F2EE 62%,#E7EBF1 62%,#D6DDE7 100%)}
+.ow-page .app-ep{display:inline-flex;align-items:center;gap:6px}
+.ow-page .ixw-copy .app-sub{margin:8px 0 10px;font:700 1rem/1.4 var(--font-body);color:#3D4560}
+
+/* ---------- the title card: a ledger sheet ---------- */
+.ixw--app-acc .ixw-copy{position:relative;max-width:520px;margin-top:20px;padding:46px 30px 24px 48px;border-radius:6px;
+  background:linear-gradient(90deg,transparent 30px,rgba(226,69,60,.5) 30px 31.5px,transparent 31.5px),repeating-linear-gradient(180deg,#FFFFFF 0 27px,#DCEFE7 27px 28px);
+  box-shadow:0 0 0 1.5px #D3E6DE,0 40px 70px -30px rgba(20,70,50,.35)}
+.ixw--app-acc .ixw-copy::before{content:"DEBIT \00B7  CREDIT \00B7  BALANCE";position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:20px;border-radius:6px 6px 0 0;
+  background:var(--ac-grn);font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.14em;color:#FFFFFF}
+.ixw--app-acc .ixw-copy h1{max-width:15ch}
+.ixw--app-acc .ixw-copy .hand{color:var(--ac-grn)}
+.ixw--app-acc .ixw-hint .ic{color:var(--ac-red)}
+@media (max-width:767px){.ixw--app-acc .ixw-copy{padding:42px 20px 22px 30px;background:linear-gradient(90deg,transparent 16px,rgba(226,69,60,.5) 16px 17.5px,transparent 17.5px),repeating-linear-gradient(180deg,#FFFFFF 0 27px,#DCEFE7 27px 28px)}}
+
+/* ---------- the caption: a journal entry ---------- */
+.ixw--app-acc .ixw-cap{border-radius:10px;border:0;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3E6DE,0 0 0 6px var(--ac-grn-l),0 26px 44px -22px rgba(20,70,50,.35)}
+.ixw--app-acc .ixw-cap::before{content:"JOURNAL ENTRY \00B7  POSTED";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:4px;background:var(--ac-ink);color:#9FE3C8;font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.08em}
+.ixw--app-acc .ixw-cap-who b{color:var(--ac-grn)}.ixw--app-acc .ixw-cap-txt b{color:var(--ac-pur)}
+.ixw--app-acc .ixw-cap-rec{background:var(--ac-grn-l);border:1px dashed #8FD0B7;color:#1D5E4A;font-family:ui-monospace,Consolas,monospace}
+
+/* ---------- buttons: posted entries with a tick ---------- */
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:8px;border:0;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-acc main .btn-primary,.ixw--app-acc main .btn-primary:hover{color:#FFFFFF;background:var(--ac-grn);box-shadow:0 4px 0 #1D6E58}
+.ixw--app-acc main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-acc main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--ac-ink);background:#FFFFFF;box-shadow:inset 0 -3px 0 var(--ac-grn),0 0 0 1.5px #B9DCCE,0 4px 0 #B9DCCE}
+.ixw--app-acc main .btn-ghost::before{display:none}.ixw--app-acc main .btn-ghost .ic{color:var(--ac-grn)}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--app-acc .ixw-cta .btn-outline-white,.ixw--app-acc .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--app-acc .ixw-ibtn{border:2px solid var(--ac-ink);box-shadow:0 3px 0 var(--ac-ink)}
+.ixw--app-acc .ixw-ibtn--play,.ixw--app-acc .ixw-ibtn--play:hover{background:var(--ac-grn);color:#FFFFFF}
+.ixw--app-acc .ixw-dots button.is-on{background:var(--ac-grn);box-shadow:0 0 0 1.5px var(--ac-ink)}
+.ixw--app-acc .ixw-peek{border-color:var(--ac-ink);box-shadow:0 3px 0 var(--ac-ink)}.ixw--app-acc .ixw-peek[aria-pressed="true"]{background:var(--ac-grn-l)}
+
+/* ---------- the glance strip: the ledger's totals line ---------- */
+.ixw--app-acc .ow-strip{border-radius:6px;box-shadow:0 0 0 1.5px #D3E6DE,0 24px 44px -30px rgba(20,70,50,.3);border-top:3px double var(--ac-ink);background:#FFFFFF}
+.ixw--app-acc .ow-strip dt .ic{color:var(--ac-grn)}
+
+/* ---------- the end card ---------- */
+.ixw--app-acc main .cta{background:repeating-linear-gradient(180deg,rgba(255,255,255,.05) 0 27px,transparent 27px 28px),linear-gradient(120deg,#1D5E4A,#2E9C7E)}
+
+/* =====================================================================================================================
+   The sections below the hero: the counting house's paper. Warm ledger paper ruled in green, brass coins for the section
+   badges, index cards, pinned receipts, a posted-journal step list, brass plaques for the company facts, a PAID stamp on
+   the end card. Every rule is scoped to this page (body.ixw--app-acc).
+   ===================================================================================================================== */
+.ixw--app-acc main .aw-sec{position:relative;background:#FBFAF4}
+.ixw--app-acc main .aw-sec:nth-of-type(odd){background:repeating-linear-gradient(180deg,transparent 0 31px,rgba(46,156,126,.06) 31px 32px),#FBFAF4}
+.ixw--app-acc main .aw-sec.section--alt,.ixw--app-acc main .aw-band{background:linear-gradient(90deg,transparent 0 46px,rgba(226,69,60,.22) 46px 47.5px,transparent 47.5px),repeating-linear-gradient(180deg,transparent 0 31px,rgba(46,156,126,.09) 31px 32px),#EFF6F1}
+.ixw--app-acc main .aw-sec+.aw-sec::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(180deg,#C9A44A 0 2px,transparent 2px 5px,#C9A44A 5px 7px);opacity:.55}
+.ixw--app-acc main .aw-sec .hand{color:#2E9C7E}
+.ixw--app-acc main .aw-sec h2{color:#1B1F3B}
+.ixw--app-acc main .aw-sec .sec-head h2::after,.ixw--app-acc main [data-aw="impl"] h2::after{content:"";display:block;width:84px;height:7px;margin-top:14px;background:linear-gradient(180deg,#C9A44A 0 2px,transparent 2px 5px,#C9A44A 5px 7px)}
+.ixw--app-acc main .aw-sec .sec-head--row h2::after{display:none}
+.ixw--app-acc .aw-badge{display:inline-grid;place-items:center;width:42px;height:42px;margin:0 10px 0 0;vertical-align:-14px;border-radius:50%;color:#1D5E4A;
+  background:radial-gradient(circle at 35% 30%,#FFF2C2,#E9D08A 40%,#C9A44A 75%,#A9852E);box-shadow:inset 0 0 0 3px rgba(255,255,255,.35),inset 0 0 0 5px rgba(122,90,30,.25),0 6px 14px -6px rgba(122,90,30,.6);transition:rotate .6s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-acc .aw-badge .ic{width:20px;height:20px}
+.ixw--app-acc .sec-head:hover .aw-badge,.ixw--app-acc .reveal.is-in .aw-badge{rotate:360deg}
+.ixw--app-acc .cta .aw-badge{display:none}
+
+/* in one paragraph: a ledger card with a red margin */
+.ixw--app-acc main .answer-box{max-width:none;padding:22px 26px 22px 70px;border:0;border-radius:8px;background:linear-gradient(90deg,transparent 52px,rgba(226,69,60,.45) 52px 54px,transparent 54px),repeating-linear-gradient(180deg,#FFFFFF 0 27px,#E3F1EA 27px 28px);
+  box-shadow:0 0 0 1.5px #D3E6DE,0 26px 50px -30px rgba(20,70,50,.4)}
+.ixw--app-acc main .answer-box::before{content:"\2713";position:absolute;left:14px;top:20px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#2E9C7E;color:#FFFFFF;font:800 13px/1 var(--font-body)}
+.ixw--app-acc main .answer-h{background:#1D5E4A;color:#E9D08A}
+.ixw--app-acc main .answer-box p:not(.answer-h){font-size:14.5px;color:#2B3245}
+.ixw--app-acc main .answer-note .ic{color:#C9A44A}
+
+/* the month-end ledger band */
+.ixw--app-acc .aw-ledger{border-radius:10px;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 2px #1D5E4A,0 0 0 8px #E3F1EA,0 40px 70px -40px rgba(20,70,50,.5)}
+.ixw--app-acc .aw-ledger-head,.ixw--app-acc .aw-row{display:grid;grid-template-columns:64px minmax(180px,.9fr) minmax(0,2fr) 120px;align-items:center;gap:0 18px;padding:0 22px}
+.ixw--app-acc .aw-ledger-head{height:44px;background:#1D5E4A;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:#E9D08A}
+.ixw--app-acc .aw-rows{margin:0;padding:0;list-style:none}
+.ixw--app-acc .aw-row{min-height:66px;border-bottom:1px solid #E3F1EA;background:linear-gradient(90deg,#FFFFFF,#FFFFFF);transition:background .25s ease}
+.ixw--app-acc .aw-row:nth-child(even){background:#F7FBF8}
+.ixw--app-acc .aw-row:hover{background:#FFF8E4}
+.ixw--app-acc .aw-no{font:800 14px/1 ui-monospace,Consolas,monospace;color:#C9A44A}
+.ixw--app-acc .aw-st{display:flex;align-items:center;gap:10px;color:#1D5E4A}.ixw--app-acc .aw-st .ic{width:20px;height:20px;flex:none}.ixw--app-acc .aw-st b{font:800 15px/1.25 var(--font-display);color:#1B1F3B}
+.ixw--app-acc .aw-say{font-size:14.5px;line-height:1.5;color:#3D4560}.ixw--app-acc .aw-say b{color:#714B67}
+.ixw--app-acc .aw-ok{justify-self:end;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#E8F7EF;color:#1E7A55;font:800 12px/1 var(--font-body);
+  transform:rotate(-3deg);box-shadow:inset 0 0 0 1.5px #9FD9BF}
+.ixw--app-acc .aw-ok .ic{width:14px;height:14px}
+.ixw--app-acc .aw-total{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;align-items:center;margin:0;padding:18px 22px;border-top:6px double #1B1F3B;background:#FFFDF4;font-size:15px;color:#1B1F3B}
+.ixw--app-acc .aw-total span:first-child{font:800 12px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#2E9C7E}
+.ixw--app-acc .aw-total b{color:#2E9C7E}
+@media (max-width:860px){.ixw--app-acc .aw-ledger-head{display:none}.ixw--app-acc .aw-row{grid-template-columns:44px minmax(0,1fr);gap:6px 12px;padding:16px 18px}.ixw--app-acc .aw-say{grid-column:2}.ixw--app-acc .aw-ok{grid-column:2;justify-self:start}
+  .ixw--app-acc .aw-total{grid-template-columns:1fr;gap:6px}}
+
+/* the lifecycle demo: framed like a bound ledger */
+.ixw--app-acc main [data-aw="life"] .dm{border:2px solid #1D5E4A;border-radius:14px;box-shadow:0 0 0 7px #E3F1EA,0 0 0 9px #C9A44A,0 40px 70px -40px rgba(20,70,50,.5)}
+.ixw--app-acc main [data-aw="life"] .dm-head{background:linear-gradient(90deg,#1D5E4A,#2E9C7E);border-bottom:0}
+.ixw--app-acc main [data-aw="life"] .dm-title b{color:#FFFFFF}.ixw--app-acc main [data-aw="life"] .dm-title small{color:#CFEDE1}
+.ixw--app-acc main [data-aw="life"] .dm-note .ic{color:#2E9C7E}
+
+/* official videos: brass frames */
+.ixw--app-acc main [data-aw="watch"] .video{border:0;border-radius:12px;box-shadow:0 0 0 6px #C9A44A,0 0 0 8px #A9852E,0 0 0 13px #FFFDF4,0 30px 50px -26px rgba(20,70,50,.5);transition:translate .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-acc main [data-aw="watch"] .video:hover{translate:0 -4px}
+.ixw--app-acc main [data-aw="watch"] .videos{gap:34px;padding:14px}
+.ixw--app-acc main .yt-play{background:#2E9C7E;box-shadow:0 0 0 6px rgba(233,208,138,.6),0 14px 34px -10px rgba(20,70,50,.7)}
+.ixw--app-acc main .yt:hover .yt-play{background:#1D5E4A}
+
+/* section by section: the screenshots on clipped ledger sheets, the kicker as a rubber stamp */
+.ixw--app-acc main [data-aw="what"] .feats{gap:64px}
+.ixw--app-acc main [data-aw="what"] .feat-media{position:relative;overflow:visible;border:0;border-radius:6px;padding:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3E6DE,0 30px 60px -34px rgba(20,70,50,.5);rotate:-1deg;transition:rotate .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-acc main [data-aw="what"] .feat--flip .feat-media{rotate:1deg}
+.ixw--app-acc main [data-aw="what"] .feat:hover .feat-media{rotate:0deg}
+.ixw--app-acc main [data-aw="what"] .feat-media::before{content:"";position:absolute;z-index:2;left:50%;top:-12px;width:70px;height:22px;margin-left:-35px;border-radius:6px;background:linear-gradient(180deg,#E9D08A,#C9A44A);box-shadow:0 3px 6px rgba(122,90,30,.35),inset 0 -6px 0 rgba(122,90,30,.25)}
+.ixw--app-acc main [data-aw="what"] .feat-media a,.ixw--app-acc main [data-aw="what"] .feat-media img{border-radius:3px}
+.ixw--app-acc main [data-aw="what"] .feat-media .zoom{display:block;overflow:hidden}
+.ixw--app-acc main [data-aw="what"] .card-kicker{display:inline-block;padding:6px 10px;border:2px solid #E2453C;border-radius:4px;color:#E2453C;font-family:ui-monospace,Consolas,monospace;rotate:-3deg;background:rgba(226,69,60,.05)}
+.ixw--app-acc main [data-aw="what"] .feat-copy h3{font-size:1.6rem}
+.ixw--app-acc main [data-aw="what"] .feat-copy p{font-size:1.04rem}
+.ixw--app-acc main [data-aw="what"] .checks .ic,.ixw--app-acc main [data-aw="impl"] .checks .ic{color:#2E9C7E}
+.ixw--app-acc main [data-aw="what"] .card{border:0;border-radius:6px;padding:34px 28px 28px;background:linear-gradient(180deg,#2E9C7E 0 8px,transparent 8px),repeating-linear-gradient(180deg,#FFFFFF 0 27px,#EAF5EF 27px 28px);box-shadow:0 0 0 1.5px #D3E6DE,0 26px 46px -30px rgba(20,70,50,.45)}
+.ixw--app-acc main [data-aw="what"] .card::after{content:"";position:absolute;right:20px;top:22px;width:14px;height:14px;border-radius:50%;background:#FBFAF4;box-shadow:inset 0 2px 3px rgba(0,0,0,.18)}
+.ixw--app-acc main [data-aw="what"] .card:hover{transform:translateY(-4px) rotate(-.6deg)}
+
+/* inside the app: receipts pinned to a cork rail */
+.ixw--app-acc main [data-aw="screens"] .shots{padding:26px 8px 22px;gap:26px}
+.ixw--app-acc main [data-aw="screens"] .shot{position:relative;overflow:visible;border:0;border-radius:4px;background:#FFFFFF;padding:10px 10px 0;box-shadow:0 18px 34px -22px rgba(20,70,50,.55);rotate:-1.4deg;transition:rotate .35s cubic-bezier(.34,1.45,.64,1),translate .35s ease}
+.ixw--app-acc main [data-aw="screens"] .shot:nth-child(even){rotate:1.2deg}
+.ixw--app-acc main [data-aw="screens"] .shot:hover{rotate:0deg;translate:0 -4px}
+.ixw--app-acc main [data-aw="screens"] .shot::before{content:"";position:absolute;z-index:2;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FF8A80,#E2453C 60%,#A8261E);box-shadow:0 3px 4px rgba(0,0,0,.25)}
+.ixw--app-acc main [data-aw="screens"] .shot .zoom{display:block;overflow:hidden;border-radius:2px}
+.ixw--app-acc main [data-aw="screens"] .shot figcaption{padding:10px 4px 12px;font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:#1D5E4A;border-top:1px dashed #C9D9D1;margin-top:8px}
+
+/* how TechNext implements it: posted journal lines */
+.ixw--app-acc main .aw-steps{counter-reset:je;gap:0;margin:0;padding:8px 0;border-radius:8px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3E6DE,0 26px 46px -30px rgba(20,70,50,.4)}
+.ixw--app-acc main .aw-steps li{counter-increment:je;position:relative;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px dashed #D3E6DE}
+.ixw--app-acc main .aw-steps li:last-child{border-bottom:0}
+.ixw--app-acc main .aw-steps li::before{content:"JE " counter(je,decimal-leading-zero);flex:none;width:56px;height:30px;display:grid;place-items:center;border-radius:6px;background:#1D5E4A;color:#E9D08A;font:800 11.5px/1 ui-monospace,Consolas,monospace}
+.ixw--app-acc main .aw-steps li .ic{order:3;margin-left:auto;width:22px;height:22px;padding:3px;border-radius:50%;background:#2E9C7E;color:#FFFFFF}
+
+/* who implements it: brass plaques */
+.ixw--app-acc .aw-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none}
+.ixw--app-acc .aw-fact{position:relative;display:grid;gap:6px;padding:22px 26px;border-radius:10px;background:linear-gradient(160deg,#FFF6D8,#F1DC9C 45%,#D9B860);box-shadow:inset 0 0 0 2px rgba(255,255,255,.55),inset 0 0 0 4px rgba(122,90,30,.3),0 18px 36px -24px rgba(122,90,30,.7);transition:translate .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-acc .aw-fact::before,.ixw--app-acc .aw-fact::after{content:"";position:absolute;top:10px;width:7px;height:7px;border-radius:50%;background:#8F6E22;box-shadow:0 1px 0 rgba(255,255,255,.6)}
+.ixw--app-acc .aw-fact::before{left:10px}.ixw--app-acc .aw-fact::after{right:10px}
+.ixw--app-acc .aw-fact:hover{translate:0 -4px}
+.ixw--app-acc .aw-fact b{font:800 1.5rem/1.1 var(--font-display);color:#1D5E4A}
+.ixw--app-acc .aw-fact span{font:600 14px/1.4 var(--font-body);color:#5A3F12}
+@media (max-width:860px){.ixw--app-acc .aw-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ixw--app-acc .aw-facts{grid-template-columns:1fr}}
+
+/* works with: ledger tabs */
+.ixw--app-acc main [data-aw="works"] .app{border:0;border-radius:4px 12px 12px 4px;background:#FFFFFF;box-shadow:inset 6px 0 0 #2E9C7E,0 0 0 1.5px #D3E6DE;padding:16px 16px 16px 20px}
+.ixw--app-acc main [data-aw="works"] .app:nth-child(3n+2){box-shadow:inset 6px 0 0 #714B67,0 0 0 1.5px #D3E6DE}
+.ixw--app-acc main [data-aw="works"] .app:nth-child(3n){box-shadow:inset 6px 0 0 #C9A44A,0 0 0 1.5px #D3E6DE}
+.ixw--app-acc main [data-aw="works"] .app:hover{transform:translateX(4px)}
+.ixw--app-acc main [data-aw="works"] .app > .ic{color:#2E9C7E}
+
+/* the end card: a PAID stamp and a stack of coins */
+.ixw--app-acc main .cta{padding-right:56px;box-shadow:0 0 0 6px #E3F1EA,0 0 0 8px #C9A44A}
+.ixw--app-acc main .cta .hand{color:#E9D08A}
+.ixw--app-acc main .cta .btn-white{color:#1D5E4A;background:#FFFFFF;border:0;box-shadow:0 4px 0 #C9A44A}
+.ixw--app-acc main .cta .btn-outline-white{color:#FFFFFF;border:2px solid #E9D08A}
+.ixw--app-acc .aw-cta-art{position:absolute;right:34%;top:18px;width:150px;height:110px;pointer-events:none;z-index:0}
+.ixw--app-acc .aw-stamp{position:absolute;left:0;top:6px;display:grid;justify-items:center;padding:8px 14px;border:3px solid rgba(255,138,128,.9);border-radius:6px;color:rgba(255,138,128,.95);font:800 26px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;rotate:-12deg}
+.ixw--app-acc .aw-stamp small{font:700 9px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
+.ixw--app-acc .aw-coin{position:absolute;right:0;width:46px;height:14px;border-radius:50%;background:linear-gradient(180deg,#F6DE94,#C9A44A);box-shadow:0 2px 0 #8F6E22}
+.ixw--app-acc .aw-coin:nth-of-type(2){bottom:20px}.ixw--app-acc .aw-coin:nth-of-type(3){bottom:31px}.ixw--app-acc .aw-coin:nth-of-type(4){bottom:42px;animation:awCoin 3.2s ease-in-out infinite}
+@keyframes awCoin{0%,70%,100%{translate:0 0}80%{translate:0 -14px}90%{translate:0 0}}
+@media (max-width:1100px){.ixw--app-acc .aw-cta-art{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--app-acc .aw-coin{animation:none}.ixw--app-acc .aw-badge{transition:none}}
+
+/* section heads: the badge sits beside the handwriting (no watermark decorations beside the heads) */
+.ixw--app-acc main .aw-sec .sec-head{position:static}
+.ixw--app-acc main .aw-sec>.container{position:relative}
+.ixw--app-acc main .aw-badge+.hand{display:inline-block;vertical-align:middle}
+.ixw--app-acc main [data-aw="what"] .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+/* ======== round 4: section fixes ======== */
+.ixw--app-acc main [data-aw="cta"] h2{color:#FFFFFF}
+.ixw--app-acc main [data-aw="cta"] .hand{color:#E9D08A}
+@media (min-width:900px){.ixw--app-acc main [data-aw="works"] .apps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ======== round 4: the hero controls: ledger buttons with a brass binding, pills and caption controls ======== */
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){overflow:hidden;height:52px;padding:0 22px 0 26px;border:0;border-radius:8px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::before{content:"";display:block;position:absolute;inset:0 auto 0 0;width:7px;background:repeating-linear-gradient(180deg,#E9D08A 0 5px,#C9A44A 5px 7px);transform:none;z-index:0;transition:none}
+.ixw--app-acc main .btn-primary,.ixw--app-acc main .btn-primary:hover{color:#FFFFFF;background:#1F7F65;box-shadow:inset 0 0 0 1px rgba(233,208,138,.45),0 4px 0 #14543F}
+.ixw--app-acc main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-acc main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:#1B1F3B;background:#FFFDF7 linear-gradient(180deg,transparent 0 calc(100% - 13px),rgba(46,156,126,.18) calc(100% - 13px) calc(100% - 12px),transparent calc(100% - 12px));box-shadow:inset 0 0 0 1.5px #B9DCCE,0 4px 0 #B9DCCE}
+.ixw--app-acc main .ixw-cta .btn-outline-white,.ixw--app-acc main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 2px #E9D08A}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--app-acc main .btn-primary:hover{box-shadow:inset 0 0 0 1px rgba(233,208,138,.6),0 6px 0 #14543F,0 16px 22px -10px rgba(31,127,101,.55)}
+.ixw--app-acc main .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px #2E9C7E,0 6px 0 #9FD0BC,0 16px 22px -12px rgba(31,127,101,.35)}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--app-acc main .btn-primary:active{box-shadow:inset 0 0 0 1px rgba(233,208,138,.45),0 1px 0 #14543F}
+.ixw--app-acc main .btn-ghost:active{box-shadow:inset 0 0 0 1.5px #2E9C7E,0 1px 0 #B9DCCE}
+.ixw--app-acc main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #C9A44A;outline-offset:4px}
+.ixw--app-acc main .btn-primary .ic{width:26px;height:26px;padding:5px;border-radius:50%;background:rgba(255,255,255,.16)}
+.ixw--app-acc main .btn-ghost .ic{color:#1F7F65}
+.ixw--app-acc .ixw-copy .actions{gap:12px}
+
+.ixw--app-acc .ixw-ep-tag{height:30px;padding:0 13px 0 6px;box-shadow:0 3px 0 #0B0B22;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-acc .ixw-ep-tag:hover{translate:0 -2px;box-shadow:0 5px 0 #0B0B22}
+.ixw--app-acc .ixw-ep-tag:active{translate:0 2px;box-shadow:0 1px 0 #0B0B22;transition-duration:.06s}
+.ixw--app-acc .ixw-ep-tag:focus-visible{outline:3px solid #C9A44A;outline-offset:3px}
+.ixw--app-acc .ixw-ep>span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#E3F3EC;box-shadow:inset 0 0 0 1.5px #1F7F6533;font:800 12.5px/1 var(--font-body);color:#1B1F3B}
+.ixw--app-acc .ixw-cap .ixw-ibtn{width:38px;height:38px;border:2px solid #1B1F3B;background:#FFFFFF;color:#1B1F3B;box-shadow:0 3px 0 #1B1F3B;transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .18s ease,color .18s ease}
+.ixw--app-acc .ixw-cap .ixw-ibtn:hover{translate:0 -2px;background:#E3F3EC;color:#1B1F3B;border-color:#1B1F3B;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-acc .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-acc .ixw-cap .ixw-ibtn:focus-visible,.ixw--app-acc .ixw-dots button:focus-visible,.ixw--app-acc .ixw-peek:focus-visible{outline:3px solid #C9A44A;outline-offset:3px}
+.ixw--app-acc .ixw-cap .ixw-ibtn--play,.ixw--app-acc .ixw-cap .ixw-ibtn--play:hover{width:46px;height:46px;background:#1F7F65;color:#FFFFFF}
+.ixw--app-acc .ixw-cap .ixw-ibtn--play:hover{filter:brightness(1.06)}
+.ixw--app-acc .ixw-dots{gap:6px;padding:4px 2px}
+.ixw--app-acc .ixw-dots button{width:9px;height:9px;background:#D5DCE6;box-shadow:inset 0 0 0 1px rgba(27,31,59,.06);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,translate .2s ease}
+.ixw--app-acc .ixw-dots button:hover{background:#1F7F65;translate:0 -1px}
+.ixw--app-acc .ixw-dots button.is-on{width:26px;background:#C9A44A;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--app-acc .ixw-peek{height:40px;padding:0 16px 0 13px;border:2px solid #1B1F3B;color:#1B1F3B;background:#FFFFFF;box-shadow:0 3px 0 #1B1F3B}
+.ixw--app-acc .ixw-peek::before{color:#1F7F65}
+.ixw--app-acc .ixw-peek:hover{translate:0 -2px;background:#E3F3EC;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-acc .ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-acc .ixw-peek[aria-pressed="true"]{background:#E3F3EC}
+.ixw--app-acc .ixw-peek[aria-pressed="true"]::before{color:#1B1F3B}
+@media (prefers-reduced-motion:reduce){.ixw--app-acc :is(.ixw-ep-tag,.ixw-ibtn,.ixw-peek,.ixw-dots button,.btn){transition:none}}
+
+/* ======== CALM LAYER (9 Oct 2026): 50% TechNext base, 50% the counting house. One quiet accent (#2E9C7E), white cards, no tilts,
+   tape, pins, rings or lips; each section keeps one or two themed touches (a brass double rule under the heads, the green-headed month-end ledger, JE numbers on the steps). ======== */
+body.ixw--app-acc{--calm-accent:#2E9C7E;--calm-accent-ink:#1D5E4A;--calm-accent-line:#B9DCCE;--calm-accent-wash:#F3F9F6;--calm-card-rule:3px solid #2E9C7E}
+body.ixw--app-acc main .aw-sec,body.ixw--app-acc main .aw-sec:nth-of-type(odd){background:#FFFFFF!important}
+body.ixw--app-acc main .aw-sec.section--alt,body.ixw--app-acc main .aw-band{background:#F3F9F6!important}
+body.ixw--app-acc main .aw-sec::before,body.ixw--app-acc main .aw-sec+.aw-sec::before,body.ixw--app-acc main .aw-sec.section--alt::before{display:none!important}
+body.ixw--app-acc main .aw-badge{display:none!important}
+body.ixw--app-acc main .aw-sec .sec-head h2::after,body.ixw--app-acc main [data-aw="impl"] h2::after{content:""!important;display:block!important;width:56px!important;height:7px!important;margin-top:16px!important;background:linear-gradient(180deg,#C9A44A 0 2px,transparent 2px 5px,#C9A44A 5px 7px)!important;border-radius:2px}
+body.ixw--app-acc main [data-aw="cta"] h2::after,body.ixw--app-acc main .aw-sec .sec-head--row h2::after{display:none!important}
+/* in one paragraph: a plain white card with the accent on its left edge */
+body.ixw--app-acc main .answer-box{padding:22px 26px!important;border:1px solid var(--calm-line)!important;border-left:3px solid #2E9C7E!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-acc main .answer-box::before,body.ixw--app-acc main .answer-box::after{display:none!important}
+body.ixw--app-acc main .answer-h{background:#F3F9F6!important;color:#1D5E4A!important;box-shadow:none!important;border:0!important}
+/* the lifecycle demo: one clean panel, a thin accent rule on top */
+body.ixw--app-acc main [data-aw="life"] .dm{border:1px solid var(--calm-line)!important;border-top:3px solid #2E9C7E!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+body.ixw--app-acc main [data-aw="life"] .dm-head{background:#FFFFFF!important;border-bottom:1px solid var(--calm-line)!important}
+body.ixw--app-acc main [data-aw="life"] .dm-title b{color:#1B1F3B!important}body.ixw--app-acc main [data-aw="life"] .dm-title small{color:#5C6B7A!important}
+/* official videos: plain rounded frames */
+body.ixw--app-acc main [data-aw="watch"] .video{border:1px solid var(--calm-line)!important;border-radius:14px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;translate:none!important;overflow:hidden}
+body.ixw--app-acc main [data-aw="watch"] .video::before,body.ixw--app-acc main [data-aw="watch"] .video::after{display:none!important}
+body.ixw--app-acc main [data-aw="watch"] .videos{gap:24px!important;padding:0!important}
+body.ixw--app-acc main .yt-play{background:#3167CA!important;box-shadow:0 10px 24px -10px rgba(31,63,130,.6)!important}
+/* section by section: screenshots in a plain white frame, the kicker as a small accent label */
+body.ixw--app-acc main [data-aw="what"] .feat-media{rotate:none!important;padding:10px!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-acc main [data-aw="what"] .feat-media::before,body.ixw--app-acc main [data-aw="what"] .feat-media::after{display:none!important}
+body.ixw--app-acc main [data-aw="what"] .card-kicker{display:inline-block!important;padding:0!important;border:0!important;background:none!important;rotate:none!important;clip-path:none!important;color:#1D5E4A!important;font:800 12px/1.4 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase}
+body.ixw--app-acc main [data-aw="what"] .card-kicker::before,body.ixw--app-acc main [data-aw="what"] .card-kicker::after{display:none!important}
+body.ixw--app-acc main [data-aw="what"] .feat-copy h3{font-size:1.45rem!important}
+body.ixw--app-acc main [data-aw="what"] .card{padding:28px 26px!important;background:#FFFFFF!important;rotate:none!important}
+body.ixw--app-acc main [data-aw="what"] .card::before,body.ixw--app-acc main [data-aw="what"] .card::after{display:none!important}
+body.ixw--app-acc main [data-aw="what"] .card:hover{transform:translateY(-2px)!important}
+body.ixw--app-acc main :is([data-aw="what"],[data-aw="impl"]) .checks .ic{color:#2E9C7E!important}
+/* inside the app: a straight row of framed screenshots */
+body.ixw--app-acc main [data-aw="screens"] .shots{padding:0!important;gap:20px!important}
+body.ixw--app-acc main [data-aw="screens"] .shot{rotate:none!important;translate:none!important;padding:10px 10px 0!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-acc main [data-aw="screens"] .shot::before,body.ixw--app-acc main [data-aw="screens"] .shot::after{display:none!important}
+body.ixw--app-acc main [data-aw="screens"] .shot figcaption{border-top:1px solid var(--calm-line)!important;font:500 12.5px/1.4 var(--font-body)!important;color:#5C6B7A!important;background:none!important}
+/* how TechNext implements it: a white list card, numbered in the accent */
+body.ixw--app-acc main .aw-steps{padding:6px 0!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important;clip-path:none!important}
+body.ixw--app-acc main .aw-steps::before,body.ixw--app-acc main .aw-steps::after{display:none!important}
+body.ixw--app-acc main .aw-steps li{border-bottom:1px solid var(--calm-line)!important;padding:16px 22px!important;background:none!important}
+body.ixw--app-acc main .aw-steps li:last-child{border-bottom:0!important}
+body.ixw--app-acc main .aw-steps li::before{display:none!important}
+body.ixw--app-acc main .aw-steps .aw-n{display:grid;place-items:center;flex:none;min-width:48px;height:28px;padding:0 8px;border-radius:8px;background:#F3F9F6;color:#1D5E4A;font:800 12px/1 var(--font-body);letter-spacing:.04em}
+body.ixw--app-acc main .aw-steps li .ic{order:3;margin-left:auto;width:20px!important;height:20px!important;padding:0!important;background:none!important;color:#2E9C7E!important}
+/* works with: plain app cards with a thin accent edge */
+body.ixw--app-acc main [data-aw="works"] .app{border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;border-left:3px solid #2E9C7E!important;box-shadow:none!important;rotate:none!important;clip-path:none!important}
+body.ixw--app-acc main [data-aw="works"] .app::before,body.ixw--app-acc main [data-aw="works"] .app::after{display:none!important}
+body.ixw--app-acc main [data-aw="works"] .app:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow)!important}
+/* the end card: the TechNext band, no rings */
+body.ixw--app-acc main .cta{box-shadow:0 30px 60px -36px rgba(30,70,145,.6)!important}
+body.ixw--app-acc main .cta .btn-white{box-shadow:none!important}body.ixw--app-acc main .cta .btn-outline-white{border:1px solid rgba(255,255,255,.7)!important}
+body.ixw--app-acc main [data-aw="cta"] .hand{color:#FFFFFF!important}
+/* buttons: the kit's flat buttons, without the world's tag / binding / barcode shapes */
+body.ixw--app-acc .btn{padding:0 22px!important;margin:0!important;clip-path:none!important;filter:none!important;rotate:none!important;translate:none!important;overflow:visible!important}
+body.ixw--app-acc .btn::before,body.ixw--app-acc .btn::after{display:none!important}
+body.ixw--app-acc .btn-primary .ic{width:18px!important;height:18px!important;padding:0!important;background:none!important}
+
+/* themed touch: the month-end ledger keeps its green header and status column, in one clean panel */
+body.ixw--app-acc .aw-ledger{border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important;border-radius:16px!important}
+body.ixw--app-acc .aw-ledger-head{background:#1D5E4A!important;color:#FFFFFF!important;font:800 11px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--app-acc .aw-no{font:800 13px/1 var(--font-body)!important;color:#2E9C7E!important}
+body.ixw--app-acc .aw-row:hover{background:#F3F9F6!important}
+body.ixw--app-acc .aw-ok{transform:none!important;rotate:none!important;box-shadow:none!important}
+body.ixw--app-acc .aw-total{border-top:1px solid var(--calm-line)!important;background:#F3F9F6!important}
+body.ixw--app-acc .aw-total span:first-child{font:800 12px/1 var(--font-body)!important}

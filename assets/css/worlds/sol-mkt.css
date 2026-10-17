@@ -1,0 +1,338 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-mkt (/solutions/marketing) — the harbour town. Sea blue, the client's livery (blue, navy, gold), sand and coral.
+   The title card is the shop's sign under its striped awning (an OPEN tag swings on the corner); the caption is the harbour
+   radio; buttons are pills on a navy lip and a rope-bound ghost; the glance strip is the quay's rope rail with life-ring icons.
+   Below the hero: a harbour notice with a life ring, the chart room (the attribution demo), three shopfronts on one quay, a
+   voyage between four buoys, the manifest with its stamp, buoy-numbered questions, postcards, and the pier-end banner. */
+.ixw--sol-mkt{--hb-blue:#2F62C0;--hb-blue-l:#DCE8FA;--hb-navy:#1F2A55;--hb-gold:#E3A21A;--hb-gold-l:#F6C74A;--hb-sea:#3E9FD0;--hb-sea-l:#E3F4FB;--hb-sand:#F5EDDF;--hb-coral:#E0567A;--hb-ink:#1B1F3B;
+  --hb-rope:repeating-linear-gradient(-55deg,#D9B57A 0 5px,#B98A5E 5px 8px,#E8CB94 8px 11px);
+  --w-alt:#F1F8FC;--w-dot:rgba(62,159,208,.13);--w-hand:#2F62C0;--lab-bd:2px solid #1F2A55;--lab-lip:#1F2A55;--lab-tail:#1F2A55;--lab-r:7px;
+  
+  --ii-bg:linear-gradient(180deg,#8FD0F5 0,#E4F5FD 55%,#F5EDDF 100%);--ii-ink:#1F2A55;--ii-b:#2F62C0;--ii-accent:#E3A21A;--ii-lip:#1F2A55;--ii-ep-bg:#2F62C0;--ii-ep-fg:#FFFFFF}
+.ixw--sol-mkt .ixw-hero{background:linear-gradient(180deg,#7CC6F2 0,#E4F5FD 27%,#9FD8F2 27%,#4AAEDC 61%,#E8DDCB 61%,#D9C8AE 100%)}
+
+/* ---------- the title card: the shop's sign under its awning ---------- */
+.ixw--sol-mkt .ixw-copy{position:relative;max-width:500px;margin-top:26px;padding:40px 30px 22px;border-radius:14px;background:#FFFFFF;
+  box-shadow:0 0 0 2px var(--hb-navy),0 7px 0 var(--hb-navy),0 44px 70px -30px rgba(20,40,90,.42)}
+.ixw--sol-mkt .ixw-copy::before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;height:32px;border-radius:14px 14px 0 0;
+  background:linear-gradient(180deg,transparent 0 19px,var(--hb-gold) 19px 21px,transparent 21px),repeating-linear-gradient(90deg,var(--hb-blue) 0 26px,#FFFFFF 26px 52px);
+  -webkit-mask:linear-gradient(#000,#000) 0 0/100% 20px no-repeat,radial-gradient(circle at 13px 19px,#000 12px,transparent 12.5px) 0 0/26px 32px repeat-x;
+  mask:linear-gradient(#000,#000) 0 0/100% 20px no-repeat,radial-gradient(circle at 13px 19px,#000 12px,transparent 12.5px) 0 0/26px 32px repeat-x}
+.ixw--sol-mkt .ixw-copy::after{content:"OPEN";position:absolute;right:26px;top:22px;padding:6px 11px 5px;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-blue),0 3px 0 2px var(--hb-navy);
+  font:800 11px/1 var(--font-display);letter-spacing:.16em;color:var(--hb-blue);transform-origin:50% -12px;animation:hbrSwing 3.4s ease-in-out infinite}
+@keyframes hbrSwing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.ixw--sol-mkt .ixw-copy h1{max-width:17ch;font-size:clamp(1.9rem,2.7vw,2.45rem)}
+.ixw--sol-mkt .ixw-copy .crumbs{margin-bottom:10px}.ixw--sol-mkt .ixw-copy .ixw-ep{margin-bottom:10px}
+.ixw--sol-mkt .ixw-copy .hand{color:var(--hb-blue)}
+.ixw--sol-mkt .ixw-copy .lead{margin-top:12px;font-size:.97rem;line-height:1.55;max-width:46ch}
+.ixw--sol-mkt .hbr-badges{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0}
+.ixw--sol-mkt .hbr-badges span{display:inline-flex;align-items:center;gap:6px;height:25px;padding:0 10px 0 7px;border-radius:6px 999px 999px 6px;background:var(--hb-blue-l);box-shadow:inset 3px 0 0 var(--hb-blue);font:800 11.5px/1 var(--font-body);color:var(--hb-navy)}
+.ixw--sol-mkt .hbr-badges span:nth-child(3){background:#FDF1D3;box-shadow:inset 3px 0 0 var(--hb-gold)}
+.ixw--sol-mkt .hbr-badges span:nth-child(2){background:#FBE3EA;box-shadow:inset 3px 0 0 var(--hb-coral)}
+.ixw--sol-mkt .hbr-badges .ic{width:14px;height:14px;color:var(--hb-blue)}
+.ixw--sol-mkt .hbr-badges span:nth-child(2) .ic{color:var(--hb-coral)}.ixw--sol-mkt .hbr-badges span:nth-child(3) .ic{color:#B9800C}
+.ixw--sol-mkt .ixw-copy .actions{margin-top:18px;gap:12px}
+.ixw--sol-mkt .ixw-copy .actions .btn-lg{height:50px;padding:0 18px;font-size:15px}
+.ixw--sol-mkt .ixw-hint{margin-top:16px}
+.ixw--sol-mkt .ixw-hint .ic{color:var(--hb-gold)}
+@media (max-width:767px){.ixw--sol-mkt .ixw-copy{padding:44px 20px 22px}.ixw--sol-mkt .ixw-copy::after{top:30px;right:16px}.ixw--sol-mkt .hbr-badges span:nth-child(n+4){display:none}}
+
+/* ---------- the caption: the harbour radio ---------- */
+.ixw--sol-mkt .ixw-cap{border-radius:16px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 5px 0 var(--hb-navy),0 28px 44px -22px rgba(20,40,90,.42)}
+.ixw--sol-mkt .ixw-cap::before{content:"HARBOUR RADIO";position:absolute;left:18px;top:-13px;padding:5px 10px 5px 24px;border-radius:999px;background:var(--hb-gold-l);box-shadow:0 0 0 2px var(--hb-navy);color:var(--hb-navy);font:800 10.5px/1 var(--font-body);letter-spacing:.12em;
+  background-image:radial-gradient(circle at 12px 50%,var(--hb-coral) 3.5px,transparent 4px)}
+.ixw--sol-mkt .ixw-cap-who b{color:var(--hb-blue)}.ixw--sol-mkt .ixw-cap-txt b{color:#B9306A}
+.ixw--sol-mkt .ixw-cap-rec{background:var(--hb-sea-l);border:1px dashed #86C6E6;color:#16507A}
+.ixw--sol-mkt .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2px var(--hb-navy)}
+
+/* ---------- buttons: a pill on a navy lip, a rope-bound ghost ---------- */
+.ixw--sol-mkt main :is(.btn-primary,.btn-ghost){border-radius:999px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease,background-color .2s ease}
+.ixw--sol-mkt main .btn-primary,.ixw--sol-mkt main .btn-primary:hover{color:#FFFFFF;background:var(--hb-blue)}
+.ixw--sol-mkt main .btn-primary{box-shadow:0 0 0 2px var(--hb-navy),0 5px 0 2px var(--hb-navy)}
+.ixw--sol-mkt main .btn-primary:hover{background:#3A6FD0;translate:0 -2px;box-shadow:0 0 0 2px var(--hb-navy),0 7px 0 2px var(--hb-navy)}
+.ixw--sol-mkt main .btn-primary .ic{background:var(--hb-gold-l);color:var(--hb-navy)}
+.ixw--sol-mkt main .btn-ghost{border:3px solid transparent;color:var(--hb-navy);background:linear-gradient(#FFFFFF,#FFFFFF) padding-box,var(--hb-rope) border-box;box-shadow:0 5px 0 #8E6440}
+.ixw--sol-mkt main .btn-ghost::before{display:none}
+.ixw--sol-mkt main .btn-ghost:hover{translate:0 -2px;color:var(--hb-blue);border-color:transparent;box-shadow:0 7px 0 #8E6440}
+.ixw--sol-mkt main .btn-ghost .ic{color:var(--hb-blue)}
+.ixw--sol-mkt main :is(.btn-primary,.btn-ghost):active{translate:0 4px;box-shadow:0 0 0 2px var(--hb-navy),0 1px 0 2px var(--hb-navy);transition-duration:.06s}
+.ixw--sol-mkt main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white):focus-visible{outline:3px solid var(--hb-gold-l);outline-offset:4px}
+.ixw--sol-mkt .ixw-ibtn{border:2px solid var(--hb-navy);box-shadow:0 3px 0 var(--hb-navy)}
+.ixw--sol-mkt .ixw-ibtn--play,.ixw--sol-mkt .ixw-ibtn--play:hover{background:var(--hb-blue);color:#FFFFFF}
+.ixw--sol-mkt .ixw-dots button.is-on{background:var(--hb-gold);box-shadow:0 0 0 1.5px var(--hb-navy)}
+.ixw--sol-mkt .ixw-peek{border-color:var(--hb-navy);box-shadow:0 3px 0 var(--hb-navy)}.ixw--sol-mkt .ixw-peek[aria-pressed="true"]{background:var(--hb-blue-l)}
+
+/* ---------- the glance strip: the quay's rope rail, life-ring icons ---------- */
+.ixw--sol-mkt .hbr-strip{padding-top:16px;border-radius:14px;background:var(--hb-rope) 0 0/100% 9px no-repeat,#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 6px 0 var(--hb-navy),0 26px 44px -30px rgba(20,40,90,.4)}
+.ixw--sol-mkt .hbr-strip dt{color:#4A5470}
+.ixw--sol-mkt .hbr-strip dt .ic{width:24px;height:24px;padding:5px;border-radius:50%;background:var(--hb-navy);color:var(--hb-gold-l);box-shadow:0 0 0 2px #FFFFFF,0 0 0 4px var(--hb-coral)}
+.ixw--sol-mkt .hbr-strip>div{position:relative}
+
+/* ---------- the end card ---------- */
+.ixw--sol-mkt main .cta{background:linear-gradient(120deg,#1F4C9E,#2F62C0 60%,#3E9FD0)}
+
+/* ============================== below the hero, section by section ============================== */
+/* the one-paragraph answer: a harbour notice with a life ring */
+.ixw--sol-mkt .hbr-notice{max-width:980px;padding:24px 28px 24px 118px;border:0;border-radius:16px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 6px 0 var(--hb-navy),0 26px 44px -32px rgba(20,40,90,.4)}
+.ixw--sol-mkt .hbr-notice::before,.ixw--sol-mkt .hbr-notice::after{content:"";position:absolute;top:12px;width:9px;height:9px;border-radius:50%;background:#C9D3DE;box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--sol-mkt .hbr-notice::before{left:12px}.ixw--sol-mkt .hbr-notice::after{right:12px}
+.ixw--sol-mkt .hbr-ring{position:absolute;left:30px;top:50%;width:64px;height:64px;margin-top:-32px;border-radius:50%;
+  background:radial-gradient(circle,transparent 0 15px,var(--hb-navy) 15px 17px,transparent 17px 30px,var(--hb-navy) 30px 32px,transparent 32px),
+    conic-gradient(var(--hb-coral) 0 12.5%,#FFFFFF 0 25%,var(--hb-coral) 0 37.5%,#FFFFFF 0 50%,var(--hb-coral) 0 62.5%,#FFFFFF 0 75%,var(--hb-coral) 0 87.5%,#FFFFFF 0);
+  -webkit-mask:radial-gradient(circle,transparent 0 15px,#000 15.5px 31.5px,transparent 32px);mask:radial-gradient(circle,transparent 0 15px,#000 15.5px 31.5px,transparent 32px);
+  filter:drop-shadow(0 3px 0 rgba(31,42,85,.3));transform-origin:50% -14px;animation:hbrRock 4s ease-in-out infinite}
+@keyframes hbrRock{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.ixw--sol-mkt .hbr-notice .answer-h{background:var(--hb-navy);color:var(--hb-gold-l)}
+.ixw--sol-mkt .hbr-notice p:not(.answer-h){font-size:15px;color:#3D4560}
+@media (max-width:640px){.ixw--sol-mkt .hbr-notice{padding:20px 18px 20px 86px}.ixw--sol-mkt .hbr-ring{left:18px;width:50px;height:50px;margin-top:-25px}}
+
+/* the demo: the chart room, a sea chart framed in navy with a compass rose and the channel chips */
+.ixw--sol-mkt .hbr-chart-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--hb-sea-l) 100%)}
+.ixw--sol-mkt .hbr-chart{position:relative;padding:12px;border-radius:26px;background:repeating-linear-gradient(0deg,transparent 0 46px,rgba(62,159,208,.16) 46px 47px),repeating-linear-gradient(90deg,transparent 0 46px,rgba(62,159,208,.16) 46px 47px),#EAF6FC;
+  box-shadow:0 0 0 3px var(--hb-navy),0 8px 0 3px var(--hb-navy),0 50px 80px -46px rgba(20,40,90,.55)}
+.ixw--sol-mkt .hbr-chart::before{content:"";position:absolute;inset:5px;border-radius:21px;border:2px dashed rgba(31,42,85,.25);pointer-events:none}
+.ixw--sol-mkt .hbr-chart-top{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:6px 10px 14px;color:var(--hb-navy);font:800 13px/1 var(--font-display);letter-spacing:.03em}
+.ixw--sol-mkt .hbr-compass{position:relative;width:34px;height:34px;flex:none;border-radius:50%;background:conic-gradient(from -22.5deg,var(--hb-navy) 0 12.5%,#FFFFFF 0 25%,var(--hb-navy) 0 37.5%,#FFFFFF 0 50%,var(--hb-navy) 0 62.5%,#FFFFFF 0 75%,var(--hb-navy) 0 87.5%,#FFFFFF 0);box-shadow:0 0 0 2px var(--hb-navy),0 0 0 5px var(--hb-gold-l);animation:hbrCompass 9s ease-in-out infinite}
+.ixw--sol-mkt .hbr-compass::after{content:"";position:absolute;left:50%;top:3px;bottom:3px;width:6px;margin-left:-3px;background:linear-gradient(180deg,var(--hb-coral) 0 50%,#FFFFFF 50%);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+@keyframes hbrCompass{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(14deg)}}
+.ixw--sol-mkt .hbr-chart-ch{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.ixw--sol-mkt .hbr-chart-ch i{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 1.5px #CFE3EF;color:#3D4560;font:800 11px/1 var(--font-body);font-style:normal}
+.ixw--sol-mkt .hbr-chart-ch i::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.ixw--sol-mkt .hbr-chart .dm{position:relative;border-radius:18px;box-shadow:0 0 0 2px #CFE3EF}
+@media (max-width:767px){.ixw--sol-mkt .hbr-chart{padding:8px;border-radius:20px}.ixw--sol-mkt .hbr-chart-ch{display:none}}
+
+/* what's included: three shopfronts on one quay, awnings in their own colour */
+.ixw--sol-mkt .hbr-fronts-sec{position:relative;background:linear-gradient(180deg,var(--hb-sea-l) 0,#FFFFFF 38%,#FFFFFF 78%,var(--hb-sand) 78%,var(--hb-sand) 100%)}
+.ixw--sol-mkt .hbr-fronts-sec::after{content:"";position:absolute;left:0;right:0;bottom:calc(22% - 4px);height:8px;background:var(--hb-rope);opacity:.75}
+.ixw--sol-mkt .hbr-sub{margin-top:10px}
+.ixw--sol-mkt .hbr-fronts{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding-top:18px}
+.ixw--sol-mkt .hbr-front{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:86px 26px 24px;border-radius:14px 14px 8px 8px;background:#FFFFFF;color:inherit;text-decoration:none;
+  box-shadow:0 0 0 2px var(--c3),0 7px 0 2px var(--c3),0 30px 44px -30px rgba(20,40,90,.4);transition:transform .45s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--sol-mkt .hbr-front:hover{transform:translateY(-6px);text-decoration:none}
+.ixw--sol-mkt .hbr-awn{position:absolute;left:-10px;right:-10px;top:12px;height:46px;border-radius:8px 8px 0 0;transform-origin:50% 0;transition:transform .45s cubic-bezier(.34,1.45,.64,1);
+  background:linear-gradient(180deg,transparent 0 30px,var(--c3) 30px 33px,transparent 33px),repeating-linear-gradient(90deg,var(--c) 0 26px,#FFFFFF 26px 52px);
+  -webkit-mask:linear-gradient(#000,#000) 0 0/100% 33px no-repeat,radial-gradient(circle at 13px 33px,#000 12px,transparent 12.5px) 0 0/26px 46px repeat-x;
+  mask:linear-gradient(#000,#000) 0 0/100% 33px no-repeat,radial-gradient(circle at 13px 33px,#000 12px,transparent 12.5px) 0 0/26px 46px repeat-x;filter:drop-shadow(0 3px 0 rgba(20,40,90,.18))}
+.ixw--sol-mkt .hbr-front:hover .hbr-awn{transform:scaleY(1.12)}
+.ixw--sol-mkt .hbr-sign{position:absolute;left:50%;top:-16px;transform:translateX(-50%);padding:7px 14px;border-radius:7px;background:var(--c3);box-shadow:0 3px 0 rgba(0,0,0,.25);color:#FFFFFF;font:800 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.ixw--sol-mkt .hbr-win{position:relative;display:grid;place-items:center;width:70px;height:62px;margin-bottom:18px;border-radius:10px;background:var(--c2);color:var(--c);box-shadow:inset 0 0 0 4px #FFFFFF,0 0 0 2px var(--c3);overflow:hidden}
+.ixw--sol-mkt .hbr-win::after{content:"";position:absolute;left:-30px;top:-10px;width:22px;height:90px;background:rgba(255,255,255,.65);transform:rotate(24deg);transition:left .6s ease}
+.ixw--sol-mkt .hbr-front:hover .hbr-win::after{left:90px}
+.ixw--sol-mkt .hbr-win .ic{width:28px;height:28px}
+.ixw--sol-mkt .hbr-front h3{margin:0 0 8px;font-size:1.18rem}
+.ixw--sol-mkt .hbr-front p{margin:0 0 18px;font-size:15px;line-height:1.6;color:#4A5268}
+.ixw--sol-mkt .hbr-front .btn-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:8px 8px 3px 3px;background:var(--c2);box-shadow:inset 0 0 0 2px var(--c);color:var(--c3)}
+.ixw--sol-mkt .hbr-front .btn-link .ic{transition:transform .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-mkt .hbr-front:hover .btn-link .ic{transform:translateX(4px)}
+@media (max-width:960px){.ixw--sol-mkt .hbr-fronts{grid-template-columns:minmax(0,1fr);max-width:560px;row-gap:46px}.ixw--sol-mkt .hbr-fronts-sec::after{display:none}.ixw--sol-mkt .hbr-fronts-sec{background:linear-gradient(180deg,var(--hb-sea-l),#FFFFFF 30%)}}
+
+/* how the service runs: a voyage between four buoys, a little boat sailing the route */
+.ixw--sol-mkt .hbr-voyage-sec{background-color:#EEF7FB;background-image:radial-gradient(rgba(62,159,208,.14) 1.6px,transparent 1.7px);background-size:24px 24px}
+.ixw--sol-mkt .hbr-voyage{position:relative;padding-top:70px}
+.ixw--sol-mkt .hbr-route{position:absolute;left:4%;right:4%;top:6px;height:40px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='40'%3E%3Cpath d='M0 20 Q40 6 80 20 T160 20' fill='none' stroke='%232F62C0' stroke-opacity='.55' stroke-width='3' stroke-dasharray='9 9' stroke-linecap='round'/%3E%3C/svg%3E") 0 0/160px 40px repeat-x}
+.ixw--sol-mkt .hbr-boat{position:absolute;left:0;top:-14px;width:46px;height:42px;animation:hbrSail 16s linear infinite}
+.ixw--sol-mkt .hbr-boat::before{content:"";position:absolute;left:6px;bottom:4px;width:34px;height:10px;border-radius:2px 2px 12px 12px;background:linear-gradient(180deg,#FFFFFF 0 4px,var(--hb-blue) 4px 7px,#FFFFFF 7px);box-shadow:0 0 0 1.5px var(--hb-navy)}
+.ixw--sol-mkt .hbr-boat::after{content:"";position:absolute;left:22px;bottom:14px;width:18px;height:26px;background:linear-gradient(180deg,var(--hb-gold-l),var(--hb-gold));clip-path:polygon(0 0,100% 100%,0 100%);filter:drop-shadow(-1.5px 0 0 var(--hb-navy))}
+@keyframes hbrSail{0%{left:0;transform:translateY(0) rotate(-3deg)}25%{transform:translateY(-6px) rotate(3deg)}50%{transform:translateY(0) rotate(-3deg)}75%{transform:translateY(-6px) rotate(3deg)}100%{left:calc(100% - 46px);transform:translateY(0) rotate(-3deg)}}
+.ixw--sol-mkt .hbr-ports{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.ixw--sol-mkt .hbr-port{position:relative;padding:48px 22px 24px;border-radius:16px;background:#FFFFFF;text-align:center;box-shadow:0 0 0 2px #CFE3EF,0 5px 0 #CFE3EF,0 22px 36px -28px rgba(20,60,90,.45);transition:transform .4s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--sol-mkt .hbr-port:hover{transform:translateY(-5px);box-shadow:0 0 0 2px var(--hb-blue),0 6px 0 var(--hb-navy),0 26px 36px -26px rgba(20,60,90,.5)}
+.ixw--sol-mkt .hbr-buoy{position:absolute;left:50%;top:-34px;display:grid;place-items:center;width:48px;height:58px;margin-left:-24px;border-radius:50% 50% 12px 12px;
+  background:linear-gradient(180deg,var(--bc,var(--hb-coral)) 0 34%,#FFFFFF 34% 66%,var(--bc,var(--hb-coral)) 66%);box-shadow:0 0 0 2.5px var(--hb-navy),0 5px 0 2.5px var(--hb-navy);font:800 20px/1 var(--font-display);color:var(--hb-navy);animation:hbrBob 3s ease-in-out infinite;animation-delay:calc(var(--i) * -.7s)}
+.ixw--sol-mkt .hbr-port:nth-child(even) .hbr-buoy{--bc:#2BB673}
+.ixw--sol-mkt .hbr-port:last-child .hbr-buoy{--bc:var(--hb-gold-l)}
+.ixw--sol-mkt .hbr-buoy::before{content:"";position:absolute;left:50%;top:-14px;width:4px;height:12px;margin-left:-2px;border-radius:2px;background:var(--hb-navy)}
+.ixw--sol-mkt .hbr-buoy::after{content:"";position:absolute;left:50%;top:-20px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#FFE7A3;box-shadow:0 0 0 2px var(--hb-navy);animation:hbrBlink 2s steps(2,start) infinite;animation-delay:calc(var(--i) * .5s)}
+@keyframes hbrBob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(3deg)}}
+@keyframes hbrBlink{to{background:#FFFFFF}}
+.ixw--sol-mkt .hbr-port h3{margin:0 0 8px;font-size:1.12rem}
+.ixw--sol-mkt .hbr-port p{margin:0;font-size:14.5px;line-height:1.6;color:#4A5268}
+.ixw--sol-mkt .hbr-loop{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px auto 0;padding:10px 18px;width:max-content;max-width:100%;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 4px 0 var(--hb-navy);font:800 13px/1.2 var(--font-display);color:var(--hb-navy)}
+.ixw--sol-mkt .hbr-loop .ic{width:20px;height:20px;color:var(--hb-blue);animation:hbrTurn 6s linear infinite}
+@keyframes hbrTurn{to{transform:rotate(360deg)}}
+@media (max-width:960px){.ixw--sol-mkt .hbr-ports{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:60px}.ixw--sol-mkt .hbr-route{display:none}.ixw--sol-mkt .hbr-voyage{padding-top:38px}}
+@media (max-width:560px){.ixw--sol-mkt .hbr-ports{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: hanging signs and the ship's manifest with its stamp */
+.ixw--sol-mkt .hbr-manifest-sec{background:linear-gradient(180deg,#FFFFFF 0,#FFFFFF 70%,var(--hb-sand) 100%)}
+@media (min-width:961px){.ixw--sol-mkt .hbr-manifest{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--sol-mkt .hbr-signs{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:40px;padding:22px 0 0 18px}
+.ixw--sol-mkt .hbr-signs::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;border-radius:4px;background:var(--hb-rope)}
+.ixw--sol-mkt .hbr-signs span{position:relative;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:8px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 5px 0 var(--hb-navy);
+  font:800 15px/1 var(--font-display);color:var(--hb-navy);transform:rotate(var(--r));transform-origin:0 50%;transition:transform .4s cubic-bezier(.34,1.45,.64,1);animation:hbrSign 5s ease-in-out infinite}
+.ixw--sol-mkt .hbr-signs span:nth-child(2){animation-delay:-1.6s}.ixw--sol-mkt .hbr-signs span:nth-child(3){animation-delay:-3.2s}
+.ixw--sol-mkt .hbr-signs span::before{content:"";position:absolute;left:-18px;top:50%;width:18px;height:3px;margin-top:-1.5px;background:#8E6440}
+.ixw--sol-mkt .hbr-signs .ic{width:30px;height:30px;padding:6px;border-radius:8px;background:var(--c);color:#FFFFFF}
+@keyframes hbrSign{0%,100%{transform:rotate(var(--r))}50%{transform:rotate(calc(var(--r) * -1))}}
+.ixw--sol-mkt .hbr-paper{position:relative;padding:26px 30px 34px;border-radius:6px;background:repeating-linear-gradient(180deg,transparent 0 33px,rgba(62,159,208,.18) 33px 34px) 0 70px/100% 100% no-repeat,#FFFDF6;
+  box-shadow:0 0 0 1.5px #E5DCC8,0 4px 0 #E5DCC8,0 34px 50px -34px rgba(60,40,10,.45);transform:rotate(.5deg)}
+.ixw--sol-mkt .hbr-paper::before{content:"";position:absolute;left:50%;top:-12px;width:90px;height:22px;margin-left:-45px;border-radius:3px;background:rgba(246,199,74,.55);transform:rotate(-2deg)}
+.ixw--sol-mkt .hbr-paper-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid var(--hb-navy)}
+.ixw--sol-mkt .hbr-paper-h b{font:800 1.5rem/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase;color:var(--hb-navy)}
+.ixw--sol-mkt .hbr-paper-h span{font:600 1.3rem/1 var(--font-hand);color:var(--hb-blue)}
+.ixw--sol-mkt .hbr-checks li{color:#2E3550;font-weight:500}
+.ixw--sol-mkt .hbr-checks li .ic{width:22px;height:22px;padding:3px;margin-top:0;border-radius:5px;background:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy);color:var(--hb-blue)}
+.ixw--sol-mkt .hbr-checks li:nth-child(3n+2) .ic{color:var(--hb-coral)}.ixw--sol-mkt .hbr-checks li:nth-child(3n) .ic{color:#B9800C}
+.ixw--sol-mkt .hbr-stamp{position:absolute;right:24px;bottom:-18px;padding:8px 14px;border:3px solid var(--hb-coral);border-radius:8px;background:rgba(255,253,246,.92);color:var(--hb-coral);font:800 14px/1 var(--font-display);letter-spacing:.14em;text-transform:uppercase;transform:rotate(-7deg)}
+.ixw--sol-mkt .hbr-paper.is-in .hbr-stamp{animation:hbrStamp .6s cubic-bezier(.34,1.45,.64,1) .5s backwards}
+@keyframes hbrStamp{from{opacity:0;transform:rotate(-7deg) scale(1.8)}}
+@media (max-width:640px){.ixw--sol-mkt .hbr-paper{padding:22px 18px 34px}}
+
+/* the FAQ: buoy-numbered questions on a rope */
+.ixw--sol-mkt .hbr-faq-sec{background-color:#EEF7FB;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'%3E%3Cpath d='M0 20 Q15 12 30 20 T60 20 T90 20 T120 20' fill='none' stroke='%233E9FD0' stroke-opacity='.14' stroke-width='2'/%3E%3C/svg%3E");background-size:120px 40px}
+.ixw--sol-mkt .hbr-faq{counter-reset:q;max-width:900px}
+.ixw--sol-mkt .hbr-faq details{counter-increment:q;position:relative;border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 2px #CFE3EF,0 4px 0 #CFE3EF;transition:box-shadow .25s ease,transform .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-mkt .hbr-faq details::before{content:"";position:absolute;left:-14px;top:22px;width:14px;height:4px;border-radius:2px;background:var(--hb-rope)}
+.ixw--sol-mkt .hbr-faq details:hover{transform:translateX(4px)}
+.ixw--sol-mkt .hbr-faq details[open]{box-shadow:0 0 0 2px var(--hb-navy),0 5px 0 var(--hb-navy),0 22px 34px -24px rgba(20,40,90,.4)}
+.ixw--sol-mkt .hbr-faq summary{justify-content:flex-start;padding-left:16px}
+.ixw--sol-mkt .hbr-faq summary::before{content:counter(q);width:34px;height:40px;border-radius:50% 50% 9px 9px;background:linear-gradient(180deg,var(--hb-coral) 0 30%,#FFFFFF 30% 70%,var(--hb-coral) 70%);box-shadow:0 0 0 2px var(--hb-navy);color:var(--hb-navy);font:800 15px/1 var(--font-display);transform:none}
+.ixw--sol-mkt .hbr-faq details:nth-child(even) summary::before{background:linear-gradient(180deg,#2BB673 0 30%,#FFFFFF 30% 70%,#2BB673 70%)}
+.ixw--sol-mkt .hbr-faq details[open] summary::before{content:counter(q);background:linear-gradient(180deg,var(--hb-gold-l) 0 30%,#FFFFFF 30% 70%,var(--hb-gold-l) 70%);transform:rotate(-8deg)}
+.ixw--sol-mkt .hbr-faq summary .ic{margin-left:auto;background:var(--hb-sea-l);color:var(--hb-blue)}
+.ixw--sol-mkt .hbr-faq .faq-a{padding-left:66px}
+.ixw--sol-mkt .hbr-faq .faq-a a{color:var(--hb-blue);font-weight:700}
+@media (max-width:640px){.ixw--sol-mkt .hbr-faq .faq-a{padding-left:22px}.ixw--sol-mkt .hbr-faq details::before{display:none}}
+
+/* related services: postcards from the harbour, a stamp and a postmark each */
+.ixw--sol-mkt .hbr-posts-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--hb-sand) 100%)}
+.ixw--sol-mkt .hbr-posts{gap:30px}
+.ixw--sol-mkt .hbr-post{position:relative;display:block;padding:104px 26px 24px;border-radius:8px;background:#FFFEF9;color:inherit;text-decoration:none;
+  box-shadow:0 0 0 1.5px #E5DCC8,0 24px 40px -30px rgba(60,40,10,.45);transform:rotate(var(--rot,0deg));transition:transform .45s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--sol-mkt .hbr-post:nth-child(1){--rot:-1.2deg}.ixw--sol-mkt .hbr-post:nth-child(3){--rot:1deg}
+.ixw--sol-mkt .hbr-post:hover{transform:rotate(0) translateY(-6px);text-decoration:none;box-shadow:0 0 0 2px var(--c),0 30px 44px -28px rgba(60,40,10,.5)}
+.ixw--sol-mkt .hbr-post::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:8px 8px 0 0;background:repeating-linear-gradient(90deg,var(--hb-coral) 0 14px,#FFFFFF 14px 22px,var(--hb-blue) 22px 36px,#FFFFFF 36px 44px)}
+.ixw--sol-mkt .hbr-pstamp{position:absolute;right:20px;top:20px;display:grid;place-items:center;width:58px;height:66px;background:var(--c);color:#FFFFFF;transform:rotate(4deg);
+  -webkit-mask:radial-gradient(circle at 50% 50%,#000 3px,transparent 3.5px) -4px -4px/8px 8px,linear-gradient(#000,#000) 4px 4px/calc(100% - 8px) calc(100% - 8px) no-repeat;
+  mask:radial-gradient(circle,#000 3px,transparent 3.5px) -4px -4px/8px 8px,linear-gradient(#000,#000) 4px 4px/calc(100% - 8px) calc(100% - 8px) no-repeat}
+.ixw--sol-mkt .hbr-pstamp .ic{width:26px;height:26px}
+.ixw--sol-mkt .hbr-post::after{content:"";position:absolute;right:56px;top:46px;width:50px;height:50px;border-radius:50%;border:2px solid rgba(31,42,85,.3);
+  background:repeating-linear-gradient(180deg,transparent 0 7px,rgba(31,42,85,.22) 7px 9px) 0 50%/100% 26px no-repeat}
+.ixw--sol-mkt .hbr-greet{position:absolute;left:24px;top:30px;right:120px;font:600 1.3rem/1.05 var(--font-hand);color:var(--c);transform:rotate(-2deg)}
+.ixw--sol-mkt .hbr-post h3{margin:0 0 8px;font-size:1.14rem}
+.ixw--sol-mkt .hbr-post p{margin:0 0 16px;font-size:15px;line-height:1.6;color:#4A5268}
+.ixw--sol-mkt .hbr-post .btn-link{color:var(--c)}
+
+/* the end card: the pier end under bunting, waves below, the lighthouse sweeping its beam */
+.ixw--sol-mkt .hbr-cta-sec .cta{padding-top:86px;padding-bottom:70px;background:linear-gradient(170deg,#3E9FD0 0,#2F62C0 55%,#1F4C9E 100%);box-shadow:0 0 0 3px var(--hb-navy),0 8px 0 3px var(--hb-navy)}
+.ixw--sol-mkt .hbr-cta-sec .cta::before{content:"";position:absolute;left:0;right:0;top:10px;height:30px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='30'%3E%3Cpath d='M0 3 Q36 10 72 3' fill='none' stroke='%23FFFFFF' stroke-opacity='.7' stroke-width='1.6'/%3E%3Cpath d='M6 4.6 L24 7 L14 27Z' fill='%23F6C74A'/%3E%3Cpath d='M42 7 L62 4.8 L53 26Z' fill='%23FFFFFF'/%3E%3C/svg%3E") 0 0/72px 30px repeat-x;
+  transform-origin:50% 0;animation:hbrBunt 3s ease-in-out infinite}
+@keyframes hbrBunt{0%,100%{transform:skewX(0)}50%{transform:skewX(-3deg)}}
+.ixw--sol-mkt .hbr-cta-sec .cta::after{left:0;right:0;top:auto;bottom:0;width:auto;height:26px;border-radius:0;transform:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='26'%3E%3Cpath d='M0 12 Q20 2 40 12 T80 12 V26 H0Z' fill='%23FFFFFF' fill-opacity='.16'/%3E%3C/svg%3E") 0 0/80px 26px repeat-x;animation:hbrWave 6s linear infinite}
+@keyframes hbrWave{to{background-position:80px 0}}
+.ixw--sol-mkt .hbr-cta-sec .cta:hover::after{transform:none}
+.ixw--sol-mkt .hbr-cta-lh{position:absolute;right:40%;bottom:20px;width:34px;height:110px;opacity:.9;pointer-events:none}
+.ixw--sol-mkt .hbr-cta-lh::before{content:"";position:absolute;left:0;right:0;bottom:0;height:86px;background:repeating-linear-gradient(180deg,#FFFFFF 0 17px,rgba(255,255,255,.55) 17px 34px);clip-path:polygon(22% 0,78% 0,100% 100%,0 100%)}
+.ixw--sol-mkt .hbr-cta-lh::after{content:"";position:absolute;left:5px;right:5px;bottom:86px;height:20px;border-radius:12px 12px 2px 2px;background:var(--hb-gold-l);box-shadow:0 0 18px 6px rgba(246,199,74,.45)}
+.ixw--sol-mkt .hbr-cta-lh i{position:absolute;left:17px;bottom:96px;width:280px;height:60px;margin-top:-30px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(255,240,180,.42),rgba(255,240,180,0));clip-path:polygon(0 45%,100% 0,100% 100%,0 55%);animation:hbrBeam 7s ease-in-out infinite}
+@keyframes hbrBeam{0%,100%{transform:translateY(-50%) rotate(-20deg)}50%{transform:translateY(-50%) rotate(-160deg)}}
+.ixw--sol-mkt .hbr-cta-sec .cta>div{position:relative;z-index:1}
+.ixw--sol-mkt .hbr-cta-sec .hand{color:var(--hb-gold-l)}
+.ixw--sol-mkt .hbr-cta-sec .btn-white{color:var(--hb-navy);box-shadow:0 0 0 2px var(--hb-navy),0 5px 0 2px var(--hb-navy)}
+.ixw--sol-mkt .hbr-cta-sec .btn-outline-white{border:3px solid transparent;color:var(--hb-navy);background:linear-gradient(var(--hb-gold-l),var(--hb-gold-l)) padding-box,var(--hb-rope) border-box;box-shadow:0 5px 0 #8E6440}
+.ixw--sol-mkt .hbr-cta-sec .btn-outline-white:hover{border-color:transparent;color:var(--hb-navy)}
+@media (max-width:1099px){.ixw--sol-mkt .hbr-cta-lh{display:none}}
+@media (max-width:767px){.ixw--sol-mkt .hbr-cta-sec .cta{padding-top:64px;padding-bottom:52px}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-mkt :is(.hbr-ring,.hbr-compass,.hbr-boat,.hbr-buoy,.hbr-loop .ic,.hbr-signs span,.hbr-cta-lh i){animation:none}
+  .ixw--sol-mkt .hbr-cta-sec .cta::before,.ixw--sol-mkt .hbr-cta-sec .cta::after,.ixw--sol-mkt .ixw-copy::after,.ixw--sol-mkt .hbr-buoy::after{animation:none}}
+
+/* ---------- hero buttons (audit round): pills on a navy lip, icon chips aligned, clear hover / press / focus ---------- */
+.ixw--sol-mkt .ixw-copy .actions{align-items:center}
+.ixw--sol-mkt .ixw-copy .actions .btn-lg{height:52px;gap:10px;overflow:visible}
+.ixw--sol-mkt .ixw-copy .actions .btn-lg::after{border-radius:inherit}
+.ixw--sol-mkt .ixw-copy .btn-primary{padding:0 9px 0 22px}
+.ixw--sol-mkt .ixw-copy .btn-primary .ic{width:32px;height:32px;padding:8px;border-radius:50%;box-shadow:inset 0 -2px 0 rgba(31,42,85,.25)}
+.ixw--sol-mkt main .ixw-copy .btn-primary:hover{box-shadow:0 0 0 2px var(--hb-navy),0 7px 0 2px var(--hb-navy),0 0 0 8px rgba(47,98,192,.16)}
+.ixw--sol-mkt .ixw-copy .btn-ghost{padding:0 22px 0 18px}
+.ixw--sol-mkt .ixw-copy .btn-ghost .ic{width:20px;height:20px}
+.ixw--sol-mkt main .ixw-copy .btn-ghost:hover{background:linear-gradient(#F4F8FE,#F4F8FE) padding-box,var(--hb-rope) border-box}
+.ixw--sol-mkt main .ixw-copy .btn-ghost:hover .ic{transform:none}
+.ixw--sol-mkt .hbr-badges{gap:7px}
+.ixw--sol-mkt .hbr-badges span{height:28px;padding:0 12px 0 8px;transition:translate .2s ease}
+.ixw--sol-mkt .hbr-badges span:hover{translate:0 -2px}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn{background:#FFFFFF;color:var(--hb-navy)}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn:hover{color:var(--hb-blue);background:var(--hb-sea-l);border-color:var(--hb-navy);box-shadow:0 5px 0 var(--hb-navy),0 0 0 4px rgba(62,159,208,.2)}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--hb-navy)}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn--play,.ixw--sol-mkt .ixw-cap .ixw-ibtn--play:hover{border:0;background:radial-gradient(circle at 40% 30%,#5B8EE0,var(--hb-blue) 62%);color:#FFFFFF;box-shadow:0 0 0 2px var(--hb-navy),0 4px 0 2px var(--hb-navy)}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn--play:hover{box-shadow:0 0 0 2px var(--hb-navy),0 6px 0 2px var(--hb-navy),0 0 0 7px rgba(246,199,74,.35)}
+.ixw--sol-mkt .ixw-cap .ixw-ibtn:focus-visible,.ixw--sol-mkt .ixw-peek:focus-visible{outline:3px solid var(--hb-gold-l);outline-offset:3px}
+.ixw--sol-mkt .ixw-dots{gap:6px}
+.ixw--sol-mkt .ixw-dots button{width:9px;height:9px;background:#CFE3F1;box-shadow:inset 0 0 0 1.5px rgba(31,42,85,.2)}
+.ixw--sol-mkt .ixw-dots button:hover{background:#9FCBE6}
+.ixw--sol-mkt .ixw-dots button.is-on{width:26px;background:repeating-linear-gradient(90deg,var(--hb-gold-l) 0 6px,#FFFFFF 6px 9px);box-shadow:0 0 0 1.5px var(--hb-navy)}
+/* the "View the scene" toggle hangs over the old town (top left), clear of the lighthouse and the tide board */
+.ixw--sol-mkt .ixw-peek{right:auto;left:max(24px,calc((100vw - 1200px) / 2 + 25px));height:40px;padding:0 18px 0 14px;border:2px solid var(--hb-navy);background:#FFFFFF;color:var(--hb-navy);font-weight:800;box-shadow:0 4px 0 var(--hb-navy),0 14px 22px -14px rgba(20,40,90,.6)}
+.ixw--sol-mkt .ixw-peek::after{content:"";position:absolute;left:12px;right:12px;bottom:-2px;height:4px;border-radius:0 0 4px 4px;background:repeating-linear-gradient(90deg,var(--hb-blue) 0 8px,#FFFFFF 8px 16px);opacity:.9}
+.ixw--sol-mkt .ixw-peek:hover{background:var(--hb-sea-l);box-shadow:0 6px 0 var(--hb-navy),0 0 0 4px rgba(62,159,208,.22)}
+.ixw--sol-mkt .ixw-peek[aria-pressed="true"]{background:var(--hb-gold-l)}
+@media (max-width:640px){.ixw--sol-mkt .ixw-copy .actions{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.ixw--sol-mkt .ixw-copy .actions .btn{width:100%;justify-content:center}}
+
+/* ---------- below the hero (audit round) ---------- */
+/* the FAQ: heading and a little lighthouse on the left, the buoys on the right (no empty half at desktop widths) */
+@media (min-width:1000px){.ixw--sol-mkt .hbr-faq-sec .container{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:56px;align-items:start}
+  .ixw--sol-mkt .hbr-faq-sec .sec-head{position:sticky;top:120px;margin:0;padding-bottom:150px}
+  .ixw--sol-mkt .hbr-faq-sec .sec-head::after{content:"";position:absolute;left:6px;bottom:0;width:150px;height:130px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 130'%3E%3Cpath d='M0 118 Q20 110 40 118 T80 118 T120 118 T160 118 V130 H0Z' fill='%233E9FD0' opacity='.35'/%3E%3Cpath d='M44 116 L52 40 H72 L80 116Z' fill='%23FFFFFF' stroke='%231F2A55' stroke-width='2.5'/%3E%3Cpath d='M50 60 H74 L75 72 H49Z M47 88 H77 L78 100 H46Z' fill='%232F62C0'/%3E%3Crect x='48' y='30' width='28' height='12' rx='2' fill='%231F2A55'/%3E%3Crect x='53' y='16' width='18' height='14' rx='2' fill='%23FFF3C8' stroke='%23E3A21A' stroke-width='2'/%3E%3Cpath d='M51 16 Q62 2 73 16Z' fill='%23E3A21A'/%3E%3Cpath d='M74 22 L140 8 L140 36Z' fill='%23F6C74A' opacity='.45'/%3E%3Ccircle cx='112' cy='108' r='9' fill='%23FFFFFF' stroke='%23E0567A' stroke-width='5' stroke-dasharray='7 7'/%3E%3C/svg%3E") 0 100%/contain no-repeat}
+  .ixw--sol-mkt .hbr-faq{max-width:none}}
+.ixw--sol-mkt .hbr-faq summary:focus-visible{outline:3px solid var(--hb-gold-l);outline-offset:3px}
+
+/* fix round: FAQ in one column — heading row with its drawing on the right, questions full width below (nothing under the side tabs) */
+@media (min-width:1000px){.ixw--sol-mkt .hbr-faq-sec .container{display:block}
+  .ixw--sol-mkt .hbr-faq-sec .sec-head{position:relative;top:auto;max-width:920px;margin:0 0 30px;padding:0 160px 0 0;min-height:110px}
+  .ixw--sol-mkt .hbr-faq-sec .sec-head::after{left:auto;right:0;bottom:-8px;width:130px;height:110px}
+  .ixw--sol-mkt .hbr-faq{max-width:920px}}
+/* the end card's lighthouse: the beam pivots at the lamp itself */
+.ixw--sol-mkt .hbr-cta-lh i{bottom:36px;margin:0;z-index:-1}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the harbour quay. One sea-blue accent.
+   Themed touches kept: the building sign over each service card (shopfront, noticeboard, livery), numbered buoys as
+   small step markers, the "Manifest" header, the slim chart-room bar over the demo.
+   =================================================================================================================== */
+.ixw--sol-mkt{--calm-accent:#2E8FC0;--calm-accent-ink:#1F6C93;--calm-accent-line:#BFDDEC;--calm-accent-wash:#F4F9FC;--calm-wash:#F4F9FC}
+html body.ixw--sol-mkt main .hbr-notice{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-mkt main .hbr-notice::before,html body.ixw--sol-mkt main .hbr-notice::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-notice p{color:var(--body)!important}
+html body.ixw--sol-mkt main .hbr-notice .answer-h{background:#E6F2F8!important;color:var(--calm-accent-ink)!important}
+/* demo */
+html body.ixw--sol-mkt main .hbr-chart-sec{background:#fff!important}
+html body.ixw--sol-mkt main .hbr-chart{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-mkt main .hbr-chart::before,html body.ixw--sol-mkt main .hbr-chart::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-chart-top{padding:12px 18px!important;background:#F4F9FC!important;border-bottom:1px solid var(--calm-line)}
+html body.ixw--sol-mkt main .hbr-compass{display:none!important}
+html body.ixw--sol-mkt main .hbr-chart .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* the three services: white cards; the building's sign stays on top */
+html body.ixw--sol-mkt main .hbr-fronts-sec{background:#fff!important}
+html body.ixw--sol-mkt main .hbr-fronts-sec::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-fronts{gap:26px!important}
+html body.ixw--sol-mkt main .hbr-front{padding:44px 26px 26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-mkt main .hbr-front:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-mkt main .hbr-front::before,html body.ixw--sol-mkt main .hbr-front::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-sign{left:26px!important;top:-13px!important;transform:none!important;box-shadow:none!important}
+html body.ixw--sol-mkt main .hbr-win{width:52px!important;height:52px!important;border-radius:14px!important;background:var(--c2)!important;box-shadow:none!important;border:0!important;overflow:hidden}
+html body.ixw--sol-mkt main .hbr-win::before,html body.ixw--sol-mkt main .hbr-win::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-front p{color:var(--body)!important}
+html body.ixw--sol-mkt main .hbr-front .btn-link{margin-top:auto;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;color:var(--c)!important}
+/* how the service runs: four step cards with a small buoy number */
+html body.ixw--sol-mkt main .hbr-voyage-sec{background:var(--calm-wash)!important;background-image:none!important}
+html body.ixw--sol-mkt main .hbr-voyage{padding-top:0!important}
+html body.ixw--sol-mkt main .hbr-port{padding:24px 22px!important;text-align:left!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-mkt main .hbr-buoy{position:static!important;margin:0 0 14px!important;width:34px!important;height:34px!important;border-radius:50%!important;background:#E6F2F8!important;color:var(--calm-accent-ink)!important;box-shadow:none!important;border:0!important;font:700 15px/1 var(--font-display)!important}
+html body.ixw--sol-mkt main .hbr-buoy::before,html body.ixw--sol-mkt main .hbr-buoy::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-port p{color:var(--body)!important}
+html body.ixw--sol-mkt main .hbr-loop{border:1px solid var(--calm-line)!important;box-shadow:none!important;background:#fff!important;color:var(--calm-accent-ink)!important}
+/* what you get: the manifest as a clean card */
+html body.ixw--sol-mkt main .hbr-manifest-sec{background:#fff!important}
+html body.ixw--sol-mkt main .hbr-paper{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;transform:none!important}
+html body.ixw--sol-mkt main .hbr-paper::before,html body.ixw--sol-mkt main .hbr-paper::after{content:none!important;display:none!important}
+html body.ixw--sol-mkt main .hbr-paper-h{border-bottom:1px solid var(--calm-line)!important}
+html body.ixw--sol-mkt main .hbr-paper li{color:var(--body)!important}
+/* FAQ: plain rows */
+html body.ixw--sol-mkt main .hbr-faq-sec{background:var(--calm-wash)!important;background-image:none!important}
+html body.ixw--sol-mkt main .hbr-faq{max-width:860px!important}
+html body.ixw--sol-mkt main .hbr-faq details{box-shadow:none!important}
+html body.ixw--sol-mkt main .hbr-faq summary::before{width:28px!important;height:28px!important;border-radius:50%!important;background:#E6F2F8!important;color:var(--calm-accent-ink)!important;box-shadow:none!important;border:0!important;font:700 12px/28px var(--font-body)!important;text-align:center}
+
+@media (max-width:480px){html body.ixw--sol-mkt main .ixw-copy .actions{flex-wrap:wrap}html body.ixw--sol-mkt main .ixw-copy .actions .btn{white-space:normal;flex:1 1 auto;min-width:0;justify-content:center;text-align:center}}

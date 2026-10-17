@@ -1,0 +1,175 @@
+<!--meta {"title": "Odoo for Retail — Singapore & Philippines", "desc": "Odoo for retailers: Point of Sale, shared stock across stores, promotions and daily takings posted to Accounting — implemented by TechNext, Odoo Partner.", "out": "industries/retail.html", "nav": "industries", "scripts": ["assets/js/showcase.js", "assets/js/industry.js", "assets/js/demo-kit.js", "assets/js/demo-stores.js", "assets/js/industry-world.js", "assets/js/worlds/retail.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-stores.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/retail.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industries-calm.css?v={ASSET_V}\">", "body": "ixw ixw--retail"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="retail" data-home="588,96" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Industries</span><span>Retail</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Shops, store chains &amp; online sellers</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo for retail · singapore · philippines</span>Tills, stock and accounts that agree with each other.</h1>
+      <p class="lead"><span class="m-full">Point of Sale that works offline, stock shared across stores and online, and daily takings posted to Accounting without a spreadsheet in between.</span><span class="m-short">A till that works offline, one stock for every store and online, and takings posted to the books.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Hover or tap anything in the shop to explore.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="ana" data-near="520,190" data-who="Ana" data-role="Cashier · sample" data-say="Morning! The till keeps selling even when the Wi-Fi doesn't, and **stock** moves with every sale." style="--x:676;--y:262;--w:112;--h:180" aria-label="Say hi to Ana at the till (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Ana</b><i>cashier</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="raj" data-near="310,96" data-who="Raj" data-role="Shopper · sample" data-say="I ordered online last night, and my **pickup** was ready before I parked!" style="--x:462;--y:334;--w:128;--h:312" aria-label="Say hi to Raj, a shopper (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Raj</b><i>shopper</i></span></button>
+      <button class="ixw-toy" type="button" data-toy="sign" data-near="310,96" data-pose="wow" data-say="Flip! The sign says hello. Behind it, **every store** runs on the same Odoo." style="--x:196;--y:200;--w:74;--h:46" aria-label="Flip the OPEN sign"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Flip the sign</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="bell" data-near="310,96" data-pose="celebrate" data-say="Ding-a-ling! A customer walks in, and the **till, stock and books** are already in step." style="--x:196;--y:92;--w:44;--h:44" aria-label="Ring the door bell"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Ring the bell</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="scan" data-near="540,190" data-pose="wow" data-say="Beep! One scan at the till sells the item, moves the stock and starts the **journal entry**." style="--x:684;--y:318;--w:50;--h:30" aria-label="Scan with the barcode scanner"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Scan</b></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="buy" data-nx="800,200" data-pose="point-right" data-rec="PO00087 · Apex Homeware · 48 mugs" data-say="Low on mugs? A **reordering rule** drafts the purchase order with the vendor's price and lead time." style="--x:948;--y:392;--w:96;--h:158" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:purchase:18}}<b>Buy</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="receive" data-nx="476,88" data-pose="point-left" data-rec="WH/IN/00112 · 48 received · bill matched" data-say="Cartons are **scanned in** with a barcode device, and the shelf count updates at once." style="--x:358;--y:310;--w:142;--h:324" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:stock:18}}<b>Receive</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="move" data-nx="770,196" data-pose="point-right" data-rec="Transfer · Store A → Orchard · 12 throws" data-say="Short at Orchard? A **transfer** shows in both stores until it is received, so nothing goes missing." style="--x:858;--y:430;--w:76;--h:82" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:stock:18}}<b>Move</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="sell" data-nx="596,96" data-pose="present" data-rec="Order 0412 · S$ 42.00 · paid by card" data-say="The till keeps selling **offline** and syncs later, and every sale moves stock." style="--x:612;--y:298;--w:86;--h:78" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:point_of_sale:18}}<b>Sell</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="online" data-nx="720,126" data-pose="point-right" data-rec="Web order #1042 · ready for pickup" data-say="The online store sells the **same stock**, and pickup orders wait right here in the cubbies." style="--x:911;--y:208;--w:162;--h:168" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:website_sale:18}}<b>Online</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="close" data-nx="862,320" data-pose="point-left" data-rec="POS/2026/0412 · S$ 3,480 posted" data-say="Closing the session posts the **takings** to Accounting, and card settlements match from the bank feed." style="--x:780;--y:306;--w:60;--h:60" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:accountant:18}}<b>Close</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:588;--ny:96" data-reacts="wow::Ka-ching! That's the sound of **stock and books agreeing**.|love::Every store and the web shop on **one database**. I'd shop here!|celebrate::Shopkeeper Nexi reporting: till to the books, **all in Odoo**!|think::Hmm… which store goes first? Start with **one store**.">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:retail}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi, I'm **Nexi**! Welcome to Harbour Goods, our sample homeware store. Tap anything and I'll show you how **Odoo** runs a shop." data-outro="From the supplier to the till to the books, every store and online, in **one Odoo database**.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:retail}}<b data-for="ana" style="--c:#5E8F77">A</b><b data-for="raj" style="--c:#4A86C5">R</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="Your shop guide · Harbour Goods is a sample store">Your shop guide · Harbour Goods is a sample store</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi, I'm <b>Nexi</b>! Welcome to Harbour Goods, our sample homeware store. Tap anything and I'll show you how <b>Odoo</b> runs a shop.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: buy"></button><button type="button" data-ixw-dot aria-label="Stop 3: receive"></button><button type="button" data-ixw-dot aria-label="Stop 4: move"></button><button type="button" data-ixw-dot aria-label="Stop 5: sell"></button><button type="button" data-ixw-dot aria-label="Stop 6: online"></button><button type="button" data-ixw-dot aria-label="Stop 7: close"></button><button type="button" data-ixw-dot aria-label="Stop 8: one database"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits"><div><dt>{{icon:layers}}Apps we switch on</dt><dd><a href="{{ROOT}}odoo/apps/point_of_sale.html">Point of Sale</a> · <a href="{{ROOT}}odoo/apps/stock.html">Inventory</a> · <a href="{{ROOT}}odoo/apps/accountant.html">Accounting</a> · <a href="{{ROOT}}odoo/apps/purchase.html">Purchase</a> · <a href="{{ROOT}}odoo/apps/website_sale.html">eCommerce</a></dd></div><div><dt>{{icon:target}}First phase</dt><dd>Start with one store</dd></div><div><dt>{{icon:users}}Delivered by</dt><dd>TechNext, Odoo Partner · Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+{{INDUSTRY_INTRO:retail}}
+
+{{INDUSTRY_FLOW:retail}}
+
+<section class="section demo-sec" id="store-network">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">watch the network</span><h2>Odoo for retail: till sales, reordering rules and store transfers, live.</h2><p class="lead"><span class="m-full">One warehouse and five stores on one Odoo database, the way TechNext sets up retailers. Every till sale moves stock. When a store's forecast drops below its minimum, its reordering rule raises a transfer from the warehouse; when the warehouse drops below its own minimum, its rule raises a purchase order to the vendor. Switch on a promotion weekend, then pick a store to see its rule, its open transfers and what to tune.</span><span class="m-short">One warehouse and five stores: watch till sales raise transfers and purchase orders.</span></p></div>
+    <div class="ixw-browser reveal" aria-hidden="true"><i></i><i></i><i></i><span>yourcompany.odoo.com/odoo/point-of-sale</span><em>Sample data</em></div>
+    <div class="dm dm-stores reveal" data-demo="stores">
+      <div class="dm-head">
+        <div class="dm-title"><b>Store network · Linen shirt</b><small>Sample data · one product · S$ 59 at the till · time compressed</small></div>
+        <button class="dm-btn srn-promo" type="button" data-promo aria-pressed="false">{{icon:megaphone}}Promotion weekend</button>
+        <button class="dm-btn" type="button" data-pause aria-pressed="false"><i class="srn-pz" aria-hidden="true"></i><span>Pause</span></button>
+        <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Reset</button>
+      </div>
+      <div class="srn-wrap">
+        <div class="srn-main">
+          <div class="srn-map" role="group" aria-label="Store network map: choose the warehouse or a store to see its details">
+            <svg class="srn-land" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M9 31C8 20 17 12 30 11C41 10 47 6 59 7C73 8 88 11 93 22C97 31 94 42 85 48C76 54 64 52 54 54C44 56 36 52 26 53C14 54 10 42 9 31Z"/><path class="srn-coast" d="M9 31C8 20 17 12 30 11C41 10 47 6 59 7C73 8 88 11 93 22C97 31 94 42 85 48C76 54 64 52 54 54C44 56 36 52 26 53C14 54 10 42 9 31Z"/></svg>
+            <svg class="srn-routes" aria-hidden="true" focusable="false"></svg>
+            <div class="srn-vendor" style="--x:9%;--y:12%;--mx:17%;--my:6%">{{icon:factory}}<span><b>Apex Textiles</b><small>Vendor · lead time 1 day</small></span></div>
+            <button class="srn-node srn-node--wh" type="button" data-n="wh" style="--x:15%;--y:57%;--mx:50%;--my:23%">{{icon:box}}<span class="srn-nm"><b>Central warehouse</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <button class="srn-node" type="button" data-n="jur" style="--x:36%;--y:77%;--mx:24%;--my:44%">{{icon:bag}}<span class="srn-nm"><b>Jurong</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <button class="srn-node" type="button" data-n="wdl" style="--x:42%;--y:24%;--mx:76%;--my:44%">{{icon:bag}}<span class="srn-nm"><b>Woodlands</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <button class="srn-node" type="button" data-n="orc" style="--x:60%;--y:62%;--mx:24%;--my:65%">{{icon:bag}}<span class="srn-nm"><b>Orchard</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <button class="srn-node" type="button" data-n="pgl" style="--x:73%;--y:24%;--mx:76%;--my:65%">{{icon:bag}}<span class="srn-nm"><b>Punggol</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <button class="srn-node" type="button" data-n="tam" style="--x:86%;--y:60%;--mx:50%;--my:87%">{{icon:bag}}<span class="srn-nm"><b>Tampines</b><em class="srn-flag"></em></span><span class="srn-bar"><u></u><i></i><s></s></span><small class="srn-q"></small></button>
+            <div class="srn-clock"><b data-clock>Fri 10:00</b><span class="srn-day"><i></i></span><small data-daytag>Normal trading</small></div>
+            <p class="srn-night" hidden><b>Stores closed</b><span>Trucks and orders carry on in the morning</span></p>
+          </div>
+          <ul class="dm-legend srn-legend">
+            <li><i class="dm-sw" style="--c:var(--tok-stock)"></i>Transfer from the warehouse</li>
+            <li><i class="dm-sw" style="--c:var(--tok-buy)"></i>Purchase from the vendor</li>
+            <li><i class="dm-sw" style="--c:var(--tok-pay)"></i>Store to store</li>
+            <li><i class="srn-lg-min"></i>Minimum (reordering rule)</li>
+            <li><i class="srn-lg-fc"></i>Forecast incl. incoming</li>
+          </ul>
+          <div class="srn-ops">
+            <p class="srn-h">Operations <small>open transfers and purchase orders</small></p>
+            <table><thead><tr><th scope="col">Reference</th><th scope="col">From → to</th><th scope="col">Qty</th><th scope="col">Status</th></tr></thead><tbody></tbody></table>
+          </div>
+        </div>
+        <aside class="srn-side" aria-label="Network figures and the selected location">
+          <dl class="dm-kpis">
+            <div><dt>Sold at the tills</dt><dd data-k="sold">0</dd></div>
+            <div><dt>Transfers</dt><dd data-k="tr">0</dd></div>
+            <div><dt>Purchase orders</dt><dd data-k="po">0</dd></div>
+            <div class="dm-ok"><dt>Demand served</dt><dd data-k="served">100%</dd></div>
+          </dl>
+          <div class="srn-detail">
+            <div class="srn-dh"><span class="srn-dic" data-f="icon"></span><span class="srn-dt"><b data-f="name"></b><small data-f="code"></small></span></div>
+            <span class="srn-bar srn-bar--big"><u></u><i></i><s></s></span>
+            <div class="srn-nums"><span><b data-f="oh"></b><small>On hand</small></span><span><b data-f="inc"></b><small>Incoming</small></span><span><b data-f="out"></b><small>Outgoing</small></span><span><b data-f="fc"></b><small>Forecast</small></span></div>
+            <dl class="srn-rule">
+              <div><dt>Reordering rule</dt><dd data-f="rule"></dd></div>
+              <div><dt>Route</dt><dd data-f="route"></dd></div>
+              <div><dt>Suggested</dt><dd><span data-f="sugg"></span><button class="srn-apply" type="button" data-f="apply">Apply</button></dd></div>
+              <div><dt>Today</dt><dd data-f="today"></dd></div>
+              <div><dt>Promotion</dt><dd><button class="srn-sw" type="button" data-f="promo" aria-pressed="false"><i aria-hidden="true"></i>In the promotion</button></dd></div>
+            </dl>
+            <ul class="srn-dops" data-f="ops"></ul>
+            <button class="dm-btn srn-rebal" type="button" data-f="rebal" hidden>{{icon:truck}}<span>Move stock from another store</span></button>
+          </div>
+          <p class="srn-h">Latest events</p>
+          <ol class="dm-log srn-log"></ol>
+        </aside>
+      </div>
+      <div class="dm-static">
+        <p><b>Sell:</b> each store's Point of Sale sells the product and its stock goes down.</p>
+        <p><b>Reorder:</b> each store has a reordering rule (minimum and maximum). When the forecast (on hand plus incoming, less outgoing) drops below the minimum, Odoo raises a transfer from the central warehouse for the quantity that brings it back to the maximum.</p>
+        <p><b>Transfer:</b> the warehouse reserves the stock, picks and ships it through a transit location, and the store receives it. When the warehouse has only part of the quantity, it ships what it has and keeps a backorder for the rest.</p>
+        <p><b>Buy:</b> the warehouse has its own reordering rule with the Buy route. Falling below its minimum raises a request for quotation to the vendor; the buyer confirms it and the goods arrive after the vendor's lead time.</p>
+        <p><b>Exceptions:</b> a promotion weekend multiplies demand at chosen stores, shelves can run empty, and stock can be moved from a store with surplus while the warehouse waits for the vendor.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample data, one product, time compressed. In Odoo the rules run automatically on a schedule you choose or from the replenishment report; Odoo 20 can suggest minimum and maximum levels from demand history, and this demo uses a simple sample rule for them.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what usually slows you down</span><h2>Three problems we see first.</h2></div>
+    <div class="grid-3 ixw-board">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{icon:bag}}</div><h3>Separate POS, separate stock</h3><p>The till knows what sold; the stock system finds out later, if at all.</p></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{icon:truck}}</div><h3>Transfers by message</h3><p>Stores move stock between each other on WhatsApp; counts drift.</p></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{icon:calculator}}</div><h3>Takings keyed in daily</h3><p>Z-reports typed into accounting each evening; card settlements reconciled by hand.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head sec-head--row reveal"><div><span class="hand">how odoo maps to it</span><h2 style="margin:0">The apps we switch on.</h2></div><a class="btn-link" href="{{ROOT}}odoo/apps.html">All Odoo apps {{icon:arrow}}</a></div>
+    <div class="showcase reveal" data-showcase data-interval="6000">
+      <div class="sc-list" role="tablist" aria-label="Odoo apps for retail">
+        <button class="sc-tab" role="tab" type="button" data-app="point_of_sale" data-kicker="Point of Sale · Sales" data-title="Point of Sale" data-href="{{ROOT}}odoo/apps/point_of_sale.html" data-desc="A till that keeps selling when the internet drops, with barcodes, promotions and loyalty — every sale moves stock and posts a journal entry." data-points="Works offline, syncs when back|Barcode, promotions and loyalty|Card terminals and e-receipts">{{odoo:point_of_sale:36}}<span><b>Point of Sale</b><small>Offline-capable, promotions, loyalty.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="stock" data-kicker="Inventory · Supply Chain" data-title="Inventory" data-href="{{ROOT}}odoo/apps/stock.html" data-desc="One location per store, transfers between stores and counts that keep the shelf and the system in agreement." data-points="One location per store|Inter-store transfers and cycle counts|Reordering rules per store">{{odoo:stock:36}}<span><b>Inventory</b><small>Per-store stock, transfers, counts.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="accountant" data-kicker="Accounting · Finance" data-title="Accounting" data-href="{{ROOT}}odoo/apps/accountant.html" data-desc="POS sessions close straight to journals and card settlements reconcile from the bank feed — no Z-report typing." data-points="Sessions closed to journals automatically|Card settlements reconciled from the bank feed|Daily takings visible without spreadsheets">{{odoo:accountant:36}}<span><b>Accounting</b><small>Takings posted, settlements reconciled.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="purchase" data-kicker="Purchase · Supply Chain" data-title="Purchase" data-href="{{ROOT}}odoo/apps/purchase.html" data-desc="Supplier orders raised from minimum-stock rules; receipts update store stock the moment they are scanned." data-points="Supplier orders from minimum-stock rules|Vendor pricelists and lead times|Receipts update store stock">{{odoo:purchase:36}}<span><b>Purchase</b><small>Supplier orders from stock rules.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="website_sale" data-kicker="eCommerce · Websites" data-title="eCommerce" data-href="{{ROOT}}odoo/apps/website_sale.html" data-desc="Sell the same products online with live stock from the stores, including click-and-collect." data-points="Same products and stock online|Click-and-collect|Online orders reserve store stock">{{odoo:website_sale:36}}<span><b>eCommerce</b><small>Same products and stock online.</small></span></button>
+      </div>
+      <div class="sc-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+{{INDUSTRY:retail}}
+
+<section class="section">
+  <div class="container">
+    <div class="cta ixw-cta reveal" data-ixw-burst>
+      <span class="ixw-cta-nexi" aria-hidden="true">{{IXW_POSE:retail:celebrate}}</span>
+      <div><span class="hand">next step</span><h2>Start with one store.</h2><p><span class="m-full">We scope POS + stock + accounting for a single location first, then roll out.</span><span class="m-short">We scope one store first, then roll out.</span></p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a></div>
+    </div>
+  </div>
+</section>

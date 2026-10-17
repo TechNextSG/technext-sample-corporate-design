@@ -1,0 +1,283 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: integration (/odoo/integration) — step 3 of 4, connect what you keep. Connector teal, Odoo purple, cable navy.
+   The title card is a patch panel (a strip of ports along the top, two of them lit); the caption is a sync-status line with
+   its SYNCED pill; buttons are plugs with two prongs; the glance strip is a cable run. */
+.ixw--integration{--ow-c:#14A38B;--ig-ink:#1B2A4A;--ig-teal:#14A38B;--ig-teal-l:#E2F5F0;--ig-pur:#714B67;
+  --w-alt:#F2F8F7;--lab-bd:2px solid #1B2A4A;--lab-lip:#1B2A4A;--lab-tail:#1B2A4A;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#F5FAF9,#DDF1EC 60%,#EDE5F3);--ii-ink:#1B2A4A;--ii-b:#14A38B;--ii-accent:#714B67;--ii-lip:#1B2A4A;--ii-ep-bg:#14A38B;--ii-ep-fg:#FFFFFF}
+.ixw--integration .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#F5FAF9 18%,#E8F2F0 62%,#E6ECEB 62%,#D3DCDA 100%)}
+
+/* ---------- the title card: a patch panel ---------- */
+.ixw--integration .ixw-copy{position:relative;max-width:510px;margin-top:20px;padding:52px 30px 24px;border-radius:14px;background:#FFFFFF;
+  box-shadow:0 0 0 1.5px #D5E5E1,0 40px 70px -30px rgba(20,60,60,.4)}
+.ixw--integration .ixw-copy::before{content:"";position:absolute;left:18px;right:18px;top:14px;height:20px;border-radius:10px;background:#F1F5F4;
+  box-shadow:inset 0 0 0 1.5px #D5E5E1}
+.ixw--integration .ixw-copy::after{content:"";position:absolute;left:28px;right:28px;top:19px;height:10px;
+  background:radial-gradient(circle,#14A38B 3.5px,transparent 4px) 0 0/26px 10px no-repeat,radial-gradient(circle,#714B67 3.5px,transparent 4px) 26px 0/26px 10px no-repeat,radial-gradient(circle,#C9D5D2 3.5px,transparent 4px) 0 0/26px 10px repeat-x}
+.ixw--integration .ixw-copy h1{max-width:15ch}
+.ixw--integration .ixw-copy .hand{color:var(--ig-teal)}
+.ixw--integration .ixw-hint .ic{color:var(--ig-pur)}
+@media (max-width:767px){.ixw--integration .ixw-copy{padding:48px 20px 22px}}
+
+/* ---------- the caption: a sync-status line ---------- */
+.ixw--integration .ixw-cap{border-radius:16px;border:0;background:#FFFFFF;box-shadow:0 0 0 1.5px #D5E5E1,0 0 0 6px var(--ig-teal-l),0 26px 44px -22px rgba(20,60,60,.4)}
+.ixw--integration .ixw-cap::before{content:"\25CF  SYNCED";position:absolute;right:18px;top:-13px;padding:5px 10px;border-radius:999px;background:var(--ig-teal);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.14em}
+.ixw--integration .ixw-cap-who b{color:var(--ig-ink)}.ixw--integration .ixw-cap-txt b{color:var(--ig-pur)}
+.ixw--integration .ixw-cap-rec{background:var(--ig-teal-l);border:1px dashed #7FD3C0;color:#0E5A4C}
+
+/* ---------- hero buttons: ticket-gate buttons (52px, a lit lip, an icon port), round signal controls ---------- */
+.ixw--integration main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){position:relative;overflow:hidden;height:52px;padding:0 24px;border-radius:14px;border:0;gap:12px;font:800 16px/1 var(--font-display);
+  transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .22s ease,background-color .2s ease}
+.ixw--integration main .btn-primary:has(.ic){padding-right:10px}.ixw--integration main .btn-ghost:has(.ic){padding-left:10px}
+.ixw--integration main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white) .ic{width:32px;height:32px;padding:7px;margin:0;border-radius:10px;transition:transform .3s var(--w-spring),background-color .2s ease}
+.ixw--integration main .btn-primary,.ixw--integration main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#22BFA2,#14A38B 60%,#119682);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 0 #0E7A68,0 14px 22px -14px rgba(14,122,104,.7)}
+.ixw--integration main .btn-primary .ic{background:#FFFFFF;color:var(--ig-teal)}
+.ixw--integration main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--integration main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--ig-ink);background:#FFFFFF;box-shadow:inset 0 0 0 2px var(--ig-ink),0 4px 0 var(--ig-ink),0 14px 22px -16px rgba(27,42,74,.5)}
+.ixw--integration main .btn-ghost::before{display:none}.ixw--integration main .btn-ghost .ic{background:var(--ig-teal-l);color:var(--ig-teal)}
+.ixw--integration main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--integration main .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 0 #0E7A68,0 20px 28px -14px rgba(20,163,139,.75)}
+.ixw--integration main .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--ig-ink),0 6px 0 var(--ig-ink),0 20px 26px -16px rgba(20,163,139,.55)}
+.ixw--integration main :is(.btn-primary,.btn-ghost):hover .ic{transform:translateX(3px)}
+.ixw--integration main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--integration main .btn-primary:active{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 0 #0E7A68}
+.ixw--integration main .btn-ghost:active{box-shadow:inset 0 0 0 2px var(--ig-ink),0 1px 0 var(--ig-ink)}
+.ixw--integration .ixw-cta .btn-outline-white,.ixw--integration .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--integration main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--integration .ixw-copy .actions{gap:14px}
+/* the walkthrough rail: line pills, the current stop lit */
+.ixw--integration .ow-rail{gap:8px}
+.ixw--integration .ow-rail a,.ixw--integration .ow-rail li.is-on{height:32px;padding:0 13px 0 5px;font-weight:800;transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw--integration .ow-rail a{background:#FFFFFF;color:#4A5570;box-shadow:inset 0 0 0 1.5px #D5E5E1}
+.ixw--integration .ow-rail a:hover{translate:0 -2px;background:var(--ig-teal-l);color:var(--ig-ink);box-shadow:inset 0 0 0 1.5px var(--ig-teal),0 3px 0 #BFE3DA}
+.ixw--integration .ow-rail a:focus-visible{outline:3px solid #FFC94A;outline-offset:2px}
+.ixw--integration .ow-rail a b{background:var(--ig-teal-l);color:var(--ig-teal)}
+.ixw--integration .ow-rail li.is-on{background:var(--ig-teal);box-shadow:0 3px 0 #0E7A68}
+.ixw--integration .ow-rail b{width:22px;height:22px}
+/* caption controls: signal buttons */
+.ixw--integration .ixw-ibtn{border:2px solid var(--ig-ink);color:var(--ig-ink);box-shadow:0 3px 0 var(--ig-ink)}
+.ixw--integration .ixw-ibtn:hover{color:var(--ig-teal);border-color:var(--ig-ink);box-shadow:0 5px 0 var(--ig-ink),0 10px 16px -8px rgba(20,163,139,.6)}
+.ixw--integration .ixw-ibtn:active{box-shadow:0 1px 0 var(--ig-ink)}
+.ixw--integration .ixw-ibtn:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--integration .ixw-ibtn--play,.ixw--integration .ixw-ibtn--play:hover{background:linear-gradient(180deg,#22BFA2,#14A38B);color:#FFFFFF}
+.ixw--integration .ixw-dots{gap:6px}
+.ixw--integration .ixw-dots button{height:8px;background:#CFE0DC}
+.ixw--integration .ixw-dots button:hover{background:#9FCFC3}
+.ixw--integration .ixw-dots button.is-on{width:24px;background:var(--ig-teal);box-shadow:0 0 0 1.5px var(--ig-ink)}
+/* "View the scene": top left, over the concourse, clear of the network map */
+.ixw--integration .ixw-peek{left:max(24px,calc((100vw - 1200px) / 2 + 24px));right:auto;top:calc(var(--header-box) + 6px);height:40px;padding:0 16px 0 6px;gap:9px;border-color:var(--ig-ink);box-shadow:0 3px 0 var(--ig-ink)}
+.ixw--integration .ixw-peek::before{width:28px;height:28px;border-radius:50%;background:var(--ig-teal);-webkit-mask:none;mask:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-size:16px;background-position:center;background-repeat:no-repeat}
+.ixw--integration .ixw-peek:hover{box-shadow:0 5px 0 var(--ig-ink),0 12px 18px -10px rgba(20,163,139,.6)}
+.ixw--integration .ixw-peek:focus-visible{outline:3px solid #FFC94A}
+.ixw--integration .ixw-peek[aria-pressed="true"]{background:var(--ig-teal-l)}
+.ixw--integration .ixw-peek[aria-pressed="true"]::before{background-color:var(--ig-pur)}
+
+/* ---------- the glance strip: a cable run ---------- */
+.ixw--integration .ow-strip{border-radius:14px;box-shadow:0 0 0 1.5px #D5E5E1,0 24px 44px -30px rgba(20,60,60,.35);
+  background:repeating-linear-gradient(90deg,#14A38B 0 18px,transparent 18px 30px) 0 0/100% 4px no-repeat,#FFFFFF}
+.ixw--integration .ow-strip dt .ic{color:var(--ig-teal)}
+
+/* ---------- the end card ---------- */
+.ixw--integration main .cta{background:radial-gradient(circle at 88% 18%,rgba(113,75,103,.35),transparent 45%),linear-gradient(120deg,#0E5A4C,#14A38B)}
+
+/* ============================== below the hero: the rest of Odoo Central ============================== */
+.ixw--integration{--ig-l1:#7DAE38;--ig-l2:#F08A24;--ig-l3:#635BFF;--ig-l4:#3167CA;--ig-l5:#E0456B;--ig-l6:#1B2A4A;--w-dot:rgba(20,163,139,.10);--w-hand:#0E7A68;
+  --ig-run:linear-gradient(90deg,#7DAE38 0 16.6%,#F08A24 0 33.3%,#635BFF 0 50%,#3167CA 0 66.6%,#E0456B 0 83.3%,#1B2A4A 0)}
+/* section heads: the hand line becomes a platform sign, under a short run of the six line colours */
+.ixw--integration .ig-head{position:relative;padding-top:24px}
+.ixw--integration .ig-head::before{content:"";position:absolute;left:0;top:0;width:150px;height:6px;border-radius:3px;background:var(--ig-run)}
+.ixw--integration .ig-head::after{content:"";position:absolute;left:146px;top:-3px;width:12px;height:12px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 3px var(--ig-pur)}
+.ixw--integration .ig-head .hand{display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;padding:7px 14px 7px 8px;border-radius:999px;background:var(--ig-ink);color:#FFFFFF;
+  font:800 12.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;transform:none;box-shadow:0 3px 0 #0C1730}
+.ixw--integration .ig-head .hand::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--ig-teal);box-shadow:inset 0 0 0 4px #FFFFFF}
+
+/* the glance strip: a ticket with the line run along its top, each fact at a stop */
+.ixw--integration .ow-strip{background:#FFFFFF;position:relative;overflow:hidden}
+.ixw--integration .ow-strip::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--ig-run)}
+.ixw--integration .ow-strip dt .ic{width:22px;height:22px;padding:3px;border-radius:50%;background:var(--ig-teal-l)}
+
+/* the one-paragraph answer: a station notice */
+.ixw--integration .ig-notice{padding:16px 20px;border:0;border-left:6px solid var(--ig-teal);border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D5E5E1,0 16px 30px -24px rgba(20,60,60,.4)}
+.ixw--integration .ig-notice .answer-h{background:var(--ig-ink);color:#FFFFFF}
+
+/* the demo: a signal-box caption over the sync map, the map framed like the network board */
+.ixw--integration .ig-board-cap{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:12px 20px 14px;border-radius:22px 22px 0 0;background:var(--ig-ink);color:#FFFFFF;
+  font:800 12.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 -5px 0 0 transparent}
+.ixw--integration .ig-board-cap span{display:inline-flex;align-items:center;gap:10px}
+.ixw--integration .ig-board-cap i{width:10px;height:10px;border-radius:50%;background:#2BC48A;box-shadow:0 0 0 4px rgba(43,196,138,.25);animation:igBlink 1.6s ease-in-out infinite}
+.ixw--integration .ig-board-cap em{font-style:normal;font-weight:700;letter-spacing:.06em;text-transform:none;color:#9FC0EA}
+@keyframes igBlink{50%{opacity:.35}}
+.ixw--integration .ig-board-cap+.dm{position:relative;border-radius:0 0 22px 22px;border-top:6px solid transparent;border-image:var(--ig-run) 1;border-image-width:6px 0 0 0;box-shadow:0 0 0 1.5px #D5E5E1,0 40px 70px -40px rgba(20,40,90,.55)}
+
+/* the lines: each card is one line of the network, numbered, running to Odoo Central */
+.ixw--integration .ig-lines{gap:22px}
+.ixw--integration .ig-line{--lc:#14A38B;display:flex;flex-direction:column;padding:0 24px 22px;border:0;border-radius:18px;background:#FFFFFF;overflow:hidden;
+  box-shadow:0 0 0 1.5px #E1ECE9,0 18px 34px -26px rgba(20,60,60,.45);transition:translate .3s var(--w-spring),box-shadow .25s ease}
+.ixw--integration .ig-line:hover{transform:none;translate:0 -4px;box-shadow:0 0 0 2px var(--lc),0 26px 40px -24px rgba(20,60,60,.5)}
+.ixw--integration .ig-line-no{display:flex;align-items:center;gap:10px;margin:0 -24px 18px;padding:12px 24px;background:var(--lc);color:#FFFFFF;font:800 13px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase}
+.ixw--integration .ig-line-no b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#FFFFFF;color:var(--lc);font:800 12px/1 var(--font-display);letter-spacing:0}
+.ixw--integration .ig-line .card-ic{color:var(--lc);margin-bottom:12px}
+.ixw--integration .ig-line p:not([class]){flex:1}
+.ixw--integration .ig-line-route{position:relative;display:flex;align-items:center;margin:18px 0 0;padding-top:16px;border-top:1.5px dashed #E1E8EE;font:800 11.5px/1 var(--font-body);color:var(--ig-pur);letter-spacing:.06em;text-transform:uppercase}
+.ixw--integration .ig-line-route i{position:relative;flex:1;height:6px;background:var(--lc)}
+.ixw--integration .ig-line-route i:first-child{border-radius:3px 0 0 3px}
+.ixw--integration .ig-line-route i::after{content:"";position:absolute;right:-7px;top:-4px;width:14px;height:14px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 3px var(--ig-ink);z-index:1}
+.ixw--integration .ig-line-route i:nth-of-type(3)::after{display:none}
+.ixw--integration .ig-line-route b{display:inline-flex;align-items:center;gap:6px;padding:6px 10px 6px 6px;border-radius:999px;background:var(--ig-pur);color:#FFFFFF;font:inherit;white-space:nowrap}
+.ixw--integration .ig-line-route b::before{content:"O";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#FFFFFF;color:var(--ig-pur);font:800 10px/1 var(--font-display)}
+.ixw--integration .ig-line-route::after{content:"";position:absolute;left:0;top:18px;width:18px;height:10px;border-radius:5px;background:#FFFFFF;box-shadow:inset 0 0 0 2.5px var(--lc);animation:igRide 3.2s cubic-bezier(.5,0,.5,1) infinite;animation-delay:calc(var(--i) * -.5s);z-index:2}
+@keyframes igRide{0%{left:0;opacity:0}10%{opacity:1}80%{opacity:1}100%{left:calc(100% - 150px);opacity:0}}
+
+/* the route, station by station: a metro line, and a train that runs it once it scrolls in */
+.ixw--integration .ig-steps{padding-top:8px}
+.ixw--integration .ig-steps::before{top:27px;left:24px;height:10px;border-radius:5px;background:var(--ig-teal);box-shadow:0 0 0 4px var(--w-alt),0 0 0 5.5px #CFE3DE;right:calc(25% - 30px)}
+.ixw--integration .ig-steps .step-n{width:48px;height:48px;border:0;background:#FFFFFF;color:var(--ig-ink);font-size:17px;box-shadow:inset 0 0 0 6px var(--ig-ink),0 0 0 6px var(--w-alt)}
+.ixw--integration .ig-steps .step:last-of-type .step-n{background:var(--ig-pur);color:#FFFFFF;box-shadow:inset 0 0 0 6px #FFFFFF,0 0 0 3px var(--ig-pur),0 0 0 8px var(--w-alt)}
+.ixw--integration .ig-steps .step:hover .step-n{background:var(--ig-teal);color:#FFFFFF;box-shadow:inset 0 0 0 6px #FFFFFF,0 0 0 3px var(--ig-teal),0 0 0 8px var(--w-alt)}
+.ixw--integration .ig-steps .step>div:not(.step-n){position:relative;padding:18px 18px 20px;border-radius:16px;background:#FFFFFF;box-shadow:0 0 0 1.5px #E1ECE9,0 16px 30px -24px rgba(20,60,60,.4)}
+.ixw--integration .ig-steps .step>div:not(.step-n)::before{content:"";position:absolute;left:16px;top:-8px;border:8px solid transparent;border-top:0;border-bottom-color:#FFFFFF}
+.ixw--integration .ig-steps .step h3::before{content:"Station";display:block;margin-bottom:6px;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--ig-teal)}
+.ixw--integration .ig-steps-train{position:absolute;z-index:2;top:17px;left:0;width:58px;height:30px;border-radius:12px 24px 8px 8px;background:var(--ig-pur);box-shadow:inset 0 -7px 0 #5A3B52,0 6px 12px -6px rgba(60,20,50,.5);opacity:0;pointer-events:none}
+.ixw--integration .ig-steps-train::before{content:"";position:absolute;right:9px;top:6px;width:14px;height:9px;border-radius:3px 7px 3px 3px;background:#9FD3F5}
+.ixw--integration .ig-steps-train::after{content:"";position:absolute;left:8px;top:7px;width:22px;height:6px;border-radius:2px;background:rgba(255,255,255,.75)}
+.ixw--integration .ig-steps.is-in .ig-steps-train{animation:igTrain 3.4s cubic-bezier(.6,0,.3,1) .3s forwards}
+@keyframes igTrain{0%{opacity:0;left:0}8%{opacity:1}100%{opacity:1;left:calc(75% - 6px)}}
+
+/* what you get: a ticket under the copy, the timetable of the service beside it */
+.ixw--integration .ig-ticket{position:relative;display:grid;gap:6px;max-width:400px;margin-top:28px;padding:22px 100px 22px 24px;border-radius:16px;background:linear-gradient(135deg,#1FB89D,#0E7A68);color:#FFFFFF;
+  -webkit-mask:radial-gradient(circle at calc(100% - 76px) 0,transparent 11px,#000 11.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 76px) 100%,transparent 11px,#000 11.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at calc(100% - 76px) 0,transparent 11px,#000 11.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 76px) 100%,transparent 11px,#000 11.5px) bottom/100% 51% no-repeat}
+.ixw--integration .ig-ticket span{font:800 11px/1 var(--font-body);letter-spacing:.16em;color:#BFF0E3}
+.ixw--integration .ig-ticket b{font:800 28px/1.1 var(--font-display)}
+.ixw--integration .ig-ticket i{font:600 13px/1.4 var(--font-body);font-style:normal;color:#E2F5F0}
+.ixw--integration .ig-ticket em{position:absolute;right:0;top:0;bottom:0;width:76px;display:grid;place-items:center;border-left:2px dashed rgba(255,255,255,.55);font:800 11px/1 var(--font-body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl}
+.ixw--integration .ig-timetable{border-radius:18px;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 1.5px #E1ECE9,0 26px 44px -30px rgba(20,60,60,.45)}
+.ixw--integration .ig-tt-h{display:flex;justify-content:space-between;margin:0;padding:14px 20px;background:var(--ig-ink);color:#FFFFFF;font:800 11.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;box-shadow:inset 0 -5px 0 var(--ig-teal)}
+.ixw--integration .ig-timetable .spec-cols{columns:1;padding:0;counter-reset:ig}
+.ixw--integration .ig-timetable .spec-cols li{counter-increment:ig;align-items:center;gap:12px;margin:0;padding:10px 18px 10px 14px;font-size:14.5px;color:var(--ink);border-bottom:1px solid #EEF3F2;transition:background-color .2s ease}
+.ixw--integration .ig-timetable .spec-cols li:nth-child(even){background:#F7FBFA}
+.ixw--integration .ig-timetable .spec-cols li:last-child{border-bottom:0}
+.ixw--integration .ig-timetable .spec-cols li:hover{background:var(--ig-teal-l)}
+.ixw--integration .ig-timetable .spec-cols li .ic{order:3;margin:0 0 0 auto;width:22px;height:22px;padding:4px;border-radius:50%;background:#2BC48A;color:#FFFFFF}
+.ixw--integration .ig-timetable .spec-cols li::before{content:counter(ig,decimal-leading-zero);flex:none;display:grid;place-items:center;width:30px;height:22px;border-radius:6px;background:var(--lc,#5C6378);color:#FFFFFF;font:800 11px/1 var(--font-body)}
+.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+1){--lc:var(--ig-l1)}.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+2){--lc:var(--ig-l2)}.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+3){--lc:var(--ig-l3)}
+.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+4){--lc:var(--ig-l4)}.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+5){--lc:var(--ig-l5)}.ixw--integration .ig-timetable .spec-cols li:nth-child(6n+6){--lc:var(--ig-l6)}
+
+/* the questions: an information desk sign beside the answers */
+.ixw--integration .ig-desk{display:grid;grid-template-columns:230px minmax(0,840px);gap:32px;align-items:start}
+.ixw--integration .ig-desk-sign{position:sticky;top:110px;display:grid;justify-items:start;gap:10px;padding:24px;border-radius:18px;background:var(--ig-ink);color:#FFFFFF;box-shadow:0 6px 0 #0C1730,0 26px 40px -26px rgba(20,30,60,.6)}
+.ixw--integration .ig-desk-sign b{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--ig-teal);font:700 30px/1 Georgia,serif;font-style:italic;box-shadow:inset 0 0 0 4px #FFFFFF}
+.ixw--integration .ig-desk-sign span{font:800 21px/1.15 var(--font-display)}
+.ixw--integration .ig-desk-sign small{font:600 12.5px/1.3 var(--font-body);color:#9FC0EA}
+.ixw--integration .ig-desk-sign::after{content:"";width:100%;height:6px;margin-top:6px;border-radius:3px;background:var(--ig-run)}
+.ixw--integration .faq summary::before{content:"i";border-radius:50%;background:var(--ig-teal-l);color:var(--ig-teal);font-family:Georgia,serif;font-style:italic}
+.ixw--integration .faq details{border-left:6px solid transparent}
+.ixw--integration .faq details:nth-child(6n+1)[open]{border-left-color:var(--ig-l1)}.ixw--integration .faq details:nth-child(6n+2)[open]{border-left-color:var(--ig-l2)}.ixw--integration .faq details:nth-child(6n+3)[open]{border-left-color:var(--ig-l3)}
+.ixw--integration .faq details:nth-child(6n+4)[open]{border-left-color:var(--ig-l4)}.ixw--integration .faq details:nth-child(6n+5)[open]{border-left-color:var(--ig-l5)}.ixw--integration .faq details:nth-child(6n+6)[open]{border-left-color:var(--ig-l6)}
+.ixw--integration .faq details[open] summary::before{content:"i";background:var(--ig-teal);color:#FFFFFF}
+
+/* related services: interchange signs, "change here for" */
+.ixw--integration .ig-change .card{padding:0 26px 24px;border:0;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1.5px #E1ECE9,0 18px 34px -26px rgba(20,60,60,.45);transition:translate .3s var(--w-spring),box-shadow .25s ease}
+.ixw--integration .ig-change .card:hover{transform:none;translate:0 -4px;box-shadow:0 0 0 2px var(--ig-teal),0 26px 40px -24px rgba(20,60,60,.5)}
+.ixw--integration .ig-change .card::before{content:"\21C4\00A0 Change here for";display:block;margin:0 -26px 20px;padding:13px 26px;background:var(--ig-ink);color:#FFFFFF;font:800 12px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--integration .ig-change .card:nth-child(1)::before{box-shadow:inset 0 -5px 0 var(--ig-l4)}.ixw--integration .ig-change .card:nth-child(2)::before{box-shadow:inset 0 -5px 0 var(--ig-l3)}.ixw--integration .ig-change .card:nth-child(3)::before{box-shadow:inset 0 -5px 0 var(--ig-l1)}
+.ixw--integration .ig-change .card-ic{color:var(--ig-teal)}
+
+/* the end card: a big ticket with a stub */
+.ixw--integration main .ig-cta{position:relative;padding-right:160px;-webkit-mask:radial-gradient(circle at calc(100% - 122px) 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 122px) 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at calc(100% - 122px) 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 122px) 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+.ixw--integration main .ig-cta::after{content:"ADMIT ONE \00B7  ODOO CENTRAL";position:absolute;right:0;top:0;bottom:0;width:122px;display:grid;place-items:center;border-left:2px dashed rgba(255,255,255,.5);color:rgba(255,255,255,.88);
+  font:800 12px/1 var(--font-body);letter-spacing:.2em;writing-mode:vertical-rl;background:rgba(0,0,0,.1)}
+
+@media (max-width:1000px){.ixw--integration .ig-desk{grid-template-columns:minmax(0,1fr)}.ixw--integration .ig-desk-sign{position:static;grid-template-columns:auto 1fr;align-items:center;width:100%}.ixw--integration .ig-desk-sign small{grid-column:2}.ixw--integration .ig-desk-sign::after{grid-column:1/-1}}
+@media (max-width:767px){
+  .ixw--integration .ig-steps::before{display:none}.ixw--integration .ig-steps-train{display:none}
+  .ixw--integration main .ig-cta{padding-right:28px;-webkit-mask:none;mask:none}.ixw--integration main .ig-cta::after{display:none}
+  .ixw--integration .ig-ticket{padding-right:86px}.ixw--integration .ig-board-cap{font-size:11px;padding:10px 14px 12px}.ixw--integration .ig-board-cap em{display:none}
+}
+
+/* the demo head: copy on the left, the line status board on the right */
+.ixw--integration .ig-head-row{display:grid;grid-template-columns:minmax(0,640px) minmax(0,380px);justify-content:space-between;align-items:end;gap:40px;margin-bottom:40px}
+.ixw--integration .ig-head-row .sec-head{margin-bottom:0}
+.ixw--integration .ig-status{border-radius:18px;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 1.5px #E1ECE9,0 26px 44px -30px rgba(20,60,60,.45)}
+.ixw--integration .ig-status-h{display:flex;justify-content:space-between;align-items:center;margin:0;padding:13px 18px;background:var(--ig-ink);color:#FFFFFF;font:800 12px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
+.ixw--integration .ig-status-h small{font:700 11px/1 var(--font-body);letter-spacing:.04em;text-transform:none;color:#9FC0EA}
+.ixw--integration .ig-status ul{margin:0;padding:6px 0;list-style:none}
+.ixw--integration .ig-status li{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:7px 18px;font:700 13.5px/1.2 var(--font-body);color:var(--ink)}
+.ixw--integration .ig-status li b{display:grid;place-items:center;width:30px;height:20px;border-radius:10px;background:var(--lc);color:#FFFFFF;font:800 10.5px/1 var(--font-body)}
+.ixw--integration .ig-status li em{font:700 11px/1 var(--font-body);font-style:normal;color:#8A96A8}
+.ixw--integration .ig-status li i{display:inline-flex;align-items:center;gap:6px;font:800 11px/1 var(--font-body);font-style:normal;color:#1E9E6A}
+.ixw--integration .ig-status li i::before{content:"";width:8px;height:8px;border-radius:50%;background:#2BC48A;animation:igBlink 2s ease-in-out infinite;animation-delay:calc(var(--d,0) * .3s)}
+.ixw--integration .ig-status li:nth-child(2) i::before{--d:1}.ixw--integration .ig-status li:nth-child(3) i::before{--d:2}.ixw--integration .ig-status li:nth-child(4) i::before{--d:3}.ixw--integration .ig-status li:nth-child(5) i::before{--d:4}.ixw--integration .ig-status li:nth-child(6) i::before{--d:5}
+.ixw--integration .ig-status-f{margin:0;padding:11px 18px;border-top:1.5px dashed #E1E8EE;font:600 12.5px/1.3 var(--font-body);color:#5C6378}
+.ixw--integration .ig-status-f b{color:var(--ig-pur)}
+/* what you get: the chips under the ticket */
+.ixw--integration .ig-chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.ixw--integration .ig-chips li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 1.5px #E1ECE9;font:700 13px/1 var(--font-body);color:var(--body)}
+.ixw--integration .ig-chips b{display:grid;place-items:center;min-width:30px;height:26px;padding:0 6px;border-radius:13px;background:var(--ig-ink);color:#FFFFFF;font:800 12px/1 var(--font-display)}
+.ixw--integration .ig-chips li:nth-child(2) b{background:var(--ig-pur)}.ixw--integration .ig-chips li:nth-child(3) b{background:var(--ig-teal)}
+.ixw--integration .ig-ticket b{color:#FFFFFF}
+.ixw--integration main .ig-cta .hand{color:#BFF0E3}
+.ixw--integration main .ig-cta::after{border-radius:0;right:0;top:0;width:122px;height:auto;transform:none!important;transition:none}
+.ixw--integration .ig-steps.is-in .ig-steps-train{animation-name:igTrain2}
+@keyframes igTrain2{0%{opacity:0;left:0}8%{opacity:1}100%{opacity:1;left:calc(75% - 64px)}}
+@media (max-width:1000px){.ixw--integration .ig-head-row{grid-template-columns:minmax(0,1fr)}.ixw--integration .ig-status{max-width:520px}}
+@media (prefers-reduced-motion:reduce){.ixw--integration .ig-line-route::after,.ixw--integration .ig-board-cap i,.ixw--integration .ig-status li i::before{animation:none}.ixw--integration .ig-steps-train{opacity:1;left:calc(75% - 64px);animation:none!important}}
+
+/* audit round: even card heights, aligned links, the "what you get" copy stays beside the timetable */
+.ixw--integration .ig-steps .step{display:flex;flex-direction:column}
+.ixw--integration .ig-steps .step>div:not(.step-n){flex:1}
+.ixw--integration .ig-change .card{display:flex;flex-direction:column}
+.ixw--integration .ig-change .card>p{flex:1}
+.ixw--integration .ig-change .card .btn-link{margin-top:14px}
+.ixw--integration .ig-chips li{white-space:nowrap}
+@media (min-width:1001px){.ixw--integration .ig-get-copy{position:sticky;top:110px;align-self:start}}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base, 50% the railway junction: teal accent, line colours as thin rules and L-number
+   roundels on the system cards, a station rule on the steps, the timetable header on the checklist. No train, no
+   status board, no information-desk sign. */
+.ixw--integration{--calm-accent:#14A38B;--calm-accent-ink:#0E7A68;--calm-accent-line:#BFE3DA;--calm-accent-wash:#F3F9F8}
+body.ixw--integration main .ig-head-row{display:block!important;margin-bottom:0!important}
+body.ixw--integration main .ig-head-row .sec-head{margin-bottom:28px!important}
+/* the network label above the demo: a slim light caption, not a dark board */
+body.ixw--integration main .ig-board-cap{padding:0 2px 12px!important;background:none!important;border-radius:0!important;color:#0E7A68!important;font:700 12px/1.2 var(--font-body)!important;letter-spacing:.1em!important;text-transform:uppercase}
+body.ixw--integration main .ig-board-cap i{width:8px!important;height:8px!important;box-shadow:none!important;animation:none!important}
+body.ixw--integration main .ig-board-cap em{color:var(--muted)!important;text-transform:none;letter-spacing:0;font-weight:500}
+body.ixw--integration main .ig-board-cap+.dm{border-radius:18px!important;border-top:1px solid var(--calm-line)!important;border-image:none!important;box-shadow:var(--calm-shadow)!important}
+/* system cards: white, a 3px line-colour rule, the line roundel kept small */
+body.ixw--integration main .ig-lines{gap:24px!important}
+body.ixw--integration main .ig-line{padding:24px 26px 26px!important;border-top:3px solid var(--lc)!important;translate:none!important}
+body.ixw--integration main .ig-line-no{margin:0 0 16px!important;padding:0!important;background:none!important;color:var(--muted)!important;font:600 12px/1 var(--font-body)!important;letter-spacing:.1em!important;text-transform:uppercase}
+body.ixw--integration main .ig-line-no b{width:28px!important;height:28px!important;background:var(--lc)!important;color:#fff!important;box-shadow:none!important}
+body.ixw--integration main .ig-line .card-ic{color:var(--lc)!important}
+body.ixw--integration main .ig-line-route{display:none!important}
+/* steps: stations on one thin teal line */
+body.ixw--integration main .ig-steps::before{top:22px!important;height:2px!important;border-radius:0!important;background:#BFE3DA!important;box-shadow:none!important}
+body.ixw--integration main .ig-steps .step-n,body.ixw--integration main .ig-steps .step:last-of-type .step-n,body.ixw--integration main .ig-steps .step:hover .step-n{width:44px!important;height:44px!important;margin-bottom:18px!important;border-radius:50%!important;background:#fff!important;border:1.5px solid var(--calm-accent)!important;color:#0E7A68!important;font:700 16px/1 var(--font-display)!important;box-shadow:none!important;transform:none!important}
+body.ixw--integration main .ig-steps .step>div:not(.step-n){padding:22px 20px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--integration main .ig-steps .step>div:not(.step-n)::before{content:none!important;display:none!important}
+body.ixw--integration main .ig-steps .step h3::before{content:"Station"!important;display:block!important;margin-bottom:6px;font:700 11px/1 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase;color:#0E7A68!important}
+/* what you get: the copy no longer sticks; chips and the timetable calm */
+body.ixw--integration main .ig-get-copy{position:static!important}
+body.ixw--integration main .ig-chips li{box-shadow:none!important;border:1px solid var(--calm-line)}
+body.ixw--integration main .ig-chips b,body.ixw--integration main .ig-chips li:nth-child(n) b{background:#E2F5F0!important;color:#0E7A68!important}
+body.ixw--integration main .ig-timetable{border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--integration main .ig-tt-h{padding:14px 20px!important;background:#F3F9F8!important;color:#0E7A68!important;border-bottom:1px solid #DCEFEA;font:700 12px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--integration main .ig-timetable .spec-cols li:nth-child(even){background:#fff!important}
+body.ixw--integration main .ig-timetable .spec-cols li::before{background:none!important;color:var(--lc)!important;font:700 12px/1 var(--font-display)!important;box-shadow:inset 0 0 0 1px var(--calm-line)!important}
+body.ixw--integration main .ig-timetable .spec-cols li .ic{background:none!important;color:#14A38B!important;padding:0!important}
+/* FAQ: one column, full measure */
+body.ixw--integration main .ig-desk{display:block!important;max-width:860px}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--integration main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--integration main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--integration main .answer-sec .answer-box::before,body.ixw--integration main .answer-sec .answer-box::after,body.ixw--integration main .answer-sec .answer-h::before,body.ixw--integration main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--integration main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--integration main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--integration main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--integration main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:480px){html body.ixw--integration main .cta .actions .btn,html body.ixw--integration .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}

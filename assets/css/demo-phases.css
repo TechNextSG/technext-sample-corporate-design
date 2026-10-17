@@ -1,0 +1,130 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* How an Odoo implementation works (blog): stage rail, environment lanes, stage panel and go-live gate (demo-phases.js) */
+.phz-fig{margin:1.8em 0 2.2em;font:500 12px/1.4 var(--font-body)}
+.phz-fig ul,.phz-fig ol{margin:0;padding:0;list-style:none}
+.phz-fig li{margin:0}
+.phz-fig p{margin:0}
+.dm-phases [data-prev] .ic{transform:rotate(90deg)}
+.dm-phases [data-next] .ic{transform:rotate(-90deg)}
+.dm-phases [data-prev],.dm-phases [data-next]{width:30px;padding:0;justify-content:center}
+.dm-phases [data-play].is-on{background:var(--blue);border-color:var(--blue)}
+.phz-rail{position:relative;padding:30px 12px 12px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#FBFBFD)}
+.phz-track{position:absolute;height:3px;border-radius:3px;background:#E6E3EA;z-index:0}
+.phz-fill{position:absolute;inset:0;border-radius:3px;background:linear-gradient(90deg,var(--blue-300),var(--blue));transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease-expo)}
+.phz-stops{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.phz-stop{display:grid;justify-items:center;align-content:start;gap:6px;padding:0 2px;border:0;background:none;cursor:pointer;font:inherit;color:inherit;text-align:center;border-radius:10px}
+.phz-stop:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.phz-dot{position:relative;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid #DDD9E3;color:var(--muted);transition:background-color .35s ease,border-color .35s ease,color .35s ease,transform .45s var(--spring),box-shadow .35s ease}
+.phz-dot .ic{width:16px;height:16px}
+.phz-stop:hover .phz-dot{border-color:var(--blue-300);transform:translateY(-2px)}
+.phz-stop.is-done .phz-dot{border-color:var(--blue);background:var(--blue-050);color:var(--blue)}
+.phz-stop.is-on .phz-dot{border-color:var(--blue);background:var(--blue);color:#fff;transform:scale(1.1);box-shadow:0 0 0 5px rgba(49,103,202,.16),0 10px 20px -10px rgba(49,103,202,.8)}
+.phz-stop.is-locked .phz-dot{border-style:dashed;border-color:#E9A6A0}
+.phz-stop.is-locked.is-on .phz-dot{background:var(--tok-late);border:2px solid var(--tok-late);box-shadow:0 0 0 5px rgba(210,67,59,.16)}
+.phz-lab{display:grid;gap:1px;justify-items:center}
+.phz-lab b{font:700 11px/1.2 var(--font-display);color:var(--ink)}
+.phz-lab small{font:600 9.5px/1.2 var(--font-body);color:var(--muted)}
+.phz-short{display:none}
+.phz-stop.is-on .phz-lab small{color:var(--blue-700)}
+.phz-lanes{position:relative;height:38px;margin-top:12px}
+.phz-lane{position:absolute;height:16px;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 9px;border-radius:999px;font:700 9px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;overflow:hidden;transition:background-color .4s ease,color .4s ease,box-shadow .4s ease}
+.phz-lane b{font-weight:700}
+.phz-lane em{font-style:normal;opacity:0;transition:opacity .4s ease}
+.phz-lane--old{top:0;background:#EFEDF2;color:#77778F}
+.phz-lane--old.is-ro{background:linear-gradient(90deg,#EFEDF2 0 var(--ro,70%),transparent var(--ro,70%)),repeating-linear-gradient(135deg,#EFEDF2 0 5px,#F8F7FA 5px 10px)}
+.phz-lane--old.is-ro em{opacity:1}
+.phz-lane--stg{top:22px;background:#F3EEFC;color:#6A4BB8}
+.phz-lane--stg.is-on{background:#E6DCFB;box-shadow:0 0 0 2px rgba(116,71,214,.18)}
+.phz-lane--live{top:22px;background:#E9F5EF;color:#137A4A}
+.phz-lane--live.is-on{background:#D3EEDF;box-shadow:0 0 0 2px rgba(19,122,74,.18)}
+.phz-loop{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:2}
+.phz-back{fill:none;stroke:var(--tok-late);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke-dashoffset .9s var(--ease-expo)}
+.phz-panel{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px 16px;padding:14px 14px 16px}
+.phz-ph{grid-column:1/-1;display:flex;align-items:center;gap:10px}
+.phz-no{font:800 22px/1 var(--font-display);color:var(--blue-100);font-variant-numeric:tabular-nums}
+.phz-pt{display:grid;gap:1px;margin-right:auto}
+.phz-pt b{font:800 15px/1.2 var(--font-display);color:var(--ink)}
+.phz-pt small{font:600 10.5px/1.2 var(--font-body);color:var(--muted)}
+.phz-env{padding:4px 9px;border-radius:999px;font:700 10px/1 var(--font-body);font-style:normal;white-space:nowrap}
+.phz-env--pre{background:var(--alt);color:var(--body);box-shadow:inset 0 0 0 1px var(--line)}
+.phz-env--stg{background:#F3EEFC;color:#6A4BB8}
+.phz-env--int{background:var(--blue-050);color:var(--blue-700)}
+.phz-env--live{background:#E9F5EF;color:#137A4A}
+.phz-main{display:grid;gap:9px;align-content:start}
+.phz-what{font:500 12.5px/1.55 var(--font-body);color:var(--body)}
+.phz-chips{display:flex;flex-wrap:wrap;gap:5px}
+.phz-chips span{padding:4px 9px;border-radius:999px;background:var(--blue-050);border:1px solid var(--blue-100);font:600 10.5px/1.2 var(--font-body);color:var(--blue-700)}
+.phz-list{display:grid;gap:4px}
+.phz-list li{position:relative;padding-left:16px;font:500 11.5px/1.45 var(--font-body);color:var(--body)}
+.phz-list li::before{content:"";position:absolute;left:2px;top:4px;width:7px;height:4px;border:solid var(--blue);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+.phz-gnote{padding:7px 10px;border-radius:10px;font:600 11.5px/1.45 var(--font-body)}
+.phz-gnote.is-ok{background:var(--ok-050);color:var(--ok)}
+.phz-gnote.is-bad{background:#FDECEA;color:#9E2B20}
+.phz-side{display:grid;gap:8px;align-content:start}
+.phz-box{padding:9px 11px;border-radius:12px;border:1px solid var(--line);background:#fff}
+.phz-fig .phz-bh{margin:0 0 5px;font:700 9.5px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.phz-box ul{display:grid;gap:3px}
+.phz-box li{position:relative;padding-left:12px;font:500 11.5px/1.4 var(--font-body);color:var(--ink)}
+.phz-box li::before{content:"";position:absolute;left:1px;top:6px;width:5px;height:5px;border-radius:50%;background:var(--c,var(--blue))}
+.phz-box--bring{--c:var(--blue)}
+.phz-box--bring .phz-bh{color:var(--blue-700)}
+.phz-box--get{--c:var(--ok);background:#FAFDFB;border-color:#D6EEE0}
+.phz-box--get .phz-bh{color:var(--ok)}
+.phz-box--avoid{background:#FFFAF2;border-color:#F2DDB8}
+.phz-box--avoid .phz-bh{color:#9A5B00}
+.phz-av{font:500 11.5px/1.45 var(--font-body);color:var(--body)}
+.phz-panel.is-in>*{animation:phzIn .5s var(--spring) both}
+.phz-panel.is-in>:nth-child(2){animation-delay:60ms}
+.phz-panel.is-in>:nth-child(3){animation-delay:120ms}
+@keyframes phzIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.phz-gate{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding:10px 14px;border-top:1px solid var(--line);background:rgba(250,249,251,.8)}
+.phz-lock{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;transition:background-color .3s ease,color .3s ease}
+.phz-lock .ic{width:16px;height:16px}
+.phz-gate.is-open .phz-lock{background:var(--ok-050);color:var(--ok)}
+.phz-gate.is-shut .phz-lock{background:#FDECEA;color:var(--tok-late)}
+.phz-gt{display:grid;gap:1px;margin-right:auto;min-width:0;flex:1 1 200px}
+.phz-gt b{font:700 12px/1.2 var(--font-display);color:var(--ink)}
+.phz-gt small{font:500 10.5px/1.35 var(--font-body);color:var(--muted)}
+.phz-chk{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 11px 0 8px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 11px/1 var(--font-body);color:var(--ink);cursor:pointer;transition:border-color .2s ease,background-color .2s ease}
+.phz-chk i{position:relative;width:16px;height:16px;border-radius:5px;border:1.5px solid #CFCBD6;background:#fff;transition:background-color .2s ease,border-color .2s ease}
+.phz-chk i::after{content:"";position:absolute;left:4.5px;top:1.5px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);transition:transform .3s var(--spring)}
+.phz-chk[aria-pressed="true"]{border-color:#CDEBD9;background:var(--ok-050)}
+.phz-chk[aria-pressed="true"] i{background:var(--ok);border-color:var(--ok)}
+.phz-chk[aria-pressed="true"] i::after{transform:rotate(45deg) scale(1)}
+.phz-chk[aria-pressed="false"]{border-color:#F6C9C4;background:#FFF8F7}
+.phz-chk:hover{border-color:var(--blue-300)}
+.phz-chk:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.phz-gate.is-shake .phz-lock{animation:phzShake .5s ease}
+@keyframes phzShake{0%,100%{transform:none}20%{transform:translateX(-3px) rotate(-6deg)}40%{transform:translateX(3px) rotate(6deg)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}
+@media (max-width:640px){
+  .phz-rail{padding:28px 6px 10px}
+  .phz-dot{width:30px;height:30px}
+  .phz-dot .ic{width:14px;height:14px}
+  .phz-stops{padding-bottom:18px}
+  .phz-stop{position:relative}
+  .phz-lab{position:absolute;top:36px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .25s ease;white-space:nowrap;pointer-events:none}
+  .phz-stop:first-child .phz-lab{left:0;transform:none;justify-items:start}
+  .phz-stop:last-child .phz-lab{left:auto;right:0;transform:none;justify-items:end}
+  .phz-stop.is-on .phz-lab{opacity:1}
+  .phz-long,.phz-lab small{display:none}
+  .phz-lab .phz-short{display:block;font-size:10px;color:var(--blue-700)}
+  .phz-lane{font-size:8px;padding:0 6px}
+  .phz-panel{grid-template-columns:minmax(0,1fr);padding:12px}
+  .phz-gate{padding:10px 12px}
+}
+@media (prefers-reduced-motion:reduce){.phz-fill,.phz-dot,.phz-back{transition:none}.phz-panel.is-in>*,.phz-gate.is-shake .phz-lock{animation:none}}
+
+/* R9 sweep: at 11px the lane names need the room their tracking took (LIVE DATABASE fits the lane again) */
+@media (max-width:640px){.phz-lanes{height:42px}.phz-lane{height:18px;letter-spacing:0;padding:0 7px}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .phz-lab small,
+  .phz-lane,
+  .phz-pt small,
+  .phz-env,
+  .phz-chips span,
+  .phz-fig .phz-bh,
+  .phz-gt small,
+  .phz-lab .phz-short{font-size:11px}
+}

@@ -1,0 +1,111 @@
+<!--meta {"title": "Contact TechNext — email, WhatsApp, meetings and offices", "desc": "Reach TechNext by inquiry form, sales@technext.asia, WhatsApp or a discovery call, or visit our offices in Singapore, Taguig City and Ho Chi Minh City.", "out": "contact.html", "nav": "", "body": "ct-page", "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/contact.css?v={ASSET_V}\">"} -->
+
+<section class="ct-hero">
+  <div class="ct-sky" aria-hidden="true">
+    <span class="ct-cloud c1"></span><span class="ct-cloud c2"></span><span class="ct-cloud c3"></span>
+    <svg class="ct-plane" viewBox="0 0 60 40"><path d="M2 20 58 2 40 38 28 24z" fill="#FFFFFF" stroke="#1B2350" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 24 58 2" stroke="#1B2350" stroke-width="2.5"/></svg>
+    <svg class="ct-trail" viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 110C80 100 120 40 200 60S330 90 400 20" fill="none" stroke="#1B2350" stroke-width="2" stroke-dasharray="6 9" stroke-linecap="round" opacity=".35"/></svg>
+  </div>
+  <div class="container ct-hero-grid">
+    <div class="ct-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Contact</span></nav>
+      <span class="hand">let's talk</span>
+      <h1>Pick the way that suits you. <em>We'll take it from there.</em></h1>
+      <p class="lead">Write to us, message us on WhatsApp, book a discovery call or visit one of our three offices. However you reach us, the reply comes from the TechNext team.</p>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="#ct-form">{{icon:chat-send}} Send an inquiry</a>
+        <a class="btn btn-ghost btn-lg" href="https://technext.odoo.com/book/c82cf8a9" target="_blank" rel="noopener">{{icon:calendar}} Set up meeting</a>
+      </div>
+    </div>
+    <div class="ct-scene" aria-hidden="true">
+      <div class="ct-desk"></div>
+      <img class="ct-nexi" src="{{ROOT}}assets/img/nexi-explains/nexi-hello.webp" alt="" width="360" height="360" loading="eager">
+      <div class="ct-bub b1"><span class="ct-bub-ic">{{icon:mail}}</span><b>sales@technext.asia</b></div>
+      <div class="ct-bub b2"><span class="ct-bub-ic">{{icon:whatsapp}}</span><b>+65 8839 6998</b></div>
+      <div class="ct-bub b3"><span class="ct-bub-ic">{{icon:calendar}}</span><b>Discovery call</b></div>
+      <div class="ct-bub b4"><span class="ct-bub-ic">{{icon:pin}}</span><b>SG · PH · VN</b></div>
+      <span class="ct-dot d1"></span><span class="ct-dot d2"></span><span class="ct-dot d3"></span>
+    </div>
+  </div>
+</section>
+
+<section class="section ct-ways">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">four doors in</span><h2>Ways to reach TechNext.</h2></div>
+    <div class="ct-cards">
+      <a class="ct-card reveal" style="--i:0;--c:#3167CA" href="#ct-form"><span class="ct-card-ic">{{icon:chat-send}}</span><h3>Inquiry form</h3><p>Tell us what slows you down. It goes straight to our sales inbox.</p><span class="ct-card-go">Write to us {{icon:arrow}}</span></a>
+      <a class="ct-card reveal" style="--i:1;--c:#E2453C" href="mailto:sales@technext.asia"><span class="ct-card-ic">{{icon:mail}}</span><h3>Email</h3><p>sales@technext.asia, the address our replies come from.</p><span class="ct-card-go">sales@technext.asia {{icon:arrow}}</span></a>
+      <a class="ct-card reveal" style="--i:2;--c:#14A38B" href="https://wa.me/6588396998?text=Hello%20TechNext%2C%20I%27d%20like%20to%20ask%20about%20Odoo%20for%20my%20company." target="_blank" rel="noopener"><span class="ct-card-ic">{{icon:whatsapp}}</span><h3>WhatsApp</h3><p>Prefer to chat? Message us with a ready-made opener.</p><span class="ct-card-go">+65 8839 6998 {{icon:arrow}}</span></a>
+      <a class="ct-card reveal" style="--i:3;--c:#F5A524" href="https://technext.odoo.com/book/c82cf8a9" target="_blank" rel="noopener"><span class="ct-card-ic">{{icon:calendar}}</span><h3>Set up meeting</h3><p>Book a discovery call and walk us through how your company works today.</p><span class="ct-card-go">Pick a time {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt ct-formsec" id="ct-form">
+  <div class="container ct-form-grid">
+    <div class="ct-form-side reveal">
+      <span class="hand">inquiry form</span>
+      <h2>Tell us what slows you down.</h2>
+      <p>We reply from <a href="mailto:sales@technext.asia">sales@technext.asia</a>. Need prices in writing? Use the <a href="{{ROOT}}quotation.html">quotation builder</a> instead.</p>
+      <ul class="ct-ticks">
+        <li>{{icon:check}} Odoo ERP, enterprise AI, websites, social media, IoT, apps and networks</li>
+        <li>{{icon:check}} Odoo Ready Partner</li>
+        <li>{{icon:check}} Clients in 10+ countries</li>
+      </ul>
+    </div>
+    <form class="form ct-form card card--static reveal" id="contact-form" novalidate data-endpoint="/api/lead">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="Contact page">
+      <div class="form-row">
+        <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="cf-company">Company</label><input id="cf-company" name="company" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="cf-email">Work email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="field">
+        <label for="cf-topic">I'm interested in</label>
+        <select id="cf-topic" name="topic" required>
+          <option value="">Choose one</option>
+          <option>Odoo Accounting</option>
+          <option>Odoo Sales &amp; CRM</option>
+          <option>Odoo Inventory</option>
+          <option>Full Odoo ERP implementation</option>
+          <option>Odoo training or support</option>
+          <option>Website</option>
+          <option>Social media management</option>
+          <option>IoT solutions</option>
+          <option>App development</option>
+          <option>Networks</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" rows="4" required></textarea></div>
+      <div class="form-foot">
+        <button class="btn btn-primary btn-lg" type="submit"><span class="btn-label">Send inquiry</span><span class="btn-busy" aria-hidden="true"></span></button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <div class="form-sent"><h3>Inquiry sent.</h3><p>It's on its way to sales@technext.asia. We'll reply from that address.</p></div>
+      <p class="small muted ct-privacy">We use your details only to reply — see the <a href="{{ROOT}}privacy.html">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section ct-offices">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">come and visit</span><h2>Three offices, one team.</h2></div>
+    <div class="ct-office-row">
+      <article class="ct-office reveal" style="--i:0;--c:#E2453C"><div class="ct-stamp">SG</div><h3>Singapore HQ</h3><p class="ct-role">Headquarters. Sales, discovery and on-site work in Singapore.</p><address>261 Waterloo Street #03-36<br>Singapore 180261</address><div class="ct-office-links"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=261+Waterloo+Street+%2303-36+Singapore+180261" target="_blank" rel="noopener">{{icon:pin}} Directions</a><a href="{{ROOT}}offices/singapore.html">Office page {{icon:arrow}}</a></div></article>
+      <article class="ct-office reveal" style="--i:1;--c:#3167CA"><div class="ct-stamp">PH</div><h3>Philippines</h3><p class="ct-role">Our main hub for Odoo development and consulting.</p><address>Level 9, IP Center<br>Taguig City, Metro Manila</address><div class="ct-office-links"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=14.5349862%2C121.0513368" target="_blank" rel="noopener">{{icon:pin}} Directions</a><a href="{{ROOT}}offices/philippines.html">Office page {{icon:arrow}}</a></div></article>
+      <article class="ct-office reveal" style="--i:2;--c:#14A38B"><div class="ct-stamp">VN</div><h3>Vietnam</h3><p class="ct-role">AI engineering. The enterprise AI behind our solutions.</p><address lang="vi">62 Nguyễn Thị Nhung, Phường Hiệp Bình<br>Ho Chi Minh City</address><div class="ct-office-links"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=62+Nguyen+Thi+Nhung+Hiep+Binh+Ho+Chi+Minh+City" target="_blank" rel="noopener">{{icon:pin}} Directions</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt ct-faqsec">
+  <div class="container ct-faq-grid">
+    <div class="sec-head reveal"><span class="hand">after you say hello</span><h2>What happens next.</h2></div>
+    <div class="faq reveal"><details><summary>Who replies to my message? {{icon:chevron}}</summary><div class="faq-a"><p>The TechNext team. Form inquiries and emails go to sales@technext.asia, and we reply from that address. WhatsApp messages go to +65 8839 6998.</p></div></details><details><summary>What happens on the discovery call? {{icon:chevron}}</summary><div class="faq-a"><p>We walk through how your company works today, and what Odoo would change. Most Odoo projects start with a discovery session that maps your processes to Odoo apps. No pitch before we understand the problem.</p></div></details><details><summary>Will I get a written quotation? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. TechNext quotes the implementation in writing once the scope is clear. If you already know the apps, users and services, the <a href="{{ROOT}}quotation.html">quotation builder</a> sends that scope to us. Nothing there commits you to anything.</p></div></details><details><summary>Do you work with companies outside Singapore? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. We work on-site in Singapore and remotely with clients in 10+ countries, from our headquarters in Singapore, our main development and consulting hub in Taguig City and our AI engineering hub in Ho Chi Minh City.</p></div></details><details><summary>What do you do with my details? {{icon:chevron}}</summary><div class="faq-a"><p>We use your details only to reply. See the <a href="{{ROOT}}privacy.html">privacy policy</a>.</p></div></details></div>
+  </div>
+</section>

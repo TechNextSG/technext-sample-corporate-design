@@ -1,0 +1,329 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-web (/solutions/website) — the model studio. Blueprint blue, studio white and oak, foam, coral and teal.
+   The title card is a drawing sheet (a hairline frame and a title block in the corner); the caption is the studio's site
+   notes; buttons are square-cornered, the ghost drawn as a dashed dimension; the glance strip is a scale ruler.
+   Below the hero: a ruled note, the workbench on a cutting mat (the site-build demo), six model kits on the shelf, a
+   blueprint with section markers for the four steps, the spec sheet beside a tape and a glass dome, RFI cards for the
+   questions, project folders for related services and a blank sheet being drawn for the end card. */
+.ixw--sol-web{--ms-bp:#2E6FBF;--ms-bp-d:#1F56A3;--ms-bp-l:#E6EFFA;--ms-coral:#FF7A59;--ms-teal:#14A38B;--ms-oak:#D9B48A;--ms-oak-d:#B98F62;--ms-wall:#F6F1E8;--ms-ink:#1B1F3B;--ms-mat:#2A9D78;
+  --ms-grid:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px) 0 0/22px 22px;
+  --w-alt:#F7F3EC;--w-dot:rgba(46,111,191,.1);--w-hand:#2E6FBF;--lab-bd:1.5px solid #2E6FBF;--lab-lip:#1F56A3;--lab-tail:#2E6FBF;--lab-r:4px;
+  --ii-pill-r:6px;
+  --ii-bg:linear-gradient(180deg,#F6F1E8 0,#FFFFFF 60%,#E6EFFA 100%);--ii-pattern:linear-gradient(rgba(46,111,191,.07) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(46,111,191,.07) 1px,transparent 1px) 0 0/28px 28px;
+  --ii-ink:#1F2A55;--ii-b:#2E6FBF;--ii-accent:#FF7A59;--ii-lip:#1F56A3;--ii-ep-bg:#2E6FBF;--ii-ep-fg:#FFFFFF}
+.ixw--sol-web .ixw-hero{background:linear-gradient(180deg,#EEF1F5 0,#EEF1F5 14%,#BFDDF5 14%,#E9F3FC 40%,#F6F1E8 40%,#F6F1E8 70%,#E8CFA8 70%,#D8B88C 100%)}
+
+/* ---------- the title card: a drawing sheet with a title block ---------- */
+.ixw--sol-web .ixw-copy{position:relative;max-width:500px;margin-top:26px;padding:34px 32px 66px;border-radius:6px;background:#FFFFFF;
+  box-shadow:0 0 0 1.5px #C9D8EE,7px 7px 0 -1px #F4F8FD,7px 7px 0 .5px #C9D8EE,0 44px 70px -30px rgba(20,50,100,.4)}
+.ixw--sol-web .ixw-copy::before{content:"";position:absolute;inset:10px;border:1.5px solid rgba(46,111,191,.32);border-radius:3px;pointer-events:none;
+  background:linear-gradient(var(--ms-bp),var(--ms-bp)) 0 0/14px 2px no-repeat,linear-gradient(var(--ms-bp),var(--ms-bp)) 0 0/2px 14px no-repeat,linear-gradient(var(--ms-bp),var(--ms-bp)) 100% 0/14px 2px no-repeat,linear-gradient(var(--ms-bp),var(--ms-bp)) 100% 0/2px 14px no-repeat}
+.ixw--sol-web .ixw-copy::after{content:"SHEET 01   ·   SCALE 1 : WEB";position:absolute;right:10px;bottom:10px;padding:10px 14px;border-left:1.5px solid rgba(46,111,191,.32);border-top:1.5px solid rgba(46,111,191,.32);border-radius:0 0 3px 0;
+  background:#F4F8FD;font:800 10px/1 var(--font-body);letter-spacing:.14em;color:var(--ms-bp);white-space:pre}
+.ixw--sol-web .ixw-copy h1{max-width:15ch;font-size:clamp(2rem,3vw,2.7rem)}
+.ixw--sol-web .ixw-copy .crumbs{margin-bottom:12px}.ixw--sol-web .ixw-copy .ixw-ep{margin-bottom:12px}
+.ixw--sol-web .ixw-copy .hand{color:var(--ms-bp)}
+.ixw--sol-web .ixw-copy .lead{margin-top:12px;font-size:.98rem;line-height:1.55;max-width:46ch}
+.ixw--sol-web .msd-badges{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0}
+.ixw--sol-web .msd-badges span{display:inline-flex;align-items:center;gap:6px;height:25px;padding:0 9px 0 7px;border-radius:4px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #C9D8EE;font:800 11.5px/1 var(--font-body);color:var(--ms-ink)}
+.ixw--sol-web .msd-badges .ic{width:14px;height:14px;color:var(--ms-bp)}
+.ixw--sol-web .msd-badges span:nth-child(2) .ic,.ixw--sol-web .msd-badges span:nth-child(4) .ic{color:var(--ms-coral)}.ixw--sol-web .msd-badges span:nth-child(3) .ic{color:var(--ms-teal)}
+.ixw--sol-web .ixw-copy .actions{margin-top:18px;gap:12px}
+.ixw--sol-web .ixw-copy .actions .btn-lg{height:50px;padding:0 18px;font-size:15px}
+.ixw--sol-web .ixw-hint{margin-top:16px}.ixw--sol-web .ixw-hint .ic{color:var(--ms-coral)}
+@media (max-width:767px){.ixw--sol-web .ixw-copy{padding:30px 20px 58px}.ixw--sol-web .msd-badges span:nth-child(n+4){display:none}}
+
+/* ---------- the caption: the studio's site notes ---------- */
+.ixw--sol-web .ixw-cap{border-radius:10px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--ms-bp),0 5px 0 var(--ms-bp-d),0 28px 44px -22px rgba(20,50,100,.42)}
+.ixw--sol-web .ixw-cap::before{content:"SITE NOTES";position:absolute;left:18px;top:-12px;padding:5px 10px;border-radius:4px;background:var(--ms-coral);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;box-shadow:0 2px 0 #D9562F}
+.ixw--sol-web .ixw-cap-who b{color:var(--ms-bp)}.ixw--sol-web .ixw-cap-txt b{color:#D9562F}
+.ixw--sol-web .ixw-cap-rec{background:linear-gradient(rgba(46,111,191,.08) 1px,transparent 1px) 0 0/10px 10px,linear-gradient(90deg,rgba(46,111,191,.08) 1px,transparent 1px) 0 0/10px 10px,#F4F8FD;border:1px solid #C9D8EE;color:var(--ms-bp-d)}
+.ixw--sol-web .ixw-cap-av{border-radius:10px;box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 1.5px var(--ms-bp)}
+.ixw--sol-web .ixw-cap-av b{border-radius:10px}
+
+/* ---------- buttons: square corners; the ghost drawn as a dashed dimension ---------- */
+.ixw--sol-web main :is(.btn-primary,.btn-ghost){border-radius:7px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease,background-color .2s ease}
+.ixw--sol-web main .btn-primary,.ixw--sol-web main .btn-primary:hover{color:#FFFFFF;background:var(--ms-bp)}
+.ixw--sol-web main .btn-primary{box-shadow:0 5px 0 var(--ms-bp-d)}
+.ixw--sol-web main .btn-primary:hover{background:#3A7DD0;translate:0 -2px;box-shadow:0 7px 0 var(--ms-bp-d)}
+.ixw--sol-web main .btn-primary .ic{border-radius:5px;background:var(--ms-coral);color:#FFFFFF}
+.ixw--sol-web main .btn-ghost{border:2px dashed var(--ms-bp);color:var(--ms-ink);background:#FFFFFF;box-shadow:0 5px 0 #C9D8EE}
+.ixw--sol-web main .btn-ghost::before{display:none}
+.ixw--sol-web main .btn-ghost:hover{translate:0 -2px;border-color:var(--ms-coral);color:var(--ms-bp-d);box-shadow:0 7px 0 #C9D8EE}
+.ixw--sol-web main .btn-ghost .ic{color:var(--ms-coral)}
+.ixw--sol-web main :is(.btn-primary,.btn-ghost):active{translate:0 4px;box-shadow:0 1px 0 var(--ms-bp-d);transition-duration:.06s}
+.ixw--sol-web main :is(.btn-primary,.btn-ghost,.btn-white,.btn-outline-white):focus-visible{outline:3px solid var(--ms-coral);outline-offset:4px}
+.ixw--sol-web .ixw-ibtn{border:1.5px solid var(--ms-bp);border-radius:8px;box-shadow:0 3px 0 var(--ms-bp-d)}
+.ixw--sol-web .ixw-ibtn--play,.ixw--sol-web .ixw-ibtn--play:hover{background:var(--ms-bp);color:#FFFFFF}
+.ixw--sol-web .ixw-dots button{border-radius:2px}.ixw--sol-web .ixw-dots button.is-on{background:var(--ms-coral)}
+.ixw--sol-web .ixw-peek{border-color:var(--ms-bp);border-radius:8px;box-shadow:0 3px 0 var(--ms-bp-d)}.ixw--sol-web .ixw-peek[aria-pressed="true"]{background:var(--ms-bp-l)}
+
+/* ---------- the glance strip: a scale ruler ---------- */
+.ixw--sol-web .msd-strip{padding-top:22px;border-radius:8px;background:repeating-linear-gradient(90deg,#2E6FBF 0 1.5px,transparent 1.5px 10px) 0 0/100% 7px no-repeat,repeating-linear-gradient(90deg,#2E6FBF 0 2px,transparent 2px 50px) 0 0/100% 13px no-repeat,linear-gradient(#2E6FBF,#2E6FBF) 0 0/100% 2px no-repeat,#FFFFFF;
+  box-shadow:0 0 0 1.5px #C9D8EE,0 6px 0 #C9D8EE,0 26px 44px -30px rgba(20,50,100,.4)}
+.ixw--sol-web .msd-strip>div{position:relative}
+.ixw--sol-web .msd-strip>div::before{content:"0" counter(rl) "0";counter-increment:rl;position:absolute;left:0;top:-2px;font:800 9px/1 var(--font-body);color:var(--ms-bp);opacity:.7}
+.ixw--sol-web .msd-strip{counter-reset:rl}
+.ixw--sol-web .msd-strip dt .ic{width:24px;height:24px;padding:5px;border-radius:6px;background:var(--ms-bp-l);color:var(--ms-bp)}
+.ixw--sol-web .msd-strip>div:nth-child(2) dt .ic,.ixw--sol-web .msd-strip>div:nth-child(4) dt .ic{background:#FFE9E1;color:#D9562F}
+
+/* ---------- the end card ---------- */
+.ixw--sol-web main .cta{background:var(--ms-grid),linear-gradient(120deg,#1F56A3,#2E6FBF)}
+
+/* ============================== below the hero, section by section ============================== */
+/* the one-paragraph answer: a note with a scale rule down its side */
+.ixw--sol-web .msd-note{max-width:980px;padding:24px 28px 24px 92px;border:0;border-radius:8px;background:#FFFFFF;box-shadow:0 0 0 1.5px #C9D8EE,0 5px 0 #C9D8EE,0 26px 44px -32px rgba(20,50,100,.4);overflow:hidden}
+.ixw--sol-web .msd-rule{position:absolute;left:0;top:0;bottom:0;width:58px;background:repeating-linear-gradient(180deg,transparent 0 9px,rgba(255,255,255,.75) 9px 10.5px) 34px 0/24px 100% no-repeat,repeating-linear-gradient(180deg,transparent 0 49px,#FFFFFF 49px 51px) 22px 0/36px 100% no-repeat,var(--ms-bp)}
+.ixw--sol-web .msd-rule::after{content:"";position:absolute;left:14px;top:50%;width:14px;height:52px;margin-top:-26px;border-radius:3px;background:linear-gradient(180deg,var(--ms-coral) 0 70%,#FFD9C9 70% 86%,#3A4458 86%);transform:rotate(18deg);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.ixw--sol-web .msd-note .answer-h{background:var(--ms-bp-l);color:var(--ms-bp-d)}
+.ixw--sol-web .msd-note p:not(.answer-h){font-size:15px;color:#3D4560}
+@media (max-width:640px){.ixw--sol-web .msd-note{padding:20px 18px 20px 70px}.ixw--sol-web .msd-rule{width:46px}}
+
+/* the demo: the workbench, a green cutting mat with registration marks */
+.ixw--sol-web .msd-bench-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--ms-wall) 100%)}
+.ixw--sol-web .msd-bench{position:relative;padding:12px;border-radius:18px;background:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px) 0 0/20px 20px,linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px) 0 0/20px 20px,linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px) 0 0/100px 100px,var(--ms-mat);
+  box-shadow:0 0 0 2px #1F7C5E,0 8px 0 2px #1F7C5E,0 50px 80px -46px rgba(10,60,40,.55)}
+.ixw--sol-web .msd-bench-top{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:6px 10px 14px;color:#FFFFFF;font:800 13px/1 var(--font-display);letter-spacing:.03em}
+.ixw--sol-web .msd-reg{position:relative;width:26px;height:26px;flex:none;border-radius:50%;border:2px solid #FFFFFF;animation:msdSpin 10s linear infinite}
+.ixw--sol-web .msd-reg::before,.ixw--sol-web .msd-reg::after{content:"";position:absolute;background:#FFFFFF}
+.ixw--sol-web .msd-reg::before{left:50%;top:-6px;bottom:-6px;width:2px;margin-left:-1px}.ixw--sol-web .msd-reg::after{top:50%;left:-6px;right:-6px;height:2px;margin-top:-1px}
+@keyframes msdSpin{to{transform:rotate(360deg)}}
+.ixw--sol-web .msd-bench-ch{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.ixw--sol-web .msd-bench-ch i{padding:5px 10px;border-radius:5px;background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);color:#FFFFFF;font:800 11px/1 var(--font-body);font-style:normal;letter-spacing:.04em}
+.ixw--sol-web .msd-bench-ch i:last-child{background:#714B67}
+.ixw--sol-web .msd-bench .dm{border-radius:12px;box-shadow:none}
+@media (max-width:767px){.ixw--sol-web .msd-bench{padding:8px;border-radius:14px}.ixw--sol-web .msd-bench-ch{display:none}}
+
+/* what we build: six model kits on the studio shelf, lids that lift */
+.ixw--sol-web .msd-kits-sec{background:linear-gradient(180deg,var(--ms-wall) 0,#FFFFFF 100%)}
+.ixw--sol-web .msd-sub{margin-top:10px}
+.ixw--sol-web .msd-kits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 26px}
+.ixw--sol-web .msd-kit{position:relative;padding:62px 24px 24px;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1.5px #E2D6C3,0 6px 0 #E2D6C3,0 26px 40px -30px rgba(80,50,20,.4);transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-kit::after{content:"";position:absolute;left:12px;right:12px;bottom:-14px;height:8px;border-radius:0 0 4px 4px;background:var(--ms-oak);box-shadow:0 3px 0 var(--ms-oak-d)}
+.ixw--sol-web .msd-kit:hover{transform:translateY(-6px)}
+.ixw--sol-web .msd-lid{position:absolute;left:-6px;right:-6px;top:-8px;display:flex;align-items:center;justify-content:space-between;height:44px;padding:0 16px;border-radius:6px;background:var(--c);color:#FFFFFF;
+  box-shadow:0 4px 0 color-mix(in srgb,var(--c) 70%,#000000);transform-origin:12% 100%;transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-lid::after{content:"";position:absolute;left:14px;right:14px;bottom:8px;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 6px,transparent 6px 10px)}
+.ixw--sol-web .msd-kit:hover .msd-lid{transform:translateY(-6px) rotate(-3deg)}
+.ixw--sol-web .msd-lid b{font:800 13px/1 var(--font-display);letter-spacing:.14em}
+.ixw--sol-web .msd-lid i{font:700 11px/1 var(--font-body);font-style:normal;opacity:.85}
+.ixw--sol-web .msd-kit-ic{position:relative;display:grid;place-items:center;width:58px;height:58px;margin:4px 0 16px 4px;color:var(--c)}
+.ixw--sol-web .msd-kit-ic::before{content:"";position:absolute;inset:6px;border-radius:9px;background:color-mix(in srgb,var(--c) 13%,#FFFFFF);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--c) 40%,#FFFFFF);transform:rotate(45deg);transition:transform .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-kit:hover .msd-kit-ic::before{transform:rotate(135deg)}
+.ixw--sol-web .msd-kit-ic .ic{position:relative;width:24px;height:24px}
+.ixw--sol-web .msd-kit h3{margin:0 0 8px;font-size:1.14rem}
+.ixw--sol-web .msd-kit p{margin:0;font-size:15px;line-height:1.6;color:#4A5268}
+@media (max-width:960px){.ixw--sol-web .msd-kits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ixw--sol-web .msd-kits{grid-template-columns:minmax(0,1fr);row-gap:36px}}
+
+/* how it runs: the blueprint, a dimension line across, section markers for the four steps */
+.ixw--sol-web .msd-plan-sec{background:#F7F3EC}
+.ixw--sol-web .msd-plan{position:relative;padding:62px 28px 30px;border-radius:14px;background:var(--ms-grid),linear-gradient(160deg,#2E6FBF,#245CA8);box-shadow:0 0 0 2px var(--ms-bp-d),0 7px 0 2px var(--ms-bp-d),0 40px 60px -40px rgba(20,50,100,.6)}
+.ixw--sol-web .msd-dim{position:absolute;left:44px;right:44px;top:26px;height:2px;background:rgba(255,255,255,.8)}
+.ixw--sol-web .msd-dim::before,.ixw--sol-web .msd-dim::after{content:"";position:absolute;top:-6px;border:7px solid transparent}
+.ixw--sol-web .msd-dim::before{left:-4px;border-right-color:#FFFFFF;border-left-width:0}.ixw--sol-web .msd-dim::after{right:-4px;border-left-color:#FFFFFF;border-right-width:0}
+.ixw--sol-web .msd-dim span{position:absolute;top:-18px;font:600 1.15rem/1 var(--font-hand);color:#FFFFFF}
+.ixw--sol-web .msd-dim span:first-child{left:4px}.ixw--sol-web .msd-dim span:last-child{right:4px}
+.ixw--sol-web .msd-steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.ixw--sol-web .msd-step{position:relative;padding:58px 20px 22px;border-radius:8px;background:#FFFFFF;text-align:center;box-shadow:0 6px 0 rgba(10,30,70,.25);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-step:hover{transform:translateY(-5px)}
+.ixw--sol-web .msd-step::before{content:"";position:absolute;left:50%;top:-36px;width:2px;height:12px;background:rgba(255,255,255,.8)}
+.ixw--sol-web .msd-mark{position:absolute;left:50%;top:-24px;width:52px;height:52px;margin-left:-26px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 2.5px var(--ms-ink);
+  display:grid;grid-template-rows:1fr 1fr;place-items:center;overflow:visible}
+.ixw--sol-web .msd-mark::before{content:"";position:absolute;left:4px;right:4px;top:50%;height:2px;margin-top:-1px;background:var(--ms-ink)}
+.ixw--sol-web .msd-mark::after{content:"";position:absolute;right:-13px;top:50%;margin-top:-8px;border:8px solid transparent;border-left:12px solid var(--ms-ink);border-right:0}
+.ixw--sol-web .msd-step:nth-child(4) .msd-mark::after{border-left-color:var(--ms-coral)}
+.ixw--sol-web .msd-mark b{align-self:end;padding-bottom:3px;font:800 17px/1 var(--font-display);color:var(--ms-ink)}
+.ixw--sol-web .msd-mark i{align-self:start;padding-top:4px;font:800 9.5px/1 var(--font-body);font-style:normal;letter-spacing:.06em;color:var(--ms-coral)}
+.ixw--sol-web .msd-step h3{margin:0 0 8px;font-size:1.12rem}
+.ixw--sol-web .msd-step p{margin:0;font-size:14.5px;line-height:1.6;color:#4A5268}
+@media (max-width:960px){.ixw--sol-web .msd-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:52px}.ixw--sol-web .msd-plan{padding-top:56px}}
+@media (max-width:560px){.ixw--sol-web .msd-steps{grid-template-columns:minmax(0,1fr)}.ixw--sol-web .msd-plan{padding:52px 16px 22px}.ixw--sol-web .msd-dim{left:24px;right:24px}}
+
+/* included every time: a tape measure, a model under a glass dome, and the numbered spec sheet */
+.ixw--sol-web .msd-spec-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--ms-wall) 100%)}
+@media (min-width:961px){.ixw--sol-web .msd-spec{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--sol-web .msd-tape{position:relative;display:flex;justify-content:space-between;align-items:center;margin-top:30px;height:30px;max-width:360px;padding:0 10px 0 44px;border-radius:4px;
+  background:repeating-linear-gradient(90deg,#3A4458 0 1.5px,transparent 1.5px 12px) 44px 0/calc(100% - 44px) 9px no-repeat,repeating-linear-gradient(90deg,#3A4458 0 1.5px,transparent 1.5px 60px) 44px 0/calc(100% - 44px) 15px no-repeat,#FFD84A;
+  box-shadow:0 3px 0 #D9B12A;font:800 11px/1 var(--font-body);color:#3A4458;transform-origin:0 50%}
+.ixw--sol-web .msd-tape::before{content:"";position:absolute;left:-8px;top:-10px;width:48px;height:50px;border-radius:14px;background:#3A4458;box-shadow:inset 0 0 0 5px #4A5468}
+.ixw--sol-web .msd-tape::after{content:"";position:absolute;left:8px;top:6px;width:16px;height:16px;border-radius:50%;background:#FFD84A;box-shadow:0 0 0 3px #2A3142}
+.ixw--sol-web .msd-tape span{position:relative;padding-top:12px}
+.ixw--sol-web .msd-spec-l.is-in .msd-tape{animation:msdTape 1s cubic-bezier(.2,.8,.2,1) .3s backwards}
+@keyframes msdTape{from{clip-path:inset(0 calc(100% - 44px) 0 0)}to{clip-path:inset(0 0 0 0)}}
+.ixw--sol-web .msd-dome{position:relative;width:150px;height:150px;margin:34px 0 0 30px}
+.ixw--sol-web .msd-dome::before{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;border-radius:5px;background:var(--ms-oak);box-shadow:0 4px 0 var(--ms-oak-d)}
+.ixw--sol-web .msd-dome::after{content:"";position:absolute;left:10px;right:10px;bottom:16px;height:124px;border-radius:65px 65px 6px 6px;background:linear-gradient(115deg,rgba(255,255,255,.75) 0 12%,rgba(220,238,250,.35) 12% 60%,rgba(255,255,255,.55) 60% 66%,rgba(220,238,250,.3) 66%);box-shadow:inset 0 0 0 2px rgba(150,190,225,.7)}
+.ixw--sol-web .msd-dome-m{position:absolute;left:38px;bottom:18px;width:52px;height:64px;border-radius:3px;background:linear-gradient(180deg,#1F2A55 0 8px,#FFFFFF 8px 12px,#BFE0F5 12px 32px,#FFFFFF 32px 36px,#F4F7FC 36px);box-shadow:inset 0 0 0 1.5px #C9D3DE}
+.ixw--sol-web .msd-dome-p{position:absolute;left:96px;bottom:18px;width:20px;height:84px;border-radius:6px;background:linear-gradient(180deg,#2A3142 0 4px,#FFFFFF 4px 10px,#BFE0F5 10px 30px,#F4F7FC 30px 74px,var(--ms-coral) 74px);box-shadow:inset 0 0 0 2px #2A3142}
+.ixw--sol-web .msd-sheet{position:relative;padding:24px 28px 26px;border-radius:6px;background:repeating-linear-gradient(180deg,transparent 0 37px,rgba(46,111,191,.14) 37px 38px) 0 66px/100% 100% no-repeat,#FFFFFF;
+  box-shadow:0 0 0 1.5px #C9D8EE,8px 8px 0 -1px #F4F8FD,8px 8px 0 .5px #C9D8EE,0 34px 50px -34px rgba(20,50,100,.4)}
+.ixw--sol-web .msd-sheet-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid var(--ms-bp)}
+.ixw--sol-web .msd-sheet-h b{font:800 1.35rem/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase;color:var(--ms-bp-d)}
+.ixw--sol-web .msd-sheet-h span{font:600 1.25rem/1 var(--font-hand);color:var(--ms-coral)}
+.ixw--sol-web .msd-checks{counter-reset:sp}
+.ixw--sol-web .msd-checks li{counter-increment:sp;position:relative;padding-left:30px;color:#2E3550;font-weight:500}
+.ixw--sol-web .msd-checks li::before{content:counter(sp,decimal-leading-zero);position:absolute;left:0;top:4px;font:800 10.5px/1 var(--font-body);color:#9AA6BC;letter-spacing:.04em}
+.ixw--sol-web .msd-checks li .ic{width:20px;height:20px;padding:3px;margin-top:1px;border-radius:4px;background:var(--ms-teal);color:#FFFFFF}
+.ixw--sol-web .msd-checks li:nth-child(3n+2) .ic{background:var(--ms-bp)}.ixw--sol-web .msd-checks li:nth-child(3n) .ic{background:var(--ms-coral)}
+@media (max-width:960px){.ixw--sol-web .msd-dome{display:none}}
+@media (max-width:640px){.ixw--sol-web .msd-sheet{padding:20px 16px}}
+
+/* the FAQ: RFI cards (requests for information), answered when opened */
+.ixw--sol-web .msd-rfi-sec{background-color:#F7F3EC;background-image:linear-gradient(rgba(46,111,191,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(46,111,191,.06) 1px,transparent 1px);background-size:28px 28px}
+.ixw--sol-web .msd-rfi{counter-reset:q;max-width:900px}
+.ixw--sol-web .msd-rfi details{counter-increment:q;position:relative;border:0;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D9E2EF,0 4px 0 #D9E2EF;transition:box-shadow .25s ease,transform .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-rfi details:hover{transform:translateX(4px)}
+.ixw--sol-web .msd-rfi details[open]{box-shadow:0 0 0 1.5px var(--ms-bp),0 5px 0 var(--ms-bp-d),0 22px 34px -24px rgba(20,50,100,.4)}
+.ixw--sol-web .msd-rfi summary{justify-content:flex-start;padding-left:16px}
+.ixw--sol-web .msd-rfi summary::before{content:"RFI-0" counter(q);width:auto;height:28px;padding:0 9px;border-radius:4px;background:var(--ms-bp-l);color:var(--ms-bp-d);font:800 11px/1 var(--font-body);letter-spacing:.06em;transform:none}
+.ixw--sol-web .msd-rfi details[open] summary::before{content:"RFI-0" counter(q);background:var(--ms-bp);color:#FFFFFF;transform:none}
+.ixw--sol-web .msd-rfi summary .ic{margin-left:auto;border-radius:6px;background:#F4F8FD;color:var(--ms-bp)}
+.ixw--sol-web .msd-rfi .faq-a{position:relative;padding-left:92px}
+.ixw--sol-web .msd-rfi details[open] .faq-a::before{content:"ANSWERED";position:absolute;left:20px;top:3px;padding:4px 7px;border-radius:4px;box-shadow:inset 0 0 0 1.5px var(--ms-teal);color:var(--ms-teal);font:800 9px/1 var(--font-body);letter-spacing:.1em;transform:rotate(-6deg)}
+.ixw--sol-web .msd-rfi .faq-a a{color:var(--ms-bp);font-weight:700}
+@media (max-width:640px){.ixw--sol-web .msd-rfi .faq-a{padding-left:22px;padding-top:24px}.ixw--sol-web .msd-rfi details[open] .faq-a::before{left:22px;top:0}}
+
+/* related services: project folders with coloured tabs and a sheet peeking out */
+.ixw--sol-web .msd-folders-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--ms-wall) 100%)}
+.ixw--sol-web .msd-folders{gap:30px;padding-top:24px}
+.ixw--sol-web .msd-folder{position:relative;padding:34px 26px 24px;border:0;border-radius:0 10px 10px 10px;background:#FFF8EA;box-shadow:0 0 0 1.5px #E8D9BB,0 6px 0 #E8D9BB,0 26px 40px -30px rgba(80,50,20,.45);overflow:visible;transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-web .msd-folder::before{content:"";position:absolute;left:14px;right:22px;top:-10px;height:30px;border-radius:4px 4px 0 0;background:#FFFFFF;box-shadow:0 0 0 1.5px #E3E8EF;transform:rotate(-1.5deg);transition:transform .45s cubic-bezier(.34,1.45,.64,1);z-index:-1}
+.ixw--sol-web .msd-folder:hover{transform:translateY(-6px);border:0}
+.ixw--sol-web .msd-folder:hover::before{transform:translateY(-10px) rotate(-3deg)}
+.ixw--sol-web .msd-tab{position:absolute;left:0;top:-24px;height:26px;padding:0 16px;border-radius:8px 8px 0 0;background:var(--c);color:#FFFFFF;font:800 11px/26px var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--sol-web .msd-folder .card-ic{display:grid;place-items:center;width:52px;height:52px;border-radius:8px;background:color-mix(in srgb,var(--c) 14%,#FFFFFF);color:var(--c)}
+.ixw--sol-web .msd-folder .btn-link{color:var(--c)}
+
+/* the end card: a blank sheet on the blueprint, a pencil drawing its first line */
+.ixw--sol-web .msd-cta-sec .cta{padding-right:300px;box-shadow:0 0 0 2px var(--ms-bp-d),0 8px 0 2px var(--ms-bp-d)}
+.ixw--sol-web .msd-cta-sec .cta::after{display:none}
+.ixw--sol-web .msd-cta-sec .cta>div{position:relative;z-index:1}
+.ixw--sol-web .msd-cta-sec .hand{color:#FFD9C9}
+.ixw--sol-web .msd-sheet2{position:absolute;right:56px;top:50%;width:150px;height:190px;margin-top:-95px;border-radius:4px;background:#FFFFFF;box-shadow:8px 8px 0 rgba(10,30,70,.25);transform:rotate(6deg);pointer-events:none}
+.ixw--sol-web .msd-sheet2::before{content:"";position:absolute;left:18px;top:30px;height:3px;width:0;border-radius:2px;background:var(--ms-bp);box-shadow:0 22px 0 var(--ms-bp-l),0 44px 0 var(--ms-bp-l),0 66px 0 var(--ms-bp-l);animation:msdDraw 4.5s ease-in-out infinite}
+.ixw--sol-web .msd-sheet2 i{position:absolute;left:18px;top:2px;width:12px;height:56px;border-radius:3px;background:linear-gradient(180deg,var(--ms-coral) 0 72%,#FFD9C9 72% 88%,#3A4458 88%);transform-origin:50% 100%;transform:rotate(36deg);animation:msdPencil 4.5s ease-in-out infinite}
+@keyframes msdDraw{0%,8%{width:0}55%,100%{width:110px}}
+@keyframes msdPencil{0%,8%{translate:0 0}55%,100%{translate:110px 0}}
+.ixw--sol-web .msd-cta-sec .btn-white{color:var(--ms-bp-d);box-shadow:0 5px 0 #9CBDE6}
+.ixw--sol-web .msd-cta-sec .btn-outline-white{border:2px dashed #FFFFFF;box-shadow:none}
+@media (max-width:1099px){.ixw--sol-web .msd-cta-sec .cta{padding-right:56px}.ixw--sol-web .msd-sheet2{display:none}}
+@media (max-width:767px){.ixw--sol-web .msd-cta-sec .cta{padding-right:22px}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-web :is(.msd-reg,.msd-sheet2 i){animation:none}.ixw--sol-web .msd-sheet2::before{animation:none;width:110px}.ixw--sol-web .msd-spec-l.is-in .msd-tape{animation:none}}
+@media (max-width:767px){.ixw--sol-web .msd-strip>div::before{display:none}.ixw--sol-web .msd-strip{padding-top:18px}}
+
+/* ---------- hero buttons (audit round): drafting-office buttons — blueprint block with a coral key, a dashed dimension ghost with tick marks ---------- */
+.ixw--sol-web .ixw-copy .actions{align-items:center}
+.ixw--sol-web .ixw-copy .actions .btn-lg{height:52px;gap:12px;overflow:visible}
+.ixw--sol-web .ixw-copy .actions .btn-lg::after{border-radius:inherit}
+.ixw--sol-web .ixw-copy .btn-primary{padding:0 10px 0 20px}
+.ixw--sol-web .ixw-copy .btn-primary .ic{width:30px;height:30px;padding:7px;box-shadow:inset 0 -2px 0 #D9562F}
+.ixw--sol-web main .ixw-copy .btn-primary:hover{box-shadow:0 7px 0 var(--ms-bp-d),0 0 0 6px rgba(46,111,191,.14)}
+.ixw--sol-web .ixw-copy .btn-ghost{position:relative;padding:0 20px 0 18px}
+.ixw--sol-web .ixw-copy .btn-ghost::before{display:block;content:"";position:absolute;inset:auto -1px -13px -1px;height:7px;transform:none;z-index:0;
+  background:linear-gradient(var(--ms-bp),var(--ms-bp)) 0 50%/100% 1px no-repeat,linear-gradient(var(--ms-bp),var(--ms-bp)) 0 0/1px 100% no-repeat,linear-gradient(var(--ms-bp),var(--ms-bp)) 100% 0/1px 100% no-repeat;opacity:.45;transition:opacity .2s ease}
+.ixw--sol-web main .ixw-copy .btn-ghost:hover::before{opacity:.9;transform:none}
+.ixw--sol-web main .ixw-copy .btn-ghost:hover{background:#F4F8FD}
+.ixw--sol-web .ixw-copy .btn-ghost .ic{width:20px;height:20px}
+.ixw--sol-web main .ixw-copy .btn-ghost:hover .ic{transform:none}
+.ixw--sol-web .msd-badges{gap:7px}
+.ixw--sol-web .msd-badges span{height:28px;padding:0 11px 0 8px;transition:translate .2s ease,box-shadow .2s ease}
+.ixw--sol-web .msd-badges span:hover{translate:0 -2px;box-shadow:inset 0 0 0 1.5px var(--ms-bp),0 3px 0 #C9D8EE}
+.ixw--sol-web .ixw-cap .ixw-ibtn{background:#FFFFFF;color:var(--ms-bp-d)}
+.ixw--sol-web .ixw-cap .ixw-ibtn:hover{background:#F4F8FD;color:var(--ms-bp);border-color:var(--ms-bp);box-shadow:0 5px 0 var(--ms-bp-d),0 0 0 4px rgba(46,111,191,.14)}
+.ixw--sol-web .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--ms-bp-d)}
+.ixw--sol-web .ixw-cap .ixw-ibtn--play,.ixw--sol-web .ixw-cap .ixw-ibtn--play:hover{border:0;border-radius:10px;background:linear-gradient(180deg,#4C88D4,var(--ms-bp));color:#FFFFFF;box-shadow:0 4px 0 var(--ms-bp-d)}
+.ixw--sol-web .ixw-cap .ixw-ibtn--play:hover{box-shadow:0 6px 0 var(--ms-bp-d),0 0 0 5px rgba(255,122,89,.25)}
+.ixw--sol-web .ixw-cap .ixw-ibtn:focus-visible,.ixw--sol-web .ixw-peek:focus-visible{outline:3px solid var(--ms-coral);outline-offset:3px}
+.ixw--sol-web .ixw-dots{gap:6px}
+.ixw--sol-web .ixw-dots button{width:10px;height:6px;background:#D5E2F3}
+.ixw--sol-web .ixw-dots button:hover{background:#A9C4E8}
+.ixw--sol-web .ixw-dots button.is-on{width:26px;background:repeating-linear-gradient(90deg,var(--ms-coral) 0 4px,#FFB49F 4px 6px)}
+.ixw--sol-web .ixw-peek{height:40px;padding:0 18px 0 14px;border:1.5px solid var(--ms-bp);background:#FFFFFF linear-gradient(rgba(46,111,191,.07) 1px,transparent 1px) 0 0/8px 8px;color:var(--ms-bp-d);font-weight:800;box-shadow:0 4px 0 var(--ms-bp-d),0 14px 22px -14px rgba(20,50,100,.55)}
+.ixw--sol-web .ixw-peek:hover{box-shadow:0 6px 0 var(--ms-bp-d),0 0 0 4px rgba(46,111,191,.14)}
+.ixw--sol-web .ixw-peek[aria-pressed="true"]{background:#FFE7DF;border-color:var(--ms-coral);color:#B5401F}
+@media (max-width:640px){.ixw--sol-web .ixw-copy .actions{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}.ixw--sol-web .ixw-copy .actions .btn{width:100%;justify-content:center}}
+
+/* ---------- below the hero (audit round) ---------- */
+/* the RFI list beside its heading and a rolled drawing in a tube (no empty half at desktop widths) */
+@media (min-width:1000px){.ixw--sol-web .msd-rfi-sec .container{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:56px;align-items:start}
+  .ixw--sol-web .msd-rfi-sec .sec-head{position:sticky;top:120px;margin:0;padding-bottom:150px}
+  .ixw--sol-web .msd-rfi-sec .sec-head::after{content:"";position:absolute;left:0;bottom:0;width:190px;height:130px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 130'%3E%3Crect x='6' y='96' width='178' height='26' rx='3' fill='%23FFFFFF' stroke='%23C9D8EE' stroke-width='2'/%3E%3Cpath d='M14 104h4M24 104h2M32 104h4M42 104h2M50 104h4M60 104h2M68 104h4M78 104h2M86 104h4M96 104h2M104 104h4M114 104h2M122 104h4M132 104h2M140 104h4M150 104h2M158 104h4M168 104h2' stroke='%232E6FBF' stroke-width='2'/%3E%3Crect x='30' y='20' width='120' height='70' rx='3' fill='%232E6FBF'/%3E%3Cpath d='M42 34h40M42 44h60M42 54h30' stroke='%23FFFFFF' stroke-width='3' opacity='.7'/%3E%3Crect x='96' y='50' width='42' height='30' rx='2' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-dasharray='4 3'/%3E%3Ccircle cx='150' cy='20' r='5' fill='%23FF7A59'/%3E%3Ccircle cx='30' cy='20' r='5' fill='%2314A38B'/%3E%3C/svg%3E") 0 100%/contain no-repeat}
+  .ixw--sol-web .msd-rfi{max-width:none}}
+.ixw--sol-web .msd-rfi summary:focus-visible{outline:3px solid var(--ms-coral);outline-offset:3px}
+/* related folders: equal heights, the link always on the bottom line */
+.ixw--sol-web .msd-folder{display:flex;flex-direction:column}
+.ixw--sol-web .msd-folder .btn-link{margin-top:auto;padding-top:14px}
+
+/* fix round: FAQ in one column — heading row with its drawing on the right, questions full width below (nothing under the side tabs) */
+@media (min-width:1000px){.ixw--sol-web .msd-rfi-sec .container{display:block}
+  .ixw--sol-web .msd-rfi-sec .sec-head{position:relative;top:auto;max-width:920px;margin:0 0 30px;padding:0 190px 0 0;min-height:100px}
+  .ixw--sol-web .msd-rfi-sec .sec-head::after{left:auto;right:0;bottom:-8px;width:160px;height:100px}
+  .ixw--sol-web .msd-rfi{max-width:920px}}
+/* kit lids: white labels, all lids level (hover only lifts) */
+.ixw--sol-web .msd-lid b,.ixw--sol-web .msd-lid i{color:#FFFFFF}
+.ixw--sol-web .msd-lid,.ixw--sol-web .msd-kit,.ixw--sol-web .msd-kit.reveal{rotate:none}
+.ixw--sol-web .msd-kit:hover .msd-lid{transform:translateY(-4px)}
+/* related folders: no loose paper strip behind the tab, all three tabs alike */
+.ixw--sol-web .msd-folder::before{display:none}
+.ixw--sol-web .msd-tab{top:-26px;height:28px;line-height:28px;box-shadow:0 -1px 0 color-mix(in srgb,var(--c) 70%,#000000) inset}
+/* "The basics": the left column sits centred against the spec sheet; the model under glass is a solid exhibit with a plaque, not a faint ghost */
+@media (min-width:961px){.ixw--sol-web .msd-spec{align-items:center}}
+.ixw--sol-web .msd-dome{width:200px;height:190px;margin:40px 0 0 24px}
+.ixw--sol-web .msd-dome::before{height:22px;background:linear-gradient(180deg,#D9B48A,#B98F62);box-shadow:0 5px 0 #9C7448,0 18px 22px -12px rgba(80,50,20,.45)}
+.ixw--sol-web .msd-dome::after{left:14px;right:14px;bottom:20px;height:160px;border-radius:86px 86px 6px 6px;background:linear-gradient(115deg,rgba(255,255,255,.85) 0 12%,rgba(200,226,246,.55) 12% 60%,rgba(255,255,255,.7) 60% 66%,rgba(200,226,246,.5) 66%);box-shadow:inset 0 0 0 2.5px #8FB7DE}
+.ixw--sol-web .msd-dome-m{left:52px;bottom:22px;width:70px;height:86px;background:linear-gradient(180deg,#1F2A55 0 10px,#FFFFFF 10px 14px,#9CC8EE 14px 40px,#FFFFFF 40px 46px,#E8EEF7 46px)}
+.ixw--sol-web .msd-dome-p{left:130px;bottom:22px;width:26px;height:110px}
+.ixw--sol-web .msd-spec-l .msd-dome+*{margin-top:0}
+.ixw--sol-web .msd-dome i:last-child::after{content:"SCALE 1 : WEB";position:absolute;left:-104px;bottom:-24px;width:150px;font:800 9px/1 var(--font-body);letter-spacing:.14em;color:#FFFFFF;text-align:center}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the model-makers' studio. One workbench-green accent.
+   Themed touches kept: the "KIT 0x" label on the six cards, the drawing marks (A-1..A-4) on the steps, the spec-sheet
+   header, folder tabs on the related cards, the slim green workbench bar over the demo.
+   =================================================================================================================== */
+.ixw--sol-web{--calm-accent:#1E9E6A;--calm-accent-ink:#17734F;--calm-accent-line:#C3E4D5;--calm-accent-wash:#F5FAF7;--calm-wash:#F5FAF7}
+html body.ixw--sol-web main .msd-note{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-web main .msd-note::before,html body.ixw--sol-web main .msd-note::after{content:none!important;display:none!important}
+html body.ixw--sol-web main .msd-note p{color:var(--body)!important}
+/* demo */
+html body.ixw--sol-web main .msd-bench-sec{background:#fff!important}
+html body.ixw--sol-web main .msd-bench{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-web main .msd-bench::before,html body.ixw--sol-web main .msd-bench::after{content:none!important;display:none!important}
+html body.ixw--sol-web main .msd-bench-top{padding:12px 18px!important;background:#1E9E6A!important}
+html body.ixw--sol-web main .msd-reg{display:none!important}
+html body.ixw--sol-web main .msd-bench .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* kits: white cards, the kit label as a small coloured line on top */
+html body.ixw--sol-web main .msd-kit{padding:56px 26px 26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-web main .msd-kit:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-web main .msd-kit::before,html body.ixw--sol-web main .msd-kit::after,html body.ixw--sol-web main .msd-lid::after{content:none!important;display:none!important}
+html body.ixw--sol-web main .msd-lid{left:26px!important;right:26px!important;top:22px!important;height:auto!important;padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:var(--c)!important}
+html body.ixw--sol-web main .msd-lid b{color:var(--c)!important;font:700 12px/1 var(--font-body)!important;letter-spacing:.1em}
+html body.ixw--sol-web main .msd-lid i{color:#9AA3B5!important;font:500 11px/1 var(--font-body)!important}
+html body.ixw--sol-web main .msd-kit-ic::before{border-radius:12px!important;box-shadow:none!important;transform:none!important}
+html body.ixw--sol-web main .msd-kit p{color:var(--body)!important}
+/* steps: plain cards, no blueprint board; the drawing mark stays */
+html body.ixw--sol-web main .msd-plan-sec{background:var(--calm-wash)!important}
+html body.ixw--sol-web main .msd-plan{padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+html body.ixw--sol-web main .msd-plan::before,html body.ixw--sol-web main .msd-plan::after,html body.ixw--sol-web main .msd-step::before,html body.ixw--sol-web main .msd-mark::after{content:none!important;display:none!important}
+html body.ixw--sol-web main .msd-step{padding:24px 22px!important;text-align:left!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-web main .msd-mark{position:relative!important;left:auto!important;top:auto!important;margin:0 0 14px!important;width:44px!important;height:44px!important;box-shadow:0 0 0 1.5px var(--calm-accent)!important;display:grid!important}
+html body.ixw--sol-web main .msd-mark::before{background:var(--calm-accent)!important;opacity:.5}
+html body.ixw--sol-web main .msd-step p{color:var(--body)!important}
+/* spec sheet */
+html body.ixw--sol-web main .msd-spec-sec{background:#fff!important}
+html body.ixw--sol-web main .msd-sheet{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-web main .msd-sheet::before,html body.ixw--sol-web main .msd-sheet::after{content:none!important;display:none!important}
+html body.ixw--sol-web main .msd-sheet li{color:var(--body)!important}
+/* FAQ */
+html body.ixw--sol-web main .msd-rfi-sec{background:var(--calm-wash)!important;background-image:none!important}
+html body.ixw--sol-web main .msd-rfi{max-width:860px!important}
+html body.ixw--sol-web main .msd-rfi details{box-shadow:none!important}
+/* related: white cards with a small folder tab */
+html body.ixw--sol-web main .msd-folders{padding-top:20px}
+html body.ixw--sol-web main .msd-folder{padding:28px 26px 26px!important;border-radius:0 16px 16px 16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-web main .msd-folder:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-web main .msd-tab{box-shadow:none!important}
+
+@media (max-width:480px){html body.ixw--sol-web main .ixw-copy .actions{flex-wrap:wrap}html body.ixw--sol-web main .ixw-copy .actions .btn{white-space:normal;flex:1 1 auto;min-width:0;justify-content:center;text-align:center}}

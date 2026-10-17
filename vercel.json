@@ -1,0 +1,1172 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "regions": [
+    "sin1"
+  ],
+  "redirects": [
+    {
+      "source": "/((?!denied|robots\\.txt|\\.well-known).*)",
+      "destination": "/denied",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(GPTBot|ClaudeBot|anthropic-ai|CCBot|Bytespider|meta-externalagent|FacebookBot|Amazonbot|cohere-ai|cohere-training-data-crawler|Diffbot|Omgilibot|omgili|img2dataset|AI2Bot|PanguBot|Timpibot|ImagesiftBot|Kangaroo Bot|webzio-extended|FirecrawlAgent|HTTrack|SiteSucker|WebCopier|Offline Explorer|Teleport Pro|WebZIP|WebReaper|HeadlessChrome|PhantomJS|python-requests|Python-urllib|python-httpx|aiohttp|Go-http-client|Scrapy|node-fetch|axios|libwww-perl|Wget/|curl/).*"
+        }
+      ]
+    },
+    {
+      "source": "/((?!denied|robots\\.txt|\\.well-known).*)",
+      "destination": "/denied",
+      "permanent": false,
+      "missing": [
+        {
+          "type": "header",
+          "key": "user-agent"
+        }
+      ]
+    },
+    {
+      "source": "/((?!denied|robots\\.txt|\\.well-known).*)",
+      "destination": "/denied",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "^\\s*$"
+        }
+      ]
+    },
+    {
+      "source": "/odoo/apps/account",
+      "destination": "/odoo/apps/invoicing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/account.html",
+      "destination": "/odoo/apps/invoicing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/accountant",
+      "destination": "/odoo/apps/accounting",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/accountant.html",
+      "destination": "/odoo/apps/accounting",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/ai_app",
+      "destination": "/odoo/apps/ai",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/ai_app.html",
+      "destination": "/odoo/apps/ai",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/appointment",
+      "destination": "/odoo/apps/appointments",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/appointment.html",
+      "destination": "/odoo/apps/appointments",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/event",
+      "destination": "/odoo/apps/events",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/event.html",
+      "destination": "/odoo/apps/events",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr",
+      "destination": "/odoo/apps/employees",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr.html",
+      "destination": "/odoo/apps/employees",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_appraisal",
+      "destination": "/odoo/apps/appraisals",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_appraisal.html",
+      "destination": "/odoo/apps/appraisals",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_expense",
+      "destination": "/odoo/apps/expenses",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_expense.html",
+      "destination": "/odoo/apps/expenses",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_holidays",
+      "destination": "/odoo/apps/time-off",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_holidays.html",
+      "destination": "/odoo/apps/time-off",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_payroll",
+      "destination": "/odoo/apps/payroll",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_payroll.html",
+      "destination": "/odoo/apps/payroll",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_recruitment",
+      "destination": "/odoo/apps/recruitment",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_recruitment.html",
+      "destination": "/odoo/apps/recruitment",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_referral",
+      "destination": "/odoo/apps/referrals",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_referral.html",
+      "destination": "/odoo/apps/referrals",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_timesheet",
+      "destination": "/odoo/apps/timesheets",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/hr_timesheet.html",
+      "destination": "/odoo/apps/timesheets",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/im_livechat",
+      "destination": "/odoo/apps/live-chat",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/im_livechat.html",
+      "destination": "/odoo/apps/live-chat",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/industry_fsm",
+      "destination": "/odoo/apps/field-service",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/industry_fsm.html",
+      "destination": "/odoo/apps/field-service",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mail",
+      "destination": "/odoo/apps/discuss",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mail.html",
+      "destination": "/odoo/apps/discuss",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/marketing_automation",
+      "destination": "/odoo/apps/marketing-automation",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/marketing_automation.html",
+      "destination": "/odoo/apps/marketing-automation",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mass_mailing",
+      "destination": "/odoo/apps/email-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mass_mailing.html",
+      "destination": "/odoo/apps/email-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mass_mailing_sms",
+      "destination": "/odoo/apps/sms-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mass_mailing_sms.html",
+      "destination": "/odoo/apps/sms-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mrp",
+      "destination": "/odoo/apps/manufacturing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mrp.html",
+      "destination": "/odoo/apps/manufacturing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mrp_plm",
+      "destination": "/odoo/apps/plm",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/mrp_plm.html",
+      "destination": "/odoo/apps/plm",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/point_of_sale",
+      "destination": "/odoo/apps/point-of-sale",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/point_of_sale.html",
+      "destination": "/odoo/apps/point-of-sale",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/pos_restaurant",
+      "destination": "/odoo/apps/restaurant-pos",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/pos_restaurant.html",
+      "destination": "/odoo/apps/restaurant-pos",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/quality_control",
+      "destination": "/odoo/apps/quality",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/quality_control.html",
+      "destination": "/odoo/apps/quality",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale",
+      "destination": "/odoo/apps/sales",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale.html",
+      "destination": "/odoo/apps/sales",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale_renting",
+      "destination": "/odoo/apps/rental",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale_renting.html",
+      "destination": "/odoo/apps/rental",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale_subscription",
+      "destination": "/odoo/apps/subscriptions",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/sale_subscription.html",
+      "destination": "/odoo/apps/subscriptions",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/social",
+      "destination": "/odoo/apps/social-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/social.html",
+      "destination": "/odoo/apps/social-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/spreadsheet_dashboard",
+      "destination": "/odoo/apps/spreadsheet",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/spreadsheet_dashboard.html",
+      "destination": "/odoo/apps/spreadsheet",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/stock",
+      "destination": "/odoo/apps/inventory",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/stock.html",
+      "destination": "/odoo/apps/inventory",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/survey",
+      "destination": "/odoo/apps/surveys",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/survey.html",
+      "destination": "/odoo/apps/surveys",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website",
+      "destination": "/odoo/apps/website-builder",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website.html",
+      "destination": "/odoo/apps/website-builder",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_blog",
+      "destination": "/odoo/apps/blog",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_blog.html",
+      "destination": "/odoo/apps/blog",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_forum",
+      "destination": "/odoo/apps/forum",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_forum.html",
+      "destination": "/odoo/apps/forum",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_sale",
+      "destination": "/odoo/apps/ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_sale.html",
+      "destination": "/odoo/apps/ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_slides",
+      "destination": "/odoo/apps/elearning",
+      "permanent": true
+    },
+    {
+      "source": "/odoo/apps/website_slides.html",
+      "destination": "/odoo/apps/elearning",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rag-systems-enterprise-guide",
+      "destination": "/solutions/ai-knowledge",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rag-systems-enterprise-guide.html",
+      "destination": "/solutions/ai-knowledge",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/rag-systems-enterprise-guide",
+      "destination": "/solutions/ai-knowledge",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/rag-systems-enterprise-guide.html",
+      "destination": "/solutions/ai-knowledge",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agents-enterprise-automation",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agents-enterprise-automation.html",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-agents-enterprise-automation",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-agents-enterprise-automation.html",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agent-governance-2025",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agent-governance-2025.html",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-agent-governance-2025",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-agent-governance-2025.html",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-ai-integration-guide",
+      "destination": "/odoo/ai-integration",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-ai-integration-guide.html",
+      "destination": "/odoo/ai-integration",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-ai-integration-guide",
+      "destination": "/odoo/ai-integration",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-ai-integration-guide.html",
+      "destination": "/odoo/ai-integration",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-18-features-upgrade-guide",
+      "destination": "/blog/odoo-20-whats-new",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-18-features-upgrade-guide.html",
+      "destination": "/blog/odoo-20-whats-new",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-18-features-upgrade-guide",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-18-features-upgrade-guide.html",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-erp-sme-southeast-asia",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-erp-sme-southeast-asia.html",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-erp-sme-southeast-asia",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-erp-sme-southeast-asia.html",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-vs-sap-enterprise-comparison",
+      "destination": "/solutions/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/blog/odoo-vs-sap-enterprise-comparison.html",
+      "destination": "/solutions/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-vs-sap-enterprise-comparison",
+      "destination": "/solutions/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/odoo-vs-sap-enterprise-comparison.html",
+      "destination": "/solutions/enterprise",
+      "permanent": true
+    },
+    {
+      "source": "/blog/big-tech-ai-infrastructure-2026",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/big-tech-ai-infrastructure-2026.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/big-tech-ai-infrastructure-2026",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/big-tech-ai-infrastructure-2026.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/context-engineering-new-discipline",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/context-engineering-new-discipline.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/context-engineering-new-discipline",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/context-engineering-new-discipline.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/github-copilot-per-token-pricing",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/github-copilot-per-token-pricing.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/github-copilot-per-token-pricing",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/github-copilot-per-token-pricing.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gpt5-openai-agentic-ai-2025",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gpt5-openai-agentic-ai-2025.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/gpt5-openai-agentic-ai-2025",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/gpt5-openai-agentic-ai-2025.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lg-nvidia-physical-ai-era",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lg-nvidia-physical-ai-era.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/lg-nvidia-physical-ai-era",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/lg-nvidia-physical-ai-era.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/local-llm-on-premise-enterprise",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/local-llm-on-premise-enterprise.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/local-llm-on-premise-enterprise",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/local-llm-on-premise-enterprise.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/philippines-bpo-ai-revolution",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/philippines-bpo-ai-revolution.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/philippines-bpo-ai-revolution",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/philippines-bpo-ai-revolution.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/singapore-national-ai-strategy-2026",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/singapore-national-ai-strategy-2026.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/singapore-national-ai-strategy-2026",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/singapore-national-ai-strategy-2026.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/singapore-smart-nation-enterprise-ai",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/singapore-smart-nation-enterprise-ai.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/singapore-smart-nation-enterprise-ai",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/singapore-smart-nation-enterprise-ai.html",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/philippines-digital-transformation-2026",
+      "destination": "/blog/odoo-20-singapore-philippines-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/blog/philippines-digital-transformation-2026.html",
+      "destination": "/blog/odoo-20-singapore-philippines-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/philippines-digital-transformation-2026",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/philippines-digital-transformation-2026.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-digital-economy-ai-2026",
+      "destination": "/blog/odoo-20-singapore-philippines-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-digital-economy-ai-2026.html",
+      "destination": "/blog/odoo-20-singapore-philippines-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-digital-economy-ai-2026",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-digital-economy-ai-2026.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-software-exports-2026",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-software-exports-2026.html",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-software-exports-2026",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-software-exports-2026.html",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-tech-talent-dev-hub",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vietnam-tech-talent-dev-hub.html",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-tech-talent-dev-hub",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/vietnam-tech-talent-dev-hub.html",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agentic-ai-workflows-and-enterprise-operations",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/agentic-ai-workflows-and-enterprise-operations",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/agentic-workflows-patterns-and-best-practices-for-enterprise-teams",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/agentic-workflows-patterns-and-best-practices-for-enterprise-teams",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agents-workflow-automation-enterprise-apac-playbook",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-agents-workflow-automation-enterprise-apac-playbook",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-workflow-automation-case-study",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/ai-workflow-automation-case-study",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-ultimate-guide-to-enterprise-agentic-ai",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/the-ultimate-guide-to-enterprise-agentic-ai",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/blog/strategic-ai-in-2026-unlocking-enterprise-value-in-southeast-asia",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/strategic-ai-in-2026-unlocking-enterprise-value-in-southeast-asia",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-the-corporate-investment-in-ai-pay-off",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/will-the-corporate-investment-in-ai-pay-off",
+      "destination": "/solutions/ai",
+      "permanent": true
+    },
+    {
+      "source": "/blog/data-sovereignty-laws-southeast-asia-compliance-guide-2026",
+      "destination": "/blog/odoo-online-vs-odoo-sh-vs-on-premise",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/data-sovereignty-laws-southeast-asia-compliance-guide-2026",
+      "destination": "/blog/odoo-online-vs-odoo-sh-vs-on-premise",
+      "permanent": true
+    },
+    {
+      "source": "/blog/software-development-guide-2026-process-architecture-best-practices",
+      "destination": "/odoo/erp-system",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/software-development-guide-2026-process-architecture-best-practices",
+      "destination": "/odoo/erp-system",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enterprise-software-requirements-the-2026-evaluation-checklist",
+      "destination": "/odoo/discovery",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/enterprise-software-requirements-the-2026-evaluation-checklist",
+      "destination": "/odoo/discovery",
+      "permanent": true
+    },
+    {
+      "source": "/blog/eurocham-interview-eric-lou-on-simplifying-digital-systems-for-cambodian-businesses",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/eurocham-interview-eric-lou-on-simplifying-digital-systems-for-cambodian-businesses",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ai-article/:path*",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/careers/",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/careers/:path+",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/gallery",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.html",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/odoo",
+      "destination": "/odoo/apps",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/#industries",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms/",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/odoo-erp-singapore",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/odoo-erp-singapore/",
+      "destination": "/solutions/odoo-erp",
+      "permanent": true
+    },
+    {
+      "source": "/ai-automation-vietnam",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-automation-vietnam/",
+      "destination": "/solutions/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/:line(What\\+if\\+your\\+hotel.*)",
+      "destination": "/solutions/ai-chatbots",
+      "permanent": true
+    },
+    {
+      "source": "/technext-logo.jpg",
+      "destination": "/assets/img/logo-horizontal.png",
+      "permanent": true
+    },
+    {
+      "source": "/images/logo/technext-logo.png",
+      "destination": "/assets/img/logo-horizontal.png",
+      "permanent": true
+    },
+    {
+      "source": "/images/logo/technext-logo.webp",
+      "destination": "/assets/img/logo-horizontal.png",
+      "permanent": true
+    },
+    {
+      "source": "/lp",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/landing_page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/landing_page/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/landing_page/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-/mwDRhgrfF2zYLYJDLTA7B9sF9fE22Pu3tLXYO2fI/c=' 'sha256-0xxF3EdNX/LixPXraBKTOgmYNw4mWyj1iHQLY4QbV4Q=' 'sha256-9Fd+wFC7YKpyBYfypJ382Zul2dG+eDr7JaToMjjIQRY=' 'sha256-Aiwucuat5x7cQgsmT3Hw+V0NNrjOqGp4dW8HPfDWU3A=' 'sha256-JHIEUGD1ET3kKzc7Wdd9pec4wvEesBWtAJ1Vg7KFI2o=' 'sha256-e90Qe4fKEpwLx3I5pwxjbx32CR7DsQ/q+NmDg7lPxeg=' 'sha256-hMTMyv5QJBQqN7SoUEn0jL4KuTzHe0EGljFYEftJ+vI=' 'sha256-kPvsGEWQ0z5UbT2TtcSnpJr0Fm3Kwslz/7ItgdY8ak0=' 'sha256-otghNyPrY7u/HJO5E0vrWLmeSyFcdv9Dl1fkNQKTltc=' 'sha256-tp30jp3RVBpHoMx4IdN7Ks8KN8HBkakiTEC3hq6FOVo=' 'sha256-zWm404GtIcHA7ohrK085VdYMBvRTf2g/r9q5QdGz/Wg=' https://*.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://odoocdn.com https://i.ytimg.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://pagead2.googlesyndication.com https://www.google.com.sg https://www.google.com.vn https://www.google.com.ph https://www.google.de; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://google.com https://www.google.com https://*.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://www.google.com.sg https://www.google.com.vn https://www.google.com.ph https://www.google.de; frame-src 'self' https://www.youtube-nocookie.com https://www.google.com https://www.googletagmanager.com https://td.doubleclick.net; media-src 'self' https://download.odoocdn.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), serial=(), hid=(), midi=(), display-capture=(), idle-detection=(), browsing-topics=(), xr-spatial-tracking=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        },
+        {
+          "key": "tdm-reservation",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(css|js|img)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-site"
+        }
+      ]
+    },
+    {
+      "source": "/denied",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/employee-hub(\\.html)?",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/tdmrep.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}

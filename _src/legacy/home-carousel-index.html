@@ -1,0 +1,657 @@
+<!--meta {"title": "Odoo Partner in Singapore — Odoo ERP & AI | TechNext", "desc": "TechNext is an Odoo Ready Partner in Singapore, with teams in the Philippines and Vietnam: Odoo ERP implementation, enterprise AI and company websites.", "out": "index.html", "nav": "home", "body": "is-home", "scripts": ["assets/js/nexi-voice.js", "assets/js/hero.js", "assets/js/hero-scenes.js", "assets/js/showcase.js", "assets/js/suite.js", "assets/js/nexi.js", "assets/js/nexi-explains-cast.js", "assets/js/hero-industries.js", "assets/js/home.js", "assets/js/home-street.js"], "head": "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Bangers&display=swap\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/hero.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/company.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/home.css?v={ASSET_V}\">"} -->
+
+<!-- ============================================================ HERO CAROUSEL -->
+<section class="hero" data-hero data-root="{{ROOT}}" aria-roledescription="carousel" aria-label="TechNext highlights">
+  <p class="skip" data-hero-live aria-live="polite" aria-atomic="true"></p>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+    <div class="hero-grid"></div>
+    <div class="spotlight"></div>
+    <canvas class="particles"></canvas>
+  </div>
+  <!-- while the Nexi Explains slide is on, the band around it (controls, marquee) turns its navy (.hero.is-nxs);
+       the slide's own comic sky and the circle transition live on slide 6 itself (.nxs-sky, data-slide-circle) -->
+  <div class="nxs-bg" aria-hidden="true"></div>
+  <div class="nxs-fx" aria-hidden="true"><span class="nxs-burst"><b data-nxs-fx>BAM!</b></span></div>
+
+  <div class="hero-track">
+
+    <!-- Slide 1 · kinetic type + every Odoo app rushing into two tilted orbits around the live dashboard -->
+    <article class="slide is-active" data-slide-dash data-title="Odoo ERP, implemented by TechNext" aria-roledescription="slide">
+      <div class="container slide-inner si-cine">
+        <div class="slide-copy">
+          <h1 class="slide-tag up" style="--d:0ms"><img src="{{ROOT}}assets/img/odoo-ready-partner.png" alt=""><span class="sep"></span>Odoo Ready Partner in Singapore, the Philippines &amp; Vietnam</h1>
+          <h2 class="as-h1">
+            <span class="kw" style="--i:0"><span>Run your</span></span>
+            <span class="kw" style="--i:1"><span class="rot"><b class="is-on">accounts<span class="sr-only">,</span> </b><b>sales<span class="sr-only">,</span> </b><b>stock<span class="sr-only">,</span> </b><b>purchasing<span class="sr-only"> and</span> </b><b>invoicing </b></span></span><br>
+            <span class="kw" style="--i:2"><span>on</span></span>
+            <span class="kw" style="--i:3"><span class="hl">one system.</span></span>
+          </h2>
+          <p class="lead up" style="--d:480ms">TechNext implements Odoo for growing companies — Accounting, Sales and Inventory first, then the rest of the suite as you need it.</p>
+          <div class="actions up" style="--d:580ms">
+            <a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a>
+            <a class="btn btn-ghost btn-lg" href="{{ROOT}}odoo/discovery.html">How we work</a>
+          </div>
+          <div class="spec-strip up" style="--d:700ms" role="group" aria-label="Focus apps — click to learn more">
+            <button class="spec" type="button" data-app="accountant">{{odoo:accountant:36}}<span><b>Accounting</b><span>Journals · bank sync · tax</span></span></button>
+            <button class="spec" type="button" data-app="sale">{{odoo:sale:36}}<span><b>Sales</b><span>Quote → order → invoice</span></span></button>
+            <button class="spec" type="button" data-app="stock">{{odoo:stock:36}}<span><b>Inventory</b><span>Stock · barcodes · replenishment</span></span></button>
+          </div>
+          <nav class="m-visual" aria-label="Focus apps">
+            <a href="{{ROOT}}odoo/apps/accountant.html">{{odoo:accountant:32}}<span><b>Accounting</b><small>Books, bank feeds, tax</small></span>{{icon:arrow}}</a>
+            <a href="{{ROOT}}odoo/apps/sale.html">{{odoo:sale:32}}<span><b>Sales</b><small>Quotation to invoice</small></span>{{icon:arrow}}</a>
+            <a href="{{ROOT}}odoo/apps/stock.html">{{odoo:stock:32}}<span><b>Inventory</b><small>Stock and purchasing</small></span>{{icon:arrow}}</a>
+          </nav>
+        </div>
+
+        <div class="dash-wrap cine up" style="--d:140ms" data-cine>
+          <canvas class="cine-fx" aria-hidden="true"></canvas>
+          <svg class="cine-rings cine-rings--back" aria-hidden="true"></svg>
+          <div class="cine-core">
+            <div class="dash" aria-hidden="true">
+              <div class="dash-bar"><i></i><i></i><i></i> Odoo · one database <span><i class="live"></i> sample data</span></div>
+              <div class="dash-body">
+                <div class="kpis">
+                  <div class="kpi">{{odoo:sale:22}}<small>Orders this week</small><b data-count="62">0</b><em>+9% vs last</em></div>
+                  <div class="kpi">{{odoo:account:22}}<small>Invoices due</small><b data-count="14">0</b><em>3 overdue</em></div>
+                  <div class="kpi">{{odoo:spreadsheet_dashboard:22}}<small>Auto hand-offs</small><b data-count="128" data-cine-hand>0</b><em>typed twice: 0</em></div>
+                </div>
+                <div class="chart"><i style="--h:38%;--i:0"></i><i style="--h:46%;--i:1"></i><i style="--h:42%;--i:2"></i><i style="--h:58%;--i:3"></i><i style="--h:52%;--i:4"></i><i style="--h:64%;--i:5"></i><i style="--h:60%;--i:6"></i><i style="--h:72%;--i:7"></i><i style="--h:68%;--i:8"></i><i style="--h:80%;--i:9"></i><i style="--h:76%;--i:10"></i><i style="--h:88%;--i:11"></i></div>
+                <ol class="cine-feed">
+                  <li>{{odoo:sale:18}}<span><b>S00419</b> signed, order confirmed</span><time>now</time></li>
+                  <li>{{odoo:stock:18}}<span><b>PO00088</b> raised by a reorder rule</span><time>2 min</time></li>
+                  <li>{{odoo:accountant:18}}<span><b>38</b> bank lines matched</span><time>today</time></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <svg class="cine-rings cine-rings--front" aria-hidden="true"></svg>
+          <div class="cine-apps" role="group" aria-label="Odoo apps TechNext implements, orbiting one database: select an app for details">
+            <button class="cine-app cine-app--r0" type="button" data-app="accountant" data-ring="0" aria-label="Accounting">{{odoo:accountant:30}}<span class="cine-tag"><b>Accounting</b><small>Books, bank, tax</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="sale" data-ring="0" aria-label="Sales">{{odoo:sale:30}}<span class="cine-tag"><b>Sales</b><small>Quote to invoice</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="stock" data-ring="0" aria-label="Inventory">{{odoo:stock:30}}<span class="cine-tag"><b>Inventory</b><small>Stock and warehouses</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="crm" data-ring="0" aria-label="CRM">{{odoo:crm:30}}<span class="cine-tag"><b>CRM</b><small>Leads and pipeline</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="purchase" data-ring="0" aria-label="Purchase">{{odoo:purchase:30}}<span class="cine-tag"><b>Purchase</b><small>Vendors and RFQs</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="mrp" data-ring="0" aria-label="Manufacturing">{{odoo:mrp:30}}<span class="cine-tag"><b>Manufacturing</b><small>Bills of materials</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="point_of_sale" data-ring="0" aria-label="Point of Sale">{{odoo:point_of_sale:30}}<span class="cine-tag"><b>Point of Sale</b><small>Shops and restaurants</small></span></button>
+            <button class="cine-app cine-app--r0" type="button" data-app="website_sale" data-ring="0" aria-label="eCommerce">{{odoo:website_sale:30}}<span class="cine-tag"><b>eCommerce</b><small>Online store</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="project" data-ring="1" aria-label="Project">{{odoo:project:22}}<span class="cine-tag"><b>Project</b><small>Tasks and milestones</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="helpdesk" data-ring="1" aria-label="Helpdesk">{{odoo:helpdesk:22}}<span class="cine-tag"><b>Helpdesk</b><small>Tickets and SLAs</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="hr" data-ring="1" aria-label="Employees">{{odoo:hr:22}}<span class="cine-tag"><b>Employees</b><small>People and contracts</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="ai_app" data-ring="1" aria-label="AI">{{odoo:ai_app:22}}<span class="cine-tag"><b>AI</b><small>Assistants and agents</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="mass_mailing" data-ring="1" aria-label="Email Marketing">{{odoo:mass_mailing:22}}<span class="cine-tag"><b>Email Marketing</b><small>Campaigns to CRM lists</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="documents" data-ring="1" aria-label="Documents">{{odoo:documents:22}}<span class="cine-tag"><b>Documents</b><small>Files and OCR</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="sign" data-ring="1" aria-label="Sign">{{odoo:sign:22}}<span class="cine-tag"><b>Sign</b><small>E-signatures</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="hr_expense" data-ring="1" aria-label="Expenses">{{odoo:hr_expense:22}}<span class="cine-tag"><b>Expenses</b><small>Receipts and claims</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="planning" data-ring="1" aria-label="Planning">{{odoo:planning:22}}<span class="cine-tag"><b>Planning</b><small>Shifts and rosters</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="knowledge" data-ring="1" aria-label="Knowledge">{{odoo:knowledge:22}}<span class="cine-tag"><b>Knowledge</b><small>Wiki and procedures</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="social" data-ring="1" aria-label="Social Marketing">{{odoo:social:22}}<span class="cine-tag"><b>Social Marketing</b><small>Posts and social leads</small></span></button>
+            <button class="cine-app cine-app--r1" type="button" data-app="web_studio" data-ring="1" aria-label="Studio">{{odoo:web_studio:22}}<span class="cine-tag"><b>Studio</b><small>Fields and automations</small></span></button>
+          </div>
+          <p class="cine-hint" aria-hidden="true">{{icon:refresh}}Drag to spin · select an app</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 2 · lead-to-cash process map: five departments, four decisions, loops and forks, live tokens -->
+    <article class="slide slide--map" data-slide-flow data-title="Lead to cash across five departments" aria-roledescription="slide">
+      <div class="container slide-inner si-stack">
+        <div class="slide-copy sc-row">
+          <div>
+            <span class="slide-tag up" style="--d:0ms">{{icon:layers}} How the apps hand off</span>
+            <h2 class="as-h1">
+              <span class="kw" style="--i:0"><span>From</span></span>
+              <span class="kw" style="--i:1"><span>lead</span></span>
+              <span class="kw" style="--i:2"><span>to</span></span>
+              <span class="kw" style="--i:3"><span class="hl">reconciled</span></span>
+              <span class="kw" style="--i:4"><span class="hl">cash,</span></span><br>
+              <span class="kw" style="--i:5"><span>across</span></span>
+              <span class="kw" style="--i:6"><span>five</span></span>
+              <span class="kw" style="--i:7"><span>departments.</span></span>
+            </h2>
+          </div>
+          <div class="sc-side up" style="--d:420ms">
+            <p class="lead">One Odoo database runs the whole chain. Orders reserve stock or trigger purchasing and manufacturing; deliveries, vendor bills and payments land in the books. TechNext configures every hand-off.</p>
+            <div class="actions">
+              <a class="btn btn-primary btn-lg" href="#talk">Book a discovery call</a>
+              <a class="btn-link" href="{{ROOT}}odoo/discovery.html">How we map your process {{icon:arrow}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="pmap up" style="--d:220ms" data-pmap>
+          <div class="pm-scen" role="group" aria-label="Run one scenario">
+            <button type="button" data-scen="all" aria-pressed="true">All flows</button>
+            <button type="button" data-scen="stock" aria-pressed="false"><i class="pm-sw pm-sw--stock"></i>Ship from stock</button>
+            <button type="button" data-scen="buy" aria-pressed="false"><i class="pm-sw pm-sw--buy"></i>Buy to order</button>
+            <button type="button" data-scen="make" aria-pressed="false"><i class="pm-sw pm-sw--make"></i>Make to order</button>
+            <button type="button" data-scen="late" aria-pressed="false"><i class="pm-sw pm-sw--late"></i>Late payer</button>
+          </div>
+          <div class="pm-view">
+            <div class="pm-cam">
+              <div class="pm-lanes" aria-hidden="true">
+              <div class="pm-lane"><span class="pm-lname">{{odoo:crm:20}}<b>Sales</b></span></div>
+              <div class="pm-lane"><span class="pm-lname">{{odoo:stock:20}}<b>Warehouse</b></span></div>
+              <div class="pm-lane"><span class="pm-lname">{{odoo:mrp:20}}<b>Production</b></span></div>
+              <div class="pm-lane"><span class="pm-lname">{{odoo:purchase:20}}<b>Purchasing</b></span></div>
+              <div class="pm-lane"><span class="pm-lname">{{odoo:accountant:20}}<b>Finance</b></span></div>
+              </div>
+              <svg class="pm-svg" aria-hidden="true"></svg>
+              <div class="pm-elabels" aria-hidden="true"></div>
+              <div class="pm-nodes" role="group" aria-label="Lead-to-cash process in Odoo across sales, warehouse, production, purchasing and finance: select a step for details">
+              <button class="pm-node" type="button" data-pn="lead" data-flow="0" style="grid-area:1/1"><span class="pm-ic">{{odoo:crm:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Lead</b></button>
+              <button class="pm-node" type="button" data-pn="quote" data-flow="1" style="grid-area:1/2"><span class="pm-ic">{{odoo:sale:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Quotation</b></button>
+              <button class="pm-node pm-gate" type="button" data-pn="g_sign" data-flow="2" style="grid-area:1/3"><span class="pm-ic"><i class="pm-dia"></i><span class="pm-n" aria-hidden="true"></span></span><b>Signed?</b></button>
+              <button class="pm-node" type="button" data-pn="order" data-flow="3" style="grid-area:1/4"><span class="pm-ic">{{odoo:sale:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Sales order</b></button>
+              <button class="pm-node pm-gate" type="button" data-pn="g_stock" data-flow="4" style="grid-area:2/4"><span class="pm-ic"><i class="pm-dia"></i><span class="pm-n" aria-hidden="true"></span></span><b>In stock?</b></button>
+              <button class="pm-node" type="button" data-pn="mo" data-flow="5" style="grid-area:3/5"><span class="pm-ic">{{odoo:mrp:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Manufacturing order</b></button>
+              <button class="pm-node pm-gate" type="button" data-pn="g_qc" data-flow="6" style="grid-area:3/6"><span class="pm-ic"><i class="pm-dia"></i><span class="pm-n" aria-hidden="true"></span></span><b>Quality OK?</b></button>
+              <button class="pm-node" type="button" data-pn="po" data-flow="7" style="grid-area:4/5"><span class="pm-ic">{{odoo:purchase:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Purchase order</b></button>
+              <button class="pm-node" type="button" data-pn="receipt" data-flow="8" style="grid-area:4/6"><span class="pm-ic">{{odoo:stock:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Receipt</b></button>
+              <button class="pm-node" type="button" data-pn="vbill" data-flow="9" style="grid-area:5/6"><span class="pm-ic">{{odoo:account:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Vendor bill</b></button>
+              <button class="pm-node" type="button" data-pn="vpay" data-flow="10" style="grid-area:5/7"><span class="pm-ic">{{odoo:accountant:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Pay vendor</b></button>
+              <button class="pm-node" type="button" data-pn="pick" data-flow="11" style="grid-area:2/7"><span class="pm-ic">{{odoo:stock:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Pick &amp; pack</b></button>
+              <button class="pm-node" type="button" data-pn="ship" data-flow="12" style="grid-area:2/8"><span class="pm-ic">{{odoo:stock:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Delivery</b></button>
+              <button class="pm-node" type="button" data-pn="inv" data-flow="13" style="grid-area:5/8"><span class="pm-ic">{{odoo:account:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Invoice</b></button>
+              <button class="pm-node pm-gate" type="button" data-pn="g_paid" data-flow="14" style="grid-area:5/9"><span class="pm-ic"><i class="pm-dia"></i><span class="pm-n" aria-hidden="true"></span></span><b>Paid?</b></button>
+              <button class="pm-node" type="button" data-pn="recon" data-flow="15" style="grid-area:5/10"><span class="pm-ic">{{odoo:accountant:24}}<span class="pm-n" aria-hidden="true"></span></span><b>Bank reconcile</b></button>
+              <button class="pm-node" type="button" data-pn="reports" data-flow="16" style="grid-area:5/11"><span class="pm-ic">{{odoo:spreadsheet_dashboard:24}}<span class="pm-n" aria-hidden="true"></span></span><b>P&amp;L, GST, cash</b></button>
+              </div>
+              <div class="pm-live" aria-hidden="true">
+                <dl class="pm-kpis">
+                  <div><dt>In flight</dt><dd data-k="flight">0</dd></div>
+                  <div><dt>Automatic hand-offs</dt><dd data-k="hand">0</dd></div>
+                  <div class="pm-k0"><dt>Typed twice</dt><dd>0</dd></div>
+                </dl>
+                <ol class="pm-log"></ol>
+              </div>
+            </div>
+          </div>
+          <p class="pm-hint" aria-hidden="true">{{icon:expand}} Select any step · sample simulation</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 3 · the industries showcase: every industry world on one screen (its real scene, Nexi in costume, the
+         sample business and three workflow steps), a channel strip of the eight badges. Markup: worlds.showcase_html();
+         behaviour: hero-industries.js. -->
+    <article class="slide slide--inds" data-slide-inds data-title="Odoo for your industry" data-dur="16000" aria-roledescription="slide">
+      {{IND_SHOWCASE}}
+    </article>
+
+    <!-- Slide 4 · Nexi Explains, TechNext's animated series: an "on air" TV cycles the premiering episodes with a
+         live countdown, the strip under it switches the TV, and Nexi (3D on desktop, drawn on phones) shows it off.
+         Episodes and dates come from _src/nexi_explains.py; the scene lives in hero-scenes.js (Explains). -->
+    <article class="slide slide--nxs" data-slide-circle data-title="Nexi Explains, TechNext’s animated series" data-dur="16000" aria-roledescription="slide">
+      <div class="nxs-sky" aria-hidden="true">
+      <span class="nxs-rays"></span><span class="nxs-dots"></span><span class="nxs-speed"></span>
+      <span class="nxs-fl nxs-fl--1">{{odoo:sale:30}}</span>
+      <span class="nxs-fl nxs-fl--2">{{odoo:accountant:30}}</span>
+      <span class="nxs-boom">NEW!</span>
+      <i class="nxs-tw nxs-tw--1">✦</i><i class="nxs-tw nxs-tw--2">✦</i><i class="nxs-tw nxs-tw--3">✦</i><i class="nxs-tw nxs-tw--4">✦</i>
+      </div>
+      <div class="container slide-inner si-nxs">
+        <div class="slide-copy">
+          <span class="slide-tag up" style="--d:0ms">{{icon:play}} New series · Nexi Explains</span>
+          <h2 class="as-h1">
+            <span class="kw" style="--i:0"><span>Odoo,</span></span>
+            <span class="kw" style="--i:1"><span>AI</span></span>
+            <span class="kw" style="--i:2"><span>&amp;</span></span>
+            <span class="kw" style="--i:3"><span>tech,</span></span><br>
+            <span class="kw" style="--i:4"><span class="hl">explained</span></span>
+            <span class="kw" style="--i:5"><span class="hl">by</span></span>
+            <span class="kw" style="--i:6"><span class="hl">Nexi.</span></span>
+          </h2>
+          <p class="lead up" style="--d:520ms">Short animated episodes starring Nexi, TechNext’s AI companion: what Odoo is, the apps companies start with, AI that does the busywork and the people side of change. New episodes every week on YouTube.</p>
+          <div class="pill-row up" style="--d:620ms">{{NXE_SLIDE_PILLS}}</div>
+          <div class="actions up" style="--d:720ms">
+            <a class="btn btn-primary btn-lg" href="{{ROOT}}nexi-explains.html">{{icon:play}} Watch Nexi Explains</a>
+            <a class="btn btn-ghost btn-lg" href="{{NXE_SUBSCRIBE}}" target="_blank" rel="noopener">Subscribe on YouTube</a>
+          </div>
+        </div>
+        {{NXE_SLIDE_STAGE}}
+      </div>
+    </article>
+  </div>
+
+  <div class="hero-ctl">
+   <div class="hero-ctl-inner">
+    <button class="icon-btn hero-arrow hero-arrow--prev" type="button" data-hero-prev aria-label="Previous slide">{{icon:arrow}}</button>
+    <div class="dots" role="tablist" aria-label="Choose slide">
+      <button class="dot" type="button" role="tab" aria-selected="true" aria-label="Slide 1: Odoo ERP, implemented"></button>
+      <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Slide 2: One flow from quotation to cash"></button>
+      <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Slide 3: Odoo Partner"></button>
+      <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Slide 4: Nexi Explains"></button>
+    </div>
+    <button class="icon-btn hero-arrow" type="button" data-hero-next aria-label="Next slide">{{icon:arrow}}</button>
+    <button class="icon-btn hero-arrow hero-pp" type="button" data-hero-pp aria-pressed="false" aria-label="Pause the slides">{{icon:pause}}{{icon:play}}</button>
+    <button class="icon-btn hero-arrow hero-voice" type="button" data-nexi-voice aria-pressed="false" aria-label="Nexi’s voice">{{icon:mute}}{{icon:volume}}</button>
+   </div>
+  </div>
+
+  <div class="hero-marquee" aria-label="Odoo apps we implement">{{MARQUEE}}</div>
+</section>
+
+<div class="pop-backdrop" hidden></div>
+<div class="pop" role="dialog" aria-modal="true" aria-label="Details" hidden></div>
+
+<!-- ============================================================ WHO WE ARE: the /company world (visitor pass, wall plaques, office postcards, room doors) -->
+<section class="section hm-who co-page hm-live" aria-labelledby="hm-who-h">
+  <div class="container">
+    <div class="hm-who-in">
+      <div class="hm-who-copy reveal">
+        <span class="hand">about technext pte. ltd.</span>
+        <h2 id="hm-who-h">One Odoo partner. Three offices. One team.</h2>
+        <p class="lead">An Odoo Ready Partner headquartered in Singapore, with our main development and consulting hub in Taguig City and an AI engineering hub in Ho Chi Minh City.</p>
+        <a class="hm-wbtn" href="{{ROOT}}company.html">Inside TechNext {{icon:arrow}}</a>
+      </div>
+      <a class="hm-pass reveal" style="--i:1" href="{{ROOT}}company.html" aria-label="Inside TechNext: the company page">
+        <span class="hm-pass-scene"><img src="{{ROOT}}assets/img/home/company.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></span>
+      </a>
+    </div>
+    <div class="co-plaques hm-plaques reveal" role="list">
+      <div class="co-plaque co-plaque--odoo" role="listitem"><img src="{{ROOT}}assets/img/odoo-ready-partner.png" alt="Odoo Ready Partner" width="91" height="40"><small>Implementing Odoo 20 end to end</small></div>
+      <div class="co-plaque" role="listitem"><b><span class="hm-num" data-count="11">11+</span></b><span>{{icon:users}}enterprise clients transformed with Odoo</span></div>
+      <div class="co-plaque" role="listitem"><b><span class="hm-num" data-count="10">10+</span></b><span>{{icon:globe}}countries with clients</span></div>
+      <div class="co-plaque" role="listitem"><b><span class="hm-num" data-count="3">3</span></b><span>{{icon:pin}}offices: Singapore, the Philippines and Vietnam</span></div>
+    </div>
+    <div class="hm-sub reveal"><span class="hand">three offices</span></div>
+    <div class="co-cities hm-cities">
+{{CO_CITIES}}
+    </div>
+    <div class="hm-sub hm-sub--doors reveal"><span class="hand">what we do</span><a class="hm-doors-all" href="#solutions">All four practices {{icon:arrow}}</a></div>
+    <div class="hm-doors" role="list">
+      <a class="hm-door hm-door--erp reveal" style="--i:0" role="listitem" href="{{ROOT}}solutions/odoo-erp.html">
+        <span class="hm-door-way" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-erp.webp" alt="" width="800" height="422" loading="lazy" decoding="async"><span class="hm-door-leaf"></span></span>
+        <span class="hm-door-sign"><span class="hand">the orchestra</span><b>Odoo ERP</b><small>Accounting, Sales and Inventory first</small><span class="hm-door-btn">Take a seat {{icon:arrow}}</span></span>
+      </a>
+      <a class="hm-door hm-door--ai reveal" style="--i:1" role="listitem" href="{{ROOT}}solutions/ai.html">
+        <span class="hm-door-way" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-ai.webp" alt="" width="800" height="422" loading="lazy" decoding="async"><span class="hm-door-leaf"></span></span>
+        <span class="hm-door-sign"><span class="hand">the science museum</span><b>Enterprise AI</b><small>Agents, knowledge, chatbots</small><span class="hm-door-btn">Enter the museum {{icon:arrow}}</span></span>
+      </a>
+      <a class="hm-door hm-door--mkt reveal" style="--i:2" role="listitem" href="{{ROOT}}solutions/marketing.html">
+        <span class="hm-door-way" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-mkt.webp" alt="" width="800" height="422" loading="lazy" decoding="async"><span class="hm-door-leaf"></span></span>
+        <span class="hm-door-sign"><span class="hand">the harbour town</span><b>Websites &amp; marketing</b><small>Sites, social and brand</small><span class="hm-door-btn">Walk the harbour {{icon:arrow}}</span></span>
+      </a>
+      <a class="hm-door hm-door--tech reveal" style="--i:3" role="listitem" href="{{ROOT}}solutions/technology.html">
+        <span class="hm-door-way" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-tech.webp" alt="" width="800" height="422" loading="lazy" decoding="async"><span class="hm-door-leaf"></span></span>
+        <span class="hm-door-sign"><span class="hand">the workshop</span><b>Technology</b><small>IoT, apps and networks</small><span class="hm-door-btn">Open the workshop {{icon:arrow}}</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOCUS: the three app worlds (showroom, port hub, counting house) -->
+<section class="section hm-apps3 hm-live" id="focus" aria-labelledby="hm-apps3-h">
+  <div class="container">
+    <div class="hm-head reveal">
+      <span class="hand">where most companies start</span>
+      <h2 id="hm-apps3-h">Three apps that run the money and the stock.</h2>
+      <p class="lead">Most companies come to us for one of these. We implement them so they work together from day one — the rest of Odoo can follow.</p>
+    </div>
+    <div class="hm-wts hm-wts--3">
+      <article class="hm-wt hm-wt--sales reveal" style="--i:0">
+        <a class="hm-wt-scene" href="{{ROOT}}odoo/apps/sales.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sales.webp" alt="" width="800" height="421" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <div class="hm-wt-top"><button class="hm-wt-ic" type="button" data-app-pop="sale" aria-label="About Odoo Sales">{{odoo:sale:34}}</button><span class="hm-wt-stage" aria-hidden="true"><b>1</b>quote → order</span></div>
+          <span class="hand">odoo sales · the showroom counter</span>
+          <h3>Sales</h3>
+          <p>Quotations, order confirmation and invoicing that follow your pricing and approval rules.</p>
+          <ul class="hm-ticks">
+            <li>{{icon:check}}Quotation templates and e-signature</li>
+            <li>{{icon:check}}Pricelists, discounts, margins</li>
+            <li>{{icon:check}}CRM pipeline hand-off</li>
+            <li>{{icon:check}}Invoice on order or on delivery</li>
+          </ul>
+          <a class="hm-wbtn" href="{{ROOT}}odoo/apps/sales.html">Step into the showroom {{icon:arrow}}</a>
+        </div>
+      </article>
+      <article class="hm-wt hm-wt--stock reveal" style="--i:1">
+        <a class="hm-wt-scene" href="{{ROOT}}odoo/apps/inventory.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/inventory.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <div class="hm-wt-top"><button class="hm-wt-ic" type="button" data-app-pop="stock" aria-label="About Odoo Inventory">{{odoo:stock:34}}</button><span class="hm-wt-stage" aria-hidden="true"><b>2</b>pick → deliver</span></div>
+          <span class="hand">odoo inventory · the port-side hub</span>
+          <h3>Inventory</h3>
+          <p>Real stock levels across warehouses, with replenishment rules that raise purchase orders before you run out.</p>
+          <ul class="hm-ticks">
+            <li>{{icon:check}}Multi-warehouse and locations</li>
+            <li>{{icon:check}}Barcode receipts and picking</li>
+            <li>{{icon:check}}Reordering rules → Purchase</li>
+            <li>{{icon:check}}Lots, serials and expiry dates</li>
+          </ul>
+          <a class="hm-wbtn" href="{{ROOT}}odoo/apps/inventory.html">Visit the port hub {{icon:arrow}}</a>
+        </div>
+      </article>
+      <article class="hm-wt hm-wt--acc reveal" style="--i:2">
+        <a class="hm-wt-scene" href="{{ROOT}}odoo/apps/accounting.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/accounting.webp" alt="" width="800" height="419" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <div class="hm-wt-top"><button class="hm-wt-ic" type="button" data-app-pop="accountant" aria-label="About Odoo Accounting">{{odoo:accountant:34}}</button><span class="hm-wt-stage" aria-hidden="true"><b>3</b>invoice → books</span></div>
+          <span class="hand">odoo accounting · the counting house</span>
+          <h3>Accounting</h3>
+          <p>Chart of accounts, journals, bank feeds, tax and reports — set up for how you actually close the month.</p>
+          <ul class="hm-ticks">
+            <li>{{icon:check}}Bank sync and reconciliation</li>
+            <li>{{icon:check}}GST / VAT and tax reports</li>
+            <li>{{icon:check}}Multi-currency, multi-company</li>
+            <li>{{icon:check}}Aged receivables, P&amp;L, balance sheet</li>
+          </ul>
+          <a class="hm-wbtn" href="{{ROOT}}odoo/apps/accounting.html">Enter the counting house {{icon:arrow}}</a>
+        </div>
+      </article>
+    </div>
+    <div class="hm-foot reveal">
+      <p class="hm-foot-say"><span class="hm-foot-ic" aria-hidden="true">{{icon:database}}</span>Quote, deliver and invoice on one set of records.</p>
+      <p class="hm-slots"><a href="{{ROOT}}odoo/apps/accountant.html">Finance apps {{icon:arrow}}</a><a href="{{ROOT}}odoo/apps/sale.html">Sales apps {{icon:arrow}}</a><a href="{{ROOT}}odoo/apps/stock.html">Supply chain apps {{icon:arrow}}</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ HOW WE WORK: the four step worlds (case room, flight school, station, control tower) -->
+<section class="section hm-steps hm-live" id="walkthrough" aria-labelledby="hm-steps-h">
+  <div class="container">
+    <div class="hm-head hm-head--row reveal">
+      <div>
+        <span class="hand">how we work</span>
+        <h2 id="hm-steps-h">Four steps, one team.</h2>
+        <p class="lead">One line from the first workshop to the help after go-live: the case room, the flight school, the station and the control tower. Each stop has its own page.</p>
+      </div>
+      <a class="btn-link" href="{{ROOT}}odoo/discovery.html">Start with discovery {{icon:arrow}}</a>
+    </div>
+    <div class="hm-route" data-hm-run>
+      <ol class="hm-steptabs" aria-hidden="true"><li><b>1</b>Discovery</li><li><b>2</b>Training</li><li><b>3</b>Integration</li><li><b>4</b>Support</li></ol>
+      <ol class="hm-wts hm-wts--4 hm-stages" role="list">
+        <li class="hm-wt hm-wt--disc hm-stage reveal" style="--i:0">
+          <a class="hm-wt-scene" href="{{ROOT}}odoo/discovery.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/discovery.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+          <div class="hm-wt-card">
+            <span class="hand">odoo consultation · step 1 of 4</span>
+            <h3>Discovery</h3>
+            <p>We map how orders, stock and money move today, then match each step to an Odoo app.</p>
+            <ul class="hm-jobs" aria-label="Discovery covers"><li>orders</li><li>stock</li><li>money</li><li>→ Odoo apps</li></ul>
+            <a class="hm-wbtn" href="{{ROOT}}odoo/discovery.html">Details {{icon:arrow}}</a>
+          </div>
+        </li>
+        <li class="hm-wt hm-wt--train hm-stage reveal" style="--i:1">
+          <a class="hm-wt-scene" href="{{ROOT}}odoo/training.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/training.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+          <div class="hm-wt-card">
+            <span class="hand">odoo training · step 2 of 4</span>
+            <h3>Training</h3>
+            <p>Role-based sessions on your own data — finance, sales and warehouse teams each learn their screens.</p>
+            <ul class="hm-jobs" aria-label="Training for"><li>finance</li><li>sales</li><li>warehouse</li></ul>
+            <a class="hm-wbtn" href="{{ROOT}}odoo/training.html">Details {{icon:arrow}}</a>
+          </div>
+        </li>
+        <li class="hm-wt hm-wt--int hm-stage reveal" style="--i:2">
+          <a class="hm-wt-scene" href="{{ROOT}}odoo/integration.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/integration.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+          <div class="hm-wt-card">
+            <span class="hand">odoo integration · step 3 of 4</span>
+            <h3>Integration</h3>
+            <p>Banks, payment gateways, marketplaces and the tools you keep — connected to Odoo, not replaced.</p>
+            <ul class="hm-jobs" aria-label="Integration connects"><li>banks</li><li>payment gateways</li><li>marketplaces</li><li>your tools</li></ul>
+            <a class="hm-wbtn" href="{{ROOT}}odoo/integration.html">Details {{icon:arrow}}</a>
+          </div>
+        </li>
+        <li class="hm-wt hm-wt--sup hm-stage reveal" style="--i:3">
+          <a class="hm-wt-scene" href="{{ROOT}}odoo/support.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/support.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+          <div class="hm-wt-card">
+            <span class="hand">odoo support · step 4 of 4</span>
+            <h3>Support</h3>
+            <p>After go-live: fixes, month-end help, version upgrades and small changes as the business moves.</p>
+            <ul class="hm-jobs" aria-label="Support covers"><li>fixes</li><li>month-end</li><li>upgrades</li><li>small changes</li></ul>
+            <a class="hm-wbtn" href="{{ROOT}}odoo/support.html">Details {{icon:arrow}}</a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SOLUTIONS: the four practice worlds (orchestra, science museum, harbour town, workshop) -->
+<section class="section hm-prac hm-live" id="solutions" aria-labelledby="hm-prac-h">
+  <div class="container">
+    <div class="hm-head reveal">
+      <span class="hand">four practices</span>
+      <h2 id="hm-prac-h">Four practices. One team.</h2>
+      <p class="lead">Each practice has its own hub: an orchestra, a science museum, a harbour town and a workshop — all run by the same team.</p>
+    </div>
+    <div class="hm-wts hm-wts--4">
+      <article class="hm-wt hm-wt--erp reveal" style="--i:0">
+        <a class="hm-wt-scene" href="{{ROOT}}solutions/odoo-erp.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-erp.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <span class="hm-wt-tag">Odoo Partner</span>
+          <span class="hand">odoo erp implementation</span>
+          <h3><a href="{{ROOT}}solutions/odoo-erp.html">ERP</a></h3>
+          <div class="hm-wt-apps" aria-hidden="true">{{odoo:accountant:24}}{{odoo:sale:24}}{{odoo:stock:24}}</div>
+          <p>Odoo implemented, customised and supported — from a first Accounting rollout to a multi-company group.</p>
+          <ul class="hm-wt-links">
+            <li><a href="{{ROOT}}solutions/odoo-erp.html">Odoo ERP Development {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}odoo/crm-development.html">CRM Development {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/enterprise.html">Enterprise Solution {{icon:arrow}}</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="hm-wt hm-wt--ai reveal" style="--i:1">
+        <a class="hm-wt-scene" href="{{ROOT}}solutions/ai.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-ai.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <span class="hm-wt-tag">Claude Partner</span>
+          <span class="hand">enterprise ai solutions</span>
+          <h3><a href="{{ROOT}}solutions/ai.html">AI Solution</a></h3>
+          <div class="hm-wt-apps" aria-hidden="true">{{odoo:ai_app:24}}{{icon:sol-rag}}{{icon:sol-chat}}</div>
+          <p>Assistants grounded in your documents, AI inside Odoo, agents for repetitive workflows and customer chatbots.</p>
+          <ul class="hm-wt-links">
+            <li><a href="{{ROOT}}solutions/ai-knowledge.html">RAG Knowledge Assistants {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}odoo/ai-integration.html">Odoo + AI integrations {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/ai-automation.html">Workflow Automation {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/ai-chatbots.html">AI Chatbots {{icon:arrow}}</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="hm-wt hm-wt--mkt reveal" style="--i:2">
+        <a class="hm-wt-scene" href="{{ROOT}}solutions/marketing.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-mkt.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <span class="hand">website &amp; social media marketing</span>
+          <h3><a href="{{ROOT}}solutions/marketing.html">Marketing</a></h3>
+          <div class="hm-wt-apps" aria-hidden="true">{{icon:sol-web}}{{icon:sol-social}}{{icon:sol-brand}}</div>
+          <p>A standalone service: websites, social channels and brand assets, run on a plan with a monthly report.</p>
+          <ul class="hm-wt-links">
+            <li><a href="{{ROOT}}solutions/website.html">Web Design &amp; Development {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/social-media.html">Social Media Management {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/brand-assets.html">Graphic &amp; Brand Assets {{icon:arrow}}</a></li>
+          </ul>
+        </div>
+      </article>
+      <article class="hm-wt hm-wt--tech reveal" style="--i:3">
+        <a class="hm-wt-scene" href="{{ROOT}}solutions/technology.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/sol-tech.webp" alt="" width="800" height="422" loading="lazy" decoding="async"></a>
+        <div class="hm-wt-card">
+          <span class="hand">technology services</span>
+          <h3><a href="{{ROOT}}solutions/technology.html">Technology</a></h3>
+          <div class="hm-wt-apps" aria-hidden="true">{{icon:sol-iot}}{{icon:sol-app}}{{icon:sol-net}}</div>
+          <p>IoT, apps and networks: the devices, software and infrastructure around your business systems, from the same team.</p>
+          <ul class="hm-wt-links">
+            <li><a href="{{ROOT}}solutions/iot.html">IoT Solutions {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/app-development.html">App Development {{icon:arrow}}</a></li>
+            <li><a href="{{ROOT}}solutions/networks.html">Networks {{icon:arrow}}</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ INDUSTRIES: the eight industry worlds, each card in its own world's colours -->
+<section class="section hm-inds hm-live" id="industries" aria-labelledby="hm-ind-h">
+  <div class="container">
+    <div class="hm-head reveal">
+      <span class="hand">eight industries, eight worlds</span>
+      <h2 id="hm-ind-h">Configured for how your industry actually runs.</h2>
+      <p class="lead">Eight industries, eight worlds. Each card opens on how Odoo is set up for that trade.</p>
+    </div>
+    <div class="hm-ind-grid">
+      <a class="hm-ind hm-ind--medical reveal" style="--i:0" href="{{ROOT}}industries/medical.html" data-lab="Patient file · Bayview Clinic · sample"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-medical.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:100%;--py:46%;--r:-90deg;--d:30%;--pw:30%;--mpy:27%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/medical/nexi-hello.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-medical}}</span><h3>Medical</h3><p>Clinics and healthcare groups: consumables stock, supplier purchasing, clean books per branch.</p><span class="hm-ind-go">Medical {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--travel reveal" style="--i:1" href="{{ROOT}}industries/travel.html" data-lab="Boarding pass · Odoo"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-travel.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:22%;--py:0%;--r:180deg;--d:30%;--pw:29%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/travel/nexi-wow.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-travel}}</span><h3>Travel</h3><p>Agencies and tour operators: quotations, supplier costs and margins per booking, multi-currency.</p><span class="hm-ind-go">Travel {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--retail reveal" style="--i:2" href="{{ROOT}}industries/retail.html" data-lab="Receipt · Harbour Goods · sample"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-retail.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:0%;--py:40%;--r:90deg;--d:32%;--pw:30%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/retail/nexi-love.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-retail}}</span><h3>Retail</h3><p>Stores and POS with shared stock, promotions and daily takings posted straight to Accounting.</p><span class="hm-ind-go">Retail {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--ecom reveal" style="--i:3" href="{{ROOT}}industries/ecommerce.html" data-lab="Tracking · PL1042SG"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-ecommerce.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:76%;--py:100%;--r:0deg;--d:34%;--pw:30%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/ecommerce/nexi-point-left.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-ecommerce}}</span><h3>Ecommerce</h3><p>Online orders, marketplace feeds and fulfilment tied to real stock and reconciled payouts.</p><span class="hm-ind-go">Ecommerce {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--cons reveal" style="--i:4" href="{{ROOT}}industries/construction.html" data-lab="DRG NB-001 · scale 1:100 · sample"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-construction.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:100%;--py:0%;--r:-135deg;--d:26%;--pw:31%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/construction/nexi-think.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-construction}}</span><h3>Construction</h3><p>Contractors and fit-out: job costing per project, subcontractor claims, progress billing and retention.</p><span class="hm-ind-go">Construction {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--fnb reveal" style="--i:5" href="{{ROOT}}industries/fnb.html" data-lab="KOT · table 7 · Lantern Kitchen"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-fnb.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:64%;--py:64%;--r:0deg;--d:40%;--pw:24%;--mpx:72%;--mpy:50%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/fnb/nexi-hello.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-fnb}}</span><h3>F&amp;B</h3><p>Restaurants and central kitchens: POS to kitchen, recipes that deplete stock, outlet takings to the books.</p><span class="hm-ind-go">F&amp;B {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--mfg reveal" style="--i:6" href="{{ROOT}}industries/manufacturing.html" data-lab="Work order traveler · Keystone Works · sample"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-manufacturing.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:0%;--py:52%;--r:75deg;--d:32%;--pw:30%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/manufacturing/nexi-present.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-manufacturing}}</span><h3>Manufacturing</h3><p>Bills of materials, work orders and component stock with the real cost of every finished unit.</p><span class="hm-ind-go">Manufacturing {{icon:arrow}}</span></span></a>
+      <a class="hm-ind hm-ind--hw reveal" style="--i:7" href="{{ROOT}}industries/health-wellness.html" data-lab="Class pass · Willow &amp; Stone · sample"><span class="hm-ind-view" aria-hidden="true"><img src="{{ROOT}}assets/img/home/ind-health-wellness.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="hm-peek" style="--px:91%;--py:100%;--r:-24deg;--d:32%;--pw:32%"><span class="hm-peek-b"><img src="{{ROOT}}assets/img/industries/health-wellness/nexi-celebrate.webp" alt="" width="412" height="494" loading="lazy" decoding="async"></span></span></span><span class="hm-ind-b"><span class="hm-ind-badge">{{icon:ind-health-wellness}}</span><h3>Health &amp; Wellness</h3><p>Studios, spas and gyms: bookings, memberships, packages and retail on one client record.</p><span class="hm-ind-go">Health &amp; Wellness {{icon:arrow}}</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ APPS: Odoo Street (the /odoo/apps world) and the plug-in widget -->
+<section class="section section--suite hm-suite hm-live" id="apps" aria-labelledby="hm-suite-h">
+  <div class="hm-street" data-street>
+    <div class="hm-st-scroll" data-st-scroll>
+      <div class="hm-st-set" data-st-set>
+        <canvas class="hm-st-cv" data-st-cv aria-hidden="true"></canvas>
+        <a class="hm-st-sign" href="{{ROOT}}odoo/apps.html">Odoo Street<span class="sr-only">: every Odoo app, by category</span></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#finance" data-st-shop="finance" aria-describedby="hm-st-p-finance" style="--i:0;--c:#0E9384"><b>Finance</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#sales" data-st-shop="sales" aria-describedby="hm-st-p-sales" style="--i:1;--c:#3167CA"><b>Sales</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#supply-chain" data-st-shop="supply" aria-describedby="hm-st-p-supply" style="--i:2;--c:#E07B12"><b>Supply Chain</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#websites" data-st-shop="websites" aria-describedby="hm-st-p-websites" style="--i:3;--c:#7B5CD6"><b>Websites</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#hr" data-st-shop="hr" aria-describedby="hm-st-p-hr" style="--i:4;--c:#D63C64"><b>Human Resources</b><small>7 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#marketing" data-st-shop="marketing" aria-describedby="hm-st-p-marketing" style="--i:5;--c:#C98316"><b>Marketing</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#services" data-st-shop="services" aria-describedby="hm-st-p-services" style="--i:6;--c:#14A38B"><b>Services</b><small>6 apps</small></a>
+        <a class="hm-st-shop" href="{{ROOT}}odoo/apps.html#productivity" data-st-shop="productivity" aria-describedby="hm-st-p-productivity" style="--i:7;--c:#56709E"><b>Productivity</b><small>7 apps</small></a>
+      </div>
+    </div>
+  <div class="hm-st-pop" id="hm-st-p-finance" data-st-pop="finance" style="--c:#0E9384" role="group" aria-label="Finance apps" hidden><p class="hm-st-pop-h"><b>Finance</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/accounting.html">{{odoo:accountant:22}}<span>Accounting</span></a></li><li><a href="{{ROOT}}odoo/apps/invoicing.html">{{odoo:account:22}}<span>Invoicing</span></a></li><li><a href="{{ROOT}}odoo/apps/expenses.html">{{odoo:hr_expense:22}}<span>Expenses</span></a></li><li><a href="{{ROOT}}odoo/apps/spreadsheet.html">{{odoo:spreadsheet_dashboard:22}}<span>Spreadsheet (BI)</span></a></li><li><a href="{{ROOT}}odoo/apps/documents.html">{{odoo:documents:22}}<span>Documents</span></a></li><li><a href="{{ROOT}}odoo/apps/sign.html">{{odoo:sign:22}}<span>Sign</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#finance">All Finance apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-sales" data-st-pop="sales" style="--c:#3167CA" role="group" aria-label="Sales apps" hidden><p class="hm-st-pop-h"><b>Sales</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/crm.html">{{odoo:crm:22}}<span>CRM</span></a></li><li><a href="{{ROOT}}odoo/apps/sales.html">{{odoo:sale:22}}<span>Sales</span></a></li><li><a href="{{ROOT}}odoo/apps/point-of-sale.html">{{odoo:point_of_sale:22}}<span>Point of Sale — Shop</span></a></li><li><a href="{{ROOT}}odoo/apps/restaurant-pos.html">{{odoo:pos_restaurant:22}}<span>Point of Sale — Restaurant</span></a></li><li><a href="{{ROOT}}odoo/apps/subscriptions.html">{{odoo:sale_subscription:22}}<span>Subscriptions</span></a></li><li><a href="{{ROOT}}odoo/apps/rental.html">{{odoo:sale_renting:22}}<span>Rental</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#sales">All Sales apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-supply" data-st-pop="supply" style="--c:#E07B12" role="group" aria-label="Supply Chain apps" hidden><p class="hm-st-pop-h"><b>Supply Chain</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/inventory.html">{{odoo:stock:22}}<span>Inventory</span></a></li><li><a href="{{ROOT}}odoo/apps/manufacturing.html">{{odoo:mrp:22}}<span>Manufacturing</span></a></li><li><a href="{{ROOT}}odoo/apps/plm.html">{{odoo:mrp_plm:22}}<span>PLM</span></a></li><li><a href="{{ROOT}}odoo/apps/purchase.html">{{odoo:purchase:22}}<span>Purchase</span></a></li><li><a href="{{ROOT}}odoo/apps/maintenance.html">{{odoo:maintenance:22}}<span>Maintenance</span></a></li><li><a href="{{ROOT}}odoo/apps/quality.html">{{odoo:quality_control:22}}<span>Quality</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#supply-chain">All Supply Chain apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-websites" data-st-pop="websites" style="--c:#7B5CD6" role="group" aria-label="Websites apps" hidden><p class="hm-st-pop-h"><b>Websites</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/website-builder.html">{{odoo:website:22}}<span>Website Builder</span></a></li><li><a href="{{ROOT}}odoo/apps/ecommerce.html">{{odoo:website_sale:22}}<span>eCommerce</span></a></li><li><a href="{{ROOT}}odoo/apps/blog.html">{{odoo:website_blog:22}}<span>Blog</span></a></li><li><a href="{{ROOT}}odoo/apps/forum.html">{{odoo:website_forum:22}}<span>Forum</span></a></li><li><a href="{{ROOT}}odoo/apps/live-chat.html">{{odoo:im_livechat:22}}<span>Live Chat</span></a></li><li><a href="{{ROOT}}odoo/apps/elearning.html">{{odoo:website_slides:22}}<span>eLearning</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#websites">All Websites apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-hr" data-st-pop="hr" style="--c:#D63C64" role="group" aria-label="Human Resources apps" hidden><p class="hm-st-pop-h"><b>Human Resources</b><span>7 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/employees.html">{{odoo:hr:22}}<span>Employees</span></a></li><li><a href="{{ROOT}}odoo/apps/recruitment.html">{{odoo:hr_recruitment:22}}<span>Recruitment</span></a></li><li><a href="{{ROOT}}odoo/apps/time-off.html">{{odoo:hr_holidays:22}}<span>Time Off</span></a></li><li><a href="{{ROOT}}odoo/apps/appraisals.html">{{odoo:hr_appraisal:22}}<span>Appraisals</span></a></li><li><a href="{{ROOT}}odoo/apps/referrals.html">{{odoo:hr_referral:22}}<span>Referrals</span></a></li><li><a href="{{ROOT}}odoo/apps/fleet.html">{{odoo:fleet:22}}<span>Fleet</span></a></li><li><a href="{{ROOT}}odoo/apps/payroll.html">{{odoo:hr_payroll:22}}<span>Payroll</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#hr">All Human Resources apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-marketing" data-st-pop="marketing" style="--c:#C98316" role="group" aria-label="Marketing apps" hidden><p class="hm-st-pop-h"><b>Marketing</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/social-marketing.html">{{odoo:social:22}}<span>Social Marketing</span></a></li><li><a href="{{ROOT}}odoo/apps/email-marketing.html">{{odoo:mass_mailing:22}}<span>Email Marketing</span></a></li><li><a href="{{ROOT}}odoo/apps/sms-marketing.html">{{odoo:mass_mailing_sms:22}}<span>SMS Marketing</span></a></li><li><a href="{{ROOT}}odoo/apps/events.html">{{odoo:event:22}}<span>Events</span></a></li><li><a href="{{ROOT}}odoo/apps/marketing-automation.html">{{odoo:marketing_automation:22}}<span>Marketing Automation</span></a></li><li><a href="{{ROOT}}odoo/apps/surveys.html">{{odoo:survey:22}}<span>Surveys</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#marketing">All Marketing apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-services" data-st-pop="services" style="--c:#14A38B" role="group" aria-label="Services apps" hidden><p class="hm-st-pop-h"><b>Services</b><span>6 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/project.html">{{odoo:project:22}}<span>Project</span></a></li><li><a href="{{ROOT}}odoo/apps/timesheets.html">{{odoo:hr_timesheet:22}}<span>Timesheets</span></a></li><li><a href="{{ROOT}}odoo/apps/field-service.html">{{odoo:industry_fsm:22}}<span>Field Service</span></a></li><li><a href="{{ROOT}}odoo/apps/helpdesk.html">{{odoo:helpdesk:22}}<span>Helpdesk</span></a></li><li><a href="{{ROOT}}odoo/apps/planning.html">{{odoo:planning:22}}<span>Planning</span></a></li><li><a href="{{ROOT}}odoo/apps/appointments.html">{{odoo:appointment:22}}<span>Appointments</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#services">All Services apps on Odoo Street {{icon:arrow}}</a></div>
+  <div class="hm-st-pop" id="hm-st-p-productivity" data-st-pop="productivity" style="--c:#56709E" role="group" aria-label="Productivity apps" hidden><p class="hm-st-pop-h"><b>Productivity</b><span>7 apps · one database</span></p><ul><li><a href="{{ROOT}}odoo/apps/discuss.html">{{odoo:mail:22}}<span>Discuss</span></a></li><li><a href="{{ROOT}}odoo/apps/approvals.html">{{odoo:approvals:22}}<span>Approvals</span></a></li><li><a href="{{ROOT}}odoo/apps/iot.html">{{odoo:iot:22}}<span>IoT</span></a></li><li><a href="{{ROOT}}odoo/apps/voip.html">{{odoo:voip:22}}<span>Phone</span></a></li><li><a href="{{ROOT}}odoo/apps/knowledge.html">{{odoo:knowledge:22}}<span>Knowledge</span></a></li><li><a href="{{ROOT}}odoo/apps/whatsapp.html">{{odoo:whatsapp:22}}<span>WhatsApp</span></a></li><li><a href="{{ROOT}}odoo/apps/ai.html">{{odoo:ai_app:22}}<span>AI</span></a></li></ul><a class="hm-st-pop-all" href="{{ROOT}}odoo/apps.html#productivity">All Productivity apps on Odoo Street {{icon:arrow}}</a></div>
+    <p class="hm-st-swipe" aria-hidden="true">Swipe along the street {{icon:arrow}}</p>
+  </div>
+  <div class="container">
+    <div class="two two--top su-wrap">
+      <div class="su-copy reveal">
+        <span class="hand">odoo apps list</span>
+        <h2 id="hm-suite-h">Every Odoo app, one database.</h2>
+        <p class="lead">Start with the three that matter most, then add apps without another integration project — they already share customers, products and accounts.</p>
+        <div class="su-presets" role="group" aria-label="Load a typical setup">
+          <p class="su-label">{{icon:layers}}Try a setup</p>
+          <div class="su-pgrid">
+            <button type="button" data-preset="core" aria-pressed="true"><span class="su-pics" aria-hidden="true">{{odoo:accountant:22}}{{odoo:sale:22}}{{odoo:stock:22}}</span><b>The core three</b><small>3 apps</small></button>
+            <button type="button" data-preset="retail" aria-pressed="false"><span class="su-pics" aria-hidden="true">{{odoo:point_of_sale:22}}{{odoo:stock:22}}{{odoo:website_sale:22}}<i>+2</i></span><b>Retail</b><small>5 apps</small></button>
+            <button type="button" data-preset="mfg" aria-pressed="false"><span class="su-pics" aria-hidden="true">{{odoo:mrp:22}}{{odoo:stock:22}}{{odoo:purchase:22}}<i>+2</i></span><b>Manufacturing</b><small>5 apps</small></button>
+            <button type="button" data-preset="services" aria-pressed="false"><span class="su-pics" aria-hidden="true">{{odoo:project:22}}{{odoo:helpdesk:22}}{{odoo:planning:22}}<i>+3</i></span><b>Services</b><small>6 apps</small></button>
+            <button type="button" data-preset="all" aria-pressed="false"><span class="su-pics" aria-hidden="true">{{odoo:ai_app:22}}{{odoo:crm:22}}{{odoo:mass_mailing:22}}<i>+15</i></span><b>Everything</b><small>18 apps</small></button>
+          </div>
+        </div>
+        <dl class="su-stats">
+          <div><dt>apps in your system</dt><dd><b data-n="apps">3</b></dd></div>
+          <div><dt>connections built in</dt><dd><b data-n="links">2</b></dd></div>
+          <div class="su-stat-zero"><dt>integrations to build</dt><dd><b class="su-zero">0</b>{{icon:check}}</dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-primary" data-quote href="{{ROOT}}quotation.html?apps=accountant,sale,stock"><span data-cta>Get a quotation for these 3 apps</span> {{icon:arrow}}</a>
+          <a class="btn btn-ghost" href="{{ROOT}}odoo/apps.html">Browse all apps</a>
+        </div>
+      </div>
+      <div class="su-stage reveal">
+        <p class="su-hint" aria-hidden="true">{{icon:plug}}Tap an app to plug it in</p>
+        <div class="su-field" data-suite role="group" aria-label="Odoo apps. Press an app to plug it into, or out of, the one database. Arrow keys move between apps.">
+          <svg class="su-svg" aria-hidden="true" focusable="false"><g class="su-rings"></g><g class="su-links"></g><g class="su-spokes"></g></svg>
+          <div class="su-core" aria-hidden="true">
+            <span class="su-halo"></span>
+            <div class="su-core-top"><span class="su-core-def">{{icon:database}}<b>One database</b></span><span class="su-core-app"><span class="su-core-ic"></span><b></b></span></div>
+            <div class="su-recs"><span data-rec="c" class="is-lit">Customers</span><span data-rec="p" class="is-lit">Products</span><span data-rec="a" class="is-lit">Accounts</span></div>
+          </div>
+          <button class="su-app is-on" type="button" aria-pressed="true" aria-label="Accounting" tabindex="0" data-mod="accountant" data-r="1" style="--a:-90deg;--o:0">{{odoo:accountant:34}}<span class="su-name" aria-hidden="true">Accounting</span></button>
+          <button class="su-app is-on" type="button" aria-pressed="true" aria-label="Sales" tabindex="-1" data-mod="sale" data-r="1" style="--a:30deg;--o:1">{{odoo:sale:34}}<span class="su-name" aria-hidden="true">Sales</span></button>
+          <button class="su-app is-on" type="button" aria-pressed="true" aria-label="Inventory" tabindex="-1" data-mod="stock" data-r="1" style="--a:150deg;--o:2">{{odoo:stock:34}}<span class="su-name" aria-hidden="true">Inventory</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="CRM" tabindex="-1" data-mod="crm" data-r="2" style="--a:-45deg;--am:-54deg;--o:3">{{odoo:crm:28}}<span class="su-name" aria-hidden="true">CRM</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Purchase" tabindex="-1" data-mod="purchase" data-r="2" style="--a:6.4deg;--am:-6deg;--o:4">{{odoo:purchase:28}}<span class="su-name" aria-hidden="true">Purchase</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Point of Sale — Shop" tabindex="-1" data-mod="point_of_sale" data-r="2" style="--a:57.9deg;--am:42deg;--o:5">{{odoo:point_of_sale:28}}<span class="su-name" aria-hidden="true">Point of Sale — Shop</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="eCommerce" tabindex="-1" data-mod="website_sale" data-r="2" style="--a:109.3deg;--am:90deg;--o:6">{{odoo:website_sale:28}}<span class="su-name" aria-hidden="true">eCommerce</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Manufacturing" tabindex="-1" data-mod="mrp" data-r="2" style="--a:160.7deg;--am:162deg;--o:7">{{odoo:mrp:28}}<span class="su-name" aria-hidden="true">Manufacturing</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Project" tabindex="-1" data-mod="project" data-r="2" style="--a:212.1deg;--am:210deg;--o:8">{{odoo:project:28}}<span class="su-name" aria-hidden="true">Project</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Invoicing" tabindex="-1" data-mod="account" data-r="2" style="--a:263.6deg;--am:258deg;--o:9">{{odoo:account:28}}<span class="su-name" aria-hidden="true">Invoicing</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="AI" tabindex="-1" data-mod="ai_app" data-r="3" style="--a:-65deg;--am:-78deg;--o:10">{{odoo:ai_app:24}}<span class="su-name" aria-hidden="true">AI</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Employees" tabindex="-1" data-mod="hr" data-r="3" style="--a:-20deg;--am:-30deg;--o:11">{{odoo:hr:24}}<span class="su-name" aria-hidden="true">Employees</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Helpdesk" tabindex="-1" data-mod="helpdesk" data-r="3" style="--a:25deg;--am:18deg;--o:12">{{odoo:helpdesk:24}}<span class="su-name" aria-hidden="true">Helpdesk</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Email Marketing" tabindex="-1" data-mod="mass_mailing" data-r="3" style="--a:70deg;--am:66deg;--o:13">{{odoo:mass_mailing:24}}<span class="su-name" aria-hidden="true">Email Marketing</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Documents" tabindex="-1" data-mod="documents" data-r="3" style="--a:121deg;--am:114deg;--o:14">{{odoo:documents:24}}<span class="su-name" aria-hidden="true">Documents</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Sign" tabindex="-1" data-mod="sign" data-r="3" style="--a:160deg;--am:138deg;--o:15">{{odoo:sign:24}}<span class="su-name" aria-hidden="true">Sign</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Planning" tabindex="-1" data-mod="planning" data-r="3" style="--a:205deg;--am:186deg;--o:16">{{odoo:planning:24}}<span class="su-name" aria-hidden="true">Planning</span></button>
+          <button class="su-app" type="button" aria-pressed="false" aria-label="Website" tabindex="-1" data-mod="website" data-r="3" style="--a:250deg;--am:234deg;--o:17">{{odoo:website:24}}<span class="su-name" aria-hidden="true">Website</span></button>
+        </div>
+        <div class="su-detail">
+          <span class="su-detail-ic">{{icon:database}}</span>
+          <p class="su-detail-t"><b>Accounting, Sales and Inventory</b> are where most companies start: quote, deliver and invoice on one set of records.</p>
+          <a class="btn-link su-detail-a" href="{{ROOT}}solutions/odoo-erp.html"><span>How we implement Odoo ERP</span> {{icon:arrow}}</a>
+        </div>
+        <p class="sr-only" aria-live="polite" data-say></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BLOG: the TechNext newsroom (the /blog world) -->
+<section class="section hm-news hm-live" id="blog" aria-labelledby="hm-news-h">
+  <div class="container">
+    <div class="hm-news-top">
+      <div class="hm-paper reveal">
+        <span class="hand">odoo news, plainly</span>
+        <h2 id="hm-news-h">Odoo news and ERP, explained.</h2>
+        <p class="lead">Release notes, country changes and plain-language guides from the TechNext Odoo desk.</p>
+        <a class="hm-wbtn" href="{{ROOT}}blog.html">All articles {{icon:arrow}}</a>
+      </div>
+      <a class="hm-news-scene reveal" style="--i:1" href="{{ROOT}}blog.html" tabindex="-1" aria-hidden="true"><img src="{{ROOT}}assets/img/home/blog.webp" alt="" width="800" height="419" loading="lazy" decoding="async"><span class="hm-onair">On air</span></a>
+    </div>
+    <div class="post-cards hm-posts">{{BLOG_LATEST}}</div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ: plain TechNext brand style -->
+<section class="section hm-faq hm-live" aria-labelledby="hm-faq-h">
+  <div class="container hm-faq-in">
+    <aside class="hm-faq-side reveal">
+      <span class="hand">questions we hear</span>
+      <h2 id="hm-faq-h">Odoo and TechNext, answered.</h2>
+      <p class="lead">Search the questions we hear most, or open one to read the answer.</p>
+      <div class="hm-nexi-card">
+        <img class="hm-nexi-img" src="{{ROOT}}assets/img/nexi-id/nexi-think.webp" alt="" width="150" height="212" loading="lazy" decoding="async">
+        <div>
+          <p class="hm-nexi-say"><b>Still wondering?</b> Ask Nexi, TechNext's AI companion, or talk to the team.</p>
+          <div class="hm-nexi-act"><a class="btn btn-primary" href="{{ROOT}}nexi#full">{{icon:bot}} Ask Nexi</a><button class="btn btn-ghost" type="button" data-talk-open aria-haspopup="dialog" aria-controls="talk-panel">Let's talk</button></div>
+        </div>
+      </div>
+    </aside>
+    <div class="hm-pal reveal" data-hm-pal>
+      <div class="hm-pal-search">
+        {{icon:search}}
+        <label class="sr-only" for="hm-pal-q">Search the questions</label>
+        <input id="hm-pal-q" type="search" placeholder="Search the questions" autocomplete="off" spellcheck="false" data-hm-pal-q>
+        <span class="hm-pal-count" aria-live="polite" data-hm-pal-count>8 answers</span>
+      </div>
+      <div class="faq hm-faq-list" data-hm-pal-list><details><summary>What does TechNext do? {{icon:chevron}}</summary><div class="faq-a"><p>TechNext implements Odoo ERP end to end (discovery, configuration, data migration, training, integration and support), builds enterprise AI, websites and social media, and delivers IoT, app development and network services for growing companies.</p></div></details><details><summary>Is TechNext an official Odoo partner? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. TechNext Pte. Ltd. is an Odoo Ready Partner, listed in <a href="https://www.odoo.com/partners/technext-pte-ltd-28073844" target="_blank" rel="noopener">Odoo's partner directory</a>.</p></div></details><details><summary>Where is TechNext based? {{icon:chevron}}</summary><div class="faq-a"><p>Our headquarters is at 261 Waterloo Street #03-36, Singapore 180261. Our main development and consulting hub is in Taguig City, Metro Manila, our AI engineering hub is in Ho Chi Minh City, and we serve clients in 10+ countries.</p></div></details><details><summary>How much does an Odoo implementation cost? {{icon:chevron}}</summary><div class="faq-a"><p>There are two parts: Odoo licences, priced per user per month by Odoo, and the implementation work, which TechNext quotes in writing. The quote depends on the apps, number of users, data to migrate, integrations, custom modules and training.</p></div></details><details><summary>Which Odoo apps should we start with? {{icon:chevron}}</summary><div class="faq-a"><p>Most companies start with Accounting, Sales and Inventory, the apps where money and stock move, and add the rest once the first phase is running.</p></div></details><details><summary>Can we add Odoo apps later? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Every Odoo app shares the same database, so adding an app later needs no integration project; it uses the customers, products and accounts already in Odoo.</p></div></details><details><summary>When was Odoo 20 released? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo unveiled Odoo 20 at Odoo Experience 2026 at Brussels Expo, and published the release notes in September 2026.</p></div></details><details><summary>What does TechNext need from us to start? {{icon:chevron}}</summary><div class="faq-a"><p>A short description of how your process runs today, a decision-maker for scope questions, and later the people who run sales, stock and finance for discovery and training.</p></div></details></div>
+      <p class="hm-pal-empty" data-hm-pal-empty hidden>No question matches that yet. <a href="{{ROOT}}nexi#full">Ask Nexi</a> or <a href="#talk">talk to the team</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA: plain TechNext brand style, with Nexi -->
+<section class="section hm-cta-sec hm-live" aria-labelledby="hm-cta-h">
+  <div class="container">
+    <div class="hm-cta reveal">
+      <div class="hm-cta-copy">
+        <span class="hand">a short discovery call</span>
+        <h2 id="hm-cta-h">Tell us what slows you down.</h2>
+        <p>A short discovery call is enough to say which Odoo apps you need, in what order, and what it will take. No pitch before we understand the problem.</p>
+        <ol class="hm-cta-list" role="list">
+          <li>{{icon:check}}Which Odoo apps</li>
+          <li>{{icon:check}}In what order</li>
+          <li>{{icon:check}}What it will take</li>
+        </ol>
+        <div class="actions">
+          <a class="btn btn-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation</a>
+          <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+        </div>
+      </div>
+      <img class="hm-cta-nexi" src="{{ROOT}}assets/img/nexi-id/nexi-hello.webp" alt="" width="190" height="268" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>

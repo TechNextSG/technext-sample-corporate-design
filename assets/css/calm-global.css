@@ -1,0 +1,11 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* CALM LAYER, global half: the header, on EVERY page including the home page (calm.css, the page kit,
+   is not loaded on the home page; its body belongs to the home agent). Loaded last; reversible with CALM = False in build.py. */
+/* ---------------------------------------------------------------- header: the same clean header everywhere */
+.header,body .header{box-shadow:none!important;border-bottom:1px solid transparent}
+.header.is-scrolled{border-bottom-color:var(--line)!important;background:rgba(255,255,255,.96)!important}
+/* the Let's talk button, the side tabs and WhatsApp: flat and identical everywhere (site.css, flat-buttons commit) */
+/* the header's "Nexi Explains" speech-bubble pill keeps its original design (owner, 9 Oct) */
+/* the header's Let's talk icon keeps its size over the page kit's .btn .ic (19px desktop, 22px when the button is icon-only) */
+body .header .header-cta .btn.hdr-contact .ic{width:19px!important;height:19px!important;stroke-width:2.2}
+@media (max-width:1100px){body .header .header-cta .btn.hdr-contact .ic{width:23px!important;height:23px!important}}

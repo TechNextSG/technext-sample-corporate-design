@@ -1,0 +1,2501 @@
+{
+ "accountant": {
+  "url": "https://www.odoo.com/app/accounting",
+  "title": "Best accounting software | Odoo",
+  "description": "Discover Odoo’s accounting software designed for SMEs. Integrate bookkeeping with all your operations to avoid double entry. Try it for free!",
+  "headline": "Accounting made effortless",
+  "lead": "Imagine one AI-native Accounting platform for all your financial operations, from reconciliation and expenses to tax returns and real-time reporting. Fast, complete, and simple.",
+  "sections": [
+   {
+    "h": "Unlock true performance",
+    "p": "Speed matters . All operations are processed in less than 90 milliseconds, faster than the blink of an eye. It helps accountants do much more in less time.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-vendor-bill.webp",
+    "feats": []
+   },
+   {
+    "h": "No data entry! Just automation",
+    "p": "Experience zero data entry. Our advanced AI-powered invoice data capture has a 98% recognition rate. All you have to do is to validate the invoice.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-bill-pdf.webp",
+    "feats": []
+   },
+   {
+    "h": "Enjoy the mobile experience",
+    "p": "Your mobile companion. Take pictures of your expenses, and let the Artificial Intelligence do the rest!",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Smart bank reconciliation",
+    "p": "Never import bank statements manually again. Odoo integrates with 28,000 banks from all around the world! 95% of the transactions are matched automatically with the financial records.",
+    "img": "",
+    "feats": [
+     "Bank synchronization",
+     "Smart AI matching"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-hero-image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-vendor-bill.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-bill-pdf.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-bill.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-mobile-02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-mobile-01.webp"
+  ],
+  "youtube": [
+   "5S-1uDGD4GA",
+   "QGcpONNTdYM"
+  ],
+  "mp4": "https://download.odoocdn.com/videos/odoo_com/video_accounting.mp4",
+  "fetched": "2026-09-28"
+ },
+ "account": {
+  "url": "https://www.odoo.com/app/invoicing",
+  "title": "Electronic invoicing and billing software | Odoo",
+  "description": "Try and adopt Odoo’s free billing and invoicing software for small businesses and large companies. Start your trial now!",
+  "headline": "Simple Electronic Invoicing",
+  "lead": "Send and receive unlimited e-invoices for free. Automate payments and reminders to get paid faster.",
+  "sections": [
+   {
+    "h": "Click. Invoice sent",
+    "p": "All the essential elements of an invoice are prepped just for you: customer details, products and prices, tax rates, etc. Your invoice is - literally - one click away.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing_mobile_01.webp",
+    "feats": []
+   },
+   {
+    "h": "Your invoices in your pocket",
+    "p": "Use the mobile app to issue invoices to your customers, update payment status, or even create batch payments for your vendor bills! Anytime, anywhere.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Get paid So fast you'll get a ticket in a flash",
+    "p": "Online payments. Redirect your clients to a flawless customer portal and let them pay with their preferred online payment method.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-customer-portal-payments.webp",
+    "feats": []
+   },
+   {
+    "h": "Connect your bank Automate follow-ups",
+    "p": "Track open payments with clear statuses and due dates. Set reminders for entries that need follow-up.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-payments-list.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-hero-image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing_mobile_01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-customer-portal-payments.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-payments-list.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing_recurring_invoices.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/your_invoice_your_style.webp"
+  ],
+  "youtube": [
+   "QAKwr48Fhvc"
+  ],
+  "mp4": "https://download.odoocdn.com/videos/odoo_com/video_invoicing.mp4",
+  "fetched": "2026-09-28"
+ },
+ "hr_expense": {
+  "url": "https://www.odoo.com/app/expenses",
+  "title": "Expenses management - Odoo",
+  "description": "Easily manage employees' expenses and keep track of your daily accounts.",
+  "headline": "Stop chasing paper receipts",
+  "lead": "Centralize and manage your expenses with company cards, spending controls, and approvals. Capture bills, sync with accounting and streamline customer reinvoicing.",
+  "sections": [
+   {
+    "h": "Submit on the go",
+    "p": "Submit expenses right from your phone! Whether emailing an expense or uploading a receipt using Odoo's mobile app, never forget to log an expense by submitting receipts on the go, as you collect them!",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Less typing , more scanning",
+    "p": "Harness the power of OCR. No more wasted time typing in each receipt detail. Odoo scans each receipt and creates an expense record with the total cost and date, so you don't have to.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/less_typing.webp",
+    "feats": []
+   },
+   {
+    "h": "Four ways to create records",
+    "p": "Email, scan, drag and drop, or manual. Add expenses by sending an email using expense codes, scan in a receipt, drag and drop a receipt into the Expenses app dashboard, or manually type in an expense - from your phone or computer!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/one_report.webp",
+    "feats": [
+     "Email",
+     "Scan",
+     "Drag & drop",
+     "Type in"
+    ]
+   },
+   {
+    "h": "Every expense, one report",
+    "p": "Stop submitting each individual expense. Place all expenses on one expense report with a click. Submitting a single report is easier for everyone; from the employees submitting expenses, the managers approving expense reports, and the accountants posting payments.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Reimburse or reinvoice in a flash",
+    "p": "Who should really be paid? Some expenses should be paid for by the client, and others by the business. Specify expenses that should be reimbursed to the employee or reinvoiced to a customer.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/expense_tracking.webp",
+    "feats": []
+   },
+   {
+    "h": "Ready, set, expense!",
+    "p": "Expense categories are pre-configured! When the Expenses app is installed, a set of pre-loaded expense categories are available so you can start creating expense records right away.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/ready_set_expense.webp",
+    "feats": []
+   },
+   {
+    "h": "Robust reporting",
+    "p": "See the data you want! Visualize expenses with customized reports to show exactly the information you need. See expenses by employee, category, dates, and more. Create reports with multiple filters and/or groupings, and favorite them for easy access.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/robust_reporting.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/submit_on_the_go.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/less_typing.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/more_scanning.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/one_report.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/expense_tracking.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/reimburse.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/ready_set_expense.webp"
+  ],
+  "youtube": [
+   "VNgdv71rJo0"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "spreadsheet_dashboard": {
+  "url": "https://www.odoo.com/app/spreadsheet",
+  "title": "Odoo Spreadsheet and Dashboards - Free Business Intelligence Software",
+  "description": "Get insightful reporting to gain an overview of your business’s analytics. Edit and share spreadsheets and dashboards to analyze data for free.",
+  "headline": "Decisions, not just data.",
+  "lead": "Odoo's business intelligence tools turn raw data into into actionable insights using spreadsheets and interactive dashboards.",
+  "sections": [
+   {
+    "h": "No more copy/paste Real-time data",
+    "p": "No export-import hassle. Your data is automatically incorporated from your database into charts and spreadsheets, keeping your information up-to-date.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/copy_paste.webp",
+    "feats": []
+   },
+   {
+    "h": "Your business's pivot moment",
+    "p": "Dynamic reports. Create and view customized reports effortlessly using a user-friendly pivot view with real-time data updates.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/copy_paste.webp",
+    "feats": []
+   },
+   {
+    "h": "Visualize, decide, succeed",
+    "p": "One dashboard to access all information. Your data is sorted into customizable categories and translated into visual representations for easy comprehension and informed decision-making.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/dashboard.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/copy_paste.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/pivot_02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/dashboard.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/features_formating.webp"
+  ],
+  "youtube": [
+   "oDeBf03YZ8o"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "documents": {
+  "url": "https://www.odoo.com/app/documents",
+  "title": "Odoo Documents - Free Document Management Software",
+  "description": "Store, share, and manage your business’s most important files on Odoo’s open-source Documents app.",
+  "headline": "Files organized. Time saved.",
+  "lead": "Odoo Documents allows you to store, view, edit, and manage unlimited files within Odoo.",
+  "sections": [
+   {
+    "h": "Your document hub",
+    "p": "One single paperless platform. With Odoo document management system, finding your documents is easier than ever before. Enjoy automatic dispatch, digitalization, and automated actions.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/documents/process_bills.webp",
+    "feats": [
+     "Emails",
+     "Scans",
+     "Files"
+    ]
+   },
+   {
+    "h": "Print, sign, scan Sign online!",
+    "p": "Make the most of your time. Don't waste time printing and scanning documents when you can just sign online. Documents integrates seamlessly with Odoo's 80+ apps.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Organization is the key",
+    "p": "Everything is where you need it, instantly available. All documents are categorized per workspace. By assigning tags, you will never lose track of them again. It's time to clear your mind and your desktop.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/documents/organization.webp",
+    "feats": []
+   },
+   {
+    "h": "Time-saving tool",
+    "p": "Use the interactive calculator below to estimate the number of manual document-related tasks you or your employees do each month.",
+    "img": "",
+    "feats": [
+     "How many documents (contracts/NDA's) are signed ?",
+     "How many times people have to search for a document ?",
+     "How many times people have to request a document ?",
+     "How many bills are recorded?",
+     "How many people are hired ?",
+     "How does this calculator work?"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/process_bills.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/request_file.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/hub.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/create_task.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/ask_for_signature.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/sign_online.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/documents/organization.webp"
+  ],
+  "youtube": [
+   "Jc2skZufE0I"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "sign": {
+  "url": "https://www.odoo.com/app/sign",
+  "title": "Odoo Sign - Free E-Signature App",
+  "description": "E-signature software to send, sign, and approve documents electronically. Also available from your phone.",
+  "headline": "eSign. Reinvented.",
+  "lead": "Send, sign, and manage unlimited agreements for free. Experience the world's most intuitive eSign workflow, built for speed and legal compliance.",
+  "sections": [
+   {
+    "h": "Simplify it, automate it, sign it",
+    "p": "Drag and drop editable and mandatory fields. Automate repetitive completion by using pre-filled templates. Write your document only once and be more productive!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/sign/simplify-signing.webp",
+    "feats": []
+   },
+   {
+    "h": "Whenever, Wherever",
+    "p": "Collect signatures in seconds. Your clients can access and review documents on any device and sign them electronically with just a few clicks.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Your signing process under control",
+    "p": "Track document status. Swiftly send signature requests and reminders to recipients, and keep an eye on the progress of your contracts.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/sign/control.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/simplify-signing.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/sign_online.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/control.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/features_adopt.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sign/features_reminders.webp"
+  ],
+  "youtube": [
+   "dGe7HrivSU8"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "crm": {
+  "url": "https://www.odoo.com/app/crm",
+  "title": "The #1 Open Source CRM | Odoo",
+  "description": "Discover Odoo’s powerful CRM software – a sales tool for businesses of all sizes. Manage prospects and customers effortlessly. Try our free system today!",
+  "headline": "Customer Relationship Maximized",
+  "lead": "AI-native CRM to track leads, get accurate forecasts and close more opportunities.",
+  "sections": [
+   {
+    "h": "Track opportunities easily in the sales software",
+    "p": "In our Customer Relationship Management (CRM) system, each opportunity is listed as a card with all the essential information. Each stage gives an overview of your expected revenues.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Never miss out on a follow-up",
+    "p": "Schedule calls, meetings, mailings, or quotations in a few clicks in the contact management software. Odoo automatically plans the next activity based on your sales script.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Effortless communication means no miscommunication",
+    "p": "Communication is key to enhancing customer relationships. Incoming emails are automatically added to your pipeline, and all contact with your team and customers is made from a single place, ensuring easy access to information at all times.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/crm/effortless_communication.webp",
+    "feats": [
+     "Email",
+     "Live chat",
+     "SMS",
+     "VoIP"
+    ]
+   },
+   {
+    "h": "Attractive quotations in two clicks",
+    "p": "Create professional-looking quotations in no time with the user-friendly interface of our sales tool. Select your products from the catalog and let Odoo handle the rest.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/crm/quotation.webp",
+    "feats": []
+   },
+   {
+    "h": "Turn reporting data into money",
+    "p": "Smart decisions for your sales strategy should be based on accurate and real-time data. Dig deeper into your sales metrics with revenue forecasts, team performance analysis, and custom dashboards.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/crm/reporting.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/crm/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/crm/effortless_communication.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/crm/quotation.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/crm/sample_quote.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/crm/reporting.webp"
+  ],
+  "youtube": [
+   "xbyPsjIfylk"
+  ],
+  "mp4": "https://download.odoocdn.com/videos/odoo_com/video_CRM.mp4",
+  "fetched": "2026-09-28"
+ },
+ "sale": {
+  "url": "https://www.odoo.com/app/sales",
+  "title": "Sales management system | Odoo",
+  "description": "Use Odoo’s sales software to create polished, professional proposals in minutes and let customers sign them online. Try it for free now!",
+  "headline": "Quotations that convert",
+  "lead": "Boost your sales with professional quotes, product configurators, electronic signatures, online payments, upsells and much more.",
+  "sections": [
+   {
+    "h": "Use quote templates to automate common orders",
+    "p": "Automatically apply the correct pricing and taxes to every customer. Skip time-consuming tasks to focus on what matters most: selling!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/sales/quote_template.webp",
+    "feats": []
+   },
+   {
+    "h": "Close deals faster with the customer portal",
+    "p": "Let customers help themselves! Customers can access their quotations, sales orders, delivery orders, and more... Save time with online payments, and close deals faster with e-signatures on quotations, contracts, and any other PDF.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/sales/customer_portal_02.webp",
+    "feats": []
+   },
+   {
+    "h": "Only focus on qualified leads",
+    "p": "Generate qualified leads through website visits, marketing campaigns, email aliases, event registrations, and more. AI-powered lead scoring narrows down which leads are worth your sales team's valuable time.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/sales/qualified_leads.webp",
+    "feats": []
+   },
+   {
+    "h": "Complete product control",
+    "p": "Set up unique product pricing, variants, and categories that integrate with eCommerce , Inventory , and Manufacturing .",
+    "img": "",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/manage_02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/manage_01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/quote_template.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/customer_portal_02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/customer_portal_01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/qualified_leads.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/sales/ai_powered.webp"
+  ],
+  "youtube": [
+   "N4zw-2t6spk"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "point_of_sale": {
+  "url": "https://www.odoo.com/app/point-of-sale-shop",
+  "title": "POS software for retail stores | Odoo",
+  "description": "Run your retail business with Odoo’s point of sale system. Set it up, start selling quicker, and manage payments effortlessly. Try it now!",
+  "headline": "POS made for retail",
+  "lead": "A reliable Point of Sale built for modern retailers. Inventory, RFID, promotions, loyalty, B2C & B2B, multi-store, accounting, and eCommerce - all in one platform.",
+  "sections": [
+   {
+    "h": "Complex meets intuitive",
+    "p": "Interface that has it all : so intuitive that anyone can master it in minutes, yet packed with a range of advanced options. Handle any transaction with ease and focus on what matters: the customers.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/interface.webp",
+    "feats": []
+   },
+   {
+    "h": "Self ordering for the win",
+    "p": "Step into the future . From the kiosk or their smartphones, your customers can do everything by themselves, from the order to the payment.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self_service_for_the_win_kiosk.webp",
+    "feats": []
+   },
+   {
+    "h": "Reward loyal customers",
+    "p": "Keep the clients coming. Improve their shopping experience with loyalty programs: points, rewards, and gift cards. Handling a refund? Use the eWallet to bump up retention while keeping the clients happy.",
+    "img": "",
+    "feats": [
+     "Coupons",
+     "Loyalty cards",
+     "Promotion",
+     "eWallet",
+     "Gift Cards"
+    ]
+   },
+   {
+    "h": "Cross-channel selling",
+    "p": "Click and collect. No more chaos between your selling channels. Allow clients to order online and pick up at the store. Preparation displays allows you to prepare large orders in advance.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_1.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/payment_terminal.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/interface.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self_service_for_the_win_kiosk.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self_service_for_the_win_mobile.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/integrated_payments.webp"
+  ],
+  "youtube": [
+   "5Bl60GkEa50"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "pos_restaurant": {
+  "url": "https://www.odoo.com/app/point-of-sale-restaurant",
+  "title": "Restaurant POS management system | Odoo",
+  "description": "Manage your restaurant smoothly with Odoo’s Point of Sale. Handle orders, floor plans, and kitchen preparation on a single platform. Try it now!",
+  "headline": "All-in-one restaurant POS",
+  "lead": "Odoo POS offers a complete point of sale with mobile ordering, table reservations, online orders, employee planning, and delivery platform integrations.",
+  "sections": [
+   {
+    "h": "Every order. Every channel. One single hub.",
+    "p": "Stop juggling multiple screens. Whether an order originates from your kiosk, website, dining room, or third-party delivery apps, manage every order seamlessly from one unified control center.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-01.webp",
+    "feats": [
+     "Third-party delivery apps"
+    ]
+   },
+   {
+    "h": "Self ordering = bigger orders",
+    "p": "Give your clients the power to order and pay instantly from a kiosk or their own phone. Slash wait times, free your servers to deliver great hospitality, and watch your average order size soar.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self-order-kiosk.webp",
+    "feats": []
+   },
+   {
+    "h": "No more kitchen chaos",
+    "p": "Keep your orders moving fast. The preparation display lets your staff know exactly what to make and when. Dedicated kitchen and bar views ensure smooth service around the clock.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-kitchen-toolbar.webp",
+    "feats": []
+   },
+   {
+    "h": "Turn restaurant searches into table bookings",
+    "p": "Let guests book instantly from your website, Google Maps, or Search via Reserve with Google. Then manage every reservation from a single, unified dashboard.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-booking-details.webp",
+    "feats": []
+   },
+   {
+    "h": "Serve more guests Let AI handle the rest",
+    "p": "Get rich insights. Ask Odoo's integrated artificial intelligence for the number of tables booked tonight, your monthly revenue, or your margin per product category.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-ai-chat.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-register.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-03.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-04.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-orders-list.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-delivery-apps.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self-order-kiosk.webp"
+  ],
+  "youtube": [
+   "tWW6jfrEIlY"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "sale_subscription": {
+  "url": "https://www.odoo.com/app/subscriptions",
+  "title": "Odoo Subscriptions",
+  "description": "Odoo simplifies your subscriptions management. Recurring billing and subscriber management the easy way.",
+  "headline": "Recurring revenues. Simplified.",
+  "lead": "From multi-plan quotations and upsells to automated renewals and retention strategies. Boost your MRR and reduce churn.",
+  "sections": [
+   {
+    "h": "Focus on selling great services",
+    "p": "Concentrate on services and relationships while Odoo's automated features handle your recurring sales and subscriptions. Quickly provide clear contracts and flawless, automated invoices; take care of taxes with no stress; and deal with payments - all done automatically according to your settings.",
+    "img": "",
+    "feats": [
+     "Simple features to manage subscriptions automatically."
+    ]
+   },
+   {
+    "h": "From happy visitors to satisfied customers",
+    "p": "Increase sales by getting rid of login requirements and making signup simple. Give your customer access to a user-friendly portal with all their data and contract options at a glance.",
+    "img": "",
+    "feats": [
+     "Create great long lasting relations with your subscribers.",
+     "No login required and easy signup",
+     "User-friendly portal",
+     "Automatic payments"
+    ]
+   },
+   {
+    "h": "Get a more efficient sales force",
+    "p": "Speed up your sales team with contract templates for your most frequent sales scenarios. Let dissatisfied customers end contracts themselves and give you the reason for their decision. Or ask them to contact you first.",
+    "img": "",
+    "feats": [
+     "Save time on routine tasks and focus on growing revenue."
+    ]
+   },
+   {
+    "h": "Analysis tools to optimize your business",
+    "p": "Help everyone in your sales team unlock their potential by analyzing the performance of individual team members. Get friendly with your MRR, LTV and more through the dashboard overview filled with detailed insights. Zoom in on your figures by simply clicking down the invoice lines.",
+    "img": "",
+    "feats": [
+     "Find out what metrics to act on in a click.",
+     "Improved sales performance",
+     "Built-in analytics of your revenues",
+     "Project your future business"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/subscription/hero-image.webp"
+  ],
+  "youtube": [
+   "I4Cjqi97JS0"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "sale_renting": {
+  "url": "https://www.odoo.com/app/rental",
+  "title": "Rental | Overview | Odoo",
+  "description": "",
+  "headline": "Rent it. Track it.",
+  "lead": "Odoo Rental brings inventory, scheduling, and contracts into a single workflow to prevent missed dates and unavailable products.",
+  "sections": [
+   {
+    "h": "Save time, rent online",
+    "p": "Online booking and reservations have never been easier thanks to integrations with Odoo's eCommerce application. Customers can shop available products, reserve their selected dates, and checkout right on the website.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_product.webp",
+    "feats": []
+   },
+   {
+    "h": "Time is money … literally",
+    "p": "Whether you rent by the hour, week, month or year, create customized pricing for every product based on different time frames.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Signature requests on request",
+    "p": "Upload rental agreements, insurance forms, contracts, and more, request a customer signature digitally before any products ever leave your warehouse.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_sign.webp",
+    "feats": []
+   },
+   {
+    "h": "Automate your to-do-list",
+    "p": "With one click, know exactly who is picking up and who is dropping off. Stay on top of your day by tracking the status of rentals and invoices from one easy dashboard.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/rental/automate.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_product.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_meeting_room.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_sign.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_agreement.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/automate.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental-days.webp"
+  ],
+  "youtube": [
+   "0RPeGbyp3vM"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "website": {
+  "url": "https://www.odoo.com/app/website",
+  "title": "The #1 free, open-source Website Builder | Odoo",
+  "description": "Create a free website in minutes and enjoy Odoo’s open-source CMS, both mobile- and SEO-friendly. Discover it now!",
+  "headline": "Scale your brand online",
+  "lead": "Build more than a website, build a business. Design beautiful pages without code, dominate search results, and turn visitors into customers with our AI-native builder.",
+  "sections": [
+   {
+    "h": "Designed to drive results",
+    "p": "Don't just exist online. Odoo's flexible website builder gives you endless design combinations to stand out from the crowd and drive conversion.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-01.webp",
+    "feats": []
+   },
+   {
+    "h": "Your dream website easy as 123...4!",
+    "p": "No coding skills? No problem. Odoo's AI-powered website configurator allows you to build a sleek website tailored to your business needs in just four easy steps. Dream it today, go live in minutes!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-configurator-business.webp",
+    "feats": []
+   },
+   {
+    "h": "Craft a website as unique as your brand",
+    "p": "Drag and drop blocks. Make precise adjustments to the layout, add filters and effects to pictures, animate an element... Do all that and more directly on the page.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-customer-01.webp",
+    "feats": []
+   },
+   {
+    "h": "No inspiration? Let AI write it for you",
+    "p": "Boost your copy-writing. Ask Odoo AI to generate your website's content from a simple prompt, or improve your current text by applying the right tone.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-edit-text.webp",
+    "feats": []
+   },
+   {
+    "h": "Your website. Future-proof.",
+    "p": "Play with amazing features and grow your business. Streamline processes, enhance user experience, and provide a unified system to run and grow your business efficiently.",
+    "img": "",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-03.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-04.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-05.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-06.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-07.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-08.webp"
+  ],
+  "youtube": [
+   "FEFqdQBMEbA"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "website_sale": {
+  "url": "https://www.odoo.com/app/ecommerce",
+  "title": "eCommerce website design | Odoo",
+  "description": "Use Odoo’s open-source eCommerce website builder and benefit from integrated inbound marketing, order, and inventory management tools. Try it now!",
+  "headline": "The best Open source eCommerce",
+  "lead": "Quick to set up. Powerful by design. Build stunning product pages and run everything on one unified platform, from marketing to operations.",
+  "sections": [
+   {
+    "h": "No code Mode",
+    "p": "AI-based website builder. Your perfect online store should be easy to create and maintain. Generate it in no time using dedicated business themes, and design stylish product pages by drag-and-dropping building blocks.",
+    "img": "",
+    "feats": [
+     "3 million+ free photos"
+    ]
+   },
+   {
+    "h": "Product is king",
+    "p": "Your products are as unique as your clients: display their many facets by configuring sizes, colors, and other variants. Stock is updated for each variant in real time.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/adaptive-product.webp",
+    "feats": []
+   },
+   {
+    "h": "Bump up loyalty, maximize revenues",
+    "p": "Stronger relationships. Just because your shop is online doesn't mean you can't connect with your customers: chat with them in real time and help them find their next best buy, and display reviews to build trust.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/maximise.webp",
+    "feats": []
+   },
+   {
+    "h": "Your store in the spotlight",
+    "p": "Sustainable growth. Odoo is designed to help you reach just the right audience and scale up as you go. Use the built-in dashboard to build advanced reports and cross-check data.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/reporting.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/products-grid.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/adaptive-product.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/maximise.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/bump_up.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/reporting.webp"
+  ],
+  "youtube": [
+   "kmkpORbyWJc"
+  ],
+  "mp4": "https://download.odoocdn.com/videos/odoo_com/video_ecommerce.mp4",
+  "fetched": "2026-09-28"
+ },
+ "website_blog": {
+  "url": "https://www.odoo.com/app/blog",
+  "title": "Odoo | Open Source Blogs alternative to Medium",
+  "description": "Write awesome blogs, SEO friendly and social.",
+  "headline": "Share your expertise",
+  "lead": "Odoo Blog lets you create posts with drag-and-drop blocks, engage visitors with comments and social sharing, and grow visibility with built-in SEO and analytics.",
+  "sections": [
+   {
+    "h": "Effortlessly convert your audience",
+    "p": "Engaging user experience. Build loyalty and convert visitors into customers that could become your ambassadors.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/blog/convert.webp",
+    "feats": []
+   },
+   {
+    "h": "Maximize your SEO",
+    "p": "Increase your visibility. Create and optimize content to get a better ranking in search engines and get more visitors.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/blog/seo.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/blog/banner.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/blog/command.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/blog/editor.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/blog/convert.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/blog/seo.webp"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "website_forum": {
+  "url": "https://www.odoo.com/app/forum",
+  "title": "Odoo Forum - Free Forum Management App",
+  "description": "Create a community, foster collaboration, and enhance support. Drive traffic and boost your brand's visibility.",
+  "headline": "Connect with your community",
+  "lead": "Odoo Forum is the ideal way to create a community, foster collaboration and enhance support. Drive traffic and boost your brand's visibility.",
+  "sections": [
+   {
+    "h": "By and for the community",
+    "p": "Enable users to help each other. Boost collective knowledge and anticipate your customer's needs with valuable insights and problem-solving discussions.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/forum/best_brushes.webp",
+    "feats": []
+   },
+   {
+    "h": "Gamification drives motivation",
+    "p": "Motivate, engage, and drive actions. Set up a reward system with Karma points to give your most active members more moderation functionalities and boost their activity.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/forum/gamification.webp",
+    "feats": []
+   },
+   {
+    "h": "Customize your content's design",
+    "p": "User-friendly and advanced text editor. Enable users to edit and structure their content with plenty of helpful features.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/forum/customize_01.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/forum/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/forum/best_brushes.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/forum/gamification.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/forum/customize_01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/forum/customize_02.webp"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "im_livechat": {
+  "url": "https://www.odoo.com/app/live-chat",
+  "title": "Open Source Live Chat App | Odoo",
+  "description": "Engage with your website visitors to boost sales and deliver real time support.",
+  "headline": "Every chat has potential",
+  "lead": "Odoo Live Chat routes live website questions to the right expert, allowing support agents to answer visitors in real time and turn conversations into leads.",
+  "sections": [
+   {
+    "h": "Answer questions, nurture leads, and solve problems instantly",
+    "p": "With its user-friendly interface and robust features, Odoo Live Chat empowers your team to engage with website visitors, address queries, and nurture leads in real time. Whether you're looking to boost customer satisfaction or enhance your team's efficiency, Odoo Live Chat is the solution that bridges the gap between you and your audience, fostering meaningful connections at every click.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/answer_questions.webp",
+    "feats": []
+   },
+   {
+    "h": "Never miss a message again",
+    "p": "Receive notifications and open a chat window no matter what Odoo app you are working in. Your conversations follow you across the database so you will never miss a chance to connect.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Help is just a click away",
+    "p": "Turn conversations into support tickets instantly without losing track of the important details. When a live chat operator runs into an issue that requires some investigation, they can create a Helpdesk ticket right from the chat window. And that entire chat history? It moves right over with the new ticket.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/help_is_just_a_click_away.webp",
+    "feats": []
+   },
+   {
+    "h": "Turn “visitor” into “customer”",
+    "p": "Convert website visitors into potential sales with just a few keystrokes. As a visitor engages with your website, the live chat enables instant communication, allowing your team to promptly address inquiries and provide personalized assistance. These interactions can then be captured and transformed into leads within the CRM app, ensuring no potential business opportunity slips through the cracks.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/turn_visitor_into_customer.webp",
+    "feats": []
+   },
+   {
+    "h": "Meet Chatbot, your new teammate",
+    "p": "From creating Helpdesk tickets to answering customer questions, the Odoo Chatbot is poised to be your most versatile employee! This intelligent virtual assistant is designed to provide instant responses and support round-the-clock. Say goodbye to long response times and hello to efficient automation!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/meet_chatbot_your_new_teammate.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/answer_questions.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/never_miss_a_question.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/help_is_just_a_click_away.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/turn_visitor_into_customer.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/meet_chatbot_your_new_teammate.webp"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "website_slides": {
+  "url": "https://www.odoo.com/app/elearning",
+  "title": "Odoo eLearning - Free Learning Management System",
+  "description": "Upload content, assess students’ development, and personalize the training process all in one platform.",
+  "headline": "Keep your learners engaged",
+  "lead": "Create courses with engaging content like videos and quizzes, motivate learners with badges and certifications, and track their progress on the road to success.",
+  "sections": [
+   {
+    "h": "Easy to use, fun to learn",
+    "p": "Create a dazzling course with the intuitive website builder. You are the source of knowledge: sharing it with the world is within your grasp.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/ease_to_use.webp",
+    "feats": []
+   },
+   {
+    "h": "Learning is a journey, not a destination",
+    "p": "Engage your students. Keep up the motivation with an intuitive platform where they can follow-up on their progress and exchange with others.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/learning-journey.webp",
+    "feats": []
+   },
+   {
+    "h": "Train people. Measure results. Drive growth.",
+    "p": "Evaluate attendees progresses. Assessments and certifications empower students by providing valuable feedback and validating their knowledge and skills.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/train-people.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/front-screen.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/ease_to_use.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/learning-journey.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/train-people.webp"
+  ],
+  "youtube": [
+   "k-CnKXxVezo"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "stock": {
+  "url": "https://www.odoo.com/app/inventory",
+  "title": "Inventory management software | Odoo",
+  "description": "Discover Odoo’s revolutionary inventory and tracking system for warehouse management. Try it now for free!",
+  "headline": "Modern inventory system",
+  "lead": "Reduce stockouts, speed up operations, optimize routes and get real time visibility with Odoo's warehouse management app.",
+  "sections": [
+   {
+    "h": "Flawless replenishments",
+    "p": "Never run out-of-stock with smart replenishment strategies like min-max rules, MTO, or the master production schedule. Let Odoo propose, or trigger purchase orders automatically. Then automate vendor follow-ups to minimize communication risks : PO acknowledgment, receipt schedule confirmation a few days before, etc.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/device.png",
+    "feats": [
+     "Replenishment",
+     "Quality control",
+     "Storage"
+    ]
+   },
+   {
+    "h": "Speed up receipt, quality control and storage",
+    "p": "Control incoming and outgoing shipments with push and pull rules, GS-1 codes, and customizable routes. Use put-away strategies to optimize your storage: slow-fast movers, ABC analysis, cross-dock... all you need to reduce the number of parts moved, and distances.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Optimize your warehouse",
+    "p": "Real-time inventory management with all the features: serial numbers, lots, packaging, reservation strategies, cycle counting, KPIs, and more...",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/optimize_warehouse.webp",
+    "feats": []
+   },
+   {
+    "h": "Minimize picking movements",
+    "p": "Choose the right strategy for you: single, cluster, wave, or batch picking. Trigger goods to release using multiple reservation strategies. Implementing the rights strategies allows to pick and pack 30% extra products with the same team.",
+    "img": "",
+    "feats": [
+     "Wave picking",
+     "Cluster picking",
+     "Batch picking"
+    ]
+   },
+   {
+    "h": "Packing has never been easier",
+    "p": "Odoo integrates with carriers to print shipping labels, quality controls, and different packing units such as parts, boxes, pallets, and more.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/truck.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/automate_vendor.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/device.png",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/optimize_warehouse.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/truck.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/smarts_routes.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/reservation_mechanism.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/traceability.webp"
+  ],
+  "youtube": [
+   "SjW6NUIiHug"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "mrp": {
+  "url": "https://www.odoo.com/app/manufacturing",
+  "title": "Open-source Manufacturing (MRP) software | Odoo",
+  "description": "Start using Odoo’s manufacturing (MRP) software to handle every step of your production process, including planning and reporting. Try it now for free!",
+  "headline": "The future of MRP",
+  "lead": "MRP + MES + PLM + Quality + Shop Floor + Maintenance. All you need on one single platform, fast and easy to use.",
+  "sections": [
+   {
+    "h": "Real-time simulated operations",
+    "p": "Simulate manufacturing orders with real-time capacity planning, components availability, and cost control. Get just-in-time replenishment propositions and choose how to fulfill parts: make or buy, sub-contract, deliver from another warehouse, etc.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/operations.webp",
+    "feats": []
+   },
+   {
+    "h": "Planning that puts you ahead of schedule",
+    "p": "Schedule manufacturing orders and plan resources with finite capacity planning. Fine tune easily with the Gantt chart.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/schedule.webp",
+    "feats": []
+   },
+   {
+    "h": "Record production and components",
+    "p": "Use to process orders, accelerate operations, and reduce input errors. Works right out of the box, blazing fast, and with no latency.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/barcode.webp",
+    "feats": [
+     "Mobile barcode app"
+    ]
+   },
+   {
+    "h": "Become a paperless company",
+    "p": "The Shop Floor app helps streamline your manufacturing line. Through the tablet-optimized dashboard, you can organize workers, workcenters, worksheets, quality tests, and much more.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Get ready for Six-Sigma level 6!",
+    "p": "Get statistical analysis of quality issues, and set control point instantly available in the shop floor with instructions. Workers can send feedback through the app as they notice waste in the manufacturing process. When ideas and information flow that smoothly, quality is raised to another level...",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/sigma_6.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/operations.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/schedule.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/barcode.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_03.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/sigma_6.webp"
+  ],
+  "youtube": [
+   "UVCXPNwFMyY"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "mrp_plm": {
+  "url": "https://www.odoo.com/app/plm",
+  "title": "Odoo PLM",
+  "description": "Product Lifecycle Management software. A reliable solution for modern companies.",
+  "headline": "Product Lifecycle Magic",
+  "lead": "A collaborative platform to manage engineering changes, versions, documents and ECOs in real-time.",
+  "sections": [
+   {
+    "h": "Manage engineering changes",
+    "p": "Managing engineering changes efficiently is all about communication. Odoo PLM harnesses the power of an enterprise social network to help you communicate more efficiently across multiple departments. Everyone follows only what they need, approvals are simple, and discussions on documents are centralized in real time.",
+    "img": "",
+    "feats": [
+     "with real-time communication."
+    ]
+   },
+   {
+    "h": "Integrated Document Management",
+    "p": "Pass information to manufacturing with triggered alerts on worksheets or work center control panels. Attach your documents directly to BoMs, routings or anywhere else.",
+    "img": "",
+    "feats": [
+     "for drawings, worksheets, and quality documents."
+    ]
+   },
+   {
+    "h": "Smart versioning",
+    "p": "Forget about syncing EBoM and MBoM. Odoo aligns every department on the same documents so you can track changes efficiently across multiple versions.",
+    "img": "",
+    "feats": [
+     "with efficient diff and merge.",
+     "Manufacturing",
+     "Purchase",
+     "Maintenance",
+     "Quality"
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "2m4ZoUEeTgU"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "purchase": {
+  "url": "https://www.odoo.com/app/purchase",
+  "title": "Purchase order software | Odoo",
+  "description": "Odoo’s all-in-one procurement software takes care of everything, from RFQs to receipts, product variants, vendor bills and much more. Try it for free!",
+  "headline": "Restock on time without overbuying",
+  "lead": "Odoo Purchase uses real-time stock to automate replenishment without tying up cash or delaying shipments.",
+  "sections": [
+   {
+    "h": "Automated RFQs for the busy bee",
+    "p": "Streamline every RFQ and purchase order with automated reordering rules. Create custom rules and replenishment methods, and sync up your most important processes where it makes sense to do so — you have the power!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_1.webp",
+    "feats": []
+   },
+   {
+    "h": "Flexible purchase agreements, for every situation",
+    "p": "Optimize procurement with customizable and automated purchase agreements. Secure the best prices with alternative RFQs, compare product lines, and streamline recurring orders with blanket orders.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/flexible_1.webp",
+    "feats": []
+   },
+   {
+    "h": "Charge vendors on your terms",
+    "p": "Create singular or split vendor bills at any time, and pay based on ordered or received quantities — you choose. Integrate with the Accounting app to track the payment status of bills.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/charge_vendors_1.webp",
+    "feats": []
+   },
+   {
+    "h": "All the small things that make procurement possible",
+    "p": "...such as variants, packagings, units of measure, and more. Go further to integrate your Point of Sale and eCommerce systems.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/all_the_small_things_1.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_4.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_3.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/flexible_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/flexible_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/charge_vendors_1.webp"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "maintenance": {
+  "url": "https://www.odoo.com/app/maintenance",
+  "title": "Odoo Maintenance",
+  "description": "Software for the modern Manufacturers. Automate preventive maintenance, organize your maintenance requests and increase overall equipment efficiency.",
+  "headline": "Plan Maintenance. Not Emergencies.",
+  "lead": "Odoo Maintenance helps you manage preventive and corrective maintenance in one place, so issues are handled early—and emergencies stay off the schedule.",
+  "sections": [
+   {
+    "h": "Automate preventive maintenance",
+    "p": "Odoo computes standard statistics to help you plan preventive maintenance, including mean time between failure (MTBF), mean time to repair (MTTR), and expected next failure date, and lets you automate metrology and preventive maintenance scheduling.",
+    "img": "",
+    "feats": [
+     "to keep your line running."
+    ]
+   },
+   {
+    "h": "Organize your maintenance requests",
+    "p": "Easily track the progress of maintenance requests using the kanban view. Use the maintenance calendar to organize and plan activities. Your team will love using the fast and easy drag-and-drop interface to organize maintenance requests.",
+    "img": "",
+    "feats": [
+     "with great kanban and calendar views."
+    ]
+   },
+   {
+    "h": "Increase overall equipment effectiveness",
+    "p": "The manufacturing department can trigger maintenance requests directly from their work center control panel. When your maintenance team acts, the right people will be updated in real time.",
+    "img": "",
+    "feats": [
+     "with efficient maintenance."
+    ]
+   },
+   {
+    "h": "Dashboard & Statistics",
+    "p": "Use automatically computed statistics including MTBF and MTBR to fine tune your preventive maintenance rules and reduce the risk of equipment failure.",
+    "img": "",
+    "feats": [
+     "to optimize your performance.",
+     "Manufacturing",
+     "Quality",
+     "PLM"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/maintenance/hero-banner.png"
+  ],
+  "youtube": [
+   "olXqMdjUMzQ"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "quality_control": {
+  "url": "https://www.odoo.com/app/quality",
+  "title": "Odoo Quality",
+  "description": "Quality Management Software. Increase efficiency, define quality control points, manage quality alerts, and keep track of total productive maintenance.",
+  "headline": "Quality without the complexity",
+  "lead": "Built for simplicity, Odoo Quality helps teams apply quality checks without slowing down daily work.",
+  "sections": [
+   {
+    "h": "Quality inspections that won’t interrupt manufacturing",
+    "p": "Maintain product consistency and quality by configuring recurring quality checks on manufacturing and inventory orders.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_inspections_1.webp",
+    "feats": []
+   },
+   {
+    "h": "Zero in on defects before they cost you",
+    "p": "Create quality alerts to address product defects, specify root causes, and suggest corrective and preventive actions.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/quality/zero_1.webp",
+    "feats": []
+   },
+   {
+    "h": "No product left unchecked",
+    "p": "Unique products require tailored inspections. Effortlessly configure a variety of quality check types to ensure each item is properly checked for defects.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Put your quality teams in control",
+    "p": "Create unlimited quality teams dedicated to specific products or operations, and assign quality checks and alerts to them for review.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_teams.webp",
+    "feats": []
+   },
+   {
+    "h": "Worksheets make custom checks effortless",
+    "p": "Create interactive worksheets for employees to fill out when conducting quality checks.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/quality/worksheets.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_inspections_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_inspections_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/zero_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/zero_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/unchecked.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_teams.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/quality/worksheets.webp"
+  ],
+  "youtube": [
+   "tKepIG603x8"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr": {
+  "url": "https://www.odoo.com/app/employees",
+  "title": "Human resources software | Odoo",
+  "description": "Use Odoo for employee management and make the most of an innovative staff directory combined with advanced HR features. Try it now! ",
+  "headline": "Human Resources Magic",
+  "lead": "Streamline hiring, onboarding, attendance, performance, payroll, and employee self-service in one AI-powered people platform.",
+  "sections": [
+   {
+    "h": "All of your people. All in one place.",
+    "p": "Get a bird's eye view of every department before zooming in on the details. Sort employees by working hours, job title, even contract status to get a full picture of your team from every possible angle.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/employees/all_of_your_people.webp",
+    "feats": []
+   },
+   {
+    "h": "Keep the private stuff private",
+    "p": "Restricted access settings to protect employee's private information - emergency contacts, visa information, and more.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/employees/stuff_private.webp",
+    "feats": []
+   },
+   {
+    "h": "Show off those skills",
+    "p": "Record every employee's unique skills , so the next time you are looking for a French-speaking JavaScript expert, you know exactly who to call.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Take control of time off",
+    "p": "Stay on top of PTO requests with integrated time off tracking. Use the presence report to monitor attendance and quickly approve vacation requests.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/employees/take_control_of_time_off.webp",
+    "feats": []
+   },
+   {
+    "h": "Never lose track of another document",
+    "p": "Upload every contract, request signatures, then store them all in one secure location.",
+    "img": "",
+    "feats": [
+     "Sheets",
+     "PDF's",
+     "Docs",
+     "And more..."
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/all_of_your_people.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/all_in_one_place.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/stuff_private.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/show_off_those_skills.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/take_control_of_time_off.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/employees/performance_appraisals.webp"
+  ],
+  "youtube": [
+   "ZRFT2A_ghog"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr_recruitment": {
+  "url": "https://www.odoo.com/app/recruitment",
+  "title": "Free recruitment software | Odoo",
+  "description": "Start using Odoo’s recruitment software and benefit from a powerful applicant tracking system. Try it now for free! ",
+  "headline": "Next-Gen ATS",
+  "lead": "Source and hire the best talents with an agile, AI-powered pipeline. Streamline everything from job postings to contract signatures on one unified platform.",
+  "sections": [
+   {
+    "h": "Never wonder about a job's status",
+    "p": "All job positions, all in one place. Keep an eye on all job postings, applicants, and scheduled activities. Every stat for every job is clearly displayed on the Recruitment dashboard.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/never_wonder_about_a_job_status.webp",
+    "feats": []
+   },
+   {
+    "h": "Visualize the pipeline",
+    "p": "Keep applicants organized. Click on a job position to see all the applicants, organized by phase. Click and drag an applicant card to quickly change where they are in the pipeline, or have applicants automatically move in the pipeline after certain activities are done.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/visualize_pipeline_to_crop.webp",
+    "feats": []
+   },
+   {
+    "h": "Don't waste time typing",
+    "p": "Automatic data importing = less typing. When applicants apply online, their info is indexed and added to their application automatically. Resumes, cover letters, and any other documents are attached to the applicant's card, and organized in the Documents app.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/don_t_waste_time_typing.webp",
+    "feats": []
+   },
+   {
+    "h": "Tailor-made pipelines",
+    "p": "Create a pipeline that reflects how you recruit with stages that have automated actions. Have emails automatically sent at different stages, and have candidates move through the pipeline automatically.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/tailor_made_pipelines_rectangle.webp",
+    "feats": []
+   },
+   {
+    "h": "Less scheduling, more interviewing!",
+    "p": "Candidates can schedule meetings online! Candidates can pick a time that suits them best. Odoo's calendar integration keeps everyone updated, avoiding double booking.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Reporting that makes sense",
+    "p": "Look at the data so you can pivot. See all the stats - which channels are delivering the most candidates, how the pipeline is progressing, and how the team is managing it all. Effective reporting gives insights on recruiting tactics, helping you to optimize your recruitment process.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/reporting_that_makes_sense.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/never_wonder_about_a_job_status.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/visualize_pipeline_to_crop.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/don_t_waste_time_typing.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/tailor_made_pipelines_rectangle.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/less_scheduling_more_interviewing.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/reporting_that_makes_sense.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/you_re_hired.webp"
+  ],
+  "youtube": [
+   "wQDfhnQM_zM"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr_holidays": {
+  "url": "https://www.odoo.com/app/time-off",
+  "title": "Odoo Time Off",
+  "description": "Manage all employee vacations and absences with Odoo Leaves. Get statistics on the leaves and plan ahead to make sure you keep productivity at its highest.",
+  "headline": "Time off without the hassle",
+  "lead": "Odoo Time Off manages requests that update timesheets, attendance, payroll, and time-off balances in real time, reducing administrative work for the entire team.",
+  "sections": [
+   {
+    "h": "Always be ready for every request",
+    "p": "Customize as many time off types as you can think of! Decide on approval and validation settings, configure notifications, and customize display options to keep things organized.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/request-01.webp",
+    "feats": []
+   },
+   {
+    "h": "Do you have the time ?",
+    "p": "Keep track of every day allocated to you as soon as you open the app, so you never let a single day expire again.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Freedom is only a few clicks away",
+    "p": "Employees can submit a leave request in just a few clicks. It will take more time to write your “Out of Office” auto-reply.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/leave-request.webp",
+    "feats": []
+   },
+   {
+    "h": "Review, approve , done",
+    "p": "No more wasting time with overly complex or manual approval processes. With all of your team's requests in a single dashboard, you have all of the information you need to approve leave instantly.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/approval.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/dashboard.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/request-01.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/request-02.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/allocated-time.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/leave-request.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/approval.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/accrual.webp"
+  ],
+  "youtube": [
+   "KIi7rSuhi_w"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr_appraisal": {
+  "url": "https://www.odoo.com/app/appraisals",
+  "title": "Appraisal and Employee Evaluation - Odoo",
+  "description": "Plan employees' evaluation and review their performances with online appraisal system.",
+  "headline": "Performance magic",
+  "lead": "Unlock your team's full potential with 360° feedback, real-time goals, and automated appraisal cycles.",
+  "sections": [
+   {
+    "h": "Set up periodical employee evaluation",
+    "p": "Maintain the motivational process in your company by doing periodical evaluations of your employees' performance. Regularly assess your human resources to bring benefits for your people as well as for your organization, whether it's a small businesses or a large corporation.",
+    "img": "",
+    "feats": [
+     "Strengthen your company's key asset : employees",
+     "Easy follow-up",
+     "Clear calendar view",
+     "Exportable answers"
+    ]
+   },
+   {
+    "h": "Build the right appraisal",
+    "p": "Create the right survey to collect your employees answers. Prepare your own templates or choose from existing ones. Manage several types of evaluations: bottom-up, top-down, self-evaluations, and final evaluation by the manager. Let employees create evaluations themselves to send them to subordinates, juniors, as well as to their managers.",
+    "img": "",
+    "feats": [
+     "Ask the right questions and collect insightful information"
+    ]
+   },
+   {
+    "h": "Design your own survey",
+    "p": "Create your own surveys to gather important information and/or opinions from your employees. Quickly add questions, edit pages and draft a useful survey, using great built-in templates or making your own design from scratch. Proof your surveys before publishing them: get them reviewed by managers, supervisors or other employees and let them add comments before finalizing the surveys. You can even create several surveys for each evaluation step to send them to different people.",
+    "img": "",
+    "feats": [
+     "Use templates or create them your way"
+    ]
+   },
+   {
+    "h": "Automate the evaluation process",
+    "p": "Create evaluation plans with a clear schedule to automatically generate interview requests. Specify the employee, department or level in the hierarchy which can answer your surveys and allow managers to review the content and finalize the evaluation.",
+    "img": "",
+    "feats": [
+     "Make sure evaluations stick to the schedule",
+     "Employees",
+     "Recruitment",
+     "Survey"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appraisals/hero-banner.png"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr_referral": {
+  "url": "https://www.odoo.com/app/referrals",
+  "title": "Referrals | Overview | Odoo",
+  "description": "",
+  "headline": "Build teams people trust",
+  "lead": "Your best employees know great talent. Let them help you build a stronger team with a structured referral program.",
+  "sections": [
+   {
+    "h": "Share open job positions",
+    "p": "Discover everything you need to know about each opened position by using the job board. Find the perfect one for your friends and share it with them by email or through your social networks.",
+    "img": "",
+    "feats": [
+     "Refer your friends with an intuitive tool"
+    ]
+   },
+   {
+    "h": "Follow your ongoing referrals",
+    "p": "See how many points you've earned for each referral and easily follow your friends progress in the recruitment process.",
+    "img": "",
+    "feats": [
+     "All your referrals in one place"
+    ]
+   },
+   {
+    "h": "Customize your team",
+    "p": "Everyone needs help, especially when fighting villains. Build your superhero team by choosing an avatar for each of your recruited friends. Show the world your team's mighty power!",
+    "img": "",
+    "feats": [
+     "With great power comes great responsibility"
+    ]
+   },
+   {
+    "h": "Get rewarded",
+    "p": "Collect points each time your friends progress in the recruitment pipeline. Level up and see your avatar take on new items.",
+    "img": "",
+    "feats": [
+     "Hard work doesn't go unnoticed",
+     "Employees",
+     "Fleet",
+     "Time Off",
+     "Lunch",
+     "Appraisals"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/referral/hero-banner.png"
+  ],
+  "youtube": [
+   "2gw4ffg_lh4"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "fleet": {
+  "url": "https://www.odoo.com/app/fleet",
+  "title": "The #1 Fleet Management Software | Odoo",
+  "description": "Get your fleet in the cloud without pain, and it's open source.",
+  "headline": "Fleet management. Simplified.",
+  "lead": "Odoo Fleet tracks repairs, leases, drivers, and all vehicle details and costs, making fleet decisions easier.",
+  "sections": [
+   {
+    "h": "Fleet management made easy",
+    "p": "You won't need any specialized tracking system for company vehicles - with Odoo's smart app, you can keep a close eye on your fleet in a few simple clicks. Manage everything through our user-friendly administrative system - fuel log entries, costs and many other features necessary for the management of your company's vehicles.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Manage leasing and all other contracts",
+    "p": "Supervise all contracts for your vehicles and receive a warning email when contracts reach their expiration date. Several visual tools are put in place to ensure that you'll remember to renew (or end) your contract. Organize the services around the vehicles and communicate with the qualified service providers; manage invoices and notes. Set up a vehicle policy within your company, as well as an insurance policy in order to manage your fleet in the most efficient way.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Monitor all costs at once",
+    "p": "Identify and trace the money spent by your company for each of the fleet vehicles. Recurring costs of your contracts such as leasing and services contracts are automatically added to your accounting at the beginning of each period of the frequency specified in the contracts, while all other costs like fuel and repairs are automatically added to your report.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Analysis and reporting",
+    "p": "Show all costs associated with a given vehicle or with a type of service. Compare different types of costs (which vehicles cost the most; which services have been performed on which vehicles; etc) by using the reporting tool. Get really helpful insights about the effective return of each vehicle in order to improve your fleet investments.",
+    "img": "",
+    "feats": [
+     "Employees",
+     "Approvals",
+     "Expenses",
+     "Survey",
+     "Sign"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/fleet/hero-banner.png"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "social": {
+  "url": "https://www.odoo.com/app/social-marketing",
+  "title": "Social Marketing | Overview | Odoo",
+  "description": "",
+  "headline": "All socials. One hub.",
+  "lead": "Stop tab-hopping. Monitor engagement, respond to followers, and keep publishing on track from a single dashboard.",
+  "sections": [
+   {
+    "h": "Plan, monitor, and analyze your accounts in one place",
+    "p": "Being present on Social Media increases awareness, connects you with your customers, boosts leads, and income. It can also provide customer support and help broadcast important company news and messages.",
+    "img": "",
+    "feats": [
+     "Find new customers and keep users' engaged."
+    ]
+   },
+   {
+    "h": "Reach your audience anywhere on the Web",
+    "p": "When push notifications arrive, the user's focus quickly shifts to it, immediately capturing attention. The short and straightforward messages allow users to read the messages from the corner of their eye, and click on it if interest is triggered.",
+    "img": "",
+    "feats": [
+     "Time-sensitive messages."
+    ]
+   },
+   {
+    "h": "Turn visitors into leads and customers into happy users",
+    "p": "Studies prove that Live chats can increase conversion rates by 40%. Users respond well to live chats; it gives them a chance of real-time interaction. It allows you to proactively engage with visitors, which is a crucial part of a positive customer support experience.",
+    "img": "",
+    "feats": [
+     "Start conversations at will."
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "EK9FBjxjLUQ"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "mass_mailing": {
+  "url": "https://www.odoo.com/app/email-marketing",
+  "title": "Open Source Mass Mailing | Odoo",
+  "description": "Design efficient emails campaigns. Send, convert and track your success. Reach the right audience online.",
+  "headline": "Send emails people actually read",
+  "lead": "Create polished email campaigns with reusable templates, personalize by audience, and schedule sends that land at the right moment—then track what drives clicks.",
+  "sections": [
+   {
+    "h": "Build awesome campaigns",
+    "p": "Craft successful email campaigns that resonate with your prospects without any IT knowledge . Get total control over your email content and layout thanks to an intuitive and easy-to-use software.",
+    "img": "",
+    "feats": [
+     "Start from scratch or pick one of our themes."
+    ]
+   },
+   {
+    "h": "Segment your database",
+    "p": "Optimize your results by sending your campaigns to targeted groups within your database. Select leads, customers, or any other group from your contacts list by country, by date, by function, and more, all designed to make sure you send your content only to the people you want to share your campaign with.",
+    "img": "",
+    "feats": [
+     "For better open and click rates."
+    ]
+   },
+   {
+    "h": "Works on any device",
+    "p": "Be sure that your email newsletter is optimally displayed on every screen - whether it is a tablet, mobile phone, laptop, or desktop computer. Our dynamic content will adapt automatically to your subscriber's screen by adjusting spacing and optimizing images, offering comfortable readability on any device.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Improve your campaigns",
+    "p": "Get accurate, and real-time statistics on every email sent out. Easily track the number of leads created, orders, the amount of revenue generated, your open rate, bounce rate, click-through rate, and improve your overall marketing strategy. Follow the opportunities generated and track the expected revenues.",
+    "img": "",
+    "feats": [
+     "Rely on stats and data to send better emails."
+    ]
+   },
+   {
+    "h": "Advanced features",
+    "p": "Add a tracking code to the links within your email campaigns and get a complete view of the performance of each campaign's performance on a dedicated dashboard with the Odoo Link Tracker .",
+    "img": "",
+    "feats": [
+     "Take full control of every aspect of your mailing campaigns.",
+     "Track your links",
+     "Calculate your ROI",
+     "CRM",
+     "Marketing Automation",
+     "Events"
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "pBX9t7L0PuA"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "mass_mailing_sms": {
+  "url": "https://www.odoo.com/app/sms-marketing",
+  "title": "SMS Marketing | Overview | Odoo",
+  "description": "",
+  "headline": "Short message. Big impact.",
+  "lead": "Keep it simple and effective: send concise campaigns, personalize at scale, and learn what works from reporting.",
+  "sections": [
+   {
+    "h": "SMSs are faster than emails and have the best open rate",
+    "p": "Do you need to remind your attendees about your event tomorrow? Do you have a flash promotion that lasts five hours? Go for an SMS campaign! While even the best email campaigns can sit unopened in many inboxes, and for a long while, SMSs arrive directly in your contacts' pockets, with almost absolute certainty that they will be opened and read in the next minute.",
+    "img": "",
+    "feats": [
+     "Open Rates"
+    ]
+   },
+   {
+    "h": "Schedule your campaigns",
+    "p": "Prepare all your SMS campaigns and schedule them to be sent later. Odoo handles the sending for you, which means that you don't have to be connected for your campaign to be spread out to the world!",
+    "img": "",
+    "feats": [
+     "And let Odoo do the work for you."
+    ]
+   },
+   {
+    "h": "Starting from 0.01€/SMS",
+    "p": "There is something else about managing SMS Campaigns that you will love: the pricing. For example, sending an SMS to the United States costs 0.0333 credit. Just saying. The credits can be purchased directly from within the app.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "We optimize technical details so that you don't have to.",
+    "p": "We shorten links for you, to limit the size of your SMSs. But that's not it: link trackers are integrated by default, to monitor the click rates, and to measure the revenues generated from your SMS campaign.",
+    "img": "",
+    "feats": [
+     "Segment easily to whom your messages are sent.",
+     "Send SMSs directly from your contact list."
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "Q0JKvwPcjIY"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "event": {
+  "url": "https://www.odoo.com/app/events",
+  "title": "Events | Overview | Odoo",
+  "description": "",
+  "headline": "Modern events management",
+  "lead": "Plan, promote, and sell events online or on-site. From designing a stunning website to tracking attendance, run your entire event lifecycle on one unified platform.",
+  "sections": [
+   {
+    "h": "Host events that resonate with your audience",
+    "p": "An all-in-one event management platform, capable of handling events of any type or scale. Odoo Events covers all aspects of an Event Planner's job from event organization and ticket sales to visibility and promotion.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Organize calendars & manage speakers",
+    "p": "Add a presenter proposal form to your event page to allow visitors to submit talks and speaker nominations. Organize the validation process of every event or presentation and schedule them in minutes while also having a gantt view option.",
+    "img": "",
+    "feats": [
+     "Easily coordinate your event content."
+    ]
+   },
+   {
+    "h": "Sell tickets online",
+    "p": "Manage event registration and online ticket sales. Choose whether you would like to publish a free event or have your attendees purchase tickets through the event page. Pick the payment method with online credit card processing or customer invoicing. Define special conditions such as Early-bird ticket prices, member perks and benefits, or multiple ticket tiers. Everything you need to boost your event attendance and manage your guest lists all from one place.",
+    "img": "",
+    "feats": [
+     "Automate the registration and payment process."
+    ]
+   },
+   {
+    "h": "Get sponsors to come to you",
+    "p": "Easily manage existing and new sponsors with Odoo Events. Add sponsors to your events and publish sponsors in order based on the level of sponsorship they purchase on the bottom of every page of the event. Sell sponsorship packages online through Odoo eCommerce.",
+    "img": "",
+    "feats": [
+     "Sell event sponsorship and promote your partners."
+    ]
+   },
+   {
+    "h": "GA integration",
+    "p": "Odoo's integration with Google Analytics is automatically configured to track any type of event via online cart and check out, call-to-actions, etc. Each of the Odoo marketing tools is also linked with Google Analytics in order to provide you with a full 360° view of your business.",
+    "img": "",
+    "feats": [
+     "Monitor your event analytics every step of the way."
+    ]
+   },
+   {
+    "h": "SEO integration",
+    "p": "Ready-to-use SEO tools are available directly in Odoo with no configuration required. Keyword suggestion based on the most searched terms on Google allowing you to tactfully structure your content and promote your events.",
+    "img": "",
+    "feats": [
+     "Increase visibility and attract more attendees.",
+     "Website",
+     "eCommerce",
+     "Email Marketing",
+     "CRM"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/events/hero-banner.png"
+  ],
+  "youtube": [
+   "6fXCQisTjEI"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "marketing_automation": {
+  "url": "https://www.odoo.com/app/marketing-automation",
+  "title": "Odoo Marketing Automation",
+  "description": "",
+  "headline": "Automate campaigns, not just emails",
+  "lead": "Design automatic campaigns with workflows that coordinate messages, actions, and lead progression in Odoo's Marketing Automation app.",
+  "sections": [
+   {
+    "h": "Create automatic & targeted marketing campaigns",
+    "p": "Segment your prospects database to deliver the right message to the right prospect at the right time. Set up advanced marketing workflows that are centered around your prospects and nurture them efficiently through your sales funnel, 24/7.",
+    "img": "",
+    "feats": [
+     "Automate your workflows and scale your business."
+    ]
+   },
+   {
+    "h": "Craft sophisticated end-to-end customer journeys",
+    "p": "Creating a multi-stage campaign with several paths is as simple as two-steps campaigns. Add new actions and select time triggers directly on your workflow.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Design engaging email campaigns in minutes",
+    "p": "Get total control over your email content and layout thanks to an intuitive and easy-to-use drag & drop interface. Use predefined building blocks to generate clean paragraphs, calls-to-action, or images without touching a single line of code.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Automate much more than just emails",
+    "p": "Create end-to-end customer journeys and use workflows to automate tasks such as moving a lead forward in your sales funnel, assigning engaged prospects to your sales team, updating a record and more.",
+    "img": "",
+    "feats": [
+     "Trigger any action you need to streamline your workflow."
+    ]
+   },
+   {
+    "h": "An efficient lead management system",
+    "p": "Generate leads through your Odoo Website , Odoo Email Marketing and Odoo Events . Within Odoo CRM , score your leads based on demographic & behavioral criteria and assign the hot ones to your sales teams.",
+    "img": "",
+    "feats": [
+     "Lead Generation",
+     "Lead Qualification",
+     "Lead Nurturing",
+     "CRM",
+     "eCommerce",
+     "Email Marketing"
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "BJXmLEUoXZA"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "survey": {
+  "url": "https://www.odoo.com/app/surveys",
+  "title": "Odoo | Design Your Surveys",
+  "description": "An open source software to create online surveys.",
+  "headline": "Stop wasting feedback",
+  "lead": "Odoo Surveys helps you design surveys, track responses, and analyze results so feedback actually drives decisions.",
+  "sections": [
+   {
+    "h": "Easily create appealing online surveys",
+    "p": "One platform to manage it all: automate appraisals, satisfaction surveys, marketing campaigns, feedback forms, etc. Create beautiful and clear survey forms with no effort. Use images on the background and to illustrate questions.",
+    "img": "",
+    "feats": [
+     "Design, share, and analyze in three intuitive steps",
+     "Design and test your survey",
+     "Share and collect data",
+     "Analyze answers",
+     "Live Sessions",
+     "Immediately benefit from the results"
+    ]
+   },
+   {
+    "h": "Simple and intuitive from design to analysis",
+    "p": "Easy from the start thanks to an extremely user-friendly interface, Odoo Surveys allows you to create and edit surveys with no effort. React to your marketing needs and provide studies anytime. Run your statistics, measure response rates and extract the analysis in a few clicks. Don't waste time on the process and focus on qualitative and quantitative analysis.",
+    "img": "",
+    "feats": [
+     "Gathering information is no longer time consuming",
+     "Events",
+     "Appraisals",
+     "Email Marketing",
+     "eLearning",
+     "Recruitment"
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/survey/hero-banner.png"
+  ],
+  "youtube": [
+   "7BrebDXKn2g"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "project": {
+  "url": "https://www.odoo.com/app/project",
+  "title": "Odoo | Open Source Project Management",
+  "description": "The #1 project management application. Lean, social, easy and real time.",
+  "headline": "Modern teamwork",
+  "lead": "The AI-native project management software to plan, track, and deliver faster.",
+  "sections": [
+   {
+    "h": "Different needs , different views",
+    "p": "The power of sticky notes. The Kanban view organizes tasks by stage. Drag and drop them like sticky notes and keep your pipeline neatly organized.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Foster collaboration to boost efficiency",
+    "p": "Involve your customers. Decide what parts of your project stakeholders can view and edit. Manage all your communication on one simple interface.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-chatter.webp",
+    "feats": []
+   },
+   {
+    "h": "Time is money",
+    "p": "Timesheet and invoice. Bill your customers according to the time spent on tasks or set up milestones to spread the costs of larger projects.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-timer.webp",
+    "feats": []
+   },
+   {
+    "h": "Always know where your project stands",
+    "p": "Project updates are generated in real-time and give a detailed overview of profitability, milestones, resources, and tasks.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-budgets.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-hero-image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-dashboard.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-chatter.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-timer.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-timesheets.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-budgets.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-milestones.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-profitability.webp"
+  ],
+  "youtube": [
+   "T45Jo3s_Pt4"
+  ],
+  "mp4": "https://download.odoocdn.com/videos/odoo_com/video_project.mp4",
+  "fetched": "2026-09-28"
+ },
+ "hr_timesheet": {
+  "url": "https://www.odoo.com/app/timesheet",
+  "title": "Odoo Timesheets - Free Time Tracking Software",
+  "description": "Keep track of employees’ time and validate billable hours for free. Approve timesheets and invoice your team’s work based on hours spent on tasks.",
+  "headline": "Don't waste time. Track it.",
+  "lead": "Odoo Timesheets allows you to automate time tracking, eliminate leakage, and boost billable hours. All within an interface powered by smart recommendations.",
+  "sections": [
+   {
+    "h": "Start the work. Stop the timer .",
+    "p": "Smart time tracking. The timer starts automatically the moment you check in. Just stop it when you're done, link your time to a project, and your timesheet is done!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-time-tracking.webp",
+    "feats": []
+   },
+   {
+    "h": "Timesheeting, no longer time-consuming",
+    "p": "All in one place. Check your timesheets, and those of your team members, in a glimpse.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-overview.webp",
+    "feats": []
+   },
+   {
+    "h": "Automated timesheets, zero effort",
+    "p": "Stop wasting hours tracking minutes. The timesheet assistant securely monitors your desktop and browser activity to build accurate timesheets automatically.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-assistant.webp",
+    "feats": []
+   },
+   {
+    "h": "Time is money",
+    "p": "Keep it profitable. Get an overview of your billable time by team member, project, task, and billing type.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-billable-filter.webp",
+    "feats": []
+   },
+   {
+    "h": "Save even more time with AI",
+    "p": "Get rich insights. Ask Odoo's integrated artificial intelligence for employee timesheet updates, team performance reports, average logged hours, and more.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-ai-insights.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-hero-banner.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-time-tracking.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-overview.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-assistant.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-billable-filter.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-billable.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-reporting-pivot.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-ai-insights.webp"
+  ],
+  "youtube": [
+   "F5qZBZzt1-Q"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "industry_fsm": {
+  "url": "https://www.odoo.com/app/field-service",
+  "title": "Field service management software | Odoo",
+  "description": "Odoo’s field service management software helps you manage your tasks and coordinate your team’s agenda efficiently. Try it now! ",
+  "headline": "Field service. Simplified.",
+  "lead": "Optimize team schedules, onsite work, products and quotes. Eliminate admin with integrated timesheets and billing.",
+  "sections": [
+   {
+    "h": "Great plan = great execution",
+    "p": "Planning powerhouse. Switch between several views adapted to your needs: get an intuitive overview with Kanban cards, manage your team's tasks in Gantt view, or organize appointments by location using the map.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-planning.webp",
+    "feats": []
+   },
+   {
+    "h": "All-in-one mobile app",
+    "p": "Everything you need is in your pocket. Odoo's powerful mobile app allows you to manage any appointment end-to-end, from filling in the worksheet to keeping your stock up to date.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoicing.webp",
+    "feats": []
+   },
+   {
+    "h": "Carefree invoicing",
+    "p": "Prefilled forms. No need to manually fill in all the details, invoice your clients on the go.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoice.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-hero-image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-hero-image-mobile.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-planning.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-tasks.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoicing.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-worksheet.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-timesheet.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoice.webp"
+  ],
+  "youtube": [
+   "yZdcmAApq-0"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "helpdesk": {
+  "url": "https://www.odoo.com/app/helpdesk",
+  "title": "Help desk software | Odoo",
+  "description": "Use Odoo’s free open-source help desk software to enjoy a powerful ticketing system and manage your assistance efficiently. Try it now!",
+  "headline": "AI-native Helpdesk",
+  "lead": "Track, prioritize, and solve tickets faster with AI-powered workflows and responses. Connect WhatsApp, Live Chat, and email to keep your team synced and customers happy.",
+  "sections": [
+   {
+    "h": "Track, prioritize, and solve customer tickets.",
+    "p": "Organize your tickets the way you want with the amazing kanban view. Get an instant overview of your team's workload and check the status of a ticket based on your custom tailored SLA rules.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/helpdesk/helpdesk-tickets-overview.webp",
+    "feats": []
+   },
+   {
+    "h": "Multi Channels, Out-of-the-box.",
+    "p": "New incoming emails create tickets automatically. Qualify your customers queries with a customizable website form.",
+    "img": "",
+    "feats": [
+     "Get in touch with your customers where they are.",
+     "Email",
+     "Website Form",
+     "Live Chat"
+    ]
+   },
+   {
+    "h": "Sell support contracts",
+    "p": "Sell support contracts to automatically provide helpdesk services to your customer. Track time on each contract with the timesheet app, and upsell automatically with time-limited contracts. Create alerts for your sales or helpdesk team based on your customer status.",
+    "img": "",
+    "feats": [
+     "Sell, renew, and upsell easily."
+    ]
+   },
+   {
+    "h": "Provide smarter self-service",
+    "p": "Develop your self-service platform by directly linking your FAQ, training videos, and presentations on a ticket. Develop a community around your product with the forum.",
+    "img": "",
+    "feats": [
+     "Built-in customer knowledge base."
+    ]
+   },
+   {
+    "h": "Allow customers to close their tickets",
+    "p": "Reduce the chance of error, avoid misunderstandings and leave more time for Helpdesk Teams to worry about what truly needs their attention. Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.",
+    "img": "",
+    "feats": [
+     "Grant autonomy. Improve productivity."
+    ]
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/helpdesk/helpdesk-dashboard.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/helpdesk/helpdesk-tickets-overview.webp"
+  ],
+  "youtube": [
+   "LWAmieWpOTw"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "planning": {
+  "url": "https://www.odoo.com/app/planning",
+  "title": "Odoo Planning - Free Planning Management Software",
+  "description": "Schedule shifts and resources to manage your business effectively. Boost employees’ productivity with Odoo’s Planning app.",
+  "headline": "Smart planning. No surprises.",
+  "lead": "Odoo Planning automates staff scheduling. Organize shifts and resources, manage field service work, and enjoy the simplicity of integrated timesheets and invoices.",
+  "sections": [
+   {
+    "h": "Schedule once. Autoplan forever.",
+    "p": "Optimize and automate your schedule. Gain clarity and efficiency with shift and worksheet templates, assigned roles, and recurring shifts.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shift-template.webp",
+    "feats": []
+   },
+   {
+    "h": "All your resources in one place",
+    "p": "Stop juggling between apps. From staff to specialized equipment, plan your entire operation in one unified dashboard.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-ressource-staff.webp",
+    "feats": []
+   },
+   {
+    "h": "From your planning to the field",
+    "p": "Schedule onsite work in seconds and track your team's progress on the live map, from dispatch to completion. Field service management has never been smoother.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Planning made easy. Shift changes made easier.",
+    "p": "Take control of your schedule. Create, assign, and reassign shifts effortlessly with an intuitive drag-and-drop interface. Enable team collaboration so employees can view open shifts and swap them seamlessly.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shifts-scheduling.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shifts-overview.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shift-template.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-ressource-staff.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-ressource-equipment.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shifts-scheduling.webp"
+  ],
+  "youtube": [
+   "z3oLCl1eFhA"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "appointment": {
+  "url": "https://www.odoo.com/app/appointments",
+  "title": "Appointments | Overview | Odoo",
+  "description": "",
+  "headline": "Scheduling for businesses",
+  "lead": "Supercharge your business with self-service booking, reminders, no-show reduction, payments, and much more. Cut hours of admin work.",
+  "sections": [
+   {
+    "h": "Appointments , at your customers fingertips",
+    "p": "Scheduling made easy, secure a time slot within a few clicks. Customers view the availability and click to make an appointment!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-mobile.webp",
+    "feats": []
+   },
+   {
+    "h": "Your availabilities always synced with your calendar",
+    "p": "Configuration is quick and integrates with the Calendar app, Microsoft Outlook, and Google Calendar.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-meet.webp",
+    "feats": []
+   },
+   {
+    "h": "Never miss out on an opportunity!",
+    "p": "Use super convenient video conferencing to connect with your customers and land more sales, hands down.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-video-conference.webp",
+    "feats": []
+   },
+   {
+    "h": "Online appointment scheduling",
+    "p": "Manage appointments efficiently with comprehensive resource and staff schedules. A complete resource-time management system.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-ressources.webp",
+    "feats": []
+   },
+   {
+    "h": "Analyze your bookings",
+    "p": "Optimize your resources based on time demand and be there when your customers need you most.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-reporting.webp",
+    "feats": []
+   },
+   {
+    "h": "Appointments loaded with options",
+    "p": "Set your schedule, create opportunities, add questions, and send customized messages. Send invitations with availability for customers to schedule appointments quick and easy.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Send calendar alarms or reminders",
+    "p": "Set a time to send a reminder using an email template loaded with dynamic placeholders, for unique customization of data. Send a SMS message or notification to reach your customers and users in different ways.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-confirmation.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-hero-image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-mobile.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-meet.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-calendar.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-meetings.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-video-conference.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-ressources.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-reporting.webp"
+  ],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "mail": {
+  "url": "https://www.odoo.com/app/discuss",
+  "title": "Share and Discuss your Ideas - Odoo",
+  "description": "Organize groups of discussions and communicate efficiently on all resources. Create internal and public mailing lists, set up newsletters.",
+  "headline": "Discuss where work happens",
+  "lead": "Odoo Discuss brings your conversations, voice notes, and documents all together in one place.",
+  "sections": [
+   {
+    "h": "Work together without switching tools",
+    "p": "Discuss keeps conversations connected to your work, so every team stays aligned from the first message to the final result. Create channels, send direct messages, or share company-wide announcements to keep everyone connected.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Make meetings even more efficient with AI",
+    "p": "Record and transcribe meetings with AI in the sidebar. Explore every decision, share key takeaways instantly, and spend less time taking notes.",
+    "img": "",
+    "feats": [
+     "Record the call"
+    ]
+   },
+   {
+    "h": "One inbox for everything",
+    "p": "Messages, mentions, activities, approvals, and notifications all in one place. Stay focused on what needs attention and never miss an important update.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/inbox.webp",
+    "feats": []
+   },
+   {
+    "h": "Ask. Find. Act.",
+    "p": "Need an answer or a file? Find information, summarize conversations, and take action in seconds with AI. Keep your team focused while AI handles the searching, summarizing, and answering.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/search.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/hero.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/inbox.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/search.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/agents.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/chat.webp"
+  ],
+  "youtube": [
+   "_XPYg4JE1mQ"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "approvals": {
+  "url": "https://www.odoo.com/app/approvals",
+  "title": "Approvals | Overview | Odoo",
+  "description": "",
+  "headline": "Stop chasing approvals",
+  "lead": "Odoo Approvals allows you to manage every request from one centralized hub. Because approving referrals, rentals, procurement, contracts, and payments shouldn't make you open so many different apps.",
+  "sections": [
+   {
+    "h": "Choose who decides",
+    "p": "Select a person who needs to approve each request, even if it's not a manager. Do you need an accountant's and a manager's approvals? You can decide whether you want both to request any type of approval.",
+    "img": "",
+    "feats": [
+     "Each request has its approvers.",
+     "Employee",
+     "Request",
+     "Notification",
+     "Approver",
+     "Approved"
+    ]
+   },
+   {
+    "h": "Save time managing your employees' requests",
+    "p": "The management of your requests are made easy; travel, office supplies, payments, all request submissions can be created, validated, or declined in seconds from your approval dashboard.",
+    "img": "",
+    "feats": [
+     "Everything in one place."
+    ]
+   },
+   {
+    "h": "Your Company, your Types",
+    "p": "Easily create the approval types that fit your needs with an intuitive configurator. Ask your employees for the information that you need before approving any request.",
+    "img": "",
+    "feats": [
+     "Create the approval types you need."
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "iot": {
+  "url": "https://www.odoo.com/app/iot",
+  "title": "IoT | Overview | Odoo",
+  "description": "",
+  "headline": "Easily connect to the Internet of Things",
+  "lead": "Odoo IoT (Internet of Things) connects so many external devices to the database.",
+  "sections": [
+   {
+    "h": "IoT Made Easy",
+    "p": "Connect the IoT Box and the devices you need to your database in no time, no technical expertise required . With the IoT Box, devices are fully integrated with existing business processes , boosting your productivity.",
+    "img": "",
+    "feats": [
+     "Easy Setup",
+     "Fully Integrated",
+     "Standard Connections"
+    ]
+   },
+   {
+    "h": "Flawless integration",
+    "p": "...such as digital calipers, micrometers, gauge feelers, height gages and more. Measurements are linked to the Products you are processing and you can continue or reject at each step.",
+    "img": "",
+    "feats": [
+     "Add any measurement tools you use...",
+     "Link lots and serial numbers to Reports."
+    ]
+   }
+  ],
+  "images": [],
+  "youtube": [
+   "ivT31w3MwH8"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "voip": {
+  "url": "https://www.odoo.com/app/voip",
+  "title": "Phone | Overview | Odoo",
+  "description": "",
+  "headline": "Calls that live where you work",
+  "lead": "Odoo Phone connects your calls to Odoo's call flow designer, so the right person picks up. Every call can be logged to the customer's record. No context lost, no separate phone system to pay for.",
+  "sections": [
+   {
+    "h": "Cut business phone costs",
+    "p": "Lower your phone bill with plans starting at $2/month.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "All the context, built into every call",
+    "p": "Launch calls directly from CRM, Helpdesk, Contacts, and more, with instant access to the related records and documents. Calls are automatically logged, so you'll easily have the details where you need them.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/btn-go-to.webp",
+    "feats": []
+   },
+   {
+    "h": "Design call flows",
+    "p": "Drag, drop, and connect call actions (e.g., menus, queues, voicemail, time conditions) around how your business actually runs. Route callers to the right person automatically, and update the whole thing yourself in minutes.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Let AI take the notes",
+    "p": "Log the call once, and Odoo's integrated artificial intelligence puts the recording, transcript, and one-line summary right where you need them.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/phone/ai/avatar-mitchell.png",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/hero.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/hero-call.png",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/btn-go-to.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/menu-create.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/sales-order-call.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/phone/ai/avatar-mitchell.png"
+  ],
+  "youtube": [
+   "sDZErem-PME"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "knowledge": {
+  "url": "https://www.odoo.com/app/knowledge",
+  "title": "Odoo Knowledge - All-in-one collaborative workspace",
+  "description": "Centralize and organize all your company’s information with Odoo’s free Knowledge app. Share knowledge and collaborate with your team in one place.",
+  "headline": "AI-powered Knowledge management",
+  "lead": "Deploy knowledge right in your daily work. Process docs, onboarding guides, and instructions all live in one shared space, powered by AI and loved by everyone.",
+  "sections": [
+   {
+    "h": "Build any page, communicate any idea",
+    "p": "Powerful text editor. Type the `/` shortcut to present your content in its best form, and integrate dynamic data from all your business apps.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/build.webp",
+    "feats": []
+   },
+   {
+    "h": "Endless ways to structure your info",
+    "p": "Flexible data organization. Sort your content with custom fields, and navigate through it with perzonalized views and filters.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/shape.webp",
+    "feats": []
+   },
+   {
+    "h": "Who gets access? You decide!",
+    "p": "Manage access rights. Choose who gets to see and manage your content. You can even share the page with the world.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Knowledge at your fingertips",
+    "p": "Integrate your knowledge base across all your business apps. Insert pre-written content to instantly communicate with your customers, answer helpdesk tickets, describe new project tasks, and much more!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/fingertips.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/hero_image.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/build.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/build_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/shape.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/get_acces.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/fingertips.webp"
+  ],
+  "youtube": [
+   "bSn6GLVxrfM"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "whatsapp": {
+  "url": "https://www.odoo.com/app/whatsapp",
+  "title": "WhatsApp | Overview | Odoo",
+  "description": "",
+  "headline": "WhatsApp for businesses",
+  "lead": "From customer engagement to automation, integrate WhatsApp in your business flows.",
+  "sections": [
+   {
+    "h": "Publish your WhatsApp number",
+    "p": "... to boost customer initiated conversations. Don't take the risk to forward customers to a phone number that's not available at any time, or engage in a one-shot conversation only.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/publish_1.webp",
+    "feats": []
+   },
+   {
+    "h": "Fully integrated with all apps",
+    "p": "Convert conversations into leads, send PDF quotations, send event badges and reminders, send invoices, etc.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/fully_integrated.webp",
+    "feats": []
+   },
+   {
+    "h": "Efficient bulk messages",
+    "p": "Select leads, contacts or empty carts and send your WhatsApp messages in just a few clicks. Enjoy conversion rates 3x better than emails or SMS.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/efficient_1.webp",
+    "feats": []
+   },
+   {
+    "h": "Templates, templates, templates!",
+    "p": "Use the pre-configured templates or make custom templates to send invoices, event tickets, POS receipts and much much more! Create your own custom templates using buttons and dynamic placeholders to insert unique data!",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/groupe_templates.webp",
+    "feats": []
+   },
+   {
+    "h": "Unified multi-channel communication",
+    "p": "The only platform to unify all touchpoints in a single platform. It's so easy: just chat in Odoo Discuss, and messages are sent to the right channel automatically.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/multi-channel.webp",
+    "feats": []
+   },
+   {
+    "h": "The power of Odoo Discuss",
+    "p": "WhatsApp works side-by-side with emails, SMS, chats, video conferences, ... all while being integrated on the business documents, like quotations, invoices, events, etc.",
+    "img": "",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/video_cover.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/publish_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/publish_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/fully_integrated.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/efficient_1.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/efficient_2.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/groupe_templates.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/templates.webp"
+  ],
+  "youtube": [
+   "jg5PVqgC1AM"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "ai_app": {
+  "url": "https://www.odoo.com/app/artificial-intelligence",
+  "title": "Artificial Intelligence | Overview | Odoo",
+  "description": "",
+  "headline": "Your apps. AI-powered",
+  "lead": "Odoo Artificial Intelligence turns your everyday data into smarter decisions, faster workflows, and fewer manual tasks. It's not an add-on, it's built into the tools you already use.",
+  "sections": [
+   {
+    "h": "Agents on your terms",
+    "p": "Let AI answer questions, complete tasks, and get things done for you. Define the role, instructions, and tools your AI agent can use across Odoo.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-creation.webp",
+    "feats": []
+   },
+   {
+    "h": "Let AI drive the next move",
+    "p": "From assigning leads to updating records, Odoo AI removes manual steps from everyday processes.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ai/new-task.webp",
+    "feats": []
+   },
+   {
+    "h": "Instant business insights",
+    "p": "Sales figures, performance analysis, forecasts, trends... just ask! Odoo AI turns your data into clear answers in seconds.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ai/business-insights-agent.webp",
+    "feats": []
+   },
+   {
+    "h": "Next-level organization",
+    "p": "Document auto-sort. Your files are assigned to the right folder, and next action is generated automatically.",
+    "img": "https://odoocdn.com/openerp_website/static/src/img/apps/ai/notification-customer-invoice.webp",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-creation.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-configuration.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-tailored-responses.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/new-task.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-assignation.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-prioritization.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-tags.webp",
+   "https://odoocdn.com/openerp_website/static/src/img/apps/ai/business-insights-agent.webp"
+  ],
+  "youtube": [
+   "vLDOltq9z20"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ },
+ "hr_payroll": {
+  "url": "https://www.odoo.com/app/payroll",
+  "title": "Payroll | Overview | Odoo",
+  "description": "",
+  "headline": "One payroll. No reconciliation.",
+  "lead": "Odoo Payroll syncs attendance, expenses, and time off across all your apps to deliver flawless paychecks automatically.",
+  "sections": [
+   {
+    "h": "Instant local rules. Zero setup.",
+    "p": "Choose your country and Odoo automatically applies the right tax rules and regulations, giving you a fully compliant system in seconds.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "No hidden payroll surprises",
+    "p": "From gross pay to benefits to employer contributions, instantly see the full cost of any salary plan, so you never go over budget.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Effortless reporting",
+    "p": "Generate clear, organized reports for any period, so sending payroll data to accountants or tax authorities is fast, accurate, and stress-free.",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Countless wage allocations in one place",
+    "p": "Keep deductions organized in a dedicated dashboard. What is our average salary cost per employee across each department?",
+    "img": "",
+    "feats": []
+   },
+   {
+    "h": "Artificial intelligence. Actual payroll control .",
+    "p": "Ask Odoo's AI anything about your payroll. From total labor costs to pay anomalies. Skip the tedious spreadsheets and get rich insights to make better, faster decisions.",
+    "img": "",
+    "feats": []
+   }
+  ],
+  "images": [
+   "https://odoocdn.com/openerp_website/static/src/img/apps/payroll/payroll-dashboard.webp"
+  ],
+  "youtube": [
+   "q9dmuj9huFk"
+  ],
+  "mp4": "",
+  "fetched": "2026-09-28"
+ }
+}

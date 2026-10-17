@@ -1,0 +1,4 @@
+Contact: mailto:sales@technext.asia
+Expires: 2027-10-17T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://technext.asia/.well-known/security.txt

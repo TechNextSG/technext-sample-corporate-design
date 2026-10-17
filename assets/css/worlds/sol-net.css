@@ -1,0 +1,257 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-net (/solutions/networks) — "The Office Waterworks". Water aqua, deep pipe blue, brass fittings, with the
+   network's own colours: staff blue, guest orange, devices green, VPN violet. The title card is an as-built drawing on blue
+   grid paper with its title block; the caption is a flow reading under a water line; buttons are pipe sections with brass
+   collars; the glance strip hangs from a main pipe. Below the hero: a brass valve tag, the control-room panel round the demo,
+   six taps on one supply, the delivery main with four valve wheels, a patch panel of twelve labelled ports beside a coverage
+   plan, work orders for the FAQ, outlets off a manifold, and a ripple for the end card. */
+.ixw--sol-net{--wt-aqua:#1C9AD6;--wt-deep:#0F6E9E;--wt-pale:#E3F4FC;--wt-ink:#1B2A3D;--wt-brass:#C9A24A;--wt-brass-d:#9C7A2C;--wt-staff:#3167CA;--wt-guest:#F28C28;--wt-dev:#2FB57C;--wt-vpn:#7A5CD6;--wt-red:#E04F4F;
+  --wt-grid:linear-gradient(rgba(28,154,214,.10) 1px,transparent 1px) 0 0/18px 18px,linear-gradient(90deg,rgba(28,154,214,.10) 1px,transparent 1px) 0 0/18px 18px;
+  --w-alt:#EEF7FC;--w-dot:rgba(28,154,214,.10);--lab-bd:2px solid #1B2A3D;--lab-lip:#1B2A3D;--lab-tail:#1B2A3D;--lab-r:999px;
+  
+  --ii-bg:linear-gradient(160deg,#F2FAFE,#D8F0FB 55%,#FFF1DC);--ii-ink:#1B2A3D;--ii-b:#1C9AD6;--ii-accent:#C9A24A;--ii-lip:#1B2A3D;--ii-ep-bg:#1C9AD6;--ii-ep-fg:#FFFFFF;
+  --ii-pattern:linear-gradient(rgba(28,154,214,.12) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(28,154,214,.12) 1px,transparent 1px) 0 0/22px 22px}
+.ixw--sol-net .ixw-hero{background:linear-gradient(180deg,#62BDF0 0,#AEDFF8 18%,#E4F5FD 30%,#DCE4EE 30%,#E9EFF5 40%,#E3EAF2 72%,#D9B98F 72%,#BF9668 100%)}
+
+/* ---------- the title card: an as-built drawing on blue grid paper, with its title block ---------- */
+.ixw--sol-net .ixw-copy{position:relative;max-width:500px;margin-top:20px;padding:30px 30px 64px;border-radius:14px;background:var(--wt-grid),#FFFFFF;
+  box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink),0 44px 70px -34px rgba(15,60,100,.45)}
+.ixw--sol-net .ixw-copy::before{content:"";position:absolute;left:-2px;right:-2px;top:-12px;height:14px;border-radius:7px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));
+  box-shadow:0 0 0 2px var(--wt-ink),inset 26px 0 0 -10px var(--wt-brass),inset -26px 0 0 -10px var(--wt-brass)}
+.ixw--sol-net .ixw-copy::after{content:"AS-BUILT · SHEET 01 · NETWORKS";position:absolute;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;padding-left:24px;border-top:2px solid var(--wt-ink);border-radius:0 0 14px 14px;
+  background:linear-gradient(90deg,transparent calc(100% - 64px),var(--wt-pale) calc(100% - 64px)),#FFFFFF;font:800 11px/1 var(--font-body);letter-spacing:.14em;color:var(--wt-deep)}
+.ixw--sol-net .ixw-copy h1{max-width:13ch}
+.ixw--sol-net .ixw-copy .hand{color:var(--wt-deep)}
+.ixw--sol-net .ixw-ep-tag{background:var(--wt-ink)}.ixw--sol-net .ixw-ep-tag .ic{background:var(--wt-aqua);color:#FFFFFF}
+.ixw--sol-net .wtw-badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.ixw--sol-net .wtw-badges span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 8px;border-radius:8px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #A9D7EE,inset 4px 0 0 var(--wt-aqua);font:800 12px/1 var(--font-body);color:#0F4E72}
+.ixw--sol-net .wtw-badges .ic{width:15px;height:15px;color:var(--wt-aqua)}
+.ixw--sol-net .wtw-badges .is-ok{box-shadow:inset 0 0 0 1.5px #A6E3C8,inset 4px 0 0 var(--wt-dev);color:#16704C}.ixw--sol-net .wtw-badges .is-ok .ic{color:var(--wt-dev)}
+.ixw--sol-net .ixw-copy .actions{margin-top:22px}
+.ixw--sol-net .ixw-hint .ic{color:var(--wt-brass)}
+@media (max-width:767px){.ixw--sol-net .ixw-copy{padding:26px 20px 60px}.ixw--sol-net .ixw-copy::after{font-size:9.5px;padding-left:18px}}
+
+/* ---------- the caption: a flow reading, a water line along its foot ---------- */
+.ixw--sol-net .ixw-cap{border-radius:18px;background:linear-gradient(180deg,#FFFFFF calc(100% - 8px),#BFE6F8 calc(100% - 8px));box-shadow:0 0 0 2px var(--wt-ink),0 5px 0 var(--wt-ink),0 26px 44px -22px rgba(15,60,100,.4)}
+.ixw--sol-net .ixw-cap::before{content:"\2248  FLOW CHECK";position:absolute;left:20px;top:-13px;padding:5px 11px;border-radius:999px;background:var(--wt-aqua);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .ixw-cap-who b{color:var(--wt-deep)}.ixw--sol-net .ixw-cap-txt b{color:var(--wt-staff)}
+.ixw--sol-net .ixw-cap-rec{background:var(--wt-pale);border:1.5px dashed #86CBEB;color:#0F4E72}
+.ixw--sol-net .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2.5px var(--wt-aqua)}
+
+/* ---------- buttons: pipe sections with brass collars ---------- */
+.ixw--sol-net main :is(.btn-primary,.btn-ghost,.wtw-cta-sec .btn-white,.wtw-cta-sec .btn-outline-white){position:relative;border:2px solid var(--wt-ink);border-radius:999px;box-shadow:0 4px 0 var(--wt-ink),inset 10px 0 0 -4px var(--wt-brass),inset -10px 0 0 -4px var(--wt-brass);transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-net main .btn-primary,.ixw--sol-net main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#4DB8EA 0,var(--wt-aqua) 55%,#1589C2)}
+.ixw--sol-net main .btn-primary .ic{color:#FFFFFF}
+.ixw--sol-net main :is(.btn-ghost,.wtw-cta-sec .btn-white),.ixw--sol-net main :is(.btn-ghost,.wtw-cta-sec .btn-white):hover{color:var(--wt-ink);background:#FFFFFF}
+.ixw--sol-net main .btn-ghost::before{display:none}.ixw--sol-net main .btn-ghost .ic{color:var(--wt-aqua)}
+.ixw--sol-net main :is(.btn-primary,.btn-ghost,.wtw-cta-sec .btn-white,.wtw-cta-sec .btn-outline-white):hover{translate:0 -2px;box-shadow:0 6px 0 var(--wt-ink),inset 10px 0 0 -4px var(--wt-brass),inset -10px 0 0 -4px var(--wt-brass)}
+.ixw--sol-net main :is(.btn-primary,.btn-ghost,.wtw-cta-sec .btn-white,.wtw-cta-sec .btn-outline-white):active{translate:0 3px;box-shadow:0 1px 0 var(--wt-ink),inset 10px 0 0 -4px var(--wt-brass),inset -10px 0 0 -4px var(--wt-brass);transition-duration:.06s}
+.ixw--sol-net main :is(.btn-primary,.btn-ghost,.wtw-cta-sec .btn-white,.wtw-cta-sec .btn-outline-white):focus-visible{outline:3px solid var(--wt-brass);outline-offset:4px}
+.ixw--sol-net .ixw-ibtn{border:2px solid var(--wt-ink);box-shadow:0 3px 0 var(--wt-ink)}
+.ixw--sol-net .ixw-ibtn--play,.ixw--sol-net .ixw-ibtn--play:hover{background:var(--wt-aqua);color:#FFFFFF}
+.ixw--sol-net .ixw-dots button.is-on{background:var(--wt-brass);box-shadow:0 0 0 1.5px var(--wt-ink)}
+.ixw--sol-net .ixw-peek{border-color:var(--wt-ink);box-shadow:0 3px 0 var(--wt-ink)}.ixw--sol-net .ixw-peek[aria-pressed="true"]{background:var(--wt-pale)}
+
+/* ---------- the glance strip: hung from the main pipe, one tap per fact ---------- */
+.ixw--sol-net .ow-strip{position:relative;padding-top:24px;border-radius:14px;background:linear-gradient(180deg,#5FC0EC 0,var(--wt-aqua) 7px,var(--wt-deep) 14px,transparent 14px),#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink),0 30px 50px -30px rgba(15,60,100,.4)}
+.ixw--sol-net .ow-strip>div{position:relative}
+@media (min-width:1101px){.ixw--sol-net .ow-strip>div::before{content:"";position:absolute;left:4px;top:-10px;width:14px;height:12px;border-radius:0 0 4px 4px;background:var(--wt-brass);box-shadow:inset 0 -3px 0 var(--wt-brass-d)}}
+.ixw--sol-net .ow-strip dt .ic{color:var(--wt-aqua)}
+.ixw--sol-net .ow-strip>div:nth-child(2) dt .ic{color:var(--wt-red)}.ixw--sol-net .ow-strip>div:nth-child(3) dt .ic{color:var(--wt-vpn)}.ixw--sol-net .ow-strip>div:nth-child(5) dt .ic{color:var(--wt-dev)}
+
+/* ============================== below the hero: the waterworks ============================== */
+/* the one-paragraph answer: a brass valve tag on a chain */
+.ixw--sol-net .wtw-tag{max-width:980px;padding:26px 30px 26px 112px;border:0;border-radius:18px 60px 60px 18px;background:linear-gradient(135deg,#F3E2B4,#E6C774 55%,#D7B35A);box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink),0 30px 50px -34px rgba(80,60,10,.45)}
+.ixw--sol-net .wtw-tag::before{content:"";position:absolute;left:0;top:0;bottom:0;width:80px;border-radius:18px 0 0 18px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.28) 0 2px,transparent 2px 9px)}
+.ixw--sol-net .wtw-tag-hole{position:absolute;left:30px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 4px var(--wt-brass-d),inset 0 2px 4px rgba(0,0,0,.25)}
+.ixw--sol-net .wtw-tag-hole::after{content:"";position:absolute;left:50%;bottom:calc(100% + 2px);width:10px;height:60px;margin-left:-5px;background:radial-gradient(ellipse 4px 5px,transparent 2.4px,#8A96A8 2.8px,#8A96A8 3.8px,transparent 4.2px) 50% 100%/10px 9px repeat-y}
+.ixw--sol-net .wtw-tag .answer-h{background:var(--wt-ink);color:#F3E2B4}
+.ixw--sol-net .wtw-tag p:not(.answer-h){font-size:15px;color:#3A3220}
+@media (max-width:640px){.ixw--sol-net .wtw-tag{padding:22px 18px 22px 70px;border-radius:18px 36px 36px 18px}.ixw--sol-net .wtw-tag::before{width:52px}.ixw--sol-net .wtw-tag-hole{left:14px}}
+
+/* the demo: the control-room panel, its flow gauges along the top */
+.ixw--sol-net .wtw-demo-sec{background:linear-gradient(180deg,#FFFFFF 0,#EEF7FC 100%)}
+.ixw--sol-net .wtw-panel{position:relative;padding:12px;border-radius:26px;background:linear-gradient(180deg,#24395A,#1B2A3D);box-shadow:0 0 0 2.5px var(--wt-ink),0 8px 0 #0E1726,0 50px 80px -46px rgba(10,30,60,.6)}
+.ixw--sol-net .wtw-panel::before,.ixw--sol-net .wtw-panel::after{content:"";position:absolute;top:120px;width:40px;height:22px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-panel::before{left:-42px;border-radius:11px 0 0 11px}.ixw--sol-net .wtw-panel::after{right:-42px;border-radius:0 11px 11px 0}
+.ixw--sol-net .wtw-panel-top b{color:#FFFFFF}
+.ixw--sol-net .wtw-panel-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:8px 10px 14px;color:#FFFFFF;font:800 12.5px/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase}
+.ixw--sol-net .wtw-flow{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(28,154,214,.22);color:#BFE6F8;font-size:10.5px}
+.ixw--sol-net .wtw-flow::before{content:"";width:7px;height:7px;border-radius:50%;background:#5FE0A8;animation:wtPulse 1.6s ease-in-out infinite}
+@keyframes wtPulse{50%{box-shadow:0 0 0 5px rgba(95,224,168,0)}0%,100%{box-shadow:0 0 0 0 rgba(95,224,168,.6)}}
+.ixw--sol-net .wtw-gauges{display:flex;gap:8px;margin-left:auto}
+.ixw--sol-net .wtw-gauges i{position:relative;display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 30px;border-radius:999px;background:rgba(255,255,255,.08);font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.06em}
+.ixw--sol-net .wtw-gauges i::before{content:"";position:absolute;left:6px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:conic-gradient(from 225deg,var(--c) calc(var(--v) * 270deg),rgba(255,255,255,.18) 0 270deg,transparent 0)}
+.ixw--sol-net .wtw-gauges i::after{content:"";position:absolute;left:11px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#1B2A3D}
+.ixw--sol-net .wtw-panel .dm{border-radius:18px;box-shadow:none}
+@media (max-width:1240px){.ixw--sol-net .wtw-panel::before,.ixw--sol-net .wtw-panel::after{display:none}}
+@media (max-width:960px){.ixw--sol-net .wtw-gauges{display:none}}
+@media (max-width:767px){.ixw--sol-net .wtw-panel{padding:8px;border-radius:20px}}
+
+/* what's included: six taps on one supply pipe, each card a basin under its spout */
+.ixw--sol-net .wtw-taps-sec{background:#FFFFFF}
+.ixw--sol-net .wtw-taps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:68px 30px;padding-top:40px}
+.ixw--sol-net article.wtw-tap:nth-of-type(n+4)::before{content:"";position:absolute;left:-17px;right:-17px;top:-54px;height:16px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));box-shadow:inset 0 2px 0 var(--wt-ink),inset 0 -2px 0 var(--wt-ink)}
+.ixw--sol-net article.wtw-tap:nth-of-type(4)::before{left:-10px;border-radius:8px 0 0 8px;box-shadow:inset 0 2px 0 var(--wt-ink),inset 0 -2px 0 var(--wt-ink),inset 2px 0 0 var(--wt-ink)}
+.ixw--sol-net article.wtw-tap:nth-of-type(6)::before{right:-10px;border-radius:0 8px 8px 0;box-shadow:inset 0 2px 0 var(--wt-ink),inset 0 -2px 0 var(--wt-ink),inset -2px 0 0 var(--wt-ink)}
+.ixw--sol-net .wtw-header{position:absolute;left:-10px;right:-10px;top:0;height:20px;border-radius:10px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));box-shadow:0 0 0 2px var(--wt-ink);overflow:hidden}
+.ixw--sol-net .wtw-header::after{content:"";position:absolute;left:0;right:0;top:8px;height:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.8) 0 10px,transparent 10px 26px);animation:wtFlow 1.2s linear infinite}
+@keyframes wtFlow{to{background-position:26px 0}}
+.ixw--sol-net .wtw-tap{position:relative;padding:30px 26px 26px;border-radius:20px;background:#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink),inset 0 -10px 0 color-mix(in srgb,var(--c) 14%,#FFFFFF);transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-net .wtw-tap:hover{transform:translateY(-6px)}
+.ixw--sol-net .wtw-spout{position:absolute;left:34px;top:-42px;width:16px;height:36px;border-radius:0 0 6px 6px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 70%,#1B2A3D));box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-spout::before{content:"";position:absolute;left:-7px;top:6px;width:30px;height:9px;border-radius:5px;background:var(--wt-brass);box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-spout::after{content:"";position:absolute;left:4px;top:36px;width:8px;height:11px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--c);opacity:0;animation:wtDrip 2.4s ease-in infinite;animation-delay:calc(var(--i) * .35s)}
+@keyframes wtDrip{0%{opacity:0;transform:translateY(-6px) scale(.4)}20%{opacity:1;transform:translateY(0) scale(1)}70%{opacity:1;transform:translateY(16px)}100%{opacity:0;transform:translateY(22px) scale(.7)}}
+.ixw--sol-net .wtw-tap .card-ic{display:grid;place-items:center;width:52px;height:52px;min-height:0;margin:0 0 16px auto;border-radius:16px;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);box-shadow:0 0 0 2px var(--wt-ink);color:var(--c)}
+.ixw--sol-net .wtw-tap .card-ic .ic{width:26px;height:26px}
+.ixw--sol-net .wtw-tap h3{margin:-50px 0 8px;max-width:calc(100% - 70px);min-height:50px;display:flex;align-items:flex-end;font-size:1.14rem}
+.ixw--sol-net .wtw-tap p{margin:0;font-size:15px;line-height:1.6;color:#455066}
+@media (max-width:960px){.ixw--sol-net .wtw-taps{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;padding-top:10px}.ixw--sol-net .wtw-header,.ixw--sol-net .wtw-spout,.ixw--sol-net article.wtw-tap::before{display:none}}
+@media (max-width:640px){.ixw--sol-net .wtw-taps{grid-template-columns:minmax(0,1fr);gap:24px}}
+
+/* how we deliver: the delivery main with four valve wheels, water running along it */
+.ixw--sol-net .wtw-main-sec{background-color:#EEF7FC;background-image:var(--wt-grid)}
+.ixw--sol-net .wtw-main{position:relative;padding-top:40px}
+.ixw--sol-net .wtw-pipe{position:absolute;left:-6px;right:-6px;top:58px;height:26px;border-radius:13px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));box-shadow:0 0 0 2px var(--wt-ink);overflow:hidden}
+.ixw--sol-net .wtw-pipe i{position:absolute;left:0;right:0;top:11px;height:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 12px,transparent 12px 30px);animation:wtFlow2 1s linear infinite}
+@keyframes wtFlow2{to{background-position:30px 0}}
+.ixw--sol-net .wtw-valves{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.ixw--sol-net .wtw-valve{position:relative;padding:70px 22px 24px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink);text-align:center;margin-top:54px}
+.ixw--sol-net .wtw-wheel{position:absolute;left:50%;top:-58px;width:76px;height:76px;margin-left:-38px;border-radius:50%;background:radial-gradient(circle,var(--wt-ink) 9px,transparent 9.5px),conic-gradient(from 0deg,transparent 0 40deg,var(--wt-red) 40deg 50deg,transparent 50deg 160deg,var(--wt-red) 160deg 170deg,transparent 170deg 280deg,var(--wt-red) 280deg 290deg,transparent 290deg);
+  box-shadow:inset 0 0 0 7px var(--wt-red),inset 0 0 0 9px var(--wt-ink),0 0 0 2px var(--wt-ink);transition:transform .8s cubic-bezier(.34,1.3,.64,1)}
+.ixw--sol-net .wtw-wheel b{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink);font:800 13px/1 var(--font-display);color:var(--wt-ink)}
+.ixw--sol-net .wtw-valve:hover .wtw-wheel{transform:rotate(240deg)}.ixw--sol-net .wtw-valve:hover .wtw-wheel b{transform:rotate(-240deg)}
+.ixw--sol-net .wtw-valve:nth-child(2) .wtw-wheel{filter:hue-rotate(185deg) saturate(.9)}.ixw--sol-net .wtw-valve:nth-child(3) .wtw-wheel{filter:hue-rotate(115deg)}.ixw--sol-net .wtw-valve:nth-child(4) .wtw-wheel{filter:hue-rotate(40deg)}
+.ixw--sol-net .wtw-valve h3{margin:0 0 8px;font-size:1.1rem}
+.ixw--sol-net .wtw-valve p{margin:0;font-size:14.5px;line-height:1.6;color:#455066}
+@media (max-width:960px){.ixw--sol-net .wtw-valves{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:30px}.ixw--sol-net .wtw-pipe{display:none}.ixw--sol-net .wtw-main{padding-top:10px}}
+@media (max-width:640px){.ixw--sol-net .wtw-valves{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: a coverage plan beside a patch panel of twelve labelled, lit ports */
+.ixw--sol-net .wtw-patch-sec{background:#FFFFFF}
+@media (min-width:961px){.ixw--sol-net .wtw-patch{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--sol-net .wtw-cover{position:relative;max-width:380px;height:210px;margin-top:30px;border-radius:16px;background:var(--wt-grid),#F6FBFE;box-shadow:0 0 0 2px var(--wt-ink),0 5px 0 var(--wt-ink);overflow:hidden}
+.ixw--sol-net .wtw-cover::before{content:"";position:absolute;left:46%;top:0;bottom:0;border-left:3px solid var(--wt-ink)}
+.ixw--sol-net .wtw-cover::after{content:"";position:absolute;left:46%;right:0;top:56%;border-top:3px solid var(--wt-ink)}
+.ixw--sol-net .wtw-ap{position:absolute;left:26%;top:48%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--wt-staff);box-shadow:0 0 0 3px #FFFFFF,0 0 0 5px var(--wt-ink);z-index:2}
+.ixw--sol-net .wtw-ring{position:absolute;left:26%;top:48%;width:200px;height:200px;margin:-100px 0 0 -100px;border-radius:50%;border:3px solid rgba(49,103,202,.5);animation:wtRing 3s ease-out infinite;opacity:0}
+.ixw--sol-net .wtw-ring:nth-of-type(3){animation-delay:1s}.ixw--sol-net .wtw-ring:nth-of-type(4){animation-delay:2s}
+@keyframes wtRing{0%{transform:scale(.1);opacity:.9}100%{transform:scale(1.1);opacity:0}}
+.ixw--sol-net .wtw-room{position:absolute;padding:4px 8px;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--wt-ink);font:800 10.5px/1 var(--font-body);color:var(--wt-ink);z-index:2}
+.ixw--sol-net .wtw-room--a{left:10px;top:10px}.ixw--sol-net .wtw-room--b{left:calc(46% + 12px);top:10px}.ixw--sol-net .wtw-room--g{right:10px;bottom:10px;background:#FFF1E2;color:#9A4E10}
+.ixw--sol-net .wtw-ports{counter-reset:port;padding:26px 26px 14px;border-radius:18px;background:linear-gradient(180deg,#24395A,#1B2A3D);box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 #0E1726;column-gap:24px}
+.ixw--sol-net .wtw-ports li{counter-increment:port;align-items:center;gap:12px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);color:#DCE6F4}
+.ixw--sol-net .wtw-ports li::before{content:"P" counter(port,decimal-leading-zero);flex:none;display:grid;place-items:center;width:40px;height:24px;border-radius:5px;background:#FFFFFF;color:var(--wt-ink);font:800 11px/1 var(--font-body);letter-spacing:.04em}
+.ixw--sol-net .wtw-ports li .ic{order:3;width:10px;height:10px;margin:0 0 0 auto;padding:0;border-radius:50%;background:#5FE0A8;color:transparent;box-shadow:0 0 0 3px rgba(95,224,168,.2);animation:wtLed 2.2s ease-in-out infinite;animation-delay:calc(var(--d,0) * 1s)}
+.ixw--sol-net .wtw-ports li:nth-child(3n+2) .ic{--d:.4;background:#7FB2FF;box-shadow:0 0 0 3px rgba(127,178,255,.2)}.ixw--sol-net .wtw-ports li:nth-child(4n+3) .ic{--d:.8;background:#FFB46B;box-shadow:0 0 0 3px rgba(255,180,107,.2)}
+@keyframes wtLed{50%{opacity:.45}}
+.ixw--sol-net .wtw-ports li span{flex:1;min-width:0;font-size:14px;color:#E6EEF8}
+
+/* the FAQ: work orders on a clipboard rail */
+.ixw--sol-net .wtw-orders-sec{background-color:#EEF7FC;background-image:var(--wt-grid)}
+.ixw--sol-net .wtw-faq{counter-reset:wo;max-width:900px}
+.ixw--sol-net .wtw-faq details{counter-increment:wo;border:0;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink),0 4px 0 var(--wt-ink);transition:transform .3s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease}
+.ixw--sol-net .wtw-faq details:hover{transform:translateX(4px)}
+.ixw--sol-net .wtw-faq details[open]{box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-aqua)}
+.ixw--sol-net .wtw-faq summary{justify-content:flex-start;gap:14px;padding-left:14px}
+.ixw--sol-net .wtw-faq summary::before{content:"WO-" counter(wo,decimal-leading-zero);flex:none;display:grid;place-items:center;width:auto;height:28px;transform:none;padding:0 10px;border-radius:999px;background:var(--wt-pale);box-shadow:inset 0 0 0 1.5px #86CBEB;color:var(--wt-deep);font:800 11.5px/1 var(--font-body);letter-spacing:.06em}
+.ixw--sol-net .wtw-faq details[open] summary::before{content:"WO-" counter(wo,decimal-leading-zero);background:var(--wt-aqua);box-shadow:none;color:#FFFFFF;transform:none}
+.ixw--sol-net .wtw-faq summary .ic{margin-left:auto;color:var(--wt-aqua)}
+.ixw--sol-net .wtw-faq .faq-a{margin:0 18px 18px;padding:14px 16px;border-radius:10px;background:var(--wt-grid),#F6FBFE;border-left:4px solid var(--wt-brass)}
+.ixw--sol-net .wtw-faq .faq-a a{color:var(--wt-deep);font-weight:700}
+
+/* related services: three outlets off one manifold */
+.ixw--sol-net .wtw-outlets-sec{background:#FFFFFF}
+.ixw--sol-net .wtw-outlets{position:relative;gap:30px;padding-top:34px}
+.ixw--sol-net .wtw-outlets::before{content:"";position:absolute;left:16%;right:16%;top:0;height:16px;border-radius:8px;background:linear-gradient(180deg,#5FC0EC,var(--wt-aqua) 55%,var(--wt-deep));box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-outlet{border:0;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--wt-ink),0 6px 0 var(--wt-ink);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-net .wtw-outlet:hover{transform:translateY(-6px);border:0}
+.ixw--sol-net .wtw-joint{position:absolute;left:50%;top:-36px;width:14px;height:36px;margin-left:-7px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 70%,#1B2A3D));box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-joint::after{content:"";position:absolute;left:-6px;bottom:2px;width:26px;height:8px;border-radius:4px;background:var(--wt-brass);box-shadow:0 0 0 2px var(--wt-ink)}
+.ixw--sol-net .wtw-outlet .card-ic{display:grid;place-items:center;width:52px;height:52px;min-height:0;border-radius:50%;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);box-shadow:0 0 0 2px var(--wt-ink);color:var(--c)}
+.ixw--sol-net .wtw-outlet .card-ic .ic{width:26px;height:26px}
+.ixw--sol-net .wtw-outlet .btn-link{color:color-mix(in srgb,var(--c) 75%,#1B2A3D)}
+@media (max-width:960px){.ixw--sol-net .wtw-outlets::before{display:none}.ixw--sol-net .wtw-outlets{padding-top:10px}.ixw--sol-net .wtw-joint{display:none}}
+
+/* the end card: a ripple spreading from a single drop */
+.ixw--sol-net .wtw-cta-sec .cta{border:2.5px solid var(--wt-ink);box-shadow:0 8px 0 var(--wt-ink);background:radial-gradient(circle at 86% 50%,rgba(255,255,255,.22) 0 40px,transparent 41px 70px,rgba(255,255,255,.14) 71px 74px,transparent 75px 110px,rgba(255,255,255,.1) 111px 114px,transparent 115px),linear-gradient(120deg,var(--wt-deep),var(--wt-aqua) 60%,#4DC2EE)}
+.ixw--sol-net .wtw-cta-sec .cta .hand{color:#FFE7A8}
+.ixw--sol-net .wtw-cta-sec .cta .btn-outline-white,.ixw--sol-net .wtw-cta-sec .cta .btn-outline-white:hover{color:var(--wt-ink);background:#FFE7A8}
+@media (prefers-reduced-motion:reduce){.ixw--sol-net :is(.wtw-header,.wtw-header::after,.wtw-pipe i,.wtw-spout::after,.wtw-ring,.wtw-ports li .ic,.wtw-flow::before){animation:none}}
+
+/* ============================== audit round: hero controls, the street side ============================== */
+/* pipe-section buttons: one height, brass collars, the icon chip on the centre line, a flow sheen on hover */
+.ixw--sol-net .ixw-copy .actions{gap:14px;margin-top:22px}
+.ixw--sol-net .ixw-copy .actions .btn{height:50px;padding:0 24px;font-size:15.5px;font-weight:700}
+.ixw--sol-net .ixw-copy .btn-primary .ic{width:26px;height:26px;padding:5px;margin-right:-8px;border-radius:50%;background:rgba(15,110,158,.35);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);transition:translate .2s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-net .ixw-copy .btn-primary:hover .ic{translate:3px 0}
+.ixw--sol-net .ixw-copy .btn-primary:hover{background:linear-gradient(180deg,#5CC2F0 0,#1F9FDB 55%,#1384BC)}
+.ixw--sol-net .ixw-copy .btn-ghost .ic{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--wt-pale);color:var(--wt-aqua)}
+.ixw--sol-net .ixw-copy .btn-ghost:hover{background:#F4FBFF}
+/* the badges: valve tags that lift */
+.ixw--sol-net .wtw-badges span{height:32px;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-net .wtw-badges span:hover{translate:0 -2px;box-shadow:inset 0 0 0 1.5px var(--wt-aqua),inset 4px 0 0 var(--wt-aqua),0 6px 12px -8px rgba(15,78,114,.5)}
+/* caption controls: round fittings with brass rims, aqua when lit */
+.ixw--sol-net .ixw-ibtn{background:#FFFFFF;color:var(--wt-ink);transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .2s ease}
+.ixw--sol-net .ixw-ibtn:hover{translate:0 -2px;border-color:var(--wt-ink);color:var(--wt-deep);background:var(--wt-pale);box-shadow:0 5px 0 var(--wt-ink),inset 0 0 0 2px var(--wt-brass)}
+.ixw--sol-net .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--wt-ink)}
+.ixw--sol-net .ixw-ibtn--play,.ixw--sol-net .ixw-ibtn--play:hover{background:linear-gradient(180deg,#4DB8EA,var(--wt-aqua));color:#FFFFFF;border-color:var(--wt-ink);box-shadow:0 3px 0 var(--wt-ink),inset 0 0 0 3px var(--wt-brass)}
+.ixw--sol-net .ixw-ibtn--play:hover{box-shadow:0 5px 0 var(--wt-ink),inset 0 0 0 3px var(--wt-brass)}
+.ixw--sol-net .ixw-ibtn:focus-visible,.ixw--sol-net .ixw-dots button:focus-visible,.ixw--sol-net .ixw-peek:focus-visible{outline:3px solid var(--wt-brass);outline-offset:3px}
+.ixw--sol-net .ixw-dots{gap:6px}
+.ixw--sol-net .ixw-dots button{width:9px;height:9px;background:#CFE7F4;box-shadow:inset 0 0 0 1.5px rgba(27,42,61,.2);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,scale .2s ease}
+.ixw--sol-net .ixw-dots button:hover{background:var(--wt-aqua);scale:1.25}
+.ixw--sol-net .ixw-dots button.is-on{width:24px;background:var(--wt-brass);box-shadow:0 0 0 1.5px var(--wt-ink)}
+/* "View the scene": a pipe section with brass collars, aqua when the text is hidden */
+.ixw--sol-net .ixw-peek{height:40px;padding:0 18px 0 14px;border:2px solid var(--wt-ink);border-radius:999px;background:#FFFFFF;color:var(--wt-ink);font-weight:800;
+  box-shadow:0 4px 0 var(--wt-ink),inset 9px 0 0 -3px var(--wt-brass),inset -9px 0 0 -3px var(--wt-brass);transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .2s ease}
+.ixw--sol-net .ixw-peek:hover{translate:0 -2px;background:var(--wt-pale);box-shadow:0 6px 0 var(--wt-ink),inset 9px 0 0 -3px var(--wt-brass),inset -9px 0 0 -3px var(--wt-brass)}
+.ixw--sol-net .ixw-peek:active{translate:0 3px;box-shadow:0 1px 0 var(--wt-ink),inset 9px 0 0 -3px var(--wt-brass),inset -9px 0 0 -3px var(--wt-brass)}
+.ixw--sol-net .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:linear-gradient(180deg,#4DB8EA,var(--wt-aqua))}
+@media (min-width:1200px){.ixw--sol-net .ixw-hero:not(.is-peek) .wtw-side{visibility:hidden}}
+
+/* ============ fix round: the FAQ uses the full width ============ */
+.ixw--sol-net .wtw-faq{max-width:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;align-items:start}
+.ixw--sol-net .wtw-faq details:last-child{grid-column:1/-1}
+@media (max-width:960px){.ixw--sol-net .wtw-faq{grid-template-columns:1fr}}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): networks. 50% TechNext base, 50% the waterworks. One water-blue accent.
+   Themed touches kept: the slim navy control-room bar over the demo, the coloured feed rule on each tap card, valve
+   numbers on the steps, the coloured status dots on the port list.
+   =================================================================================================================== */
+.ixw--sol-net{--calm-accent:#1C9AD6;--calm-accent-ink:#13729F;--calm-accent-line:#BFE0F0;--calm-accent-wash:#F4F9FC;--calm-wash:#F4F9FC}
+html body.ixw--sol-net main .wtw-tag{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-net main .wtw-tag::before,html body.ixw--sol-net main .wtw-tag::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-tag p{color:var(--body)!important}
+html body.ixw--sol-net main .wtw-tag .answer-h{background:#E5F3FA!important;color:var(--calm-accent-ink)!important}
+html body.ixw--sol-net main .wtw-demo-sec{background:#fff!important}
+html body.ixw--sol-net main .wtw-panel{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-net main .wtw-panel::before,html body.ixw--sol-net main .wtw-panel::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-panel-top{padding:12px 18px!important;background:#1F3350!important}
+html body.ixw--sol-net main .wtw-panel .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+html body.ixw--sol-net main .wtw-taps{padding-top:0!important;gap:24px!important}
+html body.ixw--sol-net main .wtw-taps::before,html body.ixw--sol-net main .wtw-taps::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-tap{border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important;margin-top:0!important}
+html body.ixw--sol-net main .wtw-tap .card-ic{box-shadow:none!important;border:0!important;background:color-mix(in srgb,var(--c) 12%,#fff)!important}
+html body.ixw--sol-net main .wtw-main{padding-top:0!important}
+html body.ixw--sol-net main .wtw-valve{padding:24px 22px!important;text-align:left!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-net main .wtw-valve::before,html body.ixw--sol-net main .wtw-valve::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-wheel{position:static!important;margin:0 0 14px!important;width:34px!important;height:34px!important;border:0!important;border-radius:50%!important;background:#E5F3FA!important;box-shadow:none!important;transform:none!important;display:grid!important;place-items:center}
+html body.ixw--sol-net main .wtw-wheel::before,html body.ixw--sol-net main .wtw-wheel::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-wheel b{position:static!important;background:none!important;border:0!important;box-shadow:none!important;color:var(--calm-accent-ink)!important;font:700 15px/1 var(--font-display)!important;width:auto!important;height:auto!important}
+html body.ixw--sol-net main .wtw-ports{background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;border-radius:16px!important}
+html body.ixw--sol-net main .wtw-ports li{background:#F7F9FC!important;color:var(--body)!important}
+html body.ixw--sol-net main .wtw-faq details{box-shadow:none!important}
+html body.ixw--sol-net main .wtw-outlets{padding-top:0!important}
+html body.ixw--sol-net main .wtw-outlets::before,html body.ixw--sol-net main .wtw-outlets::after{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-outlet{border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-net main .wtw-outlet .card-ic{box-shadow:none!important;border:0!important}
+html body.ixw--sol-net main article.wtw-tap::before{content:none!important;display:none!important}
+html body.ixw--sol-net main .wtw-taps{row-gap:24px!important}
+html body.ixw--sol-net main .wtw-valve{margin-top:0!important}
+html body.ixw--sol-net main .wtw-wheel{filter:none!important}
+html body.ixw--sol-net main .wtw-wheel b{margin:0!important;transform:none!important}
+html body.ixw--sol-net main .wtw-ports li span{color:var(--body)!important}
+html body.ixw--sol-net main .wtw-ports li::before{background:#E5F3FA!important;color:var(--calm-accent-ink)!important}

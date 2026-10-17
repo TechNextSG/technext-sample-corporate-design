@@ -1,0 +1,72 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* IoT page demo (demo-coldchain.js): a cold store's live sensors, the alerts they raise and the records they open in Odoo. */
+.cld-th{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--font-body);color:var(--body)}
+.cld-th input{width:110px;accent-color:var(--blue)}
+.cld-th output{min-width:46px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.cld-play .ic:nth-of-type(2){display:none}
+.dm-cold.is-paused .cld-play .ic:nth-of-type(1){display:none}
+.dm-cold.is-paused .cld-play .ic:nth-of-type(2){display:inline-block}
+.dm-cold.is-static .cld-play{display:none}
+.cld-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:16px}
+.cld-rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
+.cld-room{position:relative;display:flex;flex-direction:column;gap:6px;padding:12px 12px 10px;border-radius:14px;background:#fff;border:1px solid var(--line);transition:border-color .3s ease,background-color .3s ease}
+.cld-room::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:2px solid rgba(210,67,59,.5);opacity:0;pointer-events:none}
+.cld-room header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cld-room header b{font:700 13px/1.2 var(--font-display);color:var(--ink)}
+.cld-st{font:700 10.5px/1 var(--font-body);padding:5px 8px;border-radius:999px;background:var(--ok-050);color:var(--ok);transition:background-color .3s ease,color .3s ease}
+.cld-v{display:flex;align-items:baseline;gap:4px;margin:0}
+.cld-v em{font:800 1.75rem/1 var(--font-display);font-style:normal;color:var(--ink);font-variant-numeric:tabular-nums;transition:color .3s ease}
+.cld-v small{font:600 12px/1 var(--font-body);color:var(--muted)}
+.cld-spark{display:block;width:100%;height:72px;overflow:visible;cursor:crosshair;touch-action:pan-y}
+.cld-spark .ln{fill:none;stroke:var(--blue);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;transition:stroke .3s ease}
+.cld-spark .ar{fill:rgba(49,103,202,.08);transition:fill .3s ease}
+.cld-spark .lm{stroke:#D2433B;stroke-width:1.2;stroke-dasharray:4 4;opacity:.75}
+.cld-spark .pt{fill:var(--blue);stroke:#fff;stroke-width:2}
+.cld-spark .hv{stroke:var(--ink);stroke-width:1;opacity:0}
+.cld-spark .hv.is-on{opacity:.35}
+.cld-room footer{display:flex;justify-content:space-between;gap:6px;font:500 11px/1.3 var(--font-body);color:var(--muted)}
+.cld-room footer b{color:var(--ink);font-weight:700}
+.cld-room [data-door].is-bad{color:#B42318;font-weight:700}
+.cld-room.is-watch{border-color:#F0D29C}
+.cld-room.is-watch .cld-st{background:var(--amber-050);color:var(--amber)}
+.cld-room.is-alert{border-color:#F1B4AE;background:#FFFBFA}
+.cld-room.is-alert::after{animation:cldRing 1.6s ease-in-out infinite}
+.cld-room.is-alert .cld-st{background:#FDECEA;color:#B42318}
+.cld-room.is-alert .cld-v em{color:#B42318}
+.cld-room.is-alert .ln{stroke:#D2433B}
+.cld-room.is-alert .pt{fill:#D2433B}
+.cld-room.is-alert .ar{fill:rgba(210,67,59,.09)}
+@keyframes cldRing{0%,100%{opacity:.15}50%{opacity:.9}}
+.cld-side{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;align-items:start}
+.cld-card{padding:12px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.cld-h{display:flex;align-items:center;gap:8px;margin:0 0 10px}
+.cld-h b{font:700 13px/1.2 var(--font-display);color:var(--ink)}
+.cld-h small{margin-left:auto;font:600 11.5px/1 var(--font-body);color:var(--muted);font-variant-numeric:tabular-nums}
+.cld-h .ic{width:16px;height:16px;color:var(--blue)}
+.cld-h .oi{width:20px;height:20px}
+.cld-log{min-height:178px;align-content:start}
+.cld-recs{display:grid;gap:6px;margin:0;padding:0;list-style:none;min-height:56px;align-content:start}
+.cld-recs li{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:9px;align-items:center;padding:7px 9px;border-radius:10px;border:1px solid var(--line);background:#fff;font:500 11.5px/1.3 var(--font-body);color:var(--body);animation:cldIn .5s var(--spring)}
+.cld-recs li b{display:block;font:700 12px/1.25 var(--font-display);color:var(--ink)}
+.cld-recs li em{font:700 10px/1 var(--font-body);font-style:normal;padding:4px 7px;border-radius:999px;background:var(--blue-050);color:var(--blue-700)}
+.cld-recs .oi{width:20px;height:20px}
+.cld-recs .cld-none{display:block;border-style:dashed;color:var(--muted);animation:none}
+@keyframes cldIn{from{opacity:0;transform:translateY(-6px) scale(.98)}}
+.cld-kpis{padding:0 16px 16px}
+@media (max-width:960px){
+  .cld-side{grid-template-columns:minmax(0,1fr)}
+  .cld-log{min-height:0}
+}
+@media (max-width:640px){
+  .cld-rooms{grid-template-columns:minmax(0,1fr)}
+  .cld-wrap{padding:12px}
+  .cld-kpis{padding:0 12px 12px}
+  .cld-th input{width:84px}
+}
+@media (prefers-reduced-motion:reduce){.cld-room.is-alert::after{animation:none;opacity:.8}.cld-recs li{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .cld-st,
+  .cld-recs li em{font-size:11px}
+}

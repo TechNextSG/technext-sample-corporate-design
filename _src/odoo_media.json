@@ -1,0 +1,1312 @@
+{
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-bill-pdf.webp": {
+  "h": 641,
+  "path": "assets/img/odoo-media/accounting-accounting-bill-pdf-675bbd.webp",
+  "w": 451
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-bill.webp": {
+  "h": 972,
+  "path": "assets/img/odoo-media/accounting-accounting-bill-797eb3.webp",
+  "w": 1324
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-hero-image.webp": {
+  "h": 900,
+  "path": "assets/img/odoo-media/accounting-accounting-hero-image-82fa82.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-mobile-01.webp": {
+  "h": 1460,
+  "path": "assets/img/odoo-media/accounting-accounting-mobile-01-c02a28.webp",
+  "w": 780
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-mobile-02.webp": {
+  "h": 1630,
+  "path": "assets/img/odoo-media/accounting-accounting-mobile-02-9b9c3e.webp",
+  "w": 920
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/accounting/accounting-vendor-bill.webp": {
+  "h": 591,
+  "path": "assets/img/odoo-media/accounting-accounting-vendor-bill-00bfc0.webp",
+  "w": 1000
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-configuration.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/ai-agent-configuration-f83dc3.webp",
+  "w": 1256
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-creation.webp": {
+  "h": 220,
+  "path": "assets/img/odoo-media/ai-agent-creation-fb45f9.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/agent-tailored-responses.webp": {
+  "h": 1318,
+  "path": "assets/img/odoo-media/ai-agent-tailored-responses-82a7f9.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/business-insights-agent.webp": {
+  "h": 1318,
+  "path": "assets/img/odoo-media/ai-business-insights-agent-4e02d0.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/new-task.webp": {
+  "h": 400,
+  "path": "assets/img/odoo-media/ai-new-task-342559.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/notification-customer-invoice.webp": {
+  "h": 140,
+  "path": "assets/img/odoo-media/ai-notification-customer-invoice-79f8aa.webp",
+  "w": 815
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-assignation.webp": {
+  "h": 148,
+  "path": "assets/img/odoo-media/ai-task-assignation-a8d089.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-prioritization.webp": {
+  "h": 148,
+  "path": "assets/img/odoo-media/ai-task-prioritization-a38e27.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ai/task-tags.webp": {
+  "h": 144,
+  "path": "assets/img/odoo-media/ai-task-tags-acfece.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-calendar.webp": {
+  "h": 852,
+  "path": "assets/img/odoo-media/appointments-appointment-calendar-f69aa7.webp",
+  "w": 976
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-confirmation.webp": {
+  "h": 793,
+  "path": "assets/img/odoo-media/appointments-appointment-confirmation-0d97a2.webp",
+  "w": 1039
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-hero-image.webp": {
+  "h": 720,
+  "path": "assets/img/odoo-media/appointments-appointment-hero-image-928904.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-meet.webp": {
+  "h": 774,
+  "path": "assets/img/odoo-media/appointments-appointment-meet-70c7a0.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-meetings.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/appointments-appointment-meetings-fe78f8.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-mobile.webp": {
+  "h": 725,
+  "path": "assets/img/odoo-media/appointments-appointment-mobile-ef9cd0.webp",
+  "w": 390
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-reporting.webp": {
+  "h": 564,
+  "path": "assets/img/odoo-media/appointments-appointment-reporting-8dd53c.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-ressources.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/appointments-appointment-ressources-45a900.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appointments/appointment-video-conference.webp": {
+  "h": 630,
+  "path": "assets/img/odoo-media/appointments-appointment-video-conference-a0574a.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/appraisals/hero-banner.png": {
+  "h": 900,
+  "path": "assets/img/odoo-media/appraisals-hero-banner-11765e.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/blog/banner.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/blog-banner-b5f67d.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/blog/command.webp": {
+  "h": 1025,
+  "path": "assets/img/odoo-media/blog-command-c71dda.webp",
+  "w": 750
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/blog/convert.webp": {
+  "h": 721,
+  "path": "assets/img/odoo-media/blog-convert-e19206.webp",
+  "w": 1000
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/blog/editor.webp": {
+  "h": 581,
+  "path": "assets/img/odoo-media/blog-editor-2fe2dc.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/blog/seo.webp": {
+  "h": 720,
+  "path": "assets/img/odoo-media/blog-seo-0c9f69.webp",
+  "w": 1010
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/copy_paste.webp": {
+  "h": 655,
+  "path": "assets/img/odoo-media/business-intelligence-copy-paste-339734.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/dashboard.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/business-intelligence-dashboard-9315f6.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/features_formating.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/business-intelligence-features-formating-d6d8a1.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/business-intelligence-hero-image-bd5613.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/business_intelligence/pivot_02.webp": {
+  "h": 655,
+  "path": "assets/img/odoo-media/business-intelligence-pivot-02-ac496e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/crm/effortless_communication.webp": {
+  "h": 521,
+  "path": "assets/img/odoo-media/crm-effortless-communication-9cb137.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/crm/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/crm-hero-image-110777.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/crm/quotation.webp": {
+  "h": 564,
+  "path": "assets/img/odoo-media/crm-quotation-97f1da.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/crm/reporting.webp": {
+  "h": 559,
+  "path": "assets/img/odoo-media/crm-reporting-9b5f7f.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/crm/sample_quote.webp": {
+  "h": 5268,
+  "path": "assets/img/odoo-media/crm-sample-quote-65935d.webp",
+  "w": 540
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/agents.webp": {
+  "h": 326,
+  "path": "assets/img/odoo-media/discuss-agents-624c6c.webp",
+  "w": 596
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/chat.webp": {
+  "h": 774,
+  "path": "assets/img/odoo-media/discuss-chat-766bf1.webp",
+  "w": 750
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/hero.webp": {
+  "h": 611,
+  "path": "assets/img/odoo-media/discuss-hero-e6559a.webp",
+  "w": 1058
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/inbox.webp": {
+  "h": 971,
+  "path": "assets/img/odoo-media/discuss-inbox-36688c.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/discuss/search.webp": {
+  "h": 732,
+  "path": "assets/img/odoo-media/discuss-search-fd62e8.webp",
+  "w": 1036
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/ask_for_signature.webp": {
+  "h": 145,
+  "path": "assets/img/odoo-media/documents-ask-for-signature-49edaf.webp",
+  "w": 300
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/create_task.webp": {
+  "h": 145,
+  "path": "assets/img/odoo-media/documents-create-task-45fff0.webp",
+  "w": 300
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/documents-hero-image-bb0df5.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/hub.webp": {
+  "h": 534,
+  "path": "assets/img/odoo-media/documents-hub-938141.webp",
+  "w": 409
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/organization.webp": {
+  "h": 531,
+  "path": "assets/img/odoo-media/documents-organization-aa193e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/process_bills.webp": {
+  "h": 145,
+  "path": "assets/img/odoo-media/documents-process-bills-773488.webp",
+  "w": 300
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/request_file.webp": {
+  "h": 145,
+  "path": "assets/img/odoo-media/documents-request-file-507feb.webp",
+  "w": 300
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/documents/sign_online.webp": {
+  "h": 851,
+  "path": "assets/img/odoo-media/documents-sign-online-83f448.webp",
+  "w": 393
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/adaptive-product.webp": {
+  "h": 534,
+  "path": "assets/img/odoo-media/ecommerce-adaptive-product-c6e9d4.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/bump_up.webp": {
+  "h": 956,
+  "path": "assets/img/odoo-media/ecommerce-bump-up-b7b35d.webp",
+  "w": 830
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/maximise.webp": {
+  "h": 1046,
+  "path": "assets/img/odoo-media/ecommerce-maximise-cfee58.webp",
+  "w": 783
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/products-grid.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/ecommerce-products-grid-f50d6a.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/ecommerce/reporting.webp": {
+  "h": 616,
+  "path": "assets/img/odoo-media/ecommerce-reporting-30e570.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/ease_to_use.webp": {
+  "h": 621,
+  "path": "assets/img/odoo-media/elearning-ease-to-use-2fa53c.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/front-screen.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/elearning-front-screen-2ecba5.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/learning-journey.webp": {
+  "h": 578,
+  "path": "assets/img/odoo-media/elearning-learning-journey-6232cf.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/elearning/train-people.webp": {
+  "h": 540,
+  "path": "assets/img/odoo-media/elearning-train-people-c7c4e0.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/all_in_one_place.webp": {
+  "h": 526,
+  "path": "assets/img/odoo-media/employees-all-in-one-place-7fb9c4.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/all_of_your_people.webp": {
+  "h": 45,
+  "path": "assets/img/odoo-media/employees-all-of-your-people-d56af6.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/employees-hero-image-bc00fe.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/performance_appraisals.webp": {
+  "h": 723,
+  "path": "assets/img/odoo-media/employees-performance-appraisals-8b3fe5.webp",
+  "w": 725
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/show_off_those_skills.webp": {
+  "h": 578,
+  "path": "assets/img/odoo-media/employees-show-off-those-skills-3ecd0c.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/stuff_private.webp": {
+  "h": 647,
+  "path": "assets/img/odoo-media/employees-stuff-private-462a46.webp",
+  "w": 1003
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/employees/take_control_of_time_off.webp": {
+  "h": 565,
+  "path": "assets/img/odoo-media/employees-take-control-of-time-off-c530bf.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/events/hero-banner.png": {
+  "h": 930,
+  "path": "assets/img/odoo-media/events-hero-banner-84850a.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/expense_tracking.webp": {
+  "h": 458,
+  "path": "assets/img/odoo-media/expenses-expense-tracking-522737.webp",
+  "w": 277
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/expenses-hero-image-632f67.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/less_typing.webp": {
+  "h": 515,
+  "path": "assets/img/odoo-media/expenses-less-typing-41e5fb.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/more_scanning.webp": {
+  "h": 308,
+  "path": "assets/img/odoo-media/expenses-more-scanning-f774ff.webp",
+  "w": 284
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/one_report.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/expenses-one-report-aee086.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/ready_set_expense.webp": {
+  "h": 312,
+  "path": "assets/img/odoo-media/expenses-ready-set-expense-fbcb8f.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/reimburse.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/expenses-reimburse-0f67d2.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/robust_reporting.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/expenses-robust-reporting-fa50e6.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/expenses/submit_on_the_go.webp": {
+  "h": 851,
+  "path": "assets/img/odoo-media/expenses-submit-on-the-go-23cbce.webp",
+  "w": 393
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-hero-image-mobile.webp": {
+  "h": 760,
+  "path": "assets/img/odoo-media/field-service-field-service-hero-image-mobile-47de64.webp",
+  "w": 390
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-hero-image.webp": {
+  "h": 900,
+  "path": "assets/img/odoo-media/field-service-field-service-hero-image-c44416.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoice.webp": {
+  "h": 1046,
+  "path": "assets/img/odoo-media/field-service-field-service-invoice-f29d96.webp",
+  "w": 1039
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-invoicing.webp": {
+  "h": 453,
+  "path": "assets/img/odoo-media/field-service-field-service-invoicing-51ff10.webp",
+  "w": 531
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-planning.webp": {
+  "h": 572,
+  "path": "assets/img/odoo-media/field-service-field-service-planning-cee465.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-tasks.webp": {
+  "h": 899,
+  "path": "assets/img/odoo-media/field-service-field-service-tasks-969c19.webp",
+  "w": 704
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-timesheet.webp": {
+  "h": 680,
+  "path": "assets/img/odoo-media/field-service-field-service-timesheet-d6c91c.webp",
+  "w": 792
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/field-service/field-service-worksheet.webp": {
+  "h": 1046,
+  "path": "assets/img/odoo-media/field-service-field-service-worksheet-da8ee6.webp",
+  "w": 539
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/fleet/hero-banner.png": {
+  "h": 785,
+  "path": "assets/img/odoo-media/fleet-hero-banner-918aa0.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/forum/best_brushes.webp": {
+  "h": 940,
+  "path": "assets/img/odoo-media/forum-best-brushes-63e5a6.webp",
+  "w": 846
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/forum/customize_01.webp": {
+  "h": 534,
+  "path": "assets/img/odoo-media/forum-customize-01-25e8ca.webp",
+  "w": 719
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/forum/customize_02.webp": {
+  "h": 336,
+  "path": "assets/img/odoo-media/forum-customize-02-9542f7.webp",
+  "w": 391
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/forum/gamification.webp": {
+  "h": 613,
+  "path": "assets/img/odoo-media/forum-gamification-566f67.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/forum/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/forum-hero-image-c8a734.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/helpdesk/helpdesk-dashboard.webp": {
+  "h": 780,
+  "path": "assets/img/odoo-media/helpdesk-helpdesk-dashboard-0a1d9a.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/helpdesk/helpdesk-tickets-overview.webp": {
+  "h": 559,
+  "path": "assets/img/odoo-media/helpdesk-helpdesk-tickets-overview-2c167c.webp",
+  "w": 1360
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/automate_vendor.webp": {
+  "h": 226,
+  "path": "assets/img/odoo-media/inventory-automate-vendor-82d5c5.webp",
+  "w": 850
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/device.png": {
+  "h": 380,
+  "path": "assets/img/odoo-media/inventory-device-d593fe.webp",
+  "w": 346
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/hero_image.webp": {
+  "h": 800,
+  "path": "assets/img/odoo-media/inventory-hero-image-11e30a.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/optimize_warehouse.webp": {
+  "h": 623,
+  "path": "assets/img/odoo-media/inventory-optimize-warehouse-6cebb1.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/reservation_mechanism.webp": {
+  "h": 786,
+  "path": "assets/img/odoo-media/inventory-reservation-mechanism-d72724.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/smarts_routes.webp": {
+  "h": 424,
+  "path": "assets/img/odoo-media/inventory-smarts-routes-39274a.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/traceability.webp": {
+  "h": 399,
+  "path": "assets/img/odoo-media/inventory-traceability-a716db.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/inventory/truck.webp": {
+  "h": 516,
+  "path": "assets/img/odoo-media/inventory-truck-229add.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-customer-portal-payments.webp": {
+  "h": 750,
+  "path": "assets/img/odoo-media/invoicing-invoicing-customer-portal-payments-bef985.webp",
+  "w": 660
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-hero-image.webp": {
+  "h": 1000,
+  "path": "assets/img/odoo-media/invoicing-invoicing-hero-image-bcf291.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing-payments-list.webp": {
+  "h": 515,
+  "path": "assets/img/odoo-media/invoicing-invoicing-payments-list-508ce9.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing_mobile_01.webp": {
+  "h": 851,
+  "path": "assets/img/odoo-media/invoicing-invoicing-mobile-01-190c47.webp",
+  "w": 393
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/invoicing_recurring_invoices.webp": {
+  "h": 352,
+  "path": "assets/img/odoo-media/invoicing-invoicing-recurring-invoices-3bbac7.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/invoicing/your_invoice_your_style.webp": {
+  "h": 467,
+  "path": "assets/img/odoo-media/invoicing-your-invoice-your-style-6a1754.webp",
+  "w": 856
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/build.webp": {
+  "h": 616,
+  "path": "assets/img/odoo-media/knowledge-build-55ed42.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/build_2.webp": {
+  "h": 360,
+  "path": "assets/img/odoo-media/knowledge-build-2-1d6c44.webp",
+  "w": 370
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/fingertips.webp": {
+  "h": 560,
+  "path": "assets/img/odoo-media/knowledge-fingertips-7ac0f2.webp",
+  "w": 885
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/get_acces.webp": {
+  "h": 514,
+  "path": "assets/img/odoo-media/knowledge-get-acces-503cbc.webp",
+  "w": 628
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/knowledge-hero-image-840e89.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/knowledge/shape.webp": {
+  "h": 615,
+  "path": "assets/img/odoo-media/knowledge-shape-3a0d12.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/answer_questions.webp": {
+  "h": 680,
+  "path": "assets/img/odoo-media/live-chat-answer-questions-d655c6.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/help_is_just_a_click_away.webp": {
+  "h": 738,
+  "path": "assets/img/odoo-media/live-chat-help-is-just-a-click-away-a183c4.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/live-chat-hero-image-cc147c.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/meet_chatbot_your_new_teammate.webp": {
+  "h": 655,
+  "path": "assets/img/odoo-media/live-chat-meet-chatbot-your-new-teammate-79eeee.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/never_miss_a_question.webp": {
+  "h": 651,
+  "path": "assets/img/odoo-media/live-chat-never-miss-a-question-c03435.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/live-chat/turn_visitor_into_customer.webp": {
+  "h": 911,
+  "path": "assets/img/odoo-media/live-chat-turn-visitor-into-customer-31df3a.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/maintenance/hero-banner.png": {
+  "h": 900,
+  "path": "assets/img/odoo-media/maintenance-hero-banner-b2417e.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/barcode.webp": {
+  "h": 1005,
+  "path": "assets/img/odoo-media/manufacturing-barcode-2790ed.webp",
+  "w": 600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_01.webp": {
+  "h": 772,
+  "path": "assets/img/odoo-media/manufacturing-become-paperless-01-82932f.webp",
+  "w": 488
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_02.webp": {
+  "h": 642,
+  "path": "assets/img/odoo-media/manufacturing-become-paperless-02-13f072.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/become_paperless_03.webp": {
+  "h": 496,
+  "path": "assets/img/odoo-media/manufacturing-become-paperless-03-8ab524.webp",
+  "w": 374
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/manufacturing-hero-image-8e4540.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/operations.webp": {
+  "h": 537,
+  "path": "assets/img/odoo-media/manufacturing-operations-34c78c.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/schedule.webp": {
+  "h": 559,
+  "path": "assets/img/odoo-media/manufacturing-schedule-35acc2.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/manufacturing/sigma_6.webp": {
+  "h": 585,
+  "path": "assets/img/odoo-media/manufacturing-sigma-6-300442.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/payroll/payroll-dashboard.webp": {
+  "h": 918,
+  "path": "assets/img/odoo-media/payroll-payroll-dashboard-2d29e5.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/ai/avatar-mitchell.png": {
+  "h": 128,
+  "path": "assets/img/odoo-media/phone-ai-avatar-mitchell-b7befe.webp",
+  "w": 128
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/btn-go-to.webp": {
+  "h": 398,
+  "path": "assets/img/odoo-media/phone-crm-btn-go-to-b0e58c.webp",
+  "w": 342
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/menu-create.webp": {
+  "h": 264,
+  "path": "assets/img/odoo-media/phone-crm-menu-create-b46fde.webp",
+  "w": 342
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/crm/sales-order-call.webp": {
+  "h": 530,
+  "path": "assets/img/odoo-media/phone-crm-sales-order-call-a8444c.webp",
+  "w": 941
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/hero-call.png": {
+  "h": 495,
+  "path": "assets/img/odoo-media/phone-hero-call-61e448.webp",
+  "w": 323
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/phone/hero.webp": {
+  "h": 698,
+  "path": "assets/img/odoo-media/phone-hero-440769.webp",
+  "w": 1260
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-ressource-equipment.webp": {
+  "h": 930,
+  "path": "assets/img/odoo-media/planning-planning-ressource-equipment-0f4c53.webp",
+  "w": 1088
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-ressource-staff.webp": {
+  "h": 932,
+  "path": "assets/img/odoo-media/planning-planning-ressource-staff-c76bb1.webp",
+  "w": 870
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shift-template.webp": {
+  "h": 566,
+  "path": "assets/img/odoo-media/planning-planning-shift-template-c1ba81.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shifts-overview.webp": {
+  "h": 957,
+  "path": "assets/img/odoo-media/planning-planning-shifts-overview-ee8544.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/planning/planning-shifts-scheduling.webp": {
+  "h": 600,
+  "path": "assets/img/odoo-media/planning-planning-shifts-scheduling-8650d0.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-01.webp": {
+  "h": 268,
+  "path": "assets/img/odoo-media/pos-avatar-01-0ea090.webp",
+  "w": 268
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-02.webp": {
+  "h": 268,
+  "path": "assets/img/odoo-media/pos-avatar-02-8fd00f.webp",
+  "w": 268
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-03.webp": {
+  "h": 268,
+  "path": "assets/img/odoo-media/pos-avatar-03-7f4eef.webp",
+  "w": 268
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/avatar-04.webp": {
+  "h": 268,
+  "path": "assets/img/odoo-media/pos-avatar-04-eab1f6.webp",
+  "w": 268
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_1.webp": {
+  "h": 782,
+  "path": "assets/img/odoo-media/pos-cross-channel-selling-1-02c7a7.webp",
+  "w": 920
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_2.webp": {
+  "h": 785,
+  "path": "assets/img/odoo-media/pos-cross-channel-selling-2-dbdd7e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/pos-hero-image-2cf7a2.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/integrated_payments.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/pos-integrated-payments-10e9d1.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/interface.webp": {
+  "h": 760,
+  "path": "assets/img/odoo-media/pos-interface-d81648.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/payment_terminal.webp": {
+  "h": 670,
+  "path": "assets/img/odoo-media/pos-payment-terminal-e22271.webp",
+  "w": 674
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-ai-chat.webp": {
+  "h": 1366,
+  "path": "assets/img/odoo-media/pos-pos-ai-chat-aae194.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-booking-details.webp": {
+  "h": 423,
+  "path": "assets/img/odoo-media/pos-pos-booking-details-60f737.webp",
+  "w": 810
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-delivery-apps.webp": {
+  "h": 274,
+  "path": "assets/img/odoo-media/pos-pos-delivery-apps-524284.webp",
+  "w": 324
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-kitchen-toolbar.webp": {
+  "h": 82,
+  "path": "assets/img/odoo-media/pos-pos-kitchen-toolbar-fdcf70.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-orders-list.webp": {
+  "h": 314,
+  "path": "assets/img/odoo-media/pos-pos-orders-list-b55856.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/pos-register.webp": {
+  "h": 618,
+  "path": "assets/img/odoo-media/pos-pos-register-8a098c.webp",
+  "w": 1068
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self-order-kiosk.webp": {
+  "h": 1132,
+  "path": "assets/img/odoo-media/pos-self-order-kiosk-4a4ca9.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self_service_for_the_win_kiosk.webp": {
+  "h": 861,
+  "path": "assets/img/odoo-media/pos-self-service-for-the-win-kiosk-3c9bc9.webp",
+  "w": 592
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/pos/self_service_for_the_win_mobile.webp": {
+  "h": 851,
+  "path": "assets/img/odoo-media/pos-self-service-for-the-win-mobile-277aec.webp",
+  "w": 393
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-chatter.webp": {
+  "h": 664,
+  "path": "assets/img/odoo-media/project-project-chatter-7e2ea4.webp",
+  "w": 670
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-dashboard.webp": {
+  "h": 890,
+  "path": "assets/img/odoo-media/project-project-dashboard-07bd26.webp",
+  "w": 1331
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-hero-image.webp": {
+  "h": 794,
+  "path": "assets/img/odoo-media/project-project-hero-image-a39be5.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-budgets.webp": {
+  "h": 315,
+  "path": "assets/img/odoo-media/project-project-overview-budgets-c49836.webp",
+  "w": 630
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-milestones.webp": {
+  "h": 371,
+  "path": "assets/img/odoo-media/project-project-overview-milestones-d9b877.webp",
+  "w": 630
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-overview-profitability.webp": {
+  "h": 450,
+  "path": "assets/img/odoo-media/project-project-overview-profitability-e6eb0e.webp",
+  "w": 630
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-timer.webp": {
+  "h": 161,
+  "path": "assets/img/odoo-media/project-project-timer-b638cc.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/project/project-timesheets.webp": {
+  "h": 503,
+  "path": "assets/img/odoo-media/project-project-timesheets-e8062f.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/all_the_small_things_1.webp": {
+  "h": 353,
+  "path": "assets/img/odoo-media/purchase-all-the-small-things-1-2d4ce3.webp",
+  "w": 831
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_1.webp": {
+  "h": 179,
+  "path": "assets/img/odoo-media/purchase-automated-rfq-1-b788b7.webp",
+  "w": 599
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_2.webp": {
+  "h": 448,
+  "path": "assets/img/odoo-media/purchase-automated-rfq-2-b4cf2b.webp",
+  "w": 330
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_3.webp": {
+  "h": 179,
+  "path": "assets/img/odoo-media/purchase-automated-rfq-3-2bef31.webp",
+  "w": 599
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/automated_rfq_4.webp": {
+  "h": 448,
+  "path": "assets/img/odoo-media/purchase-automated-rfq-4-d81281.webp",
+  "w": 330
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/charge_vendors_1.webp": {
+  "h": 598,
+  "path": "assets/img/odoo-media/purchase-charge-vendors-1-3e5081.webp",
+  "w": 476
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/flexible_1.webp": {
+  "h": 755,
+  "path": "assets/img/odoo-media/purchase-flexible-1-971bad.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/flexible_2.webp": {
+  "h": 301,
+  "path": "assets/img/odoo-media/purchase-flexible-2-5ac5b4.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/purchase/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/purchase-hero-image-fbe9fa.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/quality-hero-image-ce2906.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_inspections_1.webp": {
+  "h": 47,
+  "path": "assets/img/odoo-media/quality-quality-inspections-1-72960b.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_inspections_2.webp": {
+  "h": 405,
+  "path": "assets/img/odoo-media/quality-quality-inspections-2-5d4f4d.webp",
+  "w": 810
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/quality_teams.webp": {
+  "h": 524,
+  "path": "assets/img/odoo-media/quality-quality-teams-64c758.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/unchecked.webp": {
+  "h": 604,
+  "path": "assets/img/odoo-media/quality-unchecked-ec34ff.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/worksheets.webp": {
+  "h": 424,
+  "path": "assets/img/odoo-media/quality-worksheets-f208f2.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/zero_1.webp": {
+  "h": 567,
+  "path": "assets/img/odoo-media/quality-zero-1-c736d5.webp",
+  "w": 536
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/quality/zero_2.webp": {
+  "h": 787,
+  "path": "assets/img/odoo-media/quality-zero-2-6a14dd.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/don_t_waste_time_typing.webp": {
+  "h": 655,
+  "path": "assets/img/odoo-media/recruitment-don-t-waste-time-typing-28ad59.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/recruitment-hero-image-6b960d.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/less_scheduling_more_interviewing.webp": {
+  "h": 619,
+  "path": "assets/img/odoo-media/recruitment-less-scheduling-more-interviewing-cb53d6.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/never_wonder_about_a_job_status.webp": {
+  "h": 465,
+  "path": "assets/img/odoo-media/recruitment-never-wonder-about-a-job-status-8e94f7.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/reporting_that_makes_sense.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/recruitment-reporting-that-makes-sense-edd2b7.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/tailor_made_pipelines_rectangle.webp": {
+  "h": 421,
+  "path": "assets/img/odoo-media/recruitment-tailor-made-pipelines-rectangle-d42e4e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/visualize_pipeline_to_crop.webp": {
+  "h": 636,
+  "path": "assets/img/odoo-media/recruitment-visualize-pipeline-to-crop-ca3a81.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/recruitment/you_re_hired.webp": {
+  "h": 556,
+  "path": "assets/img/odoo-media/recruitment-you-re-hired-07e3b9.webp",
+  "w": 683
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/referral/hero-banner.png": {
+  "h": 900,
+  "path": "assets/img/odoo-media/referral-hero-banner-01e967.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/automate.webp": {
+  "h": 279,
+  "path": "assets/img/odoo-media/rental-automate-f5fe2a.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/hero_image.webp": {
+  "h": 498,
+  "path": "assets/img/odoo-media/rental-hero-image-c8ab3e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental-days.webp": {
+  "h": 551,
+  "path": "assets/img/odoo-media/rental-rental-days-2e0ac9.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_agreement.webp": {
+  "h": 678,
+  "path": "assets/img/odoo-media/rental-rental-agreement-cfef7e.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_meeting_room.webp": {
+  "h": 602,
+  "path": "assets/img/odoo-media/rental-rental-meeting-room-8326cd.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_product.webp": {
+  "h": 657,
+  "path": "assets/img/odoo-media/rental-rental-product-9139cd.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/rental/rental_sign.webp": {
+  "h": 46,
+  "path": "assets/img/odoo-media/rental-rental-sign-4e7ac3.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/ai_powered.webp": {
+  "h": 465,
+  "path": "assets/img/odoo-media/sales-ai-powered-987d33.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/customer_portal_01.webp": {
+  "h": 797,
+  "path": "assets/img/odoo-media/sales-customer-portal-01-cfcc32.webp",
+  "w": 790
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/customer_portal_02.webp": {
+  "h": 827,
+  "path": "assets/img/odoo-media/sales-customer-portal-02-f71e7b.webp",
+  "w": 883
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/sales-hero-image-e9f392.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/manage_01.webp": {
+  "h": 679,
+  "path": "assets/img/odoo-media/sales-manage-01-4209a9.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/manage_02.webp": {
+  "h": 380,
+  "path": "assets/img/odoo-media/sales-manage-02-a751f0.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/qualified_leads.webp": {
+  "h": 705,
+  "path": "assets/img/odoo-media/sales-qualified-leads-dc5616.webp",
+  "w": 984
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sales/quote_template.webp": {
+  "h": 655,
+  "path": "assets/img/odoo-media/sales-quote-template-4fe767.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/control.webp": {
+  "h": 747,
+  "path": "assets/img/odoo-media/sign-control-ce6e54.webp",
+  "w": 1334
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/features_adopt.webp": {
+  "h": 867,
+  "path": "assets/img/odoo-media/sign-features-adopt-08efb4.webp",
+  "w": 972
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/features_reminders.webp": {
+  "h": 736,
+  "path": "assets/img/odoo-media/sign-features-reminders-50a7be.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/hero_image.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/sign-hero-image-8715b9.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/sign_online.webp": {
+  "h": 851,
+  "path": "assets/img/odoo-media/sign-sign-online-56571f.webp",
+  "w": 393
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/sign/simplify-signing.webp": {
+  "h": 872,
+  "path": "assets/img/odoo-media/sign-simplify-signing-081c61.webp",
+  "w": 1465
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/subscription/hero-image.webp": {
+  "h": 786,
+  "path": "assets/img/odoo-media/subscription-hero-image-cce959.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/survey/hero-banner.png": {
+  "h": 900,
+  "path": "assets/img/odoo-media/survey-hero-banner-b9ae34.webp",
+  "w": 1440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/accrual.webp": {
+  "h": 549,
+  "path": "assets/img/odoo-media/time-off-accrual-25ccd9.webp",
+  "w": 754
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/allocated-time.webp": {
+  "h": 548,
+  "path": "assets/img/odoo-media/time-off-allocated-time-feee9f.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/approval.webp": {
+  "h": 393,
+  "path": "assets/img/odoo-media/time-off-approval-6439d5.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/dashboard.webp": {
+  "h": 641,
+  "path": "assets/img/odoo-media/time-off-dashboard-b38a38.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/leave-request.webp": {
+  "h": 674,
+  "path": "assets/img/odoo-media/time-off-leave-request-6b3419.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/request-01.webp": {
+  "h": 870,
+  "path": "assets/img/odoo-media/time-off-request-01-4c2224.webp",
+  "w": 612
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/time-off/request-02.webp": {
+  "h": 1140,
+  "path": "assets/img/odoo-media/time-off-request-02-0d4e8d.webp",
+  "w": 924
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-ai-insights.webp": {
+  "h": 1366,
+  "path": "assets/img/odoo-media/timesheet-timesheet-ai-insights-58b1f0.webp",
+  "w": 816
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-assistant.webp": {
+  "h": 1042,
+  "path": "assets/img/odoo-media/timesheet-timesheet-assistant-60f9cf.webp",
+  "w": 1255
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-billable-filter.webp": {
+  "h": 59,
+  "path": "assets/img/odoo-media/timesheet-timesheet-billable-filter-9d1d80.webp",
+  "w": 232
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-billable.webp": {
+  "h": 198,
+  "path": "assets/img/odoo-media/timesheet-timesheet-billable-525c07.webp",
+  "w": 690
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-hero-banner.webp": {
+  "h": 873,
+  "path": "assets/img/odoo-media/timesheet-timesheet-hero-banner-6dbf1f.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-overview.webp": {
+  "h": 579,
+  "path": "assets/img/odoo-media/timesheet-timesheet-overview-b3fc98.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-reporting-pivot.webp": {
+  "h": 978,
+  "path": "assets/img/odoo-media/timesheet-timesheet-reporting-pivot-d31f34.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/timesheet/timesheet-time-tracking.webp": {
+  "h": 1169,
+  "path": "assets/img/odoo-media/timesheet-timesheet-time-tracking-d42c7d.webp",
+  "w": 1540
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-customer-01.webp": {
+  "h": 889,
+  "path": "assets/img/odoo-media/website-website-builder-customer-01-77a2fa.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-edit-text.webp": {
+  "h": 329,
+  "path": "assets/img/odoo-media/website-website-builder-edit-text-cc5da8.webp",
+  "w": 738
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-01.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-01-7d2c59.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-02.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-02-98d885.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-03.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-03-22200a.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-04.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-04-e1ac49.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-05.webp": {
+  "h": 514,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-05-10c6f8.webp",
+  "w": 596
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-06.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-06-4643e5.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-07.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-07-8ecf35.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-builder-showcase-08.webp": {
+  "h": 690,
+  "path": "assets/img/odoo-media/website-website-builder-showcase-08-8eeb57.webp",
+  "w": 800
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/website/website-configurator-business.webp": {
+  "h": 494,
+  "path": "assets/img/odoo-media/website-website-configurator-business-530703.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/efficient_1.webp": {
+  "h": 897,
+  "path": "assets/img/odoo-media/whatsapp-efficient-1-4093d8.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/efficient_2.webp": {
+  "h": 954,
+  "path": "assets/img/odoo-media/whatsapp-efficient-2-cb5b9c.webp",
+  "w": 440
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/fully_integrated.webp": {
+  "h": 654,
+  "path": "assets/img/odoo-media/whatsapp-fully-integrated-596079.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/groupe_templates.webp": {
+  "h": 736,
+  "path": "assets/img/odoo-media/whatsapp-groupe-templates-5cae13.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/multi-channel.webp": {
+  "h": 479,
+  "path": "assets/img/odoo-media/whatsapp-multi-channel-f2c291.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/publish_1.webp": {
+  "h": 598,
+  "path": "assets/img/odoo-media/whatsapp-publish-1-c1f1b1.webp",
+  "w": 448
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/publish_2.webp": {
+  "h": 598,
+  "path": "assets/img/odoo-media/whatsapp-publish-2-d16258.webp",
+  "w": 448
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/templates.webp": {
+  "h": 872,
+  "path": "assets/img/odoo-media/whatsapp-templates-51f186.webp",
+  "w": 500
+ },
+ "https://odoocdn.com/openerp_website/static/src/img/apps/whatsapp/video_cover.webp": {
+  "h": 559,
+  "path": "assets/img/odoo-media/whatsapp-video-cover-bf6c73.webp",
+  "w": 1046
+ },
+ "https://odoocdn.com/web/image/131539644-7cd16568/IMG_0275.jpeg?access_token=e88bd642-624f-4a9b-9671-68e77849a8f4": {
+  "h": 826,
+  "path": "assets/img/odoo-media/img-131539644-img-0275-58250c.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135077512-485a72af/Event%20%27Odoo%20Business%20Show%20v%E1%BB%81%20D%E1%BB%8Bch%20v%E1%BB%A5%20t%E1%BA%A1i%20Tp.%20HCM%20-%201911%27%20cover%20image.jpeg": {
+  "h": 900,
+  "path": "assets/img/odoo-media/img-135077512-event-odoo-business-show-v-d-ch-v-t-i-tp-hcm-1-912dc7.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135177909-e14ace20/PH_BS_LGP-1020_1_1.jpg": {
+  "h": 1080,
+  "path": "assets/img/odoo-media/img-135177909-ph-bs-lgp-1020-1-1-cc5fb0.webp",
+  "w": 1080
+ },
+ "https://odoocdn.com/web/image/135772659-ac9bbe21/Screenshot%202026-09-22%20at%2014.25.36.webp?access_token=7d2577c6-267b-41b1-9023-07363ce559f3": {
+  "h": 902,
+  "path": "assets/img/odoo-media/img-135772659-screenshot-2026-09-22-at-14-25-36-1dfe91.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135772665-6273df57/Screenshot%202026-09-22%20at%2014.26.17.webp?access_token=e64a767e-43a3-4fdf-afec-f64eae6eeb3f": {
+  "h": 899,
+  "path": "assets/img/odoo-media/img-135772665-screenshot-2026-09-22-at-14-26-17-639d01.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135772670-4f8b6ba1/Screenshot%202026-09-22%20at%2014.24.51.webp?access_token=8201ba03-827e-49df-9ccc-246af3441280": {
+  "h": 856,
+  "path": "assets/img/odoo-media/img-135772670-screenshot-2026-09-22-at-14-24-51-d7ae31.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135772821-c3568031/Screenshot%202026-09-22%20at%2014.27.15.webp?access_token=715c4bf6-84a7-4b06-be14-5543ff8f71e8": {
+  "h": 886,
+  "path": "assets/img/odoo-media/img-135772821-screenshot-2026-09-22-at-14-27-15-3bed19.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/135886821-72f348bb/Screenshot%202026-09-23%20at%2012.47.13.webp?access_token=4ae9ffe1-1b09-40b6-bbd7-26f12cb3eda6": {
+  "h": 919,
+  "path": "assets/img/odoo-media/img-135886821-screenshot-2026-09-23-at-12-47-13-d16763.webp",
+  "w": 1600
+ },
+ "https://odoocdn.com/web/image/136007952-5c4df806/IMG_6137.webp?access_token=9c59c0d8-3396-4bd8-9970-85111dceccdd": {
+  "h": 688,
+  "path": "assets/img/odoo-media/img-136007952-img-6137-56b453.webp",
+  "w": 688
+ }
+}

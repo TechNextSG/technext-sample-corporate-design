@@ -1,0 +1,10 @@
+# Not part of the public website: build sources, docs and GitHub-only files.
+_src
+README.md
+CNAME
+.gitignore
+.vercelignore
+
+PRODUCT.md
+DESIGN.md
+.impeccable

@@ -1,0 +1,68 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Shared chrome for the page demos (demo-kit.js): one visual language with the home hero scenes.
+   Each demo adds its own stylesheet under its own class prefix. */
+:root{
+  --tok-stock:#3167CA; --tok-buy:#D97B12; --tok-make:#7447D6; --tok-late:#D2433B; --tok-pay:#0E9384;
+  --edge:#BFCDEA; --edge-soft:#D6E0F3;
+}
+.demo-sec .sec-head{margin-bottom:26px}
+.demo-sec .sec-head .lead{max-width:68ch}
+.dm{position:relative;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.9);box-shadow:0 30px 60px -38px rgba(31,31,61,.42);overflow:hidden;isolation:isolate}
+.dm-head{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;padding:12px 14px;border-bottom:1px solid var(--line);background:rgba(250,249,251,.85)}
+.dm-title{display:grid;gap:2px;min-width:0;margin-right:auto}
+.dm-title b{font:700 13.5px/1.2 var(--font-display);color:var(--ink)}
+.dm-title small{font:500 11.5px/1.3 var(--font-body);color:var(--muted)}
+.dm-seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.dm-seg button{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;border:0;border-radius:999px;background:transparent;font:600 12px/1 var(--font-body);color:var(--body);cursor:pointer;white-space:nowrap;transition:background-color .2s ease,color .2s ease}
+.dm-seg button:hover{background:var(--alt);color:var(--ink)}
+.dm-seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.dm-seg button:focus-visible,.dm-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.dm-seg .oi{width:16px;height:16px}
+.dm-sw{width:8px;height:8px;border-radius:50%;flex:none;background:var(--c,var(--blue))}
+.dm-btn{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 12px/1 var(--font-body);color:var(--ink);cursor:pointer;transition:border-color .2s ease,background-color .2s ease}
+.dm-btn:hover{border-color:var(--blue-300);background:var(--blue-050)}
+.dm-btn .ic{width:14px;height:14px}
+.dm-btn--primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.dm-btn--primary:hover{background:var(--blue);border-color:var(--blue)}
+.dm-body{position:relative;padding:16px}
+.dm-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px;margin:0}
+.dm-kpis>div{display:flex;flex-direction:column-reverse;gap:3px;padding:9px 11px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.dm-kpis dt{font:600 9.5px/1.25 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dm-kpis dd{margin:0;font:800 1.2rem/1.05 var(--font-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.dm-kpis .dm-ok{background:var(--ok-050);border-color:#CDEBD9}
+.dm-kpis .dm-ok dd{color:var(--ok)}
+.dm-log{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.dm-log li{display:grid;grid-template-columns:7px minmax(0,1fr);gap:8px;align-items:center;padding:6px 9px;border-radius:9px;background:rgba(255,255,255,.95);border:1px solid var(--line);font:500 11.5px/1.35 var(--font-body);color:var(--body);animation:dmLog .45s var(--spring)}
+.dm-log li:nth-child(n+3){opacity:.72}
+.dm-log li span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dm-log li b{font-weight:700;color:var(--ink)}
+.dm-log li i{width:7px;height:7px;border-radius:50%;background:var(--c,var(--blue))}
+@keyframes dmLog{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.dm-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;padding:0;list-style:none;font:600 11px/1 var(--font-body);color:var(--muted)}
+.dm-legend li{display:inline-flex;align-items:center;gap:6px}
+.dm-note{display:flex;align-items:center;gap:6px;margin:10px 2px 0;font:500 11.5px/1.3 var(--font-body);color:var(--muted)}
+.dm-note .ic{width:13px;height:13px;flex:none}
+.dm-tip{position:absolute;z-index:30;transform:translate(-50%,calc(-100% - 8px));display:grid;gap:3px;width:max-content;max-width:min(260px,calc(100% - 12px));padding:8px 11px;border-radius:10px;background:var(--ink);color:#fff;font:500 11.5px/1.4 var(--font-body);pointer-events:none;box-shadow:0 14px 28px -14px rgba(31,31,61,.65)}
+.dm-tip b{font:700 12px/1.25 var(--font-display);color:#fff}
+.dm-tip span{color:#C9D3EA}
+.dm-tip.dm-tip--below{transform:translate(-50%,8px)}
+.dm-tip[hidden]{display:none}
+.dm-empty{display:none}
+/* without JS (or before it runs) the demo shows its static description instead */
+.dm-static{margin:0;padding:16px;display:grid;gap:8px;font-size:14.5px;color:var(--body)}
+.dm.is-js .dm-static{display:none}
+/* demo-kit.js sets .is-offscreen while a demo is stopped (off-screen, tab hidden, or not started yet):
+   its CSS animations hold their frame instead of running unseen */
+[data-demo].is-offscreen,[data-demo].is-offscreen::before,[data-demo].is-offscreen::after,[data-demo].is-offscreen *,[data-demo].is-offscreen ::before,[data-demo].is-offscreen ::after{animation-play-state:paused!important}
+@media (max-width:640px){
+  .dm-head{padding:10px 12px}
+  .dm-body{padding:12px}
+  .dm-seg{max-width:100%;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  .dm-seg::-webkit-scrollbar{display:none}
+}
+@media (prefers-reduced-motion:reduce){.dm-log li{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .dm-kpis dt{font-size:11px}
+}

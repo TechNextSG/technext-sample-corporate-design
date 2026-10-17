@@ -1,0 +1,55 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo AI integration demo: AI inside an Odoo record (demo-recordai.js) */
+.dra-wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.dra-rec{position:relative;padding:16px;border-right:1px solid var(--line);transition:box-shadow .4s ease}
+.dra-rec.is-ok{animation:draOk .9s ease-out}
+@keyframes draOk{0%{box-shadow:inset 0 0 0 3px rgba(19,122,74,.35)}100%{box-shadow:inset 0 0 0 0 rgba(19,122,74,0)}}
+.dra-rh{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.dra-rh .oi{width:26px;height:26px}
+.dra-rt{font:700 14px/1.2 var(--font-display);color:var(--ink)}
+.dra-scope{display:flex;align-items:center;gap:6px;margin:0 0 12px;padding:6px 10px;border-radius:9px;background:var(--alt);border:1px dashed var(--line);font:500 11.5px/1.35 var(--font-body);color:var(--body)}
+.dra-scope .ic{width:14px;height:14px;color:var(--blue);flex:none}
+.dra-form{display:grid;gap:6px}
+.dra-f{position:relative;display:grid;grid-template-columns:118px minmax(0,1fr);gap:10px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;overflow:hidden;transition:border-color .25s ease,box-shadow .25s ease}
+.dra-fl{font:600 11px/1.3 var(--font-body);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.dra-fv{font:600 13px/1.4 var(--font-body);color:var(--ink);min-width:0}
+.dra-fv.is-empty{color:#B8B8C8;font-weight:500}
+.dra-f.is-read{border-color:var(--blue-300);box-shadow:0 0 0 3px rgba(49,103,202,.14)}
+.dra-f.is-read::after{content:"";position:absolute;left:0;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(111,160,245,.25),transparent);animation:draScan .7s linear infinite}
+@keyframes draScan{from{transform:translateX(-40%)}to{transform:translateX(330%)}}
+.dra-rec.is-busy .dra-rh::after{content:"AI working";margin-left:auto;padding:3px 9px;border-radius:999px;background:var(--blue-050);font:700 10px/1.4 var(--font-body);color:var(--blue-700);animation:draBlink 1s ease-in-out infinite}
+@keyframes draBlink{50%{opacity:.4}}
+.dra-side{display:flex;flex-direction:column;gap:10px;padding:16px;background:rgba(250,249,251,.75)}
+.dra-h{margin:0;font:700 10px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.dra-acts{display:grid;gap:6px}
+.dra-act{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:center;padding:9px 10px;border-radius:11px;border:1px solid var(--line);background:#fff;text-align:left;cursor:pointer;font:600 12.5px/1.3 var(--font-body);color:var(--ink);transition:border-color .2s ease,background-color .2s ease}
+.dra-act i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--blue-050);font:800 11px/1 var(--font-display);font-style:normal;color:var(--blue)}
+.dra-act em{font:600 10px/1.2 var(--font-body);font-style:normal;color:#A0501F;background:#FFF1E6;border-radius:999px;padding:3px 7px}
+.dra-act:hover{border-color:var(--blue-300)}
+.dra-act:focus-visible,.dra-gate button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.dra-act.is-run{animation:draRun .6s ease-out}
+@keyframes draRun{0%{box-shadow:0 0 0 0 rgba(49,103,202,.4)}100%{box-shadow:0 0 0 10px rgba(49,103,202,0)}}
+.dra-act.is-done i{background:var(--ok);color:#fff}
+.dra-gate{padding:12px;border-radius:12px;border:1.5px solid #F2C79B;background:#FFF8F0;animation:dmLog .45s var(--spring)}
+.dra-gate[hidden]{display:none}
+.dra-gate p{display:flex;align-items:center;gap:7px;margin:0 0 10px;font:600 12.5px/1.4 var(--font-body);color:#7A3E10}
+.dra-gate p .ic{width:16px;height:16px;flex:none}
+.dra-gate div{display:flex;gap:8px}
+.dra-gate button{height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font:700 12px/1 var(--font-body);color:var(--ink);cursor:pointer}
+.dra-gate [data-yes]{background:var(--ok);border-color:var(--ok);color:#fff}
+.dra-log{display:grid;gap:5px;margin:0;padding:0;list-style:none}
+.dra-l{display:grid;grid-template-columns:8px minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 9px;border-radius:9px;background:#fff;border:1px solid var(--line);font:500 11.5px/1.35 var(--font-body);color:var(--body);animation:dmLog .45s var(--spring)}
+.dra-l i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.dra-l time{font-size:10px;color:var(--muted)}
+.dra-l--ok i{background:var(--ok)}.dra-l--wait i{background:#E08A1E}.dra-l--no i{background:var(--red)}.dra-l--info i{background:#B8B8C8}
+@media (max-width:860px){.dra-wrap{grid-template-columns:minmax(0,1fr)}.dra-rec{border-right:0;border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.dra-f{grid-template-columns:minmax(0,1fr);gap:2px}}
+@media (prefers-reduced-motion:reduce){.dra-f.is-read::after,.dra-rec.is-busy .dra-rh::after{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .dra-rec.is-busy .dra-rh::after,
+  .dra-h,
+  .dra-act em,
+  .dra-l time{font-size:11px}
+}

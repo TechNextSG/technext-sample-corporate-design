@@ -1,0 +1,294 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: app-sales (/odoo/apps/sales) — Odoo Sales, quote to cash. Sales rose, Odoo purple, signed green. The title card
+   is a quotation (a header with its number, a signature line at the foot); the caption is a message on the customer portal;
+   buttons are price tags with a punched hole; the glance strip is the quotation's totals bar. */
+.ixw--app-sales{--ow-c:#E46E78;--sl-ink:#1B1F3B;--sl-rose:#E46E78;--sl-rose-l:#FDF0F2;--sl-pur:#714B67;--sl-ok:#1E9E6A;
+  --w-alt:#FCF6F7;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#FDF7F7,#F9DEE2 60%,#EDE5F3);--ii-ink:#1B1F3B;--ii-b:#E46E78;--ii-accent:#714B67;--ii-lip:#1B1F3B;--ii-ep-bg:#E46E78;--ii-ep-fg:#FFFFFF}
+.ixw--app-sales .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#FDF7F7 18%,#F5EAEC 62%,#E7EBF1 62%,#D6DDE7 100%)}
+
+/* ---------- the title card: a quotation ---------- */
+.ixw--app-sales .ixw-copy{position:relative;max-width:520px;margin-top:20px;padding:54px 30px 66px;border-radius:10px;background:#FFFFFF;
+  box-shadow:0 0 0 1.5px #F0D9DD,0 40px 70px -30px rgba(90,40,50,.3)}
+.ixw--app-sales .ixw-copy::before{content:"QUOTATION \00B7  S00042";position:absolute;left:0;right:0;top:0;height:34px;display:flex;align-items:center;padding-left:24px;border-radius:10px 10px 0 0;
+  background:var(--sl-pur);font:800 11.5px/1 var(--font-body);letter-spacing:.14em;color:#FFFFFF}
+.ixw--app-sales .ixw-copy::after{content:"\2713  Signed online";position:absolute;left:30px;right:30px;bottom:20px;padding-top:8px;border-top:1.5px solid #1B1F3B;font:700 12px/1.2 var(--font-body);color:var(--sl-ok)}
+.ixw--app-sales .ixw-copy h1{max-width:15ch}
+.ixw--app-sales .ixw-copy .hand{color:var(--sl-rose)}
+.ixw--app-sales .ixw-hint .ic{color:var(--sl-rose)}
+@media (max-width:767px){.ixw--app-sales .ixw-copy{padding:50px 20px 60px}.ixw--app-sales .ixw-copy::after{left:20px;right:20px}}
+
+/* ---------- the caption: a message on the customer portal ---------- */
+.ixw--app-sales .ixw-cap{border-radius:18px 18px 18px 6px;border:0;background:#FFFFFF;box-shadow:0 0 0 1.5px #F0D9DD,0 0 0 6px var(--sl-rose-l),0 26px 44px -22px rgba(90,40,50,.3)}
+.ixw--app-sales .ixw-cap::before{content:"CUSTOMER PORTAL";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:999px;background:var(--sl-rose);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.14em}
+.ixw--app-sales .ixw-cap-who b{color:#B34452}.ixw--app-sales .ixw-cap-txt b{color:var(--sl-pur)}
+.ixw--app-sales .ixw-cap-rec{background:var(--sl-rose-l);border:1px dashed #F0B4BC;color:#7A2E3A}
+
+/* ---------- buttons: price tags with a punched hole ---------- */
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:0;padding-left:34px;border-radius:0 10px 10px 0;
+  clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%);transition:translate .22s cubic-bezier(.34,1.45,.64,1),rotate .22s ease,filter .2s ease}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";position:absolute;left:14px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.15)}
+.ixw--app-sales main .btn-primary,.ixw--app-sales main .btn-primary:hover{color:#FFFFFF;background:var(--sl-pur)}
+.ixw--app-sales main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-sales main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--sl-ink);background:#FCE3E7}
+.ixw--app-sales main .btn-ghost::before{display:none}.ixw--app-sales main .btn-ghost .ic{color:#B34452}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){filter:drop-shadow(0 4px 0 rgba(74,46,68,.45))}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px;rotate:-1.5deg}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;rotate:0deg;filter:none;transition-duration:.06s}
+.ixw--app-sales .ixw-cta .btn-outline-white,.ixw--app-sales .ixw-cta .btn-outline-white:hover{color:#1B1F3B;background:#FFD84A}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--app-sales .ixw-ibtn{border:2px solid var(--sl-ink);box-shadow:0 3px 0 var(--sl-ink)}
+.ixw--app-sales .ixw-ibtn--play,.ixw--app-sales .ixw-ibtn--play:hover{background:var(--sl-rose);color:#FFFFFF}
+.ixw--app-sales .ixw-dots button.is-on{background:var(--sl-rose);box-shadow:0 0 0 1.5px var(--sl-ink)}
+.ixw--app-sales .ixw-peek{border-color:var(--sl-ink);box-shadow:0 3px 0 var(--sl-ink)}.ixw--app-sales .ixw-peek[aria-pressed="true"]{background:var(--sl-rose-l)}
+@media (prefers-reduced-motion:reduce){.ixw--app-sales main .btn:hover{rotate:0deg}}
+
+/* ---------- the glance strip: the quotation's totals bar ---------- */
+.ixw--app-sales .ow-strip{border-radius:10px;box-shadow:0 0 0 1.5px #F0D9DD,0 24px 44px -30px rgba(90,40,50,.3);background:linear-gradient(90deg,var(--sl-pur) 0 6px,#FFFFFF 6px)}
+.ixw--app-sales .ow-strip dt .ic{color:var(--sl-rose)}
+
+/* ---------- the end card ---------- */
+.ixw--app-sales main .cta{background:radial-gradient(circle at 88% 18%,rgba(228,110,120,.45),transparent 45%),linear-gradient(120deg,#4A2E44,#714B67)}
+
+.ixw--app-sales .ixw-copy .app-sub{margin:8px 0 10px}
+
+/* =====================================================================================================================
+   The sections below the hero: the showroom. Cream and blush walls with slats, an awning edge between sections, price-tag
+   badges, a receipt for the answer, a rail of hanging tickets, shop TVs for the videos, shop-window frames for the
+   screenshots, polaroids, receipt lines for the steps, hanging price tags for the company facts. Scoped to body.ixw--app-sales.
+   ===================================================================================================================== */
+.ixw--app-sales main .aw-sec{position:relative;background:repeating-linear-gradient(90deg,transparent 0 21px,rgba(228,110,120,.05) 21px 24px),#FFF9F6}
+.ixw--app-sales main .aw-sec.section--alt,.ixw--app-sales main .aw-band{background:repeating-linear-gradient(90deg,transparent 0 21px,rgba(194,78,93,.06) 21px 24px),#FCEDEE}
+.ixw--app-sales main .aw-sec.section--alt::before,.ixw--app-sales main .aw-band::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;
+  background:radial-gradient(circle at 18px 0,#E46E78 17px,transparent 17.5px) 0 0/72px 26px repeat-x,radial-gradient(circle at 54px 0,#FFFFFF 17px,transparent 17.5px) 0 0/72px 26px repeat-x;filter:drop-shadow(0 4px 3px rgba(120,30,40,.12))}
+.ixw--app-sales main .aw-sec .hand{color:#C24E5D}
+.ixw--app-sales main .aw-sec .sec-head h2::after,.ixw--app-sales main [data-aw="impl"] h2::after{content:"";display:block;width:96px;height:10px;margin-top:14px;background:radial-gradient(circle,#E0B04A 3px,transparent 3.5px) 0 50%/16px 10px repeat-x}
+.ixw--app-sales main .aw-sec .sec-head--row h2::after{display:none}
+.ixw--app-sales .aw-badge{position:relative;display:inline-grid;place-items:center;width:46px;height:30px;margin:0 12px 0 0;vertical-align:-8px;padding-left:10px;color:#FFFFFF;background:#E46E78;
+  clip-path:polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%);rotate:-8deg;transition:rotate .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-sales .aw-badge::before{content:"";position:absolute;left:9px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#FFF9F6}
+.ixw--app-sales .aw-badge .ic{width:16px;height:16px}
+.ixw--app-sales .sec-head:hover .aw-badge,.ixw--app-sales .reveal.is-in .aw-badge{rotate:6deg}
+.ixw--app-sales .cta .aw-badge{display:none}
+
+/* in one paragraph: a till receipt with a torn edge */
+.ixw--app-sales main .answer-box{max-width:none;padding:24px 28px 34px;border:0;border-radius:6px 6px 0 0;background:#FFFFFF;box-shadow:0 0 0 1.5px #F2D3D8,0 26px 50px -30px rgba(90,40,50,.35)}
+.ixw--app-sales main .answer-box::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(135deg,#FFFFFF 5px,transparent 5.5px) 0 0/14px 10px repeat-x,linear-gradient(225deg,#FFFFFF 5px,transparent 5.5px) 0 0/14px 10px repeat-x}
+.ixw--app-sales main .answer-h{background:#714B67;color:#FFFFFF;border-radius:4px}
+.ixw--app-sales main .answer-box p:not(.answer-h){font-size:14.5px;color:#2B3245}
+.ixw--app-sales main .answer-note{border-top:1px dashed #F0B4BC;padding-top:10px}.ixw--app-sales main .answer-note .ic{color:#E46E78}
+
+/* the quote-to-cash rail: six tickets hanging from a rail */
+.ixw--app-sales .aw-rail{position:relative;padding-top:26px}
+.ixw--app-sales .aw-rail::before{content:"";position:absolute;left:-10px;right:-10px;top:8px;height:10px;border-radius:6px;background:linear-gradient(180deg,#D5DCE6,#9AA6BC);box-shadow:0 3px 6px rgba(30,40,70,.2)}
+.ixw--app-sales .aw-tks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;margin:0;padding:0;list-style:none}
+.ixw--app-sales .aw-tk{position:relative;display:grid;align-content:start;gap:8px;padding:30px 22px 34px;background:#FFF7F0;box-shadow:0 0 0 1.5px #F2D3D8,0 24px 40px -26px rgba(90,40,50,.45);transform-origin:50% -20px;transition:rotate .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-sales .aw-tk:nth-child(odd){rotate:-1.2deg}.ixw--app-sales .aw-tk:nth-child(even){rotate:1deg}
+.ixw--app-sales .aw-tk:hover{rotate:0deg}
+.ixw--app-sales .aw-tk::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:10px;background:linear-gradient(135deg,#FFF7F0 5px,transparent 5.5px) 0 0/14px 10px repeat-x,linear-gradient(225deg,#FFF7F0 5px,transparent 5.5px) 0 0/14px 10px repeat-x}
+.ixw--app-sales .aw-pin{position:absolute;left:50%;top:-22px;width:16px;height:34px;margin-left:-8px;border-radius:4px;background:linear-gradient(90deg,#C78A2E,#E0B04A 50%,#C78A2E);box-shadow:0 2px 4px rgba(0,0,0,.2)}
+.ixw--app-sales .aw-tk:nth-child(3n+2) .aw-pin{background:linear-gradient(90deg,#B84E5C,#E46E78 50%,#B84E5C)}
+.ixw--app-sales .aw-tk:nth-child(3n) .aw-pin{background:linear-gradient(90deg,#5A3A54,#714B67 50%,#5A3A54)}
+.ixw--app-sales .aw-no{font:800 11.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#C24E5D}
+.ixw--app-sales .aw-st{display:flex;align-items:center;gap:10px}.ixw--app-sales .aw-st .ic,.ixw--app-sales .aw-st .oi{width:20px;height:20px;flex:none;color:#E46E78}
+.ixw--app-sales .aw-st b{font:800 1.12rem/1.2 var(--font-display);color:#1B1F3B}
+.ixw--app-sales .aw-say{font-size:14.5px;line-height:1.55;color:#3D4560}.ixw--app-sales .aw-say b{color:#714B67}
+.ixw--app-sales .aw-rec{margin-top:6px;padding-top:10px;border-top:1px dashed #E9B9BF;font:700 11px/1.4 ui-monospace,Consolas,monospace;color:#8A5A64;text-transform:uppercase;letter-spacing:.04em}
+.ixw--app-sales .aw-total{margin:44px auto 0;max-width:640px;padding:14px 22px;border-radius:999px;background:#714B67;color:#FFFFFF;text-align:center;font:700 15px/1.4 var(--font-body);box-shadow:0 6px 0 #4A2E44}
+.ixw--app-sales .aw-total b{color:#F6D88E}
+@media (max-width:960px){.ixw--app-sales .aw-tks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ixw--app-sales .aw-tks{grid-template-columns:1fr}.ixw--app-sales .aw-total{border-radius:14px}}
+
+/* the lifecycle demo: a gold-framed counter display */
+.ixw--app-sales main [data-aw="life"] .dm{border:0;border-radius:16px;box-shadow:0 0 0 3px #E0B04A,0 0 0 9px #FFF7F0,0 0 0 11px #F2D3D8,0 40px 70px -40px rgba(90,40,50,.45)}
+.ixw--app-sales main [data-aw="life"] .dm-head{background:repeating-linear-gradient(90deg,#E46E78 0 26px,#EE8B93 26px 52px);border-bottom:0}
+.ixw--app-sales main [data-aw="life"] .dm-title b{color:#FFFFFF}.ixw--app-sales main [data-aw="life"] .dm-title small{color:#FFE6E9}
+.ixw--app-sales main [data-aw="life"] .dm-note .ic{color:#E46E78}
+
+/* official videos: shop TVs */
+.ixw--app-sales main [data-aw="watch"] .video{border:0;border-radius:18px;box-shadow:0 0 0 10px #2A3142,0 0 0 12px #E0B04A,0 34px 50px -26px rgba(74,46,68,.6)}
+.ixw--app-sales main [data-aw="watch"] .videos{padding:14px 14px 30px}
+.ixw--app-sales main [data-aw="watch"] .videos--one{margin-inline:auto}
+.ixw--app-sales main .yt-play{background:#E46E78;box-shadow:0 0 0 6px rgba(255,255,255,.35),0 14px 34px -10px rgba(120,30,40,.7)}
+.ixw--app-sales main .yt:hover .yt-play{background:#C24E5D}
+
+/* section by section: shop windows under an awning, the kicker as a price tag */
+.ixw--app-sales main [data-aw="what"] .feats{gap:70px}
+.ixw--app-sales main [data-aw="what"] .feat-media{position:relative;border:0;border-radius:6px;padding:30px 12px 12px;background:#FFFFFF;box-shadow:0 0 0 1.5px #F2D3D8,0 30px 60px -34px rgba(90,40,50,.45)}
+.ixw--app-sales main [data-aw="what"] .feat-media::before{content:"";position:absolute;left:0;right:0;top:0;height:19px;border-radius:6px 6px 0 0;background:repeating-linear-gradient(90deg,#E46E78 0 20px,#FFFFFF 20px 40px);
+  -webkit-mask:linear-gradient(#000 0 0) 0 0/100% 9px no-repeat,radial-gradient(circle at 10px 0,#000 9.5px,transparent 10px) 0 9px/20px 10px repeat-x;mask:linear-gradient(#000 0 0) 0 0/100% 9px no-repeat,radial-gradient(circle at 10px 0,#000 9.5px,transparent 10px) 0 9px/20px 10px repeat-x}
+.ixw--app-sales main [data-aw="what"] .feat-media .zoom{display:block;overflow:hidden;border-radius:4px}
+.ixw--app-sales main [data-aw="what"] .card-kicker{position:relative;display:inline-flex;align-items:center;height:28px;padding:0 14px 0 24px;color:#FFFFFF;background:#714B67;clip-path:polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%);letter-spacing:.08em}
+.ixw--app-sales main [data-aw="what"] .card-kicker::before{content:"";position:absolute;left:10px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:#FFF9F6}
+.ixw--app-sales main [data-aw="what"] .feat-copy h3{font-size:1.6rem}
+.ixw--app-sales main [data-aw="what"] .checks .ic,.ixw--app-sales main [data-aw="impl"] .checks .ic{color:#E46E78}
+.ixw--app-sales main [data-aw="what"] .card{border:0;border-radius:4px 14px 14px 4px;padding:30px 28px 28px 40px;background:#FFFFFF;box-shadow:inset 8px 0 0 #E46E78,0 0 0 1.5px #F2D3D8,0 26px 46px -30px rgba(90,40,50,.4)}
+.ixw--app-sales main [data-aw="what"] .card::after{content:"FROM ODOO.COM";position:absolute;right:16px;top:14px;font:800 9px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#C9A0A8}
+.ixw--app-sales main [data-aw="what"] .card:hover{transform:translateY(-4px) rotate(.6deg)}
+
+/* inside the app: polaroids taped to the shop wall */
+.ixw--app-sales main [data-aw="screens"] .shots{padding:30px 8px 26px;gap:28px}
+.ixw--app-sales main [data-aw="screens"] .shot{position:relative;overflow:visible;border:0;border-radius:3px;padding:12px 12px 0;background:#FFFFFF;box-shadow:0 20px 36px -22px rgba(90,40,50,.55);rotate:1.4deg;transition:rotate .35s cubic-bezier(.34,1.45,.64,1)}
+.ixw--app-sales main [data-aw="screens"] .shot:nth-child(even){rotate:-1.6deg}
+.ixw--app-sales main [data-aw="screens"] .shot:hover{rotate:0deg}
+.ixw--app-sales main [data-aw="screens"] .shot::before{content:"";position:absolute;z-index:2;left:50%;top:-12px;width:84px;height:24px;margin-left:-42px;background:rgba(246,216,142,.75);rotate:-3deg;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.ixw--app-sales main [data-aw="screens"] .shot .zoom{display:block;overflow:hidden}
+.ixw--app-sales main [data-aw="screens"] .shot figcaption{padding:14px 4px 16px;font:600 12.5px/1.3 var(--font-body);color:#8A5A64;text-align:center}
+
+/* how TechNext implements it: receipt lines with dotted leaders */
+.ixw--app-sales main .aw-steps{counter-reset:ln;gap:0;margin:0;padding:22px 24px 30px;border-radius:6px 6px 0 0;background:#FFFFFF;box-shadow:0 0 0 1.5px #F2D3D8,0 26px 46px -30px rgba(90,40,50,.4);position:relative}
+.ixw--app-sales main .aw-steps::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(135deg,#FFFFFF 5px,transparent 5.5px) 0 0/14px 10px repeat-x,linear-gradient(225deg,#FFFFFF 5px,transparent 5.5px) 0 0/14px 10px repeat-x}
+.ixw--app-sales main .aw-steps li{counter-increment:ln;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px dotted #E9B9BF;font-family:var(--font-body)}
+.ixw--app-sales main .aw-steps li::before{content:counter(ln,decimal-leading-zero) " ×1";flex:none;width:48px;font:800 12px/1.5 ui-monospace,Consolas,monospace;color:#C24E5D}
+.ixw--app-sales main .aw-steps li .ic{order:3;margin-left:auto}
+
+/* who sets up your counter: price tags on strings */
+.ixw--app-sales .aw-facts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin:0;padding:30px 0 0;list-style:none;position:relative}
+.ixw--app-sales .aw-facts::before{content:"";position:absolute;left:0;right:0;top:6px;height:6px;border-radius:3px;background:#B0707B}
+.ixw--app-sales .aw-fact{position:relative;display:grid;align-content:start;gap:6px;padding:24px 14px 18px 26px;background:#FFFFFF;clip-path:polygon(0 14px,14px 0,100% 0,100% 100%,0 100%);box-shadow:inset 0 0 0 1.5px #F2D3D8;transform-origin:50% -24px;animation:awSway 5s ease-in-out infinite;animation-delay:calc(var(--i) * -.8s)}
+.ixw--app-sales .aw-fact:nth-child(odd){background:#FFF1D6}.ixw--app-sales .aw-fact:nth-child(3n){background:#FDE3E7}
+.ixw--app-sales .aw-fact::before{content:"";position:absolute;left:10px;top:10px;width:8px;height:8px;border-radius:50%;background:#FFF9F6;box-shadow:inset 0 0 0 1.5px #C9A0A8}
+.ixw--app-sales .aw-fact b{font:800 1.25rem/1.15 var(--font-display);color:#714B67}
+.ixw--app-sales .aw-fact span{font:600 13px/1.4 var(--font-body);color:#5C4450}
+@keyframes awSway{0%,100%{rotate:-1.5deg}50%{rotate:1.5deg}}
+@media (max-width:1100px){.ixw--app-sales .aw-facts{grid-template-columns:repeat(3,minmax(0,1fr))}.ixw--app-sales .aw-facts::before{display:none}}
+@media (max-width:560px){.ixw--app-sales .aw-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* works with: counter tickets */
+.ixw--app-sales main [data-aw="works"] .app{border:0;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 1.5px #F2D3D8,0 4px 0 #F2D3D8;-webkit-mask:radial-gradient(circle at 0 50%,transparent 9px,#000 9.5px);mask:radial-gradient(circle at 0 50%,transparent 9px,#000 9.5px);padding:16px 16px 16px 22px}
+.ixw--app-sales main [data-aw="works"] .app:hover{transform:translateY(-3px) rotate(-.8deg)}
+.ixw--app-sales main [data-aw="works"] .app > .ic{color:#E46E78}
+
+/* the end card: the awning, and a signed receipt */
+.ixw--app-sales main .cta{padding-top:74px;background:repeating-linear-gradient(90deg,#E46E78 0 36px,#FFFFFF 36px 72px) 0 0/100% 26px no-repeat,radial-gradient(circle at 88% 18%,rgba(228,110,120,.45),transparent 45%),linear-gradient(120deg,#4A2E44,#714B67)}
+.ixw--app-sales main .cta .hand{color:#F9C5CB}
+.ixw--app-sales main .cta .btn-white{color:#4A2E44;background:#FFFFFF;border:0;box-shadow:0 4px 0 #E46E78}
+.ixw--app-sales main .cta .btn-outline-white{color:#1B1F3B;background:#F6D88E;border:0;box-shadow:0 4px 0 #C78A2E}
+.ixw--app-sales .aw-cta-art{position:absolute;right:31%;top:44px;z-index:0;pointer-events:none;rotate:8deg}
+.ixw--app-sales .aw-receipt{display:grid;gap:7px;width:118px;padding:14px 12px 16px;background:#FFF7F0;box-shadow:0 14px 24px -10px rgba(0,0,0,.4);animation:awPrint 4s ease-in-out infinite}
+.ixw--app-sales .aw-receipt b{font:800 13px/1 ui-monospace,Consolas,monospace;color:#714B67}
+.ixw--app-sales .aw-receipt i{display:block;height:4px;border-radius:2px;background:#F2D3D8}.ixw--app-sales .aw-receipt i:nth-of-type(2){width:70%}
+.ixw--app-sales .aw-receipt em{font:800 10px/1.2 var(--font-body);font-style:normal;color:#1E9E6A}
+@keyframes awPrint{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@media (max-width:1100px){.ixw--app-sales .aw-cta-art{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--app-sales .aw-fact,.ixw--app-sales .aw-receipt{animation:none}}
+
+/* section heads: the badge beside the handwriting (no watermark decorations beside the heads) */
+.ixw--app-sales main .aw-sec>.container{position:relative}
+.ixw--app-sales main .aw-badge+.hand{display:inline-block;vertical-align:middle}
+.ixw--app-sales main [data-aw="what"] .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+/* ======== round 4: section fixes ======== */
+/* the facts: six price tags hung straight and level on one rail, 3 by 2, equal heights (no sway, no tilt) */
+.ixw--app-sales .aw-facts{align-items:stretch;padding-top:0}
+.ixw--app-sales .aw-facts::before{display:none}
+.ixw--app-sales .aw-fact{animation:none;rotate:0deg;transform:none;min-height:96px;padding:22px 20px 18px 34px;align-content:center;box-shadow:inset 0 0 0 1.5px #F2D3D8,inset 4px 0 0 #E46E78}
+.ixw--app-sales .aw-fact::before{left:12px;top:50%;margin-top:-4px}
+.ixw--app-sales .aw-fact b{font-size:1.2rem}
+@media (min-width:561px){.ixw--app-sales .aw-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+@media (min-width:900px){.ixw--app-sales main [data-aw="works"] .apps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ======== round 4: the hero controls: price tags with a pointed end and a punched hole, pills and caption controls ======== */
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){clip-path:none;overflow:visible;height:52px;padding:0 20px 0 30px;margin-left:16px;border:0;border-radius:3px 10px 10px 3px;box-shadow:none;
+  filter:drop-shadow(0 4px 0 var(--slb-lip));transition:translate .22s cubic-bezier(.34,1.45,.64,1),rotate .25s cubic-bezier(.34,1.45,.64,1),filter .2s ease}
+.ixw--app-sales main .btn-primary,.ixw--app-sales main .btn-primary:hover{--slb-lip:#4A2E44;color:#FFFFFF;background:#714B67}
+.ixw--app-sales main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--app-sales main :is(.btn-ghost,.ixw-cta .btn-white):hover{--slb-lip:#E2A2AC;color:#1B1F3B;background:#FDE7EA}
+.ixw--app-sales main .ixw-cta .btn-outline-white,.ixw--app-sales main .ixw-cta .btn-outline-white:hover{--slb-lip:#B58A22;color:#1B1F3B;background:#FFD84A}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::before{content:"";display:block;position:absolute;inset:auto;left:-13px;top:50%;width:36px;height:36px;margin-top:-18px;border-radius:4px;background:inherit;transform:scaleX(.62) rotate(45deg);transform-origin:50% 50%;z-index:-1;transition:none}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";inset:auto;left:6px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 1px 2px rgba(0,0,0,.25);transform:none;transition:none}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px;rotate:-1.5deg;filter:drop-shadow(0 6px 0 var(--slb-lip)) drop-shadow(0 14px 14px rgba(113,75,103,.25))}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover::after{transform:none}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;rotate:0deg;filter:drop-shadow(0 1px 0 var(--slb-lip));transition-duration:.06s}
+.ixw--app-sales main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #E46E78;outline-offset:5px}
+.ixw--app-sales main .btn-primary .ic{width:26px;height:26px;padding:5px;border-radius:50%;background:rgba(255,255,255,.16)}
+.ixw--app-sales .ixw-copy .actions{gap:12px 8px}
+
+.ixw--app-sales .ixw-ep-tag{height:30px;padding:0 13px 0 6px;box-shadow:0 3px 0 #0B0B22;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--app-sales .ixw-ep-tag:hover{translate:0 -2px;box-shadow:0 5px 0 #0B0B22}
+.ixw--app-sales .ixw-ep-tag:active{translate:0 2px;box-shadow:0 1px 0 #0B0B22;transition-duration:.06s}
+.ixw--app-sales .ixw-ep-tag:focus-visible{outline:3px solid #E46E78;outline-offset:3px}
+.ixw--app-sales .ixw-ep>span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#FDF0F2;box-shadow:inset 0 0 0 1.5px #C24E5D33;font:800 12.5px/1 var(--font-body);color:#1B1F3B}
+.ixw--app-sales .ixw-cap .ixw-ibtn{width:38px;height:38px;border:2px solid #1B1F3B;background:#FFFFFF;color:#1B1F3B;box-shadow:0 3px 0 #1B1F3B;transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .18s ease,color .18s ease}
+.ixw--app-sales .ixw-cap .ixw-ibtn:hover{translate:0 -2px;background:#FDF0F2;color:#1B1F3B;border-color:#1B1F3B;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-sales .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-sales .ixw-cap .ixw-ibtn:focus-visible,.ixw--app-sales .ixw-dots button:focus-visible,.ixw--app-sales .ixw-peek:focus-visible{outline:3px solid #E46E78;outline-offset:3px}
+.ixw--app-sales .ixw-cap .ixw-ibtn--play,.ixw--app-sales .ixw-cap .ixw-ibtn--play:hover{width:46px;height:46px;background:#E46E78;color:#FFFFFF}
+.ixw--app-sales .ixw-cap .ixw-ibtn--play:hover{filter:brightness(1.06)}
+.ixw--app-sales .ixw-dots{gap:6px;padding:4px 2px}
+.ixw--app-sales .ixw-dots button{width:9px;height:9px;background:#D5DCE6;box-shadow:inset 0 0 0 1px rgba(27,31,59,.06);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,translate .2s ease}
+.ixw--app-sales .ixw-dots button:hover{background:#C24E5D;translate:0 -1px}
+.ixw--app-sales .ixw-dots button.is-on{width:26px;background:#E46E78;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--app-sales .ixw-peek{height:40px;padding:0 16px 0 13px;border:2px solid #1B1F3B;color:#1B1F3B;background:#FFFFFF;box-shadow:0 3px 0 #1B1F3B}
+.ixw--app-sales .ixw-peek::before{color:#C24E5D}
+.ixw--app-sales .ixw-peek:hover{translate:0 -2px;background:#FDF0F2;box-shadow:0 5px 0 #1B1F3B}
+.ixw--app-sales .ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--app-sales .ixw-peek[aria-pressed="true"]{background:#FDE7EA}
+.ixw--app-sales .ixw-peek[aria-pressed="true"]::before{color:#1B1F3B}
+@media (prefers-reduced-motion:reduce){.ixw--app-sales :is(.ixw-ep-tag,.ixw-ibtn,.ixw-peek,.ixw-dots button,.btn){transition:none}}
+
+/* ======== CALM LAYER (9 Oct 2026): 50% TechNext base, 50% the showroom counter. One quiet accent (#D2596A), white cards, no tilts,
+   tape, pins, rings or lips; each section keeps one or two themed touches (a rose rule under the heads, the six numbered quote tickets, line numbers on the steps). ======== */
+body.ixw--app-sales{--calm-accent:#D2596A;--calm-accent-ink:#A63A4B;--calm-accent-line:#F2C9CF;--calm-accent-wash:#FCF6F7;--calm-card-rule:3px solid #D2596A}
+body.ixw--app-sales main .aw-sec,body.ixw--app-sales main .aw-sec:nth-of-type(odd){background:#FFFFFF!important}
+body.ixw--app-sales main .aw-sec.section--alt,body.ixw--app-sales main .aw-band{background:#FCF6F7!important}
+body.ixw--app-sales main .aw-sec::before,body.ixw--app-sales main .aw-sec+.aw-sec::before,body.ixw--app-sales main .aw-sec.section--alt::before{display:none!important}
+body.ixw--app-sales main .aw-badge{display:none!important}
+body.ixw--app-sales main .aw-sec .sec-head h2::after,body.ixw--app-sales main [data-aw="impl"] h2::after{content:""!important;display:block!important;width:56px!important;height:3px!important;margin-top:16px!important;background:#D2596A!important;border-radius:2px}
+body.ixw--app-sales main [data-aw="cta"] h2::after,body.ixw--app-sales main .aw-sec .sec-head--row h2::after{display:none!important}
+/* in one paragraph: a plain white card with the accent on its left edge */
+body.ixw--app-sales main .answer-box{padding:22px 26px!important;border:1px solid var(--calm-line)!important;border-left:3px solid #D2596A!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-sales main .answer-box::before,body.ixw--app-sales main .answer-box::after{display:none!important}
+body.ixw--app-sales main .answer-h{background:#FCF6F7!important;color:#A63A4B!important;box-shadow:none!important;border:0!important}
+/* the lifecycle demo: one clean panel, a thin accent rule on top */
+body.ixw--app-sales main [data-aw="life"] .dm{border:1px solid var(--calm-line)!important;border-top:3px solid #D2596A!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+body.ixw--app-sales main [data-aw="life"] .dm-head{background:#FFFFFF!important;border-bottom:1px solid var(--calm-line)!important}
+body.ixw--app-sales main [data-aw="life"] .dm-title b{color:#1B1F3B!important}body.ixw--app-sales main [data-aw="life"] .dm-title small{color:#5C6B7A!important}
+/* official videos: plain rounded frames */
+body.ixw--app-sales main [data-aw="watch"] .video{border:1px solid var(--calm-line)!important;border-radius:14px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;translate:none!important;overflow:hidden}
+body.ixw--app-sales main [data-aw="watch"] .video::before,body.ixw--app-sales main [data-aw="watch"] .video::after{display:none!important}
+body.ixw--app-sales main [data-aw="watch"] .videos{gap:24px!important;padding:0!important}
+body.ixw--app-sales main .yt-play{background:#3167CA!important;box-shadow:0 10px 24px -10px rgba(31,63,130,.6)!important}
+/* section by section: screenshots in a plain white frame, the kicker as a small accent label */
+body.ixw--app-sales main [data-aw="what"] .feat-media{rotate:none!important;padding:10px!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-sales main [data-aw="what"] .feat-media::before,body.ixw--app-sales main [data-aw="what"] .feat-media::after{display:none!important}
+body.ixw--app-sales main [data-aw="what"] .card-kicker{display:inline-block!important;padding:0!important;border:0!important;background:none!important;rotate:none!important;clip-path:none!important;color:#A63A4B!important;font:800 12px/1.4 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase}
+body.ixw--app-sales main [data-aw="what"] .card-kicker::before,body.ixw--app-sales main [data-aw="what"] .card-kicker::after{display:none!important}
+body.ixw--app-sales main [data-aw="what"] .feat-copy h3{font-size:1.45rem!important}
+body.ixw--app-sales main [data-aw="what"] .card{padding:28px 26px!important;background:#FFFFFF!important;rotate:none!important}
+body.ixw--app-sales main [data-aw="what"] .card::before,body.ixw--app-sales main [data-aw="what"] .card::after{display:none!important}
+body.ixw--app-sales main [data-aw="what"] .card:hover{transform:translateY(-2px)!important}
+body.ixw--app-sales main :is([data-aw="what"],[data-aw="impl"]) .checks .ic{color:#D2596A!important}
+/* inside the app: a straight row of framed screenshots */
+body.ixw--app-sales main [data-aw="screens"] .shots{padding:0!important;gap:20px!important}
+body.ixw--app-sales main [data-aw="screens"] .shot{rotate:none!important;translate:none!important;padding:10px 10px 0!important;border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--app-sales main [data-aw="screens"] .shot::before,body.ixw--app-sales main [data-aw="screens"] .shot::after{display:none!important}
+body.ixw--app-sales main [data-aw="screens"] .shot figcaption{border-top:1px solid var(--calm-line)!important;font:500 12.5px/1.4 var(--font-body)!important;color:#5C6B7A!important;background:none!important}
+/* how TechNext implements it: a white list card, numbered in the accent */
+body.ixw--app-sales main .aw-steps{padding:6px 0!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;background:#FFFFFF!important;box-shadow:var(--calm-shadow)!important;clip-path:none!important}
+body.ixw--app-sales main .aw-steps::before,body.ixw--app-sales main .aw-steps::after{display:none!important}
+body.ixw--app-sales main .aw-steps li{border-bottom:1px solid var(--calm-line)!important;padding:16px 22px!important;background:none!important}
+body.ixw--app-sales main .aw-steps li:last-child{border-bottom:0!important}
+body.ixw--app-sales main .aw-steps li::before{display:none!important}
+body.ixw--app-sales main .aw-steps .aw-n{display:grid;place-items:center;flex:none;min-width:48px;height:28px;padding:0 8px;border-radius:8px;background:#FCF6F7;color:#A63A4B;font:800 12px/1 var(--font-body);letter-spacing:.04em}
+body.ixw--app-sales main .aw-steps li .ic{order:3;margin-left:auto;width:20px!important;height:20px!important;padding:0!important;background:none!important;color:#D2596A!important}
+/* works with: plain app cards with a thin accent edge */
+body.ixw--app-sales main [data-aw="works"] .app{border:1px solid var(--calm-line)!important;border-radius:14px!important;background:#FFFFFF!important;border-left:3px solid #D2596A!important;box-shadow:none!important;rotate:none!important;clip-path:none!important}
+body.ixw--app-sales main [data-aw="works"] .app::before,body.ixw--app-sales main [data-aw="works"] .app::after{display:none!important}
+body.ixw--app-sales main [data-aw="works"] .app:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow)!important}
+/* the end card: the TechNext band, no rings */
+body.ixw--app-sales main .cta{box-shadow:0 30px 60px -36px rgba(30,70,145,.6)!important}
+body.ixw--app-sales main .cta .btn-white{box-shadow:none!important}body.ixw--app-sales main .cta .btn-outline-white{border:1px solid rgba(255,255,255,.7)!important}
+body.ixw--app-sales main [data-aw="cta"] .hand{color:#FFFFFF!important}
+/* buttons: the kit's flat buttons, without the world's tag / binding / barcode shapes */
+body.ixw--app-sales .btn{padding:0 22px!important;margin:0!important;clip-path:none!important;filter:none!important;rotate:none!important;translate:none!important;overflow:visible!important}
+body.ixw--app-sales .btn::before,body.ixw--app-sales .btn::after{display:none!important}
+body.ixw--app-sales .btn-primary .ic{width:18px!important;height:18px!important;padding:0!important;background:none!important}
+
+/* themed touch: the quote-to-cash tickets: straight white tickets, rose top rule, one torn receipt foot each */
+body.ixw--app-sales .aw-rail::before,body.ixw--app-sales .aw-pin{display:none!important}
+body.ixw--app-sales .aw-tk{rotate:none!important;transform:none!important;animation:none!important;background:#FFFFFF!important;border:1px solid var(--calm-line);border-top:3px solid #D2596A;border-radius:14px!important;box-shadow:var(--calm-shadow)!important;padding:22px 22px 26px!important}
+body.ixw--app-sales .aw-tk::after{display:none!important}
+body.ixw--app-sales .aw-tk::before{display:none!important}
+body.ixw--app-sales .aw-no{font:800 12px/1 var(--font-body)!important;letter-spacing:.1em;color:#A63A4B!important;background:none!important;rotate:none!important}
+body.ixw--app-sales .aw-rec{font:600 12px/1.4 var(--font-body)!important;color:#5C6B7A!important;border-top:1px solid var(--calm-line)!important;padding-top:10px}
+body.ixw--app-sales .aw-total{rotate:none!important;background:#FFFFFF!important;color:#1B1F3B!important;border:1px solid var(--calm-line)!important;box-shadow:none!important;border-radius:999px!important}
+body.ixw--app-sales .aw-total b{color:#A63A4B!important}

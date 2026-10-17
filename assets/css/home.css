@@ -1,0 +1,224 @@
+/* Homepage sections below the hero carousel (assets/css/home.css), Oct 2026: "50% the TechNext base, 50% each page's own
+   theme". TechNext first: white cards with a 1px line, 16px radius and soft shadow, brand-blue links and buttons, Plus Jakarta
+   Sans + Inter, white / #F7F9FD section washes. Theme second: each card shows its world's still in a frame, its accent as a
+   top rule and icon tint, the world's own icon and one small touch (hub name, case-file tab, newsroom masthead).
+   The hero carousel is styled by hero.css. The earlier illustrated sections are kept in _src/legacy/home-carousel.css. */
+
+.is-home{--hc-r:16px;--hc-alt:#F7F9FD;--hc-shadow:0 1px 2px rgba(31,31,61,.05),0 10px 28px -20px rgba(31,31,61,.28);--hc-shadow-h:0 2px 6px rgba(31,31,61,.06),0 20px 40px -26px rgba(31,31,61,.34)}
+.is-home .reveal{transform:translateY(10px)}
+.is-home .reveal.is-in{transform:none}
+.is-home .section{padding:96px 0}
+
+/* ---------------------------------------------------------------- shared heads */
+.is-home .hc-eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 12.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+.is-home .hc-eyebrow::before{content:"";width:18px;height:2px;border-radius:2px;background:var(--blue)}
+.is-home .hc-head{max-width:720px;margin-bottom:44px}
+.is-home .hc-head h2{font-size:clamp(1.85rem,1.3rem + 1.7vw,2.6rem);line-height:1.12;letter-spacing:-.025em;margin:0}
+.is-home .hc-lead-s{margin:14px 0 0;font-size:1.06rem;line-height:1.6;color:var(--body);max-width:60ch}
+.is-home .hc-head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;max-width:none}
+.is-home .hc-head--row > div:first-child{max-width:700px}
+.is-home .hc-head--row > .btn-link,.is-home .hc-head-links{flex:none;margin-bottom:6px}
+.is-home .hc-head-links{display:flex;flex-wrap:wrap;gap:12px 28px}
+.is-home .hc-stretch{color:inherit;text-decoration:none}
+.is-home .hc-stretch::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:0}
+.is-home .hc-stretch:hover{text-decoration:none}
+.is-home .hc-stretch:focus-visible{outline:none}
+.is-home .hc-stretch:focus-visible::after{outline:2px solid var(--blue);outline-offset:2px}
+
+.is-home .hc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+
+/* ---------------------------------------------------------------- where to start: path cards */
+
+.is-home .hc-paths .hc-head{text-align:center;margin:0 auto 44px}
+.is-home .hc-paths .hc-head h2{max-width:22ch;margin:0 auto}
+.is-home .hc-paths .hc-eyebrow{font-size:14px}
+.is-home .hc-sub{position:relative;z-index:1;list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 22px;padding:0}
+.is-home .hc-sub a{display:inline-flex;align-items:center;height:30px;padding:0 10px;border-radius:8px;background:var(--alt);border:1px solid var(--line);font:500 13px/1 var(--font-body);color:var(--ink);text-decoration:none;transition:border-color .15s ease,color .15s ease,background-color .15s ease}
+.is-home .hc-sub a:hover{border-color:var(--blue-100);background:var(--blue-050);color:var(--blue-700)}
+.is-home .hc-path-go{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font:600 15px/1 var(--font-body);color:var(--blue)}
+.is-home .hc-path-go .ic{width:16px;height:16px;transition:transform .25s var(--ease-out)}
+.is-home .hc-path:hover .hc-path-go .ic{transform:translateX(3px)}
+.is-home .hc-paths-alt{margin:32px 0 0;text-align:center;font-size:15.5px;color:var(--body)}
+.is-home .hc-paths-alt a{display:inline-flex;align-items:center;gap:5px;font-weight:600;margin:0 6px}
+.is-home .hc-paths-alt a .ic{width:15px;height:15px}
+.is-home .hc-paths-alt > span{color:var(--muted)}
+
+/* ---------------------------------------------------------------- how we work: numbered row */
+.is-home .hc-step:hover .hc-path-go .ic{transform:translateX(3px)}
+
+/* ---------------------------------------------------------------- industries: brand-styled grid of 8 */
+
+/* ---------------------------------------------------------------- why TechNext: proof + offices */
+.is-home .hc-why{background:var(--hc-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.is-home .hc-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:var(--hc-r);box-shadow:var(--hc-shadow);margin-bottom:24px}
+.is-home .hc-stat{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:26px 28px;border-left:1px solid var(--line)}
+.is-home .hc-stat:first-child{border-left:0}
+.is-home .hc-stat b{font:800 2.5rem/1 var(--font-display);color:var(--blue);letter-spacing:-.03em}
+.is-home .hc-stat span{font-size:14.5px;line-height:1.45;color:var(--body)}
+.is-home .hc-stat--odoo img{display:block;height:44px;width:auto}
+.is-home .hc-offices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.is-home .hc-office{display:flex;flex-direction:column;gap:8px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--hc-r);text-decoration:none;color:var(--body);transition:transform .25s var(--ease-out),border-color .2s ease,box-shadow .25s ease}
+.is-home .hc-office:hover{text-decoration:none;transform:translateY(-2px);border-color:var(--blue-100);box-shadow:var(--hc-shadow-h)}
+.is-home .hc-office-tag{display:inline-flex;align-items:center;gap:6px;font:700 12px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.is-home .hc-office-tag .ic{width:15px;height:15px}
+.is-home .hc-office b{font:700 1.15rem/1.25 var(--font-display);color:var(--ink)}
+.is-home .hc-office p{margin:0;font-size:15px;line-height:1.6}
+.is-home .hc-office small{font-size:13.5px;color:var(--muted);line-height:1.5}
+.is-home .hc-office-go{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font:600 14.5px/1.3 var(--font-body);color:var(--blue)}
+.is-home .hc-office-go .ic{width:15px;height:15px;flex:none}
+
+/* ---------------------------------------------------------------- blog */
+.is-home .hc-posts{gap:20px}
+.is-home .hc-posts .post-card{border-radius:var(--hc-r);box-shadow:var(--hc-shadow)}
+.is-home .hc-posts .post-card:hover{transform:translateY(-2px);border-color:var(--blue-100);box-shadow:var(--hc-shadow-h)}
+
+/* ---------------------------------------------------------------- FAQ */
+.is-home .hc-faq{background:var(--hc-alt);border-top:1px solid var(--line)}
+.is-home .hc-faq-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 64px;align-items:start}
+.is-home .hc-faq-side h2{font-size:clamp(1.85rem,1.3rem + 1.7vw,2.6rem);line-height:1.12;letter-spacing:-.025em;margin:0}
+.is-home .hm-pal-search{display:flex;align-items:center;gap:10px;height:52px;padding:0 16px;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:12px;transition:border-color .2s ease,box-shadow .2s ease}
+.is-home .hm-pal-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-050)}
+.is-home .hm-pal-search > .ic{width:18px;height:18px;color:var(--muted);flex:none}
+.is-home .hm-pal-search input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;font:500 15px/1 var(--font-body);color:var(--ink)}
+.is-home .hm-pal-count{font:500 13px/1 var(--font-body);color:var(--muted);white-space:nowrap}
+.is-home .hm-pal .faq{max-width:none}
+.is-home .hm-pal .faq details{border-radius:12px}
+.is-home .hm-pal-empty{margin:12px 2px 0;font-size:15px}
+
+/* ---------------------------------------------------------------- closing call: the brand blue card */
+.is-home .hc-cta-sec{padding:96px 0}
+.is-home .hc-cta{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px 48px;align-items:center;padding:56px;border-radius:24px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-700) 100%);color:#fff}
+.is-home .hc-cta::after{content:"";position:absolute;right:-40px;bottom:-60px;width:300px;height:255px;background:url(../img/logo-plane.png) center/contain no-repeat;opacity:.1;filter:brightness(0) invert(1);pointer-events:none}
+.is-home .hc-cta > *{position:relative;z-index:1}
+.is-home .hc-cta .hc-eyebrow{color:#fff;opacity:.85}
+.is-home .hc-cta .hc-eyebrow::before{background:#fff}
+.is-home .hc-cta h2{color:#fff;font-size:clamp(1.9rem,1.3rem + 1.8vw,2.7rem);line-height:1.1;letter-spacing:-.025em;margin:0 0 14px}
+.is-home .hc-cta p{margin:0;color:rgba(255,255,255,.88);font-size:1.06rem;line-height:1.6;max-width:52ch}
+.is-home .hc-cta-list{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.is-home .hc-cta-list li{display:flex;align-items:center;gap:10px;font:600 16px/1.3 var(--font-body);color:#fff}
+.is-home .hc-cta-list .ic{width:20px;height:20px;padding:3px;border-radius:50%;background:rgba(255,255,255,.18);flex:none}
+.is-home .hc-cta .hc-actions{margin-top:0;gap:10px}
+@media (min-width:1024px){.is-home .hc-cta .hc-actions{flex-wrap:nowrap}.is-home .hc-cta .hc-actions .btn{padding:0 20px}}
+
+/* ---------------------------------------------------------------- responsive */
+
+@media (max-width:1023px){
+  .is-home .hc-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .is-home .hc-stat:nth-child(3){border-left:0}
+  .is-home .hc-stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .is-home .hc-offices{grid-template-columns:1fr}
+  .is-home .hc-faq-in,.is-home .hc-cta{grid-template-columns:1fr}
+  .is-home .hc-cta{padding:44px 36px}
+  .is-home .post-cards.hc-posts{grid-template-columns:1fr 1fr}
+}
+@media (max-width:767px){
+  .is-home .section,.is-home .hc-cta-sec{padding:56px 0}
+  .is-home .hc-head{margin-bottom:28px}
+  .is-home .hc-head--row{flex-direction:column;align-items:flex-start;gap:16px}
+  .is-home .hc-head-links{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:12px 24px}
+  .is-home .hc-paths .hc-head{text-align:left;margin-left:0}
+  .is-home .hc-paths .hc-head h2{margin:0}
+  .is-home .post-cards.hc-posts{grid-template-columns:1fr}
+  .is-home .hc-paths-alt{text-align:left}
+  .is-home .hc-paths-alt a{margin:0 6px 0 0}
+  .is-home .hc-cta{padding:36px 22px;border-radius:20px}
+  .is-home .hc-cta .hc-actions .btn{flex:1 1 100%}
+}
+@media (max-width:560px){
+  .is-home .hc-actions .btn{flex:1 1 100%}
+  .is-home .hc-stat{padding:20px 18px}
+  .is-home .hc-stat b{font-size:2rem}
+  .is-home .hc-stat--odoo img{height:36px}
+}
+
+/* ================================================================ balance pass (Oct 2026): "50% TechNext base, 50% each
+   page's own theme". Every card keeps the TechNext card (white, 1px line, 16px radius, blue links); its world shows as a
+   framed still, an accent top rule, the world's own icon and one small themed touch (hub name, case-file tab). */
+.is-home .hc-thumb{position:relative;display:block;margin:10px 10px 0;border-radius:10px;overflow:hidden;aspect-ratio:800/422;background:var(--ac-w,#F2F5FB)}
+.is-home .hc-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+.is-home :is(.hc-path,.hc-step,.hc-ind):hover .hc-thumb img{transform:scale(1.03)}
+.is-home :is(.hc-path,.hc-step,.hc-ind){--ac:var(--blue);--ac-t:var(--blue-700);--ac-w:var(--blue-050);position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--hc-r);box-shadow:var(--hc-shadow);overflow:hidden;text-decoration:none;color:var(--body);transition:transform .25s var(--ease-out),border-color .2s ease,box-shadow .25s ease}
+.is-home :is(.hc-path,.hc-step,.hc-ind)::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--ac);z-index:1}
+.is-home :is(.hc-path,.hc-step,.hc-ind):hover{text-decoration:none;transform:translateY(-2px);border-color:#d5d9e6;box-shadow:var(--hc-shadow-h)}
+
+/* path cards */
+.is-home .hc-path-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.is-home .hc-path-b{display:flex;flex-direction:column;flex:1;padding:18px 20px 22px}
+.is-home .hc-path-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.is-home .hc-path-ic .ic{display:block;width:34px;height:34px}
+.is-home .hc-world{font:700 11.5px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--ac-t)}
+.is-home .hc-path h3{font-size:1.18rem;line-height:1.25;margin:0 0 8px}
+.is-home .hc-path p{margin:0;font-size:14.5px;line-height:1.6}
+.is-home .hc-path .hc-sub{margin:16px 0 20px}
+.is-home .hc-path .hc-sub a:hover{border-color:var(--ac);background:var(--ac-w);color:var(--ac-t)}
+.is-home .hc-path--erp{--ac:#8A4F7D;--ac-t:#6E3D63;--ac-w:#FBF4EA}
+.is-home .hc-path--ai{--ac:#0E9384;--ac-t:#0B6F64;--ac-w:#EEF7F3}
+.is-home .hc-path--mkt{--ac:#2F62C0;--ac-t:#244E9C;--ac-w:#F1F8FC}
+.is-home .hc-path--tech{--ac:#D9901A;--ac-t:#8A560B;--ac-w:#F7F2EA}
+
+/* how we work: each step in its page's colour, a still and a case-file style tab */
+.is-home .hc-step-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.is-home .hc-tab{position:absolute;left:12px;bottom:0;padding:6px 10px 5px;border-radius:8px 8px 0 0;background:#fff;font:700 11.5px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ac-t)}
+.is-home .hc-step-b{position:relative;display:flex;flex-direction:column;flex:1;padding:18px 20px 22px}
+.is-home .hc-step-n{position:absolute;top:-20px;right:18px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ac);color:#fff;font:700 16px/1 var(--font-display);box-shadow:0 0 0 4px #fff;z-index:2}
+.is-home .hc-step h3{font-size:1.15rem;margin:0 0 8px}
+.is-home .hc-step p{margin:0 0 16px;font-size:14.5px;line-height:1.6}
+.is-home .hc-step--disc{--ac:#E2453C;--ac-t:#B5322A;--ac-w:#F7F2E8}
+.is-home .hc-step--train{--ac:#714B67;--ac-t:#5E3E56;--ac-w:#F7F5FA}
+.is-home .hc-step--int{--ac:#14A38B;--ac-t:#0D7A68;--ac-w:#F2F8F7}
+.is-home .hc-step--sup{--ac:#C96A12;--ac-t:#9A500C;--ac-w:#FBF7F1}
+
+/* industries: the eight world stills, each with its own badge and colour */
+.is-home .hc-ind-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.is-home .hc-ind .hc-thumb{aspect-ratio:16/9}
+.is-home .hc-ind-t{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:10px;padding:14px 18px 20px}
+.is-home .hc-ind-ic .ic{display:block;width:32px;height:32px}
+.is-home .hc-ind-t b{font:700 1.04rem/1.25 var(--font-display);color:var(--ink)}
+.is-home .hc-ind:hover .hc-ind-t b{color:var(--ac-t)}
+.is-home .hc-ind-t small{grid-column:1/-1;margin-top:10px;font-size:14px;line-height:1.55;color:var(--body)}
+.is-home .hc-ind--medical{--ac:#21B799;--ac-t:#13806A;--ac-w:#EEF8F5}
+.is-home .hc-ind--travel{--ac:#3FA9E0;--ac-t:#1F6F9C;--ac-w:#EEF6FC}
+.is-home .hc-ind--retail{--ac:#D9785A;--ac-t:#A8523A;--ac-w:#FBF2EE}
+.is-home .hc-ind--ecommerce{--ac:#6D5BD0;--ac-t:#5444AE;--ac-w:#F3F1FC}
+.is-home .hc-ind--construction{--ac:#E0A200;--ac-t:#8A6400;--ac-w:#FBF6E6}
+.is-home .hc-ind--fnb{--ac:#E2553D;--ac-t:#B23D28;--ac-w:#FCF1EE}
+.is-home .hc-ind--manufacturing{--ac:#FF7A1A;--ac-t:#B25010;--ac-w:#FFF3EA}
+.is-home .hc-ind--health-wellness{--ac:#8C76B8;--ac-t:#6A5596;--ac-w:#F5F2FA}
+
+/* offices: the illustrated office badges */
+.is-home .hc-office-tag .ic{width:26px;height:26px}
+.is-home .hc-office-tag{gap:10px}
+
+/* blog: a light newsroom touch (the /blog world's masthead rule and category-coloured kicker rules) */
+.is-home .hc-mast{display:flex;align-items:center;gap:14px;margin:0 0 18px;font:700 12px/1 "Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;letter-spacing:.16em;text-transform:uppercase;color:#141A3A}
+.is-home .hc-mast::after{content:"";flex:1;max-width:220px;height:4px;border-top:2px solid #141A3A;border-bottom:1px solid #141A3A}
+.is-home .hc-news h2{font-family:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;letter-spacing:-.01em}
+.is-home .hc-posts .post-card{overflow:hidden;border-top:3px solid #E2453C}
+.is-home .hc-posts .post-card[data-tags="technext-odoo"]{border-top-color:var(--blue)}
+.is-home .hc-posts .post-card[data-tags="erp"]{border-top-color:#14A38B}
+
+
+@media (max-width:1180px){
+  .is-home .hc-path-grid,.is-home .hc-ind-grid,.is-home .hc-step-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:767px){
+  .is-home .hc-path-grid,.is-home .hc-step-row{grid-template-columns:1fr}
+  .is-home .hc-path .hc-thumb{aspect-ratio:21/8}
+  .is-home .hc-step{display:grid;grid-template-columns:118px 1fr}
+  .is-home .hc-step .hc-thumb{margin:10px 0 10px 10px;aspect-ratio:auto;height:auto;min-height:100%}
+  .is-home .hc-step .hc-tab{display:none}
+  .is-home .hc-step-b{padding:16px 16px 18px}
+  .is-home .hc-step-n{position:static;width:30px;height:30px;font-size:14px;margin-bottom:8px;box-shadow:none}
+  .is-home .hc-ind-grid{grid-template-columns:1fr 1fr;gap:12px}
+}
+@media (max-width:560px){
+  .is-home .hc-ind .hc-thumb{margin:6px 6px 0;border-radius:8px}
+  .is-home .hc-ind-t{padding:10px 12px 14px;column-gap:8px}
+  .is-home .hc-ind-ic .ic{width:26px;height:26px}
+  .is-home .hc-ind-t b{font-size:.94rem}
+  .is-home .hc-ind-t small{display:none}
+  .is-home .hc-mast{line-height:1.5;letter-spacing:.12em}
+  .is-home .hc-mast::after{display:none}
+}

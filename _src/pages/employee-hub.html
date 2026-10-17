@@ -1,0 +1,119 @@
+<!--meta {"title": "Employee Hub: TechNext employee ID cards", "desc": "The TechNext Employee Hub: every employee's TechNext ID card on the lanyard rack, front and back, with their work email and a vCard to save.", "out": "employee-hub.html", "nav": "company", "robots": "noindex, nofollow", "scripts": ["assets/js/employee-cards.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/co-life.js", "assets/js/worlds/team.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/company.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/employee-hub.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/team.css?v={ASSET_V}\">", "body": "ixw ixw--team co-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="team" data-home="660,30" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span><a href="{{ROOT}}company.html">Company</a></span><span>Employee Hub</span></nav>
+      <h1 id="ixw-h1"><span class="hand h1-hand">the id station</span>Every TechNext employee, on one ID.</h1>
+      <p class="lead"><span class="m-full">The blue TechNext ID card of each person on the team: photo, name, position and ID number on the front, a work email and our three offices on the back. Flip a card, or save the contact as a vCard.</span><span class="m-short">Each person's TechNext ID card: flip it, or save the contact as a vCard.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="#cards">See the ID cards {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#anatomy">{{icon:layers}}What's on an ID</a></div>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-hot" type="button" data-hot="rack" data-nx="660,30" data-pose="point-left" data-rec="Lanyard rack · one TechNext ID per person" data-say="The **lanyard rack**: one blue TechNext ID for every person on the team." style="--x:275;--y:150;--w:260;--h:270" aria-pressed="false"><span class="ixw-hot-lab">{{icon:users}}<b>Lanyard rack</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="booth" data-nx="660,30" data-pose="point-left" data-rec="Photo booth · the photo slot on every ID" data-say="The **photo booth**: every ID has a photo slot. Until a photo is in, it shows the initials." style="--x:475;--y:190;--w:130;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:camera}}<b>Photo booth</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="printer" data-nx="540,40" data-pose="point-right" data-rec="ID printer · name, position, ID No." data-say="The **ID printer**: name, position and **ID number** on the front, our offices on the back." style="--x:639;--y:338;--w:84;--h:80" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layers}}<b>ID printer</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="laminator" data-nx="560,40" data-pose="point-right" data-rec="Laminator · a card that lasts" data-say="Into the **laminator**: the card glows through and comes out ready to wear." style="--x:725;--y:353;--w:80;--h:52" aria-pressed="false"><span class="ixw-hot-lab">{{icon:sparkle}}<b>Laminator</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="gate" data-nx="700,40" data-pose="point-right" data-rec="Badge reader · tap the TechNext ID" data-say="Tap the **TechNext ID** on the reader: it turns **green** and the gate opens." style="--x:873;--y:370;--w:150;--h:190" aria-pressed="false"><span class="ixw-hot-lab">{{icon:check}}<b>Badge gate</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="offices" data-nx="660,30" data-pose="point-right" data-rec="Singapore HQ · Taguig City · Ho Chi Minh City" data-say="Every ID back carries our **three offices**: Singapore, Taguig City, Ho Chi Minh City." style="--x:895;--y:102;--w:190;--h:104" aria-pressed="false"><span class="ixw-hot-lab">{{icon:pin}}<b>Offices</b></span></button>
+
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="sway" data-near="660,30" data-pose="wow" data-say="Swing! Every **ID** on the rack sways." style="--x:275;--y:4;--w:170;--h:28" aria-label="Swing the lanyard rack"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Swing the rack</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="flash" data-near="660,30" data-pose="love" data-say="Flash! A fresh **ID photo**." style="--x:526;--y:196;--w:40;--h:40" aria-label="Fire the photo booth flash"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Flash</b></span></button>
+
+      <button class="ixw-cast" type="button" data-cast="sit" data-near="660,30" data-who="In the photo booth" data-role="TechNext · illustration" data-say="Chin up, big smile: my **ID photo**! Peace!" style="--x:450;--y:360;--w:56;--h:150" aria-label="Say hi to the colleague in the photo booth (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Photo booth</b><i>posing</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="pho" data-near="660,30" data-who="Photographer" data-role="TechNext · illustration" data-say="Three, two, one… **smile**! Next ID photo, please." style="--x:520;--y:370;--w:50;--h:190" aria-label="Say hi to the photographer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Photographer</b><i>ID photos</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="op" data-near="540,40" data-who="ID operator" data-role="TechNext · illustration" data-say="Printed, laminated, on a **lanyard**. Here's your **TechNext ID**!" style="--x:690;--y:290;--w:60;--h:110" aria-label="Say hi to the ID operator (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>ID operator</b><i>printer</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="new" data-near="700,40" data-who="At the gate" data-role="TechNext · illustration" data-say="Beep, **green**, I'm in! First day with my new ID." style="--x:850;--y:420;--w:60;--h:100" aria-label="Say hi to the colleague at the gate (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Badge gate</b><i>tapping in</i></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:660;--ny:30" data-reacts="wow::Fresh **TechNext IDs**, still warm!|love::Blue band, white card, **my name** on it.|celebrate::Tapped in: the gate is **green**!|think::Hmm… does a robot need an **ID photo**?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:team}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. This is the **ID station**, where every TechNext ID is printed. Tap around!" data-outro="Every employee, one blue **TechNext ID**: one team, three offices.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:team}}<b data-for="sit" style="--c:#14A38B">P</b><b data-for="pho" style="--c:#F08A6C">P</b><b data-for="op" style="--c:#3167CA">I</b><b data-for="new" style="--c:#2A3550">G</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="the ID station · Employee Hub">the ID station · Employee Hub</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. This is the <b>ID station</b>, where every TechNext ID is printed. Tap around!</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: lanyard rack"></button><button type="button" data-ixw-dot aria-label="Stop 3: photo booth"></button><button type="button" data-ixw-dot aria-label="Stop 4: ID printer"></button><button type="button" data-ixw-dot aria-label="Stop 5: laminator"></button><button type="button" data-ixw-dot aria-label="Stop 6: badge gate"></button><button type="button" data-ixw-dot aria-label="Stop 7: offices"></button><button type="button" data-ixw-dot aria-label="Stop 8: one team"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">The Employee Hub at a glance</h2>
+  <dl class="glance glance--ind ixw-credits th-strip">
+    <div><dt>{{icon:users}}ID cards</dt><dd data-bc-count>One per person</dd></div>
+    <div><dt>{{icon:file}}On every ID</dt><dd>Name, position and ID No.</dd></div>
+    <div><dt>{{icon:phone}}Save a contact</dt><dd>vCard (.vcf) download</dd></div>
+    <div><dt>{{icon:lock}}This page</dt><dd>Staff page, not indexed</dd></div>
+  </dl>
+</div>
+
+<section class="section th-sec" id="cards">
+  <div class="container">
+    <div class="sec-head th-head reveal"><span class="hand">employee ID cards</span><h2>The team, ID by ID.</h2><p class="lead">One TechNext ID per person, on the lanyard rack. Tap a card to turn it over for the work email and our offices; save it to your phone as a vCard.</p></div>
+    <div class="bc-tools reveal"><button type="button" class="bc-flipall" data-bc-flipall aria-pressed="false">{{icon:refresh}}<span>Flip all IDs</span></button><span class="bc-tip">{{icon:sparkle}}Front: photo, name, position, ID No. · Back: email and offices</span></div>
+    <div class="idc-rack">
+      <span class="idc-rail" aria-hidden="true"></span>
+      <div class="idc-grid" data-bc-grid></div>
+    </div>
+    <div class="th-people bc-src" data-bc-src>{{TEAM_CARDS}}</div>
+  </div>
+</section>
+
+<section class="section section--alt th-sec" id="anatomy">
+  <div class="container">
+    <div class="sec-head th-head reveal"><span class="hand">what's on an ID</span><h2>Anatomy of a TechNext ID.</h2><p class="lead">Every ID is built the same way, so a name, a position and an ID number can be read at a glance.</p></div>
+    <div class="ida reveal">
+      <figure class="ida-card" aria-hidden="true">
+        <span class="ida-band"><b>TechNext</b><small>Employee ID</small></span>
+        <span class="ida-photo">AB</span><span class="ida-name">Name Surname</span><span class="ida-role">Position</span><span class="ida-no">ID No. 001</span><span class="ida-bar"></span>
+        <span class="bc-n" style="--x:22%;--y:7%">1</span><span class="bc-n" style="--x:76%;--y:32%">2</span><span class="bc-n" style="--x:84%;--y:60%">3</span><span class="bc-n" style="--x:84%;--y:76%">4</span><span class="bc-n" style="--x:84%;--y:91%">5</span>
+      </figure>
+      <figure class="ida-card ida-card--back" aria-hidden="true">
+        <span class="ida-k">Work email</span><span class="ida-mail">name@technext.asia</span>
+        <span class="ida-k">Our offices</span><span class="ida-off"><b>Singapore HQ</b><b>Taguig City</b><b>Ho Chi Minh City</b></span>
+        <span class="ida-prop">This card is property of TechNext Pte. Ltd.</span><span class="idc-valid">Valid</span>
+        <span class="bc-n" style="--x:84%;--y:14%">6</span><span class="bc-n" style="--x:84%;--y:40%">7</span><span class="bc-n" style="--x:10%;--y:74%">8</span>
+      </figure>
+      <ol class="bc-anat-list">
+        <li><b>TechNext band</b><span>The blue header with the TechNext plane, as on every ID in the office.</span></li>
+        <li><b>Photo slot</b><span>The person's photo, or their initials until one is added.</span></li>
+        <li><b>Name and position</b><span>As listed on this page.</span></li>
+        <li><b>ID No.</b><span>The person's number on the team list: No. 001, No. 002 and so on.</span></li>
+        <li><b>Barcode strip</b><span>The strip along the bottom, read at the badge gate.</span></li>
+        <li><b>Work email</b><span>Work details only, one tap to write.</span></li>
+        <li><b>Our offices</b><span>Singapore HQ, Taguig City and Ho Chi Minh City.</span></li>
+        <li><b>Property line and VALID stamp</b><span>Every ID belongs to TechNext Pte. Ltd.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section th-sec" id="offices">
+  <div class="container">
+    <div class="sec-head th-head reveal"><span class="hand">on every ID back</span><h2>Three offices, one team.</h2><p class="lead">Projects are run from Singapore, built in Taguig City and powered by our AI engineers in Ho Chi Minh City.</p></div>
+    <div class="th-offices">{{TEAM_OFFICES}}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta ixw-cta th-cta reveal" data-ixw-burst><span class="th-cta-ids" aria-hidden="true"><i></i><i></i></span>
+      <div><span class="hand">next step</span><h2>Talk to the team.</h2><p>Book a discovery call and we will walk through how your company works today, and what Odoo would change.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="https://technext.odoo.com/book/c82cf8a9" target="_blank" rel="noopener">Book a discovery call</a><a class="btn btn-outline-white btn-lg" href="{{ROOT}}life.html">Life at TechNext</a></div>
+    </div>
+  </div>
+</section>

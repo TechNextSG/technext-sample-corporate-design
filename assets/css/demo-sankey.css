@@ -1,0 +1,75 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Marketing page demo: attribution Sankey with flow particles, loss sinks and a funnel calculator
+   (demo-sankey.js) */
+.snk-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+.snk-main{min-width:0;padding:10px 12px 12px;background:radial-gradient(circle at 1px 1px,rgba(49,103,202,.1) 1px,transparent 1.3px) 0 0/16px 16px}
+.snk-stage{position:relative;height:540px}
+.is-vert .snk-stage{height:640px}
+.snk-svg,.snk-fx{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.snk-fx{pointer-events:none}
+.snk-l{opacity:.36;transition:opacity .25s}
+.snk-l.is-loss{opacity:.15}
+.snk-l.is-leave{opacity:1}
+.snk-svg.is-peek .snk-l{opacity:.08}
+.snk-svg.is-peek .snk-l.is-hot{opacity:.78}
+.snk-sink{fill:#CDD4E2}
+.snk-hit{outline:none}
+.snk-hit:focus-visible{stroke:var(--ink);stroke-width:2;stroke-dasharray:3 2}
+.snk-lens{fill:rgba(49,103,202,.045);stroke:rgba(49,103,202,.28);stroke-width:1;stroke-dasharray:3 4}
+.snk-txt{pointer-events:none}
+.snk-txt text{font:600 11px var(--font-body);fill:var(--ink);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:3px;stroke-linejoin:round}
+.snk-txt .snk-sl{font:700 11.5px var(--font-display)}
+.snk-txt .snk-v{font:600 11px var(--font-body);fill:var(--muted)}
+.snk-txt .snk-kl{font:500 10.5px var(--font-body);fill:var(--muted)}
+.snk-txt .snk-zl{font:700 10.5px var(--font-body);fill:var(--blue)}
+.snk-txt .snk-rl{font:600 10.5px var(--font-body);fill:#6B84B8}
+.snk-cap{min-height:2.9em;margin:6px 4px 0;font:500 12px/1.45 var(--font-body);color:var(--body)}
+/* calculator */
+.snk-calc{min-width:0;padding:14px;border-left:1px solid var(--line);background:rgba(250,249,251,.8)}
+.snk-h,.snk-tab caption{margin:0 0 10px;font:700 10px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left}
+.snk-sls{display:grid;gap:9px}
+.snk-sl label{display:flex;justify-content:space-between;gap:8px;margin-bottom:3px;font:600 11.5px/1.3 var(--font-body);color:var(--ink)}
+.snk-sl output{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+.snk-sl input{--p:50%;display:block;width:100%;height:18px;margin:0;background:none;-webkit-appearance:none;appearance:none;cursor:pointer}
+.snk-sl input:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.snk-sl input::-webkit-slider-runnable-track{height:5px;border-radius:99px;background:linear-gradient(90deg,var(--blue) var(--p),#DCE2EE var(--p))}
+.snk-sl input::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-5.5px;border-radius:50%;border:2px solid var(--blue);background:#fff;box-shadow:0 2px 6px rgba(31,31,61,.22);transition:transform .2s var(--spring)}
+.snk-sl input:active::-webkit-slider-thumb{transform:scale(1.15)}
+.snk-sl input::-moz-range-track{height:5px;border-radius:99px;background:#DCE2EE}
+.snk-sl input::-moz-range-progress{height:5px;border-radius:99px;background:var(--blue)}
+.snk-sl input::-moz-range-thumb{width:12px;height:12px;border-radius:50%;border:2px solid var(--blue);background:#fff}
+.snk-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:14px 0}
+.snk-kpis dd{font-size:1.02rem}
+.snk-tab{width:100%;border-collapse:collapse;font:500 10.5px/1.3 var(--font-body);color:var(--body);font-variant-numeric:tabular-nums}
+.snk-tab caption{margin-bottom:6px}
+.snk-tab caption span{color:var(--blue)}
+.snk-tab th,.snk-tab td{padding:4px 3px;border-bottom:1px solid rgba(31,31,61,.06);text-align:right;white-space:nowrap}
+.snk-tab thead th{font:700 10px/1.2 var(--font-body);color:var(--muted)}
+.snk-tab th:first-child{text-align:left}
+.snk-tab tbody th{font-weight:600;color:var(--ink)}
+.snk-tab tbody th .dm-sw{display:inline-block;margin-right:6px;vertical-align:0}
+.snk-tab td:last-child{font-weight:700;color:var(--ink)}
+@media (max-width:1100px){
+  .snk-wrap{grid-template-columns:minmax(0,1fr)}
+  .snk-stage{height:460px}
+  .snk-calc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) minmax(0,1.2fr);gap:0 18px;align-items:start;border-left:0;border-top:1px solid var(--line)}
+  .snk-h{grid-column:1/-1}
+  .snk-kpis{margin:0}
+}
+@media (max-width:760px){
+  .snk-calc{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:14px}
+  .snk-tab{grid-column:1/-1}
+}
+@media (max-width:560px){
+  .snk-main{padding:8px}
+  .snk-calc{grid-template-columns:minmax(0,1fr);padding:12px}
+}
+@media (prefers-reduced-motion:reduce){.snk-l{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .snk-h,
+  .snk-tab caption,
+  .snk-tab,
+  .snk-tab thead th{font-size:11px}
+}

@@ -1,0 +1,85 @@
+<!--meta {"title": "Odoo customisation vs configuration: when to build", "desc": "When to customise Odoo and when to configure instead: TechNext explains configuration, Studio and custom modules, what each costs at upgrade, and how to decide.", "out": "blog/standard-first-odoo-customisation.html", "nav": "company", "article": {"h1": "Standard first: when to customise Odoo, and when not to", "cat": "technext-odoo", "date": "2026-09-27", "order": 1, "lede": "Every customisation is paid for twice: once when it is built, and again at every upgrade. This is how TechNext decides what to configure, what to build in Studio, and what deserves custom code.", "card": "Configuration, Studio or custom code: what each costs at upgrade time, and five questions to ask before building anything.", "cover": "icons:icon:gear,odoo:web_studio,icon:code"}, "scripts": ["assets/js/demo-kit.js", "assets/js/demo-gate.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-gate.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">Key takeaways</p>
+  <ul>
+    <li>There are three levels of change in Odoo: <strong>configuration</strong>, <strong>Studio</strong> and <strong>custom modules</strong>. Each costs more to build and to maintain than the one before.</li>
+    <li>Odoo releases a major version every year, and every customisation has to be tested, and often reworked, at each upgrade.</li>
+    <li>Customise for rules, differentiators and missing integrations. Don't customise to recreate an old system's screens.</li>
+  </ul>
+</div>
+
+<p>"Can Odoo do it exactly the way we do it now?" is the question behind most customisation requests. Often the honest answer is: it could, but it shouldn't. Standard Odoo encodes how thousands of companies run sales, stock and accounting, and bending it to match an old habit usually costs more than changing the habit. That is why TechNext works <strong>standard first</strong>. It is not a refusal to customise. It is a rule about what earns the right to be customised.</p>
+
+<h2>The three levels of change</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Level</th><th>What it is</th><th>Cost at upgrade</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Configuration</strong></td><td>Settings, workflows, taxes, routes, approval rules, templates and access rights</td><td>Low: carried forward by Odoo</td></tr>
+    <tr><td><strong>Studio</strong></td><td>No-code fields, views, reports and automations (Custom plan)</td><td>Medium: needs checking after each upgrade</td></tr>
+    <tr><td><strong>Custom modules</strong></td><td>Python code for new logic, integrations or apps (Odoo.sh or on-premise)</td><td>High: must be ported and tested every version</td></tr>
+  </tbody>
+</table></div>
+<p>Odoo ships a major version every year, and Odoo 20 has just arrived. Each custom module has to be ported to the new version and retested, and each Studio change checked, before a company can upgrade. A database with dozens of customisations can end up stuck on an old version because upgrading it has become a project of its own.</p>
+
+<h2>When customising is the right call</h2>
+<ul>
+  <li><strong>A legal or regulatory requirement</strong> that the country localisation does not cover.</li>
+  <li><strong>A real differentiator:</strong> the part of the process that makes the business better than competitors, such as a unique pricing model or production method.</li>
+  <li><strong>An integration with no connector:</strong> a bank, marketplace, machine or legacy system Odoo cannot reach through standard connectors.</li>
+  <li><strong>A measured cost:</strong> a step that costs real hours every week, where configuration cannot help.</li>
+</ul>
+
+<h2>When it isn't</h2>
+<ul>
+  <li><strong>Recreating the old system.</strong> Old screens and old field names feel familiar, but familiarity fades in weeks, and the code stays.</li>
+  <li><strong>One person's preference.</strong> A layout one user prefers is not worth a module every user maintains.</li>
+  <li><strong>Rare edge cases.</strong> Something that happens twice a year is usually cheaper to handle by hand, with a note in the procedure.</li>
+  <li><strong>Problems a report would solve.</strong> Many "we need a new screen" requests are really "we need to see this number", and a saved filter or spreadsheet view does it.</li>
+</ul>
+
+<h2>Five questions before approving any customisation</h2>
+<ol>
+  <li>Does standard Odoo do this, perhaps with a setting we haven't switched on?</li>
+  <li>Could we change the process instead, and would anyone outside the company notice?</li>
+  <li>Can Studio do it without code?</li>
+  <li>What does it cost to maintain through the next three upgrades, not just to build?</li>
+  <li>Who owns it: who will notice if it breaks, and who will fix it?</li>
+</ol>
+<p>If a request survives all five, it is worth building, and worth building properly: as a clean module in version control, tested on staging and documented, rather than as a quick patch.</p>
+
+<figure class="gt-fig" aria-label="Interactive: the five questions before approving a customisation">
+  <div class="dm dm-gate reveal" data-demo="gate">
+    <div class="dm-head">
+      <div class="dm-title"><b>Should we build it?</b><small>Five questions, three levels of change</small></div>
+      <div class="dm-seg" role="group" aria-label="Try a request from this article">
+        <button type="button" data-ex="0" aria-pressed="false">New screen</button>
+        <button type="button" data-ex="1" aria-pressed="false">Old screens</button>
+        <button type="button" data-ex="2" aria-pressed="false">Twice a year</button>
+        <button type="button" data-ex="3" aria-pressed="false">Bank link</button>
+      </div>
+      <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Start over</button>
+    </div>
+    <div class="gt-body">
+      <svg class="gt-svg" aria-hidden="true"></svg>
+      <div class="gt-grid" role="group" aria-label="Answer each question yes or no"></div>
+    </div>
+    <div class="gt-verdict" aria-live="polite"></div>
+    <div class="dm-static">
+      <p>Five questions before approving any customisation: does standard Odoo do it; could the process change instead; can Studio do it without code; what does it cost to maintain through the next three upgrades; and who owns it. Configuration costs least at upgrade, Studio needs checking after each upgrade, and custom modules must be ported and tested every version.</p>
+    </div>
+  </div>
+  <figcaption class="dm-note">{{icon:check}} The questions, levels and upgrade costs are this article's; the example requests are its own "when it isn't" cases and its integration case.</figcaption>
+</figure>
+
+
+<h2>How this plays out on a TechNext project</h2>
+<p>During <a href="{{ROOT}}odoo/discovery.html">discovery</a>, every gap between your process and standard Odoo is written down with a proposed answer: configuration, Studio, a process change or a custom module. You see the trade-off before anything is built. Custom modules are built on staging, kept in version control and included in upgrade testing, which is part of our <a href="{{ROOT}}odoo/support.html">support plans</a>. When a client asks for tailored modules and workflows, that work sits under our <a href="{{ROOT}}odoo/erp-system.html">ERP customisation</a> service, with the same rules.</p>
+<p>The result is a system that fits the business and still upgrades cleanly. You can read how the whole project runs in <a href="{{ROOT}}blog/how-an-odoo-implementation-works.html">How an Odoo implementation works</a>.</p>
+
+<h2>Common questions</h2>
+<div class="faq">
+  <details><summary>What is the difference between Odoo configuration and customisation? {{icon:chevron}}</summary><div class="faq-a"><p>Configuration uses the settings and options Odoo already has, such as taxes, workflows and approval rules. Customisation changes the software itself, either with Odoo Studio (no code) or with custom Python modules.</p></div></details>
+  <details><summary>Do customisations make Odoo upgrades harder? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Odoo releases a major version every year, and custom modules must be ported and retested for each one. Studio changes need checking too. The fewer customisations, the easier each upgrade.</p></div></details>
+  <details><summary>Does TechNext build custom Odoo modules? {{icon:chevron}}</summary><div class="faq-a"><p>Yes, when a requirement justifies it. TechNext builds custom modules on staging, keeps them in version control and includes them in upgrade testing, after checking that configuration or Studio can't do the job.</p></div></details>
+</div>

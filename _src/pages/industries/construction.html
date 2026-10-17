@@ -1,0 +1,168 @@
+<!--meta {"title": "Odoo for Construction — Singapore & Philippines", "desc": "Odoo for contractors and builders: job costing per project, subcontractor claims, retention and progress invoicing — implemented by TechNext, Odoo Partner.", "out": "industries/construction.html", "nav": "industries", "scripts": ["assets/js/showcase.js", "assets/js/industry.js", "assets/js/demo-kit.js", "assets/js/demo-scurve.js", "assets/js/industry-world.js", "assets/js/worlds/construction.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-scurve.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/construction.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industries-calm.css?v={ASSET_V}\">", "body": "ixw ixw--construction"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="construction" data-home="466,110" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Industries</span><span>Construction</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Contractors, builders &amp; fit-out firms</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo for construction · singapore · philippines</span>Every project's cost and margin, while it is still running.</h1>
+      <p class="lead"><span class="m-full">Purchase orders, subcontractor claims, site materials and labour hours land on the project they belong to — so the margin is visible before hand-over, not after the final account.</span><span class="m-short">Purchases, claims, materials and hours land on their project, so you see the margin before hand-over.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Hover or tap anything on the site to explore.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="siti" data-near="330,120" data-who="Siti" data-role="Site engineer · sample" data-say="I log progress photos from the slab, and the office sees them on the **task** straight away." style="--x:404;--y:352;--w:112;--h:268" aria-label="Say hi to Siti, the site engineer (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Siti</b><i>site engineer</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="ben" data-near="760,110" data-who="Ben" data-role="Foreman · sample" data-say="My crew&#x27;s hours go straight onto the **job**. No more timesheet shoebox!" style="--x:630;--y:268;--w:76;--h:184" aria-label="Say hi to Ben, the foreman on the scaffold (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Ben</b><i>foreman</i></span></button>
+      <button class="ixw-toy" type="button" data-toy="mixer" data-near="300,120" data-pose="wow" data-say="Round and round! Concrete, bricks and rebar are all **purchases** coded to the job." style="--x:150;--y:420;--w:110;--h:100" aria-label="Spin the cement mixer"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Spin the mixer</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="crane" data-near="600,90" data-pose="celebrate" data-say="Lift off! The crane, the crew and the pour are scheduled in **Planning**." style="--x:760;--y:160;--w:220;--h:70" aria-label="Swing the crane&#x27;s load"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Swing the load</b></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="win" data-nx="300,120" data-pose="present" data-rec="Riverside Block B · S$ 2.4M · won" data-say="The tender is tracked in **CRM**, and the accepted quotation becomes the contract value, with milestones for billing." style="--x:264;--y:256;--w:172;--h:84" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:crm:18}}<b>Win</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="setup" data-nx="466,110" data-pose="point-left" data-rec="Job B-14 · 6 stages · budget S$ 2.1M" data-say="Each job becomes a **project** with stages, tasks and a budget, so every cost lands on the right job." style="--x:268;--y:400;--w:148;--h:144" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:project:18}}<b>Set up</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="buy" data-nx="940,330" data-pose="point-left" data-rec="PO00412 · 12,000 bricks · job B-14" data-say="Bricks, rebar, plant hire and subcontractors are **purchase orders** coded to the job, matched to what was delivered." style="--x:820;--y:433;--w:124;--h:78" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:purchase:18}}<b>Buy</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="site" data-nx="800,110" data-pose="point-right" data-rec="Thu · crane + 4 crew · Level 3 pour" data-say="Crews are scheduled in **Planning**. In Odoo 20, field work has a live map and keeps working offline." style="--x:904;--y:250;--w:52;--h:440" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:planning:18}}<b>Site</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="track" data-nx="960,200" data-pose="point-left" data-rec="Level 2 · 62% · 186 hours this week" data-say="Site **timesheets** record labour against tasks, with progress notes and photos for the office." style="--x:802;--y:280;--w:92;--h:50" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:hr_timesheet:18}}<b>Track</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="bill" data-nx="466,110" data-pose="point-left" data-rec="Claim #4 · S$ 380,000 · margin 12.5%" data-say="Milestones are invoiced as they are reached, and the project shows **budget, cost to date and margin**." style="--x:486;--y:404;--w:76;--h:136" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:accountant:18}}<b>Bill</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:466;--ny:110" data-reacts="wow::Look at that crane go! And the **job cost** is live too.|love::Hard hats on, spreadsheets off. **One database** for every job!|celebrate::Topping out! Tender to final claim, **all in Odoo**.|think::Hmm… which job first? Bring us **one live project**.">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:construction}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi, I&#x27;m **Nexi**! Welcome to Riverside Block B, a sample job by Northline Builders. Tap anything and I&#x27;ll show you how **Odoo** runs a site." data-outro="Tender to final claim, every job&#x27;s cost and margin, in **one Odoo database**.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:construction}}<b data-for="siti" style="--c:#1F3F73">S</b><b data-for="ben" style="--c:#E0A800">B</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="Your site guide · Northline Builders is a sample contractor">Your site guide · Northline Builders is a sample contractor</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi, I'm <b>Nexi</b>! Welcome to Riverside Block B, a sample job by Northline Builders. Tap anything and I'll show you how <b>Odoo</b> runs a site.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: win"></button><button type="button" data-ixw-dot aria-label="Stop 3: set up"></button><button type="button" data-ixw-dot aria-label="Stop 4: buy"></button><button type="button" data-ixw-dot aria-label="Stop 5: site"></button><button type="button" data-ixw-dot aria-label="Stop 6: track"></button><button type="button" data-ixw-dot aria-label="Stop 7: bill"></button><button type="button" data-ixw-dot aria-label="Stop 8: one database"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits"><div><dt>{{icon:layers}}Apps we switch on</dt><dd><a href="{{ROOT}}odoo/apps/project.html">Project</a> · <a href="{{ROOT}}odoo/apps/purchase.html">Purchase</a> · <a href="{{ROOT}}odoo/apps/accountant.html">Accounting</a> · <a href="{{ROOT}}odoo/apps/hr_timesheet.html">Timesheets</a> · <a href="{{ROOT}}odoo/apps/stock.html">Inventory</a></dd></div><div><dt>{{icon:target}}First phase</dt><dd>Bring one live project</dd></div><div><dt>{{icon:users}}Delivered by</dt><dd>TechNext, Odoo Partner · Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+{{INDUSTRY_INTRO:construction}}
+
+{{INDUSTRY_FLOW:construction}}
+
+<section class="section demo-sec" id="project-s-curve">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">drag the month</span><h2>Odoo for construction: the S-curve, earned value and progress claims with retention.</h2><p class="lead"><span class="m-full">One contract as TechNext sets it up in Odoo: a project with its own analytic account for job costing, a budget, monthly progress claims from the contract, variation orders, subcontractor claims and retention held on both sides. Drag the "as of" marker to read earned value at any month end, and switch the retention rate to see the claims and the ledger change.</span><span class="m-short">Watch a sample project's planned and actual cost curves, and the margin they leave.</span></p></div>
+    <div class="ixw-browser reveal" aria-hidden="true"><i></i><i></i><i></i><span>yourcompany.odoo.com/odoo/project</span><em>Sample data</em></div>
+    <div class="dm dm-scurve reveal" data-demo="scurve">
+      <div class="dm-head">
+        <div class="dm-title"><b>Factory extension · Jan to Dec 2026</b><small>Sample project · contract S$ 1,480,000 · budget S$ 1,250,000 · actuals to 31 Aug</small></div>
+        <div class="dm-seg" role="group" aria-label="Retention rate on claims">
+          <button type="button" data-ret="5" aria-pressed="true">Retention 5%</button>
+          <button type="button" data-ret="10" aria-pressed="false">Retention 10%</button>
+        </div>
+      </div>
+      <div class="scv-wrap">
+        <div class="scv-chartcol">
+          <div class="scv-chart"><svg class="scv-svg" aria-hidden="true" focusable="false"></svg>
+            <div class="scv-handle" role="slider" tabindex="0" aria-label="As of month end" aria-valuemin="1" aria-valuemax="8" aria-valuenow="8" aria-valuetext="31 August 2026"><b>Aug</b></div>
+          </div>
+          <ul class="dm-legend scv-legend">
+            <li><i class="scv-lg" style="--c:var(--tok-stock)"></i>Planned value (PV)</li>
+            <li><i class="scv-lg" style="--c:var(--ok)"></i>Earned value (EV)</li>
+            <li><i class="scv-lg" style="--c:var(--tok-late)"></i>Actual cost (AC)</li>
+            <li><i class="scv-lg scv-lg--dash" style="--c:var(--tok-late)"></i>Forecast to EAC</li>
+            <li><i class="scv-lg scv-lg--bar"></i>Claim, net · retention</li>
+            <li><i class="scv-lg scv-lg--vo"></i>Variation order</li>
+          </ul>
+        </div>
+        <aside class="scv-read" aria-label="Earned value at the selected month">
+          <p class="scv-h">As of <b data-r="date"></b></p>
+          <dl class="scv-evm">
+            <div><dt>PV</dt><dd data-r="pv"></dd><small>Planned value: budget of the work scheduled by now</small></div>
+            <div><dt>EV</dt><dd data-r="ev"></dd><small>Earned value: budget of the work actually done</small></div>
+            <div><dt>AC</dt><dd data-r="ac"></dd><small>Actual cost: from the project's analytic account</small></div>
+            <div data-r="cpib"><dt>CPI = EV ÷ AC</dt><dd data-r="cpi"></dd><small data-r="cpit"></small></div>
+            <div data-r="spib"><dt>SPI = EV ÷ PV</dt><dd data-r="spi"></dd><small data-r="spit"></small></div>
+            <div><dt>EAC = BAC ÷ CPI</dt><dd data-r="eac"></dd><small data-r="eact"></small></div>
+          </dl>
+          <p class="scv-prog"><span>Progress</span><b data-r="prog"></b></p>
+          <p class="scv-h">Job cost to date <small>by source, one analytic account</small></p>
+          <span class="scv-stack" data-r="stack"></span>
+          <ul class="scv-costs" data-r="costs"></ul>
+        </aside>
+      </div>
+      <div class="scv-bottom">
+        <div class="scv-panel">
+          <p class="scv-ph">{{odoo:sale:16}}<span data-r="claimh">Progress claim</span><em data-r="inv"></em></p>
+          <dl class="scv-claim" data-r="claim"></dl>
+          <ul class="scv-vos" data-r="vos"></ul>
+        </div>
+        <div class="scv-panel">
+          <p class="scv-ph">{{odoo:purchase:16}}<span>Subcontractor claims</span><em>vendor bills to the project</em></p>
+          <table class="scv-tbl"><thead><tr><th scope="col">Subcontract</th><th scope="col">Certified</th><th scope="col">Retention</th><th scope="col">This month</th></tr></thead><tbody data-r="subs"></tbody></table>
+        </div>
+        <div class="scv-panel">
+          <p class="scv-ph">{{odoo:accountant:16}}<span>Retention ledger</span><em data-r="rate"></em></p>
+          <table class="scv-tbl scv-ledger"><thead><tr><th scope="col">Month</th><th scope="col">Receivable</th><th scope="col">Payable</th></tr></thead><tbody data-r="ledger"></tbody></table>
+          <ul class="scv-rel" data-r="rel"></ul>
+        </div>
+      </div>
+      <div class="dm-static">
+        <p><b>Budget and plan:</b> the budget of S$ 1,250,000 is spread over twelve months as the planned value (PV) S-curve; approved variation orders add to the contract and the budget.</p>
+        <p><b>Earned value:</b> each month, the percentage of work done times the budget gives the earned value (EV); actual cost (AC) comes from the purchases, subcontractor bills and timesheets on the project's analytic account. CPI is EV divided by AC, SPI is EV divided by PV, and the estimate at completion is the budget divided by CPI.</p>
+        <p><b>Progress claims:</b> each month the certified work done to date, less retention (5% or 10%, limited to 5% of the contract sum) and less previous claims, is invoiced with GST at 9%.</p>
+        <p><b>Subcontractors and retention:</b> subcontractor claims are certified and billed to the project, with retention held from them; the retention ledger shows what the client holds from us and what we hold from subcontractors, and when each is released.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample project and figures. Odoo records the budget, costs, progress and invoices per project; earned value is a report we build on that data (for example an Odoo spreadsheet dashboard), and how retention is set up (a retention line and account, or payment terms) is agreed in discovery.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what usually slows you down</span><h2>Three problems we see first.</h2></div>
+    <div class="grid-3 ixw-board">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{icon:ruler}}</div><h3>Costs found at the end</h3><p>Subcontractor claims and site purchases sit in email until the project closes; the margin is a surprise.</p></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{icon:receipt}}</div><h3>Progress billing by spreadsheet</h3><p>Certified percentages, retention and variations tracked in Excel, invoices typed from it.</p></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{icon:box}}</div><h3>Materials nobody tracks</h3><p>Deliveries straight to site, no receipt against the order, stock written off at year end.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head sec-head--row reveal"><div><span class="hand">how odoo maps to it</span><h2 style="margin:0">The apps we switch on.</h2></div><a class="btn-link" href="{{ROOT}}odoo/apps.html">All Odoo apps {{icon:arrow}}</a></div>
+    <div class="showcase reveal" data-showcase data-interval="6000">
+      <div class="sc-list" role="tablist" aria-label="Odoo apps for construction">
+        <button class="sc-tab" role="tab" type="button" data-app="project" data-kicker="Project · Services" data-title="Project" data-href="{{ROOT}}odoo/apps/project.html" data-desc="One project per contract with stages, milestones and an analytic account that collects every cost and every invoice." data-points="Analytic account per project or phase|Milestones tied to progress invoicing|Tasks, site diary and documents in one place">{{odoo:project:36}}<span><b>Project</b><small>Job costing per contract.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="purchase" data-kicker="Purchase · Supply Chain" data-title="Purchase" data-href="{{ROOT}}odoo/apps/purchase.html" data-desc="Materials and subcontractor orders raised against the project; bills matched to what was certified or received." data-points="Purchase orders per project and phase|Subcontractor bills matched to certified work|Retention held and released on schedule">{{odoo:purchase:36}}<span><b>Purchase</b><small>Subcontractors and site materials.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="accountant" data-kicker="Accounting · Finance" data-title="Accounting" data-href="{{ROOT}}odoo/apps/accountant.html" data-desc="Progress invoices, retention, variations and WIP handled in the ledger — with margin per project on one report." data-points="Progress and milestone invoicing|Retention receivable and payable|Margin per project, live">{{odoo:accountant:36}}<span><b>Accounting</b><small>Progress billing, retention, WIP.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="hr_timesheet" data-kicker="Timesheets · Services" data-title="Timesheets" data-href="{{ROOT}}odoo/apps/hr_timesheet.html" data-desc="Site and office hours booked to the project from the phone; labour cost lands on the job daily." data-points="Hours per project from mobile|Labour cost posted to the analytic account|Overtime and allowances captured">{{odoo:hr_timesheet:36}}<span><b>Timesheets</b><small>Labour hours to the job.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="stock" data-kicker="Inventory · Supply Chain" data-title="Inventory" data-href="{{ROOT}}odoo/apps/stock.html" data-desc="Site stores as locations; deliveries received against orders; consumables issued to the project." data-points="Site stores as stock locations|Receipts against purchase orders|Consumables issued to the project">{{odoo:stock:36}}<span><b>Inventory</b><small>Site stores and deliveries.</small></span></button>
+      </div>
+      <div class="sc-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+{{INDUSTRY:construction}}
+
+<section class="section">
+  <div class="container">
+    <div class="cta ixw-cta reveal" data-ixw-burst>
+      <span class="ixw-cta-nexi" aria-hidden="true">{{IXW_POSE:construction:celebrate}}</span>
+      <div><span class="hand">next step</span><h2>Bring one live project.</h2><p><span class="m-full">A discovery call with one contract's costs and claims is enough to scope the first phase.</span><span class="m-short">One contract's costs and claims are enough to scope the first phase.</span></p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a></div>
+    </div>
+  </div>
+</section>

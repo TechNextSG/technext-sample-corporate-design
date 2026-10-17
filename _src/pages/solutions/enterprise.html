@@ -1,0 +1,220 @@
+<!--meta {"title": "Odoo Multi-Company ERP for Groups & Consolidation", "desc": "Odoo multi-company ERP for groups in Singapore and the Philippines: every entity in one Odoo, inter-company flows and one set of consolidated numbers.", "out": "solutions/enterprise.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-consol.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-enterprise.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-consol.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-enterprise.css?v={ASSET_V}\">", "body": "ixw ixw--sol-enterprise sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-enterprise" data-home="290,-10" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>ERP</span><span>Enterprise Solution</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Odoo for groups</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo for groups · multi-company</span>Every company in the group, one Odoo.</h1>
+      <p class="lead"><span class="m-full">Several companies, countries and currencies on one database — with inter-company transactions posted automatically, each entity's local tax rules respected, and a consolidated view for the board without a month of spreadsheets.</span><span class="m-short">Several companies, countries and currencies on one database, with a consolidated view for the board.</span></p>
+      <div class="twr-tags"><a href="{{ROOT}}solutions/odoo-erp.html">{{icon:layers}} Odoo ERP</a><a href="{{ROOT}}odoo/integration.html">{{icon:plug}} Integrations</a><span class="twr-tag-ok">{{icon:check}} 11+ enterprise clients transformed</span></div>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Every company has its own floor. Tap the people, the lift, the gates or the month-end button.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="tn" data-near="430,40" data-who="TechNext consultant" data-role="TechNext · group rollout · illustration" data-say="One company first, then the template: every next entity goes up **floor by floor**." style="--x:266;--y:364;--w:90;--h:212" aria-label="Say hi to the TechNext consultant (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Consultant</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="cfo" data-near="290,-10" data-who="Group CFO" data-role="Client team · the sky deck · illustration" data-say="One set of numbers, in the **group currency**, without a month of spreadsheets." style="--x:748;--y:-88;--w:50;--h:116" aria-label="Say hi to the group CFO (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Group CFO</b><i>sky deck</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="sg" data-near="290,40" data-who="Holding company" data-role="Client team · Singapore · SGD · illustration" data-say="Our own books, our own users, our own approvals. **Closed** for the month." style="--x:505;--y:72;--w:56;--h:108" aria-label="Say hi to the Singapore holding team (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Singapore</b><i>holding · SGD</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="ph" data-near="290,40" data-who="Philippine company" data-role="Client team · Philippines · PHP · illustration" data-say="Vietnam's invoice came up the lift as **my matching bill**. Nothing to key in." style="--x:762;--y:66;--w:52;--h:120" aria-label="Say hi to the Philippines team (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Philippines</b><i>PHP</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="vn" data-near="290,40" data-who="Vietnamese company" data-role="Client team · Vietnam · VND · illustration" data-say="We sell goods to the Philippines. One invoice here, **the bill posts there**." style="--x:640;--y:216;--w:52;--h:120" aria-label="Say hi to the Vietnam team (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Vietnam</b><i>VND</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="my" data-near="290,60" data-who="Malaysian company" data-role="Client team · Malaysia · MYR · illustration" data-say="We book in ringgit; the group reads it in **SGD**. Rates managed in one place." style="--x:792;--y:222;--w:56;--h:108" aria-label="Say hi to the Malaysia team (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Malaysia</b><i>MYR</i></span></button>
+
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="deck" data-nx="290,-10" data-pose="point-right" data-rec="Consolidation · group P&amp;L in SGD, eliminations handled" data-say="On the **sky deck** the board reads one consolidated P&amp;L in the group currency, with inter-company lines eliminated by the system." style="--x:570;--y:-94;--w:188;--h:100" aria-pressed="false"><span class="ixw-hot-lab">{{icon:bars}}<b>Consolidation</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="books" data-nx="290,40" data-pose="point-right" data-rec="Multi-company · own books, users and approvals per entity" data-say="**One floor per company**: each keeps its own books, users and approval rules, all on one Odoo database." style="--x:791;--y:341;--w:110;--h:94" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layers}}<b>Multi-company</b></span></button>
+      <button class="ixw-hot ixw-hot--left" type="button" data-hot="lift" data-nx="290,40" data-pose="point-right" data-rec="Inter-company · invoice in VN → matching bill in PH" data-say="The **inter-company lift**: Vietnam's invoice arrives upstairs as the Philippines' matching bill, and they reconcile automatically." style="--x:700;--y:120;--w:46;--h:290" aria-pressed="false"><span class="ixw-hot-lab">{{icon:refresh}}<b>Inter-company</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="fx" data-nx="290,230" data-pose="point-right" data-rec="Multi-currency · 1 SGD = 43.50 PHP · 20,200 VND · 3.30 MYR" data-say="**Multi-currency**: each company books in its own currency; rates are managed in one place and the group reports in SGD." style="--x:565;--y:325;--w:198;--h:58" aria-pressed="false"><span class="ixw-hot-lab">{{icon:bank}}<b>Multi-currency</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="local" data-nx="290,60" data-pose="point-right" data-rec="Localisations · chart of accounts, tax and filing per country" data-say="Each flag is a **country localisation**: the right chart of accounts, tax and statutory reporting for every entity." style="--x:396;--y:160;--w:104;--h:44" aria-pressed="false"><span class="ixw-hot-lab">{{icon:globe}}<b>Localisations</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="rollout" data-nx="430,40" data-pose="point-left" data-rec="Rollout · pilot → template → country by country" data-say="The **phased rollout**: one pilot company first, its setup becomes the group template, then the next entity goes up on it." style="--x:260;--y:170;--w:156;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:trend}}<b>Phased rollout</b></span></button>
+      <button class="ixw-hot ixw-hot--left" type="button" data-hot="base" data-nx="600,390" data-pose="point-right" data-rec="Odoo.sh · production, staging and development branches" data-say="Underneath, **one database on Odoo.sh**: custom modules tested on staging before they reach production." style="--x:898;--y:385;--w:84;--h:170" aria-pressed="false"><span class="ixw-hot-lab">{{icon:database}}<b>Odoo.sh</b></span></button>
+
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="close" data-near="290,-10" data-pose="celebrate" data-say="Month-end, **fast-forward**: books closed, inter-company mirrored, translated to SGD, eliminated. One group P&amp;L." style="--x:866;--y:-47;--w:34;--h:26" aria-label="Press the month-end button"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Run month-end</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="gate" data-near="600,390" data-pose="wow" data-say="Beep! **Access per company**: people see their own company's data and only the group views you grant." style="--x:791;--y:446;--w:110;--h:48" aria-label="Badge in at the gates"><span class="ixw-hot-lab" aria-hidden="true">{{icon:shield}}<b>Badge in</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:290;--ny:-10" data-reacts="wow::Four companies, **one database**!|love::One set of numbers at the top. **Love it**.|celebrate::Month closed for the **whole group**!|think::Hmm… how many entities is your group running?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-enterprise}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **group tower**: every company has its own floor, and they all stand on one Odoo." data-outro="Own floors, one lift, one foundation, and **one set of numbers** at the top. That's Odoo for groups.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-enterprise}}<b data-for="tn" style="--c:#3167CA">T</b><b data-for="cfo" style="--c:#B4892A">G</b><b data-for="sg" style="--c:#E5484D">S</b><b data-for="ph" style="--c:#2F6FD6">P</b><b data-for="vn" style="--c:#E99A12">V</b><b data-for="my" style="--c:#14A38B">M</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · Odoo for groups">assistant · Odoo for groups</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>group tower</b>: every company has its own floor, and they all stand on one Odoo.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: consolidation"></button><button type="button" data-ixw-dot aria-label="Stop 3: multi-company"></button><button type="button" data-ixw-dot aria-label="Stop 4: inter-company"></button><button type="button" data-ixw-dot aria-label="Stop 5: multi-currency"></button><button type="button" data-ixw-dot aria-label="Stop 6: localisations"></button><button type="button" data-ixw-dot aria-label="Stop 7: phased rollout"></button><button type="button" data-ixw-dot aria-label="Stop 8: Odoo.sh"></button><button type="button" data-ixw-dot aria-label="Stop 9: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:shield}}Partner status</dt><dd><a href="https://www.odoo.com/partners/technext-pte-ltd-28073844" target="_blank" rel="noopener">Odoo Ready Partner</a></dd></div><div><dt>{{icon:layers}}Built for</dt><dd>Multi-company · multi-country · multi-currency</dd></div><div><dt>{{icon:database}}Hosting</dt><dd>Odoo.sh · your own cloud</dd></div><div><dt>{{icon:trend}}Rollout</dt><dd>Pilot → template → country by country</dd></div><div><dt>{{icon:globe}}Delivered in</dt><dd>10+ countries, from Singapore, the Philippines and Vietnam</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec twr-plaque-sec">
+  <div class="container"><div class="answer-box twr-plaque reveal"><span class="twr-plaque-ic" aria-hidden="true">{{icon:layers}}</span><p class="answer-h">In one paragraph</p><p>Odoo for groups runs several companies, countries and currencies on one Odoo database. Inter-company transactions post automatically, each entity keeps its own books and local tax rules, and the board sees one consolidated set of numbers in the group currency. TechNext rolls it out in phases: one company first, then country by country.</p></div></div>
+</section>
+
+<section class="section demo-sec twr-board-sec" id="group-consolidation">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">close the month</span><h2>Odoo multi-company consolidation, from local books to one group P&amp;L.</h2><p class="lead">A sample group on one Odoo database: a Singapore holding with companies in the Philippines, Vietnam and Malaysia, each keeping its own books and currency. An intercompany invoice creates the mirror bill in the other company, a group loan accrues interest, and at month-end the figures are translated into SGD and the intercompany lines are eliminated. Switch companies in and out of the group view or move the exchange rate, and the consolidated P&amp;L TechNext sets up for you updates line by line.</p></div>
+    <div class="twr-board reveal">
+      <div class="twr-board-top" aria-hidden="true"><span class="twr-board-t">Sky deck · boardroom</span><span class="twr-flags"><i style="--c:#E5484D">SG</i><i style="--c:#2F6FD6">PH</i><i style="--c:#E99A12">VN</i><i style="--c:#14A38B">MY</i></span><span class="twr-board-r">→ one P&amp;L in SGD</span></div>
+    <div class="dm dm-consol" data-demo="consol">
+      <div class="dm-head">
+        <div class="dm-title"><b>Group consolidation</b><small>Illustrative group · one month · reported in SGD</small></div>
+        <button class="dm-btn dm-btn--primary" type="button" data-run>{{icon:play}}Run month-end</button>
+      </div>
+      <div class="cns-bar">
+        <ol class="cns-steps" aria-label="Month-end steps"><li>Local books closed</li><li>Intercompany mirrored</li><li>Translated to SGD</li><li>Eliminations posted</li><li>Group P&amp;L</li></ol>
+        <div class="cns-rate"><label for="cns-fx">SGD against PHP, VND and MYR <b data-k="pct">0%</b></label><input id="cns-fx" type="range" min="-10" max="10" step="1" value="0"><small data-k="rates">1 SGD = 43.50 PHP · 20,200 VND · 3.30 MYR</small></div>
+      </div>
+      <div class="cns-wrap">
+        <div class="cns-tree" role="group" aria-label="Group companies: switch each one in or out of the group view">
+          <svg class="cns-svg" aria-hidden="true"></svg>
+        </div>
+        <div class="cns-ws">
+          <div class="cns-scroll"><table class="cns-tbl"><caption>Consolidation worksheet · SGD thousands</caption><thead><tr><th scope="col">P&amp;L</th><th scope="col">SG</th><th scope="col">PH</th><th scope="col">VN</th><th scope="col">MY</th><th scope="col">Elim.</th><th scope="col">Group</th></tr></thead><tbody></tbody></table></div>
+          <p class="cns-check" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="cns-elims" aria-label="Elimination entries"></div>
+      <div class="dm-static">
+        <p><b>The group:</b> a holding company in Singapore (SGD) owning companies in the Philippines (PHP), Vietnam (VND) and Malaysia (MYR), each with its own books on one Odoo database.</p>
+        <p><b>Intercompany:</b> Vietnam sells goods to the Philippines, and the invoice creates the matching vendor bill in the Philippine company; Singapore lends to Vietnam and charges Malaysia a management fee.</p>
+        <p><b>Month-end:</b> each company closes its books, figures are translated into SGD, intercompany revenue and cost, receivables and payables, the loan and its interest are eliminated, together with the profit still sitting in the buyer's stock, and the group P&amp;L is produced.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Illustrative figures for a fictional group, wholly owned, one rate per currency. Your consolidation rules, rates and eliminations are set up with your accountants.</p>
+  </div>
+</section>
+
+<section class="section twr-build-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>Everything a group needs on one database.</h2>
+      <p class="lead">One system for every entity — with each company's books, users and local rules intact, and the group view built on top rather than typed up each month.</p>
+    </div>
+    <div class="twr-build reveal">
+      
+      <div class="twr-units">
+        <article class="twr-unit reveal" style="--i:0;--c:#E5484D"><span class="twr-unit-fl" aria-hidden="true">Floor 6</span><div class="card-ic">{{icon:layers}}</div><h3>Multi-company setup</h3><p>Each entity keeps its own books, users and approval rules; you share products, partners and reports only where you choose to.</p></article>
+        <article class="twr-unit reveal" style="--i:1;--c:#2F6FD6"><span class="twr-unit-fl" aria-hidden="true">Floor 5</span><div class="card-ic">{{icon:globe}}</div><h3>Country localisations</h3><p>The right chart of accounts, tax and statutory reporting per country, with group reporting rolled up in one currency.</p></article>
+        <article class="twr-unit reveal" style="--i:2;--c:#E99A12"><span class="twr-unit-fl" aria-hidden="true">Floor 4</span><div class="card-ic">{{icon:refresh}}</div><h3>Inter-company flows</h3><p>A sale in one entity raises the matching purchase in another; the invoice and bill reconcile automatically.</p></article>
+        <article class="twr-unit reveal" style="--i:3;--c:#14A38B"><span class="twr-unit-fl" aria-hidden="true">Floor 3</span><div class="card-ic">{{icon:bank}}</div><h3>Multi-currency</h3><p>Transactions in local currency, revaluation and reporting in the group currency, exchange rates managed in one place.</p></article>
+        <article class="twr-unit reveal" style="--i:4;--c:#B4892A"><span class="twr-unit-fl" aria-hidden="true">Floor 2</span><div class="card-ic">{{icon:bars}}</div><h3>Consolidation</h3><p>Group P&amp;L, balance sheet and cash on demand, with eliminations handled by the system rather than a spreadsheet.</p></article>
+        <article class="twr-unit reveal" style="--i:5;--c:#714B67"><span class="twr-unit-fl" aria-hidden="true">Floor 1</span><div class="card-ic">{{icon:shield}}</div><h3>Access and governance</h3><p>Granular access rights, record rules, approval chains and audit trails — segregation of duties enforced by configuration.</p></article>
+      </div>
+      <span class="twr-plinth" aria-hidden="true"><b>One Odoo database</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt twr-phases-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how a group rollout runs</span>
+      <h2>Pilot one entity, then template the rest.</h2>
+      <p class="lead">We prove the model on a single company, turn its setup into the group standard, and roll out entity by entity — with local changes only where the law demands them.</p>
+    </div>
+    <ol class="twr-phases reveal">
+      <li class="twr-ph reveal" style="--i:0"><span class="twr-ph-art twr-ph-art--0" aria-hidden="true"><i></i></span><span class="twr-ph-n">1</span><h3>Group discovery</h3><p>We map the entities, the flows between them, the currencies in play and exactly what the board needs to see — plus which systems stay.</p></li>
+      <li class="twr-ph reveal" style="--i:1"><span class="twr-ph-art twr-ph-art--1" aria-hidden="true"><i></i></span><span class="twr-ph-n">2</span><h3>Pilot entity</h3><p>One company implemented end to end — Accounting, Sales, Inventory and whatever it needs — running on real data.</p></li>
+      <li class="twr-ph reveal" style="--i:2"><span class="twr-ph-art twr-ph-art--2" aria-hidden="true"><i></i><i></i></span><span class="twr-ph-n">3</span><h3>Group template</h3><p>The pilot's setup becomes the standard: chart-of-accounts mapping, shared masters, inter-company rules and consolidated reports.</p></li>
+      <li class="twr-ph reveal" style="--i:3"><span class="twr-ph-art twr-ph-art--3" aria-hidden="true"><i></i><i></i><i></i></span><span class="twr-ph-n">4</span><h3>Phased rollout</h3><p>Entity by entity and country by country, with local tax and statutory reporting, trained local teams and one shared support plan.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section twr-spec-sec">
+  <div class="container">
+    <div class="two two--top twr-spec">
+      <div class="reveal twr-spec-l">
+        <span class="hand">what you get</span>
+        <h2>One platform, every entity, staged safely.</h2>
+        <p class="lead">Group deployments need custom modules, safe places to test them, and data-residency choices made on purpose. We size and set up the platform with you.</p>
+      </div>
+      <div class="twr-blue reveal">
+        <p class="twr-blue-h" aria-hidden="true"><b>Specification</b><span>sheet A-01 · the platform</span></p>
+        <ul class="spec-cols twr-list" style="margin:0">
+          <li>{{icon:check}}<span>All entities on one Odoo database with a shared master-data model.</span></li>
+          <li>{{icon:check}}<span>Production, staging and development branches on Odoo.sh.</span></li>
+          <li>{{icon:check}}<span>Custom modules built, tested on staging and version-controlled.</span></li>
+          <li>{{icon:check}}<span>Inter-company rules that post the matching document automatically.</span></li>
+          <li>{{icon:check}}<span>Multi-currency with revaluation and group-currency reporting.</span></li>
+          <li>{{icon:check}}<span>Consolidated P&amp;L, balance sheet and cash with eliminations handled.</span></li>
+          <li>{{icon:check}}<span>Country localisations for tax and statutory filing per entity.</span></li>
+          <li>{{icon:check}}<span>Granular access rights and a role model per company.</span></li>
+          <li>{{icon:check}}<span>Single sign-on across the group where you use it.</span></li>
+          <li>{{icon:check}}<span>Backups, monitoring and a clear version-upgrade path.</span></li>
+          <li>{{icon:check}}<span>Data residency by region where regulation requires it.</span></li>
+          <li>{{icon:check}}<span>One support plan covering every entity.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt twr-desk-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">questions we hear</span>
+      <h2>How groups usually ask it.</h2>
+    </div>
+    <div class="faq twr-faq reveal">
+      <details><summary>Do all entities have to go live at once? {{icon:chevron}}</summary><div class="faq-a"><p>No. We implement a pilot entity first, then roll the template out company by company. Each entity goes live when it's ready.</p></div></details>
+      <details><summary>How does consolidation work? {{icon:chevron}}</summary><div class="faq-a"><p>Group P&amp;L, balance sheet and cash are produced from the same database, with inter-company eliminations handled by the system. There's no separate month of spreadsheet consolidation.</p></div></details>
+      <details><summary>Can each country keep its own tax rules? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Every entity uses its country's localisation for chart of accounts, tax and statutory reporting, while the group reports roll up in one currency.</p></div></details>
+      <details><summary>Who can see what? {{icon:chevron}}</summary><div class="faq-a"><p>Access is controlled by granular rights and record rules per entity, with approval chains and audit trails. People see their company's data and only the group views you grant.</p></div></details>
+      <details><summary>Where does the group's data live? {{icon:chevron}}</summary><div class="faq-a"><p>Usually on Odoo.sh, with staging and version control; on your own cloud where data residency requires it. We decide per region during discovery.</p></div></details>
+      <details><summary>How is a group project priced? {{icon:chevron}}</summary><div class="faq-a"><p>By the entities, countries, integrations and custom work involved, so it's scoped and quoted rather than listed. Tell us how the group is structured and we'll come back with a phased <a href="{{ROOT}}quotation.html">quotation</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section twr-links-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>What this connects to.</h2>
+    </div>
+    <div class="twr-links reveal">
+      
+      <div class="grid-3 twr-towers">
+        <a class="card twr-link reveal" style="--i:0;--c:#3167CA" href="{{ROOT}}solutions/odoo-erp.html"><div class="card-ic">{{icon:grid}}</div><h3>Odoo ERP</h3><p>Our core single-company implementation: configure, migrate, train and support — the foundation each entity is built on.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+        <a class="card twr-link reveal" style="--i:1;--c:#714B67" href="{{ROOT}}odoo/crm-development.html"><div class="card-ic">{{odoo:crm}}</div><h3>CRM Development</h3><p>A pipeline shaped around how each team sells, feeding won deals straight into Sales.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+        <a class="card twr-link reveal" style="--i:2;--c:#14A38B" href="{{ROOT}}odoo/integration.html"><div class="card-ic">{{icon:plug}}</div><h3>Integrations</h3><p>Banks, payroll, e-commerce and legacy systems connected to Odoo through connectors or the API.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt twr-roof-sec">
+  <div class="container">
+    <div class="cta reveal">
+      <span class="twr-skyline" aria-hidden="true"></span>
+      <div>
+        <span class="hand">next step</span>
+        <h2>Tell us how the group is structured.</h2>
+        <p>Entities, countries and what the board needs to see — that's enough for a first architecture and a phased quotation.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

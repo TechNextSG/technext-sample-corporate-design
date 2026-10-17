@@ -1,0 +1,229 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: health-wellness (Willow & Stone, a sample yoga and spa studio). Sage, lavender, blush and warm sand on plaster
+   and pale wood: the copy is a linen class pass with a pressed leaf, the caption is a smooth river stone, the workflow
+   stops are pebbles on a mat, the problems are knots to work out, the apps are rolled mats, before/after is a breathing
+   journal, the video sits in an arched window, Odoo 20 is a new class card, the rollout is a cairn of three stones and the
+   end card is the garden. Scoped to body.ixw--health-wellness. */
+.ixw--health-wellness{--w-vwall:#F6EFE5;--w-vwains:#D5E5D8;--w-vfloor:#EEDDC6;--w-vbase:#A7C2AC;--w-alt:#F7F3EC;--w-dot:rgba(94,140,110,.10);--w-hand:#5E8C6E;
+  --g-sage:#8DB39A;--g-sage-d:#5E8C6E;--g-sage-dd:#3F6B4F;--g-lav:#8C76B8;--g-lav-d:#6A55A0;--g-lav-l:#EDE7F6;--g-blush:#F2B5A7;--g-sand:#EAD9C2;--g-ink:#3B3651;--g-cream:#FBF7F0;
+  --g-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --g-linen:repeating-linear-gradient(0deg,rgba(160,130,90,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(160,130,90,.05) 0 1px,transparent 1px 3px),#FBF7F0}
+.ixw--health-wellness .ixw-vg .f-hsage{fill:#8DB39A}.ixw--health-wellness .ixw-vg .f-hsage-d{fill:#5E8C6E}.ixw--health-wellness .ixw-vg .f-hsage-l{fill:#E3EFE6}
+.ixw--health-wellness .ixw-vg .f-hlav{fill:#8C76B8}.ixw--health-wellness .ixw-vg .f-hlav-l{fill:#EDE7F6}.ixw--health-wellness .ixw-vg .f-hblush-l{fill:#FBE3DC}
+.ixw--health-wellness .ixw-vg .t-sage{fill:#3F6B4F}.ixw--health-wellness .ixw-vg .t-lav{fill:#6A55A0}.ixw--health-wellness .ixw-vg .f-ink{fill:#3B3651}
+
+/* ---------- the hero: the bright studio; the copy is a linen class pass with a pressed leaf ---------- */
+.ixw--health-wellness .ixw-hero{background:linear-gradient(180deg,#F8F2E9 0%,#EFE6D8 54%,#CFE0D1 54%,#C1D7C4 74%,#EEDDC6 74%,#DCC6A8 100%)}
+.ixw--health-wellness .ixw-copy{position:relative;max-width:468px;padding:62px 32px 50px;border-radius:30px 30px 30px 8px;background:var(--g-linen);
+  box-shadow:inset 0 0 0 9px var(--g-cream),inset 0 0 0 10.5px rgba(94,140,110,.45),0 0 0 1px #E6D9C4,0 30px 60px -30px rgba(80,60,40,.45)}
+.ixw--health-wellness .ixw-copy::before{content:"CLASS PASS \00B7  WILLOW & STONE \00B7  SAMPLE";position:absolute;left:24px;top:24px;padding:7px 14px 7px 30px;border-radius:999px;
+  background:var(--g-sage-d) radial-gradient(circle at 15px 50%,#F2B5A7 4px,transparent 4.5px);font:700 10px/1 var(--font-display);letter-spacing:.16em;color:#FFFFFF}
+.ixw--health-wellness .ixw-copy::after{content:"";position:absolute;right:-14px;top:-26px;width:96px;height:96px;transform:rotate(18deg);pointer-events:none;opacity:.9;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 96C50 70 50 40 50 6' stroke='%235E8C6E' stroke-width='2.4' fill='none'/%3E%3Cg fill='%238DB39A'%3E%3Cellipse cx='38' cy='24' rx='9' ry='17' transform='rotate(-35 38 24)'/%3E%3Cellipse cx='62' cy='34' rx='9' ry='17' transform='rotate(35 62 34)'/%3E%3Cellipse cx='38' cy='50' rx='9' ry='17' transform='rotate(-35 38 50)'/%3E%3Cellipse cx='62' cy='60' rx='9' ry='17' transform='rotate(35 62 60)'/%3E%3Cellipse cx='40' cy='76' rx='8' ry='15' transform='rotate(-35 40 76)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--health-wellness .ixw-copy h1{font-family:var(--g-serif);font-weight:700;letter-spacing:-.01em}
+.ixw--health-wellness .ixw-copy .crumbs{margin-top:6px}
+.ixw--health-wellness .ixw-hint .ic{color:var(--g-lav)}
+.ixw--health-wellness .ixw-credits dt .ic{color:var(--g-lav)}
+.ixw--health-wellness .ixw-credits{border-radius:22px;box-shadow:inset 0 0 0 2px #E3EFE6,0 26px 50px -30px rgba(80,60,40,.4)}
+/* the caption: a smooth river stone */
+.ixw--health-wellness .ixw-cap{border-radius:46px 38px 42px 34px / 40px 44px 36px 42px;background:linear-gradient(160deg,#FFFFFF 0%,#F6F2EC 100%);
+  box-shadow:inset 0 2px 0 #FFFFFF,inset 0 -6px 14px rgba(120,100,80,.08),0 22px 44px -22px rgba(80,60,40,.5)}
+.ixw--health-wellness .ixw-cap::before{content:"";position:absolute;right:26px;top:-10px;width:40px;height:20px;border-radius:50%;background:#C9D9CC;box-shadow:-14px 4px 0 -4px #E5D7C3;pointer-events:none}
+.ixw--health-wellness .ixw-cap-who b,.ixw--health-wellness .ixw-cap-txt b{color:var(--g-sage-dd)}
+.ixw--health-wellness .ixw-cap-who b{font-family:var(--g-serif)}
+.ixw--health-wellness .ixw-caret{background:var(--g-lav)}
+.ixw--health-wellness .ixw-cap-rec{border-radius:999px;background:var(--g-lav-l);color:var(--g-lav-d)}
+
+/* ---------- Nexi's paragraph: a teacher's note ---------- */
+.ixw--health-wellness .ixw-say{border-radius:26px;background:var(--g-linen);box-shadow:inset 0 0 0 2px #E3EFE6,var(--w-card)}
+.ixw--health-wellness .ixw-say .ix-intro-h{background:#E3EFE6;color:var(--g-sage-dd);font-family:var(--g-serif)}
+
+/* ---------- the workflow: pebbles on a mat ---------- */
+.ixw--health-wellness .ixw-flow-sec{background:linear-gradient(180deg,#FFFFFF 0%,#F7F3EC 100%)}
+.ixw--health-wellness .ixw-scenes{border-radius:28px;background:#F1E9DD;box-shadow:inset 0 0 0 2px #E6D9C4,0 30px 60px -36px rgba(80,60,40,.45)}
+.ixw--health-wellness .ixw-scene-tag{color:var(--g-sage-dd);font-family:var(--g-serif)}
+.ixw--health-wellness .ixw-road{height:22px;margin-top:-11px;border-radius:999px;background:#E7DDF3;box-shadow:inset 0 -4px 0 rgba(106,85,160,.14),inset 0 0 0 2px #D8CCEB}
+.ixw--health-wellness .ixw-road i{border-radius:999px;background:linear-gradient(180deg,#A6CBB1,#8DB39A)}
+.ixw--health-wellness .ixw-pin{width:60px;height:52px;border:0;border-radius:52% 48% 46% 54% / 58% 54% 46% 42%;background:radial-gradient(ellipse at 40% 30%,#FFFFFF 0 30%,#EDE6DC 72%);
+  box-shadow:inset 0 -5px 0 rgba(120,100,80,.16),0 6px 0 -1px #CDBFA9,0 12px 18px -8px rgba(80,60,40,.4)}
+.ixw--health-wellness .ixw-stop:nth-child(even) .ixw-pin{border-radius:46% 54% 56% 44% / 50% 46% 54% 50%}
+.ixw--health-wellness .ixw-pin i{background:var(--g-ink)}
+.ixw--health-wellness .ixw-stop:hover .ixw-pin{border:0;translate:0 -3px;box-shadow:inset 0 -5px 0 rgba(120,100,80,.16),0 8px 0 -1px #CDBFA9,0 16px 22px -8px rgba(80,60,40,.4)}
+.ixw--health-wellness .ixw-stop.is-done .ixw-pin{border:0;background:radial-gradient(ellipse at 40% 30%,#F1F8F3 0 30%,#CFE3D5 72%)}
+.ixw--health-wellness .ixw-stop.is-done .ixw-pin i{background:var(--g-sage-d)}
+.ixw--health-wellness .ixw-stop.is-on .ixw-pin{border:0;background:radial-gradient(ellipse at 40% 30%,#F7F3FC 0 30%,#D9CCEE 72%);box-shadow:inset 0 -5px 0 rgba(106,85,160,.2),0 6px 0 -1px #B9A6D8,0 0 0 8px rgba(185,166,216,.28),0 0 30px 6px rgba(185,166,216,.4)}
+.ixw--health-wellness .ixw-stop.is-on .ixw-pin i{background:var(--g-lav-d)}
+.ixw--health-wellness .ixw-stop-t{margin-top:10px;font-family:var(--g-serif)}
+.ixw--health-wellness .ixw-panel{border-radius:26px;box-shadow:inset 0 0 0 2px #E3EFE6,0 30px 60px -36px rgba(80,60,40,.4)}
+.ixw--health-wellness .ixw-panel-meta>div{border-radius:16px;background:#F7F3EC}
+.ixw--health-wellness .ixw-panel-who b{color:var(--g-sage-dd)}
+.ixw--health-wellness .ixw-rec{border-radius:999px;border-color:#E3DCEB;background:#FBF9FE}
+.ixw--health-wellness .ixw-rec>.ic{color:var(--g-sage-d)}
+.ixw--health-wellness .ixw-pick-l::before{content:"";width:18px;height:18px;background:var(--g-sage-d);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10zm0 7v13'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2c4 3 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 2-7 6-10zm0 7v13'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ---------- the three problems: knots to work out ---------- */
+.ixw--health-wellness .ixw-board{border-radius:32px;background:var(--g-linen);box-shadow:inset 0 0 0 2px #E6D9C4,0 24px 50px -34px rgba(80,60,40,.45)}
+.ixw--health-wellness .ixw-board .card{padding:54px 24px 24px;border-radius:24px;transform-origin:50% 0}
+.ixw--health-wellness .ixw-board .card:nth-child(n){background:#FFFFFF;box-shadow:inset 0 0 0 2px #F3E6E1,0 18px 26px -16px rgba(80,60,40,.4)}
+.ixw--health-wellness .ixw-board .card::before,.ixw--health-wellness .ixw-board .card:nth-child(n)::before{left:20px;right:auto;top:18px;width:26px;height:26px;margin:0;border-radius:50%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M4 13c4-8 14-8 14 0s-10 8-10 0 8-9 14-3' fill='none' stroke='%23C7705E' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/20px no-repeat,#FBE3DC}
+.ixw--health-wellness .ixw-board .card::after{content:"TENSION";position:absolute;left:56px;top:25px;font:700 10.5px/1 var(--font-display);letter-spacing:.18em;color:#C7705E}
+.ixw--health-wellness .ixw-board .card:nth-child(2)::after{content:"KNOT"}
+.ixw--health-wellness .ixw-board .card:nth-child(3)::after{content:"STRAIN"}
+.ixw--health-wellness .ixw-board .card:hover{transform:translateY(-5px)}
+.ixw--health-wellness .ixw-board .card-ic{color:var(--g-sage-d)}
+.ixw--health-wellness .ixw-board .card h3{font-family:var(--g-serif)}
+
+/* ---------- the apps: rolled mats ---------- */
+.ixw--health-wellness .sc-tab{border:2px solid var(--g-ink);border-radius:999px;box-shadow:inset -22px 0 0 -12px rgba(255,255,255,.35),inset -26px 0 0 -12px rgba(0,0,0,.08),0 3px 0 var(--g-ink);background:#B9A6D8;color:var(--g-ink)}
+.ixw--health-wellness .sc-tab:nth-child(3n+2){background:#A6CBB1}
+.ixw--health-wellness .sc-tab:nth-child(3n){background:#F2C3B7}
+.ixw--health-wellness .sc-tab small{color:#4E4766}
+.ixw--health-wellness .sc-tab:hover{border-color:var(--g-ink);box-shadow:inset -22px 0 0 -12px rgba(255,255,255,.35),inset -26px 0 0 -12px rgba(0,0,0,.08),0 5px 0 var(--g-ink);translate:4px 0}
+.ixw--health-wellness .sc-tab.is-active{border-color:var(--g-ink);background:#FFFFFF;color:var(--g-ink);box-shadow:0 4px 0 var(--g-ink);translate:14px 0}
+.ixw--health-wellness .sc-tab.is-active small{color:#6B6585}
+.ixw--health-wellness .sc-tab.is-active b{color:var(--g-sage-dd)}
+.ixw--health-wellness .sc-tab::after{background:var(--g-lav)}
+.ixw--health-wellness .sc-panel{border-radius:24px}
+.ixw--health-wellness .sc-panel::before{background:#F1E9DD radial-gradient(circle at 20px 18px,#8DB39A 5.5px,transparent 6px) no-repeat,radial-gradient(circle at 38px 18px,#F2B5A7 5.5px,transparent 6px) no-repeat}
+
+/* ---------- before / after: a breathing journal ---------- */
+.ixw--health-wellness .ix-ba{position:relative;gap:8px;padding:50px 16px 16px;border-radius:26px;background-color:#FFFDF8;
+  background-image:repeating-linear-gradient(180deg,transparent 0 27px,rgba(140,118,184,.14) 27px 28px);box-shadow:inset 0 0 0 2px #EDE4D6,inset 40px 0 0 -38px #F2B5A7,0 30px 60px -36px rgba(80,60,40,.4)}
+.ixw--health-wellness .ix-ba::before{content:"Breathe in: today \00B7  breathe out: with Odoo";position:absolute;left:22px;top:18px;font:italic 700 14px/1 var(--g-serif);color:var(--g-lav-d)}
+.ixw--health-wellness .ix-ba::after{content:"";position:absolute;right:20px;top:14px;width:110px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 22'%3E%3Cpath d='M2 11c9-14 18-14 27 0s18 14 27 0 18-14 27 0 18 14 25 0' fill='none' stroke='%238DB39A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--health-wellness .ix-row{border:0;border-radius:16px;background:rgba(255,255,255,.9);box-shadow:inset 0 0 0 1.5px #EFE6F7}
+.ixw--health-wellness .ix-ba.is-js[data-state="after"] .ix-row{box-shadow:inset 0 0 0 1.5px #CFE3D5}
+.ixw--health-wellness .ix-task{font-family:var(--g-serif);font-weight:700;color:var(--g-ink)}
+.ixw--health-wellness .ix-before .ic{background:#FBE3DC;color:#B25A48}
+.ixw--health-wellness .ix-after .ic{background:#E3EFE6;color:var(--g-sage-dd)}
+@media (max-width:767px){.ixw--health-wellness .ix-ba::after{display:none}.ixw--health-wellness .ix-ba::before{font-size:13px}}
+
+/* ---------- media: an arched studio window ---------- */
+.ixw--health-wellness .ix-video .yt{border:12px solid #FFFFFF;border-radius:160px 160px 18px 18px;box-shadow:0 0 0 2px #E6D9C4,0 30px 50px -30px rgba(80,60,40,.5)}
+.ixw--health-wellness .yt-play{background:var(--g-lav);box-shadow:0 5px 0 var(--g-lav-d),0 18px 34px -10px rgba(140,118,184,.7)}
+@media (max-width:767px){.ixw--health-wellness .ix-video .yt{border-radius:80px 80px 14px 14px;border-width:8px}}
+
+/* ---------- new in Odoo 20: a new class on the timetable ---------- */
+.ixw--health-wellness .ix-new{border-radius:26px}
+.ixw--health-wellness .ix-new-head{background:var(--g-sage-d);box-shadow:inset 0 -6px 0 var(--g-blush)}
+.ixw--health-wellness .ix-new-head::after{content:"NEW CLASS";margin-left:auto;padding:7px 12px;border-radius:999px;background:#FFFFFF;font:700 10.5px/1 var(--font-display);letter-spacing:.16em;color:var(--g-sage-dd)}
+.ixw--health-wellness .ix-new .checks .ic{border-radius:50%;background:#E3EFE6;color:var(--g-sage-dd)}
+@media (max-width:767px){.ixw--health-wellness .ix-new-head::after{display:none}}
+
+/* ---------- rollout: a cairn of three stones ---------- */
+.ixw--health-wellness .ix-phases::before{height:6px;top:44px;border-radius:999px;background:repeating-linear-gradient(90deg,#CDBFA9 0 6px,transparent 6px 14px);opacity:1}
+.ixw--health-wellness .ix-ph-n{border-radius:52% 48% 46% 54% / 58% 54% 46% 42%;background:#A69C8E;box-shadow:inset 0 -4px 0 rgba(0,0,0,.12),0 0 0 6px var(--w-alt)}
+.ixw--health-wellness .ix-phase:nth-child(2) .ix-ph-n{background:var(--g-sage-d)}
+.ixw--health-wellness .ix-phase:nth-child(3) .ix-ph-n{background:var(--g-lav)}
+.ixw--health-wellness .ix-phase{border-radius:24px;border-top:0;box-shadow:inset 0 0 0 2px #EDE4D6}
+.ixw--health-wellness .ix-phase h3{font-family:var(--g-serif)}
+
+/* ---------- FAQ: quiet questions; integrations: little stones ---------- */
+.ixw--health-wellness .faq details{border-radius:22px}
+.ixw--health-wellness .faq summary::before{border-radius:50%;background:#EDE7F6;color:var(--g-lav-d)}
+.ixw--health-wellness .faq details[open] summary::before{background:var(--g-sage-d);color:#FFFFFF}
+.ixw--health-wellness .faq summary .ic{color:var(--g-sage-d)}
+.ixw--health-wellness .ix-chip{border-radius:999px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #E3DCEB,0 3px 0 #EDE4D6}
+.ixw--health-wellness .ix-chip .ic{color:var(--g-lav)}
+
+/* ---------- the end card: the garden through the window ---------- */
+.ixw--health-wellness .ixw-cta{border-radius:34px;background:linear-gradient(120deg,#3F6B4F,#5E8C6E 55%,#7FA88B)}
+.ixw--health-wellness .ixw-cta::before{background-image:radial-gradient(rgba(255,255,255,.1) 2px,transparent 2.2px)}
+.ixw--health-wellness .ixw-cta::after{content:"";display:block;position:absolute;right:26px;bottom:-6px;width:150px;height:120px;top:auto;border-radius:0;transform:none;pointer-events:none;opacity:.35;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 120'%3E%3Cg fill='%23FFFFFF'%3E%3Cellipse cx='75' cy='108' rx='40' ry='12'/%3E%3Cellipse cx='75' cy='86' rx='30' ry='11'/%3E%3Cellipse cx='75' cy='66' rx='21' ry='9'/%3E%3Cellipse cx='75' cy='50' rx='13' ry='7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--health-wellness .ixw-cta h2{font-family:var(--g-serif)}
+.ixw--health-wellness .ixw-cta .hand{color:#F6CFC4}
+@media (max-width:767px){.ixw--health-wellness .ixw-cta::after{display:none}}
+
+/* ---------- buttons: pebbles and linen ----------
+   Like Nexi Explains' comic buttons (an ink outline and a hard lip you press the button onto), from the studio: the
+   primary is a smooth lavender pebble with a soft highlight, the secondary a stitched linen button, the controls are
+   stones (play breathes), the switches are a rolled-out mat. */
+.ixw--health-wellness{--lab-bd:2px solid var(--g-ink);--lab-lip:var(--g-ink);--lab-tail:var(--g-ink);--lab-r:999px}
+.ixw--health-wellness main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:2.5px solid var(--g-ink);border-radius:999px;box-shadow:0 5px 0 var(--g-ink)}
+.ixw--health-wellness main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{border-color:var(--g-ink);translate:0 -2px;box-shadow:0 7px 0 var(--g-ink)}
+.ixw--health-wellness main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 4px;transition-duration:.07s;box-shadow:0 1px 0 var(--g-ink)}
+.ixw--health-wellness main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--g-lav);outline-offset:4px}
+.ixw--health-wellness main .btn-primary,.ixw--health-wellness main .btn-primary:hover{color:#FFFFFF;background:radial-gradient(90% 120% at 30% 10%,#B6A3DD,#8C76B8 55%,#7A63A9)}
+.ixw--health-wellness main .btn-primary{box-shadow:inset 0 3px 0 rgba(255,255,255,.3),0 5px 0 var(--g-ink)}
+.ixw--health-wellness main .btn-primary:hover{box-shadow:inset 0 3px 0 rgba(255,255,255,.3),0 7px 0 var(--g-ink)}
+.ixw--health-wellness main .btn-primary:active{box-shadow:inset 0 3px 0 rgba(255,255,255,.3),0 1px 0 var(--g-ink)}
+.ixw--health-wellness main .btn-primary .ic,.ixw--health-wellness main .ixw-cta .btn-white .ic{width:30px;height:30px;margin-right:-8px;padding:6px;border-radius:50%;background:#FFFFFF;color:var(--g-lav-d)}
+.ixw--health-wellness main .ixw-cta .btn-white .ic{background:var(--g-sage-d);color:#FFFFFF}
+.ixw--health-wellness main :is(.btn-primary,.ixw-cta .btn-white):hover .ic{transform:translateX(3px)}
+.ixw--health-wellness main .btn-ghost,.ixw--health-wellness main .btn-ghost:hover,.ixw--health-wellness main .ixw-cta .btn-white,.ixw--health-wellness main .ixw-cta .btn-white:hover{color:var(--g-ink);
+  background:var(--g-linen);outline:1.5px dashed rgba(94,140,110,.6);outline-offset:-7px}
+.ixw--health-wellness main :is(.btn-ghost,.ixw-cta .btn-white):focus-visible{outline:3px solid var(--g-lav);outline-offset:4px}
+.ixw--health-wellness main .btn-ghost::before{background:rgba(141,179,154,.12)}
+.ixw--health-wellness main .btn-ghost .ic{color:var(--g-sage-d)}
+.ixw--health-wellness main .ixw-cta .btn-outline-white,.ixw--health-wellness main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.12)}
+/* the controls: stones; play breathes */
+.ixw--health-wellness .ixw-ibtn{border:2.5px solid var(--g-ink);border-radius:52% 48% 46% 54% / 56% 52% 48% 44%;color:var(--g-ink);background:radial-gradient(ellipse at 40% 30%,#FFFFFF 0 30%,#EDE6DC 75%);box-shadow:0 3px 0 var(--g-ink)}
+.ixw--health-wellness .ixw-ibtn:hover{border-color:var(--g-ink);color:var(--g-sage-dd);box-shadow:0 5px 0 var(--g-ink)}
+.ixw--health-wellness .ixw-ibtn:active{box-shadow:0 1px 0 var(--g-ink)}
+.ixw--health-wellness .ixw-ibtn--play,.ixw--health-wellness .ixw-ibtn--play:hover{color:#FFFFFF;background:radial-gradient(ellipse at 40% 30%,#A6CBB1,#5E8C6E 75%)}
+.ixw--health-wellness .ixw-ibtn--play.is-on{animation:hBreathe 4s ease-in-out infinite}
+@keyframes hBreathe{0%,100%{box-shadow:0 3px 0 #3B3651,0 0 0 0 rgba(141,179,154,.5)}50%{box-shadow:0 3px 0 #3B3651,0 0 0 10px rgba(141,179,154,0)}}
+.ixw--health-wellness .ixw-dots button{background:#D9CFC1;border-radius:50% 46% 54% 50%}
+.ixw--health-wellness .ixw-dots button.is-on{width:22px;border-radius:999px;background:var(--g-lav)}
+/* the episode tag: a leaf label */
+.ixw--health-wellness .ixw-ep-tag{border-radius:16px 4px 16px 4px;background:var(--g-sage-dd);box-shadow:0 3px 0 #2A4A36}
+.ixw--health-wellness .ixw-ep-tag:hover{box-shadow:0 4px 0 #2A4A36}
+.ixw--health-wellness .ixw-ep-tag .ic{background:var(--g-blush);color:var(--g-ink)}
+/* switches and view toggles: a rolled-out mat */
+.ixw--health-wellness :is(.ix-switch,.ix-views){border:2.5px solid var(--g-ink);border-radius:999px;background:#EFE8F7;box-shadow:0 4px 0 var(--g-ink)}
+.ixw--health-wellness :is(.ix-switch,.ix-views) button{border-radius:999px;white-space:nowrap}
+.ixw--health-wellness .ix-switch::before{border-radius:999px;background:var(--g-ink);box-shadow:0 3px 0 #1F1B2E}
+.ixw--health-wellness .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:var(--g-sage-d);box-shadow:0 3px 0 var(--g-sage-dd)}
+.ixw--health-wellness .ix-views button[aria-pressed="true"]{background:var(--g-lav);color:#FFFFFF;box-shadow:0 2px 0 var(--g-lav-d)}
+/* the sample picker */
+.ixw--health-wellness .ixw-pick-b{border:2.5px solid var(--g-ink);border-radius:999px;box-shadow:0 4px 0 var(--g-ink);background:var(--g-linen)}
+.ixw--health-wellness .ixw-pick-b button{border-radius:999px}
+.ixw--health-wellness .ixw-pick-b button:hover{color:var(--g-sage-dd);background:#FFFFFF}
+.ixw--health-wellness .ixw-pick-b button[aria-pressed="true"]{background:var(--g-sage-d);color:#FFFFFF;box-shadow:0 3px 0 var(--g-sage-dd)}
+/* other industries: little stones */
+.ixw--health-wellness .ix-others a{border:2px solid var(--g-ink);border-radius:999px;box-shadow:0 3px 0 var(--g-ink)}
+.ixw--health-wellness .ix-others a:hover{border-color:var(--g-ink);box-shadow:0 5px 0 var(--g-ink);background:#F7F3EC}
+.ixw--health-wellness .ix-others a:active{box-shadow:0 1px 0 var(--g-ink)}
+.ixw--health-wellness .ix-others a .ic{color:var(--g-lav)}
+/* text links: a slow breath under the words */
+.ixw--health-wellness main .btn-link{color:var(--g-sage-dd);padding-bottom:9px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 6'%3E%3Cpath d='M0 3c3-3 6-3 9 0s6 3 9 0 6-3 6 0' fill='none' stroke='%238C76B8' stroke-width='1.8'/%3E%3C/svg%3E") 0 100%/24px 6px repeat-x}
+.ixw--health-wellness main .btn-link::after{display:none}
+.ixw--health-wellness main .btn-link:hover{color:var(--g-ink);animation:hWave 1.6s linear infinite}
+@keyframes hWave{to{background-position:24px 100%}}
+
+/* the side tabs and the header's Contact Us in this world's colours */
+.ixw--health-wellness{}
+/* the entry intro in this world's colours */
+.ixw--health-wellness{--ii-bg:#F8F2E9;--ii-pattern:radial-gradient(ellipse 40% 30% at 18% 24%,rgba(141,179,154,.22),transparent 70%),radial-gradient(ellipse 36% 26% at 84% 74%,rgba(185,166,216,.24),transparent 70%),radial-gradient(ellipse 30% 22% at 78% 18%,rgba(242,181,167,.2),transparent 70%);--ii-ink:#3B3651;--ii-b:#5E8C6E;--ii-accent:#8C76B8;--ii-lip:#3F6B4F;--ii-ep-bg:#5E8C6E;--ii-ep-fg:#FFFFFF;--ii-font:var(--g-serif,Georgia,serif)}
+/* "View the scene": a stitched linen pebble; pressed, lavender */
+.ixw--health-wellness .ixw-peek{border:2.5px solid var(--g-ink);color:var(--g-ink);background:var(--g-linen);box-shadow:0 3px 0 var(--g-ink);outline:1.5px dashed rgba(94,140,110,.6);outline-offset:-6px}
+.ixw--health-wellness .ixw-peek:hover{box-shadow:0 5px 0 var(--g-ink)}.ixw--health-wellness .ixw-peek:active{box-shadow:0 1px 0 var(--g-ink)}
+.ixw--health-wellness .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:radial-gradient(90% 120% at 30% 10%,#B6A3DD,#8C76B8 55%,#7A63A9);outline-color:rgba(255,255,255,.5)}
+.ixw--health-wellness .ixw-peek:focus-visible{outline:3px solid var(--g-lav);outline-offset:3px}
+@media (min-width:1500px){.ixw--health-wellness .ixw-set{bottom:158px}}
+@media (prefers-reduced-motion:reduce){.ixw--health-wellness .ixw-ibtn--play.is-on,.ixw--health-wellness main .btn-link:hover{animation:none}}
+
+/* audit round: hero CTAs at 52px on desktop, matching the caption controls' rhythm */
+@media (min-width:768px){.ixw--health-wellness .ixw-copy .btn-lg{height:52px}}
+/* audit round: before/after, the intro and switch stay in view beside the tall board instead of floating mid-way */
+@media (min-width:1024px){.ixw--health-wellness .ix-ba-wrap{align-items:start}.ixw--health-wellness .ix-ba-wrap>div:first-child{position:sticky;top:120px;padding-top:24px}}
+/* audit round: tablets, the glance strip clears the typed caption however long the line runs */
+@media (min-width:768px) and (max-width:1023px){.ixw--health-wellness .ixw-credits{margin-top:48px}}
+
+/* fix round: segmented switches (Today / With Odoo, and the dashboard's view toggle). Two equal halves, the active
+   pill sits fully inside with the same 4px inset on every side and a concentric radius, its lip drawn inside it,
+   labels centred; the slide eases without overshoot. */
+.ixw--health-wellness :is(.ix-switch,.ix-views){display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none;align-items:stretch;position:relative;padding:4px;border-radius:999px;overflow:hidden;isolation:isolate}
+.ixw--health-wellness :is(.ix-switch,.ix-views) button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-width:0;margin:0;padding:0 20px;text-align:center;border-radius:calc(999px - 4px);background:transparent;box-shadow:none;transition:color .25s ease,background-color .25s ease}
+.ixw--health-wellness .ix-switch button{height:42px}
+.ixw--health-wellness .ix-views button{height:34px;padding:0 16px}
+.ixw--health-wellness .ix-switch::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:calc(999px - 4px);z-index:0;transition:transform .42s cubic-bezier(.32,.72,.24,1),background-color .3s ease;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--health-wellness .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{transform:translateX(100%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--health-wellness .ix-switch button[aria-pressed="true"]{background:transparent}
+.ixw--health-wellness .ix-views button[aria-pressed="true"]{box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--health-wellness :is(.ix-switch,.ix-views) button[aria-pressed="false"]:hover{background:rgba(127,127,127,.12)}
+.ixw--health-wellness :is(.ix-switch,.ix-views) button:active{transform:translateY(1px)}
+.ixw--health-wellness :is(.ix-switch,.ix-views) button:focus-visible{outline:2px solid currentColor;outline-offset:-6px}
+@media (prefers-reduced-motion:reduce){.ixw--health-wellness .ix-switch::before{transition:none}}

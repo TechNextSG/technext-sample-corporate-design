@@ -1,0 +1,290 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: support (/odoo/support) — step 4 of 4, the same team after go-live. Warm orange, desk navy, lifebuoy red.
+   The title card is a support ticket (a status strip with OPEN → DONE); the caption is the reply on the ticket with an
+   assignee chip; buttons carry a status dot; the glance strip is the ticket's footer. */
+.ixw--support{--ow-c:#F08A24;--sp-ink:#1B2350;--sp-or:#F08A24;--sp-or-l:#FFF4E5;
+  --w-alt:#FBF7F1;--lab-bd:2px solid #1B2350;--lab-lip:#1B2350;--lab-tail:#1B2350;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#FDF9F4,#FFE9D0 60%,#E8EFFC);--ii-ink:#1B2350;--ii-b:#F08A24;--ii-accent:#E2453C;--ii-lip:#1B2350;--ii-ep-bg:#1B2350;--ii-ep-fg:#FFFFFF}
+.ixw--support .ixw-hero{background:linear-gradient(180deg,#EEF1F8 0,#FDF9F4 18%,#F5EEE5 62%,#E6E9EE 62%,#D3D8E0 100%)}
+
+/* ---------- the title card: a support ticket ---------- */
+.ixw--support .ixw-copy{position:relative;max-width:510px;margin-top:20px;padding:58px 30px 24px;border-radius:14px;background:#FFFFFF;
+  box-shadow:0 0 0 1.5px #EBDDCB,0 40px 70px -30px rgba(80,50,20,.35)}
+.ixw--support .ixw-copy::before{content:"TICKET \00B7  ODOO SUPPORT";position:absolute;left:0;right:0;top:0;height:38px;display:flex;align-items:center;padding-left:22px;border-radius:14px 14px 0 0;
+  background:var(--sp-ink);font:800 11.5px/1 var(--font-body);letter-spacing:.14em;color:#FFFFFF}
+.ixw--support .ixw-copy::after{content:"OPEN \2192  DONE";position:absolute;right:16px;top:9px;padding:5px 10px;border-radius:999px;background:#2BC48A;font:800 10.5px/1 var(--font-body);letter-spacing:.1em;color:#FFFFFF}
+.ixw--support .ixw-copy h1{max-width:15ch}
+.ixw--support .ixw-copy .hand{color:#C96A12}
+.ixw--support .ixw-hint .ic{color:var(--sp-or)}
+@media (max-width:767px){.ixw--support .ixw-copy{padding:54px 20px 22px}.ixw--support .ixw-copy::after{display:none}}
+
+/* ---------- the caption: the reply on the ticket ---------- */
+.ixw--support .ixw-cap{border-radius:16px;border:0;border-left:6px solid var(--sp-or);background:#FFFFFF;box-shadow:0 0 0 1.5px #EBDDCB,0 26px 44px -22px rgba(80,50,20,.35)}
+.ixw--support .ixw-cap::before{content:"REPLY \00B7  ASSIGNED TO YOUR TEAM";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:999px;background:var(--sp-or);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em}
+.ixw--support .ixw-cap-who b{color:var(--sp-ink)}.ixw--support .ixw-cap-txt b{color:#C96A12}
+.ixw--support .ixw-cap-rec{background:var(--sp-or-l);border:1px dashed #F5B97A;color:#7A4A12}
+
+/* ---------- hero buttons: cockpit switches (52px pills, a lit status LED on the primary, an orange port on the ghost) ---------- */
+.ixw--support main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){position:relative;overflow:hidden;height:52px;padding:0 26px;gap:12px;border-radius:999px;border:0;font:800 16px/1 var(--font-display);
+  transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .22s ease,background-color .2s ease}
+.ixw--support main .btn-primary,.ixw--support main .btn-primary:hover{padding-left:44px;color:#FFFFFF;background:linear-gradient(180deg,#2A346B,#1B2350);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 4px 0 #0E1430,0 14px 22px -14px rgba(27,35,80,.7)}
+.ixw--support main .actions .btn-primary{padding-left:44px}.ixw--support main .btn-primary:has(.ic){padding-right:10px}
+.ixw--support main .btn-primary::before{content:"";position:absolute;left:20px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#2BC48A;box-shadow:0 0 0 3px rgba(43,196,138,.28),0 0 10px rgba(43,196,138,.8);z-index:2}
+.ixw--support main .btn-primary:hover::before{animation:spDot 1s ease-in-out infinite}
+.ixw--support main .btn-primary .ic{width:32px;height:32px;padding:7px;margin:0;border-radius:50%;background:var(--sp-or);color:#FFFFFF}
+.ixw--support main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--support main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--sp-ink);background:#FFFFFF;box-shadow:inset 0 0 0 2px var(--sp-ink),0 4px 0 var(--sp-ink),0 14px 22px -16px rgba(27,35,80,.5)}
+.ixw--support main .btn-ghost:has(.ic){padding-left:10px}
+.ixw--support main .btn-ghost::before{display:none}.ixw--support main .btn-ghost .ic{width:32px;height:32px;padding:7px;margin:0;border-radius:50%;background:var(--sp-or-l);color:var(--sp-or);box-shadow:inset 0 0 0 1.5px #F5C995}
+.ixw--support main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--support main .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 0 #0E1430,0 20px 28px -14px rgba(240,138,36,.55)}
+.ixw--support main .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--sp-ink),0 6px 0 var(--sp-ink),0 20px 26px -16px rgba(240,138,36,.5)}
+.ixw--support main :is(.btn-primary,.btn-ghost):hover .ic{transform:translateX(3px)}
+.ixw--support main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--support main .btn-primary:active{box-shadow:0 1px 0 #0E1430}.ixw--support main .btn-ghost:active{box-shadow:inset 0 0 0 2px var(--sp-ink),0 1px 0 var(--sp-ink)}
+.ixw--support .ixw-cta .btn-outline-white,.ixw--support .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 2px #FFFFFF}
+.ixw--support main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--sp-or);outline-offset:4px}
+.ixw--support .ixw-copy .actions{gap:14px}
+/* the walkthrough rail: waypoint pills */
+.ixw--support .ow-rail{gap:8px}
+.ixw--support .ow-rail a,.ixw--support .ow-rail li.is-on{height:32px;padding:0 13px 0 5px;font-weight:800;transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw--support .ow-rail a{background:#FFFFFF;color:#4A5570;box-shadow:inset 0 0 0 1.5px #EBDDCB}
+.ixw--support .ow-rail a:hover{translate:0 -2px;background:var(--sp-or-l);color:var(--sp-ink);box-shadow:inset 0 0 0 1.5px var(--sp-or),0 3px 0 #F5C995}
+.ixw--support .ow-rail a:focus-visible{outline:3px solid var(--sp-or);outline-offset:2px}
+.ixw--support .ow-rail a b{background:var(--sp-or-l);color:#C96A12}
+.ixw--support .ow-rail li.is-on{background:var(--sp-or);box-shadow:0 3px 0 #C96A12}
+.ixw--support .ow-rail b{width:22px;height:22px}
+/* caption controls: radio-panel buttons */
+.ixw--support .ixw-ibtn{border:2px solid var(--sp-ink);color:var(--sp-ink);box-shadow:0 3px 0 var(--sp-ink)}
+.ixw--support .ixw-ibtn:hover{color:#C96A12;border-color:var(--sp-ink);box-shadow:0 5px 0 var(--sp-ink),0 10px 16px -8px rgba(240,138,36,.6)}
+.ixw--support .ixw-ibtn:active{box-shadow:0 1px 0 var(--sp-ink)}
+.ixw--support .ixw-ibtn:focus-visible{outline:3px solid var(--sp-or);outline-offset:3px}
+.ixw--support .ixw-ibtn--play,.ixw--support .ixw-ibtn--play:hover{background:linear-gradient(180deg,#FFA04A,#F08A24);color:#FFFFFF}
+.ixw--support .ixw-dots{gap:6px}
+.ixw--support .ixw-dots button{background:#EBDDCB}
+.ixw--support .ixw-dots button:hover{background:#F5B97A}
+.ixw--support .ixw-dots button.is-on{width:24px;background:var(--sp-or);box-shadow:0 0 0 1.5px var(--sp-ink)}
+/* "View the scene": top left over the flight plan, clear of the displays */
+.ixw--support .ixw-peek{left:max(24px,calc((100vw - 1200px) / 2 + 24px));right:auto;top:calc(var(--header-box) + 6px);height:40px;padding:0 16px 0 6px;gap:9px;border-color:var(--sp-ink);box-shadow:0 3px 0 var(--sp-ink)}
+.ixw--support .ixw-peek::before{width:28px;height:28px;border-radius:50%;background:var(--sp-or);-webkit-mask:none;mask:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-size:16px;background-position:center;background-repeat:no-repeat}
+.ixw--support .ixw-peek:hover{box-shadow:0 5px 0 var(--sp-ink),0 12px 18px -10px rgba(240,138,36,.6)}
+.ixw--support .ixw-peek:focus-visible{outline:3px solid var(--sp-or)}
+.ixw--support .ixw-peek[aria-pressed="true"]{background:var(--sp-or-l)}
+.ixw--support .ixw-peek[aria-pressed="true"]::before{background-color:var(--sp-ink)}
+@media (prefers-reduced-motion:reduce){.ixw--support main .btn::before{animation:none!important}}
+
+/* ---------- the glance strip: the ticket's footer ---------- */
+.ixw--support .ow-strip{border-radius:14px;box-shadow:0 0 0 1.5px #EBDDCB,0 24px 44px -30px rgba(80,50,20,.3);background:linear-gradient(90deg,var(--sp-or) 0 6px,#FFFFFF 6px)}
+.ixw--support .ow-strip dt .ic{color:var(--sp-or)}
+
+/* ---------- the end card ---------- */
+.ixw--support main .cta{background:radial-gradient(circle at 88% 18%,rgba(240,138,36,.4),transparent 45%),linear-gradient(120deg,#0E1430,#1B2350)}
+
+/* ============================== below the hero: the rest of the control tower ============================== */
+.ixw--support{--sp-cream:#FFF9EC;--sp-paper:#F5F2EA;--w-dot:rgba(240,138,36,.12);--w-hand:#C96A12;--sp-red:#E2453C;--sp-blue:#3167CA;--sp-pur:#714B67;--sp-teal:#14A38B}
+/* section heads: a call-sign tab with a radar blip, the heading under an approach-light row */
+.ixw--support .sp-head{position:relative;padding-top:24px}
+.ixw--support .sp-head::before{content:"";position:absolute;left:0;top:0;width:170px;height:8px;
+  background:radial-gradient(circle,#F08A24 3.4px,transparent 3.8px) 0 0/17px 8px repeat-x;animation:spLights 2.4s steps(10) infinite}
+@keyframes spLights{0%{opacity:.55}50%{opacity:1}100%{opacity:.55}}
+.ixw--support .sp-head .hand{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;padding:7px 14px 7px 7px;border-radius:8px;background:#FFFFFF;color:var(--sp-ink);
+  font:800 12.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;transform:none;box-shadow:0 0 0 2px var(--sp-ink),0 4px 0 2px var(--sp-ink)}
+.ixw--support .sp-head .hand::before{content:"";width:20px;height:20px;border-radius:5px;background:conic-gradient(from 0deg,rgba(43,196,138,.9) 0 50deg,transparent 50deg),radial-gradient(circle,#FFFFFF 2px,#1B2350 2.5px);animation:spSweep 2.4s linear infinite}
+@keyframes spSweep{to{transform:rotate(360deg)}}
+
+/* the glance strip: a flight strip, an orange holder on the left and boxes between the facts */
+.ixw--support .ow-strip{background:linear-gradient(90deg,var(--sp-or) 0 10px,var(--sp-cream) 10px)}
+.ixw--support .ow-strip>div+div{border-left:1.5px solid #EADFC9;padding-left:18px}
+.ixw--support .ow-strip dt{letter-spacing:.06em;text-transform:uppercase;font-size:11.5px}
+
+/* the one-paragraph answer: the tower briefing */
+.ixw--support .sp-brief{padding:16px 20px;border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #EBDDCB,0 16px 30px -24px rgba(80,50,20,.35);border-left:6px solid var(--sp-ink)}
+.ixw--support .sp-brief .answer-h{background:var(--sp-or);color:#FFFFFF}
+
+/* the demo head: copy and a radar scope; the demo under a console plate */
+.ixw--support .sp-head-row{display:grid;grid-template-columns:minmax(0,640px) minmax(0,360px);justify-content:space-between;align-items:end;gap:40px;margin-bottom:40px}
+.ixw--support .sp-head-row .sec-head{margin-bottom:0}
+.ixw--support .sp-radar{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 20px;align-items:center;padding:20px;border-radius:22px;background:var(--sp-ink);color:#FFFFFF;box-shadow:0 6px 0 #0E1430,0 30px 50px -30px rgba(20,25,60,.6)}
+.ixw--support .sp-scope{position:relative;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,transparent 0 24%,rgba(255,255,255,.14) 24.5% 25%,transparent 25.5% 49%,rgba(255,255,255,.14) 49.5% 50%,transparent 50.5% 74%,rgba(255,255,255,.14) 74.5% 75%,transparent 75.5%),#E7F2FB;
+  box-shadow:inset 0 0 0 6px #2A3462,inset 0 0 0 7px rgba(255,255,255,.3);overflow:hidden}
+.ixw--support .sp-scope::before,.ixw--support .sp-scope::after{content:"";position:absolute;background:rgba(49,103,202,.22)}
+.ixw--support .sp-scope::before{left:50%;top:6px;bottom:6px;width:1px}.ixw--support .sp-scope::after{top:50%;left:6px;right:6px;height:1px}
+.ixw--support .sp-sweep{position:absolute;inset:6px;border-radius:50%;background:conic-gradient(from 0deg,rgba(43,196,138,.55),rgba(43,196,138,0) 70deg,transparent 0);animation:spSweep 3.2s linear infinite}
+.ixw--support .sp-scope b{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--c);transform:rotate(var(--a)) translateX(calc(var(--r) * .7)) ;box-shadow:0 0 0 3px rgba(255,255,255,.7);animation:spBlip 3.2s ease-in-out infinite}
+@keyframes spBlip{0%,100%{opacity:.55}20%{opacity:1}}
+.ixw--support .sp-radar ul{display:grid;gap:8px;margin:0;padding:0;list-style:none;font:700 13px/1 var(--font-body)}
+.ixw--support .sp-radar li{display:flex;align-items:center;gap:8px}
+.ixw--support .sp-radar li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px rgba(255,255,255,.15)}
+.ixw--support .sp-radar p{grid-column:1/-1;margin:6px 0 0;padding-top:12px;border-top:1.5px dashed rgba(255,255,255,.2);font:600 13px/1.4 var(--font-body);color:#C9D3EA}
+.ixw--support .sp-radar p b{color:#FFB566}
+.ixw--support .sp-console-cap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px 14px;border-radius:22px 22px 0 0;background:var(--sp-ink);color:#FFFFFF;font:800 12.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 -6px 0 var(--sp-or)}
+.ixw--support .sp-console-cap span{display:inline-flex;align-items:center;gap:7px}
+.ixw--support .sp-console-cap i{width:9px;height:9px;border-radius:50%;background:#2BC48A}
+.ixw--support .sp-console-cap i:nth-child(2){background:var(--sp-or);animation:igBlinkSp 1.2s ease-in-out infinite}.ixw--support .sp-console-cap i:nth-child(3){background:#E2453C;margin-right:6px}
+@keyframes igBlinkSp{50%{opacity:.3}}
+.ixw--support .sp-console-cap em{font-style:normal;font-weight:700;letter-spacing:.06em;text-transform:none;color:#FFB566}
+.ixw--support .sp-console-cap+.dm{border-radius:0 0 22px 22px;box-shadow:0 0 0 1.5px #EBDDCB,0 40px 70px -40px rgba(60,40,20,.5)}
+
+/* what's covered: flight strips in their holders */
+.ixw--support .sp-strips{gap:20px}
+.ixw--support .sp-strip{--sc:#F08A24;display:grid;grid-template-columns:56px minmax(0,1fr);padding:0;border:0;border-radius:12px;background:var(--sp-cream);overflow:hidden;
+  box-shadow:0 0 0 1.5px #EADFC9,0 3px 0 #EADFC9,0 20px 34px -26px rgba(80,50,20,.4);transition:translate .3s var(--w-spring),box-shadow .25s ease}
+.ixw--support .sp-strip:hover{transform:none;translate:4px -2px;box-shadow:0 0 0 2px var(--sc),0 4px 0 var(--sc),0 26px 40px -24px rgba(80,50,20,.45)}
+.ixw--support .sp-strip-code{display:flex;flex-direction:column;align-items:center;justify-content:space-between;margin:0;padding:16px 0;background:var(--sc);color:#FFFFFF}
+.ixw--support .sp-strip-code b{font:800 18px/1 var(--font-display);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.12em}
+.ixw--support .sp-strip-code span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.22);font:800 11px/1 var(--font-body)}
+.ixw--support .sp-strip-body{padding:20px 22px 22px}
+.ixw--support .sp-strip-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px}
+.ixw--support .sp-strip .card-ic{margin:0;min-height:0;color:var(--sc)}
+.ixw--support .sp-strip-top em{padding:5px 10px;border-radius:999px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--sc);color:var(--sp-ink);font:800 11px/1 var(--font-body);font-style:normal;letter-spacing:.04em;white-space:nowrap}
+
+.ixw--support .sp-strip p:not([class]){padding-right:6px}
+
+/* how a plan works: a flight plan, waypoints on a dashed route and a jet that flies it */
+.ixw--support .sp-plan::before{top:22px;height:0;border-top:3px dashed var(--sp-ink);background:none;opacity:.5}
+.ixw--support .sp-plan .step-n{width:44px;height:44px;border:0;border-radius:10px;transform:rotate(45deg);background:#FFFFFF;color:var(--sp-ink);box-shadow:inset 0 0 0 3px var(--sp-ink),0 0 0 6px var(--w-alt)}
+.ixw--support .sp-plan .step:hover .step-n{transform:rotate(45deg) scale(1.08);background:var(--sp-or);color:#FFFFFF;box-shadow:inset 0 0 0 3px var(--sp-or),0 0 0 6px var(--w-alt)}
+.ixw--support .sp-plan .step-n{font-size:0}
+.ixw--support .sp-plan .step-n::after{content:counter(spw);counter-increment:spw;transform:rotate(-45deg);font:800 16px/1 var(--font-display)}
+.ixw--support .sp-plan{counter-reset:spw}
+.ixw--support .sp-plan .step>div:not(.step-n){position:relative;padding:18px 18px 20px;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #EBDDCB,0 16px 30px -24px rgba(80,50,20,.35)}
+.ixw--support .sp-plan .step h3::before{content:"Waypoint";display:block;margin-bottom:6px;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#C96A12}
+.ixw--support .sp-plan .step:last-of-type h3::before{content:"Landing · review"}
+.ixw--support .sp-plan-jet{position:absolute;z-index:2;top:6px;left:0;width:40px;height:34px;opacity:0;pointer-events:none;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231B2350' d='M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z' transform='rotate(90 12 12)'/%3E%3C/svg%3E")}
+.ixw--support .sp-plan.is-in .sp-plan-jet{animation:spJet 3.6s cubic-bezier(.5,0,.4,1) .3s forwards}
+@keyframes spJet{0%{opacity:0;left:0;translate:0 10px}8%{opacity:1}50%{translate:0 -14px}100%{opacity:1;left:calc(75% - 56px);translate:0 0}}
+
+/* what you get: a crew card beside a pre-flight checklist on a clipboard */
+.ixw--support .sp-crew{display:grid;gap:0;margin:26px 0 0;padding:6px 0;border-radius:16px;background:var(--sp-ink);color:#FFFFFF;box-shadow:0 6px 0 #0E1430,0 26px 40px -26px rgba(20,25,60,.6)}
+.ixw--support .sp-crew>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding:11px 20px;border-bottom:1px dashed rgba(255,255,255,.16)}
+.ixw--support .sp-crew>div:last-child{border-bottom:0}
+.ixw--support .sp-crew dt{font:800 11px/1.5 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#FFB566}
+.ixw--support .sp-crew dd{margin:0;font:700 14.5px/1.4 var(--font-body)}
+.ixw--support .sp-check{position:relative;margin-top:22px;padding:44px 26px 22px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 10px #C9A27A,0 0 0 11.5px #B08657,0 30px 50px -30px rgba(80,50,20,.55)}
+.ixw--support .sp-check::before{content:"";position:absolute;left:50%;top:-24px;width:120px;height:36px;margin-left:-60px;border-radius:10px 10px 6px 6px;background:linear-gradient(#C9D2DE,#9AA6BC);box-shadow:inset 0 -4px 0 rgba(0,0,0,.12),0 4px 8px -4px rgba(0,0,0,.35)}
+.ixw--support .sp-check::after{content:"";position:absolute;left:50%;top:-14px;width:40px;height:10px;margin-left:-20px;border-radius:5px;background:#5C6B7A}
+.ixw--support .sp-check-h{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 12px;padding-bottom:12px;border-bottom:2px solid var(--sp-ink);font:800 13px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--sp-ink)}
+.ixw--support .sp-check-h small{font:700 11px/1 var(--font-body);letter-spacing:.04em;text-transform:none;color:#8A96A8}
+.ixw--support .sp-check .spec-cols{columns:2;column-gap:28px}
+.ixw--support .sp-check .spec-cols li{align-items:center;padding:7px 0;margin:0;border-bottom:1px dashed #EBDDCB;font-size:14.5px;color:var(--ink)}
+.ixw--support .sp-check .spec-cols li .ic{width:22px;height:22px;padding:3px;margin:0;border-radius:6px;background:#FFFFFF;color:transparent;box-shadow:inset 0 0 0 2px var(--sp-ink);transition:background-color .3s ease,color .3s ease}
+.ixw--support .sp-check.is-in .spec-cols li .ic{background:#2BC48A;color:#FFFFFF;box-shadow:none;transition-delay:calc(var(--n,0) * 90ms + 200ms)}
+.ixw--support .sp-check .spec-cols li:nth-child(2){--n:1}.ixw--support .sp-check .spec-cols li:nth-child(3){--n:2}.ixw--support .sp-check .spec-cols li:nth-child(4){--n:3}.ixw--support .sp-check .spec-cols li:nth-child(5){--n:4}.ixw--support .sp-check .spec-cols li:nth-child(6){--n:5}
+.ixw--support .sp-check .spec-cols li:nth-child(7){--n:6}.ixw--support .sp-check .spec-cols li:nth-child(8){--n:7}.ixw--support .sp-check .spec-cols li:nth-child(9){--n:8}.ixw--support .sp-check .spec-cols li:nth-child(10){--n:9}.ixw--support .sp-check .spec-cols li:nth-child(11){--n:10}.ixw--support .sp-check .spec-cols li:nth-child(12){--n:11}
+
+/* the questions: radio check, Q and A */
+.ixw--support .sp-radio{display:grid;grid-template-columns:230px minmax(0,840px);gap:32px;align-items:start}
+.ixw--support .sp-radio-sign{position:sticky;top:110px;display:grid;justify-items:start;gap:10px;padding:24px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--sp-ink),0 6px 0 2px var(--sp-ink),0 26px 40px -26px rgba(20,25,60,.5)}
+.ixw--support .sp-radio-sign b{position:relative;display:flex;align-items:flex-end;gap:4px;width:56px;height:56px;padding:12px;border-radius:14px;background:var(--sp-or)}
+.ixw--support .sp-radio-sign b i{flex:1;border-radius:3px;background:#FFFFFF;animation:spWave 1s ease-in-out infinite}
+.ixw--support .sp-radio-sign b i:nth-child(1){height:40%}.ixw--support .sp-radio-sign b i:nth-child(2){height:90%;animation-delay:-.3s}.ixw--support .sp-radio-sign b i:nth-child(3){height:60%;animation-delay:-.6s}
+@keyframes spWave{50%{transform:scaleY(.45)}}
+.ixw--support .sp-radio-sign b i{transform-origin:bottom}
+.ixw--support .sp-radio-sign span{font:800 21px/1.15 var(--font-display);color:var(--sp-ink)}
+.ixw--support .sp-radio-sign small{font:600 12.5px/1.3 var(--font-body);color:#8A6A40}
+.ixw--support .faq summary::before{content:"Q";border-radius:8px;background:var(--sp-or-l);color:#C96A12}
+.ixw--support .faq details[open] summary::before{content:"A";background:var(--sp-ink);color:#FFFFFF;transform:none}
+.ixw--support .faq details{border-left:6px solid transparent}
+.ixw--support .faq details[open]{border-left-color:var(--sp-or)}
+
+/* related services: boarding passes with a torn stub */
+.ixw--support .sp-pass .card{position:relative;padding:0 96px 24px 26px;border:0;border-radius:18px;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 1.5px #EBDDCB,0 18px 34px -26px rgba(80,50,20,.4);transition:translate .3s var(--w-spring),box-shadow .25s ease}
+.ixw--support .sp-pass .card:hover{transform:none;translate:0 -4px;box-shadow:0 0 0 2px var(--sp-or),0 26px 40px -24px rgba(80,50,20,.45)}
+.ixw--support .sp-pass .card::before{content:"Connecting service";display:block;margin:0 -96px 20px -26px;padding:13px 26px;background:var(--sp-ink);color:#FFFFFF;font:800 12px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 -5px 0 var(--sp-or)}
+.ixw--support .sp-pass .card::after{content:"GATE 1";position:absolute;right:0;top:42px;bottom:0;width:74px;display:grid;place-items:center;border-left:2px dashed #EBDDCB;background:var(--sp-cream);color:var(--sp-ink);font:800 13px/1 var(--font-body);letter-spacing:.18em;writing-mode:vertical-rl}
+.ixw--support .sp-pass .card:nth-child(2)::after{content:"GATE 2"}.ixw--support .sp-pass .card:nth-child(3)::after{content:"GATE 3"}
+.ixw--support .sp-pass .card-ic{color:var(--sp-or)}
+
+/* the end card: a boarding pass */
+.ixw--support main .sp-cta{position:relative;padding-right:160px;-webkit-mask:radial-gradient(circle at calc(100% - 122px) 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 122px) 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at calc(100% - 122px) 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - 122px) 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+.ixw--support main .sp-cta::after{content:"BOARDING PASS \00B7  SUPPORT PLAN";position:absolute;right:0;top:0;bottom:0;width:122px;height:auto;display:grid;place-items:center;border-radius:0;border-left:2px dashed rgba(255,255,255,.4);background:rgba(240,138,36,.16);
+  color:#FFD7AC;font:800 12px/1 var(--font-body);letter-spacing:.2em;writing-mode:vertical-rl;transform:none!important;transition:none}
+.ixw--support main .sp-cta .hand{color:#FFB566}
+
+@media (max-width:1000px){.ixw--support .sp-head-row{grid-template-columns:minmax(0,1fr)}.ixw--support .sp-radar{max-width:520px}
+  .ixw--support .sp-radio{grid-template-columns:minmax(0,1fr)}.ixw--support .sp-radio-sign{position:static;grid-template-columns:auto 1fr;align-items:center;width:100%}.ixw--support .sp-radio-sign small{grid-column:2}}
+@media (max-width:767px){
+  .ixw--support .sp-plan::before,.ixw--support .sp-plan-jet{display:none}
+  .ixw--support .sp-check .spec-cols{columns:1}.ixw--support .sp-crew>div{grid-template-columns:80px minmax(0,1fr);padding:10px 16px}
+  .ixw--support main .sp-cta{padding-right:28px;-webkit-mask:none;mask:none}.ixw--support main .sp-cta::after{display:none}
+  .ixw--support .sp-pass .card{padding-right:80px}.ixw--support .sp-pass .card::before{margin-right:-80px}.ixw--support .sp-pass .card::after{width:60px}
+  .ixw--support .sp-radar{grid-template-columns:110px minmax(0,1fr)}.ixw--support .sp-scope{width:110px;height:110px}
+  .ixw--support .sp-console-cap{font-size:11px;padding:10px 14px 12px}.ixw--support .sp-console-cap em{display:none}
+  .ixw--support .ow-strip>div+div{border-left:0;padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){.ixw--support .sp-head::before,.ixw--support .sp-head .hand::before,.ixw--support .sp-sweep,.ixw--support .sp-scope b,.ixw--support .sp-radio-sign b i,.ixw--support .sp-console-cap i{animation:none}
+  .ixw--support .sp-plan-jet{opacity:1;left:calc(75% - 56px);animation:none!important}}
+@keyframes spDot{50%{box-shadow:0 0 0 7px rgba(43,196,138,0),0 0 10px rgba(43,196,138,.8)}}
+
+/* audit round: even waypoint cards, related gate cards with their links on one line */
+.ixw--support .sp-plan .step{display:flex;flex-direction:column}
+.ixw--support .sp-plan .step>div:not(.step-n){flex:1}
+.ixw--support .sp-pass .card{display:flex;flex-direction:column}
+.ixw--support .sp-pass .card>p{flex:1}
+
+/* fix round: the flight plan's dashed route now runs straight through the centre of every waypoint diamond (it sat a few px
+   above them), the numbers are centred in the diamonds, and the jet flies on the route and parks just short of the
+   landing waypoint */
+.ixw--support .sp-plan::before{top:24.5px;left:26px;right:calc(25% - 44px + 2px);border-top-width:3px;opacity:.55}
+.ixw--support .sp-plan .step-n{position:relative;z-index:1;display:grid;place-items:center;padding:0;line-height:1}
+.ixw--support .sp-plan .step-n::after{display:block;width:44px;height:44px;line-height:44px;text-align:center;font-variant-numeric:tabular-nums}
+.ixw--support .sp-plan-jet{top:9px}
+@keyframes spJet{0%{opacity:0;left:48px}10%{opacity:1}100%{opacity:1;left:calc(75% - 22px)}}
+@media (max-width:991px){.ixw--support .sp-plan-jet{display:none}}
+@media (max-width:991px){.ixw--support .sp-plan .step-n{margin:10px 0 24px 10px}}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base, 50% the control tower: amber accent, request-code colours as thin rules with the
+   two-letter code kept small, waypoint labels on the plan steps, the crew card and pre-flight checklist kept light.
+   No radar, no jet, no radio sign, no gate stubs. */
+.ixw--support{--calm-accent:#E07D17;--calm-accent-ink:#A85A0C;--calm-accent-line:#F1D3AE;--calm-accent-wash:#FFFAF3}
+body.ixw--support main .sp-head-row{display:block!important;margin-bottom:0!important}
+body.ixw--support main .sp-head-row .sec-head{margin-bottom:28px!important}
+body.ixw--support main .sp-console-cap{padding:0 2px 12px!important;background:none!important;border-radius:0!important;color:#A85A0C!important;font:700 12px/1.2 var(--font-body)!important;letter-spacing:.1em!important;text-transform:uppercase}
+body.ixw--support main .sp-console-cap i{width:8px!important;height:8px!important;animation:none!important}
+body.ixw--support main .sp-console-cap em{color:var(--muted)!important;text-transform:none;letter-spacing:0;font-weight:500}
+body.ixw--support main .sp-console-cap+.dm{border-radius:18px!important;box-shadow:var(--calm-shadow)!important;border:1px solid var(--calm-line)}
+/* what's covered: white cards, a 3px code-colour rule; code letters as a small roundel */
+body.ixw--support main .sp-strips{gap:24px!important}
+body.ixw--support main .sp-strip{display:block!important;padding:0!important;background:#fff!important;border-top:3px solid var(--sc)!important;translate:none!important}
+body.ixw--support main .sp-strip-code{display:none!important}
+body.ixw--support main .sp-strip-body{padding:24px 26px 26px!important}
+body.ixw--support main .sp-strip .card-ic{color:var(--sc)!important}
+body.ixw--support main .sp-strip-top em{background:#fff!important;box-shadow:none!important;border:1px solid var(--calm-line);color:var(--muted)!important;font:600 11.5px/1 var(--font-body)!important;letter-spacing:.02em!important;text-transform:none!important}
+/* plan steps: round amber numbers on a thin route, waypoint labels kept */
+body.ixw--support main .sp-plan::before{top:22px!important;border-top:1.5px dashed #F1C891!important;opacity:1!important}
+body.ixw--support main .sp-plan .step-n,body.ixw--support main .sp-plan .step:hover .step-n{width:44px!important;height:44px!important;border-radius:50%!important;transform:none!important;background:#fff!important;border:1.5px solid var(--calm-accent)!important;box-shadow:none!important;color:#A85A0C!important;font:700 16px/1 var(--font-display)!important;margin:0 0 18px!important}
+body.ixw--support main .sp-plan .step-n::after{content:none!important;display:none!important}
+body.ixw--support main .sp-plan .step>div:not(.step-n){padding:22px 20px!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--support main .sp-plan .step h3::before{font:700 11px/1 var(--font-body)!important;letter-spacing:.12em!important;color:#A85A0C!important}
+/* what you get: the crew card light, the checklist a plain white sheet with an amber header rule */
+body.ixw--support main .sp-get-copy{position:static!important}
+body.ixw--support main .sp-crew{background:#FFFAF3!important;color:var(--ink)!important;border:1px solid #F1D3AE;border-radius:16px!important;box-shadow:none!important}
+body.ixw--support main .sp-crew>div{border-bottom:1px solid #F5E3CB!important}
+body.ixw--support main .sp-crew dt{color:#A85A0C!important}
+body.ixw--support main .sp-crew dd{color:var(--ink)!important}
+body.ixw--support main .sp-check{margin-top:0!important;padding:24px 26px 18px!important;border-radius:16px!important;border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important}
+body.ixw--support main .sp-check::before,body.ixw--support main .sp-check::after{content:none!important;display:none!important}
+body.ixw--support main .sp-check-h{border-bottom:2px solid #F1C891!important;color:#A85A0C!important;font:700 12px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--support main .sp-check .spec-cols li{border-bottom:1px solid #F3EEE6!important}
+body.ixw--support main .sp-check .spec-cols li .ic{background:none!important;box-shadow:none!important;color:#2E9C7E!important;padding:0!important}
+/* FAQ: one column */
+body.ixw--support main .sp-radio{display:block!important;max-width:860px}
+/* related: plain kit cards, no boarding-pass header or gate stub */
+body.ixw--support main .sp-pass{gap:24px!important}
+body.ixw--support main .sp-pass .card{padding:28px 26px 26px!important;translate:none!important}
+body.ixw--support main .sp-pass .card::before,body.ixw--support main .sp-pass .card::after{content:none!important;display:none!important}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--support main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--support main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--support main .answer-sec .answer-box::before,body.ixw--support main .answer-sec .answer-box::after,body.ixw--support main .answer-sec .answer-h::before,body.ixw--support main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--support main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--support main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--support main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--support main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:480px){html body.ixw--support main .cta .actions .btn,html body.ixw--support .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}

@@ -1,0 +1,166 @@
+<!--meta {"title": "Odoo for Manufacturing — Singapore & Philippines", "desc": "Odoo for manufacturers: bills of materials, work orders, component stock, purchasing and product costing in one database — by TechNext, Odoo Partner.", "out": "industries/manufacturing.html", "nav": "industries", "scripts": ["assets/js/showcase.js", "assets/js/industry.js", "assets/js/demo-kit.js", "assets/js/demo-bomtree.js", "assets/js/industry-world.js", "assets/js/worlds/manufacturing.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-bomtree.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/manufacturing.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industries-calm.css?v={ASSET_V}\">", "body": "ixw ixw--manufacturing"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="manufacturing" data-home="300,120" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Industries</span><span>Manufacturing</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Makers, fabricators &amp; assemblers</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo for manufacturing · singapore · philippines</span>Know what it costs to make, before you quote it.</h1>
+      <p class="lead"><span class="m-full">Bills of materials drive component demand, work orders track the floor, and every finished unit carries its real cost into stock and the ledger.</span><span class="m-short">BoMs drive component demand, work orders track the floor, and each unit carries its real cost.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Hover or tap anything on the factory floor to explore.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="dev" data-near="540,140" data-who="Dev" data-role="Operator · sample" data-say="The work order is on my tablet, so I log the **quantity** with one scan. No clipboard!" style="--x:648;--y:262;--w:104;--h:150" aria-label="Say hi to Dev, the operator (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Dev</b><i>operator</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="lin" data-near="860,140" data-who="Lin" data-role="Quality inspector · sample" data-say="If a check fails, Odoo raises a **quality alert** straight away, before the batch ships." style="--x:798;--y:280;--w:104;--h:168" aria-label="Say hi to Lin, the quality inspector (sample character)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Lin</b><i>quality</i></span></button>
+      <button class="ixw-toy" type="button" data-toy="robot" data-near="300,120" data-pose="wow" data-say="Bzzt! Every weld logs its time against the **work order**, so the cost is real." style="--x:482;--y:385;--w:156;--h:170" aria-label="Make the robot weld"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Weld!</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="andon" data-near="300,120" data-pose="celebrate" data-say="Green, amber, red! Each work centre&#x27;s status shows up on the **planning** board." style="--x:407;--y:182;--w:36;--h:78" aria-label="Cycle the andon light"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Cycle the light</b></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="order" data-nx="300,120" data-pose="present" data-rec="SO 0418 · 40 × shelf unit · make to order" data-say="A confirmed **sales order** reserves stock or triggers production, depending on the product&#x27;s route." style="--x:261;--y:344;--w:154;--h:252" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:sale:18}}<b>Order</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="plan" data-nx="300,120" data-pose="point-right" data-rec="MO/0412 · cut, weld, paint · week 42" data-say="Manufacturing orders are scheduled on **work centre capacity**, and the MPS plans ahead from forecasts." style="--x:472;--y:99;--w:206;--h:116" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:mrp:18}}<b>Plan</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="source" data-nx="820,140" data-pose="point-right" data-rec="PO00377 · 160 brackets · lead time 5 days" data-say="Missing components raise **purchase orders** from reordering rules, using each vendor&#x27;s lead time." style="--x:923;--y:336;--w:146;--h:270" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:purchase:18}}<b>Source</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="make" data-nx="540,140" data-pose="point-right" data-rec="WO/0412 · weld · 26 of 40 done" data-say="Operators follow **work orders** on a tablet, record quantities with barcodes and log their time." style="--x:630;--y:318;--w:84;--h:62" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:mrp:18}}<b>Make</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="check" data-nx="860,140" data-pose="point-left" data-rec="QC-0412 · 3 of 3 checks passed" data-say="**Quality checks** run at receipt, during operations or before delivery, and a failure raises an alert." style="--x:791;--y:351;--w:150;--h:52" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:quality_control:18}}<b>Check</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="cost" data-nx="860,140" data-pose="point-left" data-rec="MO/0412 · S$ 186.40 per unit" data-say="Components, work centres and extras roll up to each order&#x27;s **real cost**, and valuation posts to Accounting." style="--x:689;--y:98;--w:158;--h:104" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:accountant:18}}<b>Cost</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:300;--ny:120" data-reacts="wow::Look at those sparks! And the **unit cost** is live.|love::BoM to ledger in **one database**. Beautifully made!|celebrate::Shipped! Order to real cost, **all in Odoo**.|think::Hmm… which product first? Send us **one BoM**.">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:manufacturing}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi, I&#x27;m **Nexi**! Welcome to Keystone Works, our sample factory. Tap anything and I&#x27;ll show you how **Odoo** runs production." data-outro="From sales order to finished goods, costed, in **one Odoo database**.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:manufacturing}}<b data-for="dev" style="--c:#2F4F6F">D</b><b data-for="lin" style="--c:#2F6B7A">L</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="Your shop-floor guide · Keystone Works is a sample manufacturer">Your shop-floor guide · Keystone Works is a sample manufacturer</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi, I'm <b>Nexi</b>! Welcome to Keystone Works, our sample factory. Tap anything and I'll show you how <b>Odoo</b> runs production.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: order"></button><button type="button" data-ixw-dot aria-label="Stop 3: plan"></button><button type="button" data-ixw-dot aria-label="Stop 4: source"></button><button type="button" data-ixw-dot aria-label="Stop 5: make"></button><button type="button" data-ixw-dot aria-label="Stop 6: check"></button><button type="button" data-ixw-dot aria-label="Stop 7: cost"></button><button type="button" data-ixw-dot aria-label="Stop 8: one database"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits"><div><dt>{{icon:layers}}Apps we switch on</dt><dd><a href="{{ROOT}}odoo/apps/mrp.html">Manufacturing</a> · <a href="{{ROOT}}odoo/apps/stock.html">Inventory</a> · <a href="{{ROOT}}odoo/apps/purchase.html">Purchase</a> · <a href="{{ROOT}}odoo/apps/quality_control.html">Quality</a> · <a href="{{ROOT}}odoo/apps/accountant.html">Accounting</a></dd></div><div><dt>{{icon:target}}First phase</dt><dd>Send us one product's BoM</dd></div><div><dt>{{icon:users}}Delivered by</dt><dd>TechNext, Odoo Partner · Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+{{INDUSTRY_INTRO:manufacturing}}
+
+{{INDUSTRY_FLOW:manufacturing}}
+
+<section class="section demo-sec" id="bom-cost-rollup">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">pull a price, watch it roll up</span><h2>Odoo for manufacturing: a multi-level BoM, costed and planned.</h2><p class="lead"><span class="m-full">One product, three levels of bill of materials, the way TechNext models it in Odoo Manufacturing. Costs roll up from components and work-centre time to the unit cost; requirements explode down from demand to manufacturing orders, shortages and purchase orders. Press a component, move its price or scrap allowance, then switch to MRP and change the demand.</span><span class="m-short">Change a component's price and watch the cost of one product roll up.</span></p></div>
+    <div class="ixw-browser reveal" aria-hidden="true"><i></i><i></i><i></i><span>yourcompany.odoo.com/odoo/manufacturing</span><em>Sample data</em></div>
+    <div class="dm dm-bomtree reveal" data-demo="bomtree">
+      <div class="dm-head">
+        <div class="dm-title"><b>Office desk · multi-level bill of materials</b><small>Sample costs and stock · SGD</small></div>
+        <div class="dm-seg" role="group" aria-label="Choose a view of the bill of materials">
+          <button type="button" data-lens="cost" aria-pressed="true">{{icon:calculator}}Cost roll-up</button>
+          <button type="button" data-lens="mrp" aria-pressed="false">{{icon:layers}}MRP explosion</button>
+        </div>
+        <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Reset</button>
+      </div>
+      <div class="bmt-wrap">
+        <div class="bmt-stage">
+          <svg class="bmt-links" aria-hidden="true" focusable="false"></svg>
+          <div class="bmt-tree" role="group" aria-label="Bill of materials: press a component to adjust its price and scrap allowance"></div>
+          <ul class="dm-legend bmt-legend">
+            <li><i class="dm-sw" style="--c:var(--tok-make)"></i>Manufactured (own BoM)</li>
+            <li><i class="dm-sw" style="--c:var(--odoo-teal)"></i>Kit BoM</li>
+            <li><i class="dm-sw" style="--c:var(--tok-stock)"></i>Purchased component</li>
+            <li class="bmt-lg-mrp"><i class="dm-sw" style="--c:var(--tok-late)"></i>Short: purchase order raised</li>
+          </ul>
+        </div>
+        <aside class="bmt-side" aria-label="Adjust the selected component, unit cost and work centres">
+          <div class="bmt-card bmt-ctl">
+            <p class="bmt-h">Selected component</p>
+            <p class="bmt-sel"><b data-s="name"></b><small data-s="sub"></small></p>
+            <label class="bmt-sl"><span>Purchase price <b data-s="price"></b></span><input type="range" data-in="price" min="50" max="160" step="1" value="100" aria-label="Purchase price of the selected component, percent of today's price"></label>
+            <label class="bmt-sl"><span>Scrap allowance <b data-s="scrap"></b></span><input type="range" data-in="scrap" min="0" max="15" step="1" value="0" aria-label="Scrap allowance on the selected component, percent added to its BoM quantity"></label>
+          </div>
+          <div class="bmt-card bmt-cost">
+            <p class="bmt-h">Unit cost · BoM overview</p>
+            <p class="bmt-big"><b data-c="unit">S$ 116.40</b><em data-c="delta"></em></p>
+            <span class="bmt-split" aria-hidden="true"><i data-c="mat"></i><u data-c="ops"></u></span>
+            <dl class="bmt-dl">
+              <div><dt><i class="dm-sw" style="--c:var(--tok-stock)"></i>Materials</dt><dd data-c="matv"></dd></div>
+              <div><dt><i class="dm-sw" style="--c:var(--tok-make)"></i>Operations</dt><dd data-c="opsv"></dd></div>
+              <div><dt>Product cost (standard price)</dt><dd data-c="std"></dd></div>
+              <div><dt>List price · margin on BoM cost</dt><dd data-c="margin"></dd></div>
+            </dl>
+            <button class="dm-btn bmt-compute" type="button" data-compute>{{odoo:mrp:16}}Compute price from BoM</button>
+          </div>
+          <div class="bmt-card bmt-wc">
+            <label class="bmt-sl"><span>Demand this week <b data-s="demand"></b></span><input type="range" data-in="demand" min="10" max="150" step="1" value="60" aria-label="Desks demanded this week"></label>
+            <p class="bmt-h">Work centres · load this week</p>
+            <ul class="bmt-wcs"></ul>
+          </div>
+        </aside>
+      </div>
+      <div class="bmt-mrp" hidden>
+        <div class="bmt-mcol" data-m="so"><p class="bmt-h">{{odoo:sale:16}}Demand</p><ul></ul></div>
+        <div class="bmt-mcol" data-m="mo"><p class="bmt-h">{{odoo:mrp:16}}Manufacturing orders</p><ul></ul></div>
+        <div class="bmt-mcol" data-m="short"><p class="bmt-h">{{odoo:stock:16}}Component shortages</p><ul></ul></div>
+        <div class="bmt-mcol" data-m="po"><p class="bmt-h">{{odoo:purchase:16}}Purchase orders</p><ul></ul></div>
+      </div>
+      <div class="dm-static">
+        <p><b>Structure:</b> an office desk is made from a steel frame and a desk top, which are manufactured from their own bills of materials, and a fixing kit, a kit BoM of screws, cam locks and an Allen key.</p>
+        <p><b>Cost roll-up:</b> each component's quantity times its cost, plus each operation's minutes at its work centre's cost per hour, adds up level by level to the desk's unit cost of S$ 116.40 in this sample.</p>
+        <p><b>Work centres:</b> cutting, welding, painting, woodworking, assembly and packing, each with its minutes per unit and its load against the hours available this week.</p>
+        <p><b>MRP:</b> demand from sales orders, less stock, becomes manufacturing orders for the desk and its sub-assemblies; components short of stock raise purchase orders to their vendors, with each vendor's lead time.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample data. Here the scrap allowance is added to the component's BoM quantity; actual scrap is recorded on the manufacturing order. Costing method, routes and lead times are agreed in discovery.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what usually slows you down</span><h2>Three problems we see first.</h2></div>
+    <div class="grid-3 ixw-board">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{icon:gear}}</div><h3>BoMs in spreadsheets</h3><p>Component lists live in Excel; when a price changes, the product cost doesn't.</p></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{icon:box}}</div><h3>Shortages found on the floor</h3><p>Production stops because a component ran out that nobody knew was low.</p></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{icon:bars}}</div><h3>Cost per unit unknown</h3><p>Labour, materials and overhead never meet in one place; margin per product is estimated.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head sec-head--row reveal"><div><span class="hand">how odoo maps to it</span><h2 style="margin:0">The apps we switch on.</h2></div><a class="btn-link" href="{{ROOT}}odoo/apps.html">All Odoo apps {{icon:arrow}}</a></div>
+    <div class="showcase reveal" data-showcase data-interval="6000">
+      <div class="sc-list" role="tablist" aria-label="Odoo apps for manufacturing">
+        <button class="sc-tab" role="tab" type="button" data-app="mrp" data-kicker="Manufacturing · Supply Chain" data-title="Manufacturing" data-href="{{ROOT}}odoo/apps/mrp.html" data-desc="Multi-level bills of materials, routings and work orders; component demand and finished-goods cost follow from them." data-points="Multi-level BoMs and routings|Work orders and work-centre capacity|Finished-goods cost rolled up automatically">{{odoo:mrp:36}}<span><b>Manufacturing</b><small>BoMs, routings, work orders.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="stock" data-kicker="Inventory · Supply Chain" data-title="Inventory" data-href="{{ROOT}}odoo/apps/stock.html" data-desc="Component and finished stock in one system; reordering rules and MRP scheduling so shortages surface before the floor does." data-points="Components and finished goods|Reordering rules and MRP scheduling|Lots and serials through production">{{odoo:stock:36}}<span><b>Inventory</b><small>Components, finished goods, lots.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="purchase" data-kicker="Purchase · Supply Chain" data-title="Purchase" data-href="{{ROOT}}odoo/apps/purchase.html" data-desc="Component demand from BoMs becomes supplier orders; receipts and bills close the loop." data-points="Orders driven by production demand|Vendor lead times respected|Bills matched to receipts">{{odoo:purchase:36}}<span><b>Purchase</b><small>Components from demand.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="quality_control" data-kicker="Quality · Supply Chain" data-title="Quality" data-href="{{ROOT}}odoo/apps/quality_control.html" data-desc="Control points at receipt, in process and at final inspection; alerts and non-conformance tracked." data-points="Control points per operation|Quality alerts and non-conformance|Traceability by lot">{{odoo:quality_control:36}}<span><b>Quality</b><small>Control points and alerts.</small></span></button>
+        <button class="sc-tab" role="tab" type="button" data-app="accountant" data-kicker="Accounting · Finance" data-title="Accounting" data-href="{{ROOT}}odoo/apps/accountant.html" data-desc="Standard or real cost per product, WIP and variances in the ledger; margin per product and per order." data-points="Standard or real costing|WIP and variance accounts|Margin per product and order">{{odoo:accountant:36}}<span><b>Accounting</b><small>Product costing and margin.</small></span></button>
+      </div>
+      <div class="sc-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+{{INDUSTRY:manufacturing}}
+
+<section class="section">
+  <div class="container">
+    <div class="cta ixw-cta reveal" data-ixw-burst>
+      <span class="ixw-cta-nexi" aria-hidden="true">{{IXW_POSE:manufacturing:celebrate}}</span>
+      <div><span class="hand">next step</span><h2>Send us one product's BoM.</h2><p><span class="m-full">We map it, its routing and its cost in a discovery session — enough to scope the first phase.</span><span class="m-short">One product's BoM is enough to scope the first phase.</span></p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a></div>
+    </div>
+  </div>
+</section>

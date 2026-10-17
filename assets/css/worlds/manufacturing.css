@@ -1,0 +1,219 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: manufacturing (Keystone Works, a sample maker of steel shelving). Machine teal, safety orange, steel and graph-paper
+   green on a factory floor: the copy is a work-order traveler, the caption is a machine panel, the workflow stops are push
+   buttons on a control rail, the problems are equipment tags, the apps are tool-cabinet drawers, before/after is a control
+   chart, the video plays on a shop-floor monitor, Odoo 20 is an engineering change order, the rollout is three stations
+   and the end card is a machine nameplate. Scoped to body.ixw--manufacturing. */
+.ixw--manufacturing{--w-vwall:#E3E9EE;--w-vwains:#C6D0D8;--w-vfloor:#C9D2D0;--w-vbase:#5C7080;--w-alt:#F2F5F6;--w-dot:rgba(47,107,122,.10);--w-hand:#21505C;
+  --g-teal:#2F6B7A;--g-teal-d:#21505C;--g-orange:#FF7A1A;--g-orange-d:#C9560A;--g-steel:#8A97A6;--g-steel-l:#E4E9EE;--g-ink:#1E2A33;--g-green:#1FA463;
+  --g-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,monospace;
+  --g-brushed:repeating-linear-gradient(90deg,#EEF2F5 0 2px,#E2E8ED 2px 4px)}
+.ixw--manufacturing .ixw-vg .f-mteal{fill:#2F6B7A}.ixw--manufacturing .ixw-vg .f-mteal-l{fill:#D8E8EC}.ixw--manufacturing .ixw-vg .f-morange{fill:#FF7A1A}.ixw--manufacturing .ixw-vg .f-morange-l{fill:#FFE6D3}
+.ixw--manufacturing .ixw-vg .f-msky{fill:#3A93C0}.ixw--manufacturing .ixw-vg .f-msteel{fill:#8A97A6}.ixw--manufacturing .ixw-vg .t-teal{fill:#21505C}
+
+/* ---------- the hero: the factory floor; the copy is a work-order traveler ---------- */
+.ixw--manufacturing .ixw-hero{background:linear-gradient(180deg,#DFE6EC 0%,#D0D9E2 62%,#5C7080 62%,#51636F 74%,#BCC7C5 74%,#A6B3B1 100%)}
+.ixw--manufacturing .ixw-copy{position:relative;max-width:468px;padding:58px 30px 54px;border-radius:8px;background:#FFFFFF;
+  box-shadow:inset 0 0 0 10px #FFFFFF,inset 0 0 0 12px var(--g-steel),0 0 0 6px #C3CDD6,0 5px 0 6px #8A97A6,0 40px 70px -30px rgba(20,40,60,.5)}
+.ixw--manufacturing .ixw-copy::before{content:"WORK ORDER TRAVELER \00B7  KEYSTONE WORKS \00B7  SAMPLE";position:absolute;left:12px;right:12px;top:12px;height:30px;display:flex;align-items:center;padding-left:34px;
+  background:var(--g-teal);font:700 10px/1 var(--g-mono);letter-spacing:.14em;color:#FFFFFF;
+  background-image:radial-gradient(circle at 16px 50%,#C3CDD6 4px,transparent 4.5px),radial-gradient(circle at calc(100% - 16px) 50%,#C3CDD6 4px,transparent 4.5px)}
+.ixw--manufacturing .ixw-copy::after{content:"";position:absolute;left:30px;right:30px;bottom:18px;height:22px;opacity:.7;
+  background:repeating-linear-gradient(90deg,#1E2A33 0 2px,transparent 2px 4px,#1E2A33 4px 5px,transparent 5px 8px,#1E2A33 8px 11px,transparent 11px 13px)}
+.ixw--manufacturing .ixw-credits dt .ic{color:var(--g-orange)}
+.ixw--manufacturing .ixw-credits{box-shadow:inset 0 8px 0 var(--g-teal),0 3px 0 #DDE3E8,0 26px 50px -30px rgba(20,40,60,.4);padding-top:12px}
+/* the caption: a machine panel with its status LED */
+.ixw--manufacturing .ixw-cap{border-radius:10px;padding-top:36px;box-shadow:inset 0 0 0 2px #D7DEE5,0 22px 44px -22px rgba(20,40,60,.5)}
+.ixw--manufacturing .ixw-cap::before{content:"CELL 2 \00B7  RUNNING";position:absolute;left:0;right:0;top:0;height:26px;display:flex;align-items:center;padding-left:34px;border-radius:10px 10px 0 0;
+  background:var(--g-teal-d) radial-gradient(circle at 18px 50%,#3FE0A8 5px,transparent 5.5px);font:700 10px/1 var(--g-mono);letter-spacing:.16em;color:#CFE9EE;pointer-events:none}
+.ixw--manufacturing .ixw-cap-who b,.ixw--manufacturing .ixw-cap-txt b{color:var(--g-teal-d)}
+.ixw--manufacturing .ixw-caret{background:var(--g-orange)}
+.ixw--manufacturing .ixw-cap-rec{font-family:var(--g-mono)}
+
+/* ---------- Nexi's paragraph: a shift note ---------- */
+.ixw--manufacturing .ixw-say{border-radius:8px;box-shadow:inset 6px 0 0 var(--g-orange),var(--w-card)}
+.ixw--manufacturing .ixw-say .ix-intro-h{background:#D8E8EC;color:var(--g-teal-d)}
+
+/* ---------- the workflow: push buttons on a control rail ---------- */
+.ixw--manufacturing .ixw-flow-sec{background:linear-gradient(180deg,#FFFFFF 0%,#F2F5F6 100%)}
+.ixw--manufacturing .ixw-scenes{background:#E3E9EE;box-shadow:0 3px 0 #D3DBE2,0 30px 60px -36px rgba(20,40,60,.45)}
+.ixw--manufacturing .ixw-scene-tag{color:var(--g-teal-d)}
+.ixw--manufacturing .ixw-road{height:16px;margin-top:-8px;border-radius:4px;background:var(--g-brushed);box-shadow:inset 0 0 0 2px #C3CDD6}
+.ixw--manufacturing .ixw-road i{border-radius:4px;background:repeating-linear-gradient(90deg,#1FA463 0 12px,#178A52 12px 16px)}
+.ixw--manufacturing .ixw-pin{width:58px;height:58px;border:0;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FFFFFF 0 46%,#E4E9EE 47% 100%);
+  box-shadow:0 0 0 5px #C3CDD6,0 0 0 7px #8A97A6,0 6px 0 7px #5C6B7A}
+.ixw--manufacturing .ixw-pin i{background:var(--g-ink)}
+.ixw--manufacturing .ixw-stop:hover .ixw-pin{border:0;box-shadow:0 0 0 5px #C3CDD6,0 0 0 7px #8A97A6,0 9px 0 7px #5C6B7A}
+.ixw--manufacturing .ixw-stop.is-done .ixw-pin{border:0;background:radial-gradient(circle at 50% 40%,#E9FBF2 0 46%,#C9EEDB 47% 100%);box-shadow:0 0 0 5px #C3CDD6,0 0 0 7px #1FA463,0 6px 0 7px #5C6B7A}
+.ixw--manufacturing .ixw-stop.is-done .ixw-pin i{background:var(--g-green)}
+.ixw--manufacturing .ixw-stop.is-on .ixw-pin{border:0;translate:0 2px;background:radial-gradient(circle at 50% 40%,#FFF4EB 0 46%,#FFD9BF 47% 100%);box-shadow:0 0 0 5px #C3CDD6,0 0 0 7px var(--g-orange),0 3px 0 7px var(--g-orange-d),0 0 26px 4px rgba(255,122,26,.45)}
+.ixw--manufacturing .ixw-stop.is-on .ixw-pin i{background:var(--g-orange)}
+.ixw--manufacturing .ixw-stop-t{margin-top:10px}
+.ixw--manufacturing .ixw-panel{box-shadow:inset 0 6px 0 var(--g-teal),0 3px 0 #DDE3E8,0 30px 60px -36px rgba(20,40,60,.4)}
+.ixw--manufacturing .ixw-panel-meta>div{background:#F2F5F6}
+.ixw--manufacturing .ixw-panel-who b{color:var(--g-teal-d)}
+.ixw--manufacturing .ixw-rec{border-color:#C9D3DB;font-family:var(--g-mono);font-size:12px}
+.ixw--manufacturing .ixw-pick-l::before{content:"";width:18px;height:18px;background:var(--g-orange);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm9 5v-2l-2.2-.4-.6-1.5 1.3-1.8-1.4-1.4-1.8 1.3-1.5-.6L14 3h-2l-.4 2.2-1.5.6-1.8-1.3-1.4 1.4 1.3 1.8-.6 1.5L3 11v2l2.2.4.6 1.5-1.3 1.8 1.4 1.4 1.8-1.3 1.5.6.4 2.2h2l.4-2.2 1.5-.6 1.8 1.3 1.4-1.4-1.3-1.8.6-1.5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm9 5v-2l-2.2-.4-.6-1.5 1.3-1.8-1.4-1.4-1.8 1.3-1.5-.6L14 3h-2l-.4 2.2-1.5.6-1.8-1.3-1.4 1.4 1.3 1.8-.6 1.5L3 11v2l2.2.4.6 1.5-1.3 1.8 1.4 1.4 1.8-1.3 1.5.6.4 2.2h2l.4-2.2 1.5-.6 1.8 1.3 1.4-1.4-1.3-1.8.6-1.5z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ---------- the three problems: equipment tags ---------- */
+.ixw--manufacturing .ixw-board{background:var(--g-brushed);box-shadow:inset 0 0 0 10px #C3CDD6,inset 0 0 0 12px #8A97A6,0 24px 50px -34px rgba(20,40,60,.5)}
+.ixw--manufacturing .ixw-board .card{padding:50px 24px 24px;border-radius:10px 10px 10px 30px;transform-origin:50% 0}
+.ixw--manufacturing .ixw-board .card:nth-child(n){background:#FFFFFF;box-shadow:inset 0 30px 0 var(--g-orange),0 18px 26px -16px rgba(20,40,60,.55)}
+.ixw--manufacturing .ixw-board .card:nth-child(2){box-shadow:inset 0 30px 0 var(--g-teal),0 18px 26px -16px rgba(20,40,60,.55)}
+.ixw--manufacturing .ixw-board .card:nth-child(3){box-shadow:inset 0 30px 0 var(--g-ink),0 18px 26px -16px rgba(20,40,60,.55)}
+.ixw--manufacturing .ixw-board .card::before,.ixw--manufacturing .ixw-board .card:nth-child(n)::before{left:auto;right:16px;top:7px;width:16px;height:16px;margin:0;background:#FFFFFF;box-shadow:inset 0 0 0 4px #C3CDD6}
+.ixw--manufacturing .ixw-board .card::after{content:"DOWNTIME";position:absolute;left:20px;top:9px;font:700 10.5px/1 var(--g-mono);letter-spacing:.16em;color:#FFFFFF}
+.ixw--manufacturing .ixw-board .card:nth-child(2)::after{content:"DELAY"}
+.ixw--manufacturing .ixw-board .card:nth-child(3)::after{content:"WASTE"}
+.ixw--manufacturing .ixw-board .card:hover{transform:rotate(-1.5deg) translateY(-4px)}
+.ixw--manufacturing .ixw-board .card-ic{color:var(--g-teal-d)}
+
+/* ---------- the apps: tool-cabinet drawers ---------- */
+.ixw--manufacturing .sc-tab{border:2px solid #B5302A;border-radius:6px;box-shadow:0 3px 0 #8E2520;background:linear-gradient(180deg,#E2453C,#C9372F);color:#FFFFFF}
+.ixw--manufacturing .sc-tab small{color:#FFE3DF}
+.ixw--manufacturing .sc-tab::before{content:"";position:absolute;left:50%;bottom:7px;width:46px;height:5px;margin-left:-23px;border-radius:3px;background:#E8EDF2}
+.ixw--manufacturing .sc-tab:hover{border-color:#8E2520;box-shadow:0 5px 0 #8E2520;translate:4px 0}
+.ixw--manufacturing .sc-tab.is-active{border-color:var(--g-ink);background:#FFFFFF;color:var(--g-ink);box-shadow:0 4px 0 var(--g-ink);translate:14px 0}
+.ixw--manufacturing .sc-tab.is-active small{color:#5C6B7A}
+.ixw--manufacturing .sc-tab.is-active b{color:var(--g-teal-d)}
+.ixw--manufacturing .sc-tab::after{background:var(--g-orange)}
+.ixw--manufacturing .sc-panel::before{background:#E4E9EE radial-gradient(circle at 20px 18px,#FF7A1A 5.5px,transparent 6px) no-repeat,radial-gradient(circle at 38px 18px,#FFC93C 5.5px,transparent 6px) no-repeat}
+
+/* ---------- before / after: a control chart on graph paper ---------- */
+.ixw--manufacturing .ix-ba{position:relative;gap:8px;padding:48px 16px 16px;border-radius:12px;background-color:#F3FAF5;
+  background-image:linear-gradient(rgba(31,164,99,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(31,164,99,.12) 1px,transparent 1px);background-size:14px 14px;box-shadow:inset 0 0 0 2px #CBE7D6,0 30px 60px -36px rgba(20,60,40,.4)}
+.ixw--manufacturing .ix-ba::before{content:"CONTROL CHART \00B7  TODAY \2192  WITH ODOO";position:absolute;left:20px;top:18px;font:700 11px/1 var(--g-mono);letter-spacing:.14em;color:#178A52}
+.ixw--manufacturing .ix-ba::after{content:"";position:absolute;right:18px;top:12px;width:120px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24'%3E%3Cpath d='M0 4h120M0 20h120' stroke='%23E2453C' stroke-width='1.2' stroke-dasharray='4 3'/%3E%3Cpath d='M0 13l12-4 12 6 12-3 12 5 12-7 12 4 12-2 12 3 12-4 12 2' fill='none' stroke='%231FA463' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--manufacturing .ix-row{border:0;border-radius:6px;background:rgba(255,255,255,.85);box-shadow:inset 4px 0 0 var(--g-orange)}
+.ixw--manufacturing .ix-ba.is-js[data-state="after"] .ix-row{box-shadow:inset 4px 0 0 var(--g-green)}
+.ixw--manufacturing .ix-task{font:700 12.5px/1.35 var(--g-mono);text-transform:uppercase;letter-spacing:.03em;color:var(--g-ink)}
+.ixw--manufacturing .ix-before .ic{background:#FFE6D3;color:var(--g-orange-d)}
+.ixw--manufacturing .ix-after .ic{background:#D7F4E4;color:#178A52}
+
+/* ---------- media: a shop-floor monitor on its bracket ---------- */
+.ixw--manufacturing .ix-video{position:relative;padding-top:26px}
+.ixw--manufacturing .ix-video .yt{border:14px solid #2A3550;border-radius:10px;box-shadow:0 0 0 3px #8A97A6,0 30px 50px -30px rgba(20,40,60,.55)}
+.ixw--manufacturing .ix-video::before{content:"";position:absolute;left:50%;top:0;width:24px;height:30px;margin-left:-12px;background:linear-gradient(#8A97A6,#5C6B7A);border-radius:3px}
+.ixw--manufacturing .yt-play{background:var(--g-orange);box-shadow:0 5px 0 var(--g-orange-d),0 18px 34px -10px rgba(255,122,26,.7)}
+
+/* ---------- new in Odoo 20: an engineering change order ---------- */
+.ixw--manufacturing .ix-new{border-radius:8px}
+.ixw--manufacturing .ix-new-head{background:var(--g-teal);box-shadow:inset 0 -6px 0 var(--g-orange)}
+.ixw--manufacturing .ix-new-head::after{content:"ECO \00B7  REV B";margin-left:auto;padding:6px 10px;border:2px dashed #FFFFFF;border-radius:4px;font:700 10.5px/1 var(--g-mono);letter-spacing:.14em;color:#FFFFFF}
+.ixw--manufacturing .ix-new .checks .ic{border-radius:4px;background:#D8E8EC;color:var(--g-teal-d)}
+@media (max-width:767px){.ixw--manufacturing .ix-new-head::after{display:none}}
+
+/* ---------- rollout: three stations on the line ---------- */
+.ixw--manufacturing .ix-phases::before{height:12px;top:41px;border-radius:4px;background:var(--g-brushed);box-shadow:inset 0 0 0 2px #C3CDD6;opacity:1}
+.ixw--manufacturing .ix-ph-n{border-radius:6px;background:var(--g-teal);box-shadow:0 3px 0 var(--g-teal-d),0 0 0 6px var(--w-alt)}
+.ixw--manufacturing .ix-ph-n::before{content:"ST-1 \00B7  ";font-family:var(--g-mono)}
+.ixw--manufacturing .ix-phase:nth-child(2) .ix-ph-n{background:var(--g-orange);box-shadow:0 3px 0 var(--g-orange-d),0 0 0 6px var(--w-alt)}
+.ixw--manufacturing .ix-phase:nth-child(2) .ix-ph-n::before{content:"ST-2 \00B7  "}
+.ixw--manufacturing .ix-phase:nth-child(3) .ix-ph-n{background:var(--g-ink);box-shadow:0 3px 0 #0B1116,0 0 0 6px var(--w-alt)}
+.ixw--manufacturing .ix-phase:nth-child(3) .ix-ph-n::before{content:"ST-3 \00B7  "}
+.ixw--manufacturing .ix-phase{border-radius:8px;border-top:6px solid var(--g-steel)}
+
+/* ---------- FAQ: shop-floor Q&A; integrations: part labels ---------- */
+.ixw--manufacturing .faq details{border-radius:8px}
+.ixw--manufacturing .faq summary::before{border-radius:50%;background:#D8E8EC;color:var(--g-teal-d);box-shadow:0 0 0 3px #FFFFFF,0 0 0 5px #C3CDD6}
+.ixw--manufacturing .faq details[open] summary::before{background:var(--g-orange);color:#FFFFFF}
+.ixw--manufacturing .faq summary .ic{color:var(--g-teal-d)}
+.ixw--manufacturing .ix-chip{border-radius:4px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #C9D3DB,inset 0 -4px 0 var(--g-teal);font-family:var(--g-mono);font-size:12px}
+.ixw--manufacturing .ix-chip .ic{color:var(--g-orange)}
+
+/* ---------- the end card: a machine nameplate ---------- */
+.ixw--manufacturing .ixw-cta{background:linear-gradient(120deg,#21505C,#2F6B7A 60%,#3D8494)}
+.ixw--manufacturing .ixw-cta::before{background-image:radial-gradient(rgba(255,255,255,.12) 2px,transparent 2.2px)}
+.ixw--manufacturing .ixw-cta::after{content:"";display:block;position:absolute;inset:12px;width:auto;height:auto;transform:none;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle at 10px 10px,#C3CDD6 5px,transparent 5.5px) 0 0/100% 100% no-repeat,radial-gradient(circle at calc(100% - 10px) 10px,#C3CDD6 5px,transparent 5.5px),radial-gradient(circle at 10px calc(100% - 10px),#C3CDD6 5px,transparent 5.5px),radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#C3CDD6 5px,transparent 5.5px);background-repeat:no-repeat;background-size:100% 100%}
+.ixw--manufacturing .ixw-cta .hand{color:#FFC793}
+
+/* ---------- buttons: push buttons and steel plates ----------
+   Like Nexi Explains' comic buttons (an ink outline and a hard lip you press the button onto), off the machines: the
+   primary is a safety-orange push button inside a steel collar, the secondary a riveted steel plate, the controls are
+   panel buttons (play is the green START), the switches are a selector rail. */
+.ixw--manufacturing{--lab-bd:2px solid var(--g-ink);--lab-lip:var(--g-ink);--lab-tail:var(--g-ink);--lab-r:6px}
+.ixw--manufacturing main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:2.5px solid var(--g-ink);box-shadow:0 5px 0 var(--g-ink)}
+.ixw--manufacturing main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{border-color:var(--g-ink);translate:0 -2px;box-shadow:0 7px 0 var(--g-ink)}
+.ixw--manufacturing main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 4px;transition-duration:.07s;box-shadow:0 1px 0 var(--g-ink)}
+.ixw--manufacturing main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--g-orange);outline-offset:4px}
+.ixw--manufacturing main .btn-primary,.ixw--manufacturing main .btn-primary:hover{color:#FFFFFF;background:radial-gradient(120% 140% at 50% 0,#FF9A4D,#FF7A1A 55%,#E0650C);box-shadow:inset 0 0 0 4px #C3CDD6,inset 0 0 0 5.5px #5C6B7A,0 5px 0 var(--g-ink)}
+.ixw--manufacturing main .btn-primary:hover{box-shadow:inset 0 0 0 4px #C3CDD6,inset 0 0 0 5.5px #5C6B7A,0 7px 0 var(--g-ink)}
+.ixw--manufacturing main .btn-primary:active{box-shadow:inset 0 0 0 4px #C3CDD6,inset 0 0 0 5.5px #5C6B7A,0 1px 0 var(--g-ink)}
+.ixw--manufacturing main .btn-primary .ic,.ixw--manufacturing main .ixw-cta .btn-white .ic{width:30px;height:30px;margin-right:-8px;padding:6px;border-radius:50%;background:var(--g-ink);color:#FFFFFF}
+.ixw--manufacturing main :is(.btn-primary,.ixw-cta .btn-white):hover .ic{transform:translateX(3px);background:var(--g-ink)}
+.ixw--manufacturing main .btn-ghost,.ixw--manufacturing main .btn-ghost:hover,.ixw--manufacturing main .ixw-cta .btn-white,.ixw--manufacturing main .ixw-cta .btn-white:hover{color:var(--g-ink);
+  background:radial-gradient(circle at 10px 10px,#8A97A6 2.4px,transparent 2.9px),radial-gradient(circle at calc(100% - 10px) 10px,#8A97A6 2.4px,transparent 2.9px),radial-gradient(circle at 10px calc(100% - 10px),#8A97A6 2.4px,transparent 2.9px),radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),#8A97A6 2.4px,transparent 2.9px),var(--g-brushed);border-radius:8px}
+.ixw--manufacturing main .btn-ghost::before{background:rgba(47,107,122,.08)}
+.ixw--manufacturing main .btn-ghost .ic{color:var(--g-teal)}
+.ixw--manufacturing main .ixw-cta .btn-outline-white,.ixw--manufacturing main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:rgba(255,255,255,.1);border-radius:8px}
+/* the controls: panel buttons; play is the green START */
+.ixw--manufacturing .ixw-ibtn{border:2.5px solid var(--g-ink);color:var(--g-ink);background:radial-gradient(circle at 50% 40%,#FFFFFF 0 50%,#E4E9EE 52%);box-shadow:inset 0 0 0 3px #C3CDD6,0 3px 0 var(--g-ink)}
+.ixw--manufacturing .ixw-ibtn:hover{border-color:var(--g-ink);color:var(--g-teal-d);box-shadow:inset 0 0 0 3px #C3CDD6,0 5px 0 var(--g-ink)}
+.ixw--manufacturing .ixw-ibtn:active{box-shadow:inset 0 0 0 3px #C3CDD6,0 1px 0 var(--g-ink)}
+.ixw--manufacturing .ixw-ibtn--play,.ixw--manufacturing .ixw-ibtn--play:hover{color:#FFFFFF;background:radial-gradient(circle at 50% 38%,#4FD08E,#1FA463 60%,#178A52);box-shadow:inset 0 0 0 3px #C3CDD6,0 3px 0 var(--g-ink)}
+.ixw--manufacturing .ixw-ibtn--play.is-on{animation:gRun 1.8s ease-out infinite}
+@keyframes gRun{0%{box-shadow:inset 0 0 0 3px #C3CDD6,0 3px 0 #1E2A33,0 0 0 0 rgba(31,164,99,.5)}70%,100%{box-shadow:inset 0 0 0 3px #C3CDD6,0 3px 0 #1E2A33,0 0 0 12px rgba(31,164,99,0)}}
+.ixw--manufacturing .ixw-dots button{background:#C3CDD6;border-radius:2px}
+.ixw--manufacturing .ixw-dots button.is-on{width:22px;background:var(--g-orange)}
+/* the episode tag: a stamped plate */
+.ixw--manufacturing .ixw-ep-tag{border-radius:4px;background:var(--g-ink);box-shadow:0 3px 0 #0B1116}
+.ixw--manufacturing .ixw-ep-tag:hover{box-shadow:0 4px 0 #0B1116}
+.ixw--manufacturing .ixw-ep-tag .ic{background:var(--g-orange);color:#FFFFFF}
+/* switches and view toggles: a selector rail */
+.ixw--manufacturing :is(.ix-switch,.ix-views){border:2.5px solid var(--g-ink);border-radius:8px;background:var(--g-brushed);box-shadow:0 4px 0 var(--g-ink)}
+.ixw--manufacturing :is(.ix-switch,.ix-views) button{border-radius:5px;font-family:var(--g-mono);text-transform:uppercase;letter-spacing:.04em;font-size:13px;white-space:nowrap}
+.ixw--manufacturing .ix-switch::before{border-radius:5px;background:var(--g-ink);box-shadow:0 3px 0 #0B1116}
+.ixw--manufacturing .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:var(--g-green);box-shadow:0 3px 0 #178A52}
+.ixw--manufacturing .ix-views button[aria-pressed="true"]{background:var(--g-orange);color:#FFFFFF;box-shadow:0 2px 0 var(--g-orange-d)}
+/* the sample picker */
+.ixw--manufacturing .ixw-pick-b{border:2.5px solid var(--g-ink);border-radius:10px;box-shadow:0 4px 0 var(--g-ink);background:var(--g-brushed)}
+.ixw--manufacturing .ixw-pick-b button{border-radius:6px}
+.ixw--manufacturing .ixw-pick-b button:hover{color:var(--g-teal-d);background:#FFFFFF}
+.ixw--manufacturing .ixw-pick-b button[aria-pressed="true"]{background:var(--g-teal);color:#FFFFFF;box-shadow:0 3px 0 var(--g-teal-d)}
+/* other industries: part labels */
+.ixw--manufacturing .ix-others a{border:2px solid var(--g-ink);border-radius:6px;box-shadow:0 3px 0 var(--g-ink)}
+.ixw--manufacturing .ix-others a:hover{border-color:var(--g-ink);box-shadow:0 5px 0 var(--g-ink);background:#F2F5F6}
+.ixw--manufacturing .ix-others a:active{box-shadow:0 1px 0 var(--g-ink)}
+.ixw--manufacturing .ix-others a .ic{color:var(--g-orange)}
+/* text links: a moving belt underline */
+.ixw--manufacturing main .btn-link{color:var(--g-teal-d);padding-bottom:9px;background:repeating-linear-gradient(90deg,var(--g-orange) 0 8px,transparent 8px 12px) 0 100%/100% 3px no-repeat}
+.ixw--manufacturing main .btn-link::after{display:none}
+.ixw--manufacturing main .btn-link:hover{color:var(--g-ink);animation:gBelt .6s linear infinite}
+@keyframes gBelt{to{background-position:12px 100%}}
+
+/* the side tabs and the header's Contact Us in this world's colours */
+.ixw--manufacturing{}
+/* the entry intro in this world's colours */
+.ixw--manufacturing{--ii-bg:linear-gradient(180deg,#E7ECF0,#D3DBE2);--ii-pattern:repeating-linear-gradient(90deg,rgba(40,60,80,.07) 0 6px,transparent 6px 22px);--ii-ink:#1E2A33;--ii-b:#2F6B7A;--ii-accent:#FF7A1A;--ii-bar:repeating-linear-gradient(-45deg,#1E2A33 0 10px,#FFC93C 10px 20px);--ii-lip:#1E2A33;--ii-ep-bg:#2F6B7A;--ii-ep-fg:#FFFFFF;--ii-pill-r:6px;--ii-font:var(--g-mono,var(--font-display))}
+/* "View the scene": a riveted steel plate; pressed, the orange push button */
+.ixw--manufacturing .ixw-peek{border:2.5px solid var(--g-ink);border-radius:8px;color:var(--g-ink);box-shadow:0 3px 0 var(--g-ink);
+  background:radial-gradient(circle at 8px 8px,#8A97A6 2px,transparent 2.5px),radial-gradient(circle at calc(100% - 8px) 8px,#8A97A6 2px,transparent 2.5px),radial-gradient(circle at 8px calc(100% - 8px),#8A97A6 2px,transparent 2.5px),radial-gradient(circle at calc(100% - 8px) calc(100% - 8px),#8A97A6 2px,transparent 2.5px),var(--g-brushed)}
+.ixw--manufacturing .ixw-peek:hover{box-shadow:0 5px 0 var(--g-ink)}.ixw--manufacturing .ixw-peek:active{box-shadow:0 1px 0 var(--g-ink)}
+.ixw--manufacturing .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:radial-gradient(120% 140% at 50% 0,#FF9A4D,#FF7A1A 55%,#E0650C)}
+.ixw--manufacturing .ixw-peek:focus-visible{outline:3px solid var(--g-orange);outline-offset:3px}
+@media (min-width:1500px){.ixw--manufacturing .ixw-set{bottom:158px}}
+@media (prefers-reduced-motion:reduce){.ixw--manufacturing .ixw-ibtn--play.is-on,.ixw--manufacturing main .btn-link:hover{animation:none}}
+
+/* audit round: hero CTAs at 52px on desktop, matching the caption controls' rhythm */
+@media (min-width:768px){.ixw--manufacturing .ixw-copy .btn-lg{height:52px}}
+/* audit round: before/after, the intro and switch stay in view beside the tall board instead of floating mid-way */
+@media (min-width:1024px){.ixw--manufacturing .ix-ba-wrap{align-items:start}.ixw--manufacturing .ix-ba-wrap>div:first-child{position:sticky;top:120px;padding-top:24px}}
+/* audit round: tablets, the glance strip clears the typed caption however long the line runs */
+@media (min-width:768px) and (max-width:1023px){.ixw--manufacturing .ixw-credits{margin-top:48px}}
+
+/* fix round: segmented switches (Today / With Odoo, and the dashboard's view toggle). Two equal halves, the active
+   pill sits fully inside with the same 4px inset on every side and a concentric radius, its lip drawn inside it,
+   labels centred; the slide eases without overshoot. */
+.ixw--manufacturing :is(.ix-switch,.ix-views){display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none;align-items:stretch;position:relative;padding:4px;border-radius:8px;overflow:hidden;isolation:isolate}
+.ixw--manufacturing :is(.ix-switch,.ix-views) button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-width:0;margin:0;padding:0 20px;text-align:center;border-radius:calc(8px - 4px);background:transparent;box-shadow:none;transition:color .25s ease,background-color .25s ease}
+.ixw--manufacturing .ix-switch button{height:42px}
+.ixw--manufacturing .ix-views button{height:34px;padding:0 16px}
+.ixw--manufacturing .ix-switch::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:calc(8px - 4px);z-index:0;transition:transform .42s cubic-bezier(.32,.72,.24,1),background-color .3s ease;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--manufacturing .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{transform:translateX(100%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--manufacturing .ix-switch button[aria-pressed="true"]{background:transparent}
+.ixw--manufacturing .ix-views button[aria-pressed="true"]{box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--manufacturing :is(.ix-switch,.ix-views) button[aria-pressed="false"]:hover{background:rgba(127,127,127,.12)}
+.ixw--manufacturing :is(.ix-switch,.ix-views) button:active{transform:translateY(1px)}
+.ixw--manufacturing :is(.ix-switch,.ix-views) button:focus-visible{outline:2px solid currentColor;outline-offset:-6px}
+@media (prefers-reduced-motion:reduce){.ixw--manufacturing .ix-switch::before{transition:none}}

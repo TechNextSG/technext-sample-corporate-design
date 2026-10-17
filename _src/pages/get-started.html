@@ -1,0 +1,372 @@
+<!--meta {"title": "Free website design and setup on Odoo — TechNext", "desc": "We custom-design and set up your multi-page Odoo website, free. Live in as little as 3 days and ready for more Odoo apps. Singapore & the Philippines.", "out": "get-started.html", "nav": "", "body": "gs-page", "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/get-started.css?v={ASSET_V}\">"} -->
+
+<section class="gs-hero">
+  <div class="container gs-hero-grid">
+    <div class="gs-copy">
+      <span class="gs-offer-pill"><b>Free design</b> Live in as little as 3 days</span>
+      <h1>We design your website on Odoo. <em>Free.</em></h1>
+      <p class="lead">Our designers build a full multi-page website around your brand and set it up at no charge. You pay only your Odoo subscription.</p>
+      <ul class="gs-ticks">
+        <li>{{icon:check}} A multi-page website, custom-designed in the style you choose</li>
+        <li>{{icon:check}} Runs on your own Odoo subscription, ready for more apps</li>
+        <li>{{icon:check}} Every cost in writing before we start</li>
+      </ul>
+      <p class="gs-hero-proof">Odoo partner with offices in Singapore, the Philippines and Vietnam</p>
+    </div>
+
+    <form class="form gs-form card card--static" id="gs-form" novalidate data-endpoint="/api/lead">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="Get started page (free website design offer)">
+      <span class="gs-form-tag">{{icon:sparkle}} Free design</span>
+      <h2 class="gs-form-h">Claim your free website design</h2>
+      <p class="gs-form-sub">Takes a minute. We reply within one working day from sales@technext.asia.</p>
+      <div class="form-row">
+        <div class="field"><label for="gs-name">Name</label><input id="gs-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="gs-company">Company</label><input id="gs-company" name="company" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="gs-email">Work email</label><input id="gs-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="gs-phone">Phone</label><input id="gs-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="field">
+        <label for="gs-topic">I want</label>
+        <select id="gs-topic" name="topic" required>
+          <option selected>Free website design on Odoo</option>
+          <option>Full Odoo ERP</option>
+          <option>AI solutions</option>
+          <option>Social media or branding</option>
+          <option>IoT, apps or networks</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="gs-size">Team size</label>
+          <select id="gs-size" name="team_size" required>
+            <option value="">Choose one</option>
+            <option>Just me</option>
+            <option>2–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>200+</option>
+          </select>
+        </div>
+        <div class="field"><label for="gs-msg">Your current website <span class="opt">(optional)</span></label><input id="gs-msg" name="message" type="text" placeholder="yourcompany.com, or leave blank"></div>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-primary btn-lg gs-submit" type="submit"><span class="btn-label">Claim my free design</span><span class="btn-busy" aria-hidden="true"></span></button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <div class="form-sent"><h3>Thanks, we have it.</h3><p>We'll check your details and reply from sales@technext.asia within one working day.</p></div>
+      <p class="small muted gs-privacy">No payment needed to apply. We use your details only to reply. See the <a href="{{ROOT}}privacy.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="gs-proof" aria-label="Industries we work with">
+  <div class="container gs-proof-in">
+    <span class="gs-proof-h">Businesses we set up</span>
+    <ul class="gs-proof-list">
+      <li><span class="card-ic">{{icon:ind-retail}}</span>Retail</li>
+      <li><span class="card-ic">{{icon:ind-fnb}}</span>Food &amp; beverage</li>
+      <li><span class="card-ic">{{icon:ind-manufacturing}}</span>Manufacturing</li>
+      <li><span class="card-ic">{{icon:ind-medical}}</span>Medical</li>
+      <li><span class="card-ic">{{icon:ind-travel}}</span>Travel</li>
+      <li><span class="card-ic">{{icon:ind-construction}}</span>Construction</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section gs-get">
+  <div class="container gs-get-grid">
+    <div class="gs-mock reveal" aria-hidden="true">
+      <div class="gs-mock-site">
+        <div class="gs-mock-bar"><i></i><i></i><i></i><span>yourcompany.com</span></div>
+        <div class="gs-mock-body">
+          <div class="gs-mock-nav"><b></b><span></span><span></span><span></span><em>Contact</em></div>
+          <div class="gs-mock-hero"><div><b></b><b class="s"></b><span></span><em>Get a quote</em></div><div class="gs-mock-img"></div></div>
+          <div class="gs-mock-cards"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="gs-mock-odoo">
+        <div class="gs-mock-odoo-h">{{odoo:website:22}} <b>Odoo</b><small>your database</small></div>
+        <div class="gs-mock-apps">
+          <span class="on">{{odoo:website:30}}<small>Website</small><i>Live</i></span>
+          <span>{{odoo:crm:30}}<small>CRM</small></span>
+          <span>{{odoo:account:30}}<small>Invoicing</small></span>
+          <span>{{odoo:stock:30}}<small>Inventory</small></span>
+        </div>
+      </div>
+    </div>
+    <div class="gs-get-copy">
+      <div class="sec-head reveal"><span class="hand">what you get</span><h2>What's free, and what you pay for.</h2></div>
+      <div class="gs-incl reveal">
+        <div class="gs-incl-col gs-incl-free">
+          <h3>{{icon:check}} Free from TechNext (our work)</h3>
+          <ul>
+            <li>Custom multi-page website design, styled to your brand</li>
+            <li>Your choice of look, colours and layout, with rounds of changes</li>
+            <li>Setting up the Website app in your Odoo database</li>
+            <li>Contact form, mobile layout and basic SEO</li>
+            <li>One handover call to show your team how to edit it</li>
+          </ul>
+        </div>
+        <div class="gs-incl-col gs-incl-paid">
+          <h3>{{icon:receipt}} You pay for</h3>
+          <ul>
+            <li>Your Odoo subscription, paid to Odoo at Odoo's price</li>
+            <li>More Odoo apps (CRM, invoicing, inventory, HR) if you add them</li>
+            <li>Your domain name, if you don't have one yet</li>
+            <li>Extra pages, an online shop or support, only if you ask</li>
+          </ul>
+        </div>
+      </div>
+      <p class="gs-get-note reveal">We tell you every cost in writing before we start. You own the website, the Odoo account and the data.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt gs-how">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">how it works</span><h2>Live in as little as 3 days.</h2></div>
+    <ol class="gs-steps">
+      <li class="reveal" style="--i:0"><span class="gs-n">1</span><span class="gs-when">Day 1</span><h3>Claim your free design</h3><p>Send the form. We reply within one working day and book a 20-minute call about your business and the style you like.</p></li>
+      <li class="reveal" style="--i:1"><span class="gs-n">2</span><span class="gs-when">Day 2–3</span><h3>We build it</h3><p>We design your website and set it up in your Odoo. You review it and ask for changes.</p></li>
+      <li class="reveal" style="--i:2"><span class="gs-n">3</span><span class="gs-when">When you're ready</span><h3>Grow on the same system</h3><p>Add CRM, invoicing or inventory later. No moving data, no second system.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section gs-faq">
+  <div class="container gs-faq-in">
+    <div class="sec-head reveal"><span class="hand">questions</span><h2>Quick answers.</h2></div>
+    <div class="gs-qas reveal">
+      <div class="gs-qa"><h3>What exactly is free?</h3><p>Our work: designing your website and setting it up in Odoo. We don't charge for it. Odoo itself is not free. Your website runs on your own Odoo subscription, which you pay to Odoo. We do this because many businesses that start with a website on Odoo later ask us to set up more apps. If you never do, that's fine.</p></div>
+      <div class="gs-qa"><h3>Who owns the website and the data?</h3><p>You do. The Odoo subscription and database are in your name, and you can export your data or move to another partner at any time.</p></div>
+      <div class="gs-qa"><h3>How fast can my website be live?</h3><p>In as little as 3 days once we have your logo, text and photos. Bigger websites can take a little longer, and we confirm the date on our first call.</p></div>
+      <div class="gs-qa"><h3>Can I choose how it looks?</h3><p>Yes. Pick a style, send us websites you like, or share your brand guide. We design every page around it and adjust it with you until it feels like your business.</p></div>
+      <div class="gs-qa"><h3>I need an online shop or a special feature.</h3><p>Tell us in the form. Your website design is still free. Online shops, bookings or custom features are quoted separately, in writing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta reveal">
+      <div><span class="hand">ready in days</span><h2>Get your website designed free.</h2><p>Fill out the short form. We reply within one working day from sales@technext.asia.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="#gs-form" data-to-form>Claim my free design {{icon:arrow}}</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="gs-exit" id="gs-exit" role="dialog" aria-modal="true" aria-labelledby="gs-exit-h" aria-describedby="gs-exit-p" hidden>
+  <div class="gs-exit-bg" data-exit-close></div>
+  <div class="gs-exit-box">
+    <button class="gs-exit-x" type="button" data-exit-close aria-label="Close"><svg class="gs-exit-ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="t" cx="18" cy="18" r="15"/><circle class="p" cx="18" cy="18" r="15"/></svg><span class="gs-exit-count" aria-hidden="true">3</span>{{icon:x}}</button>
+    <div class="gs-exit-who"><img src="{{ROOT}}assets/img/logo-plane.png" alt="" width="40" height="34"><span><b>TechNext team</b><small>Singapore · Philippines · Vietnam</small></span></div>
+    <div class="gs-exit-bubble">
+      <span class="gs-exit-typing" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="gs-exit-msg"><h2 id="gs-exit-h">Leaving already?</h2><p id="gs-exit-p">No pressure. If you have a quick question, just message us.</p></div>
+    </div>
+    <div class="gs-exit-actions">
+      <a class="btn btn-primary btn-lg" href="https://wa.me/6588396998?text=Hi%20TechNext%2C%20I%20have%20a%20quick%20question." target="_blank" rel="noopener" data-exit-go="message">{{icon:whatsapp}} Message us now</a>
+      <a class="btn btn-ghost btn-lg" href="https://technext.odoo.com/book/c82cf8a9" target="_blank" rel="noopener" data-exit-go="schedule">{{icon:calendar}} Set a schedule</a>
+    </div>
+    <div class="gs-exit-foot"><button type="button" data-exit-close>Stay on this page</button><button type="button" data-exit-leave hidden>Leave anyway</button></div>
+  </div>
+</div>
+
+<script>
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /get-started: the "leaving already?" pop-up (inline at the end of _src/pages/get-started.html, not a deferred file: it must
+   catch a logo click or a tab close from the first paint, even on a slow connection), a random human message with "Message us now" and "Set a schedule".
+   It opens when the visitor tries to leave:
+   - closing the tab or window, reloading, the back button or a typed address: browsers only allow their own plain
+     "Leave site?" box there (and only once the visitor has clicked or typed on the page). If the visitor stays, the
+     pop-up follows at once with a "glad you stayed" message. Once per page view.
+   - a click on a link that leaves the page: the pop-up every time, with "Leave anyway" to continue.
+   - early warnings, once per visit: the mouse heading for the tab bar (desktop), a fast scroll back up (phones).
+   Never after the form was sent. The message uses the visitor's first name if they already typed it into the form. */
+(function () {
+  var box = document.getElementById('gs-exit');
+  if (!box) return;
+  var form = document.getElementById('gs-form');
+  var KEY = 'tn_gs_exit';
+  var shown = false, pending = null, lastFocus = null, readyAt = Date.now() + 4000, leaving = false, asked = false;
+  try { shown = sessionStorage.getItem(KEY) === '1'; } catch (e) { /* storage blocked: once per page view */ }
+
+  var hour = new Date().getHours();
+  var later = hour >= 18 || hour < 5 ? 'tomorrow' : 'later today';
+  // {n} = ", Maria" when the visitor typed a name, "" otherwise
+  var MSGS = [
+    ['Leaving already{n}?', 'No pressure. If you have a quick question, just message us. Someone from our team will reply.'],
+    ['Before you go{n}…', 'Got a minute? Tell us what slows your business down and we\'ll point you the right way.'],
+    ['Wait, one quick thing{n}', 'Most people just want to ask a question first. Message us, or pick a time that suits you.'],
+    ['Not ready for a form{n}?', 'That\'s fine. Send us a quick message, or book a short call when it suits you.'],
+    ['Still deciding{n}?', 'Happy to help you figure it out. Chat with us now, or set a time to talk ' + later + '.'],
+    ['Heading out{n}?', 'We\'d love to hear what you\'re working on. Drop us a message or set a time to talk.'],
+    ['Quick question before you go{n}?', 'Ask us anything about Odoo, AI or your website. We reply on WhatsApp.'],
+    ['Thanks for stopping by{n}', 'If now isn\'t a good time, book a call for ' + later + '. Or message us and we\'ll reply when you\'re free.']
+  ];
+  // after the browser's own "Leave site?" box, when the visitor chose to stay
+  var STAY = [
+    ['Glad you stayed{n}!', 'Anything we can help with? Message us now, or set a time that suits you.'],
+    ['Thanks for sticking around{n}', 'Not sure where to start? Send us a quick message. Someone from our team will reply.'],
+    ['Oh good, you\'re still here{n}', 'If you have a question, just ask. Or pick a time to talk ' + later + '.'],
+    ['Happy to see you stay{n}', 'Tell us what you\'re working on. A quick message is enough to get started.']
+  ];
+  var pickLast = -1;
+  try { pickLast = parseInt(sessionStorage.getItem(KEY + '_m'), 10); } catch (e) { /* first visit */ }
+
+  function firstName() {
+    var f = form && form.querySelector('[name=name]');
+    var v = f ? f.value.trim().split(/\s+/)[0] : '';
+    return v && v.length <= 20 && /^[\p{L}'-]+$/u.test(v) ? v.charAt(0).toUpperCase() + v.slice(1) : '';
+  }
+  function fill(list) {
+    var i;
+    do { i = Math.floor(Math.random() * list.length); } while (list === MSGS && i === pickLast && list.length > 1);
+    if (list === MSGS) { pickLast = i; try { sessionStorage.setItem(KEY + '_m', String(i)); } catch (e) { /* fine */ } }
+    var n = firstName();
+    box.querySelector('#gs-exit-h').textContent = list[i][0].replace('{n}', n ? ', ' + n : '');
+    box.querySelector('#gs-exit-p').textContent = list[i][1];
+  }
+  function track(name) {
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, { page: 'get-started' }); } catch (e) { /* never block */ }
+  }
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // the (x) appears after a 3-second countdown; until then the backdrop and Esc do not close the pop-up either
+  var xBtn = box.querySelector('.gs-exit-x'), xCount = box.querySelector('.gs-exit-count'), lockTimer = 0;
+  function unlock() {
+    clearInterval(lockTimer);
+    box.classList.remove('is-locked');
+    xBtn.disabled = false;
+    xBtn.setAttribute('aria-label', 'Close');
+  }
+  function lock() {
+    var n = 3;
+    clearInterval(lockTimer);
+    box.classList.add('is-locked');
+    xBtn.disabled = true;
+    xBtn.setAttribute('aria-label', 'Close, available in 3 seconds');
+    xCount.textContent = n;
+    lockTimer = setInterval(function () {
+      n -= 1;
+      if (n > 0) xCount.textContent = n; else unlock();
+    }, 1000);
+  }
+
+  // how: 'early' (mouse / scroll: once per visit, not in the first 4 s), 'link' (every time), 'stay' (after "Leave site?")
+  function open(how, href) {
+    if (form && form.classList.contains('is-sent')) return false;
+    if (!box.hidden) return how === 'link';
+    if (how === 'early' && (shown || Date.now() < readyAt)) return false;
+    shown = true;
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* fine */ }
+    pending = href || null;
+    var leave = box.querySelector('[data-exit-leave]');
+    leave.hidden = !pending;
+    fill(how === 'stay' ? STAY : MSGS);
+    lastFocus = document.activeElement;
+    box.hidden = false;
+    lock();
+    box.classList.toggle('is-typing', !reduce);
+    requestAnimationFrame(function () { box.classList.add('is-open'); });
+    if (!reduce) setTimeout(function () { box.classList.remove('is-typing'); }, 900);
+    document.body.style.overflow = 'hidden';
+    var first = box.querySelector('[data-exit-go]');
+    if (first) first.focus({ preventScroll: true });
+    track('exit_popup_' + how);
+    return true;
+  }
+  function close() {
+    if (box.hidden) return;
+    unlock();
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { box.hidden = true; }, reduce ? 0 : 220);
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+
+  box.addEventListener('click', function (e) {
+    if (e.target.closest('[data-exit-close]')) {
+      if (box.classList.contains('is-locked') && !e.target.closest('.gs-exit-foot')) return;   // (x) and backdrop wait for the countdown
+      close(); return;
+    }
+    if (e.target.closest('[data-exit-leave]') && pending) { leaving = true; location.href = pending; return; }
+    var go = e.target.closest('[data-exit-go]');
+    if (go) { track('exit_popup_' + go.getAttribute('data-exit-go')); setTimeout(close, 150); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape' && !box.classList.contains('is-locked')) close();
+    if (e.key === 'Tab') {   // keep focus inside the pop-up
+      var f = [].filter.call(box.querySelectorAll('a[href], button'), function (el) { return !el.hidden && !el.disabled && el.offsetParent !== null; });
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+
+  // footer links and the header logo are plain on this page: the form is the only thing to click
+  // (this script sits inside the page content, so the footer is parsed later: strip it now if present and again once the page is parsed)
+  function plainFooter() { [].forEach.call(document.querySelectorAll('.footer nav a[href], .header .brand[href]'), function (a) { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); }); }
+  plainFooter();
+  document.addEventListener('DOMContentLoaded', plainFooter);
+
+  // "Fill out the form": scroll up to it, put the cursor in the first field and flash the card once
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-to-form]');
+    if (!t || !form) return;
+    e.preventDefault();
+    form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(function () {
+      var f = form.querySelector('#gs-name'); if (f) f.focus({ preventScroll: true });
+      form.classList.remove('is-flash'); void form.offsetWidth; form.classList.add('is-flash');
+    }, reduce ? 0 : 600);
+  });
+
+  // 1. desktop: the pointer leaves through the top edge (towards the tabs, back button or address bar)
+  document.addEventListener('mouseout', function (e) {
+    if (!e.relatedTarget && e.clientY <= 0) open('early');
+  });
+
+  // 2. a click on a link that leaves this page (logo, footer); new-tab, mail, phone and same-page links are not exits
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a || box.contains(a) || a.target === '_blank' || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
+    if (open('link', a.href)) e.preventDefault();
+  });
+
+  // 4. closing the tab or window, reloading, back button, typed address: the browser's "Leave site?" box, then the
+  //    pop-up if the visitor stays. Timers do not run while that box is open, so a callback that fires late means the
+  //    box was shown and the visitor chose to stay; a callback on time means no box (the page is simply leaving).
+  addEventListener('beforeunload', function (e) {
+    if (leaving || asked || (form && form.classList.contains('is-sent'))) return;
+    e.preventDefault();
+    e.returnValue = '';
+    var t0 = Date.now();
+    setTimeout(function () {
+      if (Date.now() - t0 < 300 || document.visibilityState !== 'visible') return;
+      asked = true;
+      open('stay');
+    }, 30);
+  });
+
+  // 3. phones: a fast scroll back towards the top after reading at least one screen
+  if (matchMedia('(pointer: coarse)').matches) {
+    var maxY = 0, lastY = scrollY, lastT = Date.now();
+    addEventListener('scroll', function () {
+      var y = scrollY, t = Date.now();
+      maxY = Math.max(maxY, y);
+      var speed = (lastY - y) / Math.max(1, t - lastT);   // px per ms, upwards
+      if (maxY > innerHeight && speed > 2.2 && y < maxY * 0.5) open('early');
+      lastY = y; lastT = t;
+    }, { passive: true });
+  }
+})();
+</script>

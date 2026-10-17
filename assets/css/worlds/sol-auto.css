@@ -1,0 +1,336 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-auto (/solutions/ai-automation) — the sorting office. Slate ironwork, brass fittings, cream paper, a red rubber
+   stamp and the red-and-blue airmail stripe. The title card is a letter with its stamp and postmark; the caption is a run
+   docket; buttons are brass-plated slate keys; the glance strip is a sheet of stamps. Below the hero: an airmail memo,
+   the sorting console around the demo, six postage stamps, a pneumatic-tube route, the run-log ledger, envelope FAQs,
+   parcel tags and a sealed envelope for the end card. */
+.ixw--sol-auto{--sor-ink:#1B1F3B;--sor-slate:#2F5D6B;--sor-slate-d:#1F4450;--sor-slate-l:#E3EEF0;--sor-brass:#D4A23F;--sor-brass-d:#A87A22;--sor-brass-l:#F2D58C;
+  --sor-red:#D64A3A;--sor-paper:#FFFDF7;--sor-cream:#FBF4E6;--sor-sage:#CFE3D6;--sor-green:#1E9E6A;--sor-amber:#F2A93B;
+  --sor-air:repeating-linear-gradient(-45deg,#D64A3A 0 12px,#FFFFFF 12px 20px,#3167CA 20px 32px,#FFFFFF 32px 40px);
+  --ow-c:#2F5D6B;--w-alt:#F6F1E6;--w-dot:rgba(47,93,107,.09);--w-hand:#A87A22;--w-teal:#2F5D6B;--w-teal-d:#1F4450;--w-teal-l:#E3EEF0;
+  --lab-bg:#FFFDF7;--lab-bd:2px solid #1F4450;--lab-lip:#1F4450;--lab-tail:#1F4450;--lab-r:7px;
+  
+  --ii-bg:linear-gradient(160deg,#FFFDF7,#FBF4E6 55%,#E3EEF0);--ii-pattern:repeating-linear-gradient(-45deg,rgba(214,74,58,.06) 0 18px,transparent 18px 30px,rgba(49,103,202,.06) 30px 48px,transparent 48px 60px);
+  --ii-ink:#1B1F3B;--ii-b:#2F5D6B;--ii-accent:#D64A3A;--ii-lip:#1F4450;--ii-ep-bg:#2F5D6B;--ii-ep-fg:#FFFFFF}
+.ixw--sol-auto .ixw-hero{background:linear-gradient(180deg,#9FD3F6 0,#FFF9EE 18%,#F5EAD6 52%,#CFE3D6 52%,#CFE3D6 64%,#D9B98C 64%,#C49A68 100%)}
+
+/* ---------- the title card: a letter with its stamp and postmark ---------- */
+.ixw--sol-auto .ixw-copy{position:relative;max-width:500px;margin-top:14px;padding:32px 30px 26px;border-radius:10px;background:var(--sor-paper);
+  box-shadow:0 0 0 1.5px #E8DCC4,0 40px 70px -30px rgba(60,40,10,.38)}
+.ixw--sol-auto .ixw-copy::before{content:"";position:absolute;left:0;right:0;top:0;height:9px;border-radius:10px 10px 0 0;background:var(--sor-air)}
+.ixw--sol-auto .ixw-copy::after{content:"AGENT\A MAIL";white-space:pre;position:absolute;right:22px;top:-16px;display:grid;place-items:center;width:58px;height:68px;padding-top:4px;
+  background:radial-gradient(circle,transparent 3.2px,#FFFFFF 3.6px) -5px -5px/10px 10px,#FFFFFF;box-shadow:inset 0 0 0 6px #FFFFFF,inset 0 0 0 8px var(--sor-red),0 8px 14px -6px rgba(60,40,10,.35);
+  font:800 10.5px/1.15 var(--font-display);letter-spacing:.08em;text-align:center;color:var(--sor-red);rotate:5deg}
+.ixw--sol-auto .ixw-copy h1{max-width:15ch}
+.ixw--sol-auto .ixw-copy .lead{font-size:1rem;line-height:1.6;max-width:44ch}
+.ixw--sol-auto .ixw-copy .hand{color:var(--sor-brass-d)}
+.ixw--sol-auto .ixw-copy .crumbs{padding-right:70px}
+/* the tag pills: postage labels with an inked chip */
+.ixw--sol-auto .sor-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ixw--sol-auto .sor-pills .tag{height:28px;gap:7px;padding:0 11px 0 5px;border-radius:7px;border:1.5px solid #E3D3B2;background:#FFFFFF;color:var(--sor-slate-d);font:700 12px/1 var(--font-body);box-shadow:0 2px 0 #EFE3C9}
+.ixw--sol-auto .sor-pills .tag .ic{width:18px;height:18px;padding:3.5px;border-radius:5px;background:var(--sor-slate);color:var(--sor-brass-l)}
+.ixw--sol-auto .sor-pills .tag--ok{border-color:#A8DCC4;background:#F3FBF7;color:#13654A;box-shadow:0 2px 0 #CDEBDD}
+.ixw--sol-auto .sor-pills .tag--ok .ic{background:var(--sor-green);color:#FFFFFF}
+.ixw--sol-auto .ixw-hint{margin-top:16px}
+.ixw--sol-auto .ixw-hint .ic{color:var(--sor-red)}
+.ixw--sol-auto .ixw-ep-tag .ic{background:var(--sor-brass)}
+@media (max-width:767px){.ixw--sol-auto .ixw-copy{padding:30px 20px 22px}.ixw--sol-auto .ixw-copy::after{display:none}.ixw--sol-auto .ixw-copy .crumbs{padding-right:0}}
+
+/* ---------- the caption: a run docket with a tear-off edge ---------- */
+.ixw--sol-auto .ixw-cap{border-radius:10px;background:radial-gradient(circle at 0 50%,transparent 4px,#FFFFFF 4.5px) 0 0/10px 12px repeat-y,#FFFFFF;padding-left:20px;
+  box-shadow:0 0 0 1.5px #E8DCC4,0 3px 0 #E8DCC4,0 26px 44px -22px rgba(60,40,10,.38)}
+.ixw--sol-auto .ixw-cap::before{content:"RUN NOTE";position:absolute;left:22px;top:-12px;padding:5px 10px 5px 22px;border-radius:5px;background:var(--sor-slate);color:var(--sor-brass-l);font:800 10px/1 var(--font-body);letter-spacing:.14em;
+  background-image:radial-gradient(circle at 11px 50%,#7FF0CF 3px,transparent 3.5px)}
+.ixw--sol-auto .ixw-cap-who b{color:var(--sor-slate-d)}.ixw--sol-auto .ixw-cap-txt b{color:var(--sor-red)}
+.ixw--sol-auto .ixw-cap-rec{background:#FFF8E8;border:1.5px dashed #D9B76A;color:#6E4F12}
+.ixw--sol-auto .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2px var(--sor-brass)}
+
+/* ---------- buttons: brass-plated slate keys (one build for the pair: 50px, 14px radius, a 2px trim, a 4px lip, an icon chip) ---------- */
+.ixw--sol-auto main .btn-primary,.ixw--sol-auto main .btn-primary:hover{background:linear-gradient(180deg,#3E7383,var(--sor-slate) 60%);color:#FFFFFF;box-shadow:0 0 0 2px var(--sor-brass),0 5px 0 2px var(--sor-brass-d),0 18px 26px -14px rgba(31,68,80,.7)}
+.ixw--sol-auto main .btn-primary:hover{translate:0 -2px;box-shadow:0 0 0 2px var(--sor-brass),0 7px 0 2px var(--sor-brass-d),0 22px 30px -14px rgba(31,68,80,.7)}
+.ixw--sol-auto main .btn-primary:active{translate:0 4px;box-shadow:0 0 0 2px var(--sor-brass),0 1px 0 2px var(--sor-brass-d)}
+.ixw--sol-auto main .btn-primary .ic{background:var(--sor-brass);color:var(--sor-ink)}
+.ixw--sol-auto main .btn-ghost{background:var(--sor-paper);color:var(--sor-ink);border:2px solid var(--sor-slate-d);box-shadow:0 4px 0 var(--sor-slate-d)}
+.ixw--sol-auto main .btn-ghost:hover{color:var(--sor-slate-d);box-shadow:0 6px 0 var(--sor-slate-d)}
+.ixw--sol-auto main .btn-ghost::before{display:none}
+.ixw--sol-auto main .btn-ghost .ic{color:var(--sor-red)}
+.ixw--sol-auto .ixw-copy .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 14px;margin-top:26px}
+.ixw--sol-auto main .ixw-copy .actions .btn{flex:none;height:50px;gap:12px;border:0;border-radius:14px;font:800 15.5px/1 var(--font-display);letter-spacing:-.005em;overflow:hidden;transform:none;
+  transition:translate .22s var(--w-spring),box-shadow .22s ease,background-color .2s ease,color .2s ease}
+.ixw--sol-auto main .ixw-copy .actions .btn:hover{transform:none;translate:0 -2px}
+.ixw--sol-auto main .ixw-copy .actions .btn:active{transform:none;translate:0 3px;transition-duration:.08s}
+.ixw--sol-auto main .ixw-copy .actions .btn:focus-visible{outline:3px solid var(--sor-brass);outline-offset:4px}
+.ixw--sol-auto main .ixw-copy .actions .btn .ic{display:block;flex:none;width:30px;height:30px;margin:0;padding:7px;border-radius:9px;transition:transform .3s var(--w-spring)}
+.ixw--sol-auto main .ixw-copy .btn-primary{padding:0 10px 0 22px;background:linear-gradient(180deg,#3E7383,var(--sor-slate) 58%,#295462);
+  box-shadow:inset 0 0 0 2px var(--sor-brass),inset 0 4px 0 rgba(255,255,255,.12),0 4px 0 var(--sor-slate-d),0 16px 24px -14px rgba(31,68,80,.75)}
+.ixw--sol-auto main .ixw-copy .btn-primary:hover{background:linear-gradient(180deg,#457D8E,#33656F 58%,#2B5866);
+  box-shadow:inset 0 0 0 2px var(--sor-brass-l),inset 0 4px 0 rgba(255,255,255,.12),0 6px 0 var(--sor-slate-d),0 0 0 5px rgba(212,162,63,.22),0 22px 30px -14px rgba(31,68,80,.8)}
+.ixw--sol-auto main .ixw-copy .btn-primary:active{box-shadow:inset 0 0 0 2px var(--sor-brass),0 1px 0 var(--sor-slate-d)}
+.ixw--sol-auto main .ixw-copy .btn-primary .ic{background:var(--sor-brass);color:var(--sor-ink);box-shadow:inset 0 -2px 0 var(--sor-brass-d)}
+.ixw--sol-auto main .ixw-copy .btn-primary:hover .ic{transform:translateX(3px)}
+.ixw--sol-auto main .ixw-copy .btn-ghost{padding:0 22px 0 10px;background:var(--sor-paper);color:var(--sor-ink);
+  box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 4px 0 var(--sor-slate-d),0 16px 24px -16px rgba(31,68,80,.45)}
+.ixw--sol-auto main .ixw-copy .btn-ghost:hover{background:#FFFFFF;color:var(--sor-slate-d);box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 6px 0 var(--sor-slate-d),0 0 0 5px rgba(214,74,58,.12),0 22px 30px -16px rgba(31,68,80,.5)}
+.ixw--sol-auto main .ixw-copy .btn-ghost:active{box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 1px 0 var(--sor-slate-d)}
+.ixw--sol-auto main .ixw-copy .btn-ghost .ic{background:#FDEDEB;color:var(--sor-red);box-shadow:inset 0 -2px 0 #F6CFC9}
+.ixw--sol-auto main .ixw-copy .btn-ghost:hover .ic{transform:rotate(-8deg) scale(1.06)}
+@media (max-width:520px){.ixw--sol-auto .ixw-copy .actions{gap:12px}.ixw--sol-auto main .ixw-copy .actions .btn{flex:1 1 100%;justify-content:center}}
+/* the caption keys and the stop dots */
+.ixw--sol-auto .ixw-cap-ctl{gap:8px}
+.ixw--sol-auto .ixw-cap .ixw-ibtn{width:38px;height:38px;border:0;background:var(--sor-paper);color:var(--sor-slate-d);box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 3px 0 var(--sor-slate-d)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn:hover{background:#FFFFFF;color:var(--sor-red);box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 5px 0 var(--sor-slate-d),0 0 0 4px rgba(212,162,63,.22)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn:active{box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 1px 0 var(--sor-slate-d)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn:focus-visible{outline:3px solid var(--sor-brass);outline-offset:3px}
+.ixw--sol-auto .ixw-cap .ixw-ibtn--play,.ixw--sol-auto .ixw-cap .ixw-ibtn--play:hover{width:44px;height:44px;color:#FFFFFF;background:linear-gradient(180deg,#3E7383,var(--sor-slate) 60%);
+  box-shadow:inset 0 0 0 2px var(--sor-brass),0 3px 0 var(--sor-slate-d),0 10px 16px -8px rgba(31,68,80,.6)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn--play:hover{color:var(--sor-brass-l);box-shadow:inset 0 0 0 2px var(--sor-brass-l),0 5px 0 var(--sor-slate-d),0 0 0 4px rgba(212,162,63,.25)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn--play:active{box-shadow:inset 0 0 0 2px var(--sor-brass),0 1px 0 var(--sor-slate-d)}
+.ixw--sol-auto .ixw-cap .ixw-ibtn--play.is-on{animation:sorHalo 2.4s ease-out infinite}
+@keyframes sorHalo{0%{box-shadow:inset 0 0 0 2px var(--sor-brass),0 3px 0 var(--sor-slate-d),0 0 0 0 rgba(212,162,63,.5)}70%,100%{box-shadow:inset 0 0 0 2px var(--sor-brass),0 3px 0 var(--sor-slate-d),0 0 0 10px rgba(212,162,63,0)}}
+.ixw--sol-auto .ixw-dots{gap:6px;margin-top:2px}
+.ixw--sol-auto .ixw-dots button{background:#E6D9BD;transition:width .3s var(--w-spring),background-color .2s ease,scale .2s ease}
+.ixw--sol-auto .ixw-dots button:hover{background:var(--sor-slate);scale:1.15}
+.ixw--sol-auto .ixw-dots button.is-on{background:var(--sor-red);box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
+.ixw--sol-auto .ixw-dots button:focus-visible{outline:2px solid var(--sor-slate-d);outline-offset:2px}
+/* "View the scene": a paper key at the card's top-left corner, clear of the run log and its stamping head */
+@media (min-width:1200px){
+  .ixw--sol-auto .ixw-peek{top:calc(var(--header-box) + 8px);right:auto;left:max(20px,calc(50% - 577px));height:36px;padding:0 14px 0 10px;gap:8px;border:0;border-radius:10px;background:var(--sor-paper);color:var(--sor-slate-d);
+    box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 3px 0 var(--sor-slate-d),0 12px 20px -12px rgba(31,68,80,.5);font:800 13px/1 var(--font-display)}
+  .ixw--sol-auto .ixw-peek::before{background:var(--sor-red)}
+  .ixw--sol-auto .ixw-peek:hover{translate:0 -2px;box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 5px 0 var(--sor-slate-d),0 0 0 4px rgba(212,162,63,.25)}
+  .ixw--sol-auto .ixw-peek:active{translate:0 2px;box-shadow:inset 0 0 0 2px var(--sor-slate-d),0 1px 0 var(--sor-slate-d)}
+  .ixw--sol-auto .ixw-peek:focus-visible{outline:3px solid var(--sor-brass);outline-offset:3px}
+  .ixw--sol-auto .ixw-peek[aria-pressed="true"]{background:var(--sor-slate);color:#FFFFFF;box-shadow:inset 0 0 0 2px var(--sor-brass),0 3px 0 var(--sor-slate-d),0 12px 20px -12px rgba(31,68,80,.5)}
+  .ixw--sol-auto .ixw-peek[aria-pressed="true"]::before{background:var(--sor-brass-l)}
+}
+/* ---------- the glance strip: a sheet of stamps on an airmail band ---------- */
+.ixw--sol-auto .ow-strip{position:relative;padding-top:18px;border-radius:12px;background:var(--sor-air) 0 0/100% 7px no-repeat,var(--sor-paper);box-shadow:0 0 0 1.5px #E8DCC4,0 24px 44px -30px rgba(60,40,10,.35)}
+.ixw--sol-auto .ow-strip>div{position:relative}
+.ixw--sol-auto .ow-strip>div+div::before{content:"";position:absolute;left:-17px;top:20px;bottom:4px;border-left:2px dashed #E3D3B2}
+.ixw--sol-auto .ow-strip dt .ic{width:24px;height:24px;padding:4px;border-radius:6px;background:var(--sor-slate);color:var(--sor-brass-l)}
+.ixw--sol-auto .ow-strip dd{color:var(--sor-ink)}
+@media (max-width:1100px){.ixw--sol-auto .ow-strip>div+div::before{display:none}}
+
+/* ============================== below the hero ============================== */
+/* the one-paragraph answer: an airmail memo with a postmark */
+.ixw--sol-auto .sor-memo{display:block;max-width:980px;padding:28px 32px 28px 138px;border:8px solid transparent;border-radius:16px;
+  background:linear-gradient(var(--sor-paper),var(--sor-paper)) padding-box,var(--sor-air) border-box;box-shadow:0 26px 44px -30px rgba(60,40,10,.4)}
+.ixw--sol-auto .sor-postmark{position:absolute;left:26px;top:50%;width:84px;height:84px;margin-top:-42px;display:grid;place-content:center;gap:2px;border-radius:50%;border:2.5px solid var(--sor-slate);
+  box-shadow:inset 0 0 0 5px var(--sor-paper),inset 0 0 0 6.5px var(--sor-slate);color:var(--sor-slate);text-align:center;rotate:-10deg}
+.ixw--sol-auto .sor-postmark b{font:800 20px/1 var(--font-display);letter-spacing:.04em}
+.ixw--sol-auto .sor-postmark i{font:800 7.5px/1 var(--font-body);font-style:normal;letter-spacing:.14em}
+.ixw--sol-auto .sor-postmark::after{content:"";position:absolute;left:58px;top:-14px;width:46px;height:30px;opacity:.45;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40' fill='none' stroke='%232F5D6B' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M2 6q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3Cpath d='M2 16q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3Cpath d='M2 26q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3Cpath d='M2 36q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3C/svg%3E") center/contain no-repeat;rotate:10deg}
+.ixw--sol-auto .sor-memo .answer-h{display:block;width:fit-content;margin-bottom:8px;background:#FDEDEB;color:#A2342A}
+.ixw--sol-auto .sor-memo p:not(.answer-h){font-size:15.5px;line-height:1.65;color:#3D4560}
+@media (max-width:640px){.ixw--sol-auto .sor-memo{padding:22px 18px 22px 18px}.ixw--sol-auto .sor-postmark{position:relative;left:auto;top:auto;margin:0 0 12px;width:64px;height:64px}.ixw--sol-auto .sor-postmark::after{display:none}.ixw--sol-auto .sor-postmark b{font-size:15px}}
+
+/* the demo: the sorting console, a slate desk with brass trim around the live run */
+.ixw--sol-auto .sor-desk-sec{background-color:#FBF6EC;background-image:linear-gradient(rgba(154,106,67,.08) 2px,transparent 2px),linear-gradient(90deg,rgba(154,106,67,.08) 2px,transparent 2px);background-size:66px 48px}
+.ixw--sol-auto .sor-console{position:relative;padding:10px 12px 12px;border-radius:28px;background:linear-gradient(180deg,#3A6C7B,var(--sor-slate-d));
+  box-shadow:inset 0 0 0 2px var(--sor-brass),0 0 0 5px #FBF6EC,0 0 0 7px #E3D3B2,0 50px 80px -46px rgba(31,68,80,.7)}
+.ixw--sol-auto .sor-console::before,.ixw--sol-auto .sor-console::after{content:"";position:absolute;top:16px;width:8px;height:8px;border-radius:50%;background:var(--sor-brass-l);box-shadow:0 0 0 2px var(--sor-brass-d)}
+.ixw--sol-auto .sor-console::before{left:16px}.ixw--sol-auto .sor-console::after{right:16px}
+.ixw--sol-auto .sor-console-top{display:flex;align-items:center;gap:12px;padding:4px 26px 12px;color:var(--sor-brass-l);font:800 12.5px/1 var(--font-display);letter-spacing:.08em;text-transform:uppercase}
+.ixw--sol-auto .sor-console-top b{color:var(--sor-brass-l)}
+.ixw--sol-auto .sor-console-top i{font:700 11px/1 var(--font-body);font-style:normal;letter-spacing:.04em;text-transform:none;color:#A9C6CE}
+.ixw--sol-auto .sor-lamp{width:10px;height:10px;border-radius:50%;background:#7FF0CF;box-shadow:0 0 0 3px rgba(127,240,207,.25);animation:sorBlink 1.6s steps(2,start) infinite}
+@keyframes sorBlink{50%{background:#2E5A50;box-shadow:none}}
+.ixw--sol-auto .sor-gauge{position:relative;margin-left:auto;width:44px;height:24px;border-radius:44px 44px 0 0;background:var(--sor-paper);box-shadow:inset 0 0 0 2px var(--sor-brass);overflow:hidden}
+.ixw--sol-auto .sor-gauge i{position:absolute;left:50%;bottom:0;width:2px;height:19px;margin-left:-1px;background:var(--sor-red);transform-origin:50% 100%;animation:sorNeedle 3.2s ease-in-out infinite}
+@keyframes sorNeedle{0%,100%{transform:rotate(-55deg)}45%{transform:rotate(40deg)}70%{transform:rotate(10deg)}}
+.ixw--sol-auto .sor-console .dm{border-radius:18px;border:0;box-shadow:none}
+.ixw--sol-auto .sor-desk-sec .dm-note .ic{color:var(--sor-green)}
+@media (max-width:767px){.ixw--sol-auto .sor-console{padding:6px 6px 8px;border-radius:20px}.ixw--sol-auto .sor-console-top i,.ixw--sol-auto .sor-gauge{display:none}.ixw--sol-auto .sor-console-top{padding:6px 18px 10px}}
+
+/* what's included: six postage stamps, perforated, each with its value and a postmark that lands on hover */
+.ixw--sol-auto .sor-stamps-sec{padding-top:72px;background:linear-gradient(180deg,#FBF6EC 0,#FFFFFF 60%)}
+.ixw--sol-auto .sor-stamps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.ixw--sol-auto .sor-stamp{position:relative;filter:drop-shadow(0 1px 0 #E3D3B2) drop-shadow(0 18px 18px rgba(60,40,10,.12));transform:rotate(var(--rot,0deg));transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-stamp:nth-child(3n+1){--rot:-.8deg}.ixw--sol-auto .sor-stamp:nth-child(3n+3){--rot:.7deg}
+.ixw--sol-auto .sor-stamp:hover{transform:rotate(0) translateY(-6px)}
+.ixw--sol-auto .sor-stamp-in{position:relative;height:100%;padding:58px 34px 56px;background:#FFFFFF;box-shadow:inset 0 0 0 12px #FFFFFF,inset 0 0 0 14px var(--c),inset 0 0 0 200px color-mix(in srgb,var(--c) 4%,#FFFFFF);
+  -webkit-mask:radial-gradient(circle 6px at 50% 0,#0000 96%,#000) 50% 0/18px 100% repeat-x,radial-gradient(circle 6px at 50% 100%,#0000 96%,#000) 50% 100%/18px 100% repeat-x,radial-gradient(circle 6px at 0 50%,#0000 96%,#000) 0 50%/100% 18px repeat-y,radial-gradient(circle 6px at 100% 50%,#0000 96%,#000) 100% 50%/100% 18px repeat-y;
+  -webkit-mask-composite:source-in,source-in,source-in;mask:radial-gradient(circle 6px at 50% 0,#0000 96%,#000) 50% 0/18px 100% repeat-x,radial-gradient(circle 6px at 50% 100%,#0000 96%,#000) 50% 100%/18px 100% repeat-x,radial-gradient(circle 6px at 0 50%,#0000 96%,#000) 0 50%/100% 18px repeat-y,radial-gradient(circle 6px at 100% 50%,#0000 96%,#000) 100% 50%/100% 18px repeat-y;mask-composite:intersect}
+.ixw--sol-auto .sor-val{position:absolute;left:30px;top:26px;font:800 22px/1 var(--font-display);letter-spacing:-.02em;color:var(--c)}
+.ixw--sol-auto .sor-val::after{content:"AGENT";margin-left:5px;font:800 8.5px/1 var(--font-body);letter-spacing:.14em;color:#9AA6BC;vertical-align:4px}
+.ixw--sol-auto .sor-stamp .card-ic{position:absolute;right:30px;top:24px;display:grid;place-items:center;width:52px;height:52px;min-height:0;margin:0;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,#FFFFFF);color:var(--c);box-shadow:0 0 0 4px #FFFFFF,0 0 0 5.5px color-mix(in srgb,var(--c) 30%,#FFFFFF)}
+.ixw--sol-auto .sor-stamp .card-ic .ic{width:24px;height:24px}
+.ixw--sol-auto .sor-stamp h3{margin:22px 0 8px;font-size:1.15rem}
+.ixw--sol-auto .sor-stamp p{margin:0;font-size:15px;line-height:1.6;color:#4A5268}
+.ixw--sol-auto .sor-pm{position:absolute;right:22px;bottom:18px;padding:5px 10px;border:2px solid var(--c);border-radius:999px;font:800 9px/1 var(--font-body);letter-spacing:.16em;color:var(--c);opacity:.18;rotate:-9deg;transition:opacity .3s ease,scale .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-stamp:hover .sor-pm{opacity:.85;scale:1.12}
+@media (max-width:960px){.ixw--sol-auto .sor-stamps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ixw--sol-auto .sor-stamps{grid-template-columns:minmax(0,1fr);gap:20px}.ixw--sol-auto .sor-stamp-in{padding:56px 26px 52px}}
+
+/* how we build one: four stops on a pneumatic tube, a capsule running the route; the gate stop wears a barrier */
+.ixw--sol-auto .sor-route-sec{background-color:#F3F7F6;background-image:radial-gradient(rgba(47,93,107,.10) 1.6px,transparent 1.8px);background-size:24px 24px}
+.ixw--sol-auto .sor-route{position:relative;padding-top:58px}
+.ixw--sol-auto .sor-pipe{position:absolute;left:2%;right:2%;top:14px;height:20px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(200,232,240,.9) 45%,rgba(160,205,215,.9));
+  box-shadow:inset 0 0 0 2px rgba(47,93,107,.25),0 8px 16px -10px rgba(31,68,80,.5)}
+.ixw--sol-auto .sor-pipe::before{content:"";position:absolute;inset:-4px 0;background:repeating-linear-gradient(90deg,transparent 0 110px,var(--sor-brass) 110px 122px);border-radius:999px;-webkit-mask:linear-gradient(#000,#000);opacity:.95;clip-path:inset(0 round 999px)}
+.ixw--sol-auto .sor-cap{position:absolute;top:4px;left:0;width:38px;height:12px;border-radius:999px;background:linear-gradient(180deg,#F2D58C,#D4A23F 60%,#A87A22);box-shadow:0 2px 4px rgba(0,0,0,.2);animation:sorCap 7s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes sorCap{0%{left:0}22%{left:calc(25% - 19px)}30%{left:calc(25% - 19px)}48%{left:calc(50% - 19px)}56%{left:calc(50% - 19px)}74%{left:calc(75% - 19px)}82%{left:calc(75% - 19px)}100%{left:calc(100% - 38px)}}
+.ixw--sol-auto .sor-stops{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.ixw--sol-auto .sor-stop{position:relative;padding:58px 22px 24px;border-radius:16px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D6E4E6,0 4px 0 #D6E4E6,0 24px 36px -28px rgba(31,68,80,.45);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-stop:hover{transform:translateY(-5px)}
+.ixw--sol-auto .sor-stop::before{content:"";position:absolute;left:50%;top:-30px;width:14px;height:30px;margin-left:-7px;background:linear-gradient(90deg,rgba(160,205,215,.9),rgba(255,255,255,.95) 40%,rgba(160,205,215,.9));box-shadow:inset 0 0 0 1.5px rgba(47,93,107,.25)}
+.ixw--sol-auto .sor-stop-n{position:absolute;left:18px;top:16px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--sor-brass);box-shadow:0 0 0 3px #FFF1CC,0 3px 0 3px var(--sor-brass-d);font:800 14px/1 var(--font-display);color:var(--sor-ink)}
+.ixw--sol-auto .sor-stop-ic{position:absolute;right:16px;top:12px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sor-slate);color:var(--sor-brass-l);box-shadow:inset 0 0 0 3px var(--sor-slate-d),0 0 0 3px var(--sor-brass)}
+.ixw--sol-auto .sor-stop-ic .ic{width:18px;height:18px}
+.ixw--sol-auto .sor-stop--gate::after{content:"";position:absolute;left:18px;right:18px;top:-8px;height:9px;border-radius:5px;background:repeating-linear-gradient(90deg,var(--sor-red) 0 16px,#FFFFFF 16px 30px);box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.ixw--sol-auto .sor-stop h3{margin:0 0 8px;font-size:1.08rem}
+.ixw--sol-auto .sor-stop p{margin:0;font-size:14.5px;line-height:1.6;color:#4A5268}
+@media (max-width:960px){.ixw--sol-auto .sor-stops{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:30px}.ixw--sol-auto .sor-pipe,.ixw--sol-auto .sor-stop::before{display:none}.ixw--sol-auto .sor-route{padding-top:14px}}
+@media (max-width:640px){.ixw--sol-auto .sor-stops{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: the run log as a ledger, every item stamped; the kill switch beside the heading */
+.ixw--sol-auto .sor-ledger-sec{background:#FFFFFF}
+@media (min-width:961px){.ixw--sol-auto .sor-ledger{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--sol-auto .sor-kill{display:inline-flex;align-items:center;gap:16px;margin-top:30px;padding:14px 22px 14px 14px;border-radius:16px;background:var(--sor-paper);box-shadow:0 0 0 1.5px #E8DCC4,0 4px 0 #E8DCC4}
+.ixw--sol-auto .sor-kill-box{position:relative;width:54px;height:72px;border-radius:10px;background:var(--sor-red);box-shadow:inset 0 0 0 3px #A2342A,0 4px 0 #8E2A20}
+.ixw--sol-auto .sor-kill-lamp{position:absolute;left:50%;top:9px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#7FF0CF;box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+.ixw--sol-auto .sor-kill-lever{position:absolute;left:50%;bottom:12px;width:6px;height:30px;margin-left:-3px;border-radius:3px;background:#3A4458;transform-origin:50% 100%;rotate:-28deg;transition:rotate .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-kill-lever::after{content:"";position:absolute;left:50%;top:-8px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0 0 0 3px #3A4458}
+.ixw--sol-auto .sor-kill:hover .sor-kill-lever{rotate:32deg}
+.ixw--sol-auto .sor-kill:hover .sor-kill-lamp{background:var(--sor-amber)}
+.ixw--sol-auto .sor-kill-t b{display:block;font:800 15px/1.2 var(--font-display);color:var(--sor-ink)}
+.ixw--sol-auto .sor-kill-t i{font:600 13px/1.3 var(--font-body);font-style:normal;color:#6B7285}
+.ixw--sol-auto .sor-log{position:relative;display:grid;grid-template-columns:minmax(0,1fr);column-gap:30px;margin:0;padding:16px 26px 18px 34px;list-style:none;border-radius:6px 18px 18px 6px;background:var(--sor-paper);
+  box-shadow:0 0 0 1.5px #E8DCC4,0 26px 44px -30px rgba(60,40,10,.38)}
+.ixw--sol-auto .sor-log::before{content:"";position:absolute;left:4px;top:16px;bottom:16px;width:12px;background:radial-gradient(circle,#FFFFFF 3px,#E8DCC4 3.5px,transparent 4px) 50% 0/12px 24px repeat-y}
+.ixw--sol-auto .sor-log li{display:grid;grid-template-columns:30px 22px minmax(0,1fr);align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #EDE4D0;font-size:15px;line-height:1.45;color:#3D4560}
+.ixw--sol-auto .sor-t{align-self:stretch;display:flex;align-items:center;border-right:2px solid rgba(214,74,58,.32);font:800 11px/1 ui-monospace,Consolas,monospace;font-style:normal;color:#9A8A6A}
+.ixw--sol-auto .sor-log li .ic{width:22px;height:22px;padding:4px;border-radius:50%;color:#FFFFFF;background:var(--sor-green);box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px rgba(30,158,106,.35);transition:transform .35s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-log li:hover .ic{transform:rotate(-14deg) scale(1.15)}
+.ixw--sol-auto .sor-log li:hover{background:linear-gradient(90deg,transparent,#FFF6E0 30%,transparent)}
+.ixw--sol-auto .sor-log li:nth-child(2) .ic,.ixw--sol-auto .sor-log li:nth-child(6) .ic{background:var(--sor-red);box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px rgba(214,74,58,.35)}
+@media (min-width:1100px){.ixw--sol-auto .sor-log{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:column;grid-template-rows:repeat(6,auto)}}
+
+/* the FAQ: envelopes with an airmail edge; the number is a stamp, the answer a lined letter */
+.ixw--sol-auto .sor-faq-sec{background-color:#F6F1E6;background-image:repeating-linear-gradient(-45deg,rgba(214,74,58,.035) 0 22px,transparent 22px 44px,rgba(49,103,202,.035) 44px 66px,transparent 66px 88px)}
+.ixw--sol-auto .sor-faq{counter-reset:q;max-width:900px}
+.ixw--sol-auto .sor-faq details{counter-increment:q;border-radius:12px;background:var(--sor-paper);box-shadow:0 0 0 1.5px #E8DCC4,0 3px 0 #E8DCC4}
+.ixw--sol-auto .sor-faq details::before{content:"";display:block;height:5px;background:var(--sor-air)}
+.ixw--sol-auto .sor-faq details[open]{box-shadow:0 0 0 2px var(--sor-slate),0 4px 0 var(--sor-slate-d),0 22px 34px -24px rgba(31,68,80,.45)}
+.ixw--sol-auto .sor-faq summary::before{content:counter(q,decimal-leading-zero);width:40px;height:44px;border-radius:2px;background:radial-gradient(circle,transparent 2.4px,#FFFFFF 2.8px) -4px -4px/8px 8px,#FFFFFF;
+  box-shadow:inset 0 0 0 4px #FFFFFF,inset 0 0 0 5.5px var(--sor-slate);color:var(--sor-slate);font:800 13px/1 var(--font-display);rotate:-4deg}
+.ixw--sol-auto .sor-faq details[open] summary::before{content:counter(q,decimal-leading-zero);background:radial-gradient(circle,transparent 2.4px,#FFFFFF 2.8px) -4px -4px/8px 8px,#FFFFFF;box-shadow:inset 0 0 0 4px #FFFFFF,inset 0 0 0 5.5px var(--sor-red);color:var(--sor-red);transform:none;rotate:4deg}
+.ixw--sol-auto .sor-faq summary .ic{background:var(--sor-slate-l);color:var(--sor-slate)}
+.ixw--sol-auto .sor-faq .faq-a{margin:0 22px 18px 68px;padding:12px 18px 12px 22px;border-radius:6px;background:linear-gradient(90deg,rgba(214,74,58,.35) 0 2px,transparent 2px),repeating-linear-gradient(180deg,#FFFFFF 0 25px,#EEE6D4 25px 26px);font-size:15.5px;line-height:26px}
+.ixw--sol-auto .sor-faq .faq-a a{color:var(--sor-red);font-weight:700}
+@media (max-width:640px){.ixw--sol-auto .sor-faq .faq-a{margin:0 14px 14px 14px}}
+
+/* related services: brown-paper parcel tags with a string */
+.ixw--sol-auto .sor-rel-sec{background:#FFFFFF}
+.ixw--sol-auto .sor-ptag{position:relative;padding:30px 28px 26px 70px;border:0;border-radius:0;background:linear-gradient(135deg,transparent 16px,#F6EAD2 0) top left/51% 51% no-repeat,linear-gradient(45deg,transparent 16px,#F6EAD2 0) bottom left/51% 51% no-repeat,
+  linear-gradient(-135deg,transparent 0,#F6EAD2 0) top right/51% 51% no-repeat,linear-gradient(-45deg,transparent 0,#F6EAD2 0) bottom right/51% 51% no-repeat;filter:drop-shadow(0 0 1px #D9C49C) drop-shadow(0 16px 18px rgba(60,40,10,.14));transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-ptag:hover{transform:rotate(-1.4deg) translateY(-6px);border:0}
+.ixw--sol-auto .sor-hole{position:absolute;left:22px;top:34px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#FBF6EC 0 4.5px,#8C6A3A 5px 5.6px,#E6C27A 6px 8.6px,#B08840 9px 10px,transparent 10.5px),radial-gradient(circle,color-mix(in srgb,var(--c) 14%,#F6EAD2) 0 10.6px,transparent 11px);box-shadow:0 1px 2px rgba(60,40,10,.18)}
+.ixw--sol-auto .sor-hole::after{content:"";position:absolute;left:-6px;top:-6px;width:34px;height:34px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--c) 40%,#F6EAD2)}
+.ixw--sol-auto .sor-ptag .card-ic{display:grid;place-items:center;width:46px;height:46px;min-height:0;margin-bottom:14px;border-radius:12px;background:#FFFFFF;color:var(--c);box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 30%,#FFFFFF)}
+.ixw--sol-auto .sor-ptag .card-ic .ic{width:24px;height:24px}
+.ixw--sol-auto .sor-ptag h3{color:var(--sor-ink)}.ixw--sol-auto .sor-ptag p{color:#5A4E3A}
+.ixw--sol-auto .sor-ptag .btn-link{color:var(--c)}
+.ixw--sol-auto .sor-ptag::after{content:"TN";position:absolute;right:22px;top:22px;display:grid;place-items:center;width:42px;height:50px;background:radial-gradient(circle,transparent 2.6px,#FFFFFF 3px) -4px -4px/8px 8px,#FFFFFF;box-shadow:inset 0 0 0 5px #FFFFFF,inset 0 0 0 7px var(--c),inset 0 0 0 40px color-mix(in srgb,var(--c) 10%,#FFFFFF),0 3px 6px -2px rgba(60,40,10,.25);font:800 13px/1 var(--font-display);color:var(--c);rotate:5deg;pointer-events:none}
+.ixw--sol-auto .sor-ptag::before{content:"";position:absolute;right:12px;top:40px;z-index:1;width:46px;height:24px;opacity:.55;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32' fill='none' stroke='%231F4450' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M2 6q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3Cpath d='M2 16q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3Cpath d='M2 26q6-5 12 0t12 0 12 0 12 0 12 0'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* the end card: a sealed envelope, airmail edge, red wax seal */
+.ixw--sol-auto .sor-end-sec .cta{border:9px solid transparent;background:linear-gradient(135deg,#3A6C7B,#1F4450) padding-box,var(--sor-air) border-box;overflow:visible}
+.ixw--sol-auto .sor-end-sec .cta::after{left:0;right:0;top:0;width:auto;height:58%;border-radius:0;background:linear-gradient(to bottom right,rgba(255,255,255,.07) 50%,transparent 50.4%) left/50.1% 100% no-repeat,linear-gradient(to bottom left,rgba(255,255,255,.07) 50%,transparent 50.4%) right/50.1% 100% no-repeat;pointer-events:none}
+.ixw--sol-auto .sor-end-sec .cta:hover::after{transform:none}
+.ixw--sol-auto .sor-end-sec .cta .hand{color:var(--sor-brass-l)}
+.ixw--sol-auto .sor-seal{position:absolute;left:50%;top:-34px;z-index:2;display:grid;place-items:center;width:68px;height:68px;margin-left:-34px;border-radius:46% 54% 50% 50%;background:radial-gradient(circle at 38% 35%,#E8695A,#B7362A 70%);
+  box-shadow:inset 0 0 0 6px rgba(0,0,0,.12),0 8px 14px -6px rgba(80,20,10,.55);font:800 19px/1 var(--font-display);color:#FBD2CC;letter-spacing:.02em;rotate:-8deg;transition:rotate .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-auto .sor-end-sec .cta:hover .sor-seal{rotate:8deg}
+.ixw--sol-auto .sor-end-sec main .btn-white,.ixw--sol-auto .sor-end-sec .btn-white{color:var(--sor-slate-d);box-shadow:0 0 0 2px var(--sor-brass),0 5px 0 2px var(--sor-brass-d)}
+@media (max-width:640px){.ixw--sol-auto .sor-seal{width:54px;height:54px;margin-left:-27px;top:-28px;font-size:15px}}
+
+/* section ornaments (desktop): the pigeonhole rack beside the demo head, the rubber stamp beside the stamps, the pillar box by the FAQ */
+.ixw--sol-auto .sor-desk-sec .container,.ixw--sol-auto .sor-stamps-sec .container,.ixw--sol-auto .sor-faq-sec .container{position:relative}
+.ixw--sol-auto .sor-rack{position:absolute;right:24px;top:0;width:250px;padding:30px 12px 12px;border-radius:10px;background:#9A6A43;box-shadow:0 0 0 3px #7A5236,0 26px 40px -24px rgba(60,40,10,.5)}
+.ixw--sol-auto .sor-rack-h{position:absolute;left:-6px;right:-6px;top:-10px;display:flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:7px;background:var(--sor-slate);color:#FFFFFF;font:800 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
+.ixw--sol-auto .sor-rack-h b{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--sor-brass);color:var(--sor-ink);font-size:11px;letter-spacing:0}
+.ixw--sol-auto .sor-rack-g{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ixw--sol-auto .sor-rack-g i{position:relative;height:40px;border-radius:4px;background:#5C3F27;box-shadow:inset 0 3px 0 rgba(0,0,0,.18)}
+.ixw--sol-auto .sor-rack-g i.is-l::after{content:"";position:absolute;left:6px;right:6px;bottom:5px;height:16px;border-radius:2px;background:linear-gradient(160deg,transparent 46%,rgba(60,70,100,.25) 47% 50%,transparent 51%),linear-gradient(20deg,transparent 46%,rgba(60,70,100,.25) 47% 50%,transparent 51%),#FFFFFF;box-shadow:3px -4px 0 -1px #FFF6E0}
+.ixw--sol-auto .sor-rack-g i:nth-child(8){animation:sorSlot 4s ease-in-out infinite}
+@keyframes sorSlot{0%,55%{box-shadow:inset 0 3px 0 rgba(0,0,0,.18)}62%,80%{box-shadow:inset 0 0 0 2px #7FF0CF,0 0 12px rgba(127,240,207,.6)}100%{box-shadow:inset 0 3px 0 rgba(0,0,0,.18)}}
+.ixw--sol-auto .sor-fly{position:absolute;left:-70px;top:30px;width:34px;height:22px;border-radius:3px;background:linear-gradient(160deg,transparent 46%,rgba(60,70,100,.3) 47% 50%,transparent 51%),linear-gradient(20deg,transparent 46%,rgba(60,70,100,.3) 47% 50%,transparent 51%),#FFFFFF;
+  box-shadow:inset -6px 6px 0 -3px #D64A3A,0 6px 10px -4px rgba(0,0,0,.3);animation:sorFly 4s cubic-bezier(.5,0,.3,1) infinite}
+@keyframes sorFly{0%{translate:0 40px;rotate:-14deg;opacity:0}12%{opacity:1}55%{translate:268px 50px;rotate:8deg;opacity:1}62%{translate:270px 54px;rotate:0deg;opacity:0}100%{opacity:0}}
+.ixw--sol-auto .sor-inkpad{position:absolute;right:30px;top:-10px;width:250px;height:140px}
+.ixw--sol-auto .sor-inkpad::before{content:"";position:absolute;right:-4px;bottom:-6px;width:140px;height:84px;border-radius:4px;rotate:-3deg;background:linear-gradient(90deg,transparent 14px,rgba(214,74,58,.35) 14px 15.5px,transparent 15.5px),repeating-linear-gradient(180deg,#FFFFFF 0 13px,#E9EEF4 13px 14px);background-color:#FFFFFF;box-shadow:0 0 0 1px #E3D3B2,0 12px 18px -10px rgba(60,40,10,.35)}
+.ixw--sol-auto .sor-pad{position:absolute;left:0;bottom:2px;width:96px;height:30px;border-radius:7px;background:radial-gradient(ellipse at 40% 35%,#E0574A,#A2342A 75%);box-shadow:inset 0 2px 3px rgba(0,0,0,.25),0 0 0 4px #8E9AB0,0 0 0 5.5px #5C6B7A,0 10px 14px -6px rgba(0,0,0,.35)}
+.ixw--sol-auto .sor-pad::before{content:"INK";position:absolute;left:-5px;right:-5px;bottom:calc(100% + 6px);height:22px;border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#B8C2D2,#8E9AB0);box-shadow:inset 0 -3px 0 #5C6B7A;transform-origin:50% 100%;transform:perspective(120px) rotateX(38deg);display:grid;place-items:center;font:800 9px/1 var(--font-body);letter-spacing:.2em;color:#3A4458}
+.ixw--sol-auto .sor-mark{position:absolute;right:16px;bottom:22px;z-index:1;padding:7px 12px;border:3px solid var(--sor-red);border-radius:6px;font:800 16px/1 var(--font-display);letter-spacing:.1em;color:var(--sor-red);rotate:-9deg;opacity:0;mix-blend-mode:multiply;animation:sorMark 3.6s ease-out infinite}
+@keyframes sorMark{0%,46%{opacity:.18;scale:1}50%{opacity:0;scale:1.3}54%{opacity:.9;scale:1}88%{opacity:.9}100%{opacity:.18}}
+.ixw--sol-auto .sor-rs{position:absolute;left:140px;top:4px;width:60px;height:96px;animation:sorStamp 3.6s cubic-bezier(.6,0,.4,1) infinite}
+.ixw--sol-auto .sor-rs::before{content:"";position:absolute;left:21px;top:0;width:18px;height:46px;border-radius:9px 9px 4px 4px;background:linear-gradient(90deg,#7A5236,#A87A5A 40%,#7A5236)}
+.ixw--sol-auto .sor-rs::after{content:"";position:absolute;left:24px;top:-8px;width:12px;height:12px;border-radius:50%;background:var(--sor-brass)}
+.ixw--sol-auto .sor-rs i{position:absolute;left:0;top:44px;width:60px;height:22px;border-radius:5px;background:linear-gradient(180deg,#5C3F27,#4A321F);box-shadow:inset 0 -6px 0 var(--sor-red)}
+@keyframes sorStamp{0%,10%{translate:-115px 26px;rotate:-10deg}24%{translate:-115px 34px;rotate:0deg}38%{translate:0 -10px}48%{translate:0 30px}56%{translate:0 -6px}80%,100%{translate:-115px 26px;rotate:-10deg}}
+.ixw--sol-auto .sor-postbox{position:absolute;right:70px;top:150px;width:150px;height:330px;border-radius:70px 70px 12px 12px;background:linear-gradient(90deg,#B7362A,#D64A3A 30%,#E8695A 46%,#C7402F 70%,#A2342A);box-shadow:0 30px 40px -24px rgba(80,20,10,.55)}
+.ixw--sol-auto .sor-pb-cap{position:absolute;left:-10px;right:-10px;top:56px;height:14px;border-radius:7px;background:#A2342A;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.ixw--sol-auto .sor-pb-slot{position:absolute;left:30px;right:30px;top:94px;height:12px;border-radius:6px;background:#2A1A18;box-shadow:0 -4px 0 #8E2A20}
+.ixw--sol-auto .sor-pb-plate{position:absolute;left:24px;right:24px;top:126px;padding:8px 6px;border-radius:6px;background:var(--sor-paper);text-align:center;font:800 11px/1.3 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--sor-ink)}
+.ixw--sol-auto .sor-pb-times{position:absolute;left:30px;right:30px;top:190px;padding:7px 6px;border-radius:4px;background:#FFFFFF;text-align:center;font:600 10.5px/1.3 var(--font-body);color:#5C6B7A}
+.ixw--sol-auto .sor-pb-times b{display:block;font-weight:800;color:var(--sor-red)}
+.ixw--sol-auto .sor-postbox::after{content:"";position:absolute;left:-14px;right:-14px;bottom:-10px;height:18px;border-radius:6px;background:#8E2A20}
+.ixw--sol-auto .sor-pb-env{position:absolute;left:52px;top:52px;width:46px;height:30px;border-radius:3px;background:linear-gradient(160deg,transparent 46%,rgba(60,70,100,.3) 47% 50%,transparent 51%),linear-gradient(20deg,transparent 46%,rgba(60,70,100,.3) 47% 50%,transparent 51%),#FFFFFF;box-shadow:0 4px 8px -3px rgba(0,0,0,.3);animation:sorPost 3.4s ease-in infinite}
+@keyframes sorPost{0%{translate:0 -80px;rotate:-12deg;opacity:0}20%{opacity:1}60%{translate:0 0;rotate:0deg;opacity:1}78%,100%{translate:0 40px;opacity:0}}
+@media (max-width:1259px){.ixw--sol-auto .sor-rack,.ixw--sol-auto .sor-inkpad,.ixw--sol-auto .sor-postbox{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-auto :is(.sor-fly,.sor-mark,.sor-rs,.sor-pb-env,.sor-cap,.sor-gauge i,.sor-lamp,.sor-rack-g i){animation:none}.ixw--sol-auto .sor-mark{opacity:.9}}
+.ixw--sol-auto .ixwi-card::after{display:none}
+/* below 1400px the mail-room lead stands behind the card (the world script moves her); her tap target follows */
+@media (max-width:1399px){.ixw--sol-auto .ixw-cast[data-cast="srt"]{--x:-478 !important}}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the sorting office. One slate accent.
+   Themed touches kept: a slim airmail edge on the one-paragraph memo, the stamp frame + value on the six cards, the
+   slate console bar over the demo, the numbered log on what you get.
+   =================================================================================================================== */
+.ixw--sol-auto{--calm-accent:#2F6B7A;--calm-accent-ink:#245562;--calm-accent-line:#C5DADF;--calm-accent-wash:#F5F8F9;--calm-wash:#F5F8F9}
+html body.ixw--sol-auto main .sor-memo{max-width:900px;padding:24px 28px 24px 28px!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:var(--calm-shadow)!important;position:relative;overflow:hidden}
+html body.ixw--sol-auto main .sor-memo::before{content:""!important;display:block!important;position:absolute;left:0;right:0;top:0;height:4px;background:repeating-linear-gradient(90deg,#D64A3A 0 18px,#fff 18px 24px,#3167CA 24px 42px,#fff 42px 48px)!important}
+html body.ixw--sol-auto main .sor-memo::after{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-memo p{color:var(--body)!important}
+@media (max-width:640px){html body.ixw--sol-auto main .sor-memo{padding:22px 18px!important}}
+/* the demo: one panel under a slim slate console bar */
+html body.ixw--sol-auto main .sor-desk-sec{background:#fff!important}
+html body.ixw--sol-auto main .sor-console{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-auto main .sor-console::before,html body.ixw--sol-auto main .sor-console::after{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-console-top{padding:12px 18px!important;background:#2F6B7A!important;color:#E6F0F2!important}
+html body.ixw--sol-auto main .sor-gauge{display:none!important}
+html body.ixw--sol-auto main .sor-console .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* what's included: six cards with a thin stamp frame inside and the stamp value top-left */
+html body.ixw--sol-auto main .sor-stamps-sec{background:#fff!important}
+html body.ixw--sol-auto main .sor-stamp{filter:none!important;transform:none!important}
+html body.ixw--sol-auto main .sor-stamp-in{padding:56px 28px 28px!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;background:#fff!important;-webkit-mask:none!important;mask:none!important;
+  box-shadow:inset 0 0 0 8px #fff,inset 0 0 0 9.5px color-mix(in srgb,var(--c) 45%,#fff),var(--calm-shadow)!important}
+html body.ixw--sol-auto main .sor-stamp:hover .sor-stamp-in{box-shadow:inset 0 0 0 8px #fff,inset 0 0 0 9.5px var(--c),var(--calm-shadow-h)!important}
+html body.ixw--sol-auto main .sor-stamp-in::before,html body.ixw--sol-auto main .sor-stamp-in::after,html body.ixw--sol-auto main .sor-val::after{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-val{left:28px!important;top:24px!important;font-size:18px!important}
+html body.ixw--sol-auto main .sor-pm{display:none!important}
+html body.ixw--sol-auto main .sor-stamp-in p{color:var(--body)!important}
+/* how we build one: four clean step cards, no pipe */
+html body.ixw--sol-auto main .sor-route{padding-top:0!important}
+html body.ixw--sol-auto main .sor-stop{padding:24px 22px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-auto main .sor-stop::before,html body.ixw--sol-auto main .sor-stop--gate::after{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-stop-n{position:static!important;display:inline-grid!important;margin:0 0 14px!important;background:#E7F0F2!important;color:var(--calm-accent)!important;box-shadow:none!important}
+html body.ixw--sol-auto main .sor-stop-ic{background:#F2F6F7!important;color:var(--calm-accent)!important;box-shadow:none!important}
+html body.ixw--sol-auto main .sor-stop p{color:var(--body)!important}
+/* what you get: the log as a clean card */
+html body.ixw--sol-auto main .sor-log{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-auto main .sor-log::before{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-log li{border-bottom:1px solid var(--calm-line)!important;color:var(--body)!important}
+html body.ixw--sol-auto main .sor-log li .ic{background:#E7F0F2!important;color:var(--calm-accent)!important}
+html body.ixw--sol-auto main .sor-t{border:0!important;color:#8AA2A8!important}
+/* FAQ: plain rows, full width */
+html body.ixw--sol-auto main .sor-faq{max-width:860px!important}
+html body.ixw--sol-auto main .sor-faq details{background:#fff!important;box-shadow:none!important;border-image:none!important}
+html body.ixw--sol-auto main .sor-faq details::before,html body.ixw--sol-auto main .sor-faq details::after{content:none!important;display:none!important}
+/* related: plain white cards with a coloured top rule */
+html body.ixw--sol-auto main .sor-ptag{padding:26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important;-webkit-mask:none!important;mask:none!important}
+html body.ixw--sol-auto main .sor-ptag::before,html body.ixw--sol-auto main .sor-ptag::after{content:none!important;display:none!important}
+html body.ixw--sol-auto main .sor-ptag:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-auto main .sor-memo{border-top:4px solid transparent!important;border-image:repeating-linear-gradient(90deg,#D64A3A 0 18px,#fff 18px 24px,#3167CA 24px 42px,#fff 42px 48px) 4 0 0 0!important}

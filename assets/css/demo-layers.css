@@ -1,0 +1,162 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo customisation page demo: the upgrade-safe stack, eight requirements to place, a decision tree
+   that climbs the spine, meters for risk, effort and maintenance, and an upgrade test (demo-layers.js) */
+.dm-layers:not(.is-js) .lyr-wrap{display:none}
+.lyr-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+.lyr-main{min-width:0;padding:14px 16px 16px}
+/* requirements waiting to be placed */
+.lyr-tray{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 8px;min-height:212px;align-content:start}
+.dm-layers.is-all .lyr-tray{min-height:0}
+.lyr-req{position:relative;display:flex;min-width:0;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 8px 16px -14px rgba(31,31,61,.45);transition:transform .5s var(--ease-expo),border-color .25s ease,box-shadow .25s ease,opacity .25s ease;touch-action:manipulation}
+.lyr-pick{position:relative;flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:9px;padding:7px 9px;border:0;border-radius:12px 0 0 12px;background:none;text-align:left;cursor:grab}
+.lyr-pick>.ic{width:26px;height:26px;padding:5px;border-radius:8px;flex:none;color:var(--blue);background:var(--blue-050)}
+.lyr-pick span{display:grid;gap:1px;min-width:0}
+.lyr-pick b{font:700 11.5px/1.25 var(--font-display);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lyr-pick small{font:500 10.5px/1.3 var(--font-body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lyr-pick:focus-visible,.lyr-sug:focus-visible,.lyr-put:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.lyr-pick[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--blue)}
+.lyr-sug{flex:none;align-self:center;height:26px;margin-right:8px;padding:0 10px;border:0;border-radius:999px;background:var(--blue-050);font:700 11px/1 var(--font-body);color:var(--blue-700);cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.lyr-sug:hover{background:var(--blue);color:#fff}
+.lyr-req:hover{border-color:var(--blue-300)}
+.lyr-req.is-drag{z-index:40;transition:none;box-shadow:0 22px 38px -18px rgba(31,31,61,.55);cursor:grabbing}
+.dm-layers.is-dragging{cursor:grabbing}
+.dm-layers.is-dragging .lyr-req:not(.is-drag){pointer-events:none}
+.lyr-st{display:none;position:absolute;right:-6px;top:-7px;width:18px;height:18px;border-radius:50%;place-items:center;font:800 10.5px/1 var(--font-display);font-style:normal;color:#fff;box-shadow:0 0 0 2px #fff}
+.lyr-req.is-ok .lyr-st{display:grid;background:var(--ok)}
+.lyr-req.is-over .lyr-st{display:grid;background:var(--tok-buy)}
+.lyr-done{grid-column:1/-1;display:none;align-items:center;gap:8px;margin:0;padding:12px 14px;border-radius:12px;border:1px dashed #BFD9C9;background:var(--ok-050);font:600 12px/1.4 var(--font-body);color:var(--ok)}
+.lyr-done .ic{width:16px;height:16px;flex:none}
+.dm-layers.is-all .lyr-done{display:flex}
+.dm-layers.is-busy .lyr-req{pointer-events:none}
+/* the stack: five slabs, standard at the bottom */
+.lyr-stack{position:relative;display:grid;gap:7px;margin-top:14px}
+.lyr-layer{--c:var(--blue);--t:#EEF3FC;--e:#D3DFF5;position:relative;display:grid;grid-template-columns:192px minmax(0,1fr) 186px;align-items:center;min-height:62px;border-radius:14px;border:1px solid var(--e);background:linear-gradient(90deg,var(--t),rgba(255,255,255,.75) 70%);box-shadow:0 4px 0 -1px var(--e),0 12px 20px -18px rgba(31,31,61,.5);transition:box-shadow .3s ease,border-color .3s ease,transform .3s var(--spring)}
+.lyr-layer[data-l="std"]{--c:var(--odoo);--t:#F6F0F4;--e:#E6D7E2}
+.lyr-layer[data-l="cfg"]{--c:var(--blue);--t:#EDF2FC;--e:#D2DEF5}
+.lyr-layer[data-l="stu"]{--c:var(--tok-pay);--t:#E9F6F3;--e:#C7E8E0}
+.lyr-layer[data-l="mod"]{--c:var(--tok-make);--t:#F1EDFC;--e:#DBD1F5}
+.lyr-layer[data-l="int"]{--c:var(--tok-buy);--t:#FDF4E7;--e:#F0DCB6}
+.lyr-lh{grid-column:1;grid-row:1;display:flex;align-items:center;gap:9px;min-width:0;padding:10px 12px}
+.lyr-lh>.ic,.lyr-lh>.oi{width:28px;height:28px;flex:none}
+.lyr-lh>.ic{padding:5px;border-radius:9px;color:var(--c);background:#fff;box-shadow:0 0 0 1px var(--e)}
+.lyr-lh span{display:grid;gap:1px;min-width:0}
+.lyr-lh b{font:700 12px/1.2 var(--font-display);color:var(--ink)}
+.lyr-lh small{font:500 10.5px/1.3 var(--font-body);color:var(--body)}
+.lyr-slot{grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;align-content:center;gap:10px 6px;min-width:0;min-height:46px;padding:8px 4px}
+.lyr-slot .lyr-req{max-width:100%;border-color:var(--e);box-shadow:0 5px 12px -10px rgba(31,31,61,.5)}
+.lyr-slot .lyr-pick{padding:5px 9px 5px 6px;border-radius:10px;cursor:pointer}
+.lyr-slot .lyr-pick>.ic{width:20px;height:20px;padding:3px;border-radius:6px;color:var(--c);background:var(--t)}
+.lyr-slot .lyr-pick b{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lyr-slot .lyr-pick small,.lyr-slot .lyr-sug{display:none}
+.lyr-slot .lyr-req.is-over{border-color:#F0CD92;background:#FFFBF3}
+/* upgrade test marks on placed cards */
+.lyr-slot .lyr-pick::after{content:"";position:absolute;right:10px;bottom:-8px;padding:2px 6px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font:700 10px/1.1 var(--font-body);white-space:nowrap;opacity:0;transition:opacity .25s ease}
+.lyr-slot .lyr-req[class*="is-u-"] .lyr-pick::after{opacity:1}
+.lyr-req.is-u-ok .lyr-pick::after{content:"upgraded";color:var(--ok)}
+.lyr-req.is-u-chk .lyr-pick::after{content:"checked";color:var(--ok)}
+.lyr-req.is-u-work .lyr-pick::after{content:"porting…";color:var(--tok-make);animation:lyrBlink .8s ease-in-out infinite alternate}
+.lyr-layer[data-l="int"] .lyr-req.is-u-work .lyr-pick::after{content:"re-testing…";color:#A45E0C}
+.lyr-req.is-u-done .lyr-pick::after{content:"ported, tests pass";color:var(--ok);animation:none}
+.lyr-layer[data-l="int"] .lyr-req.is-u-done .lyr-pick::after{content:"re-tested";color:var(--ok)}
+@keyframes lyrBlink{from{opacity:.45}to{opacity:1}}
+.lyr-put{grid-column:2;grid-row:1;align-self:stretch;display:none;align-items:center;justify-content:center;gap:8px;margin:5px 4px;border-radius:10px;border:1.5px dashed var(--c);background:rgba(255,255,255,.82);font:700 11.5px/1 var(--font-body);color:var(--ink);cursor:pointer;z-index:2}
+.lyr-put kbd{display:grid;place-items:center;width:18px;height:18px;border-radius:5px;background:var(--c);color:#fff;font:800 10.5px/1 var(--font-display)}
+.lyr-put:hover{background:#fff}
+.dm-layers.is-placing .lyr-put{display:flex}
+.lyr-gate{grid-column:3;grid-row:1;position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:7px;padding-right:12px;min-width:0}
+.lyr-gate span{font:600 10.5px/1.25 var(--font-body);color:var(--muted);text-align:right;transition:color .25s ease}
+.lyr-gate em{display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;background:#fff;border:1.5px solid #C5D2EC;font:800 10px/1 var(--font-display);font-style:normal;color:var(--muted);transition:background-color .25s ease,border-color .25s ease,color .25s ease}
+.lyr-ans{display:none;padding:3px 7px;border-radius:999px;font:800 10px/1 var(--font-body);color:#fff}
+.lyr-gate.is-yes .lyr-ans,.lyr-gate.is-no .lyr-ans{display:inline-block;order:-1;animation:lyrPop .35s var(--spring)}
+.lyr-gate.is-yes .lyr-ans{background:var(--ok)}
+.lyr-gate.is-no .lyr-ans{background:#9AA3B8}
+.lyr-gate.is-yes em{background:var(--ok);border-color:var(--ok);color:#fff}
+.lyr-gate.is-no em{border-color:#9AA3B8;color:var(--ink)}
+.lyr-gate.is-yes span{color:var(--ok)}
+.lyr-gate.is-no span{color:var(--ink)}
+.lyr-layer[data-l="int"] .lyr-gate em{border-style:dashed}
+@keyframes lyrPop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.lyr-spine{position:absolute;left:0;top:0;width:2px;height:0;z-index:1;background:repeating-linear-gradient(180deg,#C5D2EC 0 5px,transparent 5px 9px);pointer-events:none}
+.lyr-spine.is-run{background:repeating-linear-gradient(180deg,var(--blue-300) 0 5px,transparent 5px 9px)}
+.lyr-tok{position:absolute;left:-8px;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 4px rgba(49,103,202,.22),0 8px 16px -6px rgba(49,103,202,.7);opacity:0;transition:transform .5s var(--ease-expo),opacity .3s ease}
+.lyr-tok.is-on{opacity:1}
+.lyr-tok.is-in{opacity:0;transition:transform .45s var(--ease-expo),opacity .35s ease .2s}
+.lyr-layer.is-hit{box-shadow:0 4px 0 -1px var(--e),0 0 0 3px color-mix(in srgb,var(--c) 25%,transparent)}
+.lyr-layer.is-target{border-color:var(--c);box-shadow:0 4px 0 -1px var(--e),0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent);transform:scale(1.01)}
+.lyr-layer.is-shake{animation:lyrShake .45s ease}
+@keyframes lyrShake{20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+.lyr-stack::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;border-radius:14px;background:linear-gradient(0deg,transparent,rgba(49,103,202,.22),transparent);opacity:0;pointer-events:none;z-index:3}
+.dm-layers.is-scan .lyr-stack::after{animation:lyrScan 2.2s ease-in-out forwards}
+@keyframes lyrScan{0%{opacity:0;transform:translateY(0)}10%{opacity:1}90%{opacity:1}100%{opacity:0;transform:translateY(calc(34px - var(--sh,340px)))}}
+/* side panel */
+.lyr-side{display:flex;flex-direction:column;gap:8px;min-width:0;padding:14px;border-left:1px solid var(--line);background:rgba(250,249,251,.8)}
+.lyr-sa,.lyr-sb{display:flex;flex-direction:column;gap:8px;min-width:0}
+.lyr-meters{display:grid;gap:9px;padding:11px 12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.lyr-m p{display:flex;justify-content:space-between;gap:8px;margin:0 0 5px;font:500 11px/1.2 var(--font-body);color:var(--muted)}
+.lyr-m p b{font:700 11.5px/1.2 var(--font-display);color:var(--ink)}
+.lyr-m p em{font-style:normal;font-weight:700;color:var(--ok)}
+.lyr-m.is-over p em{color:#B45A0A}
+.lyr-bar{position:relative;display:block;height:8px;border-radius:999px;background:var(--alt);box-shadow:inset 0 0 0 1px var(--line);overflow:visible}
+.lyr-bar i{position:absolute;inset:0;border-radius:999px;background:linear-gradient(90deg,#3FAF7B,var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-expo)}
+.lyr-m.is-over .lyr-bar i{background:linear-gradient(90deg,#3FAF7B,var(--blue) 45%,var(--tok-buy))}
+.lyr-bar u{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;border-radius:2px;background:var(--ink);opacity:0;transition:left .6s var(--ease-expo),opacity .3s ease}
+.lyr-key{display:flex;align-items:center;gap:6px;margin:0;font:500 10.5px/1.3 var(--font-body);color:var(--muted)}
+.lyr-key i{width:2px;height:12px;border-radius:2px;background:var(--ink)}
+.lyr-sh{margin:4px 0 0;font:700 10px/1.3 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lyr-path{display:grid;gap:5px;margin:0;padding:0;list-style:none;min-height:40px}
+.lyr-path li{display:grid;gap:3px;padding:7px 9px;border-radius:10px;background:#fff;border:1px solid var(--line);border-left:3px solid #9AA3B8;animation:lyrIn .4s var(--ease-out) both}
+.lyr-path li.is-yes{border-left-color:var(--ok)}
+.lyr-path b{font:700 10.5px/1.3 var(--font-display);color:var(--ink)}
+.lyr-path span{font:500 10.5px/1.35 var(--font-body);color:var(--body)}
+.lyr-path em{display:inline-block;margin-right:3px;padding:2px 6px;border-radius:999px;background:#9AA3B8;color:#fff;font:800 10px/1 var(--font-body);font-style:normal;vertical-align:1px}
+.lyr-path .is-yes em{background:var(--ok)}
+@keyframes lyrIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.lyr-verdict{margin:0;padding:9px 11px;border-radius:10px;background:var(--alt);border:1px solid var(--line);font:600 11.5px/1.4 var(--font-body);color:var(--ink)}
+.lyr-verdict.is-ok{background:var(--ok-050);border-color:#CDEBD9;color:var(--ok)}
+.lyr-verdict.is-over{background:var(--amber-050);border-color:#F2DDB2;color:#8A5300}
+.lyr-verdict.is-no{background:#FCEFEE;border-color:#F3CFCB;color:#A8322A}
+.lyr-up{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.lyr-up:empty::before{content:"Run the upgrade test once something is placed.";font:500 11px/1.35 var(--font-body);color:var(--muted)}
+.lyr-up li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:7px;align-items:center;font:500 11px/1.35 var(--font-body);color:var(--body);animation:lyrIn .4s var(--ease-out) both}
+.lyr-up li b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ok);color:#fff;font:800 10.5px/1 var(--font-display)}
+.lyr-up li.is-chk b{background:var(--tok-pay)}
+.lyr-up li.is-work b{background:var(--tok-make)}
+.lyr-up li.is-warn b{background:var(--tok-buy)}
+.lyr-up li.is-warn{color:#8A5300;font-weight:600}
+@media (max-width:1100px){
+  .lyr-wrap{grid-template-columns:minmax(0,1fr)}
+  .lyr-side{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:8px 16px}
+  .lyr-tray{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .lyr-main{padding:12px}
+  .lyr-tray{grid-template-columns:minmax(0,1fr)}
+  .lyr-layer{grid-template-columns:minmax(0,1fr) 96px}
+  .lyr-lh{grid-column:1;grid-row:1;padding:9px 10px 2px}
+  .lyr-slot{grid-column:1;grid-row:2;padding:4px 8px 8px}
+  .lyr-put{grid-column:1;grid-row:2}
+  .lyr-gate{grid-column:2;grid-row:1/span 2;flex-direction:column-reverse;align-items:flex-end;justify-content:center;gap:4px;padding-right:9px}
+  .lyr-gate span{font-size:10px}
+  .lyr-gate.is-yes .lyr-ans,.lyr-gate.is-no .lyr-ans{order:0}
+  .lyr-side{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.dm-layers *{transition:none!important;animation:none!important}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .lyr-pick small,
+  .lyr-st,
+  .lyr-lh small,
+  .lyr-slot .lyr-pick b,
+  .lyr-slot .lyr-pick::after,
+  .lyr-put kbd,
+  .lyr-gate span,
+  .lyr-gate em,
+  .lyr-ans,
+  .lyr-key,
+  .lyr-sh,
+  .lyr-path b,
+  .lyr-path span,
+  .lyr-path em,
+  .lyr-up li b{font-size:11px}
+}

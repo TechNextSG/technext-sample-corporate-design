@@ -1,0 +1,241 @@
+<!--meta {"title": "AI Workflow Automation for SMEs — SG & PH", "desc": "AI workflow automation for SMEs in Singapore and the Philippines: AI agents do the repetitive steps, people approve what matters. No AI team to hire.", "out": "solutions/ai-automation.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-agentrun.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-auto.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-agentrun.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-auto.css?v={ASSET_V}\">", "body": "ixw ixw--sol-auto sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-auto" data-home="600,-6" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>AI Solution</span><span>Workflow Automation</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Workflow Automation</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">ai workflow automation</span>Repetitive work, done by AI agents. You keep the decision.</h1>
+      <p class="lead"><span class="m-full">Multi-step work — classify the email, pull the record, prepare the document, route it, follow up — run by an AI agent across your systems, with a person approving before anything irreversible happens.</span><span class="m-short">An AI agent runs the steps across your systems. A person approves anything irreversible.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <div class="sor-pills"><span class="tag">{{icon:sparkle}}Claude Partner</span><span class="tag">{{icon:file}}Audit trail</span><span class="tag tag--ok">{{icon:check}}Human approval where money moves</span></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Every email is a letter. Tap the agent on the rail, the team, the log or the red lever.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="tn" data-near="380,40" data-who="TechNext consultant" data-role="TechNext · illustration" data-say="We **map your workflow** first: every step, system and decision, written down before anything is built." style="--x:252;--y:360;--w:92;--h:226" aria-label="Say hi to the TechNext consultant (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Consultant</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="rev" data-near="250,40" data-who="Reviewer" data-role="Client team · illustration" data-say="Items the agent isn't sure about come to **me**. I check the fields, then the run carries on." style="--x:362;--y:384;--w:84;--h:164" aria-label="Say hi to the reviewer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Reviewer</b><i>client team</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="dev" data-near="520,60" data-who="TechNext developer" data-role="TechNext · illustration" data-say="Every action is in the **log**. Something looks wrong? We replay the step or roll it back." style="--x:615;--y:384;--w:84;--h:164" aria-label="Say hi to the TechNext developer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Developer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="apr" data-near="640,40" data-who="Approver" data-role="Client team · illustration" data-say="Nothing posts, pays or goes to a customer until I **stamp** it. That's the gate." style="--x:763;--y:318;--w:90;--h:130" aria-label="Say hi to the approver (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Approver</b><i>client team</i></span></button>
+
+      <button class="ixw-cast" type="button" data-cast="srt" data-near="-380,60" data-who="TechNext mail-room lead" data-role="TechNext · illustration" data-say="Inbox, PDFs and scans land here first. **One event you choose** starts the run, then the agent takes the steps." style="--x:-572;--y:432;--w:80;--h:236" aria-label="Say hi to the TechNext mail-room lead (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Mail-room lead</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="cou" data-near="-200,80" data-who="Courier" data-role="Visitor · illustration" data-say="I just drop the post. The **agent** sorts it, and a **person** still signs before anything goes back out." style="--x:34;--y:486;--w:110;--h:276" aria-label="Say hi to the courier (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Courier</b><i>visitor</i></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="trigger" data-nx="296,-12" data-pose="point-left" data-rec="Trigger · a new email in the purchasing inbox" data-say="A **new email**, record, file or a scheduled time drops in and starts the run. No one has to remember to kick it off." style="--x:176;--y:178;--w:88;--h:250" aria-pressed="false"><span class="ixw-hot-lab">{{icon:zap}}<b>Trigger</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="classify" data-nx="530,-12" data-pose="point-left" data-rec="Classified · purchase request" data-say="The agent **reads and classifies** each one, a purchase request, a customer email, a vendor bill, and lights its slot." style="--x:355;--y:130;--w:150;--h:190" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layers}}<b>Classify</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="record" data-nx="650,-14" data-pose="point-left" data-rec="Odoo · Purchase · budget and vendor checked" data-say="Then it **pulls the record** it needs, from Odoo or your other systems: the budget, the vendor, the order." style="--x:495;--y:250;--w:104;--h:340" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:purchase:18}}<b>Record</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="draft" data-nx="470,-14" data-pose="point-right" data-rec="Draft · purchase order, ready for approval" data-say="It **prepares the document**: the purchase order, the reply, the bill entry. Prepared, not posted." style="--x:629;--y:160;--w:128;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{icon:file}}<b>Draft</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="gate" data-nx="600,-10" data-pose="point-right" data-rec="Approval · a person signs off the purchase order" data-say="Anything irreversible **waits for a person**: a payment, a posting, a message to a customer. The guardrails say what it may do alone." style="--x:780;--y:80;--w:172;--h:112" aria-pressed="false"><span class="ixw-hot-lab">{{icon:usercheck}}<b>Approval gate</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="route" data-nx="720,-14" data-pose="point-right" data-rec="Sent to the vendor · follow-up scheduled" data-say="Approved, it's **routed**: to the vendor, the customer or Odoo, and the **follow-up** drops into the tickler." style="--x:906;--y:200;--w:118;--h:326" aria-pressed="false"><span class="ixw-hot-lab">{{icon:send}}<b>Route &amp; follow up</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="log" data-nx="230,40" data-pose="point-right" data-rec="Run log · every step, with its time" data-say="**Every step is logged** against the record it touched, so you can see what ran and why, and replay or roll it back." style="--x:640;--y:-81;--w:660;--h:40" aria-pressed="false"><span class="ixw-hot-lab">{{icon:bars}}<b>Run log</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="lever" data-near="660,60" data-pose="wow" data-say="The **kill switch**: pull it and the whole workflow pauses. Every workflow has one." style="--x:830;--y:238;--w:40;--h:62" aria-label="Pull the kill switch: pause the workflow"><span class="ixw-hot-lab" aria-hidden="true">{{icon:pause}}<b>Pause it</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:600;--ny:-6" data-reacts="wow::Another letter in. The agent's **already on it**.|love::Prepared by the agent, **approved by you**. Love that.|celebrate::Stamped, sent, logged. **Next!**|think::Hmm… which workflow **eats your week**?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-auto}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **sorting office**: every email is a letter, the agent runs the steps, and a person keeps the gate." data-outro="Triggers, multi-step runs, an approval gate, guardrails and a full log. **Agents prepare; people post.**">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-auto}}<b data-for="tn" style="--c:#3167CA">C</b><b data-for="rev" style="--c:#5FA58A">R</b><b data-for="dev" style="--c:#1E3A6E">D</b><b data-for="apr" style="--c:#C2506A">A</b><b data-for="srt" style="--c:#4C9BE8">M</b><b data-for="cou" style="--c:#E08A12">C</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · workflow automation">assistant · workflow automation</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>sorting office</b>: every email is a letter, the agent runs the steps, and a person keeps the gate.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: trigger"></button><button type="button" data-ixw-dot aria-label="Stop 3: classify"></button><button type="button" data-ixw-dot aria-label="Stop 4: record"></button><button type="button" data-ixw-dot aria-label="Stop 5: draft"></button><button type="button" data-ixw-dot aria-label="Stop 6: approval gate"></button><button type="button" data-ixw-dot aria-label="Stop 7: route and follow up"></button><button type="button" data-ixw-dot aria-label="Stop 8: run log"></button><button type="button" data-ixw-dot aria-label="Stop 9: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:bot}}Discipline</dt><dd>Workflow automation agent</dd></div><div><dt>{{icon:zap}}Trigger</dt><dd>Runs on an event you choose</dd></div><div><dt>{{icon:usercheck}}Control</dt><dd>Human approval and guardrails</dd></div><div><dt>{{icon:file}}Every step</dt><dd>Logged for audit</dd></div><div><dt>{{icon:plug}}Connects</dt><dd>The tools you already use</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec sor-memo-sec">
+  <div class="container"><div class="answer-box sor-memo reveal"><p class="answer-h">In one paragraph</p><p>AI workflow automation lets an agent run the multi-step work between your systems: classify an email, pull the record, prepare the document, route it and follow up. TechNext builds these agents across email, Odoo and your other tools, with a person approving before anything irreversible happens and every step logged.</p></div></div>
+</section>
+
+<section class="section demo-sec sor-desk-sec" id="bill-agent">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">watch an agent run</span><h2>AI workflow automation for vendor bills, from inbox to payment run.</h2><p class="lead">A TechNext agent reads each bill, checks it against the purchase order and receipt in Odoo, and routes it by how sure it is: sure bills go to a one-click batch approval, the rest to a person who checks the fields. Nothing posts or pays without a person. Drag the confidence threshold and watch the split between the fast track and review change, switch the day, and click any bill in the trace to follow it.</p></div>
+    <div class="sor-console">
+      <div class="sor-console-top" aria-hidden="true"><span class="sor-lamp"></span><b>Sorting console</b><i>live run · sample bills</i><span class="sor-gauge"><i></i></span></div>
+    <div class="dm dm-agentrun reveal" data-demo="agentrun">
+      <div class="dm-head">
+        <div class="dm-title"><b>Agent run · vendor bill intake</b><small>Sample bills · SGD · GST 9%</small></div>
+        <div class="dm-seg" role="group" aria-label="Choose the day">
+          <button type="button" data-sc="normal" aria-pressed="true">{{icon:mail}}Normal day</button>
+          <button type="button" data-sc="rush" aria-pressed="false">{{icon:zap}}Month-end rush</button>
+          <button type="button" data-sc="newsup" aria-pressed="false">{{icon:users}}New suppliers</button>
+        </div>
+        <button class="dm-btn" type="button" data-play><i class="arn-pz" aria-hidden="true"></i>{{icon:play}}<span>Pause</span></button>
+      </div>
+      <div class="arn-dag" role="group" aria-label="The agent's run: hover or focus a step for details">
+        <svg class="arn-edges" aria-hidden="true" focusable="false"></svg>
+        <button type="button" class="arn-n" data-n="in"><span class="arn-ic">{{icon:mail}}</span><span class="arn-t"><b>Bills in</b><small>Email · PDF · scan</small></span><i class="arn-cnt" data-c="in"></i></button>
+        <button type="button" class="arn-n" data-n="ocr"><span class="arn-ic">{{icon:sparkle}}</span><span class="arn-t"><b>Read the bill</b><small>OCR · fields + confidence</small></span></button>
+        <button type="button" class="arn-n" data-n="rules"><span class="arn-ic">{{icon:shield}}</span><span class="arn-t"><b>Validation rules</b><span class="arn-lamps"><i data-r="po">PO</i><i data-r="tol">±2%</i><i data-r="dup">Dup</i><i data-r="gst">GST</i></span></span></button>
+        <button type="button" class="arn-n arn-n--gate" data-n="gate"><span class="arn-dia"></span><span class="arn-t"><b>≥ <span data-th>90</span>%</b><small>confidence</small></span></button>
+        <button type="button" class="arn-n" data-n="rev"><span class="arn-ic">{{icon:usercheck}}</span><span class="arn-t"><b>Review queue</b><small data-q>AP clerk checks fields</small></span></button>
+        <button type="button" class="arn-n" data-n="apr"><span class="arn-ic">{{icon:check}}</span><span class="arn-t"><b>Approval</b><small>Budget owner</small></span></button>
+        <button type="button" class="arn-n arn-n--odoo" data-n="post"><span class="arn-ic">{{odoo:account:22}}</span><span class="arn-t"><b>Post to Odoo</b><small>Accounting · journal entry</small></span><i class="arn-cnt" data-c="post"></i></button>
+        <button type="button" class="arn-n" data-n="pay"><span class="arn-ic">{{icon:bank}}</span><span class="arn-t"><b>Schedule payment</b><small>Due date · payment batch</small></span><i class="arn-cnt" data-c="pay"></i></button>
+        <button type="button" class="arn-n arn-n--exc" data-n="exc"><span class="arn-ic">{{icon:search}}</span><span class="arn-t"><b>Exceptions</b><small>Buyer or AP resolves</small></span><i class="arn-cnt" data-c="exc"></i></button>
+        <button type="button" class="arn-n arn-n--rej" data-n="rej"><span class="arn-ic">{{icon:x}}</span><span class="arn-t"><b>Rejected</b><small>Duplicate · not a bill</small></span><i class="arn-cnt" data-c="rej"></i></button>
+        <div class="arn-toks" aria-hidden="true"></div>
+      </div>
+      <div class="arn-cards">
+        <div class="arn-card arn-bill" aria-label="The bill being read">
+          <p class="arn-ch">{{icon:file}}<b>Bill on the desk</b><small data-b="follow">latest read</small></p>
+          <div class="arn-bh"><b data-b="ref">–</b><span data-b="vendor"></span><em data-b="state"></em></div>
+          <ul class="arn-fields"></ul>
+          <p class="arn-verdict" data-b="verdict"></p>
+          <div class="arn-je" data-b="je" hidden></div>
+        </div>
+        <div class="arn-card arn-hist">
+          <p class="arn-ch">{{icon:bars}}<b>Confidence, 240 sample bills</b><small>lowest field on each bill</small></p>
+          <svg class="arn-hsvg" role="img" aria-label="Histogram of confidence scores with the fast-track threshold"></svg>
+          <div class="arn-th"><label for="arn-th">Fast-track threshold</label><input type="range" id="arn-th" min="70" max="99" step="1" value="90"><output for="arn-th" data-thv>90%</output></div>
+          <ul class="arn-split" aria-live="polite"><li data-s="auto"><i></i><b>0</b>fast track, batch approval</li><li data-s="rev"><i></i><b>0</b>go to review</li><li data-s="exc"><i></i><b>0</b>fail a rule</li></ul>
+        </div>
+        <div class="arn-card arn-trace">
+          <dl class="dm-kpis arn-kpis">
+            <div class="dm-ok"><dt>Fast-tracked</dt><dd data-k="auto">0</dd></div>
+            <div><dt>In review</dt><dd data-k="rev">0</dd></div>
+            <div><dt>Exceptions</dt><dd data-k="exc">0</dd></div>
+            <div><dt>Rejected</dt><dd data-k="rej">0</dd></div>
+          </dl>
+          <p class="arn-ch">{{icon:layers}}<b>Trace log</b><small>click a bill to follow it</small></p>
+          <ol class="arn-log"></ol>
+        </div>
+      </div>
+      <div class="dm-static">
+        <p><b>Bills in:</b> the bills inbox, supplier uploads and scans. <b>Read the bill:</b> OCR extracts vendor, bill number, dates, PO reference, subtotal, GST and total, each with a confidence score.</p>
+        <p><b>Validation rules:</b> PO match, amount within tolerance of the PO and receipt, duplicate check, GST 9% check. A failed rule sends the bill to exceptions, where the buyer confirms it or AP rejects it.</p>
+        <p><b>Confidence gate:</b> at or above the threshold the bill joins a one-click batch approval, then posts to Odoo Accounting; below it, an AP clerk reviews the fields and the budget owner approves. Posted bills are scheduled for payment by their terms, and Finance releases the payment batch.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample data, sped up. The fast track still has a person in it: a one-click batch approval before anything posts, and Finance releases every payment batch.</p>
+  </div>
+</section>
+
+
+<section class="section sor-stamps-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>Where an agent earns its place.</h2>
+    </div>
+    <div class="sor-stamps">
+      <article class="sor-stamp reveal" style="--i:0;--c:#3167CA"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">01</span><div class="card-ic">{{icon:zap}}</div><h3>Event triggers</h3><p>A new email, record, file or a scheduled time starts the run — no one has to remember to kick it off.</p><span class="sor-pm" aria-hidden="true">TRIGGER</span></div></article>
+      <article class="sor-stamp reveal" style="--i:1;--c:#3FA9E0"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">02</span><div class="card-ic">{{icon:layers}}</div><h3>Multi-step tasks</h3><p>Read, classify, look up the record, prepare a document, route it and schedule the follow-up — in sequence.</p><span class="sor-pm" aria-hidden="true">IN SEQUENCE</span></div></article>
+      <article class="sor-stamp reveal" style="--i:2;--c:#1E9E6A"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">03</span><div class="card-ic">{{icon:usercheck}}</div><h3>Approval gates</h3><p>A person signs off before anything irreversible — a payment, a posting, a message to a customer.</p><span class="sor-pm" aria-hidden="true">APPROVED</span></div></article>
+      <article class="sor-stamp reveal" style="--i:3;--c:#D64A3A"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">04</span><div class="card-ic">{{icon:shield}}</div><h3>Guardrails</h3><p>We set what the agent may do alone, what waits for approval, and what it must never do at all.</p><span class="sor-pm" aria-hidden="true">GUARDED</span></div></article>
+      <article class="sor-stamp reveal" style="--i:4;--c:#2F5D6B"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">05</span><div class="card-ic">{{icon:file}}</div><h3>Audit trail</h3><p>Every action is logged against the record it touched, so you can see what ran and why.</p><span class="sor-pm" aria-hidden="true">LOGGED</span></div></article>
+      <article class="sor-stamp reveal" style="--i:5;--c:#714B67"><div class="sor-stamp-in"><span class="sor-val" aria-hidden="true">06</span><div class="card-ic">{{icon:plug}}</div><h3>Connected tools</h3><p>Email, documents, spreadsheets, Odoo and your other systems joined through APIs and connectors.</p><span class="sor-pm" aria-hidden="true">CONNECTED</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt sor-route-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how we build one</span>
+      <h2>Map it, automate it, keep a gate.</h2>
+    </div>
+    <div class="sor-route reveal">
+      <ol class="sor-stops">
+        <li class="sor-stop reveal" style="--i:0"><span class="sor-stop-n">1</span><span class="sor-stop-ic" aria-hidden="true">{{icon:search}}</span><h3>Map the workflow</h3><p>Every step, system and decision, and where time is lost today — written down before anything is built.</p></li>
+        <li class="sor-stop sor-stop--gate reveal" style="--i:1"><span class="sor-stop-n">2</span><span class="sor-stop-ic" aria-hidden="true">{{icon:shield}}</span><h3>Set the gates</h3><p>What the agent may do alone, what waits for approval, and what it must never do.</p></li>
+        <li class="sor-stop reveal" style="--i:2"><span class="sor-stop-n">3</span><span class="sor-stop-ic" aria-hidden="true">{{icon:plug}}</span><h3>Build and connect</h3><p>Odoo, email, documents, spreadsheets and your tools connected through APIs and connectors.</p></li>
+        <li class="sor-stop reveal" style="--i:3"><span class="sor-stop-n">4</span><span class="sor-stop-ic" aria-hidden="true">{{icon:bars}}</span><h3>Run and measure</h3><p>Handled, escalated, corrected — reported back, with gates loosened only when there's evidence to.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section sor-ledger-sec">
+  <div class="container">
+    <div class="two two--top sor-ledger">
+      <div class="reveal sor-ledger-l">
+        <span class="hand">what you get</span>
+        <h2>Agents prepare; people post.</h2>
+        <p class="lead">Nothing irreversible happens without a person. Every action is logged against the record it touched, any step can be replayed or rolled back, and you can pause a workflow at any time.</p>
+      </div>
+      <ol class="sor-log reveal">
+        <li><i class="sor-t" aria-hidden="true">01</i>{{icon:check}}<span>Runs triggered by the events you choose</span></li>
+        <li><i class="sor-t" aria-hidden="true">02</i>{{icon:check}}<span>Approval steps for payments, postings and commitments</span></li>
+        <li><i class="sor-t" aria-hidden="true">03</i>{{icon:check}}<span>Guardrails for what the agent may and may not do</span></li>
+        <li><i class="sor-t" aria-hidden="true">04</i>{{icon:check}}<span>A full action log on the record it touched</span></li>
+        <li><i class="sor-t" aria-hidden="true">05</i>{{icon:check}}<span>Access scoped to what the task needs</span></li>
+        <li><i class="sor-t" aria-hidden="true">06</i>{{icon:check}}<span>Kill switch and pause per workflow</span></li>
+        <li><i class="sor-t" aria-hidden="true">07</i>{{icon:check}}<span>Replay or roll back any step</span></li>
+        <li><i class="sor-t" aria-hidden="true">08</i>{{icon:check}}<span>Connected to email, documents, spreadsheets and Odoo</span></li>
+        <li><i class="sor-t" aria-hidden="true">09</i>{{icon:check}}<span>Works with the tools you already use</span></li>
+        <li><i class="sor-t" aria-hidden="true">10</i>{{icon:check}}<span>Grounded in your own data, not guesswork</span></li>
+        <li><i class="sor-t" aria-hidden="true">11</i>{{icon:check}}<span>A monthly report: handled, escalated, corrected</span></li>
+        <li><i class="sor-t" aria-hidden="true">12</i>{{icon:check}}<span>Clear pricing on quotation</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt sor-faq-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">questions</span>
+      <h2>What teams ask before they start.</h2>
+    </div>
+    <div class="faq sor-faq reveal">
+      <details><summary>Will it act without us? {{icon:chevron}}</summary><div class="faq-a"><p>No. Anything irreversible — a payment, a posting, a message to a customer — waits for a person to approve. The agent prepares the step; you release it.</p></div></details>
+      <details><summary>How do we know what it did? {{icon:chevron}}</summary><div class="faq-a"><p>Every action is logged against the record it touched, and any step can be replayed or rolled back if something looks wrong.</p></div></details>
+      <details><summary>What can it connect to? {{icon:chevron}}</summary><div class="faq-a"><p>Email, documents, spreadsheets, Odoo and your other systems, joined through APIs and connectors so the agent works across them in one run.</p></div></details>
+      <details><summary>Can we stop it quickly? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. There's a kill switch and a pause per workflow, and access is scoped so the agent only ever sees what its task needs.</p></div></details>
+      <details><summary>Does it need Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>No. Agents work with the tools you already use, and connect to Odoo when you run it — reading and preparing records inside the ERP.</p></div></details>
+      <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to the workflow and systems involved. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section sor-rel-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>Pairs well with these.</h2>
+    </div>
+    <div class="grid-3 sor-rel">
+      <a class="card sor-ptag reveal" style="--i:0;--c:#714B67" href="{{ROOT}}odoo/ai-integration.html"><div class="card-ic">{{icon:cpu}}</div><h3>AI inside Odoo</h3><p>Run these workflows on your ERP records — bills matched, replies drafted, records summarised.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card sor-ptag reveal" style="--i:1;--c:#1E9E6A" href="{{ROOT}}solutions/ai-chatbots.html"><div class="card-ic">{{icon:bot}}</div><h3>AI chatbots</h3><p>Let a conversation kick off a workflow, then capture the lead or booking that follows.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card sor-ptag reveal" style="--i:2;--c:#3167CA" href="{{ROOT}}solutions/ai.html"><div class="card-ic">{{icon:sparkle}}</div><h3>AI overview</h3><p>See how automation agents fit alongside the other three AI disciplines.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt sor-end-sec">
+  <div class="container">
+    <div class="cta sor-env reveal">
+      <span class="sor-seal" aria-hidden="true">TN</span>
+      <div>
+        <span class="hand">next step</span>
+        <h2>Describe one workflow that eats your week.</h2>
+        <p>Steps, systems and who approves what — we'll return a design and a first-version estimate.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

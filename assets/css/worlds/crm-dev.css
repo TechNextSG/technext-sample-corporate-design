@@ -1,0 +1,287 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: crm-dev (/odoo/crm-development) — a CRM shaped around how the client sells. CRM mint, deal-bell gold, Odoo purple.
+   The title card is an opportunity card from the pipeline (its stage chip, stars and an expected-revenue footer); the
+   caption is an activity on the lead (a "next activity" chip); buttons are stage chevrons that point onward; the glance
+   strip is the pipeline's stage bar. */
+.ixw--crm-dev{--ow-c:#21B799;--cr-ink:#1B1F3B;--cr-mint:#21B799;--cr-mint-l:#E6F7F1;--cr-gold:#E9B949;--cr-pur:#714B67;
+  --w-alt:#F3FAF7;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#F4FBF8,#D9F2E8 60%,#FFF1D0);--ii-ink:#1B1F3B;--ii-b:#21B799;--ii-accent:#E9B949;--ii-lip:#1B1F3B;--ii-ep-bg:#21B799;--ii-ep-fg:#FFFFFF}
+.ixw--crm-dev .ixw-hero{background:linear-gradient(180deg,#9FD3F6 0,#E6F5FD 20%,#EEF3F7 38%,#E8EFF4 60%,#A6DE8F 60%,#86CC72 100%)}
+
+/* ---------- the title card: an opportunity card ---------- */
+.ixw--crm-dev .ixw-copy{position:relative;max-width:510px;margin-top:20px;padding:30px 30px 60px;border-radius:12px;background:#FFFFFF;border-left:7px solid var(--cr-mint);
+  box-shadow:0 0 0 1.5px #D3EBE1,0 40px 70px -30px rgba(20,80,60,.35)}
+.ixw--crm-dev .ixw-copy::before{content:"PROPOSITION";position:absolute;right:20px;top:-12px;padding:6px 11px;border-radius:999px;background:var(--cr-mint-l);box-shadow:0 0 0 1.5px #A9DFCD;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;color:#127A64}
+.ixw--crm-dev .ixw-copy::after{content:"\2605\2605\2605   Expected: a pipeline you trust";position:absolute;left:0;right:0;bottom:0;height:42px;display:flex;align-items:center;padding-left:24px;border-radius:0 0 12px 0;
+  background:#FBFCFD;border-top:1.5px solid #E3EEE9;font:800 12px/1 var(--font-body);color:#3D4560;letter-spacing:.02em}
+.ixw--crm-dev .ixw-copy h1{max-width:14ch}
+.ixw--crm-dev .ixw-copy .hand{color:#127A64}
+.ixw--crm-dev .ixw-hint .ic{color:var(--cr-gold)}
+@media (max-width:767px){.ixw--crm-dev .ixw-copy{padding:26px 20px 56px}.ixw--crm-dev .ixw-copy::before{display:none}}
+
+/* ---------- the caption: an activity on the lead ---------- */
+.ixw--crm-dev .ixw-cap{border-radius:14px;border:0;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3EBE1,0 0 0 6px var(--cr-mint-l),0 26px 44px -22px rgba(20,80,60,.35)}
+.ixw--crm-dev .ixw-cap::before{content:"\25F7  NEXT ACTIVITY";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:999px;background:var(--cr-gold);color:#1B1F3B;font:800 10.5px/1 var(--font-body);letter-spacing:.12em}
+.ixw--crm-dev .ixw-cap-who b{color:#127A64}.ixw--crm-dev .ixw-cap-txt b{color:var(--cr-pur)}
+.ixw--crm-dev .ixw-cap-rec{background:var(--cr-mint-l);border:1px dashed #8AD9C2;color:#0E5A4C}
+
+/* ---------- buttons: stage chevrons that point onward ---------- */
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:0;border-radius:8px 0 0 8px;padding-right:34px;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);transition:translate .22s cubic-bezier(.34,1.45,.64,1),filter .2s ease}
+.ixw--crm-dev main .btn-primary,.ixw--crm-dev main .btn-primary:hover{color:#FFFFFF;background:var(--cr-mint)}
+.ixw--crm-dev main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--crm-dev main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--cr-ink);background:#E3EEE9}
+.ixw--crm-dev main .btn-ghost::before{display:none}.ixw--crm-dev main .btn-ghost .ic{color:#127A64}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){filter:drop-shadow(0 4px 0 rgba(14,90,76,.55))}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:4px -1px}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;filter:none;transition-duration:.06s}
+.ixw--crm-dev .ixw-cta .btn-outline-white,.ixw--crm-dev .ixw-cta .btn-outline-white:hover{color:#1B1F3B;background:var(--cr-gold)}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--crm-dev .ixw-ibtn{border:2px solid var(--cr-ink);box-shadow:0 3px 0 var(--cr-ink)}
+.ixw--crm-dev .ixw-ibtn--play,.ixw--crm-dev .ixw-ibtn--play:hover{background:var(--cr-mint);color:#FFFFFF}
+.ixw--crm-dev .ixw-dots button.is-on{background:var(--cr-gold);box-shadow:0 0 0 1.5px var(--cr-ink)}
+.ixw--crm-dev .ixw-peek{border-color:var(--cr-ink);box-shadow:0 3px 0 var(--cr-ink)}.ixw--crm-dev .ixw-peek[aria-pressed="true"]{background:var(--cr-mint-l)}
+
+/* ---------- the glance strip: the pipeline's stage bar ---------- */
+.ixw--crm-dev .ow-strip{border-radius:12px;box-shadow:0 0 0 1.5px #D3EBE1,0 24px 44px -30px rgba(20,80,60,.3);
+  background:linear-gradient(90deg,#D5DCE6 0 25%,#9ADBC8 25% 50%,#5BC4A6 50% 75%,#2BC48A 75%) 0 0/100% 5px no-repeat,#FFFFFF}
+.ixw--crm-dev .ow-strip dt .ic{color:#127A64}
+
+/* ---------- the end card ---------- */
+.ixw--crm-dev main .cta{background:radial-gradient(circle at 88% 18%,rgba(233,185,73,.4),transparent 45%),linear-gradient(120deg,#0E5A4C,#21B799)}
+
+/* ============================== below the hero: the relay, section by section ============================== */
+.ixw--crm-dev{--cr-track:#E2725A;--cr-track-d:#B9533E;--cr-track-l:#FBE3DA;--cr-navy:#14304A;--cr-grass:#A6DE8F;--cr-chk:repeating-conic-gradient(#1B1F3B 0 25%,#FFFFFF 0 50%)}
+/* the glance strip: the track itself, lanes numbered */
+.ixw--crm-dev .ow-strip{counter-reset:lane;background:linear-gradient(180deg,var(--cr-track) 0 3px,#FFFFFF 3px 4.5px,var(--cr-track) 4.5px 8px,#FFFFFF 8px 9.5px,var(--cr-track) 9.5px 13px) 0 0/100% 13px no-repeat,#FFFFFF;padding-top:14px}
+.ixw--crm-dev .ow-strip>div{counter-increment:lane;position:relative}
+.ixw--crm-dev .ow-strip>div::after{content:"Lane " counter(lane);position:absolute;right:0;top:18px;padding:3px 7px;border-radius:999px;background:var(--cr-track-l);color:var(--cr-track-d);font:800 9.5px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:960px){.ixw--crm-dev .ow-strip>div::after{display:none}}
+
+/* the one-paragraph answer: a race briefing at the start line */
+.ixw--crm-dev .cr-brief{max-width:980px;padding:24px 28px 24px 112px;border:0;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3EBE1,0 24px 44px -30px rgba(20,80,60,.35);overflow:hidden}
+.ixw--crm-dev .cr-brief::before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;background:var(--cr-chk) 0 0/9px 9px}
+.ixw--crm-dev .cr-flag{position:absolute;left:42px;top:50%;width:44px;height:56px;margin-top:-30px}
+.ixw--crm-dev .cr-flag::before{content:"";position:absolute;left:2px;top:0;bottom:0;width:4px;border-radius:2px;background:#7A869C}
+.ixw--crm-dev .cr-flag::after{content:"";position:absolute;left:6px;top:2px;width:36px;height:26px;border-radius:0 4px 4px 0;background:var(--cr-chk) 0 0/9px 9px;transform-origin:0 50%;animation:crFlag 2.4s ease-in-out infinite}
+@keyframes crFlag{0%,100%{transform:skewY(0)}50%{transform:skewY(-6deg) scaleX(.94)}}
+.ixw--crm-dev .cr-brief .answer-h{background:var(--cr-mint-l);color:#127A64}
+.ixw--crm-dev .cr-brief p:not(.answer-h){font-size:15px;color:#3D4560}
+@media (max-width:640px){.ixw--crm-dev .cr-brief{padding:20px 18px 20px 76px}.ixw--crm-dev .cr-flag{left:28px;transform:scale(.8)}}
+
+/* the demo: the stadium's jumbotron, a graphite frame with a live header and the stage lanes */
+.ixw--crm-dev .cr-demo-sec{background:linear-gradient(180deg,#FFFFFF 0,#F1FAF6 100%)}
+.ixw--crm-dev .cr-tron{position:relative;padding:12px;border-radius:30px;background:#2A3142;box-shadow:0 0 0 4px #3A4458,0 50px 80px -46px rgba(10,30,40,.65)}
+.ixw--crm-dev .cr-tron::before,.ixw--crm-dev .cr-tron::after{content:"";position:absolute;top:84px;width:22px;height:96px;border-radius:8px;background:radial-gradient(circle,#4A5468 6px,#2A3142 6.5px) 50% 0/22px 32px repeat-y,#2A3142;box-shadow:0 0 0 3px #3A4458}
+.ixw--crm-dev .cr-tron::before{left:-36px}.ixw--crm-dev .cr-tron::after{right:-36px}
+.ixw--crm-dev .cr-tron-top{display:flex;align-items:center;gap:14px;padding:6px 10px 12px;color:#FFFFFF;font:800 12.5px/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase}
+.ixw--crm-dev .cr-live{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:rgba(255,111,111,.16);color:#FFB3B3;font-size:10.5px}
+.ixw--crm-dev .cr-live::before{content:"";width:7px;height:7px;border-radius:50%;background:#FF6F6F;animation:crBlink 1.2s steps(2,start) infinite}
+@keyframes crBlink{to{visibility:hidden}}
+.ixw--crm-dev .cr-tron-lanes{display:flex;gap:6px;margin-left:auto}
+.ixw--crm-dev .cr-tron-lanes i{padding:5px 10px;border-radius:999px;background:rgba(127,240,207,.12);color:#7FF0CF;font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.06em}
+.ixw--crm-dev .cr-tron-lanes i:last-child{background:#2BC48A;color:#0E3B2C}
+.ixw--crm-dev .cr-tron .dm{border-radius:20px;box-shadow:none}
+@media (max-width:1240px){.ixw--crm-dev .cr-tron::before,.ixw--crm-dev .cr-tron::after{display:none}}
+@media (max-width:767px){.ixw--crm-dev .cr-tron{padding:8px;border-radius:22px}.ixw--crm-dev .cr-tron-lanes{display:none}}
+
+/* what's included: six race bibs, pinned at the corners */
+.ixw--crm-dev .cr-bibs-sec{background:linear-gradient(180deg,#F1FAF6 0,#FFFFFF 70%)}
+.ixw--crm-dev .cr-bibs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.ixw--crm-dev .cr-bib{position:relative;padding:62px 26px 26px;border-radius:14px;background:
+  radial-gradient(circle at 14px 14px,#C9D3DE 3.5px,#FFFFFF 4px,transparent 5px),radial-gradient(circle at calc(100% - 14px) 14px,#C9D3DE 3.5px,#FFFFFF 4px,transparent 5px),
+  radial-gradient(circle at 14px calc(100% - 14px),#C9D3DE 3.5px,transparent 4px),radial-gradient(circle at calc(100% - 14px) calc(100% - 14px),#C9D3DE 3.5px,transparent 4px),#FFFFFF;
+  box-shadow:0 0 0 1.5px #E3E8EF,0 3px 0 #E3E8EF,0 26px 40px -30px rgba(20,40,60,.4);transform:rotate(var(--rot,0deg));transition:transform .45s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease;overflow:hidden}
+.ixw--crm-dev .cr-bib:nth-child(3n+1){--rot:-.6deg}.ixw--crm-dev .cr-bib:nth-child(3n+3){--rot:.6deg}
+.ixw--crm-dev .cr-bib:hover{transform:rotate(0) translateY(-6px);box-shadow:0 0 0 2px var(--c),0 5px 0 var(--c),0 34px 46px -30px rgba(20,40,60,.45)}
+.ixw--crm-dev .cr-bib-top{position:absolute;left:0;right:0;top:0;height:40px;display:flex;align-items:center;padding:0 30px;background:var(--c);color:#FFFFFF;font:800 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--crm-dev .cr-bib-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 14px,transparent 14px 28px)}
+.ixw--crm-dev .cr-bib-n{position:absolute;right:20px;top:46px;font:800 64px/1 var(--font-display);letter-spacing:-.04em;color:var(--c);opacity:.13;transition:opacity .3s ease,transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--crm-dev .cr-bib:hover .cr-bib-n{opacity:.3;transform:scale(1.08)}
+.ixw--crm-dev .cr-bib .card-ic{display:grid;place-items:center;width:52px;height:52px;margin-bottom:16px;border-radius:14px;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);color:var(--c)}
+.ixw--crm-dev .cr-bib .card-ic .ic{width:26px;height:26px}.ixw--crm-dev .cr-bib .card-ic .oi{width:34px;height:34px}
+.ixw--crm-dev .cr-bib h3{margin-bottom:8px;font-size:1.16rem}
+.ixw--crm-dev .cr-bib p{margin:0;font-size:15px;line-height:1.6;color:#4A5268}
+@media (max-width:960px){.ixw--crm-dev .cr-bibs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ixw--crm-dev .cr-bibs{grid-template-columns:minmax(0,1fr);gap:18px}}
+
+/* how we build it: four legs of the relay on one track, the baton passed at each hand-off */
+.ixw--crm-dev .cr-relay-sec{background-color:#EEF8F1;background-image:repeating-linear-gradient(100deg,rgba(255,255,255,.45) 0 60px,transparent 60px 120px)}
+.ixw--crm-dev .cr-relay{position:relative;padding-top:34px}
+.ixw--crm-dev .cr-relay-track{position:absolute;left:0;right:0;top:40px;height:34px;border-radius:999px;background:linear-gradient(180deg,#EE9478 0,#E06A50 100%);box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 10px 20px -12px rgba(150,60,40,.55)}
+.ixw--crm-dev .cr-relay-track::before{content:"";position:absolute;left:18px;right:18px;top:50%;height:2px;margin-top:-1px;background:repeating-linear-gradient(90deg,#FFFFFF 0 16px,transparent 16px 28px)}
+.ixw--crm-dev .cr-relay-track::after{content:"";position:absolute;right:0;top:0;bottom:0;width:30px;border-radius:0 999px 999px 0;background:var(--cr-chk) 0 0/8.5px 8.5px}
+.ixw--crm-dev .cr-relay-track span{position:absolute;top:-24px;font:800 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#B9533E}
+.ixw--crm-dev .cr-relay-track span:first-child{left:6px}.ixw--crm-dev .cr-relay-track span:last-child{right:6px}
+.ixw--crm-dev .cr-legs{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.ixw--crm-dev .cr-leg{position:relative;padding:62px 22px 24px;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D3EBE1,0 22px 36px -28px rgba(20,80,60,.4);transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--crm-dev .cr-leg:hover{transform:translateY(-5px)}
+.ixw--crm-dev .cr-leg-n{position:absolute;left:50%;top:-26px;display:grid;place-items:center;width:52px;height:52px;margin-left:-26px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 5px var(--cr-mint),0 6px 0 5px #127A64;font:800 22px/1 var(--font-display);color:var(--cr-ink)}
+.ixw--crm-dev .cr-leg:last-child .cr-leg-n{box-shadow:0 0 0 5px var(--cr-gold),0 6px 0 5px #B98E2A}
+.ixw--crm-dev .cr-leg:not(:last-child)::after{content:"";position:absolute;right:-19px;top:-12px;width:16px;height:30px;border-radius:5px;background:linear-gradient(180deg,#FFFFFF 0 7px,var(--cr-gold) 7px);box-shadow:0 3px 0 #B98E2A;transform:rotate(28deg);z-index:2;animation:crBaton 2.6s ease-in-out infinite;animation-delay:calc(var(--i) * .4s)}
+@keyframes crBaton{0%,100%{transform:rotate(28deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-6px)}}
+.ixw--crm-dev .cr-leg h3{margin:0 0 8px;font-size:1.1rem;text-align:center}
+.ixw--crm-dev .cr-leg p{margin:0;font-size:14.5px;line-height:1.6;color:#4A5268;text-align:center}
+@media (max-width:960px){.ixw--crm-dev .cr-legs{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:56px}.ixw--crm-dev .cr-leg::after{display:none}.ixw--crm-dev .cr-relay-track{display:none}.ixw--crm-dev .cr-relay{padding-top:30px}}
+@media (max-width:640px){.ixw--crm-dev .cr-legs{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: the podium beside the list; every item ticked off at the finish */
+.ixw--crm-dev .cr-medal-sec{background:#FFFFFF}
+.ixw--crm-dev .cr-podium{position:relative;display:flex;align-items:flex-end;gap:8px;margin-top:78px;max-width:400px;padding-bottom:14px}
+.ixw--crm-dev .cr-podium::after{content:"";position:absolute;left:-12px;right:-12px;bottom:0;height:10px;border-radius:999px;background:linear-gradient(180deg,var(--cr-track) 0 4px,#FFFFFF 4px 5.5px,var(--cr-track) 5.5px)}
+.ixw--crm-dev .cr-pod::before{content:attr(data-n);position:absolute;left:0;right:0;top:22px;font:800 34px/1 var(--font-display);color:#E3E8EF}
+.ixw--crm-dev .cr-pod--1::before{color:rgba(233,185,73,.45)}
+@media (min-width:961px){.ixw--crm-dev .cr-medal{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
+.ixw--crm-dev .cr-pod{position:relative;flex:1;display:flex;align-items:flex-end;justify-content:center;padding:0 6px 14px;border-radius:10px 10px 4px 4px;background:#FFFFFF;box-shadow:0 0 0 1.5px #E3E8EF,0 4px 0 #E3E8EF;font:800 12px/1.2 var(--font-body);color:#3D4560;text-align:center}
+.ixw--crm-dev .cr-pod--1{height:150px;box-shadow:0 0 0 2px var(--cr-gold),0 5px 0 #B98E2A}.ixw--crm-dev .cr-pod--2{height:112px}.ixw--crm-dev .cr-pod--3{height:88px}
+.ixw--crm-dev .cr-pod i{position:absolute;left:50%;top:-30px;width:40px;height:40px;margin-left:-20px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFFFFF 0 3px,transparent 4px),var(--m,#C9D3DE);box-shadow:0 0 0 4px #FFFFFF,0 6px 14px -4px rgba(0,0,0,.25)}
+.ixw--crm-dev .cr-pod i::after{content:"";position:absolute;left:50%;bottom:100%;width:16px;height:22px;margin-left:-8px;background:linear-gradient(90deg,#3167CA 0 50%,#21B799 50%);clip-path:polygon(0 0,100% 0,100% 100%,50% 70%,0 100%);transform:translateY(4px)}
+.ixw--crm-dev .cr-pod--1 i{--m:var(--cr-gold);width:48px;height:48px;margin-left:-24px;top:-36px;animation:crShine 3s ease-in-out infinite}
+.ixw--crm-dev .cr-pod--3 i{--m:#E5A877}
+@keyframes crShine{0%,100%{filter:brightness(1)}50%{filter:brightness(1.15) drop-shadow(0 0 8px rgba(233,185,73,.7))}}
+.ixw--crm-dev .cr-checks{padding:26px 28px;border-radius:20px;background:#F6FBF9;box-shadow:inset 0 0 0 1.5px #D3EBE1}
+.ixw--crm-dev .cr-checks li{position:relative;padding-left:4px}
+.ixw--crm-dev .cr-checks li .ic{width:22px;height:22px;padding:4px;border-radius:6px;background:var(--cr-mint);color:#FFFFFF;margin-top:0}
+.ixw--crm-dev .cr-checks li:nth-child(6) .ic,.ixw--crm-dev .cr-checks li:nth-child(7) .ic{background:var(--cr-gold);color:#1B1F3B}
+.ixw--crm-dev .cr-checks a{color:#127A64;font-weight:700}
+
+/* the FAQ: questions from the stands, each row a seat in the stand */
+.ixw--crm-dev .cr-stands-sec{background-color:#F3F8FB;background-image:radial-gradient(circle,rgba(91,196,166,.18) 4px,transparent 4.5px),linear-gradient(180deg,transparent 0 19px,rgba(20,48,74,.05) 19px 21px);background-size:16px 21px,100% 21px}
+.ixw--crm-dev .cr-faq{counter-reset:q;max-width:900px}
+.ixw--crm-dev .cr-faq details{counter-increment:q;border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #D9E5EE,0 3px 0 #D9E5EE;transition:box-shadow .25s ease,transform .3s cubic-bezier(.34,1.45,.64,1)}
+.ixw--crm-dev .cr-faq details:hover{transform:translateX(4px)}
+.ixw--crm-dev .cr-faq details[open]{box-shadow:0 0 0 2px var(--cr-mint),0 4px 0 #127A64,0 22px 34px -24px rgba(20,80,60,.4)}
+.ixw--crm-dev .cr-faq summary{gap:14px;padding-left:16px}
+.ixw--crm-dev .cr-faq summary::before{content:counter(q,decimal-leading-zero);flex:none;display:grid;place-items:center;width:38px;height:30px;border-radius:8px;background:var(--cr-navy);color:#7FF0CF;font:800 13px/1 var(--font-body);letter-spacing:.04em}
+.ixw--crm-dev .cr-faq summary{justify-content:flex-start}.ixw--crm-dev .cr-faq summary .ic{margin-left:auto;color:var(--cr-track)}
+.ixw--crm-dev .cr-faq details[open] summary::before{background:var(--cr-mint);color:#FFFFFF}
+.ixw--crm-dev .cr-faq .faq-a{padding-left:68px}
+.ixw--crm-dev .cr-faq .faq-a a{color:#127A64;font-weight:700}
+@media (max-width:640px){.ixw--crm-dev .cr-faq .faq-a{padding-left:22px}}
+
+/* related services: event tickets with a torn stub */
+.ixw--crm-dev .cr-ticket{padding:28px 28px 26px 86px;border:0;border-radius:16px;background:radial-gradient(circle at 64px 0,transparent 9px,#FFFFFF 9.5px) top/100% 51% no-repeat,radial-gradient(circle at 64px 100%,transparent 9px,#FFFFFF 9.5px) bottom/100% 51% no-repeat;
+  box-shadow:none;filter:drop-shadow(0 0 1.5px #D3DCE6) drop-shadow(0 18px 20px rgba(20,40,60,.12));transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--crm-dev .cr-ticket:hover{transform:translateY(-6px) rotate(-.6deg);border:0}
+.ixw--crm-dev .cr-ticket::before{content:"";position:absolute;left:64px;top:14px;bottom:14px;border-left:2px dashed #D3DCE6}
+.ixw--crm-dev .cr-ticket .card-ic{position:absolute;left:0;top:0;bottom:0;width:64px;min-height:0;margin:0;display:grid;place-items:center;border-radius:16px 0 0 16px;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);color:var(--c)}
+.ixw--crm-dev .cr-ticket .card-ic .ic{width:26px;height:26px}.ixw--crm-dev .cr-ticket .card-ic .oi{width:32px;height:32px}
+.ixw--crm-dev .cr-ticket .btn-link{color:var(--c)}
+
+/* the end card: the finish line */
+.ixw--crm-dev .cr-finish-sec .cta{padding-top:74px;background:radial-gradient(circle at 88% 30%,rgba(233,185,73,.45),transparent 40%),linear-gradient(120deg,#0E5A4C,#21B799)}
+.ixw--crm-dev .cr-finish-sec .cta::before{content:"";position:absolute;left:0;right:0;top:0;height:22px;background:var(--cr-chk) 0 0/11px 11px;opacity:.9}
+.ixw--crm-dev .cr-finish-sec .cta::after{right:-60px;top:auto;bottom:-140px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,216,74,.35),rgba(255,216,74,0) 70%)}
+/* ======== round 4: section fixes ======== */
+/* the FAQ: the stand's sign on the left, the questions on the right (wide screens) */
+@media (min-width:1024px){.ixw--crm-dev .cr-stands-sec .container{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}
+  .ixw--crm-dev .cr-stands-sec .sec-head{position:sticky;top:110px;margin:0}.ixw--crm-dev .cr-stands-sec .faq{max-width:none}}
+/* the end card's buttons as stage chevrons too */
+.ixw--crm-dev main .cta :is(.btn-white,.btn-outline-white){overflow:visible;height:52px;padding:0 18px 0 22px;margin-right:18px;border:0;border-radius:10px 3px 3px 10px;filter:drop-shadow(0 4px 0 var(--crb-lip));transition:translate .22s cubic-bezier(.34,1.45,.64,1),filter .2s ease}
+.ixw--crm-dev main .cta .btn-white,.ixw--crm-dev main .cta .btn-white:hover{--crb-lip:#0A5E4E;color:#0E5A4C;background:#FFFFFF}
+.ixw--crm-dev main .cta .btn-outline-white,.ixw--crm-dev main .cta .btn-outline-white:hover{--crb-lip:#B58A22;color:#1B1F3B;background:#E9B949}
+.ixw--crm-dev main .cta .btn-outline-white::before{display:none}
+.ixw--crm-dev main .cta :is(.btn-white,.btn-outline-white)::after{content:"";inset:auto;top:50%;right:-14px;left:auto;width:36px;height:36px;margin-top:-18px;border-radius:4px;background:inherit;transform:scaleX(.62) rotate(45deg);transition:none;z-index:-1}
+.ixw--crm-dev main .cta :is(.btn-white,.btn-outline-white):hover::after{transform:scaleX(.62) rotate(45deg)}
+.ixw--crm-dev main .cta :is(.btn-white,.btn-outline-white):hover{translate:3px -2px;filter:drop-shadow(0 6px 0 var(--crb-lip))}
+.ixw--crm-dev main .cta :is(.btn-white,.btn-outline-white):focus-visible{outline:3px solid #E9B949;outline-offset:5px}
+
+/* ======== round 4: the hero controls: stage chevrons with a real tip, a lip, a glow, pills and caption controls ======== */
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){clip-path:none;overflow:visible;height:52px;padding:0 18px 0 22px;margin-right:18px;border:0;border-radius:10px 3px 3px 10px;box-shadow:none;
+  filter:drop-shadow(0 4px 0 var(--crb-lip));transition:translate .22s cubic-bezier(.34,1.45,.64,1),filter .2s ease}
+.ixw--crm-dev main .btn-primary,.ixw--crm-dev main .btn-primary:hover{--crb-lip:#0A5E4E;color:#FFFFFF;background:#0F8A72}
+.ixw--crm-dev main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--crm-dev main :is(.btn-ghost,.ixw-cta .btn-white):hover{--crb-lip:#8FD2BD;color:#1B1F3B;background:#E6F7F1}
+.ixw--crm-dev main .ixw-cta .btn-outline-white,.ixw--crm-dev main .ixw-cta .btn-outline-white:hover{--crb-lip:#B58A22;color:#1B1F3B;background:#E9B949}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white)::after{content:"";inset:auto;top:50%;right:-14px;left:auto;width:36px;height:36px;margin-top:-18px;border-radius:4px;background:inherit;
+  transform:scaleX(.62) rotate(45deg);transition:none;z-index:-1;pointer-events:none}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover::after{transform:scaleX(.62) rotate(45deg)}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:3px -2px;filter:drop-shadow(0 6px 0 var(--crb-lip)) drop-shadow(0 14px 14px rgba(15,138,114,.28))}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;filter:drop-shadow(0 1px 0 var(--crb-lip));transition-duration:.06s}
+.ixw--crm-dev main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #E9B949;outline-offset:5px}
+.ixw--crm-dev main .btn-primary .ic{width:26px;height:26px;padding:5px;border-radius:50%;background:rgba(255,255,255,.18)}
+.ixw--crm-dev .ixw-copy .actions{gap:14px 8px}
+@media (max-width:420px){.ixw--crm-dev .ixw-copy .actions .btn{height:50px;padding:0 14px 0 18px}}
+
+.ixw--crm-dev .ixw-ep-tag{height:30px;padding:0 13px 0 6px;box-shadow:0 3px 0 #0B0B22;transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--crm-dev .ixw-ep-tag:hover{translate:0 -2px;box-shadow:0 5px 0 #0B0B22}
+.ixw--crm-dev .ixw-ep-tag:active{translate:0 2px;box-shadow:0 1px 0 #0B0B22;transition-duration:.06s}
+.ixw--crm-dev .ixw-ep-tag:focus-visible{outline:3px solid #E9B949;outline-offset:3px}
+.ixw--crm-dev .ixw-ep>span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#E6F7F1;box-shadow:inset 0 0 0 1.5px #0F8A7233;font:800 12.5px/1 var(--font-body);color:#1B1F3B}
+.ixw--crm-dev .ixw-cap .ixw-ibtn{width:38px;height:38px;border:2px solid #1B1F3B;background:#FFFFFF;color:#1B1F3B;box-shadow:0 3px 0 #1B1F3B;transition:translate .18s cubic-bezier(.34,1.45,.64,1),box-shadow .18s ease,background-color .18s ease,color .18s ease}
+.ixw--crm-dev .ixw-cap .ixw-ibtn:hover{translate:0 -2px;background:#E6F7F1;color:#1B1F3B;border-color:#1B1F3B;box-shadow:0 5px 0 #1B1F3B}
+.ixw--crm-dev .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--crm-dev .ixw-cap .ixw-ibtn:focus-visible,.ixw--crm-dev .ixw-dots button:focus-visible,.ixw--crm-dev .ixw-peek:focus-visible{outline:3px solid #E9B949;outline-offset:3px}
+.ixw--crm-dev .ixw-cap .ixw-ibtn--play,.ixw--crm-dev .ixw-cap .ixw-ibtn--play:hover{width:46px;height:46px;background:#0F8A72;color:#FFFFFF}
+.ixw--crm-dev .ixw-cap .ixw-ibtn--play:hover{filter:brightness(1.06)}
+.ixw--crm-dev .ixw-dots{gap:6px;padding:4px 2px}
+.ixw--crm-dev .ixw-dots button{width:9px;height:9px;background:#D5DCE6;box-shadow:inset 0 0 0 1px rgba(27,31,59,.06);transition:width .3s cubic-bezier(.34,1.45,.64,1),background-color .2s ease,translate .2s ease}
+.ixw--crm-dev .ixw-dots button:hover{background:#0F8A72;translate:0 -1px}
+.ixw--crm-dev .ixw-dots button.is-on{width:26px;background:#E9B949;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--crm-dev .ixw-peek{height:40px;padding:0 16px 0 13px;border:2px solid #1B1F3B;color:#1B1F3B;background:#FFFFFF;box-shadow:0 3px 0 #1B1F3B}
+.ixw--crm-dev .ixw-peek::before{color:#0F8A72}
+.ixw--crm-dev .ixw-peek:hover{translate:0 -2px;background:#E6F7F1;box-shadow:0 5px 0 #1B1F3B}
+.ixw--crm-dev .ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 #1B1F3B;transition-duration:.06s}
+.ixw--crm-dev .ixw-peek[aria-pressed="true"]{background:#E6F7F1}
+.ixw--crm-dev .ixw-peek[aria-pressed="true"]::before{color:#1B1F3B}
+@media (prefers-reduced-motion:reduce){.ixw--crm-dev :is(.ixw-ep-tag,.ixw-ibtn,.ixw-peek,.ixw-dots button,.btn){transition:none}}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base, 50% the relay stadium: mint accent, leg colours as thin rules with the leg label kept,
+   a thin track line under the four legs, lane numbers on the FAQ. No scoreboard bezel, bibs, podium, ticket stubs or
+   chequered flags. */
+.ixw--crm-dev{--calm-accent:#1A9E83;--calm-accent-ink:#127A64;--calm-accent-line:#BDE6D9;--calm-accent-wash:#F3FAF7}
+body.ixw--crm-dev main :is(.cr-demo-sec,.cr-bibs-sec,.cr-relay-sec,.cr-stands-sec,.cr-medal-sec){background-image:none!important}
+/* the demo: one clean panel with a slim label row (LIVE + stage lanes kept as small chips) */
+body.ixw--crm-dev main .cr-tron{padding:0!important;border-radius:18px!important;background:none!important;box-shadow:none!important}
+body.ixw--crm-dev main .cr-tron::before,body.ixw--crm-dev main .cr-tron::after{content:none!important;display:none!important}
+body.ixw--crm-dev main .cr-tron-top{padding:0 2px 12px!important;color:var(--ink)!important;font:700 12px/1 var(--font-body)!important;letter-spacing:.08em!important}
+body.ixw--crm-dev main .cr-live{background:#FDECEC!important;color:#B4372F!important}
+body.ixw--crm-dev main .cr-live::before{animation:none!important;background:#E2453C!important}
+body.ixw--crm-dev main .cr-tron-lanes i,body.ixw--crm-dev main .cr-tron-lanes i:last-child{background:#F3FAF7!important;color:#127A64!important;border:1px solid #BDE6D9}
+body.ixw--crm-dev main .cr-tron .dm{border-radius:18px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+/* what's included: white cards, a 3px leg-colour rule, the leg label as a small kicker */
+body.ixw--crm-dev main .cr-bibs{gap:24px!important}
+body.ixw--crm-dev main .cr-bib{padding:26px 26px 26px!important;border-radius:16px!important;background:#fff!important;background-image:none!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important;rotate:none!important}
+body.ixw--crm-dev main .cr-bib::before,body.ixw--crm-dev main .cr-bib::after,body.ixw--crm-dev main .cr-bib-top::after{content:none!important;display:none!important}
+body.ixw--crm-dev main .cr-bib:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+body.ixw--crm-dev main .cr-bib-top{position:static!important;height:auto!important;display:block!important;margin:0 0 16px!important;padding:0!important;background:none!important;color:var(--c)!important;font:700 11px/1.2 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase}
+body.ixw--crm-dev main .cr-bib-n{display:none!important}
+body.ixw--crm-dev main .cr-bib .card-ic{width:48px!important;height:48px!important;border-radius:12px!important}
+/* how we build it: four legs on one thin track */
+body.ixw--crm-dev main .cr-relay{padding-top:22px!important}
+body.ixw--crm-dev main .cr-relay-track{top:22px!important;height:2px!important;border-radius:0!important;background:#BDE6D9!important;box-shadow:none!important}
+body.ixw--crm-dev main .cr-relay-track::before,body.ixw--crm-dev main .cr-relay-track::after{content:none!important;display:none!important}
+body.ixw--crm-dev main .cr-relay-track span{top:-22px!important;color:#127A64!important;font:700 11px/1 var(--font-body)!important}
+body.ixw--crm-dev main .cr-legs{gap:24px!important}
+body.ixw--crm-dev main .cr-leg{padding:44px 22px 24px!important;border-radius:16px!important;border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important;transform:none!important}
+body.ixw--crm-dev main .cr-leg::after{content:none!important;display:none!important}
+body.ixw--crm-dev main .cr-leg-n,body.ixw--crm-dev main .cr-leg:last-child .cr-leg-n{width:44px!important;height:44px!important;margin-left:-22px!important;top:-22px!important;background:#fff!important;border:1.5px solid var(--calm-accent);box-shadow:none!important;color:#127A64!important;font:700 16px/1 var(--font-display)!important}
+/* what you get: a light mint sheet, plain ticks */
+body.ixw--crm-dev main .cr-checks{border-radius:16px!important;background:#fff!important;box-shadow:var(--calm-shadow)!important;border:1px solid var(--calm-line)}
+body.ixw--crm-dev main .cr-checks li .ic,body.ixw--crm-dev main .cr-checks li:nth-child(n) .ic{background:none!important;color:#1A9E83!important;padding:0!important}
+/* FAQ: heading above, lane numbers kept small */
+body.ixw--crm-dev main .cr-stands-sec .container{display:block!important}
+body.ixw--crm-dev main .cr-stands-sec .sec-head{position:static!important;margin:0 0 44px!important}
+body.ixw--crm-dev main .cr-faq{max-width:860px!important}
+body.ixw--crm-dev main .cr-faq details,body.ixw--crm-dev main .cr-faq details[open]{box-shadow:none!important;transform:none!important}
+body.ixw--crm-dev main .cr-faq summary::before{width:34px!important;height:26px!important;background:#F3FAF7!important;color:#127A64!important;font:700 12px/1 var(--font-display)!important;box-shadow:none!important}
+body.ixw--crm-dev main .cr-faq details[open] summary::before{background:#1A9E83!important;color:#fff!important}
+body.ixw--crm-dev main .cr-faq summary .ic{color:var(--muted)!important}
+/* related: plain kit cards with a 3px colour rule */
+body.ixw--crm-dev main .cr-tickets{gap:24px!important}
+body.ixw--crm-dev main .cr-ticket{padding:26px 26px 26px!important;background:#fff!important;filter:none!important;border-top:3px solid var(--c)!important}
+body.ixw--crm-dev main .cr-ticket::before{content:none!important;display:none!important}
+body.ixw--crm-dev main .cr-ticket .card-ic{position:static!important;width:48px!important;height:48px!important;margin:0 0 16px!important;border-radius:12px!important}
+body.ixw--crm-dev main .cr-ticket .btn-link{color:var(--blue)!important}
+@media (max-width:960px){body.ixw--crm-dev main .cr-legs{row-gap:44px!important}}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--crm-dev main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--crm-dev main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--crm-dev main .answer-sec .answer-box::before,body.ixw--crm-dev main .answer-sec .answer-box::after,body.ixw--crm-dev main .answer-sec .answer-h::before,body.ixw--crm-dev main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--crm-dev main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--crm-dev main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--crm-dev main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--crm-dev main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:480px){html body.ixw--crm-dev main .cta .actions .btn,html body.ixw--crm-dev .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}

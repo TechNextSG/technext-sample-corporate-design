@@ -1,0 +1,97 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Standard first (blog): five-question gate, the answered route and where the request lands (demo-gate.js) */
+.gt-fig{margin:1.8em 0 2.2em;font:500 12px/1.4 var(--font-body)}
+.gt-fig ul,.gt-fig ol{margin:0;padding:0;list-style:none}
+.gt-fig li{margin:0}
+.gt-fig p{margin:0}
+.gt-body{position:relative;background:linear-gradient(180deg,#fff,#FBFBFD)}
+.gt-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.gt-line{fill:none;stroke:#DDD9E3;stroke-width:2;stroke-linecap:round}
+.gt-stub{fill:none;stroke:#E4E1E8;stroke-width:1.5}
+.gt-arm{fill:none;stroke:#DCD8E2;stroke-width:1.5;stroke-dasharray:3 4}
+.gt-hi{fill:none;stroke:var(--blue);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.gt-tok{fill:#fff;stroke:var(--blue);stroke-width:3.2;filter:drop-shadow(0 3px 5px rgba(49,103,202,.45))}
+[data-out="cfg"] .gt-hi,[data-out="cfg"] .gt-tok{stroke:var(--ok)}
+[data-out="studio"] .gt-hi,[data-out="studio"] .gt-tok{stroke:#D97B12}
+[data-out="custom"] .gt-hi,[data-out="custom"] .gt-tok{stroke:var(--tok-late)}
+[data-out="nope"] .gt-hi,[data-out="nope"] .gt-tok{stroke:var(--ink)}
+.gt-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 172px;column-gap:44px;row-gap:8px;padding:14px}
+.gt-q{grid-column:1;display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:4px 10px;padding:9px 10px;border-radius:12px;border:1px solid var(--line);background:#fff;transition:border-color .3s ease,box-shadow .3s ease,opacity .3s ease}
+.gt-q.is-now{border-color:var(--blue-300);box-shadow:0 0 0 3px var(--blue-050),0 12px 24px -20px rgba(31,31,61,.6)}
+.gt-q.is-off{opacity:.42}
+.gt-no{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--alt);border:1px solid var(--line);font:800 11px/1 var(--font-display);color:var(--muted);transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.gt-q.is-now .gt-no{background:var(--blue);border-color:var(--blue);color:#fff}
+.gt-q.is-done .gt-no{background:var(--blue-050);border-color:var(--blue-100);color:var(--blue-700)}
+.gt-qt{display:grid;gap:2px;min-width:0}
+.gt-qt b{font:700 12px/1.35 var(--font-display);color:var(--ink)}
+.gt-qt small{font:500 10.5px/1.35 var(--font-body);color:var(--muted)}
+.gt-yn button{height:26px;padding:0 11px}
+.gt-yn button:disabled{cursor:default;opacity:.6}
+.gt-yn button:disabled:hover{background:transparent;color:var(--body)}
+.gt-to{display:none}
+.gt-bin{grid-column:2;position:relative;display:grid;gap:3px;align-content:center;padding:8px 11px;border-radius:12px;border:1px dashed #D9D5DF;background:rgba(250,249,251,.85);transition:border-color .35s ease,background-color .35s ease,opacity .35s ease,transform .45s var(--spring),box-shadow .35s ease}
+.gt-bin b{font:700 12px/1.2 var(--font-display);color:var(--ink)}
+.gt-bin small{font:500 10px/1.3 var(--font-body);color:var(--muted)}
+.gt-bin.is-dim{opacity:.45}
+.gt-bin.is-hit{border-style:solid;background:#fff;transform:translateX(3px);box-shadow:0 12px 24px -18px rgba(31,31,61,.55)}
+.gt-bin--cfg{--c:var(--ok)}
+.gt-bin--proc{--c:var(--blue)}
+.gt-bin--studio{--c:#D97B12}
+.gt-bin--nope{--c:var(--ink)}
+.gt-bin--custom{--c:var(--tok-late)}
+.gt-bin.is-hit{border-color:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 14%,transparent),0 12px 24px -18px rgba(31,31,61,.55)}
+.gt-meter{display:flex;gap:2px}
+.gt-meter i{width:14px;height:5px;border-radius:3px;background:#E6E3EA}
+.gt-meter i.is-on{background:var(--c,var(--blue))}
+.gt-verdict{padding:12px 14px 14px;border-top:1px solid var(--line);background:rgba(250,249,251,.8);min-height:64px}
+.gt-wait{font:500 12px/1.5 var(--font-body);color:var(--muted)}
+.gt-verdict.is-set{display:grid;gap:9px}
+.gt-v--cfg{--c:var(--ok)}
+.gt-v--proc{--c:var(--blue)}
+.gt-v--studio{--c:#D97B12}
+.gt-v--nope{--c:var(--ink)}
+.gt-v--custom{--c:var(--tok-late)}
+.gt-vh{display:flex;align-items:center;gap:10px}
+.gt-vh .gt-meter i{width:18px;height:7px}
+.gt-vt{display:grid;gap:1px}
+.gt-vt b{font:800 15px/1.2 var(--font-display);color:var(--ink)}
+.gt-vt small{font:500 11px/1.4 var(--font-body);color:var(--body)}
+.gt-vline{font:500 12.5px/1.55 var(--font-body);color:var(--ink);padding-left:12px;border-left:3px solid var(--c)}
+.gt-vex{font:500 11.5px/1.5 var(--font-body);color:var(--muted)}
+.gt-ups{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.gt-uph{font:700 9.5px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.gt-up{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px 0 4px;border-radius:999px;background:#fff;border:1px solid color-mix(in srgb,var(--c) 30%,var(--line));animation:gtUp .45s var(--spring) both;animation-delay:calc(var(--k) * 140ms + 120ms)}
+.gt-up i{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--c);color:#fff;font:800 9.5px/1 var(--font-display);font-style:normal}
+.gt-up small{font:600 10.5px/1 var(--font-body);color:var(--ink)}
+.gt-up.is-none{border-style:dashed}
+.gt-up.is-none i{background:#CFCBD6}
+.gt-upc{margin-left:auto;font:600 11px/1.3 var(--font-body);color:var(--c)}
+@keyframes gtUp{from{opacity:0;transform:translateX(-6px) scale(.9)}to{opacity:1;transform:none}}
+.gt-verdict.is-in>*{animation:gtIn .45s var(--spring) both}
+.gt-verdict.is-in>:nth-child(2){animation-delay:60ms}
+@keyframes gtIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:620px){
+  .gt-svg,.gt-bin{display:none}
+  .gt-grid{grid-template-columns:minmax(0,1fr);padding:12px}
+  .gt-q{grid-template-columns:24px minmax(0,1fr)}
+  .gt-yn{grid-column:2;justify-self:start}
+  .gt-to{grid-column:2;justify-self:start;font:700 10.5px/1 var(--font-body);font-style:normal;padding:4px 8px;border-radius:999px}
+  .gt-to.is-next{display:inline-block;background:var(--alt);color:var(--muted)}
+  .gt-to.is-exit{display:inline-block;background:var(--ink);color:#fff}
+  .gt-to.gt-to--cfg{background:var(--ok)}
+  .gt-to.gt-to--studio{background:#D97B12}
+  .gt-to.gt-to--custom{background:var(--tok-late)}
+  .gt-to.gt-to--proc{background:var(--blue)}
+  .gt-upc{margin-left:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){.gt-up,.gt-verdict.is-in>*{animation:none}.gt-bin,.gt-q{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .gt-qt small,
+  .gt-bin small,
+  .gt-uph,
+  .gt-up i,
+  .gt-up small,
+  .gt-to{font-size:11px}
+}

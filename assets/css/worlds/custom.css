@@ -1,0 +1,299 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: custom (/odoo/erp-system) — Odoo customization as a tailor's atelier. Linen walls, walnut and brass, Odoo plum,
+   tape-measure yellow and pin red. The title card is a sheet of pattern paper with a tape measure along its top and a dashed
+   cut line; the caption is a garment tag; buttons are stitched; the glance strip is a tape measure; sections are garment tags,
+   a fitting line pinned to a tape, garment bags, a fitting card, a swatch book and a plum fitting-room end card. */
+.ixw--custom{--ow-c:#714B67;--cu-ink:#23284A;--cu-plum:#714B67;--cu-plum-d:#553449;--cu-brass:#C9A24A;--cu-brass-d:#A07C2E;--cu-tape:#F2C94C;--cu-pin:#D64545;
+  --cu-linen:#FBF6EE;--cu-linen2:#F3E9D8;--cu-paper:#FFFBF2;--cu-line:#EADFCB;--cu-blue:#3167CA;
+  --w-alt:#FBF6EE;--w-dot:rgba(201,162,74,.12);--w-hand:#714B67;--lab-bg:#FFFBF2;--lab-bd:2px solid #714B67;--lab-lip:#714B67;--lab-tail:#714B67;--lab-r:8px;
+  
+  --ii-bg:linear-gradient(160deg,#FBF6EE,#F3E9D8 60%,#F1E6EE);--ii-ink:#23284A;--ii-b:#714B67;--ii-accent:#C9A24A;--ii-lip:#23284A;--ii-ep-bg:#714B67;--ii-ep-fg:#FFFFFF}
+.ixw--custom .ixw-hero{background:linear-gradient(180deg,#F8F2E9 0,#FCF8F1 18%,#F3E9D8 62%,#E8D2B0 62%,#D6B78C 100%)}
+
+/* ---------- the title card: a sheet of pattern paper ---------- */
+.ixw--custom .ixw-copy{position:relative;max-width:530px;margin-top:20px;padding:36px 32px 26px;border-radius:6px;
+  background:linear-gradient(rgba(201,162,74,.13) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(201,162,74,.13) 1px,transparent 1px) 0 0/22px 22px,var(--cu-paper);
+  outline:2px dashed rgba(113,75,103,.32);outline-offset:-11px;box-shadow:0 0 0 1.5px var(--cu-line),0 40px 70px -30px rgba(90,60,30,.42)}
+.ixw--custom .ixw-copy::before{content:"";position:absolute;left:-10px;right:28px;top:-9px;height:20px;border-radius:3px;rotate:-.6deg;
+  background:repeating-linear-gradient(90deg,var(--cu-ink) 0 1px,transparent 1px 7px) 0 0/100% 6px no-repeat,repeating-linear-gradient(90deg,var(--cu-ink) 0 1.5px,transparent 1.5px 35px) 0 0/100% 10px no-repeat,var(--cu-tape);
+  box-shadow:0 4px 8px -4px rgba(90,60,30,.4)}
+.ixw--custom .ixw-copy::after{content:"\2702  PATTERN No. 01 \00B7  STANDARD FIRST";position:absolute;right:-1px;bottom:-1px;padding:8px 12px;border-radius:6px 0 6px 0;background:var(--cu-plum);
+  font:800 10px/1 ui-monospace,Consolas,monospace;letter-spacing:.08em;color:#FFFFFF}
+.ixw--custom .ixw-copy h1{max-width:15ch;color:var(--cu-ink)}
+.ixw--custom .ixw-copy .hand{color:var(--cu-plum)}
+.ixw--custom .ixw-hint{padding-right:190px}.ixw--custom .ixw-hint .ic{color:var(--cu-pin)}
+@media (max-width:767px){.ixw--custom .ixw-copy{padding:30px 20px 22px;outline-offset:-8px}.ixw--custom .ixw-copy::after{display:none}.ixw--custom .ixw-hint{padding-right:0}}
+
+/* ---------- the caption: a garment tag ---------- */
+.ixw--custom .ixw-cap{border-radius:14px;border:0;background:#FFFFFF;outline:1.5px dashed rgba(113,75,103,.35);outline-offset:-7px;box-shadow:0 0 0 1.5px var(--cu-line),0 0 0 6px var(--cu-paper),0 0 0 7.5px var(--cu-line),0 26px 44px -22px rgba(90,60,30,.4)}
+.ixw--custom .ixw-cap::before{content:"\2702  fitting notes";position:absolute;left:18px;top:-14px;padding:6px 11px;border-radius:6px;background:var(--cu-plum);color:#FFFFFF;font:800 11px/1 var(--font-body);letter-spacing:.04em;box-shadow:0 3px 0 var(--cu-plum-d)}
+.ixw--custom .ixw-cap-who b{color:var(--cu-plum)}.ixw--custom .ixw-cap-txt b{color:var(--cu-blue)}
+.ixw--custom .ixw-cap-rec{background:var(--cu-paper);border:1px dashed #D9C6A4;color:#5A4630}
+
+/* ---------- hero buttons: stitched (52px, a running stitch inside, a brass-ringed icon button), garment-tag controls ---------- */
+.ixw--custom main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){position:relative;overflow:hidden;height:52px;padding:0 24px;gap:12px;border-radius:12px;border:0;font:800 16px/1 var(--font-display);
+  outline:1.5px dashed rgba(255,255,255,.6);outline-offset:-6px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .22s ease,outline-color .2s ease}
+.ixw--custom main .btn-primary:has(.ic){padding-right:9px}.ixw--custom main .btn-ghost:has(.ic){padding-left:9px}
+.ixw--custom main :is(.btn-primary,.btn-ghost) .ic{width:34px;height:34px;padding:8px;margin:0;border-radius:50%;transition:transform .3s var(--w-spring)}
+.ixw--custom main .btn-primary,.ixw--custom main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#86587A,#714B67);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 5px 0 var(--cu-plum-d),0 16px 24px -16px rgba(85,52,73,.8)}
+.ixw--custom main .btn-primary .ic{background:var(--cu-tape);color:var(--cu-ink);box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.ixw--custom main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--custom main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--cu-plum);background:var(--cu-paper);outline-color:rgba(113,75,103,.5);box-shadow:inset 0 0 0 2px var(--cu-plum),0 5px 0 var(--cu-plum-d),0 16px 24px -18px rgba(85,52,73,.6)}
+.ixw--custom main .btn-ghost::before{display:none}.ixw--custom main .btn-ghost .ic{background:#F1E6EE;color:var(--cu-plum);box-shadow:inset 0 0 0 1.5px var(--cu-brass)}
+.ixw--custom main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -3px}
+.ixw--custom main .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 8px 0 var(--cu-plum-d),0 22px 28px -14px rgba(201,162,74,.6)}
+.ixw--custom main .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--cu-plum),0 8px 0 var(--cu-plum-d),0 22px 28px -16px rgba(201,162,74,.55)}
+.ixw--custom main :is(.btn-primary,.btn-ghost):hover .ic{transform:rotate(-12deg) scale(1.06)}
+.ixw--custom main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 4px;box-shadow:0 1px 0 rgba(0,0,0,.25);transition-duration:.06s}
+.ixw--custom .ixw-cta .btn-outline-white,.ixw--custom .ixw-cta .btn-outline-white:hover{color:var(--cu-ink);background:var(--cu-tape);outline-color:rgba(35,40,74,.4);box-shadow:0 5px 0 #C9A21A}
+.ixw--custom main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--cu-tape);outline-offset:4px}
+.ixw--custom .ixw-copy .actions{gap:14px}
+/* the episode tag: a woven label */
+.ixw--custom .ixw-ep-tag{transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw--custom .ixw-ep-tag:hover{translate:0 -2px}
+.ixw--custom .ixw-ep-tag:focus-visible{outline:3px solid var(--cu-tape);outline-offset:3px}
+/* caption controls: buttons sewn on */
+.ixw--custom .ixw-ibtn{border:2px solid var(--cu-ink);color:var(--cu-ink);box-shadow:0 3px 0 var(--cu-ink)}
+.ixw--custom .ixw-ibtn:hover{color:var(--cu-plum);border-color:var(--cu-ink);box-shadow:0 5px 0 var(--cu-ink),0 10px 16px -8px rgba(201,162,74,.7)}
+.ixw--custom .ixw-ibtn:active{box-shadow:0 1px 0 var(--cu-ink)}
+.ixw--custom .ixw-ibtn:focus-visible{outline:3px solid var(--cu-tape);outline-offset:3px}
+.ixw--custom .ixw-ibtn--play,.ixw--custom .ixw-ibtn--play:hover{background:linear-gradient(180deg,#86587A,#714B67);color:#FFFFFF}
+.ixw--custom .ixw-ibtn--play::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1.2px dashed rgba(255,255,255,.55);pointer-events:none}
+.ixw--custom .ixw-ibtn--play{position:relative}
+.ixw--custom .ixw-dots{gap:6px}
+.ixw--custom .ixw-dots button{border-radius:50%;width:9px;height:9px;background:#E3D5BE}
+.ixw--custom .ixw-dots button:hover{background:#D9B98A}
+.ixw--custom .ixw-dots button.is-on{width:24px;border-radius:999px;background:var(--cu-pin);box-shadow:0 0 0 1.5px var(--cu-ink)}
+/* "View the scene": top left, on the wall over the fitting corner, clear of the mirror */
+.ixw--custom .ixw-peek{left:max(24px,calc((100vw - 1200px) / 2 + 24px));right:auto;top:calc(var(--header-box) + 2px);height:40px;padding:0 16px 0 6px;gap:9px;border-color:var(--cu-ink);background:var(--cu-paper);box-shadow:0 3px 0 var(--cu-ink)}
+.ixw--custom .ixw-peek::before{width:28px;height:28px;border-radius:50%;background:var(--cu-plum);-webkit-mask:none;mask:none;box-shadow:inset 0 0 0 2px var(--cu-tape);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");background-size:16px;background-position:center;background-repeat:no-repeat}
+.ixw--custom .ixw-peek:hover{box-shadow:0 5px 0 var(--cu-ink),0 12px 18px -10px rgba(201,162,74,.7)}
+.ixw--custom .ixw-peek:focus-visible{outline:3px solid var(--cu-tape)}
+.ixw--custom .ixw-peek[aria-pressed="true"]{background:#F1E6EE}
+.ixw--custom .ixw-hot-lab .ic{color:var(--cu-plum)}
+
+/* ---------- the glance strip: a tape measure laid along the floor ---------- */
+.ixw--custom .ow-strip{position:relative;overflow:hidden;padding-top:22px;border-radius:8px;background:var(--cu-paper);box-shadow:0 0 0 1.5px var(--cu-line),0 24px 44px -30px rgba(90,60,30,.4)}
+.ixw--custom .ow-strip::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;
+  background:repeating-linear-gradient(90deg,var(--cu-ink) 0 1px,transparent 1px 8px) 0 0/100% 5px no-repeat,repeating-linear-gradient(90deg,var(--cu-ink) 0 1.5px,transparent 1.5px 40px) 0 0/100% 9px no-repeat,var(--cu-tape)}
+.ixw--custom .ow-strip>div+div{border-left:1px dashed #D9C6A4}
+.ixw--custom .ow-strip dt{font:700 12px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.02em;color:#8A6A45}.ixw--custom .ow-strip dt .ic{color:var(--cu-plum)}
+
+/* ---------- the one-paragraph answer: a note pinned to the pattern ---------- */
+.ixw--custom .answer-sec .answer-box{position:relative;max-width:900px;padding:22px 26px 20px;border:0;border-radius:6px;rotate:-.4deg;
+  background:linear-gradient(rgba(201,162,74,.12) 1px,transparent 1px) 0 0/100% 24px,var(--cu-paper);box-shadow:0 0 0 1.5px var(--cu-line),0 18px 30px -22px rgba(90,60,30,.45)}
+.ixw--custom .answer-sec .answer-box::before{content:"";position:absolute;left:50%;top:-8px;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F08A8A,var(--cu-pin) 60%);box-shadow:0 3px 4px rgba(90,30,30,.35)}
+.ixw--custom .answer-sec .answer-h{background:var(--cu-plum);color:#FFFFFF}
+.ixw--custom .answer-sec .answer-box p:not(.answer-h){font-size:14.5px;color:#3D3428}
+
+/* ---------- section heads and backgrounds ---------- */
+.ixw--custom .section--alt{background-color:var(--cu-linen);background-image:repeating-linear-gradient(90deg,rgba(150,110,60,.05) 0 1px,transparent 1px 16px)}
+.ixw--custom .cu-head h2,.ixw--custom .demo-sec .sec-head h2,.ixw--custom .cu-worn-copy h2,.ixw--custom .cu-faq-side h2{color:var(--cu-ink)}
+.ixw--custom .cu-head .hand::before,.ixw--custom .demo-sec .sec-head .hand::before,.ixw--custom .cu-worn-copy .hand::before,.ixw--custom .cu-faq-side .hand::before{content:"\2702";display:inline-block;margin-right:8px;font:400 18px/1 var(--font-body);color:var(--cu-pin);rotate:-90deg}
+.ixw--custom .cu-head h2::after,.ixw--custom .demo-sec .sec-head h2::after{content:"";display:block;width:120px;height:0;margin-top:14px;border-top:2.5px dashed var(--cu-brass)}
+.ixw--custom .cu-head .lead{max-width:60ch}
+
+/* ---------- the layers demo, laid on the cutting table ---------- */
+.ixw--custom .demo-sec{background:linear-gradient(rgba(201,162,74,.10) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(201,162,74,.10) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(180deg,#FFFFFF,var(--cu-linen))}
+.ixw--custom .demo-sec .dm{border:0;border-radius:18px;box-shadow:0 0 0 1.5px var(--cu-line),0 0 0 9px #FFFFFF,0 0 0 10.5px var(--cu-line),0 40px 70px -40px rgba(90,60,30,.5)}
+.ixw--custom .demo-sec .dm-head{background:var(--cu-paper);border-bottom:1.5px dashed #D9C6A4}
+.ixw--custom .demo-sec .dm-note .ic{color:var(--cu-plum)}
+
+/* ---------- what it gives you: garment tags ---------- */
+.ixw--custom .cu-tags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 26px}
+.ixw--custom .cu-tag{position:relative;padding:40px 26px 26px;border-radius:16px 16px 12px 12px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--cu-line),0 22px 40px -28px rgba(90,60,30,.45);
+  transform-origin:50% 0;transition:rotate .5s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,opacity .38s ease-out,transform .38s ease-out}
+.ixw--custom .cu-tag::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;border-radius:16px 16px 0 0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.25) 0 2px,transparent 2px 10px),var(--sw)}
+.ixw--custom .cu-tag::after{content:"";position:absolute;inset:20px 10px 10px;border:1.5px dashed rgba(201,162,74,.38);border-radius:8px;pointer-events:none}
+.ixw--custom .cu-tag-str{position:absolute;left:50%;top:22px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--cu-linen);box-shadow:inset 0 0 0 3px var(--cu-brass),0 1px 0 rgba(255,255,255,.8)}
+.ixw--custom .cu-tag-str::after{content:"";position:absolute;left:6px;bottom:8px;width:2px;height:40px;border-radius:2px;background:#B08A5A;transform-origin:50% 100%;rotate:14deg}
+.ixw--custom .cu-tag-top{display:flex;align-items:center;justify-content:space-between;margin:8px 0 14px}
+.ixw--custom .cu-btn-ic{position:relative;display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--sw,var(--cu-plum));color:#FFFFFF;box-shadow:inset 0 0 0 3px rgba(255,255,255,.18),0 4px 0 rgba(35,40,74,.18)}
+.ixw--custom .cu-btn-ic::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.55)}
+.ixw--custom .cu-btn-ic .ic{width:21px;height:21px}
+.ixw--custom .cu-tag-no{font:800 12px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#8A6A45}
+.ixw--custom .cu-tag h3{margin:0 0 8px;font-size:1.12rem;color:var(--cu-ink)}
+.ixw--custom .cu-tag p{margin:0;font-size:14.5px;line-height:1.6;color:var(--body)}
+.ixw--custom .cu-tag:hover{rotate:1.4deg;box-shadow:0 0 0 1.5px var(--sw),0 28px 46px -26px rgba(90,60,30,.5)}
+.ixw--custom .cu-tag:nth-child(even):hover{rotate:-1.4deg}
+
+/* ---------- how we deliver it: four fittings pinned to a tape measure ---------- */
+.ixw--custom .cu-fit{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:64px 0 0;list-style:none}
+.ixw--custom .cu-fit::before{content:"";position:absolute;left:-12px;right:-12px;top:6px;height:30px;border-radius:4px;transform-origin:0 50%;rotate:-.4deg;
+  background:repeating-linear-gradient(90deg,var(--cu-ink) 0 1px,transparent 1px 9px) 0 0/100% 8px no-repeat,repeating-linear-gradient(90deg,var(--cu-ink) 0 1.6px,transparent 1.6px 45px) 0 0/100% 14px no-repeat,var(--cu-tape);
+  box-shadow:0 6px 10px -6px rgba(90,60,30,.45);scale:0 1;transition:scale 1.1s cubic-bezier(.3,.9,.3,1) .1s}
+.ixw--custom .cu-fit.is-in::before{scale:1 1}
+.ixw--custom .cu-fit-step{position:relative;padding:28px 22px 24px;border-radius:10px;background:var(--cu-paper);outline:1.5px dashed rgba(113,75,103,.28);outline-offset:-8px;box-shadow:0 0 0 1.5px var(--cu-line),0 22px 36px -26px rgba(90,60,30,.5);
+  rotate:calc((var(--i) - 1.5) * .5deg);opacity:0;translate:0 18px;transition:opacity .45s ease-out,translate .55s cubic-bezier(.34,1.45,.64,1);transition-delay:calc(var(--i) * 140ms + .5s)}
+.ixw--custom .cu-fit.is-in .cu-fit-step{opacity:1;translate:0 0}
+.ixw--custom .cu-fit-pin{position:absolute;left:50%;top:-38px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F08A8A,var(--cu-pin) 60%);box-shadow:0 3px 4px rgba(90,30,30,.35)}
+.ixw--custom .cu-fit-pin::after{content:"";position:absolute;left:7px;top:14px;width:2px;height:32px;background:linear-gradient(#B7BFCC,#8A94A8);border-radius:2px}
+.ixw--custom .cu-fit-step:nth-child(2) .cu-fit-pin{background:radial-gradient(circle at 35% 35%,#8FB0EE,var(--cu-blue) 60%)}
+.ixw--custom .cu-fit-step:nth-child(3) .cu-fit-pin{background:radial-gradient(circle at 35% 35%,#F7E08F,#D9A520 60%)}
+.ixw--custom .cu-fit-step:nth-child(4) .cu-fit-pin{background:radial-gradient(circle at 35% 35%,#7FD6B6,#2E9C7E 60%)}
+.ixw--custom .cu-fit-verb{display:flex;align-items:center;gap:10px;margin:0 0 14px}
+.ixw--custom .cu-fit-verb .ic{width:38px;height:38px;padding:9px;border-radius:50%;background:var(--cu-plum);color:#FFFFFF;flex:none}
+.ixw--custom .cu-fit-verb span{font:600 1.55rem/1 var(--font-hand);color:var(--cu-plum)}
+.ixw--custom .cu-fit-verb em{margin-left:auto;font:800 1.7rem/1 var(--font-display);font-style:normal;color:rgba(201,162,74,.55)}
+.ixw--custom .cu-fit-step h3{margin:0 0 8px;font-size:1.06rem;color:var(--cu-ink)}
+.ixw--custom .cu-fit-step p{margin:0;font-size:14.5px;line-height:1.6;color:var(--body)}
+
+/* ---------- editions & hosting: garment bags and the fitting card ---------- */
+.ixw--custom .cu-worn{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:start}
+.ixw--custom .cu-bags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0 0;padding:26px 0 0;list-style:none;position:relative}
+.ixw--custom .cu-bags::before{content:"";position:absolute;left:-8px;right:-8px;top:8px;height:7px;border-radius:4px;background:linear-gradient(180deg,#E3C97A,var(--cu-brass-d))}
+.ixw--custom .cu-bag{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:30px 14px 22px;border-radius:26px 26px 14px 14px;background:var(--bl);text-align:center;
+  box-shadow:inset 0 0 0 2px rgba(35,40,74,.06),0 18px 30px -22px rgba(35,40,74,.45);transform-origin:50% -20px;transition:rotate .6s cubic-bezier(.34,1.56,.64,1)}
+.ixw--custom .cu-bag::before{content:"";position:absolute;left:50%;top:-22px;width:18px;height:18px;margin-left:-9px;border:3px solid #8A94A8;border-bottom-color:transparent;border-left-color:transparent;border-radius:50%;rotate:-45deg}
+.ixw--custom .cu-bag::after{content:"";position:absolute;left:50%;top:22px;bottom:70px;border-left:1.5px dashed rgba(35,40,74,.22)}
+.ixw--custom .cu-bag:hover{rotate:2.5deg}
+.ixw--custom .cu-bag-ic{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#FFFFFF;color:var(--b);box-shadow:0 2px 0 rgba(35,40,74,.08)}
+.ixw--custom .cu-bag-ic .ic{width:22px;height:22px}
+.ixw--custom .cu-bag b{position:relative;z-index:1;margin-top:20px;padding:6px 10px;border-radius:8px;background:#FFFFFF;font:800 14px/1.2 var(--font-display);color:var(--b)}
+.ixw--custom .cu-bag span:last-child{font-size:12.5px;line-height:1.45;color:#4A4F66}
+.ixw--custom .cu-card{position:relative;padding:0 0 22px;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--cu-line),0 30px 50px -30px rgba(90,60,30,.5);rotate:.6deg}
+.ixw--custom .cu-card::before{content:"";position:absolute;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F7E08F,#D9A520 60%);box-shadow:0 3px 4px rgba(90,60,30,.35);z-index:1}
+.ixw--custom .cu-card-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 14px;padding:20px 24px 14px;border-radius:14px 14px 0 0;background:var(--cu-plum);color:#FFFFFF}
+.ixw--custom .cu-card-h span{font:800 13px/1 var(--font-display);letter-spacing:.14em;text-transform:uppercase}
+.ixw--custom .cu-card-h em{font:600 1.2rem/1 var(--font-hand);font-style:normal;color:var(--cu-tape)}
+.ixw--custom .cu-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px;margin:0;padding:0 22px;list-style:none}
+.ixw--custom .cu-checks li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--cu-line);font-size:14px;line-height:1.45;color:var(--body)}
+.ixw--custom .cu-checks .ic{width:22px;height:22px;padding:3px;margin-top:-1px;border-radius:5px;flex:none;color:var(--cu-plum);background:var(--cu-paper);box-shadow:inset 0 0 0 1.5px rgba(113,75,103,.3)}
+
+/* ---------- questions: the fitting-room bench ---------- */
+.ixw--custom .cu-faq-wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
+.ixw--custom .cu-faq-side{position:sticky;top:110px}
+.ixw--custom .cu-form{display:grid;place-items:center;margin:22px 0 14px;padding:18px 0 10px;border-radius:18px;background:radial-gradient(circle at 50% 70%,#FFFFFF,var(--cu-linen2) 70%);box-shadow:0 0 0 1.5px var(--cu-line)}
+.ixw--custom .cu-form svg{max-width:100%;height:auto}
+.ixw--custom .cu-form-tape{stroke-dasharray:180;stroke-dashoffset:0;animation:cuTape 5s ease-in-out infinite}
+@keyframes cuTape{0%,100%{stroke-dashoffset:0}50%{stroke-dashoffset:40}}
+.ixw--custom .cu-faq-more{margin:0;font:600 14px/1.4 var(--font-body);color:var(--muted)}.ixw--custom .cu-faq-more a{font-weight:800;color:var(--cu-plum)}
+.ixw--custom .cu-faq{max-width:none}
+.ixw--custom .cu-faq details{position:relative;border:0;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--cu-line),0 10px 22px -18px rgba(90,60,30,.4)}
+.ixw--custom .cu-faq details[open]{outline:1.5px dashed rgba(113,75,103,.35);outline-offset:-7px;box-shadow:0 0 0 1.5px var(--cu-plum),0 18px 30px -20px rgba(90,60,30,.45)}
+.ixw--custom .cu-faq summary{padding-left:46px}
+.ixw--custom .cu-faq summary::before{content:"";position:absolute;left:18px;top:22px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F08A8A,var(--cu-pin) 60%);box-shadow:0 2px 3px rgba(90,30,30,.3)}
+.ixw--custom .cu-faq details:nth-child(3n+2) summary::before{background:radial-gradient(circle at 35% 35%,#8FB0EE,var(--cu-blue) 60%)}
+.ixw--custom .cu-faq details:nth-child(3n) summary::before{background:radial-gradient(circle at 35% 35%,#F7E08F,#D9A520 60%)}
+.ixw--custom .cu-faq summary .ic{color:var(--cu-plum)}
+.ixw--custom .cu-faq .faq-a{padding-left:46px}
+
+/* ---------- related services: a swatch book ---------- */
+.ixw--custom .cu-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.ixw--custom .cu-swatch{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:0 24px 24px;border-radius:14px;background:#FFFFFF;color:inherit;text-decoration:none;overflow:hidden;
+  box-shadow:0 0 0 1.5px var(--cu-line),0 22px 40px -28px rgba(90,60,30,.45);transition:translate .3s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease,opacity .38s ease-out,transform .38s ease-out}
+.ixw--custom .cu-swatch:hover{translate:0 -6px;text-decoration:none;box-shadow:0 0 0 1.5px var(--sw),0 30px 46px -26px rgba(90,60,30,.5)}
+.ixw--custom .cu-cloth{display:block;align-self:stretch;height:96px;margin:0 -24px;background-color:var(--sw);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/18px 9px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/18px 9px repeat-x}
+.ixw--custom .cu-cloth--pin{background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 1.5px,transparent 1.5px 14px)}
+.ixw--custom .cu-cloth--herr{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.2) 0 3px,transparent 3px 12px),repeating-linear-gradient(-45deg,rgba(0,0,0,.08) 0 3px,transparent 3px 12px);background-size:24px 24px,24px 24px;background-position:0 0,12px 0}
+.ixw--custom .cu-cloth--check{background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 10px,transparent 10px 24px),repeating-linear-gradient(0deg,rgba(255,255,255,.18) 0 10px,transparent 10px 24px)}
+.ixw--custom .cu-swatch .cu-btn-ic{margin:-28px 0 14px;box-shadow:0 0 0 4px #FFFFFF,0 6px 0 rgba(35,40,74,.15)}
+.ixw--custom .cu-swatch h3{margin:0 0 8px;font-size:1.1rem;color:var(--cu-ink)}
+.ixw--custom .cu-swatch p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--body)}
+.ixw--custom .cu-swatch .btn-link{margin-top:auto;color:var(--cu-plum);font-weight:800}
+
+/* ---------- the end card: the fitting room ---------- */
+.ixw--custom main .cu-cta{background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 16px),linear-gradient(120deg,#553449,#714B67 60%,#8A5B7E)}
+.ixw--custom main .cu-cta::before{background-image:radial-gradient(rgba(242,201,76,.22) 2px,transparent 2.2px)}
+.ixw--custom main .cu-cta .hand{color:var(--cu-tape)}
+.ixw--custom .cu-cta-tape{position:absolute;left:-14px;top:-12px;width:min(58%,560px);height:24px;border-radius:4px;rotate:-1.4deg;pointer-events:none;z-index:1;
+  background:repeating-linear-gradient(90deg,var(--cu-ink) 0 1px,transparent 1px 8px) 0 0/100% 7px no-repeat,repeating-linear-gradient(90deg,var(--cu-ink) 0 1.5px,transparent 1.5px 40px) 0 0/100% 12px no-repeat,var(--cu-tape);box-shadow:0 6px 10px -6px rgba(0,0,0,.4)}
+
+@media (max-width:1100px){.ixw--custom .cu-tags,.ixw--custom .cu-swatches{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--custom .cu-fit{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:70px}
+  .ixw--custom .cu-worn{grid-template-columns:1fr}.ixw--custom .cu-faq-wrap{grid-template-columns:1fr;gap:28px}.ixw--custom .cu-faq-side{position:static}.ixw--custom .cu-form{display:none}}
+@media (max-width:767px){.ixw--custom .cu-tags,.ixw--custom .cu-swatches,.ixw--custom .cu-fit,.ixw--custom .cu-checks{grid-template-columns:1fr}.ixw--custom .cu-fit{row-gap:62px}
+  .ixw--custom .cu-bags{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ixw--custom .cu-bag{padding:24px 8px 16px}.ixw--custom .cu-bag b{font-size:12px;padding:5px 6px}.ixw--custom .cu-bag span:last-child{font-size:11px}
+  .ixw--custom .cu-card-h{flex-direction:column;align-items:flex-start;gap:6px}.ixw--custom .cu-cta-tape{width:70%}}
+@media (prefers-reduced-motion:reduce){.ixw--custom .cu-fit::before{transition:none;scale:1 1}.ixw--custom .cu-fit-step{transition:none;opacity:1;translate:0 0}.ixw--custom .cu-form-tape{animation:none}}
+
+/* ---------- the demo's head: the alteration order, drawn beside it ---------- */
+.ixw--custom .cu-demo-top{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:center;margin-bottom:34px}
+.ixw--custom .cu-demo-top .sec-head{margin-bottom:0;max-width:none}
+.ixw--custom .cu-ladder{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;padding:22px 22px 22px 52px;border-radius:12px;rotate:1deg;
+  background:linear-gradient(rgba(201,162,74,.13) 1px,transparent 1px) 0 0/18px 18px,linear-gradient(90deg,rgba(201,162,74,.13) 1px,transparent 1px) 0 0/18px 18px,var(--cu-paper);
+  box-shadow:0 0 0 6px var(--cu-brass),0 0 0 7.5px var(--cu-brass-d),0 30px 50px -28px rgba(90,60,30,.55)}
+.ixw--custom .cu-ladder-h{align-self:flex-start;display:flex;flex-direction:column;gap:2px;margin:0 0 4px;font:800 12px/1.2 var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--cu-plum)}
+.ixw--custom .cu-ladder-h em{font:600 1.15rem/1 var(--font-hand);font-style:normal;letter-spacing:0;text-transform:none;color:#9A8A70}
+.ixw--custom .cu-rung{display:flex;align-items:center;gap:10px;width:var(--w);height:44px;padding:0 14px 0 8px;border-radius:10px;background:var(--c);color:#FFFFFF;font:800 14px/1 var(--font-display);
+  outline:1.5px dashed rgba(255,255,255,.55);outline-offset:-5px;box-shadow:0 4px 0 rgba(35,40,74,.18);animation:cuRung 6s ease-in-out infinite;animation-delay:calc(var(--d,0) * 1s)}
+.ixw--custom .cu-rung b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#FFFFFF;color:var(--c);font:800 12px/1 var(--font-display)}
+.ixw--custom .cu-rung:nth-of-type(1){--d:3}.ixw--custom .cu-rung:nth-of-type(2){--d:2}.ixw--custom .cu-rung:nth-of-type(3){--d:1}.ixw--custom .cu-rung:nth-of-type(4){--d:0}
+@keyframes cuRung{0%,8%{opacity:.35;filter:saturate(.3)}14%,70%{opacity:1;filter:none}80%,100%{opacity:.35;filter:saturate(.3)}}
+.ixw--custom .cu-ladder-tape{position:absolute;left:18px;top:22px;bottom:22px;width:14px;border-radius:3px;background:repeating-linear-gradient(0deg,var(--cu-ink) 0 1px,transparent 1px 8px) 0 0/6px 100% no-repeat,var(--cu-tape)}
+.ixw--custom .cu-ladder-tape u{position:absolute;left:-4px;bottom:0;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F08A8A,var(--cu-pin) 60%);box-shadow:0 3px 4px rgba(90,30,30,.35);animation:cuClimb 6s ease-in-out infinite}
+@keyframes cuClimb{0%,8%{bottom:0}30%,70%{bottom:calc(50% + 4px)}90%,100%{bottom:0}}
+.ixw--custom .demo-sec .dm-note{margin-top:22px}
+.ixw--custom .cu-faq-more a{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.ixw--custom .cu-faq-more a .ic{width:15px;height:15px}
+@media (max-width:1100px){.ixw--custom .cu-demo-top{grid-template-columns:1fr;gap:26px}.ixw--custom .cu-ladder{max-width:420px;rotate:0deg}}
+@media (max-width:767px){.ixw--custom .cu-ladder{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--custom .cu-rung,.ixw--custom .cu-ladder-tape u{animation:none}}
+
+/* audit round: fittings of even height; the edition bags taller, with room for their words */
+.ixw--custom .cu-fit{align-items:stretch}
+.ixw--custom .cu-fit-step{display:flex;flex-direction:column}
+.ixw--custom .cu-bag{min-height:176px;padding:34px 16px 24px}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base, 50% the tailor's fitting room: plum accent, swatch colours as thin rules and button
+   icons on the cards, the tape-measure line under the four fittings with their verbs, the three garment "bags" for
+   hosting as light tiles, a plum header on the fitting card. No tag strings, pins, dashed stitching, ladder, form or tape. */
+.ixw--custom{--calm-accent:#714B67;--calm-accent-ink:#553449;--calm-accent-line:#DCCAD6;--calm-accent-wash:#FAF6F8}
+body.ixw--custom main :is(.cu-head,.demo-sec .sec-head,.cu-worn-copy,.cu-faq-side) .hand::before{content:""!important}
+body.ixw--custom main .cu-demo-top{display:block!important;margin-bottom:28px!important}
+/* what an ERP gives you: white kit cards with a 3px swatch rule; round button icon kept, no stitching */
+body.ixw--custom main .cu-tags{gap:24px!important}
+body.ixw--custom main .cu-tag{padding:24px 26px 26px!important;border-radius:16px!important;border:1px solid var(--calm-line);border-top:3px solid var(--sw)!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+body.ixw--custom main .cu-tag::before,body.ixw--custom main .cu-tag::after,body.ixw--custom main .cu-btn-ic::before{content:none!important;display:none!important}
+body.ixw--custom main .cu-tag-top{margin:0 0 16px!important}
+body.ixw--custom main .cu-btn-ic{width:44px!important;height:44px!important;background:color-mix(in srgb,var(--sw,#714B67) 12%,#fff)!important;color:var(--sw,#714B67)!important;box-shadow:none!important}
+body.ixw--custom main .cu-tag-no{font:600 12px/1 var(--font-body)!important;color:var(--muted)!important}
+/* fittings: one thin tape line, white cards, verb kept as the label */
+body.ixw--custom main .cu-fit{padding-top:24px!important;gap:24px!important}
+body.ixw--custom main .cu-fit::before{top:0!important;height:6px!important;rotate:none!important;border-radius:3px!important;background:repeating-linear-gradient(90deg,#E9C766 0 1px,#F4DC8E 1px 10px)!important;box-shadow:none!important;scale:1 1!important;opacity:.8}
+body.ixw--custom main .cu-fit-step{padding:24px 22px!important;border-radius:16px!important;background:#fff!important;outline:0!important;border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important;opacity:1!important;translate:none!important;rotate:none!important}
+body.ixw--custom main .cu-fit-step::before,body.ixw--custom main .cu-fit-step::after{content:none!important;display:none!important}
+body.ixw--custom main .cu-fit-verb .ic{width:34px!important;height:34px!important;padding:8px!important;background:#F4ECF2!important;color:#714B67!important}
+body.ixw--custom main .cu-fit-verb span{font:700 1.05rem/1 var(--font-display)!important;color:#714B67!important}
+body.ixw--custom main .cu-fit-verb em{font:700 13px/1 var(--font-display)!important;color:var(--muted)!important}
+/* hosting tiles and the fitting card */
+body.ixw--custom main .cu-worn-copy{position:static!important}
+body.ixw--custom main .cu-bags{padding-top:0!important}
+body.ixw--custom main .cu-bags::before,body.ixw--custom main .cu-bag::before,body.ixw--custom main .cu-bag::after{content:none!important;display:none!important}
+body.ixw--custom main .cu-bag{min-height:0!important;padding:20px 14px 18px!important;border-radius:14px!important;background:#fff!important;border:1px solid var(--calm-line);border-top:3px solid var(--b)!important;box-shadow:none!important;rotate:none!important}
+body.ixw--custom main .cu-bag-ic{background:var(--bl)!important;box-shadow:none!important}
+body.ixw--custom main .cu-bag b{margin-top:6px!important;padding:0!important;background:none!important}
+body.ixw--custom main .cu-card{rotate:none!important;border-radius:16px!important;border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)!important;overflow:hidden}
+body.ixw--custom main .cu-card::before,body.ixw--custom main .cu-card::after{content:none!important;display:none!important}
+body.ixw--custom main .cu-card-h{border-radius:0!important;background:#FAF6F8!important;color:#553449!important;border-bottom:1px solid #EFE4EC}
+body.ixw--custom main .cu-card-h span{font:700 12px/1 var(--font-body)!important;letter-spacing:.12em!important}
+body.ixw--custom main .cu-card-h em{font:500 12.5px/1.2 var(--font-body)!important;color:var(--muted)!important}
+body.ixw--custom main .cu-checks li{border-bottom:1px solid #F3EEF2!important}
+body.ixw--custom main .cu-checks .ic{background:none!important;box-shadow:none!important;padding:0!important;color:#714B67!important}
+/* FAQ: heading above, one column */
+body.ixw--custom main .cu-faq-wrap{display:block!important}
+body.ixw--custom main .cu-faq-side{position:static!important;margin-bottom:40px}
+body.ixw--custom main .cu-faq{max-width:860px}
+/* related: white kit cards with a 3px swatch rule */
+body.ixw--custom main .cu-swatches{gap:24px!important}
+body.ixw--custom main .cu-swatch{padding:26px 26px 26px!important;border-radius:16px!important;border:1px solid var(--calm-line);border-top:3px solid var(--sw)!important;box-shadow:var(--calm-shadow)!important;translate:none!important}
+body.ixw--custom main .cu-swatch::before,body.ixw--custom main .cu-swatch::after{content:none!important;display:none!important}
+body.ixw--custom main .cu-swatch .cu-btn-ic{margin:0 0 16px!important}
+body.ixw--custom main .cu-swatch .btn-link{color:var(--blue)!important}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--custom main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--custom main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--custom main .answer-sec .answer-box::before,body.ixw--custom main .answer-sec .answer-box::after,body.ixw--custom main .answer-sec .answer-h::before,body.ixw--custom main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--custom main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--custom main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--custom main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--custom main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:860px){html body.ixw--custom main .cta{grid-template-columns:minmax(0,1fr)!important}}
+@media (max-width:480px){html body.ixw--custom main .cta .actions .btn,html body.ixw--custom .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}
+body.ixw--custom main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){outline:0!important}
+body.ixw--custom main .cu-faq details[open]{outline:0!important;box-shadow:inset 3px 0 0 var(--calm-accent)!important}
+body.ixw--custom main .cu-faq summary::before,body.ixw--custom main .cu-faq details:nth-child(n) summary::before{width:10px!important;height:10px!important;top:24px!important;background:#E7D6E2!important;box-shadow:none!important}
+body.ixw--custom main .cu-faq details[open] summary::before{background:#714B67!important}

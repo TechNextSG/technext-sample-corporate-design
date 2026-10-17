@@ -1,0 +1,117 @@
+<!--meta {"title": "Odoo 20 Release Notes: New Features & Upgrade Checklist", "desc": "Odoo 20 release notes explained by TechNext, an Odoo Partner: AI agents, MCP, offline mode, Field Service in Planning, pricing and an upgrade checklist.", "out": "blog/odoo-20-whats-new.html", "nav": "company", "article": {"h1": "Odoo 20 release notes: what's new, in plain language", "cat": "odoo-news", "date": "2026-09-27", "order": 9, "lede": "Odoo unveiled version 20 at Odoo Experience 2026 in Brussels. Here is what actually changes for the people who use it every day, and what to check before you upgrade.", "card": "AI agents that run processes, an MCP connector for outside AI tools, offline mode, and the changes to check before upgrading.", "cover": "O20:acct_assistant"}, "scripts": ["assets/js/demo-kit.js", "assets/js/demo-o20.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-o20.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">Key takeaways</p>
+  <ul>
+    <li>Odoo 20 puts <strong>AI agents</strong> at the centre: automations can now call an agent, and agents can create and update records, including from an uploaded PDF.</li>
+    <li>An <strong>MCP connector</strong> lets outside AI tools work with your Odoo database while keeping each user's access rights.</li>
+    <li>Records can be created and edited <strong>offline</strong>, and sync when the connection is back.</li>
+    <li>Some things move or go: the Field Service app is folded into <strong>Planning</strong>, and Payroll drops work entries. Check these before you upgrade.</li>
+  </ul>
+</div>
+
+<p>Odoo ships one major version a year, and it presents each one at Odoo Experience, its annual conference in Brussels. Odoo 20 arrived there in September 2026, with long <a href="https://www.odoo.com/odoo-20-release-notes" target="_blank" rel="noopener">release notes</a> covering almost every app. At TechNext we implement and support Odoo for companies in Singapore, the Philippines, Vietnam and beyond, so we read the notes with one question in mind: what changes for the people who use Odoo every day?</p>
+
+<p>Odoo's own summary of the release is short: a refreshed look, processes that run themselves through AI agents, websites built from a single sentence, and an AI accounting assistant. Below is what each of those means in practice, plus the smaller changes that matter just as much when you plan an upgrade.</p>
+
+{{VIDEO:YlmN5QcAdLs|Meet Odoo 20's best features}}
+
+<figure class="ox-fig" aria-label="Interactive: Odoo 20 by area, and what to check before upgrading">
+  <div class="dm dm-o20 reveal" data-demo="o20">
+    <div class="dm-head">
+      <div class="dm-title"><b>Odoo 20, area by area</b><small>Everything below is from this article</small></div>
+      <ul class="dm-legend ox-legend" aria-label="Card tags"><li><i class="dm-sw" style="--c:var(--tok-stock)"></i>New</li><li><i class="dm-sw" style="--c:var(--tok-make)"></i>Changed</li><li><i class="dm-sw" style="--c:var(--tok-buy)"></i>Moved</li><li><i class="dm-sw" style="--c:var(--tok-late)"></i>Removed</li><li><i class="dm-sw" style="--c:var(--tok-pay)"></i>Cost</li></ul>
+    </div>
+    <div class="ox-chips" role="tablist" aria-label="Areas of Odoo 20"></div>
+    <div class="ox-cards" role="tabpanel" aria-live="polite"></div>
+    <div class="ox-up">
+      <div class="ox-in">
+        <p class="ox-h">{{icon:refresh}}Should you upgrade to Odoo 20 now?</p>
+        <p class="ox-l">Where does Odoo run?</p>
+        <div class="dm-seg ox-host" role="group" aria-label="Where Odoo runs"><button type="button" data-host="online" aria-pressed="true">Odoo Online</button><button type="button" data-host="sh" aria-pressed="false">Odoo.sh</button><button type="button" data-host="prem" aria-pressed="false">On-premise</button></div>
+        <p class="ox-l">What do you use today?</p>
+        <div class="ox-uses" role="group" aria-label="What you use today"></div>
+      </div>
+      <div class="ox-out" aria-live="polite"></div>
+    </div>
+    <div class="dm-static">
+      <p>Odoo 20 adds AI agents that automated actions can call, an MCP connector for outside AI tools, offline mode, bill payments from Odoo and an Accounting Assistant. Field Service moves into Planning, payroll work entries are removed and account groups become parent accounts. Before upgrading: check removed or moved features, custom modules and Studio changes, AI usage and credits, and do a dry run on a copy.</p>
+    </div>
+  </div>
+  <figcaption class="dm-note">{{icon:check}} Summarised from Odoo's release notes as covered in this article; test every change on a copy of your own database.</figcaption>
+</figure>
+
+
+<h2>AI agents that do the work, not just answer questions</h2>
+<p>The biggest shift in Odoo 20 is that AI stops being a chat box on the side. Automated and scheduled actions can now call an <strong>AI agent</strong>, so you can describe a process in plain language and let the agent carry it out. Agents in Odoo 20 can:</p>
+<ul>
+  <li>create records, including from an uploaded PDF such as a vendor bill or purchase order;</li>
+  <li>update existing records;</li>
+  <li>answer questions about a file you give them;</li>
+  <li>generate images, and take instructions by voice.</li>
+</ul>
+<p>Conversations are stored for up to 30 days, Odoo picks the AI model automatically, and what used to be called "topics" are now "skills". One practical point: Odoo's release notes say every AI feature now uses paid <strong>IAP credits</strong>. Budget for usage, not just for the subscription.</p>
+
+{{VIDEO:vLDOltq9z20|Your apps, AI-powered by Odoo}}
+
+<h2>Connect your own AI tools with MCP</h2>
+<p>Odoo 20 adds a connector for the <strong>Model Context Protocol (MCP)</strong>, the open standard AI assistants use to reach business systems. Odoo describes it as a way to link any AI system to your database, and the external tool works within the user's existing access rights. For companies already using AI assistants elsewhere, this is the difference between copying data out of Odoo and asking questions of the live system.</p>
+
+<h2>Offline mode and a better phone experience</h2>
+<p>You can now create, edit, archive and delete records, and rerun earlier searches, without a connection. Changes sync when you are back online. Odoo pitches this at on-site teams: warehouse floors, construction sites and field technicians. The mobile interface also gets a swipe-down command palette, a bottom-sheet date picker, better forms on touchscreens and file sharing from the phone.</p>
+
+<h2>Field Service moves into Planning</h2>
+<p>The standalone Field Service app is discontinued. Its features (a live map, routing preferences, travel fees, a website request form and worksheets) now live in the <strong>Planning</strong> app. If your technicians use Field Service today, this is the first thing to test on a copy of your database before upgrading.</p>
+
+{{SHOT:O20:planning_fsm|Odoo 20: field service work now lives in the Planning app}}
+
+<h2>Accounting: paying bills from Odoo, and an AI assistant</h2>
+<ul>
+  <li><strong>Pay bills from Odoo:</strong> approve and pay vendor bills singly or in batches with one signature, through a new payment-initiation interface where your bank supports it.</li>
+  <li><strong>Bill line prediction</strong> suggests how new vendor bills should be coded.</li>
+  <li><strong>Parent accounts</strong> replace account groups, and account codes become optional.</li>
+  <li><strong>Customer invoice reminders</strong> and <strong>valuation without Inventory</strong> are built in.</li>
+  <li>The <strong>Accounting Assistant</strong> answers finance questions and audits reconciliations.</li>
+</ul>
+
+{{SHOT:O20:acct_assistant|Odoo 20: the Accounting Assistant}}
+
+<h2>Payroll, inventory, manufacturing and spreadsheets</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>App</th><th>What changes in Odoo 20</th></tr></thead>
+  <tbody>
+    <tr><td>Payroll</td><td>A dashboard rebuilt around warnings, test print of pay runs, net-to-gross simulation and working schedules in hours per day. Work entries, and the Planning-to-Payroll link, are removed.</td></tr>
+    <tr><td>Inventory &amp; Purchase</td><td>Suggested stock levels for reordering rules (based on the last 30 days of sales), inventory at a past date, a stock aging report and a vendor quality rate.</td></tr>
+    <tr><td>Manufacturing</td><td>Continuous production, bill of materials comparison, split manufacturing orders and new work order views.</td></tr>
+    <tr><td>Spreadsheet</td><td>Bubble and calendar charts, named ranges, locked sheets, regex formulas and calculated columns.</td></tr>
+    <tr><td>Point of Sale</td><td>Snooze products, turn order lines into a combo, and take multiple currencies.</td></tr>
+    <tr><td>CRM</td><td>Lead generation now uses Dun &amp; Bradstreet data instead of Clearbit.</td></tr>
+    <tr><td>Website</td><td>An AI Website Assistant that builds and edits pages by chat, structured data on by default, llms.txt and AI-assisted SEO.</td></tr>
+  </tbody>
+</table></div>
+
+<div class="post-gallery">{{SHOT:O20:purchase_inv|Odoo 20: purchasing and inventory}}{{SHOT:O20:mrp|Odoo 20: manufacturing}}{{SHOT:O20:crm_leadgen|Odoo 20: lead generation in CRM}}</div>
+<p class="post-credit">Screenshots and videos: Odoo S.A., from the Odoo 20 launch on odoo.com and Odoo's YouTube channel.</p>
+
+<h2>What happens to pricing</h2>
+<p>At Odoo Experience, Odoo said its prices had not changed since 2022 despite 26% cumulative inflation. The <strong>One App Free</strong> plan stays, the <strong>Standard</strong> plan is unchanged and the <strong>Custom</strong> plan rises by 20%. There is also a new <strong>Light User</strong> access type for employees who only need things like HR self-service. Prices differ by country and currency, so check <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener">odoo.com/pricing</a> for your market, or ask TechNext to include the licence estimate in your quotation.</p>
+
+<h2>Odoo 20 upgrade checklist: should you upgrade now?</h2>
+<p>How you move depends on where Odoo runs. Odoo Online databases go through Odoo's own upgrade service. Odoo.sh and on-premise databases, especially those with custom modules, need a planned upgrade. Either way, we recommend four checks first:</p>
+<ol>
+  <li><strong>Removed or moved features.</strong> Field Service (now in Planning), payroll work entries and account groups (now parent accounts).</li>
+  <li><strong>Custom modules and Studio changes.</strong> Each one must be tested, and custom code may need porting.</li>
+  <li><strong>AI usage.</strong> Decide which AI features to switch on, and set a budget for credits.</li>
+  <li><strong>A dry run on a copy.</strong> Upgrade a duplicate database, run a normal week of transactions and a month-end close, then decide.</li>
+</ol>
+<p>This is how TechNext runs upgrades for clients on our <a href="{{ROOT}}odoo/support.html">support plans</a>: on a staging copy first, checked against real records, with go-live only once the finance team has closed a test month.</p>
+
+<h2>Common questions about Odoo 20</h2>
+<div class="faq">
+  <details><summary>What is in the Odoo 20 release notes? {{icon:chevron}}</summary><div class="faq-a"><p>The headline items are AI agents that automated actions can call, an MCP connector for outside AI tools, offline mode, bill payments and an Accounting Assistant. Field Service moves into Planning, payroll work entries are removed and account groups become parent accounts. Odoo publishes the full notes at odoo.com/odoo-20-release-notes.</p></div></details>
+  <details><summary>How do I upgrade to Odoo 20? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo Online databases use Odoo's own upgrade service. Odoo.sh and on-premise databases, especially with custom modules, need a planned upgrade: check removed or moved features, test custom modules and Studio changes, budget AI credits, and do a dry run on a copy of the database before the live upgrade.</p></div></details>
+  <details><summary>When was Odoo 20 released? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo unveiled Odoo 20 at Odoo Experience 2026 at Brussels Expo, and published the release notes in September 2026.</p></div></details>
+  <details><summary>Do Odoo 20's AI features cost extra? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Odoo's release notes say every AI feature now uses paid IAP credits, which are billed on top of the Odoo subscription.</p></div></details>
+  <details><summary>Is the Field Service app gone in Odoo 20? {{icon:chevron}}</summary><div class="faq-a"><p>The standalone Field Service app is discontinued. Its features, including the live map, routing, travel fees and worksheets, now sit in the Planning app.</p></div></details>
+  <details><summary>Can TechNext upgrade our database to Odoo 20? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. TechNext upgrades a copy of your database first, tests custom modules and a month-end close, and only then schedules the live upgrade.</p></div></details>
+</div>

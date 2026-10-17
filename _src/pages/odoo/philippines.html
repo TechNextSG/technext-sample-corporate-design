@@ -1,0 +1,168 @@
+<!--meta {"title": "Odoo Partner Philippines — BIR-ready, Taguig City", "desc": "TechNext is your Odoo partner in the Philippines: BIR-ready accounting and payroll, set up from Taguig City, so you don't need to hire your own Odoo team.", "out": "odoo/philippines.html", "nav": "odoo", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-bir.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-bir.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-ph.css?v={ASSET_V}\">", "body": "ph-page"} -->
+
+<section class="page-hero page-hero--split page-hero--stage" data-stage-hero>
+  {{STAGE_BG}}
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Odoo</span><span>Philippines</span></nav>
+    <div class="two two--stage">
+      <div>
+        <h1><span class="hand h1-hand">odoo partner · philippines</span>Your Odoo partner in the Philippines, BIR-ready.</h1>
+        <p class="lead">You don't need to hire your own Odoo team. Our main hub in Taguig City, Metro Manila, sets up BIR-ready accounting, payroll with the 1601-C, 2316 and 1604-C, restaurant and retail setups, and trains your team.</p>
+        <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">Talk to us</a></div>
+        <div class="pill-row"><span class="tag tag--odoo">Odoo Ready Partner</span><a class="tag" href="{{ROOT}}company.html#office-ph">{{icon:pin}} Level 9, IP Center, Taguig City</a></div>
+      </div>
+      <div class="stage stage--ph" aria-hidden="true">
+        <div class="st-card ph-board dp" style="--d:6">
+          <div class="st-bar"><i></i><i></i><i></i>{{odoo:accountant:16}}<span>Odoo 20 · Philippines</span></div>
+          <ul class="ph-forms">
+            <li style="--i:0"><b>BIR 2307</b><span>Expanded withholding certificate</span><em>{{icon:check}}</em></li>
+            <li style="--i:1"><b>BIR 2306</b><span>Final withholding certificate</span><em>{{icon:check}}</em></li>
+            <li style="--i:2"><b>2551Q</b><span>Non-VAT registered companies</span><em>{{icon:check}}</em></li>
+            <li style="--i:3"><b>1601-C</b><span>Monthly payroll reporting</span><em>{{icon:check}}</em></li>
+            <li style="--i:4"><b>BIR 2316</b><span>Yearly payroll certificate</span><em>{{icon:check}}</em></li>
+            <li style="--i:5"><b>1604-C</b><span>Alphalist DAT for eSubmission</span><em>{{icon:check}}</em></li>
+          </ul>
+        </div>
+        <span class="st-chip ph-c1 dp" style="--d:12">{{icon:receipt}}BIR- and CAS-compliant invoices</span>
+        <span class="st-chip ph-c2 dp" style="--d:9">{{icon:pin}}Taguig City, Metro Manila</span>
+      </div>
+    </div>
+    <h2 class="sr-only">At a glance</h2>
+    <dl class="glance">
+      <div><dt>Office</dt><dd>Level 9, IP Center, Taguig City, Metro Manila</dd></div>
+      <div><dt>Localisation</dt><dd>BIR forms · CAS · Philippine payroll</dd></div>
+      <div><dt>Partner status</dt><dd><a href="https://www.odoo.com/partners/technext-pte-ltd-28073844" target="_blank" rel="noopener">Odoo Ready Partner</a></dd></div>
+      <div><dt>Team</dt><dd>Taguig City, our main hub, with Singapore HQ and our AI engineers in Vietnam</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section section--tight answer-sec">
+  <div class="container"><div class="answer-box reveal"><p class="answer-h">In one paragraph</p><p>TechNext is an Odoo Ready Partner whose main development and consulting hub is in Taguig City, Metro Manila. We implement Odoo for Philippine companies with the BIR localisation set up and checked against your filings: CAS-compliant invoices, BIR 2306 and 2307 certificates, 2551Q and 1600-VT reports, and payroll with the 1601-C, 2316 and 1604-C.</p></div></div>
+</section>
+
+<section class="section demo-sec" id="bir-year">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">a year of BIR filings</span><h2>BIR compliance in Odoo for Philippine companies, month by month.</h2><p class="lead">How often each BIR form comes round, and where Odoo produces it: 2307 and 2306 certificates from vendor bills, the 1600-VT report, the monthly 1601-C payroll items, the 2551Q for non-VAT companies each quarter, and the yearly 2316 and 1604-C with its Alphalist DAT file. Switch the company type, drag through the months, and follow each document from the bill or payroll run to the form. TechNext's Taguig team sets this up and checks it against your last filings.</p></div>
+    <div class="dm dm-bir reveal" data-demo="bir">
+      <div class="dm-head">
+        <div class="dm-title"><b>BIR year in Odoo 20</b><small>Sample company in Taguig City · cadence only, no deadline dates</small></div>
+        <div class="dm-seg" role="group" aria-label="Company type">
+          <button type="button" data-vat="0" aria-pressed="true">Non-VAT</button>
+          <button type="button" data-vat="1" aria-pressed="false">VAT-registered</button>
+        </div>
+        <button class="dm-btn dm-btn--primary" type="button" data-play aria-pressed="false">{{icon:play}}<span>Play the year</span></button>
+      </div>
+      <div class="bir-wrap">
+        <div class="bir-cal">
+          <p class="bir-h">{{icon:calendar}} Filing cadence <small>period covered, not due dates</small></p>
+          <div class="bir-scroll"><div class="bir-in">
+            <div class="bir-grid" role="table" aria-label="BIR forms by month of the period covered"></div>
+            <div class="bir-scrub"><span class="bir-mo" aria-hidden="true">January</span><input type="range" min="1" max="13" step="1" value="1" aria-label="Month of the year"></div>
+          </div></div>
+          <ul class="dm-legend bir-leg"><li><i class="dm-sw" style="--c:#DDE7F8"></i>Fewer items</li><li><i class="dm-sw" style="--c:#1E4691"></i>More items</li><li><i class="dm-sw bir-sw-q"></i>Quarterly</li><li><i class="dm-sw bir-sw-y"></i>Yearly</li></ul>
+        </div>
+        <div class="bir-flow">
+          <p class="bir-h">{{icon:layers}} Document flow <small data-k="month">January</small></p>
+          <div class="bir-lanes">
+            <svg class="bir-links" aria-hidden="true"></svg>
+            <div class="bir-lane" data-lane="0"><p class="bir-lh">{{odoo:purchase:18}}Vendor bills</p></div>
+            <div class="bir-lane" data-lane="1"><p class="bir-lh">{{odoo:accountant:18}}Reports</p></div>
+            <div class="bir-lane" data-lane="2"><p class="bir-lh">{{odoo:hr_payroll:18}}Payroll</p></div>
+          </div>
+          <ol class="dm-log bir-log" aria-label="This month in Odoo"></ol>
+        </div>
+      </div>
+      <div class="dm-static">
+        <p><b>Per vendor payment:</b> a vendor bill carries its withholding; Odoo generates the BIR 2307 (expanded withholding) or 2306 (final withholding) certificate on the bill and can send it to the vendor when the bill is paid.</p>
+        <p><b>Monthly:</b> the 1601-C items from each payroll run, and the 1600-VT report for final withholding VAT.</p>
+        <p><b>Quarterly:</b> the 2551Q report for non-VAT registered companies. <b>Yearly:</b> the BIR Form 2316 for each employee, and the 1604-C summary worksheets with the Alphalist DAT file for eSubmission.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample company and volumes. Cadence only: deadlines, rates and which forms apply to you are confirmed with your accountant during discovery.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">what odoo covers</span><h2>Odoo 20 for Philippine companies.</h2><p class="lead">The Philippine localisation in Odoo 20 is the most complete it has been. This is what it covers, from Odoo's release notes.</p></div>
+    <div class="grid-2">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{odoo:accountant:36}}</div><h3>Accounting and BIR</h3><ul class="checks">
+        <li>{{icon:check}}BIR 2306 and 2307 certificates as PDFs, generated on vendor bills and sent when a bill is paid</li>
+        <li>{{icon:check}}BIR- and CAS-compliant invoices, a BIR-format partner ledger and a Book of Accounts</li>
+        <li>{{icon:check}}The 1600-VT report for final withholding VAT and the 2551Q for non-VAT companies</li>
+        <li>{{icon:check}}Senior citizen and PWD discounts on invoices and credit notes</li>
+      </ul></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{odoo:hr_payroll:36}}</div><h3>Payroll</h3><ul class="checks">
+        <li>{{icon:check}}A basic Philippine payroll package: basic pay, benefits, taxes and overtime</li>
+        <li>{{icon:check}}Form 1601-C items for monthly BIR payroll reporting</li>
+        <li>{{icon:check}}The yearly BIR Form 2316, and 1604-C worksheets with Alphalist DAT exports</li>
+        <li>{{icon:check}}Automatic SSS and Pag-IBIG loan deductions</li>
+      </ul></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{odoo:pos_restaurant:36}}</div><h3>Retail and restaurants</h3><ul class="checks">
+        <li>{{icon:check}}GrabFood orders and menu sync in the Point of Sale</li>
+        <li>{{icon:check}}Lazada and TikTok marketplace connectors for online sellers</li>
+        <li>{{icon:check}}Loyalty, gift cards and self-ordering at the counter or table</li>
+      </ul></article>
+      <article class="card reveal" style="--i:3"><div class="card-ic">{{icon:layers}}</div><h3>Groups across countries</h3><ul class="checks">
+        <li>{{icon:check}}A company per country in one database, each with its own localisation</li>
+        <li>{{icon:check}}Philippine and Singapore entities side by side, with intercompany transactions</li>
+        <li>{{icon:check}}Multi-currency accounting with automatic exchange differences</li>
+      </ul></article>
+    </div>
+    <p class="small muted mt-24">Sources: the <a href="https://www.odoo.com/odoo-20-release-notes" target="_blank" rel="noopener">Odoo 20 release notes</a>. The release notes do not mention the BIR's Electronic Invoicing System (EIS); if your company is covered by EIS, we plan that connection as its own piece of work. Read more in <a href="{{ROOT}}blog/odoo-20-singapore-philippines-vietnam.html">Odoo 20 in Singapore, the Philippines and Vietnam</a>.</p>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="two two--top">
+      <div class="reveal">
+        <span class="hand">how we run it</span>
+        <h2>A Philippine Odoo project, step by step.</h2>
+        <p class="lead">The same method as every TechNext project, with the BIR checks built in.</p>
+        <div class="actions"><a class="btn btn-ghost" href="{{ROOT}}odoo/discovery.html">Start with discovery {{icon:arrow}}</a><a class="btn-link" href="{{ROOT}}blog/how-an-odoo-implementation-works.html">How an implementation works {{icon:arrow}}</a></div>
+      </div>
+      <ol class="apply-steps reveal">
+        <li><span class="apply-n">1</span><div><b>Discovery</b><p>We map how orders, stock, payroll and money move today, and which BIR forms you file.</p></div></li>
+        <li><span class="apply-n">2</span><div><b>Configuration on a staging copy</b><p>The Philippine localisation, taxes and withholding, set up on a copy of your database.</p></div></li>
+        <li><span class="apply-n">3</span><div><b>BIR check</b><p>Odoo's reports compared line by line with what your accountant filed last period.</p></div></li>
+        <li><span class="apply-n">4</span><div><b>Migration, training and go-live</b><p>Opening balances reconciled, role-based training on your own data, then a planned cut-over.</p></div></li>
+        <li><span class="apply-n">5</span><div><b>Support</b><p>Fixes, month-end help and upgrades, from the team that set it up.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3">
+      <article class="card reveal" style="--i:0"><div class="card-ic">{{icon:pin}}</div><h3>Our Taguig office</h3><p>Level 9, IP Center, Taguig City, Metro Manila. Our main development and consulting hub, with finance, sales and marketing, alongside our Singapore HQ and our AI engineering hub in Vietnam.</p><a class="btn-link" href="{{ROOT}}company.html#office-ph">Office and map {{icon:arrow}}</a></article>
+      <article class="card reveal" style="--i:1"><div class="card-ic">{{icon:briefcase}}</div><h3>We're hiring in Taguig</h3><p>Odoo architects and consultants, finance, HR, sales and marketing roles, all listed on JobStreet.</p><a class="btn-link" href="{{ROOT}}careers.html">Open roles {{icon:arrow}}</a></article>
+      <article class="card reveal" style="--i:2"><div class="card-ic">{{icon:calendar}}</div><h3>Odoo events in the Philippines</h3><p>Odoo's Business Shows and Accounting workshops in Metro Manila, Legazpi and Laguna this October.</p><a class="btn-link" href="{{ROOT}}blog/upcoming-odoo-events-singapore-philippines-vietnam.html">Upcoming events {{icon:arrow}}</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">common questions</span><h2>Odoo in the Philippines, answered.</h2></div>
+    <div class="faq reveal">
+      <details><summary>Is TechNext an Odoo partner in the Philippines? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. TechNext Pte. Ltd. is an Odoo Ready Partner, listed in Odoo's partner directory, with its main development and consulting hub at Level 9, IP Center, Taguig City, Metro Manila.</p></div></details>
+      <details><summary>Can Odoo generate BIR Form 2307? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Odoo 20 generates official BIR 2306 and 2307 withholding tax certificates as PDFs from vendor bills, and can send them to the vendor when a bill is paid.</p></div></details>
+      <details><summary>Does Odoo support Philippine payroll? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo 20 adds a basic Philippine payroll package with basic pay, benefits, taxes and overtime, plus Forms 1601-C, 2316 and 1604-C with Alphalist DAT exports, and automatic SSS and Pag-IBIG loan deductions.</p></div></details>
+      <details><summary>Does Odoo 20 support the BIR's Electronic Invoicing System (EIS)? {{icon:chevron}}</summary><div class="faq-a"><p>The Odoo 20 release notes do not mention EIS. If your company is covered by it, TechNext plans the connection as a separate piece of work during discovery.</p></div></details>
+      <details><summary>Can one Odoo database run our Philippine and Singapore companies? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Odoo runs a company per country in one database, each with its own localisation, currencies and reports, with intercompany transactions between them.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta reveal">
+      <div><span class="hand">next step</span><h2>Running Odoo in the Philippines?</h2><p>Tell us which BIR forms you file and how payroll runs today. We'll say what Odoo covers and what it takes.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a><a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a></div>
+    </div>
+  </div>
+</section>

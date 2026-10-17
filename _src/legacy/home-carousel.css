@@ -1,0 +1,485 @@
+/* Homepage sections below the hero (assets/css/home.css). Each section wears the design of the page it is about, in a
+   compact form: the world itself (a still of that page's hero scene, assets/img/home/<world>.webp, captured with its
+   "View the scene" mode) and the page's own title-card skin, hand label and button style, mirrored here under home classes.
+   1 who we are     -> /company: the visitor pass, the wall plaques, the office postcards ({{CO_CITIES}}), the room doors
+   2 three apps     -> /odoo/apps/sales (quotation), /inventory (shipping label), /accounting (ledger sheet)
+   3 four steps     -> /odoo/discovery (case folder), /training (flight manual), /integration (patch panel), /support (ticket)
+   4 four practices -> /solutions/odoo-erp (programme), /ai (museum wall label), /marketing (shop sign), /technology (work order)
+   5 industries     -> each /industries/* world's own label and colours      6 full suite -> /odoo/apps (Odoo Street)
+   7 blog           -> /blog (the TechNext newsroom)                         8 FAQ and 9 CTA -> plain TechNext brand style
+   Loops pause off-screen (.hm-on, assets/js/home.js) and stop with reduced motion. */
+
+.is-home{--hm-ink:#1B1F3B;--hm-ease:cubic-bezier(.23,1,.32,1);--hm-spring:cubic-bezier(.34,1.45,.64,1)}
+.is-home .hm-live:not(.hm-on) *,.is-home .hm-live:not(.hm-on) *::before,.is-home .hm-live:not(.hm-on) *::after{animation-play-state:paused!important}
+.is-home :where(.hm-who,.hm-apps3,.hm-steps,.hm-prac,.hm-inds,.hm-suite,.hm-news,.hm-faq,.hm-cta-sec){position:relative;isolation:isolate}
+.is-home .hm-live h2{font-size:clamp(1.95rem,1.35rem + 2vw,2.8rem);line-height:1.1;letter-spacing:-.025em;max-width:20ch;text-wrap:balance}
+.is-home .hm-live .lead{margin-top:14px;max-width:60ch}
+.is-home .hm-head{max-width:720px;margin-bottom:44px}
+.is-home .hm-head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;max-width:none}
+.is-home .hm-head--row > div{max-width:700px}
+.is-home .hm-head--row > .btn-link{flex:none;margin-bottom:8px}
+
+/* ---------------------------------------------------------------- the world button (each world sets its own skin) */
+.is-home .hm-wbtn{--b:#3167CA;--bf:#fff;--bl:var(--hm-ink);--br:12px;position:relative;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;height:42px;padding:0 16px;margin-top:auto;
+  border:2px solid var(--bl);border-radius:var(--br);background:var(--b);color:var(--bf);font:700 14.5px/1 var(--font-body);text-decoration:none;white-space:nowrap;
+  box-shadow:0 4px 0 var(--bl);transition:transform .2s var(--hm-spring),box-shadow .2s ease}
+.is-home .hm-wbtn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--bl);color:var(--bf);text-decoration:none}
+.is-home .hm-wbtn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--bl)}
+.is-home .hm-wbtn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.is-home .hm-wbtn .ic{width:16px;height:16px;transition:transform .25s var(--hm-spring)}
+.is-home .hm-wbtn:hover .ic{transform:translateX(3px)}
+
+/* ---------------------------------------------------------------- the world tile: a still of the page's world + its title card */
+.is-home .hm-wts{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+.is-home .hm-wts--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.is-home .hm-wts--4{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.is-home .hm-wt{--wb:#F3F7FE;--wi:var(--hm-ink);--wh:var(--blue);position:relative;display:flex;flex-direction:column;border-radius:22px;background:var(--wb);
+  box-shadow:0 0 0 1.5px rgba(27,31,59,.1),0 30px 50px -36px rgba(20,30,60,.45)}
+.is-home .hm-wt-scene{position:relative;display:block;aspect-ratio:800/421;border-radius:22px 22px 0 0;overflow:hidden}
+.is-home .hm-wt-scene img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--hm-ease)}
+.is-home .hm-wt:hover .hm-wt-scene img{transform:scale(1.045)}
+.is-home .hm-wt-card{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:8px;margin:-30px 14px 16px;padding:22px 18px 20px;background:#fff;border-radius:14px;
+  box-shadow:0 0 0 1.5px rgba(27,31,59,.12),0 24px 40px -26px rgba(20,30,60,.4)}
+.is-home .hm-wt-card .hand{margin:0;font-size:1.2rem;color:var(--wh)}
+.is-home .hm-wt-card h3{margin:0;font-size:1.3rem}
+.is-home .hm-wt-card h3 a{color:var(--hm-ink);text-decoration:none}
+.is-home .hm-wt-card h3 a:hover{color:var(--wh)}
+.is-home .hm-wt-card > p{margin:0;font-size:14.5px;line-height:1.55}
+.is-home .hm-wt-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.is-home .hm-wt-ic{display:grid;place-items:center;width:50px;height:50px;padding:0;background:#fff;border:2px solid var(--wi);border-radius:13px;box-shadow:0 3px 0 var(--wi);cursor:pointer;transition:transform .3s var(--hm-spring)}
+.is-home .hm-wt-ic:hover{transform:rotate(-6deg) scale(1.06)}
+.is-home .hm-wt-ic:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.is-home .hm-wt-ic .oi{width:32px;height:32px}
+.is-home .hm-wt-stage{display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 4px;border-radius:999px;background:#fff;border:1.5px solid var(--wi);font:700 12px/1 var(--font-body);color:var(--hm-ink)}
+.is-home .hm-wt-stage b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--wh);color:#fff;font:800 11px/1 var(--font-display)}
+.is-home .hm-ticks{list-style:none;margin:2px 0 8px;padding:0;display:grid;gap:6px}
+.is-home .hm-ticks li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;line-height:1.4;color:var(--hm-ink)}
+.is-home .hm-ticks .ic{flex:none;width:17px;height:17px;margin-top:1px;padding:2px;border-radius:50%;background:#DDF4E8;color:#137A4A}
+.is-home .hm-jobs{list-style:none;margin:2px 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.is-home .hm-jobs li{padding:4px 10px;border-radius:999px;background:var(--wb);border:1px solid rgba(27,31,59,.14);font:600 12px/1.2 var(--font-body);color:var(--hm-ink)}
+.is-home .hm-wt-apps{display:flex;gap:6px}
+.is-home .hm-wt-apps > *{width:34px;height:34px;padding:5px;border-radius:10px;background:var(--wb)}
+.is-home .hm-wt-apps .ic{color:var(--wh)}
+.is-home .hm-wt-links{list-style:none;margin:auto 0 0;padding:10px 0 0;border-top:1.5px dashed rgba(27,31,59,.16);display:grid;gap:2px}
+.is-home .hm-wt-links a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 0;font:600 13.5px/1.3 var(--font-body);color:var(--hm-ink);text-decoration:none}
+.is-home .hm-wt-links a:hover{color:var(--wh)}
+.is-home .hm-wt-links .ic{flex:none;width:15px;height:15px;color:var(--wh);transition:transform .25s var(--hm-spring)}
+.is-home .hm-wt-links a:hover .ic{transform:translateX(3px)}
+.is-home .hm-wt-tag{position:absolute;right:14px;top:-14px;z-index:2;padding:6px 10px;border-radius:6px;font:800 10.5px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase}
+
+/* ================================================================ 1 · who we are (/company) */
+.is-home .hm-who{--co-ink:#1B1F3B;--co-blue:#3167CA;--co-ph:#14A38B;--co-vn:#F08A24;--co-tri:linear-gradient(90deg,#3167CA 0 33.3%,#14A38B 33.3% 66.6%,#F08A24 66.6% 100%);
+  padding:110px 0 100px;background:radial-gradient(circle at 100% 0,rgba(240,138,36,.07),transparent 40%),radial-gradient(circle at 0 100%,rgba(20,163,139,.07),transparent 40%),linear-gradient(180deg,#F6F9FE,#FFFFFF)}
+.is-home .hm-who-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px 64px;align-items:center}
+.is-home .hm-who-copy .hm-wbtn{margin-top:24px}
+/* the visitor pass on its lanyard (the /company title card) */
+.is-home .hm-pass{position:relative;display:block;margin-top:40px;padding:48px 14px 14px;border-radius:24px;background:#fff;text-decoration:none;
+  box-shadow:0 0 0 2.5px var(--co-ink),0 8px 0 2.5px var(--co-ink),0 44px 70px -30px rgba(20,40,90,.5);transition:transform .35s var(--hm-spring)}
+.is-home .hm-pass:hover{transform:translateY(-4px)}
+.is-home .hm-pass::before{content:"VISITOR PASS \00B7  INSIDE TECHNEXT";position:absolute;left:0;right:0;top:0;height:34px;display:flex;align-items:center;padding-left:22px;border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,#3167CA,#2756B0);font:800 11px/1 var(--font-body);letter-spacing:.14em;color:#fff}
+.is-home .hm-pass::after{content:"";position:absolute;left:50%;top:-52px;width:28px;height:62px;margin-left:-14px;border-radius:0 0 6px 6px;
+  background:linear-gradient(180deg,#D3DAE5,#8E99AC) bottom/100% 14px no-repeat,repeating-linear-gradient(180deg,rgba(255,255,255,.16) 0 2px,transparent 2px 10px),linear-gradient(90deg,#1E4691,#3167CA 50%,#1E4691);
+  -webkit-mask:linear-gradient(180deg,transparent,#000 26px);mask:linear-gradient(180deg,transparent,#000 26px)}
+.is-home .hm-pass-scene{display:block;aspect-ratio:800/422;border-radius:14px;overflow:hidden;border:2px solid var(--co-ink);background:#EEF5FF}
+.is-home .hm-pass-scene img{display:block;width:100%;height:100%;object-fit:cover}
+/* the wall plaques (mirrors /company .co-plaque) */
+.is-home .hm-plaques{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:64px}
+.is-home .co-plaque{position:relative;display:grid;align-content:center;justify-items:start;gap:6px;min-height:118px;padding:22px 24px;border-radius:16px;background:linear-gradient(160deg,#FFFFFF,#F1F5FC);
+  border:2.5px solid var(--co-ink);box-shadow:0 6px 0 var(--co-ink),0 24px 40px -28px rgba(20,40,90,.45)}
+.is-home .co-plaque::before{content:"";position:absolute;inset:9px;pointer-events:none;
+  background:radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 0 0/9px 9px no-repeat,radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 100% 0/9px 9px no-repeat,
+  radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 0 100%/9px 9px no-repeat,radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 100% 100%/9px 9px no-repeat}
+.is-home .co-plaque b{font:800 2.6rem/1 var(--font-display);letter-spacing:-.03em;color:var(--co-ink);font-variant-numeric:tabular-nums}
+.is-home .co-plaque b::after{content:"";display:block;width:54px;height:5px;margin-top:8px;border-radius:3px;background:var(--co-tri)}
+.is-home .co-plaque span:not(.hm-num){display:flex;align-items:center;gap:7px;font:700 14px/1.35 var(--font-display);color:var(--body)}
+.is-home .co-plaque span .ic{width:17px;height:17px;flex:none;color:var(--co-blue)}
+.is-home .co-plaque--odoo{background:linear-gradient(160deg,#FFFFFF,#F7F1F6)}
+.is-home .co-plaque--odoo img{height:40px;width:auto}
+.is-home .co-plaque--odoo small{font:600 12.5px/1.35 var(--font-body);color:var(--muted)}
+.is-home .hm-sub{margin:64px 0 18px}
+.is-home .hm-sub .hand{margin:0;font-size:1.6rem}
+/* the office postcards (base in company.css; the /company extras mirrored) */
+.is-home .hm-cities{gap:30px}
+.is-home .hm-cities .co-city{border-radius:14px;rotate:-.7deg;transition:translate .3s var(--hm-spring),box-shadow .25s ease,rotate .35s ease}
+.is-home .hm-cities .co-city:nth-child(2){rotate:.6deg}
+.is-home .hm-cities .co-city:nth-child(3){rotate:-.3deg}
+.is-home .hm-cities .co-city:hover{rotate:0deg}
+.is-home .hm-cities .co-city-art{height:150px}
+.is-home .hm-cities .co-city-art::before{content:"";position:absolute;left:26%;top:14px;width:118px;height:49px;pointer-events:none;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 62'%3E%3Cg fill='none' stroke='%231B1F3B' stroke-width='2'%3E%3Ccircle cx='31' cy='31' r='26'/%3E%3Ccircle cx='31' cy='31' r='19' stroke-dasharray='2 4'/%3E%3Cpath d='M62 16q11-6 22 0t22 0 22 0 22 0M62 31q11-6 22 0t22 0 22 0 22 0M62 46q11-6 22 0t22 0 22 0 22 0'/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+.is-home .hm-cities .co-city-art::after{content:"";position:absolute;right:16px;bottom:14px;width:46px;height:56px;border:2px dashed rgba(255,255,255,.95);border-radius:3px;rotate:6deg;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Cpath d='M-10.5-2.2 10.5-10 5.9 10.4.7 3.3-3.4 7.8-3 1.5z' fill='%23FFFFFF'/%3E%3C/svg%3E") center 40%/24px 24px no-repeat,var(--o);box-shadow:0 0 0 3px #FFFFFF,0 6px 10px -4px rgba(20,30,60,.4)}
+.is-home .hm-cities .co-city-h::before{content:"greetings from";display:block;margin-bottom:2px;font:600 1rem/1.1 var(--font-hand);color:var(--o)}
+/* what we do: four doors into the practice hubs, each in its hub's palette (compact teaser; the full cards live in #solutions) */
+.is-home .hm-sub--doors{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.is-home .hm-doors-all{display:inline-flex;align-items:center;gap:6px;min-height:40px;font:700 14px/1 var(--font-body);color:#3167CA;text-decoration:none}
+.is-home .hm-doors-all .ic{width:16px;height:16px}
+.is-home .hm-doors{--dk:#1B2433;--dc:#FFFDF8;--da:#3167CA;--db:#3167CA;--df:#fff;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.is-home .hm-door{position:relative;display:flex;flex-direction:column;border-radius:999px 999px 14px 14px;padding:10px 10px 12px;background:var(--dc);box-shadow:0 0 0 2px var(--dk),0 6px 0 var(--dk);color:inherit;text-decoration:none;transition:translate .3s var(--hm-spring),box-shadow .25s ease}
+.is-home .hm-door:hover,.is-home .hm-door:focus-visible{translate:0 -4px;box-shadow:0 0 0 2px var(--dk),0 10px 0 var(--dk);text-decoration:none}
+.is-home .hm-door-way{position:relative;display:block;height:150px;border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--da);box-shadow:inset 0 0 0 3px var(--dk);perspective:600px}
+.is-home .hm-door-way img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block}
+.is-home .hm-door-leaf{position:absolute;inset:0 0 0 50%;background:var(--da);border-left:3px solid var(--dk);transform-origin:100% 50%;transform:rotateY(-58deg);transition:transform .5s var(--hm-spring);
+  background-image:linear-gradient(var(--dk),var(--dk)),linear-gradient(rgba(255,255,255,.22),rgba(255,255,255,.22));background-size:8px 8px,60% 34%;background-position:18% 55%,50% 20%;background-repeat:no-repeat}
+.is-home .hm-door:hover .hm-door-leaf,.is-home .hm-door:focus-visible .hm-door-leaf{transform:rotateY(-82deg)}
+.is-home .hm-door-sign{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 6px 2px;flex:1}
+.is-home .hm-door-sign .hand{margin:0;font-size:1.15rem;color:var(--da)}
+.is-home .hm-door-sign b{font:800 1.15rem/1.2 var(--font-display);color:var(--dk)}
+.is-home .hm-door-sign small{font-size:.9rem;line-height:1.35;color:#4A5268}
+.is-home .hm-door-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;margin-top:auto;padding:0 14px;border-radius:10px;background:var(--db);color:var(--df);font:700 13.5px/1 var(--font-body);box-shadow:0 3px 0 var(--dk);translate:0 6px}
+.is-home .hm-door-btn .ic{width:15px;height:15px}
+.is-home .hm-door--erp{--dk:#55354D;--dc:#FFFCF3;--da:#8A4F7D;--db:#714B67;--df:#FFF3DA}
+.is-home .hm-door--erp .hm-door-way{box-shadow:inset 0 0 0 3px #E2B23A}
+.is-home .hm-door--ai{--dk:#16323A;--dc:#FFFDF8;--da:#0E9384;--db:#16323A;--df:#F2DD8E}
+.is-home .hm-door--ai .hm-door-btn{box-shadow:0 3px 0 #94741A}
+.is-home .hm-door--mkt{--dk:#1F2A55;--dc:#F1F8FC;--da:#2F62C0;--db:#2F62C0;--df:#fff}
+.is-home .hm-door--mkt .hm-door-btn{border-radius:999px}
+.is-home .hm-door--mkt .hm-door-way::before{content:"";position:absolute;z-index:2;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(90deg,#2F62C0 0 14px,#fff 14px 28px)}
+.is-home .hm-door--tech{--dk:#1B2433;--dc:#FFFDF8;--da:#B9720F;--db:#FFC93C;--df:#1B2433;border-radius:16px}
+.is-home .hm-door--tech .hm-door-way{border-radius:8px}
+.is-home .hm-door--tech .hm-door-way::before{content:"";position:absolute;z-index:2;left:0;right:0;top:0;height:9px;background:repeating-linear-gradient(-45deg,#FFC93C 0 9px,#1B2433 9px 18px)}
+.is-home .hm-door--tech .hm-door-btn{border-radius:6px;box-shadow:0 0 0 2px #1B2433,0 3px 0 2px #1B2433}
+@media (max-width:1100px){.is-home .hm-doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.is-home .hm-doors{gap:14px}.is-home .hm-door-way{height:110px}.is-home .hm-door-sign small{font-size:.85rem}.is-home .hm-door-btn{font-size:12px;padding:0 10px;white-space:nowrap;gap:4px}.is-home .hm-door-btn .ic{width:13px;height:13px}.is-home .hm-door-sign b{font-size:1.02rem}}
+@media (max-width:380px){.is-home .hm-doors{grid-template-columns:1fr 1fr;gap:10px}.is-home .hm-door{padding:8px 6px 10px}}
+@media (prefers-reduced-motion:reduce){.is-home .hm-door,.is-home .hm-door-leaf{transition:none}}
+
+/* ================================================================ 2 · the three app worlds */
+.is-home .hm-apps3{padding:110px 0;background:#FAF9FB}
+/* Sales: a quotation (/odoo/apps/sales) */
+.is-home .hm-wt--sales{--wb:#FBF1F2;--wh:#E46E78}
+.is-home .hm-wt--sales .hm-wt-card{padding:46px 18px 50px;border-radius:10px;box-shadow:0 0 0 1.5px #F0D9DD,0 30px 50px -30px rgba(90,40,50,.3)}
+.is-home .hm-wt--sales .hm-wt-card::before{content:"QUOTATION \00B7  S00042";position:absolute;left:0;right:0;top:0;height:30px;display:flex;align-items:center;padding-left:18px;border-radius:10px 10px 0 0;background:#714B67;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;color:#fff}
+.is-home .hm-wt--sales .hm-wt-card::after{content:"\2713  Signed online";position:absolute;left:18px;right:18px;bottom:16px;padding-top:8px;border-top:1.5px solid #1B1F3B;font:700 12px/1.2 var(--font-body);color:#1E9E6A}
+.is-home .hm-wt--sales .hm-wt-stage b{background:#714B67}
+.is-home .hm-wt--sales .hm-wbtn{--b:#714B67;--br:10px;padding-left:28px}
+.is-home .hm-wt--sales .hm-wbtn::before{content:"";position:absolute;left:10px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.5px #1B1F3B}
+/* Inventory: a shipping label (/odoo/apps/inventory) */
+.is-home .hm-wt--stock{--wb:#F1F3F7;--wh:#C47A12}
+.is-home .hm-wt--stock .hm-wt-card{padding:42px 18px 62px;border-radius:4px;box-shadow:0 0 0 2px #1B1F3B,0 30px 50px -30px rgba(30,40,70,.4)}
+.is-home .hm-wt--stock .hm-wt-card::before{content:"FROM  WH/STOCK  \2192  TO  YOUR CUSTOMER";position:absolute;left:0;right:0;top:0;height:28px;display:flex;align-items:center;padding-left:14px;
+  background:repeating-linear-gradient(-45deg,#FFD84A 0 12px,#1B1F3B 12px 24px) 0 100%/100% 5px no-repeat,#fff;border-bottom:2px solid #1B1F3B;font:800 9.5px/1 var(--font-body);letter-spacing:.08em;color:#1B1F3B}
+.is-home .hm-wt--stock .hm-wt-card::after{content:"";position:absolute;left:18px;right:18px;bottom:14px;height:34px;
+  background:repeating-linear-gradient(90deg,#1B1F3B 0 2px,transparent 2px 4px,#1B1F3B 4px 7px,transparent 7px 9px,#1B1F3B 9px 10px,transparent 10px 13px,#1B1F3B 13px 16px,transparent 16px 18px)}
+.is-home .hm-wt--stock .hm-wt-stage b{background:#3167CA}
+.is-home .hm-wt--stock .hm-wbtn{--b:#FFD84A;--bf:#1B1F3B;--br:4px;padding-left:36px}
+.is-home .hm-wt--stock .hm-wbtn::before{content:"";position:absolute;left:10px;top:11px;bottom:11px;width:18px;background:repeating-linear-gradient(90deg,#1B1F3B 0 2px,transparent 2px 3px,#1B1F3B 3px 4px,transparent 4px 6px)}
+/* Accounting: a ledger sheet (/odoo/apps/accounting) */
+.is-home .hm-wt--acc{--wb:#EEF7F3;--wh:#2E9C7E}
+.is-home .hm-wt--acc .hm-wt-card{padding:42px 18px 20px 30px;border-radius:6px;box-shadow:0 0 0 1.5px #D3E6DE,0 30px 50px -30px rgba(20,70,50,.35);
+  background:linear-gradient(90deg,transparent 16px,rgba(226,69,60,.5) 16px 17.5px,transparent 17.5px),repeating-linear-gradient(180deg,#FFFFFF 0 27px,#DCEFE7 27px 28px)}
+.is-home .hm-wt--acc .hm-wt-card::before{content:"DEBIT \00B7  CREDIT \00B7  BALANCE";position:absolute;left:0;right:0;top:0;height:28px;display:flex;align-items:center;justify-content:flex-end;padding-right:16px;border-radius:6px 6px 0 0;background:#2E9C7E;font:800 10px/1 var(--font-body);letter-spacing:.14em;color:#fff}
+.is-home .hm-wt--acc .hm-wt-stage b{background:#2E9C7E}
+.is-home .hm-wt--acc .hm-wbtn{--b:#2E9C7E;--br:8px}
+.is-home .hm-wt--acc .hm-wbtn::before{content:"\2713";font-weight:800}
+.is-home .hm-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:44px}
+.is-home .hm-foot-say{display:flex;align-items:center;gap:12px;margin:0;font:700 1.12rem/1.35 var(--font-display);color:var(--hm-ink)}
+.is-home .hm-foot-ic{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff}
+.is-home .hm-foot-ic .ic{width:21px;height:21px}
+.is-home .hm-slots{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.is-home .hm-slots a{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font:600 14px/1 var(--font-body);color:var(--hm-ink);text-decoration:none;transition:border-color .2s ease,transform .25s var(--hm-spring)}
+.is-home .hm-slots a:hover{border-color:var(--blue-300);transform:translateY(-2px)}
+.is-home .hm-slots .ic{width:15px;height:15px;color:var(--blue)}
+
+/* ================================================================ 3 · the four step worlds */
+.is-home .hm-steps{padding:110px 0;background:#fff}
+.is-home .hm-steptabs{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 40px;padding:0}
+.is-home .hm-steptabs li{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 5px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font:700 13px/1 var(--font-body);color:var(--body);transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.is-home .hm-steptabs b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#F1F3F8;font:800 12px/1 var(--font-display);color:var(--hm-ink)}
+.is-home .hm-steptabs li.is-run{background:var(--tc);border-color:var(--tc);color:#fff}
+.is-home .hm-steptabs li.is-run b{background:#fff}
+.is-home .hm-steptabs li:nth-child(1){--tc:#3167CA}.is-home .hm-steptabs li:nth-child(2){--tc:#714B67}.is-home .hm-steptabs li:nth-child(3){--tc:#14A38B}.is-home .hm-steptabs li:nth-child(4){--tc:#F08A24}
+.is-home .hm-stage{transition:transform .45s var(--hm-spring),box-shadow .3s ease}
+.is-home .hm-stage.is-run{transform:translateY(-6px);box-shadow:0 0 0 2px var(--wh),0 30px 50px -30px rgba(20,30,60,.5)}
+/* Discovery: a case folder (/odoo/discovery) */
+.is-home .hm-wt--disc{--wb:#F7F2E8;--wh:#E2453C}
+.is-home .hm-wt--disc .hm-wt-card{margin-top:-14px;padding:30px 16px 18px;border-radius:4px;background:#FFFDF7;box-shadow:0 0 0 6px #EBCB94,0 30px 50px -30px rgba(90,60,20,.4)}
+.is-home .hm-wt--disc .hm-wt-card::before{content:"CASE FILE 01 \00B7  DISCOVERY";position:absolute;left:-6px;top:-32px;height:28px;padding:0 14px;border-radius:10px 10px 0 0;background:#EBCB94;
+  box-shadow:inset 0 1.5px 0 #C9A06A,inset 1.5px 0 0 #C9A06A,inset -1.5px 0 0 #C9A06A;font:800 9.5px/28px var(--font-body);letter-spacing:.12em;color:#7A5A30;white-space:nowrap}
+.is-home .hm-wt--disc .hm-wt-card::after{content:"";position:absolute;right:12px;top:-22px;width:14px;height:44px;border:3px solid #9AA6BC;border-radius:8px;border-bottom-color:transparent;transform:rotate(8deg)}
+.is-home .hm-wt--disc .hm-wbtn{--b:#3167CA;--br:10px 4px 4px 10px;padding-right:26px;box-shadow:inset -12px 0 0 #1B1F3B,0 4px 0 var(--bl)}
+.is-home .hm-wt--disc .hm-wbtn:hover{box-shadow:inset -12px 0 0 #1B1F3B,0 6px 0 var(--bl)}
+/* Training: a spiral-bound flight manual (/odoo/training) */
+.is-home .hm-wt--train{--wb:#F7F5FA;--wh:#714B67}
+.is-home .hm-wt--train .hm-wt-card{padding:28px 16px 18px;border-radius:6px 14px 14px 6px;box-shadow:0 0 0 1.5px #E3DCEB,6px 6px 0 #EDE5F3,0 30px 50px -30px rgba(60,30,60,.4)}
+.is-home .hm-wt--train .hm-wt-card::before{content:"";position:absolute;left:18px;right:18px;top:-12px;height:24px;
+  background:radial-gradient(circle at 50% 70%,#FFFFFF 3.5px,transparent 4px) 0 0/22px 24px repeat-x,radial-gradient(ellipse 5px 12px at 50% 50%,#9AA6BC 4px,transparent 4.6px) 0 0/22px 24px repeat-x}
+.is-home .hm-wt--train .hm-wbtn{--b:#714B67;--br:10px;overflow:hidden}
+.is-home .hm-wt--train .hm-wbtn::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:34%;background:#F2A33A;transition:width .45s var(--hm-ease)}
+.is-home .hm-wt--train .hm-wbtn:hover::after{width:100%}
+/* Integration: a patch panel (/odoo/integration) */
+.is-home .hm-wt--int{--wb:#F2F8F7;--wh:#14A38B;--wi:#1B2A4A}
+.is-home .hm-wt--int .hm-wt-card{padding:44px 16px 18px;border-radius:14px;box-shadow:0 0 0 1.5px #D5E5E1,0 30px 50px -30px rgba(20,60,60,.4)}
+.is-home .hm-wt--int .hm-wt-card::before{content:"";position:absolute;left:14px;right:14px;top:12px;height:18px;border-radius:9px;background:#F1F5F4;box-shadow:inset 0 0 0 1.5px #D5E5E1}
+.is-home .hm-wt--int .hm-wt-card::after{content:"";position:absolute;left:22px;right:22px;top:16px;height:10px;
+  background:radial-gradient(circle,#14A38B 3.5px,transparent 4px) 0 0/24px 10px no-repeat,radial-gradient(circle,#714B67 3.5px,transparent 4px) 24px 0/24px 10px no-repeat,radial-gradient(circle,#C9D5D2 3.5px,transparent 4px) 0 0/24px 10px repeat-x}
+.is-home .hm-wt--int .hm-wbtn{--b:#14A38B;--bl:#1B2A4A;--br:10px;padding-left:30px}
+.is-home .hm-wt--int .hm-wbtn::before{content:"";position:absolute;left:10px;top:50%;width:10px;height:12px;margin-top:-6px;background:linear-gradient(90deg,#fff 0 3px,transparent 3px 7px,#fff 7px)}
+/* Support: a support ticket (/odoo/support) */
+.is-home .hm-wt--sup{--wb:#FBF7F1;--wh:#C96A12;--wi:#1B2350}
+.is-home .hm-wt--sup .hm-wt-card{padding:48px 16px 18px;border-radius:14px;box-shadow:0 0 0 1.5px #EBDDCB,0 30px 50px -30px rgba(80,50,20,.35)}
+.is-home .hm-wt--sup .hm-wt-card::before{content:"TICKET \00B7  ODOO SUPPORT";position:absolute;left:0;right:0;top:0;height:32px;display:flex;align-items:center;padding-left:16px;border-radius:14px 14px 0 0;background:#1B2350;font:800 10px/1 var(--font-body);letter-spacing:.14em;color:#fff}
+.is-home .hm-wt--sup .hm-wbtn{--b:#1B2350;--bl:#1B2350;--br:10px;padding-left:28px}
+.is-home .hm-wt--sup .hm-wbtn::before{content:"";position:absolute;left:11px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:#F08A24;box-shadow:0 0 0 3px rgba(240,138,36,.3)}
+
+/* ================================================================ 4 · the four practice worlds */
+.is-home .hm-prac{padding:110px 0;background:#FAF9FB}
+/* ERP: a concert programme (/solutions/odoo-erp) */
+.is-home .hm-wt--erp{--wb:#FBF4EA;--wh:#8A4F7D}
+.is-home .hm-wt--erp .hm-wt-card{padding:26px 16px 52px;border-radius:6px;background:#FFFCF3;box-shadow:inset 0 0 0 6px #FFFCF3,inset 0 0 0 7.5px #F0D79A,0 0 0 2px #E2B23A,0 30px 50px -30px rgba(85,53,77,.45)}
+.is-home .hm-wt--erp .hm-wt-card::after{content:"\266A  Conductor: TechNext";position:absolute;left:8px;right:8px;bottom:8px;height:34px;display:flex;align-items:center;padding-left:14px;border-radius:0 0 3px 3px;
+  background:repeating-linear-gradient(180deg,transparent 0 5px,rgba(113,75,103,.13) 5px 6px) 0 4px/100% 26px no-repeat,#FBF3E4;border-top:1.5px solid #F0D79A;font:800 11px/1 var(--font-body);color:#55354D}
+.is-home .hm-wt--erp .hm-wt-tag{right:auto;left:16px;background:#714B67;color:#FFF3DA;border-radius:0;padding-right:18px;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 50%,100% 100%,0 100%)}
+/* AI: a museum wall label (/solutions/ai) */
+.is-home .hm-wt--ai{--wb:#F8F2E6;--wh:#0E9384}
+.is-home .hm-wt--ai .hm-wt-card{padding:26px 18px 18px;border-radius:6px;background:#FFFDF8;box-shadow:0 0 0 2px #16323A,0 4px 0 2px #C9A227,0 30px 50px -30px rgba(40,40,20,.4)}
+.is-home .hm-wt--ai .hm-wt-card::before{content:"";position:absolute;inset:8px;pointer-events:none;
+  background:radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) left top/8px 8px no-repeat,radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) right top/8px 8px no-repeat,
+  radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) left bottom/8px 8px no-repeat,radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) right bottom/8px 8px no-repeat}
+.is-home .hm-wt--ai .hm-wt-tag{background:#16323A;color:#F2DD8E;box-shadow:0 3px 0 #94741A;border-radius:4px}
+/* Marketing: the shop sign under its awning (/solutions/marketing) */
+.is-home .hm-wt--mkt{--wb:#F1F8FC;--wh:#2F62C0}
+.is-home .hm-wt--mkt .hm-wt-card{padding:42px 16px 18px;border-radius:14px;box-shadow:0 0 0 2px #1F2A55,0 6px 0 #1F2A55,0 30px 50px -30px rgba(20,40,90,.42)}
+.is-home .hm-wt--mkt .hm-wt-card::before{content:"";position:absolute;left:-2px;right:-2px;top:-2px;height:30px;border-radius:14px 14px 0 0;
+  background:linear-gradient(180deg,transparent 0 18px,#E3A21A 18px 20px,transparent 20px),repeating-linear-gradient(90deg,#2F62C0 0 24px,#FFFFFF 24px 48px);
+  -webkit-mask:linear-gradient(#000,#000) 0 0/100% 19px no-repeat,radial-gradient(circle at 12px 18px,#000 11px,transparent 11.5px) 0 0/24px 30px repeat-x;
+  mask:linear-gradient(#000,#000) 0 0/100% 19px no-repeat,radial-gradient(circle at 12px 18px,#000 11px,transparent 11.5px) 0 0/24px 30px repeat-x}
+.is-home .hm-wt--mkt .hm-wt-card::after{content:"OPEN";position:absolute;right:14px;top:36px;padding:5px 9px 4px;border-radius:6px;background:#fff;box-shadow:0 0 0 2px #2F62C0,0 3px 0 2px #1F2A55;font:800 10px/1 var(--font-display);letter-spacing:.16em;color:#2F62C0;transform-origin:50% -10px;animation:hmSwing 3.4s ease-in-out infinite}
+@keyframes hmSwing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+/* Technology: a work order clipped to the board (/solutions/technology) */
+.is-home .hm-wt--tech{--wb:#F7F2EA;--wh:#B9720F}
+.is-home .hm-wt--tech .hm-wt-card{padding:28px 16px 18px;border-radius:6px 6px 16px 16px;background:#FFFDF8;box-shadow:0 0 0 2px #1B2433,6px 8px 0 #1B2433,0 30px 50px -30px rgba(40,30,10,.4)}
+.is-home .hm-wt--tech .hm-wt-card::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;border-radius:6px 6px 0 0;background:repeating-linear-gradient(-45deg,#FFC93C 0 10px,#1B2433 10px 20px)}
+.is-home .hm-wt--tech .hm-wt-card::after{content:"WORK ORDER \00B7  TN-TECH-01";position:absolute;right:12px;top:-14px;padding:6px 9px;border-radius:6px;background:#1B2433;color:#FFC93C;font:800 9.5px/1 var(--font-body);letter-spacing:.1em;box-shadow:0 3px 0 #000}
+
+/* ================================================================ 5 · the eight industry worlds */
+.is-home .hm-inds{padding:110px 0;background:#fff}
+.is-home .hm-ind-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.is-home .hm-ind{--ic:#21B799;--ii:#1B1F3B;--ib:#21B799;--if:#fff;--il:#FFFFFF;position:relative;display:flex;flex-direction:column;padding-top:28px;border:2px solid var(--ii);border-radius:16px;background:#fff;
+  box-shadow:0 5px 0 var(--ii);overflow:hidden;color:inherit;text-decoration:none;transition:transform .3s var(--hm-spring),box-shadow .25s ease}
+.is-home .hm-ind:hover{transform:translateY(-4px);box-shadow:0 9px 0 var(--ii);text-decoration:none}
+.is-home .hm-ind::before{content:attr(data-lab);position:absolute;left:0;right:0;top:0;height:28px;display:flex;align-items:center;padding:0 12px;background:var(--ic);border-bottom:2px solid var(--ii);
+  font:800 9.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--il);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.is-home .hm-ind-view{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-bottom:2px solid var(--ii)}
+.is-home .hm-ind-view > img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--hm-ease)}
+.is-home .hm-ind:hover .hm-ind-view > img{transform:scale(1.05)}
+/* Nexi peeks into every scene, in that industry's costume: from an edge, a corner or behind the counter (--px/--py: where
+   the edge is, --r: which way she leans in, --d: how much of her stays hidden). She bobs and ducks; on hover she comes up. */
+.is-home .hm-peek{position:absolute;z-index:1;left:var(--px);top:var(--py);width:var(--pw,22%);aspect-ratio:412/494;transform:translate(-50%,-100%) rotate(var(--r,0deg));transform-origin:50% 100%;clip-path:inset(-120% -120% 0 -120%);pointer-events:none}
+.is-home .hm-peek-b{display:block;width:100%;height:100%;transform:translateY(var(--d,40%));transition:transform .45s var(--hm-spring)}
+.is-home .hm-peek img{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 4px 6px rgba(20,30,60,.22));animation:hmPeek 5.2s ease-in-out calc(var(--i,0) * -.65s) infinite;transform-origin:50% 100%}
+.is-home .hm-ind:hover .hm-peek-b,.is-home .hm-ind:focus-visible .hm-peek-b{transform:translateY(calc(var(--d,40%) - 14%))}
+@keyframes hmPeek{0%,100%{transform:translateY(0) rotate(0)}22%{transform:translateY(-3%) rotate(-3deg)}44%{transform:translateY(0) rotate(2deg)}70%{transform:translateY(0) rotate(0)}78%{transform:translateY(16%) rotate(0)}86%{transform:translateY(-2%) rotate(-2deg)}}
+@media (prefers-reduced-motion:reduce){.is-home .hm-peek-b{transition:none}}
+.is-home .hm-ind-b{position:relative;flex:1;display:flex;flex-direction:column;gap:6px;padding:26px 16px 16px}
+.is-home .hm-ind-badge{position:absolute;left:14px;top:-22px;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--ic);border:2px solid var(--ii);color:#fff}
+.is-home .hm-ind-badge .ic{width:22px;height:22px}
+.is-home .hm-ind h3{margin:0;font-size:1.1rem;color:var(--hm-ink)}
+.is-home .hm-ind p{margin:0;font-size:13.5px;line-height:1.5}
+.is-home .hm-ind-go{display:inline-flex;align-items:center;align-self:flex-start;gap:6px;height:34px;margin-top:auto;padding:0 13px;border-radius:10px;background:var(--ib);border:2px solid var(--ii);box-shadow:0 3px 0 var(--ii);font:700 13px/1 var(--font-body);color:var(--if)}
+.is-home .hm-ind-go .ic{width:14px;height:14px;transition:transform .25s var(--hm-spring)}
+.is-home .hm-ind:hover .hm-ind-go .ic{transform:translateX(3px)}
+.is-home .hm-ind--travel{--ic:#3FA9E0;--ii:#17284A;--ib:#17284A}
+.is-home .hm-ind--retail{--ic:#D9785A;--ii:#3D405B;--ib:#D9785A}
+.is-home .hm-ind--ecom{--ic:#6D5BD0;--ii:#2B2350;--ib:#6D5BD0}
+.is-home .hm-ind--cons{--ic:#FFC93C;--il:#1E2A3A;--ii:#1E2A3A;--ib:#1F3F73}
+.is-home .hm-ind--cons .hm-ind-badge{color:#1E2A3A}
+.is-home .hm-ind--fnb{--ic:#1F4D3F;--ii:#13332A;--ib:#E2553D}
+.is-home .hm-ind--mfg{--ic:#2F6B7A;--ii:#1E2A33;--ib:#FF7A1A}
+.is-home .hm-ind--hw{--ic:#8DB39A;--ii:#3B3651;--ib:#8C76B8}
+
+/* ================================================================ 6 · Odoo Street (/odoo/apps) and the suite widget */
+.is-home .hm-suite{padding:0 0 110px;background:linear-gradient(180deg,#F2EAF6 0%,#F8F6FB 60%,#FFFFFF 100%)}
+/* Odoo Street: the /odoo/apps street carried on down the page (canvas: assets/js/home-street.js). The shops are links over
+   the canvas, styled as the shops' own sign boards; the ground's tiles run out into this section's background. */
+.is-home .hm-street{--k:.85;position:relative;margin-bottom:40px;background:linear-gradient(180deg,#FFFFFF 0%,#D8EEFB 55%,#F2EAF6 100%)}
+.is-home .hm-st-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.is-home .hm-st-scroll::-webkit-scrollbar{display:none}
+.is-home .hm-st-set{position:relative;margin:0 auto;width:1445px;height:374px}
+.is-home .hm-st-cv{position:absolute;top:0;left:0;display:block;pointer-events:none}
+.is-home .hm-st-sign{position:absolute;left:var(--sx,50%);top:calc(14 / 440 * 100%);height:calc(44 / 440 * 100%);transform:translateX(-50%);display:flex;align-items:center;gap:.5em;padding:0 1.3em;border-radius:calc(var(--k) * 9px);
+  background:#714B67;box-shadow:0 calc(var(--k) * 4px) 0 #4A2E44;font:800 max(13px,calc(var(--k) * 21px))/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase;color:#fff;white-space:nowrap;text-decoration:none;transition:transform .25s var(--hm-spring)}
+.is-home .hm-st-sign::before,.is-home .hm-st-sign::after{content:"";width:.34em;height:.34em;border-radius:50%;background:#FFD84A}
+.is-home .hm-st-sign:hover{transform:translateX(-50%) translateY(-2px);color:#fff;text-decoration:none}
+.is-home .hm-st-shop{position:absolute;left:calc((56 + var(--i) * 200) / 1700 * 100%);top:calc(92 / 440 * 100%);width:calc(188 / 1700 * 100%);height:calc(110 / 440 * 100%);border-radius:calc(var(--k) * 7px);
+  display:flex;align-items:flex-start;justify-content:space-between;gap:4px;padding:calc(var(--k) * 7px) calc(var(--k) * 9px) 0;color:#fff;text-decoration:none;transition:transform .3s var(--hm-spring)}
+.is-home .hm-st-shop b{font:800 max(11px,calc(var(--k) * 13px))/1.1 var(--font-display);white-space:nowrap;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.is-home .hm-st-shop small{font:700 max(10px,calc(var(--k) * 10.5px))/1.2 var(--font-body);opacity:.9;white-space:nowrap}
+.is-home .hm-st-shop:hover,.is-home .hm-st-shop.is-open{transform:translateY(-3px);color:#fff;text-decoration:none}
+.is-home .hm-st-shop:focus-visible{outline:3px solid #3167CA;outline-offset:4px}
+.is-home .hm-st-pop{position:absolute;z-index:6;width:min(300px,calc(100vw - 32px));padding:0 0 10px;border-radius:14px;background:#fff;border:2px solid var(--c);box-shadow:0 5px 0 var(--c),0 30px 50px -24px rgba(60,30,60,.45);
+  opacity:0;transform:translateY(-6px) scale(.97);transform-origin:var(--ax,50%) 0;transition:opacity .2s ease,transform .3s var(--hm-spring)}
+.is-home .hm-st-pop.is-in{opacity:1;transform:none}
+.is-home .hm-st-pop::before{content:"";position:absolute;left:var(--ax,50%);top:-9px;width:14px;height:14px;margin-left:-7px;background:var(--c);transform:rotate(45deg);border-radius:3px}
+.is-home .hm-st-pop-h{position:relative;display:flex;flex-direction:column;gap:3px;margin:0 0 6px;padding:11px 14px 14px;border-radius:11px 11px 0 0;color:#fff;
+  background:radial-gradient(circle at 9px 0,#fff 8.5px,transparent 9px) 0 100%/18px 9px repeat-x,var(--c)}
+.is-home .hm-st-pop-h b{font:800 16px/1.1 var(--font-display);color:#fff}
+.is-home .hm-st-pop-h span{font:600 12px/1.2 var(--font-body);opacity:.9}
+.is-home .hm-st-pop ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 6px;margin:0;padding:4px 8px}
+.is-home .hm-st-pop li a{display:flex;align-items:center;gap:8px;min-height:36px;padding:4px 6px;border-radius:9px;font:600 13px/1.2 var(--font-body);color:var(--hm-ink);text-decoration:none}
+.is-home .hm-st-pop li a:hover,.is-home .hm-st-pop li a:focus-visible{background:#F6F1F9;color:var(--hm-ink);text-decoration:none}
+.is-home .hm-st-pop li .oi{flex:none;width:22px;height:22px}
+.is-home .hm-st-pop-all{display:flex;align-items:center;gap:6px;margin:6px 14px 0;padding-top:9px;border-top:1.5px dashed #E3DCEB;font:700 13px/1.2 var(--font-body);color:#714B67;text-decoration:none}
+.is-home .hm-st-pop-all .ic{width:14px;height:14px;transition:transform .25s var(--hm-spring)}
+.is-home .hm-st-pop-all:hover .ic{transform:translateX(3px)}
+.is-home .hm-st-say{position:absolute;z-index:3;max-width:200px;margin:0;padding:8px 12px;border-radius:12px;background:#fff;box-shadow:0 0 0 1.5px #E3DCEB,0 10px 20px -10px rgba(60,30,60,.4);
+  font:600 12.5px/1.35 var(--font-body);color:var(--hm-ink);transform:translate(-50%,-100%);pointer-events:none;text-align:center}
+.is-home .hm-st-say::after{content:"";position:absolute;left:50%;bottom:-6px;width:12px;height:12px;margin-left:-6px;background:#fff;transform:rotate(45deg);box-shadow:1.5px 1.5px 0 #E3DCEB}
+.is-home .hm-st-say.is-in{animation:hmSay .35s var(--hm-spring)}
+@keyframes hmSay{from{opacity:0;transform:translate(-50%,-80%) scale(.9)}}
+.is-home .hm-st-swipe{display:none}
+.is-home .hm-street.is-swipe .hm-st-shop small{display:none}
+.is-home .hm-street.is-swipe .hm-st-swipe{position:absolute;right:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;margin:0;padding:6px 12px;border-radius:999px;background:#714B67;color:#fff;font:700 12px/1 var(--font-body);
+  box-shadow:0 3px 0 #4A2E44;pointer-events:none;transition:opacity .3s ease;animation:hmNudge 2.4s ease-in-out infinite}
+.is-home .hm-street.is-swipe .hm-st-swipe .ic{width:13px;height:13px}
+.is-home .hm-street.is-swiped .hm-st-swipe{opacity:0}
+@keyframes hmNudge{50%{transform:translateX(-5px)}}
+.is-home .hm-suite .su-wrap{gap:48px 60px}
+/* the copy wears the street's title card: an Odoo home screen under the awning */
+.is-home .hm-suite .su-copy{position:relative;padding:48px 28px 26px;border-radius:20px;
+  background:radial-gradient(circle at 11px 0,#714B67 10.5px,transparent 11px) 0 14px/44px 11px repeat-x,radial-gradient(circle at 33px 0,#F2EAF6 10.5px,transparent 11px) 0 14px/44px 11px repeat-x,repeating-linear-gradient(90deg,#714B67 0 22px,#F2EAF6 22px 44px) 0 0/100% 14px no-repeat,#fff;
+  box-shadow:0 0 0 1.5px #E3DCEB,0 40px 70px -30px rgba(60,30,60,.35)}
+.is-home .hm-suite .su-copy::before{content:"";position:absolute;right:22px;top:38px;width:26px;height:26px;background:radial-gradient(circle,#714B67 3px,transparent 3.5px) 0 0/9px 9px;opacity:.75}
+.is-home .hm-suite .su-copy .hand{color:#714B67}
+.is-home .hm-suite .su-copy h2{max-width:15ch}
+.is-home .hm-suite .su-pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.is-home .hm-suite .su-presets button{height:auto;display:grid;justify-items:start;gap:3px;padding:11px 12px;border-radius:14px;background:#fff;border:1.5px solid #E3DCEB;box-shadow:0 8px 18px -14px rgba(60,30,60,.5);color:var(--hm-ink);text-align:left;translate:none;transition:transform .25s var(--hm-spring),border-color .2s ease,background-color .2s ease}
+.is-home .hm-suite .su-presets button:hover{transform:translateY(-2px);border-color:#714B67}
+.is-home .hm-suite .su-presets button[aria-pressed="true"]{background:#714B67;border-color:#714B67;color:#fff}
+.is-home .hm-suite .su-presets button[aria-pressed="true"] :is(b,small){color:#fff}
+.is-home .hm-suite .su-presets b{font:700 14px/1.2 var(--font-display);color:var(--hm-ink)}
+.is-home .hm-suite .su-presets small{font:500 12px/1.2 var(--font-body);color:var(--muted)}
+.is-home .hm-suite .su-pics{display:flex;align-items:center;gap:3px;margin-bottom:4px}
+.is-home .hm-suite .su-pics .oi{width:24px;height:24px;padding:2px;border-radius:7px;background:#fff}
+.is-home .hm-suite .su-pics i{font:700 12px/1 var(--font-body);font-style:normal;color:inherit;opacity:.75;margin-left:3px}
+.is-home .hm-suite .su-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0 0}
+.is-home .hm-suite .su-stats > div{padding:12px 14px;border-radius:14px;background:#F8F6FB;border:1.5px solid #E3DCEB;display:flex;flex-direction:column-reverse;gap:6px}
+.is-home .hm-suite .su-stats dt{font:600 12px/1.3 var(--font-body);color:var(--body)}
+.is-home .hm-suite .su-stats dd{margin:0;display:flex;align-items:center;gap:6px}
+.is-home .hm-suite .su-stats dd b{font:800 30px/1 var(--font-display);color:#714B67;font-variant-numeric:tabular-nums}
+.is-home .hm-suite .su-stats b.is-tick{animation:suTick .55s var(--spring)}
+.is-home .hm-suite .su-stats .su-zero{color:#137A4A}
+.is-home .hm-suite .su-stats dd .ic{width:20px;height:20px;padding:2px;border-radius:50%;background:#DDF4E8;color:#137A4A}
+.is-home .hm-suite .su-stage{padding:20px 18px 16px;border-radius:20px;background:#fff;box-shadow:0 0 0 1.5px #E3DCEB,0 40px 70px -30px rgba(60,30,60,.35)}
+.is-home .hm-suite .su-hint{background:#714B67}
+
+/* ================================================================ 7 · the TechNext newsroom (/blog) */
+.is-home .hm-news{--bl-serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;padding:110px 0;background:linear-gradient(180deg,#F4F7FC,#FFFFFF)}
+.is-home .hm-news-top{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:36px;align-items:center;margin-bottom:46px}
+.is-home .hm-paper{position:relative;padding:72px 30px 28px;border-radius:3px;background:#FFFDF8;box-shadow:0 0 0 1px #E6E1D4,0 40px 70px -34px rgba(20,26,58,.45)}
+.is-home .hm-paper::before{content:"THE TECHNEXT NEWS \00B7  ODOO 20 EDITION";position:absolute;left:24px;right:24px;top:16px;height:36px;display:flex;align-items:center;justify-content:center;
+  border-top:3px solid #141A3A;border-bottom:1px solid #141A3A;box-shadow:0 3px 0 #FFFDF8,0 4px 0 #141A3A;font:800 12px/1 var(--bl-serif);letter-spacing:.14em;color:#141A3A;white-space:nowrap}
+.is-home .hm-paper .hand{color:#E2453C}
+.is-home .hm-paper h2{font-family:var(--bl-serif);font-weight:700;color:#141A3A}
+.is-home .hm-paper .hm-wbtn{margin-top:22px;--b:#E2453C;--bl:#141A3A;--br:4px}
+.is-home .hm-news-scene{position:relative;display:block;aspect-ratio:800/419;border-radius:16px;overflow:hidden;box-shadow:0 0 0 2px #141A3A,0 8px 0 2px #141A3A}
+.is-home .hm-news-scene img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--hm-ease)}
+.is-home .hm-news-scene:hover img{transform:scale(1.04)}
+.is-home .hm-onair{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:4px;background:#E2453C;box-shadow:0 3px 0 #141A3A;font:800 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.is-home .hm-onair::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:hmLive 1.4s steps(1) infinite}
+@keyframes hmLive{50%{opacity:.25}}
+/* the archive cards carry a red kicker rule (mirrors /blog .post-card) */
+.is-home .hm-posts{gap:0;background:#FFFDF8;box-shadow:0 0 0 1px #E6E1D4}
+.is-home .hm-posts .post-card{border:0;border-radius:0;border-top:4px solid #E2453C;border-left:1px solid #D9DEE8;background:transparent;padding:20px 20px 22px;box-shadow:none;transition:background-color .25s ease,transform .35s var(--hm-spring)}
+.is-home .hm-posts .post-card:first-child{border-left:0}
+.is-home .hm-posts .post-card[data-tags="technext-odoo"]{border-top-color:#3167CA}
+.is-home .hm-posts .post-card[data-tags="erp"]{border-top-color:#14A38B}
+.is-home .hm-posts .post-card:hover{background:#fff;transform:translateY(-3px) rotate(-.3deg);box-shadow:0 18px 30px -20px rgba(20,26,58,.4)}
+.is-home .hm-posts .post-card .post-cover{margin:-20px -20px 6px;border-radius:0;border-bottom:1px solid #D9DEE8}
+.is-home .hm-posts .post-card h3{font-family:var(--bl-serif);font-weight:700;font-size:1.2rem}
+.is-home .hm-posts .post-card .post-cat{border-radius:3px}
+.is-home .hm-posts .post-card-foot time{font-variant-caps:all-small-caps;letter-spacing:.06em}
+
+/* ================================================================ 8 · FAQ (plain brand) */
+.is-home .hm-faq{padding:110px 0;background:#F8FAFE}
+.is-home .hm-faq-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px 64px;align-items:start}
+.is-home .hm-nexi-card{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:center;margin-top:30px;padding:16px 20px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-sm)}
+.is-home .hm-nexi-img{width:88px;height:auto;animation:hmBob 3.6s ease-in-out infinite}
+@keyframes hmBob{50%{transform:translateY(-6px)}}
+.is-home .hm-nexi-say{margin:0 0 12px;font-size:14.5px;line-height:1.5}
+.is-home .hm-nexi-say b{color:var(--ink)}
+.is-home .hm-nexi-act{display:flex;flex-wrap:wrap;gap:8px}
+.is-home .hm-nexi-act .btn{height:40px;padding:0 14px;font-size:14px}
+.is-home .hm-pal-search{display:flex;align-items:center;gap:10px;height:52px;padding:0 8px 0 18px;margin-bottom:14px;border:1px solid var(--line);border-radius:999px;background:#fff;box-shadow:var(--shadow-sm);transition:border-color .2s ease,box-shadow .2s ease}
+.is-home .hm-pal-search:focus-within{border-color:var(--blue-300);box-shadow:0 0 0 4px var(--blue-050)}
+.is-home .hm-pal-search .ic{flex:none;width:19px;height:19px;color:var(--blue)}
+.is-home .hm-pal-search input{flex:1;min-width:0;height:100%;border:0;background:transparent;font:500 16px/1 var(--font-body);color:var(--ink);outline:none}
+.is-home .hm-pal-count{flex:none;padding:6px 11px;border-radius:999px;background:var(--blue-050);font:700 12px/1 var(--font-body);color:var(--blue-700)}
+.is-home .hm-pal .faq{max-width:none}
+.is-home .hm-pal-empty{margin:14px 4px;font-size:14.5px}
+
+/* ================================================================ 9 · CTA (plain brand) */
+.is-home .hm-cta-sec{padding:20px 0 110px;background:#fff}
+.is-home .hm-cta{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 40px;align-items:center;padding:56px 64px;border-radius:28px;background:radial-gradient(circle at 88% 20%,rgba(255,255,255,.14),transparent 45%),linear-gradient(135deg,#3167CA,#1E4691);box-shadow:var(--shadow-blue);color:#fff}
+.is-home .hm-cta .hand{color:#FFE08A}
+.is-home .hm-cta h2{color:#fff;max-width:16ch}
+.is-home .hm-cta-copy > p:not(.hand){margin:14px 0 0;max-width:54ch;color:#E3ECFB;font-size:1.06rem;line-height:1.6}
+.is-home .hm-cta-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px;padding:0}
+.is-home .hm-cta-list li{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 8px;border-radius:999px;background:rgba(255,255,255,.12);font:600 14.5px/1 var(--font-body);color:#fff}
+.is-home .hm-cta-list .ic{width:22px;height:22px;padding:4px;border-radius:50%;background:#fff;color:var(--blue)}
+.is-home .hm-cta .actions{margin-top:0}
+.is-home .hm-cta-nexi{width:200px;height:auto;animation:hmBob 3.4s ease-in-out infinite;filter:drop-shadow(0 16px 18px rgba(10,25,70,.35))}
+
+/* ================================================================ responsive */
+@media (max-width:1100px){
+  .is-home .hm-wts--4,.is-home .hm-ind-grid,.is-home .hm-plaques{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .is-home .hm-wts--4{row-gap:34px}
+}
+@media (max-width:980px){
+  .is-home .hm-who-in,.is-home .hm-faq-in,.is-home .hm-news-top{grid-template-columns:1fr}
+  .is-home .hm-pass{max-width:640px}
+  .is-home .hm-wts--3{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
+  .is-home .hm-posts{grid-template-columns:1fr}
+  .is-home .hm-posts .post-card{border-left:0}
+  .is-home .hm-cta{grid-template-columns:1fr;padding:44px 36px}
+  .is-home .hm-cta-nexi{position:absolute;right:20px;bottom:-10px;width:130px}
+  .is-home .hm-cta-copy{padding-bottom:110px}
+}
+@media (max-width:760px){
+  .is-home .hm-head--row{flex-direction:column;align-items:flex-start;gap:14px}
+  .is-home .hm-wts--4{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .is-home .hm-ind-grid{grid-template-columns:1fr}
+  .is-home .hm-suite .su-pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .is-home :is(.hm-who,.hm-apps3,.hm-steps,.hm-prac,.hm-inds,.hm-news,.hm-faq){padding:76px 0}
+  .is-home .hm-suite{padding-bottom:76px}
+  .is-home .hm-cta-sec{padding:8px 0 76px}
+  .is-home .hm-head{margin-bottom:32px}
+  .is-home .hm-plaques{gap:12px;margin-top:48px}
+  .is-home .co-plaque{min-height:104px;padding:18px 16px}
+  .is-home .co-plaque b{font-size:2.1rem}
+  .is-home .co-plaque span:not(.hm-num){font-size:12.5px}
+  .is-home .co-plaque--odoo img{height:32px}
+  .is-home .hm-sub{margin:48px 0 14px}
+  .is-home .hm-pass{padding:44px 10px 10px;border-radius:20px}
+  .is-home .hm-pass::before{font-size:10px;padding-left:16px}
+  .is-home .hm-wt-card{margin:-24px 10px 12px}
+  .is-home .hm-ind{display:grid;grid-template-columns:40% minmax(0,1fr)}
+  .is-home .hm-ind-view{aspect-ratio:auto;height:100%;border-bottom:0;border-right:2px solid var(--ii)}
+  .is-home .hm-ind-b{padding:14px}
+  .is-home .hm-ind-badge{position:static;width:34px;height:34px}
+  .is-home .hm-peek{left:var(--mpx,var(--px));top:var(--mpy,var(--py));width:calc(var(--pw,22%) * 1.75)}
+  .is-home .hm-suite .su-copy{padding:44px 18px 22px}
+  .is-home .hm-suite .su-stats{gap:8px}
+  .is-home .hm-suite .su-stats > div{padding:10px}
+  .is-home .hm-suite .su-stats dd b{font-size:24px}
+  .is-home .hm-suite .su-stage{padding:14px 8px 12px}
+  .is-home .hm-paper{padding:66px 18px 22px}
+  .is-home .hm-paper::before{left:14px;right:14px;font-size:9.5px;letter-spacing:.08em}
+  .is-home .hm-pal-count{display:none}
+  .is-home .hm-nexi-card{grid-template-columns:68px minmax(0,1fr);padding:14px}
+  .is-home .hm-nexi-img{width:68px}
+  .is-home .hm-cta{padding:36px 22px;border-radius:22px}
+  .is-home .hm-cta .actions .btn{width:100%}
+  .is-home .hm-cta-nexi{width:104px;right:10px}
+  .is-home .hm-cta-copy{padding-bottom:96px}
+}
+@media (prefers-reduced-motion:reduce){
+  .is-home .hm-live *,.is-home .hm-live *::before,.is-home .hm-live *::after{animation:none!important}
+}
+/* industry badges: the same full-colour icons as the header's Industries menu */
+.is-home .hm-ind-badge{background:none;border:0;width:46px;height:46px;border-radius:13px;box-shadow:0 0 0 3px #fff,0 6px 14px -6px rgba(31,31,61,.45)}
+.is-home .hm-ind-badge .ic{width:46px;height:46px}
+@media (max-width:560px){.is-home .hm-ind-badge,.is-home .hm-ind-badge .ic{width:36px;height:36px}}

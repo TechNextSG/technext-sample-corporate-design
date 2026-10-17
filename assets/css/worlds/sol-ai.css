@@ -1,0 +1,295 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-ai (/solutions/ai) — the AI hub as a hands-on science museum, the AI Discovery Hall. Warm plaster and stone,
+   polished brass, museum ink, and one colour per gallery (01 knowledge teal, 02 Odoo purple, 03 agents amber, 04 chatbots
+   blue) with approval green at the gate. The title card is a framed wall label with brass screws; the caption is the audio
+   guide; buttons are ink plates with a brass lip; the glance strip is a row of object labels on a brass rail; below: a
+   curator's note, the use-case matrix in a vitrine, four arched galleries, the visitor route, an admission ticket, the
+   information desk and wayfinding signs. Classes: .msm-* */
+.ixw--sol-ai{--ow-c:#0E9384;--msm-ink:#16323A;--msm-ivory:#FFFDF8;--msm-wall:#F5ECDA;--msm-stone:#E6D8BC;--msm-stone-d:#CCB892;--msm-brass:#C9A227;--msm-brass-d:#94741A;--msm-brass-l:#F2DD8E;
+  --msm-teal:#0E9384;--msm-pur:#714B67;--msm-amb:#D97B12;--msm-blue:#3167CA;--msm-ok:#1E9E6A;--msm-txt:#4A4A3F;
+  --w-alt:#F8F2E6;--w-dot:rgba(201,162,39,.14);--w-hand:#0E9384;--lab-bg:#FFFDF8;--lab-bd:2px solid #16323A;--lab-lip:#C9A227;--lab-tail:#16323A;--lab-r:6px;
+  
+  --ii-bg:linear-gradient(160deg,#FFFDF8,#F2E6CC 60%,#DDF2EE);--ii-ink:#16323A;--ii-b:#0E9384;--ii-accent:#C9A227;--ii-lip:#16323A;--ii-ep-bg:#0E9384;--ii-ep-fg:#FFFFFF}
+.ixw--sol-ai .ixw-hero{background:linear-gradient(180deg,#BFE3F8 0,#F5ECDA 24%,#F5ECDA 62%,#EFE4CF 62%,#E3D3B4 100%)}
+
+/* ---------- the title card: a framed wall label, brass screws in the corners ---------- */
+.ixw--sol-ai .ixw-copy{position:relative;max-width:520px;margin-top:10px;padding:28px 30px 22px;border-radius:6px;background:var(--msm-ivory);
+  box-shadow:0 0 0 1.5px var(--msm-stone),0 0 0 9px var(--msm-ivory),0 0 0 10.5px var(--msm-stone-d),0 40px 70px -30px rgba(60,45,20,.4)}
+.ixw--sol-ai .ixw-copy::before{content:"";position:absolute;inset:9px;pointer-events:none;
+  background:radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) left top/8px 8px no-repeat,radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) right top/8px 8px no-repeat,
+    radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) left bottom/8px 8px no-repeat,radial-gradient(circle,#F2DD8E 0 1.4px,#C9A227 1.6px 3px,#94741A 3.4px,transparent 3.8px) right bottom/8px 8px no-repeat}
+.ixw--sol-ai .ixw-copy::after{content:"HALL A \00B7  AI \00B7  4 EXHIBITS";position:absolute;right:26px;top:-15px;padding:7px 12px;border-radius:4px;background:var(--msm-ink);color:var(--msm-brass-l);
+  font:800 10.5px/1 var(--font-body);letter-spacing:.16em;box-shadow:0 3px 0 var(--msm-brass-d)}
+.ixw--sol-ai :is(.ixwi-card,.hxs-card)::after{display:none}
+.ixw--sol-ai .ixw-copy h1{max-width:15ch;font-size:clamp(2.1rem,3.3vw,2.85rem);color:var(--msm-ink)}
+.ixw--sol-ai .ixw-copy .crumbs{margin-bottom:12px}.ixw--sol-ai .ixw-copy .ixw-ep{margin-bottom:10px}
+.ixw--sol-ai .ixw-copy .hand{color:var(--msm-teal)}
+.ixw--sol-ai .ixw-copy .lead{margin-top:14px;font-size:1rem;line-height:1.6;color:var(--msm-txt)}
+.ixw--sol-ai .msm-badges{display:grid;gap:9px;margin:18px 0 0}
+.ixw--sol-ai .msm-badges p{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0}
+.ixw--sol-ai .msm-cred span{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px 0 5px;border-radius:999px;background:#FFF7DD;box-shadow:inset 0 0 0 1.5px var(--msm-brass);font:800 11.5px/1 var(--font-body);color:var(--msm-ink)}
+.ixw--sol-ai .msm-cred span::before{content:"";width:17px;height:17px;border-radius:50%;flex:none;background:var(--msm-brass) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.6 8.2l2.2 2.1 4.6-4.6' fill='none' stroke='%2316323A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.ixw--sol-ai .msm-cred span+span::before{background-color:#D9B7CF}
+.ixw--sol-ai .msm-exh b{margin-right:3px;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7A6337}
+.ixw--sol-ai .msm-exh a{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 4px;border-radius:8px;background:#FFFFFF;font:800 12px/1 var(--font-body);color:var(--msm-ink);text-decoration:none;
+  box-shadow:inset 0 0 0 1.5px #E2D5BA,0 2px 0 #E2D5BA;transition:translate .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease,background-color .2s ease}
+.ixw--sol-ai .msm-exh a .ic{width:22px;height:22px;padding:4px;border-radius:6px;background:var(--c);color:#FFFFFF}
+.ixw--sol-ai .msm-exh a:hover{translate:0 -2px;background:#FFFDF8;text-decoration:none;color:var(--msm-ink);box-shadow:inset 0 0 0 1.5px var(--c),0 4px 0 var(--c),0 10px 16px -10px var(--c)}
+.ixw--sol-ai .msm-exh a:active{translate:0 2px;box-shadow:inset 0 0 0 1.5px var(--c),0 0 0 var(--c);transition-duration:.06s}
+.ixw--sol-ai .msm-exh a:focus-visible{outline:3px solid var(--msm-brass);outline-offset:3px}
+.ixw--sol-ai .ixw-copy .actions{gap:12px;margin-top:20px}
+.ixw--sol-ai .ixw-hint{margin-top:16px;font-size:13px}.ixw--sol-ai .ixw-hint .ic{color:var(--msm-brass)}
+@media (max-width:767px){.ixw--sol-ai .ixw-copy{padding:30px 20px 22px}.ixw--sol-ai .ixw-copy::after{right:16px;font-size:9.5px;letter-spacing:.1em}}
+
+/* ---------- the caption: the audio guide ---------- */
+.ixw--sol-ai .ixw-cap{border-radius:14px;background:var(--msm-ivory);box-shadow:0 0 0 2px var(--msm-ink),0 5px 0 2px var(--msm-ink),0 26px 44px -22px rgba(40,30,10,.45)}
+.ixw--sol-ai .ixw-cap::before{content:"\25B6  AUDIO GUIDE";position:absolute;left:18px;top:-14px;padding:6px 11px 6px 10px;border-radius:999px;background:var(--msm-teal);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;box-shadow:0 0 0 2px var(--msm-ink)}
+.ixw--sol-ai .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2px var(--msm-brass)}
+.ixw--sol-ai .ixw-cap-who b{color:var(--msm-teal)}.ixw--sol-ai .ixw-cap-txt b{color:var(--msm-pur)}
+.ixw--sol-ai .ixw-cap-rec{background:#FFF7DD;border:1px dashed var(--msm-brass);color:#6B5512}
+
+/* ---------- buttons: ink plates with a brass lip; the second one is an ivory placard; the tour controls are audio-guide keys ---------- */
+.ixw--sol-ai main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:10px;border:0;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease,background-color .2s ease,color .2s ease}
+.ixw--sol-ai main .btn-primary{color:#FFFFFF;background:linear-gradient(180deg,#22474F,#16323A 60%);box-shadow:inset 0 0 0 1.5px rgba(242,221,142,.4),inset 0 1px 0 rgba(255,255,255,.12),0 4px 0 var(--msm-brass-d),0 14px 24px -14px rgba(22,50,58,.7)}
+.ixw--sol-ai main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#285560,#1A3B44 60%);box-shadow:inset 0 0 0 1.5px var(--msm-brass-l),inset 0 1px 0 rgba(255,255,255,.16),0 6px 0 var(--msm-brass-d),0 20px 30px -14px rgba(201,162,39,.6)}
+.ixw--sol-ai main .btn-primary .ic{color:var(--msm-ink);background:linear-gradient(180deg,#F7E6A6,var(--msm-brass))}
+.ixw--sol-ai main .btn-primary:hover .ic{background:linear-gradient(180deg,#FFF1BD,#D9B43A)}
+.ixw--sol-ai main :is(.btn-ghost,.ixw-cta .btn-white){color:var(--msm-ink);background:var(--msm-ivory);box-shadow:inset 0 0 0 2px var(--msm-ink),0 4px 0 var(--msm-ink),0 14px 24px -16px rgba(22,50,58,.5)}
+.ixw--sol-ai main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--msm-ink);background:#FFF7DD;box-shadow:inset 0 0 0 2px var(--msm-ink),0 6px 0 var(--msm-ink),0 20px 28px -16px rgba(201,162,39,.55)}
+.ixw--sol-ai main .btn-ghost::before{display:none}
+.ixw--sol-ai main .btn-ghost .ic{width:26px;height:26px;padding:5px;margin-left:-8px;border-radius:50%;background:var(--msm-teal);color:#FFFFFF}
+.ixw--sol-ai main .btn-ghost:hover .ic{transform:none;rotate:-10deg}
+.ixw--sol-ai main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--sol-ai main .btn-primary:active{translate:0 3px;box-shadow:inset 0 0 0 1.5px rgba(242,221,142,.4),0 1px 0 var(--msm-brass-d);transition-duration:.06s}
+.ixw--sol-ai main :is(.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;box-shadow:inset 0 0 0 2px var(--msm-ink),0 1px 0 var(--msm-ink);transition-duration:.06s}
+.ixw--sol-ai .ixw-cta .btn-outline-white,.ixw--sol-ai .ixw-cta .btn-outline-white:hover{color:var(--msm-ink);background:var(--msm-brass-l);box-shadow:inset 0 0 0 2px var(--msm-ink),0 4px 0 var(--msm-ink)}
+.ixw--sol-ai .ixw-cta .btn-outline-white:hover{background:#F8E7A8;box-shadow:inset 0 0 0 2px var(--msm-ink),0 6px 0 var(--msm-ink)}
+.ixw--sol-ai main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--msm-brass);outline-offset:4px}
+.ixw--sol-ai .ixw-copy .actions .btn{height:52px;padding:0 24px;font-size:16px}
+.ixw--sol-ai .ixw-copy .actions .btn-primary{padding-right:12px}
+/* the audio-guide keys: prev / play / next and the track dots */
+.ixw--sol-ai .ixw-cap-ctl{gap:7px}
+.ixw--sol-ai .ixw-ibtn{width:38px;height:38px;border:2px solid var(--msm-ink);background:var(--msm-ivory);color:var(--msm-ink);box-shadow:0 3px 0 var(--msm-ink)}
+.ixw--sol-ai .ixw-ibtn:hover{translate:0 -2px;border-color:var(--msm-ink);color:var(--msm-teal);background:#FFF7DD;box-shadow:0 5px 0 var(--msm-ink),0 10px 16px -8px rgba(201,162,39,.6)}
+.ixw--sol-ai .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--msm-ink)}
+.ixw--sol-ai .ixw-ibtn:focus-visible{outline:3px solid var(--msm-brass);outline-offset:3px}
+.ixw--sol-ai .ixw-ibtn--play,.ixw--sol-ai .ixw-ibtn--play:hover{width:46px;height:46px;color:#FFFFFF;background:radial-gradient(circle at 35% 30%,#22B5A4,var(--msm-teal) 60%,#0A6B60);box-shadow:inset 0 0 0 2px rgba(255,255,255,.25),0 3px 0 var(--msm-ink),0 0 0 3px var(--msm-brass-l)}
+.ixw--sol-ai .ixw-ibtn--play:hover{box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 5px 0 var(--msm-ink),0 0 0 3px var(--msm-brass)}
+.ixw--sol-ai .ixw-ibtn--play.is-on{animation:msmHalo 2.6s ease-out infinite}
+@keyframes msmHalo{0%{box-shadow:inset 0 0 0 2px rgba(255,255,255,.25),0 3px 0 #16323A,0 0 0 3px #F2DD8E,0 0 0 3px rgba(14,147,132,.45)}70%,100%{box-shadow:inset 0 0 0 2px rgba(255,255,255,.25),0 3px 0 #16323A,0 0 0 3px #F2DD8E,0 0 0 14px rgba(14,147,132,0)}}
+.ixw--sol-ai .ixw-dots{gap:6px;padding:5px 8px;border-radius:999px;background:#F3EAD7;box-shadow:inset 0 0 0 1px #E2D5BA}
+.ixw--sol-ai .ixw-dots button{width:8px;height:8px;background:#D9C9A6}
+.ixw--sol-ai .ixw-dots button:hover{background:var(--msm-brass-d)}
+.ixw--sol-ai .ixw-dots button.is-on{width:22px;background:var(--msm-brass);box-shadow:0 0 0 1.5px var(--msm-ink)}
+.ixw--sol-ai .ixw-dots button:focus-visible{outline:2px solid var(--msm-ink);outline-offset:2px}
+/* "View the scene": a museum tag with an ink eye; pressed ("Show the text") = an ink plate */
+.ixw--sol-ai .ixw-peek{height:40px;padding:0 16px 0 6px;gap:9px;border:2px solid var(--msm-ink);background:var(--msm-ivory);color:var(--msm-ink);box-shadow:0 3px 0 var(--msm-ink),0 12px 20px -12px rgba(22,50,58,.5)}
+.ixw--sol-ai .ixw-peek::before{width:26px;height:26px;border-radius:50%;background:var(--msm-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2DD8E' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center/15px no-repeat;-webkit-mask:none;mask:none}
+.ixw--sol-ai .ixw-peek:hover{translate:0 -2px;background:#FFF7DD;box-shadow:0 5px 0 var(--msm-ink),0 16px 24px -12px rgba(201,162,39,.6)}
+.ixw--sol-ai .ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 var(--msm-ink)}
+.ixw--sol-ai .ixw-peek:focus-visible{outline:3px solid var(--msm-brass);outline-offset:3px}
+.ixw--sol-ai .ixw-peek[aria-pressed="true"]{background:var(--msm-ink);color:var(--msm-brass-l)}
+.ixw--sol-ai .ixw-peek[aria-pressed="true"]::before{background-color:var(--msm-brass);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316323A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E")}
+.ixw--sol-ai .ixw-hot-lab .ic{color:var(--msm-teal)}
+@media (max-width:767px){.ixw--sol-ai .ixw-copy .actions .btn{height:50px;padding:0 18px;font-size:15px}.ixw--sol-ai .msm-exh b{display:none}.ixw--sol-ai .msm-badges p{gap:6px}.ixw--sol-ai .msm-exh a{padding:0 9px 0 4px;font-size:11.5px;gap:5px}.ixw--sol-ai .msm-exh a .ic{width:20px;height:20px}}
+
+/* ---------- the glance strip: object labels on a brass rail ---------- */
+.ixw--sol-ai .ow-strip{position:relative;padding:24px 22px 22px;gap:0 14px;border-radius:12px;background:linear-gradient(180deg,#F3EAD7,#E6D8BC);box-shadow:inset 0 0 0 1.5px var(--msm-stone-d),0 24px 44px -30px rgba(60,45,20,.4)}
+.ixw--sol-ai .ow-strip::before{content:"";position:absolute;left:16px;right:16px;top:12px;height:6px;border-radius:3px;background:linear-gradient(180deg,var(--msm-brass-l),var(--msm-brass-d))}
+.ixw--sol-ai .ow-strip>div{position:relative;margin-top:4px;padding:16px 14px 14px;border-radius:4px;background:var(--msm-ivory);box-shadow:inset 0 3px 0 var(--c,#0E9384),0 8px 14px -10px rgba(60,45,20,.4)}
+.ixw--sol-ai .ow-strip>div:nth-child(1){--c:#0E9384}.ixw--sol-ai .ow-strip>div:nth-child(2){--c:#714B67}.ixw--sol-ai .ow-strip>div:nth-child(3){--c:#1E9E6A}.ixw--sol-ai .ow-strip>div:nth-child(4){--c:#D97B12}.ixw--sol-ai .ow-strip>div:nth-child(5){--c:#3167CA}
+.ixw--sol-ai .ow-strip>div::before{content:"";position:absolute;left:50%;top:-10px;width:2px;height:10px;margin-left:-1px;background:var(--msm-brass-d)}
+.ixw--sol-ai .ow-strip>div+div{border-left:0}
+.ixw--sol-ai .ow-strip dt{font:800 11px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#7A6337}.ixw--sol-ai .ow-strip dt .ic{color:var(--c)}
+.ixw--sol-ai .ow-strip dd{color:var(--msm-ink)}
+
+/* ---------- sections: stone and brass ---------- */
+.ixw--sol-ai .section--alt{background-color:#F8F2E6;background-image:linear-gradient(45deg,rgba(201,162,39,.07) 25%,transparent 25% 75%,rgba(201,162,39,.07) 75%),linear-gradient(45deg,rgba(201,162,39,.07) 25%,transparent 25% 75%,rgba(201,162,39,.07) 75%);background-size:44px 44px;background-position:0 0,22px 22px}
+.ixw--sol-ai :is(.msm-head,.demo-sec .sec-head,.msm-get-copy,.msm-faq-side) h2{color:var(--msm-ink)}
+.ixw--sol-ai :is(.msm-head,.demo-sec .sec-head,.msm-get-copy,.msm-faq-side) .hand::before{content:"\25C6";display:inline-block;margin-right:8px;font:400 13px/1 var(--font-body);color:var(--msm-brass);vertical-align:2px}
+.ixw--sol-ai :is(.msm-head,.demo-sec .sec-head) h2::after{content:"";display:block;width:108px;height:6px;margin-top:14px;border-radius:3px;background:linear-gradient(90deg,var(--msm-teal) 0 25%,var(--msm-pur) 25% 50%,var(--msm-amb) 50% 75%,var(--msm-blue) 75%)}
+
+/* the curator's note */
+.ixw--sol-ai .answer-sec{padding-top:46px}
+.ixw--sol-ai .msm-note{position:relative;display:block;max-width:940px;padding:26px 30px 24px 92px;border:0;border-radius:6px;background:var(--msm-ivory);box-shadow:0 0 0 1.5px var(--msm-stone),0 0 0 7px var(--msm-ivory),0 0 0 8.5px var(--msm-stone-d),0 22px 40px -28px rgba(60,45,20,.45)}
+.ixw--sol-ai .msm-note::before{content:"\201C";position:absolute;left:24px;top:14px;width:48px;height:48px;border-radius:50%;background:var(--msm-ink);color:var(--msm-brass-l);font:800 44px/62px Georgia,serif;text-align:center}
+.ixw--sol-ai .msm-note .answer-h{display:block;margin:0 0 8px;background:transparent;padding:0;color:var(--msm-teal);letter-spacing:.14em}
+.ixw--sol-ai .msm-note .answer-h::before{content:"Curator's note \00B7  ";color:#7A6337}
+.ixw--sol-ai .msm-note p:not(.answer-h){font-size:15px;line-height:1.65;color:#2F3A33}
+@media (max-width:640px){.ixw--sol-ai .msm-note{padding:76px 20px 22px}.ixw--sol-ai .msm-note::before{left:20px;top:18px}}
+
+/* the use-case matrix, in a vitrine */
+.ixw--sol-ai .msm-demo-sec{background:linear-gradient(180deg,#FFFFFF,#FBF6EA)}
+.ixw--sol-ai .msm-demo-top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;align-items:center;margin-bottom:34px}
+.ixw--sol-ai .msm-demo-top .sec-head{margin-bottom:0;max-width:none}
+.ixw--sol-ai .msm-label{position:relative;padding:26px 24px 22px;border-radius:4px;background:var(--msm-ivory);rotate:1.2deg;box-shadow:0 0 0 1.5px var(--msm-stone-d),0 18px 30px -18px rgba(60,45,20,.45)}
+.ixw--sol-ai .msm-label-pin{position:absolute;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F2DD8E,#C9A227 55%,#94741A);box-shadow:0 3px 4px rgba(60,45,20,.35)}
+.ixw--sol-ai .msm-label-k{margin:0 0 6px;font:800 10.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--msm-teal)}
+.ixw--sol-ai .msm-label-t{margin:0;font:800 1.35rem/1.15 var(--font-display);color:var(--msm-ink)}
+.ixw--sol-ai .msm-label-m{margin:6px 0 14px;padding-bottom:12px;border-bottom:1.5px dashed var(--msm-stone-d);font:600 13px/1.4 var(--font-body);color:#7A6337}
+.ixw--sol-ai .msm-label-key{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.ixw--sol-ai .msm-label-key li{display:flex;align-items:center;gap:10px;font:700 14px/1.2 var(--font-body);color:var(--msm-ink)}
+.ixw--sol-ai .msm-label-key .ic{width:28px;height:28px;padding:6px;border-radius:50%;background:var(--c);color:#FFFFFF;flex:none}
+.ixw--sol-ai .msm-demo-sec .dm{border:0;border-radius:14px;box-shadow:0 0 0 1.5px var(--msm-stone-d),0 0 0 10px var(--msm-ivory),0 0 0 11.5px var(--msm-stone-d),0 -6px 0 10px var(--msm-ivory),0 40px 70px -40px rgba(60,45,20,.5)}
+.ixw--sol-ai .msm-demo-sec .dm-head{background:linear-gradient(180deg,#FFFDF8,#F7F0E2);box-shadow:inset 0 -1.5px 0 var(--msm-stone)}
+.ixw--sol-ai .msm-demo-sec .dm-note{margin-top:24px}.ixw--sol-ai .msm-demo-sec .dm-note .ic{color:var(--msm-ok)}
+
+/* four disciplines: the galleries, each an arched doorway */
+.ixw--sol-ai .msm-map{display:flex;align-items:center;gap:0;max-width:none;margin:-6px 0 34px;padding:10px 14px;border-radius:999px;background:#FBF6EA;box-shadow:inset 0 0 0 1.5px var(--msm-stone)}
+.ixw--sol-ai .msm-map span{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--c);color:#FFFFFF;font:800 12px/1 var(--font-body);flex:none}
+.ixw--sol-ai .msm-map i{flex:1;height:2px;margin:0 6px;background:repeating-linear-gradient(90deg,var(--msm-stone-d) 0 6px,transparent 6px 11px)}
+.ixw--sol-ai .msm-map b{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:999px;background:var(--msm-ink);color:var(--msm-brass-l);font:800 12px/1 var(--font-body);white-space:nowrap}
+.ixw--sol-ai .msm-map b .ic{width:15px;height:15px}
+.ixw--sol-ai .msm-gals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.ixw--sol-ai :is(.msm-gal,.msm-sign){min-width:0;box-sizing:border-box}
+.ixw--sol-ai .msm-gal{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 24px 26px;border-radius:200px 200px 14px 14px;background:linear-gradient(180deg,var(--l) 0,#FFFFFF 46%);text-decoration:none;color:inherit;
+  box-shadow:inset 0 0 0 2px var(--c),inset 0 0 0 9px #FFFFFF,inset 0 0 0 10.5px color-mix(in srgb,var(--c) 30%,#FFFFFF),0 22px 36px -24px rgba(60,45,20,.45);transition:translate .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease,opacity .38s ease-out,transform .38s ease-out}
+.ixw--sol-ai .msm-gal::after{content:"";position:absolute;left:-4px;right:-4px;bottom:-12px;height:12px;border-radius:0 0 8px 8px;background:linear-gradient(180deg,var(--msm-stone),var(--msm-stone-d))}
+.ixw--sol-ai .msm-gal:hover{translate:0 -6px;text-decoration:none;color:inherit;box-shadow:inset 0 0 0 2px var(--c),inset 0 0 0 9px #FFFFFF,inset 0 0 0 10.5px var(--c),0 30px 44px -24px color-mix(in srgb,var(--c) 60%,transparent)}
+.ixw--sol-ai .msm-gal-n{align-self:center;margin-bottom:14px;padding:5px 10px;border-radius:4px;background:var(--msm-ink);color:var(--msm-brass-l);font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
+.ixw--sol-ai .msm-gal-ic{align-self:center;display:grid;place-items:center;width:66px;height:66px;margin-bottom:16px;border-radius:50%;background:var(--c);color:#FFFFFF;box-shadow:0 0 0 5px #FFFFFF,0 0 0 7px var(--msm-brass),0 10px 16px -8px rgba(60,45,20,.5);transition:rotate .6s cubic-bezier(.34,1.56,.64,1)}
+.ixw--sol-ai .msm-gal-ic .ic{width:28px;height:28px}
+.ixw--sol-ai .msm-gal:hover .msm-gal-ic{rotate:-14deg}
+.ixw--sol-ai .msm-gal h3{display:grid;align-items:center;min-height:2.6em;margin:0 0 10px;font-size:1.08rem;line-height:1.25;color:var(--msm-ink);text-wrap:balance}
+.ixw--sol-ai .msm-gal h3::after{content:"";justify-self:center;width:28px;height:3px;margin-top:8px;border-radius:2px;background:var(--c)}
+.ixw--sol-ai .msm-gal p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--body)}
+.ixw--sol-ai .msm-gal .btn-link{margin-top:auto;padding:8px 14px;border-radius:999px;background:color-mix(in srgb,var(--c) 10%,#FFFFFF);color:var(--c);font-weight:800;transition:background-color .2s ease}
+.ixw--sol-ai .msm-gal:hover .btn-link{background:color-mix(in srgb,var(--c) 18%,#FFFFFF)}
+.ixw--sol-ai .msm-gal:focus-visible{outline:3px solid var(--msm-brass);outline-offset:6px}
+
+/* how we deliver: the visitor route, four tour stops on a roped path */
+.ixw--sol-ai .msm-route{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;padding:60px 0 0;list-style:none}
+.ixw--sol-ai .msm-route::before{content:"";position:absolute;left:12.5%;right:12.5%;top:20px;height:24px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0 2Q50 30 100 2' fill='none' stroke='%23B5303A' stroke-width='5' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") 0 0/33.3333% 100% repeat-x}
+.ixw--sol-ai .msm-stop::before{content:"";position:absolute;left:50%;top:-44px;width:7px;height:44px;margin-left:-3.5px;border-radius:3px;background:linear-gradient(90deg,#94741A,#F2DD8E 45%,#C9A227)}
+.ixw--sol-ai .msm-stop::after{content:"";position:absolute;left:50%;top:-54px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F2DD8E,#C9A227 55%,#94741A)}
+.ixw--sol-ai .msm-route-sec .container{position:relative}
+.ixw--sol-ai .msm-route-sign{position:absolute;right:24px;top:6px;display:grid;justify-items:center;gap:4px;width:190px;padding:18px 16px 16px;border-radius:10px 10px 4px 4px;background:var(--msm-ink);color:#FFFFFF;rotate:2deg;box-shadow:inset 0 0 0 2px var(--msm-brass),0 6px 0 var(--msm-brass-d),0 24px 30px -18px rgba(22,50,58,.55)}
+.ixw--sol-ai .msm-route-sign::after{content:"";position:absolute;left:50%;top:100%;width:6px;height:46px;margin-left:-3px;background:linear-gradient(90deg,#94741A,#F2DD8E 45%,#C9A227)}
+.ixw--sol-ai .msm-route-sign b{font:800 11px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--msm-brass-l)}
+.ixw--sol-ai .msm-route-sign span{font:800 2rem/1.05 var(--font-display)}
+.ixw--sol-ai .msm-route-sign i{display:inline-flex;align-items:center;gap:6px;font:600 1.15rem/1 var(--font-hand);font-style:normal;color:#BFE9E2}.ixw--sol-ai .msm-route-sign .ic{width:15px;height:15px}
+.ixw--sol-ai .msm-stop{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:0 14px;padding:22px 22px 24px;border-radius:12px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--msm-stone),inset 0 4px 0 var(--c),0 18px 30px -22px rgba(60,45,20,.45);
+  translate:0 26px;opacity:0;transition:translate .7s cubic-bezier(.34,1.56,.64,1),opacity .4s ease-out;transition-delay:calc(var(--i) * 150ms + .15s)}
+.ixw--sol-ai .msm-route.is-in .msm-stop{translate:0 0;opacity:1}
+.ixw--sol-ai .msm-stop>div{display:contents}
+.ixw--sol-ai .msm-stop-k{grid-row:1/3;align-self:center;position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--msm-ink);box-shadow:0 0 0 3px var(--msm-brass),0 4px 0 3px var(--msm-brass-d)}
+.ixw--sol-ai .msm-stop-k b{font:800 20px/1 var(--font-display);color:var(--msm-brass-l)}
+.ixw--sol-ai .msm-stop-k i{position:absolute;right:-8px;bottom:-6px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--c);color:#FFFFFF;box-shadow:0 0 0 2px #FFFFFF}
+.ixw--sol-ai .msm-stop-k .ic{width:13px;height:13px}
+.ixw--sol-ai .msm-stop-t{grid-column:2;align-self:end;margin:4px 0 5px;font:800 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.ixw--sol-ai .msm-stop h3{grid-column:2;align-self:start;margin:0;font-size:1.04rem;line-height:1.25;color:var(--msm-ink)}
+.ixw--sol-ai .msm-stop p:last-child{grid-column:1/-1;margin:16px 0 0;padding-top:14px;border-top:1.5px dashed #E2D5BA;font-size:14.3px;line-height:1.6;color:var(--body)}
+
+/* what you get: stats in brass medallions, the admission ticket */
+.ixw--sol-ai .msm-get{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:56px;align-items:center}
+.ixw--sol-ai .msm-stats{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+.ixw--sol-ai .msm-stats div{display:grid;place-items:center;align-content:center;width:112px;height:112px;border-radius:50%;background:var(--msm-ivory);box-shadow:inset 0 0 0 2px var(--msm-brass),inset 0 0 0 7px var(--msm-ivory),inset 0 0 0 8.5px var(--msm-stone-d),0 14px 24px -16px rgba(60,45,20,.5)}
+.ixw--sol-ai .msm-stats dd{order:-1;margin:0;font:800 1.9rem/1 var(--font-display);color:var(--msm-ink)}
+.ixw--sol-ai .msm-stats dt{margin-top:4px;max-width:80px;text-align:center;font:700 10.5px/1.2 var(--font-body);letter-spacing:.04em;text-transform:uppercase;color:#7A6337}
+.ixw--sol-ai .msm-ticket{position:relative;padding:0 0 0;border-radius:14px;background:radial-gradient(circle at 0 50%,#FFFFFF 13px,transparent 13.5px) 0 0/100% 100% no-repeat,radial-gradient(circle at 100% 50%,#FFFFFF 13px,transparent 13.5px) 0 0/100% 100% no-repeat,var(--msm-ivory);
+  box-shadow:0 0 0 1.5px var(--msm-stone-d),0 30px 50px -30px rgba(60,45,20,.5)}
+.ixw--sol-ai .msm-ticket-h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin:0;padding:20px 28px 16px;border-radius:14px 14px 0 0;background:var(--msm-ink)}
+.ixw--sol-ai .msm-ticket-h span{font:800 11px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--msm-brass-l)}
+.ixw--sol-ai .msm-ticket-h b{font:800 1.2rem/1 var(--font-display);color:#FFFFFF}
+.ixw--sol-ai .msm-incl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px;margin:0;padding:12px 30px 10px;list-style:none}
+.ixw--sol-ai .msm-incl li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed #E2D5BA;font-size:14px;line-height:1.5;color:var(--msm-txt)}
+.ixw--sol-ai .msm-incl li .ic{width:20px;height:20px;padding:3px;margin-top:1px;border-radius:50%;flex:none;color:#FFFFFF;background:var(--msm-teal)}
+.ixw--sol-ai .msm-incl li:nth-child(4n+2) .ic{background:var(--msm-pur)}.ixw--sol-ai .msm-incl li:nth-child(4n+3) .ic{background:var(--msm-amb)}.ixw--sol-ai .msm-incl li:nth-child(4n) .ic{background:var(--msm-blue)}
+.ixw--sol-ai .msm-ticket-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 0;padding:14px 28px 18px;border-top:2px dashed var(--msm-stone-d);font:800 11px/1.2 var(--font-body);letter-spacing:.14em;color:#7A6337}
+.ixw--sol-ai .msm-ticket-foot span+span{display:inline-flex;align-items:center;gap:6px;letter-spacing:.02em;text-transform:none;color:var(--msm-ok)}.ixw--sol-ai .msm-ticket-foot .ic{width:16px;height:16px}
+
+/* questions: the information desk */
+.ixw--sol-ai .msm-faq-wrap{display:grid;grid-template-columns:340px minmax(0,1fr);gap:52px;align-items:start}
+.ixw--sol-ai :is(.msm-head,.demo-sec .sec-head,.msm-get-copy,.msm-faq-side) h2{text-wrap:balance}
+.ixw--sol-ai .msm-faq-side{position:sticky;top:110px}
+.ixw--sol-ai .msm-desk{display:grid;place-items:center;margin:22px 0 14px;padding:14px 0 8px;border-radius:16px;background:radial-gradient(circle at 50% 85%,#FFFFFF,#F2E8D4 75%);box-shadow:0 0 0 1.5px var(--msm-stone)}
+.ixw--sol-ai .msm-desk svg{max-width:100%;height:auto}
+.ixw--sol-ai .msm-desk-i{animation:msmSwing 4s ease-in-out infinite;transform-origin:120px 78px}
+@keyframes msmSwing{0%,100%{rotate:-4deg}50%{rotate:4deg}}
+.ixw--sol-ai .msm-faq-more{margin:0;font:600 14px/1.4 var(--font-body);color:var(--muted)}
+.ixw--sol-ai .msm-faq-more a{display:inline-flex;align-items:center;gap:4px;font-weight:800;color:var(--msm-teal)}.ixw--sol-ai .msm-faq-more a .ic{width:15px;height:15px}
+.ixw--sol-ai .msm-faq{max-width:none;counter-reset:q}
+.ixw--sol-ai .msm-faq details{position:relative;border:0;border-radius:10px;background:#FFFFFF;box-shadow:0 0 0 1.5px var(--msm-stone),0 10px 22px -18px rgba(60,45,20,.4);counter-increment:q}
+.ixw--sol-ai .msm-faq details[open]{box-shadow:inset 4px 0 0 var(--msm-teal),0 0 0 1.5px #A9DCD3,0 18px 30px -20px rgba(14,147,132,.35)}
+.ixw--sol-ai .msm-faq summary{padding-left:62px}
+.ixw--sol-ai .msm-faq summary::before{content:counter(q);position:absolute;left:18px;top:13px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--msm-ink);color:var(--msm-brass-l);font:800 12px/1 var(--font-body);box-shadow:0 0 0 2px var(--msm-brass)}
+.ixw--sol-ai .msm-faq details[open] summary::before{background:var(--msm-teal);color:#FFFFFF}
+.ixw--sol-ai .msm-faq summary .ic{color:var(--msm-teal)}
+.ixw--sol-ai .msm-faq .faq-a{padding-left:62px}
+
+/* related: wayfinding signs */
+.ixw--sol-ai .msm-signs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ixw--sol-ai .msm-sign{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:0 22px 22px;border-radius:10px;background:var(--msm-ink);color:#FFFFFF;text-decoration:none;
+  box-shadow:inset 0 0 0 1.5px rgba(242,221,142,.35),0 4px 0 var(--msm-brass-d),0 24px 36px -24px rgba(22,50,58,.6);transition:translate .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease,opacity .38s ease-out,transform .38s ease-out}
+.ixw--sol-ai .msm-sign:hover{translate:0 -5px;text-decoration:none;color:#FFFFFF;box-shadow:inset 0 0 0 1.5px var(--msm-brass),0 6px 0 var(--msm-brass-d),0 30px 40px -24px rgba(22,50,58,.6)}
+.ixw--sol-ai .msm-sign-ar{display:flex;align-items:center;gap:8px;align-self:stretch;margin:0 -22px 18px;padding:12px 18px;border-radius:10px 10px 0 0;background:var(--c);font:800 11.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--sol-ai .msm-sign-ar,.ixw--sol-ai .msm-sign-ar b{color:#FFFFFF}.ixw--sol-ai .msm-sign-ar b{font-weight:800;text-shadow:0 1px 0 rgba(0,0,0,.18)}
+.ixw--sol-ai .msm-sign-ar .ic{width:18px;height:18px}.ixw--sol-ai .msm-sign-ar .ic:last-child{margin-left:auto;transition:translate .3s ease}
+.ixw--sol-ai .msm-sign:hover .msm-sign-ar .ic:last-child{translate:5px 0}
+.ixw--sol-ai .msm-sign h3{margin:0 0 8px;font-size:1.08rem;color:#FFFFFF}
+.ixw--sol-ai .msm-sign p{margin:0 0 16px;font-size:14.3px;line-height:1.6;color:rgba(255,255,255,.8)}
+.ixw--sol-ai .msm-sign .btn-link{margin-top:auto;color:var(--msm-brass-l);font-weight:800}
+
+/* the end card: bunting across the hall */
+.ixw--sol-ai main .msm-cta{background:radial-gradient(circle at 85% 120%,rgba(201,162,39,.35),transparent 45%),linear-gradient(120deg,#16323A,#0F4F55 55%,#0E9384)}
+.ixw--sol-ai main .msm-cta .hand{color:var(--msm-brass-l)}
+.ixw--sol-ai .msm-cta-bunting{position:absolute;left:40px;right:260px;top:0;display:flex;justify-content:space-between;pointer-events:none}
+.ixw--sol-ai .msm-cta-bunting::before{content:"";position:absolute;left:0;right:0;top:4px;height:10px;border-top:2px solid rgba(242,221,142,.6);border-radius:0 0 50% 50%}
+.ixw--sol-ai .msm-cta-bunting i{width:22px;height:26px;margin-top:6px;background:var(--c);clip-path:polygon(0 0,100% 0,50% 100%);animation:msmFlag 3s ease-in-out infinite;animation-delay:calc(var(--d,0) * 1s);transform-origin:50% 0}
+.ixw--sol-ai .msm-cta-bunting i:nth-child(2n){--d:-.6}.ixw--sol-ai .msm-cta-bunting i:nth-child(3n){--d:-1.4}
+@keyframes msmFlag{0%,100%{rotate:-5deg}50%{rotate:5deg}}
+
+@media (max-width:1100px){.ixw--sol-ai .msm-demo-top,.ixw--sol-ai .msm-get{grid-template-columns:1fr;gap:28px}.ixw--sol-ai .msm-label{max-width:420px}
+  .ixw--sol-ai .msm-gals,.ixw--sol-ai .msm-signs{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}.ixw--sol-ai .msm-route{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--sol-ai .msm-route::before,.ixw--sol-ai .msm-stop::before,.ixw--sol-ai .msm-stop::after{display:none}.ixw--sol-ai .msm-route{padding-top:0}
+  .ixw--sol-ai .msm-route-sign{display:none}.ixw--sol-ai .msm-faq-wrap{grid-template-columns:1fr;gap:28px}.ixw--sol-ai .msm-faq-side{position:static}.ixw--sol-ai .msm-desk{display:none}}
+@media (max-width:767px){.ixw--sol-ai .msm-label{display:none}.ixw--sol-ai .msm-gals,.ixw--sol-ai .msm-signs,.ixw--sol-ai .msm-route,.ixw--sol-ai .msm-incl{grid-template-columns:1fr}
+  .ixw--sol-ai .msm-map{padding:8px 10px}.ixw--sol-ai .msm-map span{width:28px;height:28px}.ixw--sol-ai .msm-map b{padding:0 10px;font-size:11px}.ixw--sol-ai .msm-map i{margin:0 3px}
+  .ixw--sol-ai .msm-gal{border-radius:160px 160px 14px 14px}.ixw--sol-ai .msm-stats div{width:96px;height:96px}.ixw--sol-ai .msm-stats dd{font-size:1.6rem}
+  .ixw--sol-ai .msm-ticket-h{flex-direction:column;gap:6px;padding:18px 22px 14px}.ixw--sol-ai .msm-incl{padding:8px 22px}.ixw--sol-ai .msm-ticket-foot{flex-direction:column;align-items:flex-start;padding:14px 22px 16px}
+  .ixw--sol-ai .msm-cta-bunting{left:20px;right:20px}.ixw--sol-ai .ow-strip{padding:20px 14px 18px;gap:12px 10px}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-ai .msm-stop{transition:none;translate:0 0;opacity:1}.ixw--sol-ai :is(.msm-desk-i,.msm-cta-bunting i){animation:none}}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+.ixw--sol-ai .ixw-credits-wrap + .section{padding-top:14px!important}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the AI discovery hall. One teal accent.
+   Themed touches kept: the curator's note, the arched gallery cards (01-04), "tour stop" labels on the four steps,
+   the "Admission includes" card with its dark header.
+   =================================================================================================================== */
+.ixw--sol-ai{--calm-accent:#0E9384;--calm-accent-ink:#0B6F64;--calm-accent-line:#BFE3DD;--calm-accent-wash:#F5FAF9;--calm-wash:#F5FAF9}
+html body.ixw--sol-ai main :is(.msm-head,.demo-sec .sec-head) h2::after{content:none!important;display:none!important}
+html body.ixw--sol-ai main :is(.msm-head,.demo-sec .sec-head,.msm-get-copy,.msm-faq-side) .hand::before{content:""!important}
+html body.ixw--sol-ai main .msm-note{max-width:900px;padding:24px 28px 24px 88px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-ai main .msm-note::before{width:40px!important;height:40px!important;left:28px!important;top:24px!important;background:#E3F3F0!important;color:var(--calm-accent)!important;font:800 34px/52px var(--font-display)!important}
+html body.ixw--sol-ai main .msm-note p:not(.answer-h){color:var(--body)!important}
+@media (max-width:640px){html body.ixw--sol-ai main .msm-note{padding:72px 20px 22px!important}html body.ixw--sol-ai main .msm-note::before{left:20px!important;top:20px!important}}
+/* the matrix: a plain white panel and a plain side label */
+html body.ixw--sol-ai main .msm-label{rotate:none!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-ai main .msm-demo-sec .dm{border:1px solid var(--calm-line)!important;border-radius:18px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-ai main .msm-demo-sec .dm-head{background:#FBFCFD!important;box-shadow:inset 0 -1px 0 var(--calm-line)!important}
+/* galleries: the arch stays (the museum), the plinth and the coloured fill go */
+html body.ixw--sol-ai main .msm-gal{background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-ai main .msm-gal:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-ai main .msm-gal::before,html body.ixw--sol-ai main .msm-gal::after{content:none!important;display:none!important}
+html body.ixw--sol-ai main .msm-gal-n{background:color-mix(in srgb,var(--c) 10%,#fff)!important;color:var(--c)!important;box-shadow:none!important}
+html body.ixw--sol-ai main .msm-gal-ic{box-shadow:none!important;transform:none!important}
+/* the route: four clean step cards; brass posts and rope go, the "tour stop" label stays */
+html body.ixw--sol-ai main .msm-route{padding-top:0!important}
+html body.ixw--sol-ai main .msm-route::before,html body.ixw--sol-ai main .msm-stop::before,html body.ixw--sol-ai main .msm-stop::after{content:none!important;display:none!important}
+html body.ixw--sol-ai main .msm-stop{border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;translate:none!important;opacity:1!important}
+html body.ixw--sol-ai main .msm-stop-k{background:color-mix(in srgb,var(--c) 12%,#fff)!important;box-shadow:none!important}
+html body.ixw--sol-ai main .msm-stop-k b{background:none!important;color:var(--c)!important}
+html body.ixw--sol-ai main .msm-faq summary::before{box-shadow:none!important;border:0!important}
+/* what you get: the admission card, white, no punched edges */
+html body.ixw--sol-ai main .msm-ticket{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-ai main .msm-ticket::before,html body.ixw--sol-ai main .msm-ticket::after{content:none!important;display:none!important}
+html body.ixw--sol-ai main .msm-ticket-h{background:#16332F!important}
+html body.ixw--sol-ai main .msm-incl li{border-bottom:1px solid var(--calm-line)!important;color:var(--body)!important}
+html body.ixw--sol-ai main .msm-ticket-foot{background:#F5FAF9!important;border-top:1px solid var(--calm-line)!important}
+/* FAQ: head on the left (not sticky), numbered rows in the accent */
+html body.ixw--sol-ai main .msm-faq-side{position:static!important}
+html body.ixw--sol-ai main .msm-faq details{box-shadow:none!important}
+html body.ixw--sol-ai main .msm-faq summary::before{background:#E3F3F0!important;color:var(--calm-accent)!important;font:700 13px/1 var(--font-body)!important}
+html body.ixw--sol-ai main .msm-faq details[open] summary::before{background:var(--calm-accent)!important;color:#fff!important}

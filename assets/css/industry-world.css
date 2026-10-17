@@ -1,0 +1,662 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* Industry "world" pages (body.ixw): the industry page dressed as a Nexi Explains episode. Bright pastel sets, the flat cast,
+   white caption cards that type, chunky "lip" buttons you can press, sample Odoo records as stickers.
+   Loaded after industry.css; everything is scoped to body.ixw so the other industry pages are untouched.
+   Smoothness rules (README): transform/opacity only in animations, no backdrop-filter, nothing animates off screen. */
+
+.ixw{
+  --w-teal:#21B799; --w-teal-d:#168F76; --w-teal-l:#DDF4EE; --w-mint:#EEF8F6; --w-mint-2:#E2F2EF;
+  --w-coral:#FF8FA3; --w-yellow:#FFD84A; --w-amber:#F5A524; --w-ink2:#2A3550;
+  --w-card:0 1px 2px rgba(31,31,61,.06),0 18px 40px -24px rgba(31,40,90,.38);
+  --w-lip:#1E4691; --w-lip-ghost:#CFE0F7;
+  --w-ease:cubic-bezier(.2,.8,.2,1); --w-spring:cubic-bezier(.34,1.45,.64,1);
+}
+
+/* ============================== buttons: the pressable "lip" family ============================== */
+/* A pill with a darker lip under it (the video's chunky chips): hover lifts it, press sinks it onto the lip.
+   `translate` (not transform) so it composes with site.js's magnetic pull on .btn-lg. */
+.ixw .btn{height:50px;padding:0 22px;border-radius:999px;font:700 15px/1 var(--font-display);letter-spacing:.005em;gap:10px;
+  transition:translate .22s var(--w-spring),box-shadow .22s ease,background-color .2s ease,color .2s ease,border-color .2s ease}
+.ixw .btn:hover{transform:none}
+.ixw .btn:active{transform:none}
+.ixw .btn-lg{height:54px;padding:0 24px;font-size:16px}
+.ixw .btn-primary{background:linear-gradient(180deg,#4F86E4 0%,var(--blue) 62%);color:#fff;border:0;
+  box-shadow:0 4px 0 var(--w-lip),0 14px 24px -12px rgba(49,103,202,.7),inset 0 1px 0 rgba(255,255,255,.35)}
+.ixw .btn-primary:hover{background:linear-gradient(180deg,#5C90EA 0%,#3A70D3 62%);translate:0 -2px;
+  box-shadow:0 6px 0 var(--w-lip),0 20px 30px -14px rgba(49,103,202,.75),inset 0 1px 0 rgba(255,255,255,.4)}
+.ixw .btn-primary:active{translate:0 3px;transition-duration:.07s;box-shadow:0 1px 0 var(--w-lip),0 6px 12px -8px rgba(49,103,202,.6),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw .btn-primary .ic{width:28px;height:28px;padding:6px;margin-right:-10px;border-radius:50%;background:rgba(255,255,255,.2);transition:transform .3s var(--w-spring),background-color .2s ease}
+.ixw .btn-primary:hover .ic{transform:translateX(3px) rotate(-8deg);background:rgba(255,255,255,.32)}
+.ixw .btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--w-lip-ghost);box-shadow:0 4px 0 var(--w-lip-ghost),0 12px 22px -16px rgba(31,40,90,.35)}
+.ixw .btn-ghost::before{background:var(--blue-050)}
+.ixw .btn-ghost:hover{translate:0 -2px;border-color:#B9D0F2;color:var(--blue-700);box-shadow:0 6px 0 #B9D0F2,0 18px 26px -16px rgba(31,40,90,.4)}
+.ixw .btn-ghost:active{translate:0 3px;transition-duration:.07s;box-shadow:0 1px 0 #B9D0F2}
+.ixw .btn-ghost .ic{width:18px;height:18px;color:var(--blue)}
+.ixw .btn-white{background:#fff;color:var(--blue-700);border:0;box-shadow:0 4px 0 #A9C2EE,0 16px 28px -14px rgba(10,20,60,.5)}
+.ixw .btn-white:hover{translate:0 -2px;color:var(--blue);box-shadow:0 6px 0 #A9C2EE,0 22px 32px -14px rgba(10,20,60,.55)}
+.ixw .btn-white:active{translate:0 3px;transition-duration:.07s;box-shadow:0 1px 0 #A9C2EE}
+.ixw .btn-outline-white{border:2px solid rgba(255,255,255,.7);color:#fff;box-shadow:0 4px 0 rgba(255,255,255,.28)}
+.ixw .btn-outline-white:hover{translate:0 -2px;border-color:#fff;box-shadow:0 6px 0 rgba(255,255,255,.35)}
+.ixw .btn-outline-white:active{translate:0 3px;transition-duration:.07s;box-shadow:0 1px 0 rgba(255,255,255,.35)}
+.ixw .btn:focus-visible{outline:3px solid var(--w-yellow);outline-offset:4px}
+.ixw .btn-link{font-family:var(--font-display);font-weight:700}
+/* the small round control buttons (tour, walkthrough) */
+.ixw-ibtn{display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:50%;border:2px solid #DCE6F4;background:#fff;color:var(--ink);cursor:pointer;
+  box-shadow:0 3px 0 #DCE6F4;transition:translate .2s var(--w-spring),box-shadow .2s ease,border-color .2s ease,color .2s ease;-webkit-tap-highlight-color:transparent}
+.ixw-ibtn .ic{width:18px;height:18px}
+.ixw-ibtn--prev .ic,[data-ixw-fprev] .ic{transform:rotate(90deg)}
+.ixw-ibtn--next .ic,[data-ixw-fnext] .ic{transform:rotate(-90deg)}
+.ixw-ibtn:hover{translate:0 -2px;border-color:#B9D0F2;color:var(--blue);box-shadow:0 5px 0 #B9D0F2}
+.ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 #B9D0F2;transition-duration:.07s}
+.ixw-ibtn:focus-visible{outline:3px solid var(--blue-300);outline-offset:2px}
+.ixw-ibtn--play{width:46px;height:46px;border:0;color:#fff;background:linear-gradient(180deg,#4F86E4,var(--blue) 62%);box-shadow:0 3px 0 var(--w-lip),0 10px 18px -10px rgba(49,103,202,.7)}
+.ixw-ibtn--play:hover{color:#fff;box-shadow:0 5px 0 var(--w-lip),0 14px 22px -10px rgba(49,103,202,.75)}
+.ixw-ibtn--play:active{box-shadow:0 1px 0 var(--w-lip)}
+.ixw-ibtn--play .ic{grid-area:1/1;width:18px;height:18px}
+.ixw-ibtn--play .ic+.ic{margin-left:2px}
+.ixw-ibtn--play.is-on .ic+.ic,.ixw-ibtn--play:not(.is-on) .ic:first-child{opacity:0;transform:scale(.4)}
+.ixw-ibtn--play .ic{transition:opacity .2s ease,transform .3s var(--w-spring)}
+/* a soft halo that breathes while something plays */
+.ixw-ibtn--play.is-on{animation:ixwHalo 2.4s ease-out infinite}
+@keyframes ixwHalo{0%{box-shadow:0 3px 0 var(--w-lip),0 0 0 0 rgba(49,103,202,.35)}70%,100%{box-shadow:0 3px 0 var(--w-lip),0 0 0 12px rgba(49,103,202,0)}}
+
+/* ============================== hero: the set ============================== */
+main>.ixw-hero:first-child{margin-top:calc(var(--header-box) * -1)}
+.ixw-hero{position:relative;overflow:hidden;isolation:isolate;min-height:clamp(700px,96vh,900px);padding:calc(var(--header-box) + 40px) 0 76px;
+  background:linear-gradient(180deg,var(--w-mint) 0%,var(--w-mint-2) 64%,#E7EEF6 64%,#DCE5EF 100%)}
+.ixw-cv{position:absolute;left:-24px;top:-24px;z-index:0;pointer-events:none}
+.ixw-hero-in{position:relative;z-index:3;pointer-events:none}
+.ixw-copy{max-width:460px;padding-top:12px;pointer-events:auto}
+.ixw-copy h1{font-size:clamp(2.1rem,3.6vw,3.15rem);line-height:1.08;max-width:15ch;margin-bottom:0}
+.ixw-copy .lead{margin-top:16px;font-size:1.06rem;max-width:40ch}
+.ixw-copy .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.ixw-copy .crumbs{margin-bottom:16px}
+.ixw-ep{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:0 0 14px;font:600 13px/1.2 var(--font-body);color:var(--body)}
+.ixw-ep-tag{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px 0 6px;border-radius:999px;background:var(--ink);color:#fff;font:800 12px/1 var(--font-display);letter-spacing:.02em;text-decoration:none;
+  box-shadow:0 3px 0 #0B0B22;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw-ep-tag .ic{width:18px;height:18px;padding:4px;border-radius:50%;background:var(--w-yellow);color:var(--ink)}
+.ixw-ep-tag:hover{translate:0 -1px;box-shadow:0 4px 0 #0B0B22;text-decoration:none;color:#fff}
+.ixw-hint{display:flex;align-items:center;gap:8px;margin:22px 0 0;font:600 13.5px/1.35 var(--font-body);color:var(--body)}
+.ixw-hint .ic{width:18px;height:18px;flex:none;color:var(--w-amber);animation:ixwTwinkle 2.6s ease-in-out infinite}
+@keyframes ixwTwinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(18deg)}}
+
+/* the set box: 1000 x 600 set units; 1 unit = .1cqw, so everything inside scales with it */
+.ixw-set{position:absolute;z-index:2;right:max(72px,calc((100vw - 1200px) / 2 - 60px));bottom:140px;width:min(58vw,840px);aspect-ratio:1000/600;container-type:inline-size}
+.ixw-front{position:absolute;inset:0;will-change:transform}
+.ixw-hero:not(.is-live) .ixw-hot,.ixw-hero:not(.is-live) .ixw-cast,.ixw-hero:not(.is-live) .ixw-toy,.ixw-hero:not(.is-live) .ixw-cap-ctl,.ixw-hero:not(.is-live) .ixw-dots{display:none}
+
+/* staff, hotspots and toys: invisible areas over the drawn objects (--x/--y = the centre, --w/--h = the size, in set units).
+   Pointing at one glows the object on the canvas (or makes the staff member smile and hop) and pops its label; a hotspot's
+   label also shows while Nexi presents it. The areas take no transform and no z-index, so a label (z 8) rises above Nexi (z 5). */
+.ixw-hot,.ixw-cast,.ixw-toy{position:absolute;left:calc((var(--x) - var(--w) / 2) * .1cqw);top:calc((var(--y) - var(--h) / 2) * .1cqw);width:calc(var(--w) * .1cqw);height:calc(var(--h) * .1cqw);
+  margin:0;padding:0;border:0;border-radius:14px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ixw-cast{border-radius:40% 40% 24% 24%}
+.ixw-hot:focus-visible,.ixw-cast:focus-visible,.ixw-toy:focus-visible{outline:3px dashed var(--blue-300);outline-offset:3px}
+/* a small object still gets a comfortable touch area (at least 32 px), centred on it */
+.ixw-hot::after,.ixw-toy::after,.ixw-cast::after{content:"";position:absolute;left:min(0px,calc((100% - 44px) / 2));right:min(0px,calc((100% - 44px) / 2));top:min(0px,calc((100% - 44px) / 2));bottom:min(0px,calc((100% - 44px) / 2))}   /* R9: every tap spot is at least 44 px (mobile audit: Latest, the clocks, Track were 32-38 px) */
+/* a world themes its labels with --lab-bg, --lab-bd (border), --lab-lip, --lab-tail and --lab-r (radius) */
+.ixw-hot-lab{position:absolute;z-index:8;left:50%;bottom:calc(100% + 4px);display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 7px;border-radius:var(--lab-r,999px);background:var(--lab-bg,#fff);border:var(--lab-bd,0);
+  font:800 12.5px/1 var(--font-display);color:var(--ink);white-space:nowrap;box-shadow:0 3px 0 var(--lab-lip,#DCE6F4),0 12px 24px -12px rgba(20,40,90,.5);
+  opacity:0;transform:translate(-50%,10px) scale(.6);transform-origin:50% 100%;transition:opacity .16s ease,transform .4s var(--w-spring);pointer-events:none}
+.ixw-hot-lab::after{content:"";position:absolute;left:50%;top:100%;margin-left:-6px;border:6px solid transparent;border-top-color:var(--lab-tail,#fff)}
+.ixw-hot-lab .oi{width:18px;height:18px}
+.ixw-hot-lab .ic{width:16px;height:16px;color:var(--blue)}
+.ixw-hot-lab i{font:600 11.5px/1 var(--font-body);font-style:normal;color:var(--muted)}
+.ixw-hot--below .ixw-hot-lab{bottom:auto;top:calc(100% + 4px);transform:translate(-50%,-10px) scale(.6);transform-origin:50% 0}
+.ixw-hot--below .ixw-hot-lab::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--lab-tail,#fff)}
+.ixw-hot--left .ixw-hot-lab{left:auto;right:calc(100% + 4px);bottom:auto;top:50%;transform:translate(10px,-50%) scale(.6);transform-origin:100% 50%}
+.ixw-hot--left .ixw-hot-lab::after{left:100%;top:50%;margin:-6px 0 0;border-top-color:transparent;border-left-color:var(--lab-tail,#fff)}
+.ixw-hot--right .ixw-hot-lab{left:calc(100% + 4px);bottom:auto;top:50%;transform:translate(-10px,-50%) scale(.6);transform-origin:0 50%}
+.ixw-hot--right .ixw-hot-lab::after{left:auto;right:100%;top:50%;margin:-6px 0 0;border-top-color:transparent;border-right-color:var(--lab-tail,#fff)}
+:is(.ixw-hot,.ixw-cast,.ixw-toy):is(:hover,:focus-visible) .ixw-hot-lab,.ixw-hot.is-on .ixw-hot-lab{opacity:1;transform:translate(-50%,0) scale(1)}
+.ixw-hot--below:is(:hover,:focus-visible,.is-on) .ixw-hot-lab{transform:translate(-50%,0) scale(1)}
+:is(.ixw-hot--left,.ixw-hot--right):is(:hover,:focus-visible,.is-on) .ixw-hot-lab{transform:translate(0,-50%) scale(1)}
+
+/* Nexi: X and Y travel on separate easings, so a flight curves; the button hops on an arc and the pose swaps mid-air */
+.ixw-nexi{--npx:.037cqw;position:absolute;left:0;top:0;z-index:5;width:0;height:0;transform:translateX(calc(var(--nx) * .1cqw));transition:transform 1.1s cubic-bezier(.55,.05,.3,1)}
+.ixw-nexi-y{transform:translateY(calc(var(--ny) * .1cqw));transition:transform 1.1s cubic-bezier(.3,.9,.35,1.12)}
+.ixw-nexi-b{position:absolute;left:-7.6cqw;top:-9.4cqw;width:15.2cqw;height:18.8cqw;padding:0;border:0;background:none;cursor:pointer;border-radius:40%;-webkit-tap-highlight-color:transparent}
+.ixw-nexi-b:focus-visible{outline:3px solid var(--blue-300);outline-offset:2px}
+.ixw-nexi-bob{position:absolute;left:7.6cqw;top:9.4cqw;width:0;height:0;animation:ixwBob 3.4s ease-in-out infinite}
+@keyframes ixwBob{0%,100%{transform:translateY(-.5cqw)}50%{transform:translateY(.6cqw)}}
+.ixw-aura{position:absolute;left:-11cqw;top:-11cqw;width:22cqw;height:22cqw;border-radius:50%;background:radial-gradient(closest-side,rgba(111,160,245,.32),rgba(111,160,245,.12) 55%,rgba(111,160,245,0));pointer-events:none}
+.ixw-pose{position:absolute;max-width:none;left:calc(var(--ax) * var(--npx) * -1);top:calc(var(--ay) * var(--npx) * -1);width:calc(var(--w) * var(--npx));height:auto;
+  opacity:0;visibility:hidden;transition:opacity .14s ease,visibility 0s linear .14s;pointer-events:none;user-select:none;filter:drop-shadow(0 .8cqw 1cqw rgba(20,40,90,.18))}
+.ixw-pose.is-on{opacity:1;visibility:visible;transition:opacity .14s ease}
+.ixw-nexi.is-pop .ixw-pose.is-on{animation:ixwPop .38s var(--w-spring)}
+@keyframes ixwPop{0%{transform:scale(.92,1.06)}60%{transform:scale(1.04,.97)}100%{transform:none}}
+.ixw-nexi.is-fly .ixw-nexi-b{animation:ixwArc 1.1s cubic-bezier(.4,0,.3,1)}
+@keyframes ixwArc{0%{translate:0 0;rotate:0deg}45%{translate:0 -4.5cqw;rotate:var(--tilt,0deg)}100%{translate:0 0;rotate:0deg}}
+.ixw-nexi.is-boing .ixw-nexi-b{animation:ixwBoing .7s var(--w-spring)}
+@keyframes ixwBoing{0%{scale:1}25%{scale:1.14 .88;translate:0 1cqw}55%{scale:.94 1.08;translate:0 -2.6cqw}100%{scale:1;translate:0 0}}
+
+/* caption card: Nexi (or a staff member) speaking, the text types in like the videos */
+.ixw-cap{position:absolute;z-index:7;left:56cqw;top:48.6cqw;width:clamp(520px,72cqw,640px);transform:translateX(-50%);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px 14px;
+  padding:12px 14px 12px 12px;border-radius:20px;background:#fff;box-shadow:0 2px 0 #E3EAF4,0 22px 44px -22px rgba(20,40,90,.45)}
+.ixw-cap-av{position:relative;width:50px;height:50px;border-radius:50%;background:linear-gradient(180deg,#EAF0FB,#DDE7F8);overflow:hidden;align-self:start;box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #DDE7F8}
+.ixw-cap-av img{position:absolute;left:50%;top:6%;width:128%;max-width:none;height:auto;transform:translateX(-50%)}
+.ixw-cap-av b{position:absolute;inset:0;display:none;place-items:center;border-radius:50%;background:var(--c,#5B8DEF);font:800 20px/1 var(--font-display);color:#fff}
+.ixw-cap-av b.is-on{display:grid}
+.ixw-cap-av.is-cast img{display:none}
+.ixw-cap-body{min-width:0}
+.ixw-cap-who{display:flex;align-items:baseline;gap:8px;margin:0 0 3px;line-height:1.2}
+.ixw-cap-who b{font:800 12.5px/1 var(--font-display);color:var(--blue-700)}
+.ixw-cap-who small{font:600 11.5px/1.2 var(--font-body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ixw-cap-txt{margin:0;min-height:2.9em;font:650 15.5px/1.42 var(--font-display);color:var(--ink);letter-spacing:-.005em}
+.ixw-cap-txt b{color:var(--blue);font-weight:800}
+.ixw-caret{display:inline-block;width:2px;height:1em;margin-left:2px;vertical-align:-2px;background:var(--blue);opacity:0}
+.ixw-cap.is-typing .ixw-caret{opacity:1;animation:ixwCaret .9s steps(1) infinite}
+@keyframes ixwCaret{50%{opacity:0}}
+.ixw-cap-rec{display:none;align-items:center;gap:7px;margin:7px 0 0;padding:4px 6px 4px 5px;border-radius:999px;background:#F4F7FC;font:600 12px/1.25 var(--font-body);color:var(--body);width:fit-content;max-width:100%}
+.ixw-cap.has-rec .ixw-cap-rec{display:inline-flex;animation:ixwRise .4s var(--w-spring) .9s both}
+.ixw-cap-rec .oi{width:18px;height:18px;flex:none}
+.ixw-cap-rec span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ixw-cap-rec em,.ixw-rec em{flex:none;padding:3px 7px;border-radius:999px;background:var(--amber-050);color:#7A4E00;font:800 9.5px/1 var(--font-body);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+@keyframes ixwRise{from{opacity:0;transform:translateY(6px) scale(.96)}}
+.ixw-cap-side{display:flex;flex-direction:column;align-items:center;gap:9px}
+.ixw-cap-ctl{display:flex;align-items:center;gap:5px}
+.ixw-cap .ixw-ibtn{width:36px;height:36px}
+.ixw-cap .ixw-ibtn--play{width:42px;height:42px}
+.ixw-dots{display:flex;justify-content:center;gap:5px}
+.ixw-dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#D5DEEC;cursor:pointer;transition:width .3s var(--w-spring),background-color .2s ease}
+.ixw-dots button.is-on{width:22px;background:var(--blue)}
+.ixw-dots button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* the glance strip, as the episode's credits card, overlapping the floor */
+.ixw-credits-wrap{position:relative;z-index:4;margin-top:-40px}
+.ixw .ixw-credits{margin:0;border:0;padding:6px 26px 20px;gap:0 34px;border-radius:22px;background:#fff;box-shadow:0 3px 0 #E3EAF4,0 26px 50px -30px rgba(20,40,90,.4)}
+.ixw .ixw-credits>div{padding-top:16px}
+.ixw .ixw-credits dt{display:flex;align-items:center;gap:7px}
+.ixw .ixw-credits dt .ic{width:16px;height:16px;color:var(--w-teal)}
+
+/* ============================== Nexi's one-paragraph caption ============================== */
+.ixw .ix-intro-sec{padding-top:40px}
+.ixw .ixw-say{grid-template-columns:auto minmax(0,1fr);align-items:start;gap:16px;max-width:880px;padding:20px 24px 20px 20px;border:0;border-radius:22px;background:#fff;box-shadow:var(--w-card)}
+.ixw .ixw-say::before{content:"";position:absolute;left:46px;top:100%;border:10px solid transparent;border-top-color:#fff;filter:drop-shadow(0 4px 3px rgba(20,40,90,.08))}
+.ixw-av{position:relative;display:block;width:56px;height:56px;border-radius:50%;overflow:hidden;background:linear-gradient(180deg,#EAF0FB,#DDE7F8);box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #DDE7F8;flex:none}
+.ixw-av img{position:absolute;left:50%;top:6%;width:128%;max-width:none;height:auto;transform:translateX(-50%)}
+.ixw .ixw-say .ix-intro-h{display:inline-block;margin-bottom:6px;background:var(--w-teal-l);color:var(--w-teal-d)}
+.ixw .ixw-say p:last-child{font:500 15.5px/1.6 var(--font-body);color:var(--ink)}
+
+/* ============================== a clinic day: stations on a route ============================== */
+.ixw-flow-sec{background:linear-gradient(180deg,#fff 0%,var(--w-alt,#F3FAF8) 100%)}
+.ixw-stage{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:stretch}
+.ixw-scenes{position:relative;border-radius:26px;overflow:hidden;background:var(--w-mint);aspect-ratio:520/320;box-shadow:0 3px 0 #D6E9E4,0 30px 60px -36px rgba(20,60,70,.45)}
+.ixw-scene{position:absolute;inset:0;opacity:0;transform:scale(1.03);transition:opacity .45s ease,transform .7s var(--w-ease)}
+.ixw-scene.is-on{opacity:1;transform:none}
+.ixw-scene-tag{position:absolute;left:14px;top:12px;z-index:2;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font:800 10.5px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--w-teal-d)}
+.ixw-vg{display:block;width:100%;height:100%}
+.ixw-flow:not(.is-js) .ixw-scene:first-child{opacity:1;transform:none}
+.ixw-panels{position:relative;display:grid}
+.ixw-panel{grid-area:1/1;display:flex;flex-direction:column;gap:10px;padding:24px 26px;border-radius:26px;background:#fff;box-shadow:0 3px 0 #E3EAF4,0 30px 60px -36px rgba(20,40,90,.4);
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .35s ease,transform .45s var(--w-spring),visibility 0s linear .35s}
+.ixw-panel.is-on{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .45s var(--w-spring)}
+.ixw-flow:not(.is-js) .ixw-panels{gap:14px}
+.ixw-flow:not(.is-js) .ixw-panel{grid-area:auto;opacity:1;visibility:visible;transform:none}
+.ixw-panel-who{display:flex;align-items:center;gap:10px}
+.ixw-panel-who .ixw-av{width:42px;height:42px}
+.ixw-panel-who b{display:block;font:800 13px/1.2 var(--font-display);color:var(--blue-700)}
+.ixw-panel-who small{display:block;font:700 11px/1.3 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ixw-panel h3{margin:4px 0 0;font-size:1.45rem}
+.ixw-panel-p{position:relative;margin:0;min-height:4.8em;font:500 16px/1.6 var(--font-body);color:var(--ink)}
+.ixw-panel.is-typing .ixw-panel-p::after{content:"";display:inline-block;width:2px;height:1em;margin-left:2px;vertical-align:-2px;background:var(--blue);animation:ixwCaret .9s steps(1) infinite}
+.ixw-panel-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:2px 0 0}
+.ixw-panel-meta>div{padding:11px 13px;border-radius:14px;background:#F4F7FC}
+.ixw-panel-meta dt{font:700 10.5px/1.2 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ixw-panel-meta dd{display:flex;align-items:flex-start;gap:8px;margin:0;font:700 13.5px/1.4 var(--font-display);color:var(--ink)}
+.ixw-panel-meta dd .oi,.ixw-panel-meta dd .ix-ic{width:22px;height:22px;flex:none}
+.ixw-was{background:#FFF4F4!important}
+.ixw-was dd span{font-family:var(--font-body);font-weight:500;color:var(--body);text-decoration:line-through;text-decoration-color:rgba(217,58,48,.5);text-decoration-thickness:2px}
+.ixw-rec{display:flex;align-items:center;gap:8px;margin:auto 0 0;padding:8px 10px;border-radius:12px;border:1.5px dashed #CFDBEE;font:600 12.5px/1.35 var(--font-body);color:var(--body)}
+.ixw-rec .oi{width:18px;height:18px;flex:none}
+.ixw-rec span{flex:1;min-width:0}
+/* the route */
+.ixw-route{display:flex;align-items:flex-end;gap:18px;margin-top:20px}
+.ixw-track{position:relative;flex:1;min-width:0;padding-top:70px;container-type:inline-size}
+.ixw-road{position:absolute;left:calc(50% / var(--n));right:calc(50% / var(--n));top:96px;height:8px;margin-top:-4px;border-radius:8px;background:repeating-linear-gradient(90deg,#D5E2F2 0 14px,transparent 14px 22px)}
+.ixw-road i{position:absolute;inset:0;border-radius:8px;background:linear-gradient(90deg,var(--w-teal),var(--blue));transform-origin:left;transform:scaleX(var(--p,0));transition:transform .9s cubic-bezier(.5,.1,.25,1)}
+.ixw-stops{position:relative;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:6px}
+.ixw-stop{display:grid;justify-items:center;gap:8px;padding:0;border:0;background:none;cursor:pointer;font:700 13.5px/1.2 var(--font-display);color:var(--body);-webkit-tap-highlight-color:transparent}
+.ixw-pin{position:relative;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid #DCE6F4;box-shadow:0 4px 0 #DCE6F4;transition:translate .3s var(--w-spring),box-shadow .25s ease,border-color .25s ease,background-color .25s ease}
+.ixw-pin .oi,.ixw-pin .ix-ic{width:26px;height:26px}
+.ixw-pin i{position:absolute;right:-6px;top:-6px;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font:800 11px/1 var(--font-display);font-style:normal;box-shadow:0 0 0 3px #fff;transition:background-color .25s ease,transform .3s var(--w-spring)}
+.ixw-stop:hover .ixw-pin{translate:0 -3px;border-color:#B9D0F2;box-shadow:0 7px 0 #B9D0F2}
+.ixw-stop.is-done .ixw-pin{border-color:#BFE9E1;box-shadow:0 4px 0 #BFE9E1}
+.ixw-stop.is-done .ixw-pin i{background:var(--w-teal)}
+.ixw-stop.is-on{color:var(--ink)}
+.ixw-stop.is-on .ixw-pin{translate:0 -4px;border-color:var(--blue);background:#F2F6FE;box-shadow:0 6px 0 var(--blue),0 16px 26px -12px rgba(49,103,202,.6)}
+.ixw-stop.is-on .ixw-pin i{background:var(--blue);transform:scale(1.15)}
+.ixw-stop:focus-visible{outline:none}
+.ixw-stop:focus-visible .ixw-pin{outline:3px solid var(--blue-300);outline-offset:4px}
+.ixw-rider{position:absolute;left:0;top:0;width:0;height:0;z-index:2;transform:translateX(calc((var(--at,0) + .5) * 100cqw / var(--n)));transition:transform .9s cubic-bezier(.5,.1,.25,1);pointer-events:none}
+.ixw-rider>span{position:absolute;left:0;top:0;--npx:.13px;width:0;height:0}
+.ixw-rider .ixw-pose{left:calc(var(--ax) * -.13px);top:calc((var(--ay) * -.13px) + 36px);width:calc(var(--w) * .13px);filter:drop-shadow(0 6px 6px rgba(20,40,90,.18))}
+.ixw-rider.is-hop>span{animation:ixwHop .9s cubic-bezier(.4,0,.3,1)}
+@keyframes ixwHop{0%{transform:none}45%{transform:translateY(-22px) rotate(6deg)}100%{transform:none}}
+.ixw-rider>span::after{content:"";position:absolute;left:-22px;top:66px;width:44px;height:8px;border-radius:50%;background:radial-gradient(closest-side,rgba(20,40,90,.22),rgba(20,40,90,0))}
+.ixw-fctl{display:flex;align-items:center;gap:8px;padding-bottom:30px}
+/* vignette paint (the SVGs use classes, not inline colours) */
+.ixw-vg .v-wall{fill:var(--w-vwall,#EAF6F4)}.ixw-vg .v-wains{fill:var(--w-vwains,#D6EDE8)}.ixw-vg .v-rail{fill:#fff}.ixw-vg .v-floor{fill:var(--w-vfloor,#EEF3F9)}.ixw-vg .v-base{fill:var(--w-vbase,#C4E2DB)}
+.ixw-vg .f-ink{fill:#2A3550}.ixw-vg .f-ink-l{fill:#3B4664}.ixw-vg .f-white{fill:#fff}.ixw-vg .f-white-t{fill:rgba(255,255,255,.7)}.ixw-vg .f-blue{fill:#3167CA}.ixw-vg .f-blue-d{fill:#1E4691}.ixw-vg .f-blue-m{fill:#6FA0F5}.ixw-vg .f-blue-l{fill:#DDE7F8}
+.ixw-vg .f-teal{fill:#21B799}.ixw-vg .f-teal-l{fill:#C5EDE3}.ixw-vg .f-pink{fill:#FF8FA3}.ixw-vg .f-pink-l{fill:#FFD9E0}.ixw-vg .f-yellow{fill:#FFD84A}.ixw-vg .f-yellow-l{fill:#FFEDB0}
+.ixw-vg .f-amber{fill:#F5A524}.ixw-vg .f-amber-d{fill:#D4840C}.ixw-vg .f-green{fill:#1FA463}.ixw-vg .f-purple{fill:#7B5BD6}.ixw-vg .f-chip{fill:#EEF2F8}.ixw-vg .f-glass{fill:#E3F2FA}.ixw-vg .f-shelf{fill:#C9DCE8}
+.ixw-vg .f-box{fill:#E8B983}.ixw-vg .f-box-d{fill:#D29A5E}
+.ixw-vg .s-white{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.ixw-vg .s-line{fill:none;stroke:#E3E9F2;stroke-width:2}
+.ixw-vg .s-red{fill:none;stroke:#D93A30;stroke-width:2.5;stroke-dasharray:6 5}
+.ixw-vg .s-blue{fill:none;stroke:#3167CA;stroke-width:3;stroke-linecap:round}
+.ixw-vg .s-dash{fill:none;stroke:#9FB9EA;stroke-width:2.5;stroke-dasharray:5 6}
+.ixw-vg .s-dash-g{fill:none;stroke:#1FA463;stroke-width:2.5;stroke-dasharray:5 6}
+.ixw-vg .s-green-f{fill:#E8F5EE;stroke:#1FA463;stroke-width:2.5}
+.ixw-vg text{font-family:var(--font-display);font-size:14px;font-weight:600}
+.ixw-vg .t-s,.ixw-vg .t-s text{font-size:13px}.ixw-vg .t-xs,.ixw-vg .t-xs text{font-size:11px}.ixw-vg .t-b,.ixw-vg .t-b text{font-weight:800}
+.ixw-vg .t-w{fill:#fff}.ixw-vg .t-ink,.ixw-vg .t-ink text{fill:#1F1F3D}.ixw-vg .t-mut,.ixw-vg .t-mut text{fill:#6B6B84}.ixw-vg .t-blue{fill:#3167CA}.ixw-vg .t-green{fill:#137A4A}.ixw-vg .t-red{fill:#B3271E}
+.ixw-vg .v-card{filter:drop-shadow(0 6px 10px rgba(20,40,90,.14))}
+.ixw-vg .v-shadow ellipse{fill:rgba(20,40,90,.12)}
+/* vignette motion: every element's resting state is its final state; the animation runs FROM the start state
+   (fill backwards), so reduced motion simply shows the finished scene */
+.ixw-scene.is-on .v-in-up{animation:vUp .6s var(--w-spring) backwards}
+.ixw-scene.is-on .v-in-r{animation:vRight .6s var(--w-spring) .25s backwards}
+.ixw-scene.is-on .v-d1{animation:vPop .45s var(--w-spring) .7s backwards}
+.ixw-scene.is-on .v-d3{animation:vPop .5s var(--w-spring) 1.4s backwards}
+.ixw-scene.is-on .v-d4{animation:vPop .5s var(--w-spring) 2.1s backwards}
+.ixw-scene.is-on .v-d5{animation:vPop .5s var(--w-spring) 2.2s backwards}
+.ixw-scene.is-on .v-d6{animation:vPop .5s var(--w-spring) 2.6s backwards}
+.ixw-scene.is-on .v-d7{animation:vDrop .55s cubic-bezier(.3,1.5,.6,1) 3.1s backwards}
+.ixw-vg [class*="v-"]{transform-box:fill-box;transform-origin:center}
+@keyframes vUp{from{opacity:0;transform:translateY(18px)}}
+@keyframes vRight{from{opacity:0;transform:translateX(24px)}}
+@keyframes vPop{from{opacity:0;transform:scale(.6)}}
+@keyframes vDrop{from{opacity:0;transform:translateY(-60px)}}
+.ixw-scene.is-on .v-pick{animation:vPick .5s var(--w-spring) .8s backwards}
+@keyframes vPick{from{transform:scale(.7);opacity:.3}}
+.ixw-scene.is-on .v-press{animation:vPress .3s ease 1.15s backwards}
+@keyframes vPress{50%{transform:scale(.94)}}
+.ixw-scene.is-on .v-slot-in{animation:vRight .5s var(--w-spring) 1.8s backwards}
+.ixw-scene.is-on .v-swing{transform-origin:50% 0;animation:vSwing 1s ease-in-out 2.4s 2}
+@keyframes vSwing{25%{transform:rotate(14deg)}75%{transform:rotate(-14deg)}}
+.ixw-scene.is-on .v-bar{transform-origin:left center;animation:vBar .6s var(--w-ease) backwards;animation-delay:calc(.5s + var(--i) * .22s)}
+@keyframes vBar{from{transform:scaleX(0)}}
+.ixw-scene.is-on .v-lot{animation:vLot 2.2s var(--w-ease) .9s backwards}
+@keyframes vLot{0%{transform:none}20%{transform:translateY(-6px) scale(1.06)}100%{transform:none}}
+.ixw-scene.is-on .v-fefo{animation:vPop .5s var(--w-spring) 2.6s backwards}
+.ixw-scene.is-on .v-fly{animation:vFly .9s cubic-bezier(.45,0,.25,1) 1.5s backwards}
+@keyframes vFly{0%{transform:translate(-200px,-108px) scale(1.6);opacity:0}15%{opacity:1}55%{transform:translate(-110px,-150px) scale(1.25) rotate(-8deg)}100%{transform:none}}
+.ixw-scene.is-on .v-level{transform-origin:center bottom;animation:vLevel 1.2s var(--w-ease) .5s backwards}
+.ixw-vg .v-level{transform:scaleY(.38)}
+@keyframes vLevel{from{transform:scaleY(.82)}}
+.ixw-scene.is-on .v-stamp{animation:vStamp .4s cubic-bezier(.3,1.6,.6,1) 2.1s backwards}
+@keyframes vStamp{from{opacity:0;transform:scale(1.8) rotate(-8deg)}}
+.ixw-scene.is-on .v-van{animation:vVan .9s cubic-bezier(.2,.9,.3,1) 2.3s backwards}
+@keyframes vVan{from{transform:translateX(200px)}}
+.ixw-scene.is-on .v-line{animation:vUp .4s var(--w-ease) backwards;animation-delay:calc(.5s + var(--i) * .35s)}
+.ixw-scene.is-on .v-card-tap{animation:vTap 1.4s var(--w-ease) 1.6s backwards}
+@keyframes vTap{0%{transform:translate(40px,-10px) rotate(8deg)}55%{transform:translate(-50px,6px) rotate(-4deg)}100%{transform:none}}
+.ixw-scene.is-on .v-waves{animation:vWave .9s ease-out 2.1s 2 backwards}
+@keyframes vWave{from{opacity:0}50%{opacity:1}}
+.ixw-scene.is-on .v-receipt{transform-origin:center top;animation:vPrint .7s var(--w-ease) 2.6s backwards}
+@keyframes vPrint{from{transform:scaleY(0);opacity:0}}
+.ixw-scene.is-on .v-match{animation:vPop .5s var(--w-spring) 1.3s backwards}
+.ixw-scene.is-on .v-paid{animation:vStamp .4s cubic-bezier(.3,1.6,.6,1) 2s backwards}
+.ixw-scene.is-on .v-rise{transform-origin:center bottom;animation:vRise .7s var(--w-spring) backwards;animation-delay:calc(2.3s + var(--i) * .15s)}
+@keyframes vRise{from{transform:scaleY(0)}}
+.ixw-flow.is-offscreen .ixw-scene *,.ixw-flow.is-offscreen .ixw-ibtn--play{animation-play-state:paused}
+.ixw-hero.is-off *,.ixw-hero.is-off *::before,.ixw-hero.is-off *::after,.ixw-cta.is-off .ixw-pose{animation-play-state:paused!important}
+
+/* ============================== the rest of the page, in the same world ============================== */
+.ixw .section--alt{background-color:var(--w-alt,#F3FAF8);background-image:radial-gradient(var(--w-dot,rgba(33,183,153,.09)) 1.6px,transparent 1.7px);background-size:26px 26px}
+.ixw .hand{color:var(--w-hand,var(--w-teal-d))}
+.ixw .sec-head h2{letter-spacing:-.02em}
+
+/* the FEFO demo sits in an Odoo window */
+.ixw .demo-sec .dm{border:0;border-radius:24px;box-shadow:0 3px 0 #E3EAF4,0 40px 70px -40px rgba(20,40,90,.5)}
+.ixw-browser{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:24px 24px 0 0;background:#E9EEF6;font:600 12px/1 var(--font-body);color:var(--muted)}
+.ixw-browser i{width:11px;height:11px;border-radius:50%;background:#FF8FA3}.ixw-browser i+i{background:#FFD84A}.ixw-browser i+i+i{background:#3FBF7F}
+.ixw-browser span{margin-left:10px;padding:5px 12px;border-radius:999px;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ixw-browser em{margin-left:auto;padding:4px 9px;border-radius:999px;background:var(--amber-050);color:#7A4E00;font:800 10px/1 var(--font-body);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+.ixw .ixw-browser+.dm{border-radius:0 0 24px 24px}
+.ixw .dm-btn,.ixw .dm-seg{box-shadow:0 2px 0 #E3EAF4}
+.ixw .dm-btn{height:32px;border-width:1.5px;font-weight:700;transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+.ixw .dm-btn:hover{translate:0 -1px;box-shadow:0 3px 0 #CFE0F7}
+.ixw .dm-btn:active{translate:0 1px;box-shadow:0 1px 0 #CFE0F7}
+.ixw .dm-btn--primary{background:var(--blue);border-color:var(--blue);box-shadow:0 2px 0 var(--w-lip)}
+.ixw .dm-btn--primary:hover{background:#3A70D3;box-shadow:0 3px 0 var(--w-lip)}
+.ixw .dm-seg button[aria-pressed="true"]{background:var(--blue)}
+
+/* three problems: notes pinned on the staff room board */
+.ixw-board{padding:34px;border-radius:28px;background-color:#F2E6D3;background-image:radial-gradient(rgba(140,100,50,.12) 1.4px,transparent 1.5px),radial-gradient(rgba(255,255,255,.4) 1.2px,transparent 1.3px);
+  background-size:14px 14px,22px 22px;background-position:0 0,7px 9px;box-shadow:inset 0 0 0 10px #E3D2B6,inset 0 0 0 12px #D7C29E,0 24px 50px -34px rgba(90,60,20,.5)}
+.ixw-board .card{border:0;border-radius:6px;padding:34px 26px 26px;box-shadow:0 2px 0 rgba(0,0,0,.05),0 18px 26px -18px rgba(70,50,20,.5);transform:rotate(var(--rot,-1deg));transition:transform .4s var(--w-spring),box-shadow .3s ease}
+.ixw-board .card:nth-child(1){--rot:-1.6deg;background:#FFF8E1}
+.ixw-board .card:nth-child(2){--rot:1.2deg;background:#EAF4FF}
+.ixw-board .card:nth-child(3){--rot:-.8deg;background:#FDEEF2}
+.ixw-board .card::before{content:"";position:absolute;left:50%;top:12px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF9BAE,#E0456B 70%);box-shadow:0 3px 4px rgba(80,20,30,.35)}
+.ixw-board .card:nth-child(2)::before{background:radial-gradient(circle at 35% 35%,#8FB6FF,#3167CA 70%)}
+.ixw-board .card:nth-child(3)::before{background:radial-gradient(circle at 35% 35%,#7FE0C9,#169C80 70%)}
+.ixw-board .card:hover{transform:rotate(0) translateY(-6px) scale(1.02);box-shadow:0 2px 0 rgba(0,0,0,.05),0 30px 40px -22px rgba(70,50,20,.55)}
+.ixw-board .card h3{font-size:1.18rem}
+.ixw-board .card-ic{color:var(--ink)}
+
+/* the apps: lockers on the left, an Odoo window on the right */
+.ixw .sc-tab{border:2px solid #E3EAF4;border-radius:16px;box-shadow:0 3px 0 #E3EAF4;transition:translate .25s var(--w-spring),box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+.ixw .sc-tab:hover{translate:0 -2px;border-color:#CFE0F7;box-shadow:0 5px 0 #CFE0F7}
+.ixw .sc-tab.is-active{border-color:var(--blue);background:#F2F6FE;box-shadow:0 4px 0 var(--blue)}
+.ixw .sc-tab::after{height:3px;border-radius:3px;left:14px;right:14px;width:auto}
+.ixw .sc-panel{border:0;border-radius:24px;box-shadow:0 3px 0 #E3EAF4,0 40px 70px -40px rgba(20,40,90,.45);padding-top:36px}
+.ixw .sc-panel::before{content:"";position:absolute;left:0;right:0;top:0;height:36px;background:#E9EEF6 radial-gradient(circle at 20px 18px,#FF8FA3 5.5px,transparent 6px) no-repeat,radial-gradient(circle at 38px 18px,#FFD84A 5.5px,transparent 6px) no-repeat;}
+.ixw .sc-panel::after{content:"";position:absolute;left:56px;top:18px;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:#3FBF7F}
+
+/* before / after: a sliding switch, sticker rows */
+.ixw .ix-switch{position:relative;padding:5px;border:2px solid #E3EAF4;box-shadow:0 4px 0 #E3EAF4;background:#fff}
+.ixw .ix-switch button{position:relative;z-index:1;height:44px;padding:0 22px;font:800 14.5px/1 var(--font-display);transition:color .3s ease}
+.ixw .ix-switch button[aria-pressed="true"]{background:transparent;color:#fff}
+.ixw .ix-switch::before{content:"";position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--ink);transition:transform .45s var(--w-spring),background-color .3s ease;box-shadow:0 3px 0 #0B0B22}
+.ixw .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{transform:translateX(100%);background:var(--w-teal);box-shadow:0 3px 0 var(--w-teal-d)}
+/* two equal halves (an intrinsically sized grid gives both 1fr columns the wider label's width), so the sliding pill
+   is exactly one half on either side */
+.ixw .ix-switch{display:inline-grid;grid-template-columns:1fr 1fr}
+.ixw .ix-switch button{flex:1;white-space:nowrap}
+.ixw .ix-row{border:0;border-radius:16px;box-shadow:0 2px 0 #E3EAF4,0 12px 24px -20px rgba(20,40,90,.4)}
+.ixw .ix-ba.is-js[data-state="after"] .ix-row{box-shadow:0 2px 0 #BFE9E1,0 12px 24px -20px rgba(20,90,70,.4)}
+.ixw .ix-face .ic{width:22px;height:22px;padding:4px;border-radius:50%;margin-top:0}
+.ixw .ix-before .ic{background:#FDE8E7;color:#C0392B}
+.ixw .ix-after .ic{background:#DDF4EE;color:#137A4A}
+
+/* dashboard: an Odoo window */
+.ixw .ix-dash{border:0;border-radius:24px;box-shadow:0 3px 0 #E3EAF4,0 40px 70px -40px rgba(20,40,90,.45)}
+.ixw .ix-kpi{border:0;border-radius:14px;background:#F4F7FC}
+.ixw .ix-kpi:nth-child(1){background:#EAF6F4}.ixw .ix-kpi:nth-child(2){background:#FFF6E3}.ixw .ix-kpi:nth-child(3){background:#FDEEF2}
+.ixw .ix-views{padding:4px;border:2px solid #E3EAF4;box-shadow:0 3px 0 #E3EAF4;background:#fff}
+.ixw .ix-views button{height:32px;font-weight:800;font-family:var(--font-display)}
+.ixw .ix-views button[aria-pressed="true"]{background:var(--blue);color:#fff;box-shadow:0 2px 0 var(--w-lip)}
+.ixw .ix-bar{background:linear-gradient(180deg,#4FD1B5,var(--w-teal))}
+.ixw .ix-bar.s2{background:linear-gradient(180deg,#5A8BE0,var(--blue))}
+
+/* media: a framed screen with a sticker */
+.ixw .ix-video .yt{border:10px solid #fff;border-radius:26px;box-shadow:0 3px 0 #E3EAF4,0 34px 60px -34px rgba(20,40,90,.5)}
+.ixw .yt-play{box-shadow:0 5px 0 var(--w-lip),0 18px 34px -10px rgba(49,103,202,.75)}
+.ixw .ix-shots .shot img,.ixw .ix-shot img{border-radius:14px}
+
+/* new in Odoo 20: a checklist card */
+.ixw .ix-new{grid-template-columns:1fr;gap:0;border:0;border-radius:26px;background:#fff;box-shadow:0 3px 0 #E3EAF4,0 34px 60px -38px rgba(20,40,90,.45);padding-top:0;padding-bottom:28px;overflow:hidden}
+.ixw .ix-new-head{margin:0 -34px;padding:22px 34px;background:linear-gradient(120deg,var(--blue),#4F86E4);grid-column:1/-1;align-items:center}
+.ixw .ix-new-head h2,.ixw .ix-new-head .hand{color:#fff}
+.ixw .ix-new-head .oi{background:#fff;border-radius:14px;padding:6px;width:52px;height:52px}
+.ixw .ix-new .checks{grid-row:auto;padding-top:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px}
+.ixw .ix-new .checks li{margin:0}
+.ixw .ix-new .checks .ic{width:22px;height:22px;padding:4px;border-radius:50%;background:#DDF4EE;color:#137A4A;margin-top:0}
+.ixw .ix-new .btn-link{margin-top:22px;justify-self:start}
+
+/* rollout: three map pins on a road */
+.ixw .ix-phases::before{top:44px;height:6px;background:repeating-linear-gradient(90deg,#9FD9CC 0 14px,transparent 14px 22px);opacity:1}
+.ixw .ix-phase{border:0;border-radius:22px;padding-top:26px;box-shadow:0 3px 0 #E3EAF4,0 24px 44px -30px rgba(20,40,90,.4);transition:translate .3s var(--w-spring),box-shadow .3s ease}
+.ixw .ix-phase:hover{translate:0 -4px;box-shadow:0 6px 0 #CFE0F7,0 30px 50px -30px rgba(20,40,90,.45)}
+.ixw .ix-ph-n{height:34px;padding:0 14px;font:800 13px/1 var(--font-display);background:var(--w-teal);box-shadow:0 3px 0 var(--w-teal-d),0 0 0 6px #F3FAF8}
+.ixw .ix-phase:nth-child(2) .ix-ph-n{background:var(--blue);box-shadow:0 3px 0 var(--w-lip),0 0 0 6px #F3FAF8}
+.ixw .ix-phase:nth-child(3) .ix-ph-n{background:#E0456B;box-shadow:0 3px 0 #B02E52,0 0 0 6px #F3FAF8}
+.ixw .ix-ph-apps .oi{border:0;background:#F4F7FC;border-radius:10px}
+.ixw .ix-int{border:0;border-radius:20px;box-shadow:0 2px 0 #E3EAF4,0 16px 30px -24px rgba(20,40,90,.35)}
+.ixw .ix-chip{border:0;background:#F4F7FC}
+
+/* FAQ: speech bubbles */
+.ixw .faq details{border:0;border-radius:18px;box-shadow:0 2px 0 #E3EAF4,0 14px 28px -22px rgba(20,40,90,.35);transition:box-shadow .25s ease,translate .3s var(--w-spring)}
+.ixw .faq details:hover{translate:0 -2px}
+.ixw .faq details[open]{box-shadow:0 3px 0 #CFE0F7,0 20px 36px -22px rgba(20,40,90,.4)}
+.ixw .faq summary{gap:14px}
+.ixw .faq summary::before{content:"?";display:grid;place-items:center;width:30px;height:30px;flex:none;border-radius:50% 50% 50% 8px;background:var(--w-teal-l);color:var(--w-teal-d);font:800 15px/1 var(--font-display);transition:transform .35s var(--w-spring),background-color .2s ease,color .2s ease}
+.ixw .faq details[open] summary::before{content:"!";background:var(--blue);color:#fff;transform:rotate(-8deg) scale(1.08)}
+.ixw .faq summary .ic{margin-left:auto;width:30px;height:30px;padding:6px;border-radius:50%;background:#F4F7FC}
+.ixw .faq .faq-a{padding-left:66px;font-size:15.5px}
+
+/* keep reading + other industries: sticker chips */
+.ixw .ix-others a{height:42px;border:2px solid #E3EAF4;box-shadow:0 3px 0 #E3EAF4;font-family:var(--font-display);font-weight:800;transition:translate .25s var(--w-spring),box-shadow .2s ease,border-color .2s ease}
+.ixw .ix-others a:hover{transform:none;translate:0 -2px;border-color:#CFE0F7;box-shadow:0 5px 0 #CFE0F7}
+.ixw .ix-others a:active{translate:0 2px;box-shadow:0 1px 0 #CFE0F7}
+
+/* the end card: Nexi celebrates, confetti on the button */
+.ixw .ixw-cta{grid-template-columns:minmax(0,1.2fr) auto;padding:56px 56px 56px 56px;background:linear-gradient(120deg,#2F62C2,#4A80E0 70%,#6A9BF0);overflow:visible;isolation:isolate}
+.ixw .ixw-cta::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.16) 2px,transparent 2.2px);background-size:24px 24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.ixw .ixw-cta::after{display:none}
+.ixw .ixw-cta .hand{color:#FFE48A}
+@media (min-width:1100px){.ixw .ixw-cta{padding-right:240px}}
+@media (min-width:768px) and (max-width:1099px){.ixw .ixw-cta{grid-template-columns:minmax(0,1fr);padding-right:190px}}
+.ixw-cta-nexi{position:absolute;right:96px;bottom:100%;width:0;height:0;--npx:.36px;pointer-events:none}
+.ixw-cta:has(.ixw-cta-nexi){overflow:visible!important}
+.ixw-cta-nexi .ixw-pose{left:calc(var(--ax) * -.36px);top:calc(var(--ay) * -.36px + 40px);width:calc(var(--w) * .36px);animation:ixwBob 3.4s ease-in-out infinite}
+.ixw .ixw-cta .actions{position:relative}
+.ixw-conf{position:absolute;z-index:3;width:8px;height:12px;border-radius:2px;background:var(--c);pointer-events:none;animation:ixwConf .85s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes ixwConf{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy) + 40px)) rotate(var(--r));opacity:0}}
+
+/* ============================== responsive ============================== */
+@media (max-width:1199px){
+  .ixw-hero{min-height:0;padding-bottom:110px}
+  .ixw-copy{max-width:640px}
+  /* the set keeps the right 72px clear for the site's side tabs */
+  .ixw-set{position:relative;right:auto;bottom:auto;width:min(calc(100% - 104px),880px);margin:26px 0 0 max(24px,calc((100% - 880px) / 2))}
+  .ixw-cap{top:51cqw;left:3cqw;width:94cqw;transform:none}
+  .ixw-credits-wrap{margin-top:-28px}
+  .ixw-stage{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+  .ixw-hero{padding-top:calc(var(--header-box) + 20px);padding-bottom:250px}
+  .ixw-credits-wrap{margin-top:-13px}
+  .ixw-copy .actions{gap:12px}
+  .ixw-copy .actions .btn{flex:1 1 auto}
+  .ixw-hint{display:none}
+  /* show set units 180..1000: the calm wall on the left is cropped away */
+  .ixw-set{width:calc((100vw - 52px) * 1000 / 820);max-width:none;margin:22px 0 0 calc((100vw - 52px) * -180 / 820)}
+  .ixw-cap{top:auto;bottom:-206px;left:calc(18cqw + 16px);width:calc(100vw - 32px);transform:none;grid-template-columns:auto minmax(0,1fr);gap:6px 12px}
+  .ixw-cap-side{grid-column:1/-1}
+  .ixw-cap-av{width:42px;height:42px}
+  .ixw-cap-txt{font-size:14.5px;min-height:4.2em}
+  .ixw-hot-lab{display:none}
+  .ixw .ixw-credits{padding:4px 18px 16px}
+  .ixw .ixw-say{padding:16px}
+  .ixw-av{width:46px;height:46px}
+  .ixw-panel{padding:20px}
+  .ixw-panel-meta{grid-template-columns:1fr}
+  .ixw-route{flex-direction:column;align-items:stretch;gap:10px}
+  .ixw-track{padding-top:26px;padding-bottom:8px;margin-top:-16px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .ixw-track::-webkit-scrollbar{display:none}
+  .ixw-track{scroll-behavior:smooth;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 28px),transparent)}
+  .ixw-stops{grid-template-columns:repeat(var(--n),88px)}
+  .ixw-road{top:33px;left:44px;right:auto;width:calc(var(--n) * 94px - 94px)}
+  .ixw-rider{display:none}
+  .ixw-fctl{justify-content:center;padding-bottom:0}
+  .ixw-board{padding:18px}
+  .ixw .ixw-cta{padding:40px 24px 28px;grid-template-columns:1fr}
+  .ixw-cta-nexi{right:76px;--npx:.26px}
+  .ixw-dots{display:none}
+  .ixw-cta-nexi .ixw-pose{left:calc(var(--ax) * -.26px);top:calc(var(--ay) * -.26px + 40px);width:calc(var(--w) * .26px)}
+  .ixw .faq .faq-a{padding-left:22px}
+  .ixw .ix-new .checks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .ixw-nexi,.ixw-nexi-y,.ixw-rider{transition:none}
+  .ixw-nexi-bob,.ixw-hint .ic,.ixw-ibtn--play.is-on,.ixw-cta-nexi .ixw-pose{animation:none}
+  .ixw-scene *{animation:none!important}
+  .ixw-hot-lab{transition:opacity .16s ease}
+}
+
+
+/* ============================== v2: shared by every world ============================== */
+.ixw main{overflow-x:clip}
+/* phone copy: the full text on wide screens, a shorter one on phones */
+.ixw .m-short{display:none}
+@media (max-width:767px){.ixw .m-full{display:none}.ixw .m-short{display:inline}}
+
+/* the workflow's sample picker */
+.ixw-pick{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 18px}
+.ixw-pick-l{display:inline-flex;align-items:center;gap:8px;font:800 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ixw-pick-b{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;background:#fff;border:2px solid #E3EAF4;box-shadow:0 3px 0 #E3EAF4}
+.ixw-pick-b button{height:38px;padding:0 16px;border:0;border-radius:999px;background:none;font:800 13.5px/1 var(--font-display);color:var(--body);cursor:pointer;transition:background-color .2s ease,color .2s ease,box-shadow .2s ease}
+.ixw-pick-b button:hover{color:var(--blue-700);background:var(--blue-050)}
+.ixw-pick-b button[aria-pressed="true"]{background:var(--blue);color:#fff;box-shadow:0 3px 0 var(--w-lip)}
+.ixw-pick-b button:focus-visible{outline:3px solid var(--blue-300);outline-offset:2px}
+.ixw-flow.is-swap .ixw-vg [data-v],.ixw-flow.is-swap .ixw-rec [data-v]{animation:ixwSwap .55s var(--w-ease)}
+@keyframes ixwSwap{0%{opacity:0}100%{opacity:1}}
+
+/* more vignette paint + motion (used by any world) */
+.ixw-vg .f-sky{fill:#3FA9E0}.ixw-vg .f-sky-l{fill:#DDF0FB}.ixw-vg .f-coral{fill:#FF8A65}.ixw-vg .f-sand{fill:#F4E2B8}.ixw-vg .f-sea{fill:#2E8FD0}.ixw-vg .f-line{fill:#D5DEEC}
+.ixw-vg .t-sun{fill:#FFC94A}.ixw-vg .t-big{font-size:22px}.ixw-vg .t-big2{font-size:18px}.ixw-vg .t-mid{font-size:16px}
+.ixw-vg .s-thin{stroke-width:2}.ixw-vg .s-ink{fill:none;stroke:#1F1F3D;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.ixw-vg .s-arrow{fill:none;stroke:#3167CA;stroke-width:3;stroke-linecap:round;stroke-dasharray:4 4}
+.ixw-vg .s-ring-bg{fill:none;stroke:#EEF2F8;stroke-width:14}
+.ixw-vg .v-ring{fill:none;stroke:#21B799;stroke-width:14;stroke-linecap:round;stroke-dasharray:327 327;stroke-dashoffset:calc(327px * (1 - var(--v,0)));transition:stroke-dashoffset .8s var(--w-ease)}
+.ixw-vg .v-hbar{transform:scaleX(var(--v,1));transform-origin:left center;transition:transform .8s var(--w-ease)}
+.ixw-vg .v-sign{stroke-dasharray:260;stroke-dashoffset:0}
+.ixw-scene.is-on .v-ring{animation:vRing 1.2s var(--w-ease) .5s backwards}
+@keyframes vRing{from{stroke-dashoffset:327px}}
+.ixw-scene.is-on .v-hbar{animation:vHbar .9s var(--w-ease) .6s backwards}
+@keyframes vHbar{from{transform:scaleX(0)}}
+.ixw-scene.is-on .v-in-l{animation:vLeft .6s var(--w-spring) .25s backwards}
+@keyframes vLeft{from{opacity:0;transform:translateX(-24px)}}
+.ixw-scene.is-on .v-enq{animation:vEnq .9s cubic-bezier(.3,1.2,.4,1) .8s backwards}
+@keyframes vEnq{from{opacity:0;transform:translate(-150px,-6px) rotate(-8deg) scale(.8)}}
+.ixw-scene.is-on .v-sign{animation:vSign 1.1s ease .7s backwards}
+@keyframes vSign{from{stroke-dashoffset:260}}
+.ixw-scene.is-on .v-knob{animation:vKnob .45s var(--w-spring) 1.2s backwards}
+@keyframes vKnob{from{transform:translateX(-10px)}}
+.ixw-scene.is-on .v-glide{animation:vGlide 1.6s var(--w-ease) 1.4s backwards}
+@keyframes vGlide{from{transform:translate(-120px,24px) rotate(-14deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.ixw-vg .v-ring,.ixw-vg .v-hbar{transition:none}}
+
+/* the sample note under the workflow's scenes */
+.ixw-scenewrap{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ixw-scene-note{display:flex;align-items:center;gap:7px;margin:0 4px;font:600 12.5px/1.4 var(--font-body);color:var(--muted)}
+.ixw-scene-note .ic{width:15px;height:15px;flex:none;color:var(--w-amber)}
+
+/* small laptops (1200-1499 px): the scene sits higher so the caption always clears the credits card */
+@media (min-width:1200px) and (max-width:1499px){.ixw-set{bottom:172px}}
+
+/* phones: readable labels and comfortable tap targets on every world page */
+@media (max-width:767px){
+  .ixw .ix-intro-h{font-size:11px}
+  .ixw-cap-rec em,.ixw-rec em{font-size:11px}
+  .ixw-panel-meta dt{font-size:11px}
+  .ixw .crumbs a{display:inline-block;padding:5px 0}
+  .ixw .ix-sample{font-size:11px}
+  .ixw .dm-kpis dt{font-size:11px}
+  .ixw-pick{gap:8px}
+  .ixw-pick-b{width:100%;border-radius:18px}
+  .ixw-pick-b button{flex:1 1 auto;height:auto;min-height:40px;padding:8px 12px;border-radius:12px;font-size:13px}
+}
+
+/* "View the scene": a toggle that hides the title card and the caption so the scene behind them shows (desktop only) */
+.ixw-peek{position:absolute;z-index:8;top:calc(var(--header-box) + 14px);right:max(72px,calc((100vw - 1200px) / 2 - 60px));display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 15px 0 12px;
+  border:2px solid var(--ink);border-radius:999px;background:#FFFFFF;box-shadow:0 3px 0 var(--ink);font:800 13px/1 var(--font-display);color:var(--ink);cursor:pointer;
+  transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw-peek::before{content:"";width:18px;height:18px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center/contain no-repeat}
+.ixw-peek:hover{translate:0 -2px;box-shadow:0 5px 0 var(--ink)}
+.ixw-peek:active{translate:0 2px;box-shadow:0 1px 0 var(--ink)}
+.ixw-peek:focus-visible{outline:3px solid var(--blue-300);outline-offset:3px}
+.ixw-peek[aria-pressed="true"]{background:var(--w-yellow)}
+.ixw-copy,.ixw-cap{transition:opacity .35s ease,translate .5s var(--w-spring),visibility 0s linear 0s}
+.ixw-hero.is-peek .ixw-copy{opacity:0;translate:-36px 0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,translate .45s var(--w-ease),visibility 0s linear .45s}
+.ixw-hero.is-peek .ixw-cap{opacity:0;translate:0 24px;visibility:hidden;pointer-events:none;transition:opacity .3s ease,translate .45s var(--w-ease),visibility 0s linear .45s}
+@media (max-width:1199px){.ixw-peek{display:none}}
+/* phones: the scene drags sideways (the engine sets --pan); the caption stays put; a hint until the first drag */
+.ixw-drag{display:none}
+@media (max-width:767px){
+  .ixw-hero{touch-action:pan-y}
+  .ixw-hero.is-dragging .ixw-set{cursor:grabbing}
+  .ixw-hero.is-dragging .ixw-hot,.ixw-hero.is-dragging .ixw-toy,.ixw-hero.is-dragging .ixw-cast{pointer-events:none}
+  .ixw-drag{display:inline-flex;position:absolute;z-index:6;left:59%;top:10px;translate:-50% 0;align-items:center;gap:6px;padding:6px 12px;border:2px solid var(--st-ink,#1F1F3D);border-radius:999px;
+    background:#FFFFFF;box-shadow:0 3px 0 var(--st-ink,#1F1F3D);font:800 12px/1 var(--font-display);color:var(--st-ink,#1F1F3D);white-space:nowrap;pointer-events:none;transition:opacity .4s ease}
+  .ixw-drag::before,.ixw-drag::after{content:"";width:8px;height:8px;border:solid currentColor;border-width:0 0 2.5px 2.5px;rotate:45deg;animation:ixwNudge 1.6s ease-in-out infinite}
+  .ixw-drag::after{rotate:-135deg;order:2}
+  .ixw-hero.was-dragged .ixw-drag{opacity:0}
+}
+@keyframes ixwNudge{50%{translate:-3px 0}}
+@media (prefers-reduced-motion:reduce){.ixw-drag::before,.ixw-drag::after{animation:none}}
+@media (prefers-reduced-motion:reduce){.ixw-copy,.ixw-cap{transition:none}}
+
+/* ---------------- the entry intro (#ixw-intro): 3 s in the page's own style ----------------
+   The world's own colour and pattern drift behind (--ii-bg, --ii-pattern); the page's own title card (.ixw-copy, skinned by assets/css/worlds/<key>.css)
+   rises with its Nexi Explains tag, hand label, the industry and three workflow steps in the page's button colours
+   (--hc-bg, --st-ink); the badge pops above it with Nexi peeking out; soft rays turn behind like the Nexi Explains slide.
+   Per world: --ii-ink (veil), --ii-accent (rays, ripples, bar), --ii-b (the industry word), --ii-font (title type). */
+.ixwi{position:fixed;inset:0;z-index:2147483000;place-items:center;overflow:hidden;background:var(--ii-bg,#F4F7FD);color:var(--ii-ink,#1F1F3D);cursor:pointer;
+  animation:ixwiFailsafe 0s linear 7s forwards}
+/* the intro covers the whole window, site header included: the header stays hidden while it plays and fades back in as
+   the iris opens (site.css), so no half-header shows above the intro on any page */
+html.ixw-intro .header{visibility:hidden;opacity:0;transition:none;animation:hdrBack 0s linear 7s forwards}
+@keyframes ixwiFailsafe{to{visibility:hidden;opacity:0;pointer-events:none}}
+.ixwi-bg{position:absolute;inset:-6%;background:var(--ii-pattern,none)}
+.ixwi.is-on .ixwi-bg{animation:ixwiDrift 3s cubic-bezier(.2,.7,.3,1) both}
+@keyframes ixwiDrift{from{transform:scale(1.08)}}
+.ixwi-rays{position:absolute;left:50%;top:50%;width:2400px;height:2400px;margin:-1200px 0 0 -1200px;border-radius:50%;pointer-events:none;opacity:0;
+  background:repeating-conic-gradient(from 0deg,color-mix(in srgb,#FFFFFF 13%,transparent) 0 5deg,transparent 5deg 14deg);
+  -webkit-mask-image:radial-gradient(closest-side,#000 6%,transparent 55%);mask-image:radial-gradient(closest-side,#000 6%,transparent 55%)}
+.ixwi.is-on .ixwi-rays{animation:ixwiRays 3s ease-out both}
+@keyframes ixwiRays{0%{opacity:0;transform:rotate(-20deg) scale(.6)}25%{opacity:1}100%{opacity:.7;transform:rotate(25deg) scale(1)}}
+.ixwi-lock{position:relative;z-index:2;display:grid;justify-items:center;padding:0 20px}
+.ixwi.is-out .ixwi-lock{animation:ixwiRush .55s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes ixwiRush{to{transform:scale(1.25);opacity:0}}
+/* the badge with Nexi peeking from behind it */
+.ixwi-mark{position:absolute;z-index:3;right:-36px;top:-46px;width:96px;height:96px;rotate:8deg}
+.ixwi-badge{position:absolute;inset:0;z-index:2;display:grid;place-items:center;transform:scale(0)}
+.ixwi-badge .ic-ind{width:96px;height:96px;border-radius:26px;filter:drop-shadow(0 6px 0 var(--st-ink,#1F1F3D)) drop-shadow(0 20px 26px rgba(10,20,40,.35))}
+.ixwi-badge::before{content:"";position:absolute;inset:-7px;border-radius:33px;background:#FFFFFF;box-shadow:0 6px 0 var(--st-ink,#1F1F3D)}
+.ixwi-badge .ic-ind{position:relative}
+.ixwi.is-on .ixwi-badge{animation:ixwiPop .6s cubic-bezier(.3,1.6,.5,1) .08s both}
+@keyframes ixwiPop{from{transform:scale(0) rotate(-16deg)}to{transform:scale(1) rotate(0)}}
+.ixwi-nexi{position:absolute;z-index:1;left:30%;bottom:62%;width:auto;height:128px;opacity:0;transform-origin:30% 100%}
+.ixwi.is-on .ixwi-nexi{animation:ixwiPeek .6s cubic-bezier(.3,1.5,.5,1) .5s both}
+@keyframes ixwiPeek{from{opacity:0;transform:translate(-30%,46%) rotate(-10deg) scale(.7)}to{opacity:1;transform:translate(0,0) rotate(9deg) scale(1)}}
+.ixwi-ripple{position:absolute;inset:-8px;border-radius:40px;border:3px solid var(--ii-accent,#3167CA);opacity:0}
+.ixwi.is-on .ixwi-ripple{animation:ixwiRipple 1s cubic-bezier(.2,.7,.3,1) .3s both}
+.ixwi.is-on .ixwi-ripple+.ixwi-ripple{animation-delay:.52s}
+@keyframes ixwiRipple{from{opacity:.9;transform:scale(.7)}to{opacity:0;transform:scale(2.2)}}
+.ixwi-spark{position:absolute;left:50%;top:50%;width:7px;height:16px;margin:-8px 0 0 -3.5px;border-radius:4px;background:var(--ii-accent,#3167CA);opacity:0}
+.ixwi.is-on .ixwi-spark{animation:ixwiSpark .7s cubic-bezier(.2,.7,.3,1) .32s both}
+@keyframes ixwiSpark{from{opacity:1;transform:rotate(var(--a)) translateY(-60px) scale(.5)}to{opacity:0;transform:rotate(var(--a)) translateY(calc(-124px * var(--d))) scale(1)}}
+/* the page's own title card */
+.ixw .ixwi-card{position:relative;width:min(468px,calc(100vw - 48px));max-width:none;margin:0;text-align:left;opacity:0;cursor:pointer}
+.ixwi.is-on .ixwi-card{animation:ixwiCard .6s cubic-bezier(.3,1.3,.5,1) .18s both}
+@keyframes ixwiCard{from{opacity:0;transform:translateY(40px) scale(.92)}to{opacity:1;transform:none}}
+.ixwi-ep,.ixwi-hand,.ixwi-title,.ixwi-sub{opacity:0}
+.ixwi-ep .ixw-ep-tag{pointer-events:none}
+.ixwi-hand{display:block;margin-top:14px}
+.ixw--health-wellness .ixwi-card::after{display:none}
+/* the boarding pass: the tear line runs above the steps, so they sit on the stub */
+.ixw--travel .ixw-copy.ixwi-card .ixwi-pills{margin-top:38px}
+.ixw--travel .ixw-copy.ixwi-card::after{bottom:84px}
+.ixwi-title{display:block;margin-top:2px;font:800 clamp(30px,4.2vw,46px)/1.05 var(--ii-font,var(--font-display));letter-spacing:-.02em;color:var(--ink)}
+.ixwi-title b{color:var(--ii-b,var(--ii-accent,#3167CA))}
+.ixwi-sub{display:block;margin-top:10px;font:800 11.5px/1.2 var(--font-display);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.ixwi.is-on .ixwi-ep{animation:ixwiUp .45s cubic-bezier(.3,1.4,.5,1) .5s both}
+.ixwi.is-on .ixwi-hand{animation:ixwiUp .45s cubic-bezier(.3,1.4,.5,1) .62s both}
+.ixwi.is-on .ixwi-title{animation:ixwiUp .55s cubic-bezier(.3,1.3,.5,1) .72s both}
+.ixwi.is-on .ixwi-sub{animation:ixwiUp .45s ease .95s both}
+@keyframes ixwiUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* three workflow steps, in the page's primary button colours */
+.ixwi-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.ixwi-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px 8px 9px;margin:2.5px 2.5px 7px;border:0;border-radius:var(--ii-pill-r,999px);background:var(--hc-bg,#3167CA);
+  box-shadow:0 0 0 2.5px var(--st-ink,#1F1F3D),0 4.5px 0 2.5px var(--st-ink,#1F1F3D);color:var(--hc-fg,#FFFFFF);font:800 13.5px/1 var(--font-display);opacity:0}
+.ixwi-pill .oi{width:18px;height:18px;padding:2px;border-radius:5px;background:#FFFFFF;box-sizing:content-box}
+.ixwi.is-on .ixwi-pill{animation:ixwiBurst .55s cubic-bezier(.3,1.5,.5,1) calc(1.1s + var(--i) * .1s) both}
+@keyframes ixwiBurst{from{opacity:0;transform:translateY(-30px) scale(.4)}to{opacity:1;transform:none}}
+.ixwi-bar{position:absolute;z-index:3;left:0;right:0;bottom:0;height:5px;background:var(--ii-bar,var(--ii-accent,#3167CA));transform:scaleX(0);transform-origin:0 50%}
+.ixwi.is-on .ixwi-bar{animation:ixwiBar 2.45s linear both}
+@keyframes ixwiBar{to{transform:scaleX(1)}}
+.ixwi-ring{position:fixed;z-index:3;border-radius:50%;border:3px solid var(--ii-accent,#3167CA);pointer-events:none;opacity:0}
+.ixwi-skip{position:absolute;z-index:3;right:22px;bottom:22px;padding:8px 14px;border:2px solid #FFFFFF;border-radius:999px;background:color-mix(in srgb,var(--ii-ink,#1F1F3D) 40%,transparent);color:#FFFFFF;font:800 12px/1 var(--font-display);letter-spacing:.06em;cursor:pointer}
+@media (min-width:1100px){.ixwi-lock{scale:1.18}}
+@media (max-width:767px){
+  .ixwi-mark,.ixwi-badge .ic-ind{width:76px;height:76px}.ixwi-mark{right:-10px;top:-40px}.ixwi-badge .ic-ind{border-radius:21px}.ixwi-badge::before{border-radius:27px}
+  .ixwi-nexi{height:100px}.ixwi-title{font-size:30px}.ixwi-pill{font-size:12.5px;padding:7px 12px 7px 8px}
+}
+
+/* R9: the hero card's Nexi Explains pill plays the scene's tour (industry-world.js): a press pop and a ring on its play icon */
+.ixw-ep-tag.is-play .ic{animation:ixwEpPlay .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes ixwEpPlay{0%{transform:scale(.6)}55%{transform:scale(1.25);box-shadow:0 0 0 6px rgba(255,210,63,.45)}100%{transform:none;box-shadow:0 0 0 0 rgba(255,210,63,0)}}
+@media (prefers-reduced-motion:reduce){.ixw-ep-tag.is-play .ic{animation:none}}
+
+/* R9 mobile audit: the caption's prev/next and the card's Nexi Explains pill reach 44 px of tap area without changing
+   their drawing (an invisible ring around each) */
+.ixw-cap .ixw-ibtn,.ixw-ep-tag{position:relative}
+.ixw-cap .ixw-ibtn::before{content:"";position:absolute;inset:-6px;border-radius:50%}
+.ixw-ep-tag::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}

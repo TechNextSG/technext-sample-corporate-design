@@ -1,0 +1,240 @@
+<!--meta {"title": "Enterprise RAG Implementation — Knowledge Assistants", "desc": "Enterprise RAG implementation by TechNext: knowledge assistants that answer from your policies, manuals and records, with sources, in Singapore and PH.", "out": "solutions/ai-knowledge.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-rag.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-rag.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-rag.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-rag.css?v={ASSET_V}\">", "body": "ixw ixw--sol-rag sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-rag" data-home="300,-110" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>AI Solution</span><span>RAG Knowledge Assistants</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Knowledge assistants</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">enterprise rag implementation</span>Answers from your own documents, with the source.</h1>
+      <p class="lead"><span class="m-full">A knowledge assistant reads your policies, manuals, contracts, tickets and ERP records, and answers questions from them — citing where each answer came from. Nothing invented, nothing outside your documents.</span><span class="m-short">Answers from your policies, manuals, contracts and records, each citing where it came from.</span></p>
+      <div class="ixw-badges lbr-badges"><span>Claude Partner</span><span class="lbr-ok">{{icon:check}}Sources cited</span><span class="lbr-lock">{{icon:lock}}Permission-aware</span></div>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap the robot's rail, the readers, the cage, the ladder or the lamp.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-hot" type="button" data-hot="ask" data-nx="250,-124" data-pose="point-right" data-rec="Question · How do I claim travel expenses? · asked by Sales" data-say="Anyone can **ask in plain language**, the way they'd ask a colleague. No keywords, no folder hunting." style="--x:436;--y:176;--w:178;--h:56" aria-pressed="false"><span class="ixw-hot-lab">{{icon:chat}}<b>Ask</b><i>plain language</i></span></button>
+      <button class="ixw-hot" type="button" data-hot="fetch" data-nx="290,-130" data-pose="point-right" data-rec="Retrieval · the closest passages from approved documents" data-say="The **robot librarian** runs the rail, finds the passages closest to the question and pulls the one book that answers it." style="--x:600;--y:8;--w:560;--h:62" aria-pressed="false"><span class="ixw-hot-lab">{{icon:search}}<b>Retrieve</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="cite" data-nx="900,-124" data-pose="point-left" data-rec="Answer · [1] Expense policy, section 4.2" data-say="It **quotes the page**: the answer comes only from that passage, with the citation, so anyone can open the source and check." style="--x:732;--y:224;--w:192;--h:204" aria-pressed="false"><span class="ixw-hot-lab">{{icon:quote}}<b>Cited answer</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="locked" data-nx="690,-124" data-pose="point-right" data-rec="Permissions · Finance ✓ · Sales ✗" data-say="**Permission-aware**: who can see a document decides who can get an answer from it. Sales asks, and the robot is turned away from the Finance shelves." style="--x:897;--y:126;--w:222;--h:226" aria-pressed="false"><span class="ixw-hot-lab">{{icon:lock}}<b>Restricted</b><i>by role</i></span></button>
+      <button class="ixw-hot" type="button" data-hot="index" data-nx="420,-124" data-pose="point-left" data-rec="Index · SharePoint, Drive, Odoo Documents and Knowledge, tickets, PDFs" data-say="The **card catalogue** is the index: every document connected and chunked, each card tabbed with your existing access rules." style="--x:219;--y:340;--w:88;--h:250" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layers}}<b>Index</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="gap" data-nx="540,-124" data-pose="think" data-rec="Gap review · unanswered questions, missing documents" data-say="An **empty slot**: when your documents don't say, it answers **“I don’t know”** instead of guessing, and the question goes on the gap list." style="--x:709;--y:72;--w:50;--h:66" aria-pressed="false"><span class="ixw-hot-lab">{{icon:search}}<b>Gap</b><i>I don't know</i></span></button>
+
+      <button class="ixw-cast" type="button" data-cast="eng" data-near="420,-124" data-who="TechNext knowledge engineer" data-role="TechNext · keeps the index · illustration" data-say="Every card gets its **access tab**, copied from your existing rules. That's how the robot knows who may read what." style="--x:290;--y:352;--w:84;--h:236" aria-label="Say hi to the knowledge engineer at the card catalogue (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="ask" data-near="250,-124" data-who="Sales rep" data-role="Client team · asking a question · illustration" data-say="I just **asked**. It showed me the answer and **the page it came from**. No more digging through folders." style="--x:434;--y:352;--w:84;--h:236" aria-label="Say hi to the sales rep at the ask terminal (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Sales rep</b><i>asking</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="rdr" data-near="540,-124" data-who="Operations lead" data-role="Client team · reading the source · illustration" data-say="I read the source, then **thumbs up**. Unanswered questions show us which **documents are missing**." style="--x:628;--y:366;--w:88;--h:210" aria-label="Say hi to the reader at the table (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Reader</b><i>gives feedback</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="fin" data-near="690,-124" data-who="Finance lead" data-role="Client team · holds the key card · illustration" data-say="My **key card** opens the Finance shelves. Sales asks the same question and gets only what **Sales may see**." style="--x:954;--y:352;--w:80;--h:236" aria-label="Say hi to the finance lead at the restricted section (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Finance lead</b><i>key card</i></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="ladder" data-near="290,-130" data-pose="wow" data-say="Whee! The **rolling ladder** reaches the top shelves. The robot doesn't need it, but it's fun." style="--x:560;--y:110;--w:64;--h:120" aria-label="Roll the library ladder"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Roll the ladder</b></span></button>
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="lamp" data-near="540,-124" data-pose="love" data-say="Click! The reading lamp is on. **The source** is easier to read in good light." style="--x:682;--y:362;--w:40;--h:46" aria-label="Switch on the reading lamp"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Reading lamp</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:300;--ny:-110" data-reacts="wow::The answer **and the page** it came from!|love::Nothing invented, **nothing outside** your documents. Love it.|celebrate::Found it, **with the citation**. Yay!|think::Hmm… which ten questions does your team answer **every day**?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-rag}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **reading room**: ask in plain language, and the robot librarian brings the page that answers it." data-outro="Your documents, your access rules, and **the source on every answer**. Nothing invented. That's a knowledge assistant.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-rag}}<b data-for="eng" style="--c:#1F6B52">E</b><b data-for="ask" style="--c:#3167CA">S</b><b data-for="rdr" style="--c:#D9785A">R</b><b data-for="fin" style="--c:#8E2C3A">F</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="your guide · the reading room">your guide · the reading room</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>reading room</b>: ask in plain language, and the robot librarian brings the page that answers it.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: ask"></button><button type="button" data-ixw-dot aria-label="Stop 3: retrieve"></button><button type="button" data-ixw-dot aria-label="Stop 4: cited answer"></button><button type="button" data-ixw-dot aria-label="Stop 5: restricted by role"></button><button type="button" data-ixw-dot aria-label="Stop 6: the index"></button><button type="button" data-ixw-dot aria-label="Stop 7: I don't know"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:database}}Discipline</dt><dd>RAG knowledge assistant</dd></div><div><dt>{{icon:file}}Grounding</dt><dd>Your documents, policies, records</dd></div><div><dt>{{icon:quote}}Every answer</dt><dd>Cites its sources</dd></div><div><dt>{{icon:lock}}Scope</dt><dd>Approved content only</dd></div><div><dt>{{icon:globe}}Deploy</dt><dd>Web · WhatsApp · in-app · Odoo</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec">
+  <div class="container"><div class="answer-box lbr-plate reveal"><p class="answer-h">In one paragraph</p><p>An enterprise RAG (retrieval-augmented generation) knowledge assistant reads your policies, manuals, contracts, tickets and ERP records and answers questions from them in plain language, citing the source of each answer. TechNext builds these assistants to stay inside your approved documents and respect each user's permissions, so nothing is invented.</p></div></div>
+</section>
+
+<section class="section demo-sec lbr-demo-sec" id="permission-aware-rag">
+  <div class="container">
+    <div class="lbr-demo-top">
+      <div class="sec-head reveal"><span class="hand">same question, different access</span><h2>Enterprise RAG that respects who is asking.</h2><p class="lead">A TechNext knowledge assistant embeds the question, searches your SOPs, policies, product specs and Odoo records, ranks the closest passages, then drops every passage the person asking may not see, before a word of the answer is written. Pick a question and a role to watch the answer change, and move the relevance bar to see when it refuses to guess.</p></div>
+      <div class="lbr-slip reveal" aria-hidden="true">
+        <p class="lbr-slip-h"><b>Call slip</b><span>sample</span></p>
+        <dl class="lbr-slip-f"><div><dt>Question</dt><dd>Bulk-order discount</dd></div><div><dt>Asked as</dt><dd>Sales</dd></div><div><dt>Searched</dt><dd>SOPs · policies · specs · Odoo records</dd></div><div><dt>Filtered</dt><dd>{{icon:lock}}by role, before answering</dd></div><div><dt>Answer</dt><dd>{{icon:quote}}with citations</dd></div></dl>
+      </div>
+    </div>
+    <div class="dm dm-rag reveal" data-demo="rag">
+      <div class="dm-head">
+        <div class="dm-title"><b>Retrieval with permissions</b><small>Sample corpus · 60 passages · 4 source types</small></div>
+        <div class="dm-seg" role="group" aria-label="Ask as">
+          <button type="button" data-role="fin" aria-pressed="false">{{icon:calculator}}Finance</button>
+          <button type="button" data-role="sal" aria-pressed="true">{{icon:briefcase}}Sales</button>
+          <button type="button" data-role="wh" aria-pressed="false">{{icon:box}}Warehouse</button>
+          <button type="button" data-role="mgr" aria-pressed="false">{{icon:users}}Manager</button>
+        </div>
+      </div>
+      <div class="rtv-qs" role="group" aria-label="Pick a question">
+        <button type="button" data-q="0" aria-pressed="false">PO approval limit</button>
+        <button type="button" data-q="1" aria-pressed="false">Damaged supplier delivery</button>
+        <button type="button" data-q="2" aria-pressed="true">Bulk-order discount</button>
+        <button type="button" data-q="3" aria-pressed="false">X200 temperature range</button>
+        <button type="button" data-q="4" aria-pressed="false">Working from abroad</button>
+      </div>
+      <ol class="rtv-pipe" aria-label="Retrieval pipeline">
+        <li data-s="0"><i>1</i><span><b>Query</b><small data-t="0">the question</small></span></li>
+        <li data-s="1"><i>2</i><span><b>Embed</b><small data-t="1">a vector</small></span><em class="rtv-vec" aria-hidden="true"></em></li>
+        <li data-s="2"><i>3</i><span><b>Search</b><small data-t="2">60 passages</small></span></li>
+        <li data-s="3"><i>4</i><span><b>Rank top 6</b><small data-t="3">by similarity</small></span></li>
+        <li data-s="4"><i>5</i><span><b>Permission filter</b><small data-t="4">by role</small></span></li>
+        <li data-s="5"><i>6</i><span><b>Answer</b><small data-t="5">with citations</small></span></li>
+      </ol>
+      <div class="rtv-wrap">
+        <div class="rtv-map">
+          <p class="rtv-h">{{icon:grid}}<b>Embedding space</b><small>2D projection, distances approximate</small></p>
+          <div class="rtv-plot"><svg class="rtv-svg" role="img" aria-label="Passages plotted by meaning; the question lands among the closest ones"></svg></div>
+          <ul class="dm-legend rtv-leg"><li><i class="dm-sw" style="--c:#0E9384"></i>SOP</li><li><i class="dm-sw" style="--c:#3167CA"></i>Policy</li><li><i class="dm-sw" style="--c:#D97B12"></i>Product spec</li><li><i class="dm-sw" style="--c:#714B67"></i>Odoo record</li><li><i class="rtv-lk"></i>Locked for this role</li></ul>
+        </div>
+        <div class="rtv-rank">
+          <p class="rtv-h">{{icon:bars}}<b>Top 6 passages</b><small data-k="locked"></small></p>
+          <ol class="rtv-list" aria-label="Closest passages, ranked"></ol>
+          <div class="rtv-bar"><label for="rtv-bar">Relevance bar</label><input type="range" id="rtv-bar" min="0.65" max="0.9" step="0.01" value="0.7"><output for="rtv-bar" data-k="bar">0.70</output></div>
+        </div>
+        <div class="rtv-ans" aria-live="polite">
+          <p class="rtv-h">{{icon:chat}}<b>Answer</b><small data-k="as">as Sales</small></p>
+          <p class="rtv-q" data-k="q"></p>
+          <div class="rtv-a" data-k="a"></div>
+          <ol class="rtv-src" data-k="src" aria-label="Sources"></ol>
+          <p class="rtv-behind" data-k="behind"></p>
+        </div>
+      </div>
+      <div class="dm-static">
+        <p>The question is turned into a vector and compared with every passage in the index: SOPs, policies, product specs and Odoo records. The six closest passages are ranked by similarity.</p>
+        <p>Before anything is written, passages the person asking may not see are removed: Finance, Sales, Warehouse and Manager roles each see a different set, following the access rules you already have. The answer is composed only from the passages that remain and clear the relevance bar, with a citation on every sentence. When nothing clears the bar, the assistant says it cannot find an answer instead of guessing.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample corpus, questions and figures. In a real deployment the index follows your own document and record access rights.</p>
+  </div>
+</section>
+
+
+<section class="section lbr-shelf-sec">
+  <div class="container">
+    <div class="sec-head lbr-head reveal">
+      <span class="hand">what's included</span>
+      <h2>Questions your team answers ten times a day.</h2>
+    </div>
+    <div class="lbr-shelf">
+      <article class="lbr-book reveal" style="--i:0;--c:#1F6B52"><span class="lbr-book-no">RAG · 01</span><span class="lbr-book-ic">{{icon:file}}</span><h3>Source ingestion</h3><p>Policies, manuals, contracts, wikis, tickets and Odoo records connected and indexed — in the formats you already keep them in.</p></article>
+      <article class="lbr-book reveal" style="--i:1;--c:#8E2C3A"><span class="lbr-book-no">RAG · 02</span><span class="lbr-book-ic">{{icon:lock}}</span><h3>Permission-aware retrieval</h3><p>Who can see a document decides who can get an answer from it. Your existing access rules are carried into the index.</p></article>
+      <article class="lbr-book reveal" style="--i:2;--c:#2F4A7A"><span class="lbr-book-no">RAG · 03</span><span class="lbr-book-ic">{{icon:quote}}</span><h3>Citations on every answer</h3><p>Each answer links to the passages it used, so anyone can open the source and check the wording for themselves.</p></article>
+      <article class="lbr-book reveal" style="--i:3;--c:#7A5236"><span class="lbr-book-no">RAG · 04</span><span class="lbr-book-ic">{{icon:shield}}</span><h3>Stays within your sources</h3><p>Answers come only from approved content; when the documents don't say, it says "I don't know" — which keeps hallucination in check.</p></article>
+      <article class="lbr-book reveal" style="--i:4;--c:#6B4A8A"><span class="lbr-book-no">RAG · 05</span><span class="lbr-book-ic">{{icon:chat}}</span><h3>Where your team works</h3><p>Deploy inside Odoo, on your intranet, in a web widget, or on WhatsApp — the same knowledge behind each front door.</p></article>
+      <article class="lbr-book reveal" style="--i:5;--c:#3C7A6A"><span class="lbr-book-no">RAG · 06</span><span class="lbr-book-ic">{{icon:search}}</span><h3>Gap review</h3><p>Unanswered questions surface the documents you're missing, so the knowledge base gets better with use.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt lbr-cab-sec">
+  <div class="container">
+    <div class="sec-head lbr-head reveal">
+      <span class="hand">how it works</span>
+      <h2>Index, retrieve, answer, cite.</h2>
+    </div>
+    <ol class="lbr-cabinet" data-ixw-in>
+      <li class="lbr-drawer" style="--i:0;--c:#1F6B52"><div class="lbr-drawer-f"><span class="lbr-drawer-l"><b>1</b>Connect</span><i></i></div><div class="lbr-drawer-c"><span class="lbr-drawer-ic">{{icon:plug}}</span><h3>Connect your sources</h3><p>SharePoint, Drive, Odoo Documents and Knowledge, ticket systems and PDFs — the places your answers already live.</p></div></li>
+      <li class="lbr-drawer" style="--i:1;--c:#8E2C3A"><div class="lbr-drawer-f"><span class="lbr-drawer-l"><b>2</b>Index</span><i></i></div><div class="lbr-drawer-c"><span class="lbr-drawer-ic">{{icon:lock}}</span><h3>Index with permissions</h3><p>Documents are chunked and indexed, and your existing access rules decide who can retrieve from each one.</p></div></li>
+      <li class="lbr-drawer" style="--i:2;--c:#2F4A7A"><div class="lbr-drawer-f"><span class="lbr-drawer-l"><b>3</b>Answer</span><i></i></div><div class="lbr-drawer-c"><span class="lbr-drawer-ic">{{icon:quote}}</span><h3>Answer with citations</h3><p>Each question retrieves the most relevant passages; the assistant answers only from those and shows them.</p></div></li>
+      <li class="lbr-drawer" style="--i:3;--c:#C8A24A"><div class="lbr-drawer-f"><span class="lbr-drawer-l"><b>4</b>Improve</span><i></i></div><div class="lbr-drawer-c"><span class="lbr-drawer-ic">{{icon:refresh}}</span><h3>Improve from feedback</h3><p>Thumbs up or down and unanswered questions feed a review of gaps in the underlying documents.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section lbr-get-sec">
+  <div class="container">
+    <div class="lbr-get">
+      <div class="lbr-get-copy reveal">
+        <span class="hand">what you get</span>
+        <h2>A single place to ask, wherever your team works.</h2>
+        <p class="lead">Staff ask in Odoo, Teams, Slack or the intranet; customers can get a scoped version on your website or WhatsApp. Every answer shows its source, so people trust it and learn where the source lives.</p>
+        <ul class="lbr-doors" aria-label="Front doors"><li>{{odoo:mail:18}}Odoo</li><li>{{icon:users}}Teams</li><li>{{icon:chat}}Slack</li><li>{{icon:layout}}Intranet</li><li>{{icon:globe}}Website</li><li>{{icon:whatsapp}}WhatsApp</li></ul>
+      </div>
+      <div class="lbr-card reveal">
+        <p class="lbr-card-h"><span>Borrower's privileges</span><b>{{icon:check}}12 included</b></p>
+        <ul class="lbr-priv">
+          <li>{{icon:check}}Answers grounded in your own documents</li>
+          <li>{{icon:check}}A citation on every answer</li>
+          <li>{{icon:check}}Permission-aware retrieval by existing access rules</li>
+          <li>{{icon:check}}No answers from outside approved content</li>
+          <li>{{icon:check}}"I don't know" instead of a guess</li>
+          <li>{{icon:check}}Ingestion of the formats you already keep</li>
+          <li>{{icon:check}}Connected to Odoo orders, stock and invoices</li>
+          <li>{{icon:check}}Deploy on web, WhatsApp, in-app and inside Odoo</li>
+          <li>{{icon:check}}Private-cloud or on-premise models where data can't leave</li>
+          <li>{{icon:check}}A feedback loop that surfaces missing documents</li>
+          <li>{{icon:check}}A monthly review of gaps and usage</li>
+          <li>{{icon:check}}Clear pricing on quotation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt lbr-faq-sec">
+  <div class="container">
+    <div class="lbr-faq-wrap">
+      <aside class="lbr-faq-side reveal">
+        <span class="hand">questions</span>
+        <h2>What teams ask before they start.</h2>
+        <p class="lbr-faq-more">Your question isn't here? <a href="#talk">Ask the librarian {{icon:arrow}}</a></p>
+      </aside>
+      <div class="faq lbr-faq reveal">
+        <details><summary>How does it avoid making things up? {{icon:chevron}}</summary><div class="faq-a"><p>It answers only from passages retrieved from your own sources, and cites them. When the documents don't cover a question, it says so rather than guessing.</p></div></details>
+        <details><summary>Could it show a document someone shouldn't see? {{icon:chevron}}</summary><div class="faq-a"><p>No. Retrieval is permission-aware: who can see a document decides who can get an answer from it, following your existing access rules.</p></div></details>
+        <details><summary>What sources can it read? {{icon:chevron}}</summary><div class="faq-a"><p>Policies, manuals, contracts, wikis, support tickets, PDFs and Odoo records — connected from the systems where you already keep them.</p></div></details>
+        <details><summary>Where can our people use it? {{icon:chevron}}</summary><div class="faq-a"><p>Inside Odoo Discuss or Knowledge, in Microsoft Teams or Slack, in a web widget on your intranet, or on WhatsApp for a scoped customer version.</p></div></details>
+        <details><summary>Does our data leave our environment? {{icon:chevron}}</summary><div class="faq-a"><p>It stays in your tenancy. Where data can't leave, we deploy private-cloud or on-premise models and choose hosting for your requirements.</p></div></details>
+        <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to your sources and channels. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section lbr-see-sec">
+  <div class="container">
+    <div class="sec-head lbr-head reveal">
+      <span class="hand">related services</span>
+      <h2>Pairs well with these.</h2>
+    </div>
+    <div class="lbr-see">
+      <a class="lbr-xref reveal" style="--i:0;--c:#3167CA" href="{{ROOT}}solutions/ai-chatbots.html"><span class="lbr-xref-k">See also <b>AI · 04</b></span><span class="lbr-xref-ic">{{icon:bot}}</span><h3>AI chatbots</h3><p>Put the same grounded knowledge in front of customers on web and WhatsApp, with a clean hand-off.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="lbr-xref reveal" style="--i:1;--c:#714B67" href="{{ROOT}}odoo/ai-integration.html"><span class="lbr-xref-k">See also <b>AI · 02</b></span><span class="lbr-xref-ic">{{icon:cpu}}</span><h3>AI inside Odoo</h3><p>Answer lookups from your ERP records and draft replies right where the work happens.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="lbr-xref reveal" style="--i:2;--c:#1F6B52" href="{{ROOT}}solutions/ai.html"><span class="lbr-xref-k">See also <b>AI · all</b></span><span class="lbr-xref-ic">{{icon:sparkle}}</span><h3>AI overview</h3><p>See how knowledge assistants fit alongside the other three AI disciplines.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt lbr-cta-sec">
+  <div class="container">
+    <div class="cta ixw-cta lbr-cta reveal" data-ixw-burst>
+      <span class="lbr-cta-books" aria-hidden="true"><i style="--c:#8E2C3A;--h:64px"></i><i style="--c:#C8A24A;--h:52px"></i><i style="--c:#2F4A7A;--h:70px"></i><i style="--c:#3C7A6A;--h:58px"></i><i style="--c:#6B4A8A;--h:66px;--r:-14deg"></i></span><span class="ixw-cta-nexi" aria-hidden="true">{{IXW_POSE:sol-rag:celebrate}}</span>
+      <div>
+        <span class="hand">next step</span>
+        <h2>Send us ten questions your team keeps answering.</h2>
+        <p>We'll build a first assistant on the documents behind them and show you the answers, with sources, in a discovery session.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

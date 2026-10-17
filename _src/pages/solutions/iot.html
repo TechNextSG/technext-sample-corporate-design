@@ -1,0 +1,220 @@
+<!--meta {"title": "IoT Solutions Connected to Odoo — SG & PH", "desc": "IoT solutions in Singapore and the Philippines: sensors and devices that report straight into Odoo, so alerts, quality checks and records happen on their own.", "out": "solutions/iot.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-coldchain.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-iot.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-coldchain.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-iot.css?v={ASSET_V}\">", "body": "ixw ixw--sol-iot sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-iot" data-home="930,20" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>Technology</span><span>IoT Solutions</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>IoT Solutions</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">iot solutions</span>Sensors and devices that report into Odoo.</h1>
+      <p class="lead"><span class="m-full">Sensors and devices that measure what matters, such as temperature, energy, machine runtime or location, and send it to a live dashboard, an alert or straight into Odoo, so problems show up before someone has to walk over and check.</span><span class="m-short">Sensors that send temperature, energy, runtime or location to a live dashboard, an alert or Odoo, before anyone walks over.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#iot-live">See it run</a></div>
+      <p class="grh-pills"><span class="grh-pill">{{icon:wifi}}Wired or wireless</span><span class="grh-pill grh-pill--ok">{{icon:check}}Alerts you can act on</span><span class="grh-pill">{{icon:plug}}Connects to Odoo</span></p>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap the team, a sensor, the gateway, the dashboard, the cold room or the mist.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast grh-side" type="button" data-cast="prop" data-near="-120,120" data-who="TechNext IoT technician" data-role="TechNext · illustration" data-say="Every tray is **sensor-tagged**, so the seedlings report their own moisture and humidity." style="--x:-320;--y:360;--w:84;--h:200" aria-label="Say hi to the IoT technician"></button>
+      <button class="ixw-cast" type="button" data-cast="eng" data-near="520,30" data-who="TechNext IoT engineer" data-role="TechNext · illustration" data-say="A new stake in this bed: it reports **soil moisture** every few minutes." style="--x:250;--y:330;--w:84;--h:150" aria-label="Say hi to the TechNext IoT engineer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>IoT engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="grow" data-near="520,30" data-who="Grower" data-role="Client team · illustration" data-say="The beds tell me when they need water, so I **stop guessing**." style="--x:412;--y:330;--w:84;--h:150" aria-label="Say hi to the grower (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Grower</b><i>client</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="tech" data-near="470,40" data-who="TechNext support engineer" data-role="TechNext · illustration" data-say="Batteries and firmware checked, **every change recorded**." style="--x:545;--y:256;--w:72;--h:200" aria-label="Say hi to the TechNext support engineer on the ladder (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Support engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="sup" data-near="930,20" data-who="Supervisor on duty" data-role="Client team · illustration" data-say="The alert came to **my phone**, with the reading attached." style="--x:712;--y:330;--w:84;--h:150" aria-label="Say hi to the supervisor on duty (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Supervisor</b><i>on duty</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="pack" data-near="930,20" data-who="Packer" data-role="Client team · illustration" data-say="Weighed, labelled, into **cold room 1**. And the door closes behind me." style="--x:805;--y:300;--w:84;--h:110" aria-label="Say hi to the packer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Packer</b><i>client</i></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="sensors" data-nx="520,30" data-pose="point-left" data-rec="Sensors · temperature, humidity, soil, door, energy" data-say="**Sensors and devices**: temperature, humidity, energy, door, presence and location sensors, chosen for the site and the job." style="--x:340;--y:96;--w:56;--h:72" aria-pressed="false"><span class="ixw-hot-lab">{{icon:cpu}}<b>Sensors</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="gateway" data-nx="470,40" data-pose="point-right" data-rec="Connectivity · Wi-Fi, wired or cellular gateways" data-say="The **gateway** collects every reading: Wi-Fi, wired or cellular, set up for your building and how far the devices are spread." style="--x:620;--y:178;--w:52;--h:64" aria-pressed="false"><span class="ixw-hot-lab">{{icon:wifi}}<b>Gateway</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="dash" data-nx="930,20" data-pose="point-left" data-rec="Live dashboard · readings, history and trends" data-say="The **live dashboard**: current readings, history and trends per site, room or machine, on a screen or a phone." style="--x:732;--y:175;--w:156;--h:134" aria-pressed="false"><span class="ixw-hot-lab">{{icon:bars}}<b>Live dashboard</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="alert" data-nx="850,40" data-pose="point-right" data-rec="Alerts · email or WhatsApp, with the reading attached" data-say="An out-of-range reading becomes an **alert** to the person who can fix it, by email or WhatsApp, with the reading attached." style="--x:910;--y:184;--w:80;--h:72" aria-pressed="false"><span class="ixw-hot-lab">{{icon:zap}}<b>Alerts</b></span></button>
+      <button class="ixw-hot ixw-hot--left" type="button" data-hot="cold" data-nx="860,60" data-pose="point-right" data-rec="Cold room · door contact, temperature, energy" data-say="The **cold room** reports its door, temperature and energy. Ten minutes out of range and Odoo opens a quality check on the stock inside." style="--x:910;--y:350;--w:80;--h:240" aria-pressed="false"><span class="ixw-hot-lab">{{icon:pulse}}<b>Cold room</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="odoo" data-nx="930,20" data-pose="point-left" data-rec="Odoo IoT · scales, label printers, measuring tools" data-say="**Odoo IoT** connects scales, label printers, cameras and measuring tools straight to Odoo Manufacturing, Quality and Point of Sale." style="--x:803;--y:378;--w:100;--h:32" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:iot:18}}<b>Odoo IoT</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="mist" data-near="470,40" data-pose="celebrate" data-say="Mist on! The humidity reading climbs on the **dashboard** within the minute." style="--x:590;--y:-8;--w:26;--h:26" aria-label="Turn the mist valve"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Turn on the mist</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:930;--ny:20" data-reacts="wow::A cold room that **texts you**!|love::Plants with sensors. **Love it**.|celebrate::Door closed, back in range, logged in **Odoo**!|think::Hmm… what would you like to **stop walking over** to check?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-iot}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **smart greenhouse**: the beds, the air and the cold room all report their own status." data-outro="Sensors, a gateway, a live dashboard, alerts and **Odoo**: problems show up before anyone walks over. That's IoT at TechNext.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-iot}}<b data-for="eng" style="--c:#3167CA">E</b><b data-for="grow" style="--c:#5E9E2A">G</b><b data-for="tech" style="--c:#2E8FD0">T</b><b data-for="sup" style="--c:#7B5CD6">S</b><b data-for="pack" style="--c:#E07B12">P</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · IoT">assistant · IoT</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>smart greenhouse</b>: the beds, the air and the cold room all report their own status.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: sensors"></button><button type="button" data-ixw-dot aria-label="Stop 3: the gateway"></button><button type="button" data-ixw-dot aria-label="Stop 4: the live dashboard"></button><button type="button" data-ixw-dot aria-label="Stop 5: alerts"></button><button type="button" data-ixw-dot aria-label="Stop 6: the cold room"></button><button type="button" data-ixw-dot aria-label="Stop 7: Odoo IoT"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip grh-strip"><div><dt>{{icon:cpu}}Discipline</dt><dd>IoT solutions</dd></div><div><dt>{{icon:pulse}}Measures</dt><dd>Temperature, energy, runtime, location</dd></div><div><dt>{{icon:bars}}Shows up in</dt><dd>Dashboards, alerts and Odoo</dd></div><div><dt>{{icon:wrench}}Hardware</dt><dd>Chosen for your site</dd></div><div><dt>{{icon:lifebuoy}}After go-live</dt><dd>Support and upkeep</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec grh-tag-sec">
+  <div class="container"><div class="answer-box grh-tag reveal"><span class="grh-tag-top" aria-hidden="true"><i class="grh-sig"><b></b><b></b><b></b><b></b></i><span class="grh-tag-id">TAG 01 · IoT SOLUTIONS</span><span class="grh-tag-live">Live</span><i class="grh-bat"></i></span><p class="answer-h">In one paragraph</p><p>IoT (Internet of Things) solutions connect physical things such as fridges, machines, meters, vehicles and rooms to software, so they report their own status. TechNext recommends the sensors and gateways, sets up the connection, builds the dashboards and alerts, and can feed the readings into Odoo, where they support maintenance, quality and inventory work. Odoo IoT also connects scales, printers and measuring tools directly to Odoo apps.</p></div></div>
+</section>
+
+<section class="section demo-sec grh-demo-sec" id="iot-live">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">watch the sensors</span><h2>IoT monitoring for a cold store, from the sensor to Odoo.</h2><p class="lead">Three rooms report every minute. When one drifts out of range, the person on duty gets an alert; if it stays out too long, Odoo opens a quality check on the stock inside, and a power fault opens a maintenance request. Pick a scenario, move the alert limit, and hover a chart to read any minute.</p></div>
+    <div class="grh-panel reveal">
+      <div class="grh-panel-top" aria-hidden="true"><span class="grh-live">Live</span><b>Control panel · sample cold store</b><span class="grh-vent"><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="dm dm-cold" data-demo="coldchain">
+        <div class="dm-head">
+          <div class="dm-title"><b>Live sensors · sample cold store</b><small>Simulated readings, sped up · one tick is one minute</small></div>
+          <div class="dm-seg" role="group" aria-label="Choose the scenario">
+            <button type="button" data-sc="normal" aria-pressed="false">{{icon:check}}Normal day</button>
+            <button type="button" data-sc="door" aria-pressed="true">{{icon:box}}Door left open</button>
+            <button type="button" data-sc="power" aria-pressed="false">{{icon:zap}}Power cut</button>
+          </div>
+          <label class="cld-th"><span>Chiller limit</span><input type="range" id="cld-th" min="4" max="8" step="0.5" value="5" aria-label="Alert limit for the chillers, in degrees Celsius"><output for="cld-th" data-thv>5.0 °C</output></label>
+          <button class="dm-btn cld-play" type="button" data-play aria-label="Pause the simulation">{{icon:pause}}{{icon:play}}<span>Pause</span></button>
+        </div>
+        <div class="cld-wrap">
+          <div class="cld-rooms">
+            <div class="cld-room" data-r="0"><header><b>Chiller A</b><span class="cld-st">OK</span></header><p class="cld-v"><em data-v>3.2</em><small>°C</small></p><svg class="cld-spark" viewBox="0 0 240 64" preserveAspectRatio="none" role="img" aria-label="Chiller A temperature, last 40 minutes"></svg><footer><span>Limit <b data-lim>5.0 °C</b></span><span data-door>Door closed</span></footer></div>
+            <div class="cld-room" data-r="1"><header><b>Chiller B</b><span class="cld-st">OK</span></header><p class="cld-v"><em data-v>3.6</em><small>°C</small></p><svg class="cld-spark" viewBox="0 0 240 64" preserveAspectRatio="none" role="img" aria-label="Chiller B temperature, last 40 minutes"></svg><footer><span>Limit <b data-lim>5.0 °C</b></span><span data-door>Door closed</span></footer></div>
+            <div class="cld-room" data-r="2"><header><b>Freezer</b><span class="cld-st">OK</span></header><p class="cld-v"><em data-v>-18.0</em><small>°C</small></p><svg class="cld-spark" viewBox="0 0 240 64" preserveAspectRatio="none" role="img" aria-label="Freezer temperature, last 40 minutes"></svg><footer><span>Limit <b data-lim>-15.0 °C</b></span><span data-door>Power on</span></footer></div>
+          </div>
+          <div class="cld-side">
+            <div class="cld-card"><p class="cld-h">{{icon:zap}}<b>Alerts</b><small data-clock>08:00</small></p><ol class="dm-log cld-log" aria-live="polite"></ol></div>
+            <div class="cld-card cld-odoo"><p class="cld-h">{{odoo:quality_control}}<b>In Odoo</b><small>opened automatically</small></p><ol class="cld-recs"><li class="cld-none">Nothing yet: every room is in range.</li></ol></div>
+          </div>
+        </div>
+        <dl class="dm-kpis cld-kpis"><div><dt>Readings</dt><dd data-k="reads">0</dd></div><div><dt>Alerts sent</dt><dd data-k="alerts">0</dd></div><div><dt>Minutes out of range</dt><dd data-k="out">0</dd></div><div class="dm-ok"><dt>Odoo records opened</dt><dd data-k="recs">0</dd></div></dl>
+        <div class="dm-static">
+          <p><b>Rooms:</b> two chillers and a freezer, each with a temperature sensor reporting every minute, plus a door contact on Chiller B and a power monitor on the freezer.</p>
+          <p><b>Alerts:</b> a reading above the room's limit sends an alert to the person on duty; the alert repeats if nobody acts, and a recovery message follows when the room is back in range.</p>
+          <p><b>Odoo:</b> ten minutes out of range opens a quality check on the stock in that room; a power fault also opens a maintenance request for the equipment.</p>
+        </div>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample data, sped up. Limits, who is alerted and what Odoo opens are agreed with you room by room.</p>
+  </div>
+</section>
+
+<section class="section grh-bed-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>From the sensor to the screen.</h2>
+    </div>
+    <div class="grh-bed">
+      <article class="grh-stake reveal" style="--i:0;--c:#14A3A3"><div class="card-ic">{{icon:cpu}}</div><h3>Sensors and devices</h3><p>Temperature, humidity, energy, door, presence and location sensors, chosen for the site and the job.</p></article>
+      <article class="grh-stake reveal" style="--i:1;--c:#2E8FD0"><div class="card-ic">{{icon:wifi}}</div><h3>Connectivity</h3><p>Wi-Fi, wired or cellular gateways, set up for your building and how far the devices are spread.</p></article>
+      <article class="grh-stake reveal" style="--i:2;--c:#2E9A58"><div class="card-ic">{{icon:bars}}</div><h3>Live dashboards</h3><p>Current readings, history and trends per site, room or machine, on a screen or a phone.</p></article>
+      <article class="grh-stake reveal" style="--i:3;--c:#E07B12"><div class="card-ic">{{icon:zap}}</div><h3>Alerts</h3><p>An out-of-range reading reaches the person who can fix it, by email or WhatsApp, with the reading attached.</p></article>
+      <article class="grh-stake reveal" style="--i:4;--c:#714B67"><div class="card-ic">{{odoo:iot}}</div><h3>Odoo IoT</h3><p>Scales, label printers, cameras and measuring tools connected to Odoo Manufacturing, Quality and Point of Sale.</p></article>
+      <article class="grh-stake reveal" style="--i:5;--c:#8C6A4A"><div class="card-ic">{{icon:wrench}}</div><h3>Set-up and support</h3><p>Installation, a documented device list and support after go-live, so the readings keep coming.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt grh-grow-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how we deliver</span>
+      <h2>Prove it in one room, then roll it out.</h2>
+    </div>
+    <div class="steps grh-grow reveal">
+      <div class="step grh-stage reveal" style="--i:0"><span class="grh-sprout" aria-hidden="true"><svg viewBox="0 0 120 90"><ellipse cx="60" cy="78" rx="52" ry="10" fill="#8C6A4A"/><ellipse cx="60" cy="74" rx="46" ry="7" fill="#A07C58"/><ellipse cx="60" cy="70" rx="6" ry="4.5" fill="#C9A27A"/><path d="M24 30h72" stroke="#14A3A3" stroke-width="2.5" stroke-dasharray="4 5" stroke-linecap="round"/><circle cx="24" cy="30" r="5" fill="#fff" stroke="#14A3A3" stroke-width="2.5"/><circle cx="96" cy="30" r="5" fill="#fff" stroke="#14A3A3" stroke-width="2.5"/><path d="M52 18l8-10 8 10" fill="none" stroke="#14302A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="step-n">1</div><div><h3>Survey the site</h3><p>What to measure, where the devices go, and how they will connect, written down before anything is bought.</p></div></div>
+      <div class="step grh-stage reveal" style="--i:1"><span class="grh-sprout" aria-hidden="true"><svg viewBox="0 0 120 90"><ellipse cx="60" cy="78" rx="52" ry="10" fill="#8C6A4A"/><ellipse cx="60" cy="74" rx="46" ry="7" fill="#A07C58"/><path d="M60 74V50" stroke="#2E9A58" stroke-width="4" stroke-linecap="round"/><path d="M60 54c-14 0-20-8-20-16 10 0 20 4 20 16z" fill="#5CC27F"/><path d="M60 52c12 0 18-8 18-15-9 0-18 4-18 15z" fill="#3FAE6A"/><rect x="84" y="44" width="4" height="32" rx="2" fill="#E3E8EF"/><rect x="79" y="34" width="14" height="14" rx="3" fill="#fff" stroke="#C9D3DE"/><circle cx="86" cy="41" r="2" fill="#2BB673"/></svg></span><div class="step-n">2</div><div><h3>Pilot one area</h3><p>A few sensors and a working dashboard in one room or line, so you see the value before you scale.</p></div></div>
+      <div class="step grh-stage reveal" style="--i:2"><span class="grh-sprout" aria-hidden="true"><svg viewBox="0 0 120 90"><ellipse cx="60" cy="78" rx="52" ry="10" fill="#8C6A4A"/><ellipse cx="60" cy="74" rx="46" ry="7" fill="#A07C58"/><path d="M40 74V40M80 74V36" stroke="#2E9A58" stroke-width="3.5" stroke-linecap="round"/><path d="M40 46c-12 0-17-7-17-14 9 0 17 3 17 14zM40 56c10 0 15-6 15-12-8 0-15 3-15 12zM80 42c12 0 17-7 17-14-9 0-17 3-17 14zM80 54c-10 0-15-6-15-12 8 0 15 3 15 12z" fill="#3FAE6A"/><circle cx="40" cy="36" r="4" fill="#E9483B"/><path d="M48 22c8-8 16-8 24 0M53 27c4-4 10-4 14 0" fill="none" stroke="#14A3A3" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="31" r="2.5" fill="#14A3A3"/></svg></span><div class="step-n">3</div><div><h3>Roll out and connect</h3><p>Devices installed, readings flowing to dashboards and alerts, and into Odoo where it helps.</p></div></div>
+      <div class="step grh-stage reveal" style="--i:3"><span class="grh-sprout" aria-hidden="true"><svg viewBox="0 0 120 90"><ellipse cx="60" cy="78" rx="52" ry="10" fill="#8C6A4A"/><ellipse cx="60" cy="74" rx="46" ry="7" fill="#A07C58"/><path d="M60 74V26" stroke="#2E9A58" stroke-width="4" stroke-linecap="round"/><path d="M60 40c-16 0-22-9-22-18 11 0 22 5 22 18zM60 52c16 0 22-9 22-18-11 0-22 5-22 18zM60 64c-14 0-19-7-19-14 10 0 19 4 19 14z" fill="#3FAE6A"/><circle cx="60" cy="20" r="7" fill="#FF8FA3"/><circle cx="60" cy="20" r="3" fill="#FFD84A"/><circle cx="74" cy="30" r="4" fill="#E9483B"/><path d="M92 50l4 6 10-14" fill="none" stroke="#2BB673" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 40c4-6 10-6 14 0" fill="none" stroke="#3FA9E0" stroke-width="2.5" stroke-linecap="round"/><path d="M18 50l3 5M24 50l3 5" stroke="#3FA9E0" stroke-width="2.5" stroke-linecap="round"/></svg></span><div class="step-n">4</div><div><h3>Look after it</h3><p>Device health, batteries and firmware checked, with every change recorded.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section grh-readout-sec">
+  <div class="container">
+    <div class="two two--top grh-readout">
+      <div class="reveal grh-readout-l">
+        <span class="hand">what you get</span>
+        <h2>Readings people actually use.</h2>
+        <p class="lead">A dashboard nobody opens does not help. We start from the decision a reading should trigger, such as moving stock, calling a technician or checking a batch, and build the alert and the screen around it.</p>
+        <div class="grh-gcard" aria-hidden="true">
+          <div class="grh-gauge"><span class="grh-gauge-dial"><i></i></span><span class="grh-gauge-cap"><b>In range</b><small>sample reading</small></span></div>
+          <p class="grh-gcard-h">What a reading should trigger</p>
+          <ul class="grh-trig"><li><i style="--c:#3167CA"></i>Moving stock</li><li><i style="--c:#F5A524"></i>Calling a technician</li><li><i style="--c:#2E9A58"></i>Checking a batch</li></ul>
+          <p class="grh-flow"><span>Reading</span><span>Decision</span><span>Alert</span><span>Screen</span></p>
+        </div>
+      </div>
+      <div class="grh-board reveal">
+        <p class="grh-board-top" aria-hidden="true"><span class="grh-live">Live</span><b>Everything in the scope</b><span class="grh-board-n">12 / 12</span></p>
+        <ul class="spec-cols grh-leds" style="margin:0">
+          <li>{{icon:check}}Sensors and gateways chosen for your site</li>
+          <li>{{icon:check}}Readings at an interval you set</li>
+          <li>{{icon:check}}A live dashboard per site, room or machine</li>
+          <li>{{icon:check}}History and trends you can export</li>
+          <li>{{icon:check}}Alerts by email or WhatsApp</li>
+          <li>{{icon:check}}Who gets which alert, and when</li>
+          <li>{{icon:check}}Odoo IoT for scales, printers and measuring tools</li>
+          <li>{{icon:check}}Readings linked to Odoo records where it helps</li>
+          <li>{{icon:check}}A device list with locations and owners</li>
+          <li>{{icon:check}}Installation and documentation</li>
+          <li>{{icon:check}}Support after go-live</li>
+          <li>{{icon:check}}Clear pricing on quotation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt grh-alerts-sec">
+  <div class="container">
+    <div class="two two--top grh-qa">
+      <div class="sec-head reveal">
+        <span class="hand">questions</span>
+        <h2>What teams ask before they start.</h2>
+        <p class="lead">Five questions that come in like alerts. Open one to read the reply.</p>
+      </div>
+      <div class="faq grh-alerts reveal">
+        <details><summary>What can we monitor? {{icon:chevron}}</summary><div class="faq-a"><p>Temperature and humidity, energy use, machine runtime and stoppages, doors, room occupancy and vehicle location are the common ones. If a sensor can measure it, it can usually be brought onto a dashboard.</p></div></details>
+        <details><summary>Do we need Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>No. Dashboards and alerts work on their own. If you run Odoo, the readings can feed it, and Odoo IoT connects devices such as scales and printers to the Odoo apps directly.</p></div></details>
+        <details><summary>Who supplies the hardware? {{icon:chevron}}</summary><div class="faq-a"><p>We recommend the sensors and gateways for your site and can source them, or work with devices you already have where they can be connected.</p></div></details>
+        <details><summary>What if a device goes offline? {{icon:chevron}}</summary><div class="faq-a"><p>A device that stops reporting raises its own alert, so a silent sensor is noticed rather than mistaken for a calm reading.</p></div></details>
+        <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to the number of devices, sites and integrations. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section grh-packets-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>Pairs well with these.</h2>
+    </div>
+    <div class="grid-3 grh-packets">
+      <a class="card grh-packet reveal" style="--i:0;--c:#F07C2A" href="{{ROOT}}solutions/networks.html"><div class="card-ic">{{icon:network}}</div><h3>Networks</h3><p>The office network and Wi-Fi your devices and people rely on, set up and documented.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card grh-packet reveal" style="--i:1;--c:#714B67" href="{{ROOT}}odoo/apps/iot.html"><div class="card-ic">{{odoo:iot}}</div><h3>Odoo IoT app</h3><p>How Odoo connects scales, printers and measuring tools to its apps.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card grh-packet reveal" style="--i:2;--c:#2E9A58" href="{{ROOT}}solutions/technology.html"><div class="card-ic">{{icon:layers}}</div><h3>Technology overview</h3><p>See how IoT works together with apps and networks.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section grh-glass-sec">
+  <div class="container">
+    <div class="cta grh-glass reveal">
+      <div>
+        <span class="hand">next step</span>
+        <h2>Tell us what you need to keep an eye on.</h2>
+        <p>Equipment, rooms or sites, and who should be alerted. We'll come back with a pilot plan and an estimate.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

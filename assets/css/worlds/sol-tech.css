@@ -1,0 +1,282 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-tech (/solutions/technology) — the TechNext workshop: a bright maker garage, three benches wired together.
+   Safety yellow and ink, tool amber / teal / orange for the three benches, pegboard tan, whitewashed brick.
+   The title card is a work order clipped to the board (hazard band, punched tag, order number); buttons are chunky machine
+   keys that press down; the caption has a label-maker tape; the glance strip is a strip of pegboard with tool tags.
+   Below the hero: a clipboard, a test bench, tool cases, wired modules, job tickets on a wire, parts drawers, hanging
+   shop signs and a roll-up door. New classes use the mkg- prefix. */
+.ixw--sol-tech{--mk-ink:#1B2433;--mk-yel:#FFC93C;--mk-amber:#F2A93B;--mk-orange:#F07C2A;--mk-teal:#14A38B;--mk-peg:#E6C89C;--mk-peg-d:#D4B080;--mk-steel:#5C6B7A;--mk-paper:#FFFDF8;--mk-brick:#F5EEE4;
+  --mk-hazard:repeating-linear-gradient(-45deg,#FFC93C 0 10px,#1B2433 10px 20px);
+  --w-alt:#F7F2EA;--w-dot:rgba(140,100,50,.12);--w-hand:#B9720F;
+  --lab-bg:#FFFDF8;--lab-bd:2px solid #1B2433;--lab-lip:#1B2433;--lab-tail:#1B2433;--lab-r:7px;
+  
+  --ii-bg:linear-gradient(160deg,#FFF8E8,#F5EEE4 55%,#E3E8EF);--ii-ink:#1B2433;--ii-b:#B9720F;--ii-accent:#FFC93C;--ii-lip:#1B2433;--ii-pill-r:10px;
+  --ii-pattern:radial-gradient(rgba(140,100,50,.16) 1.6px,transparent 1.8px) 0 0/16px 16px}
+.ixw--sol-tech .ixw-hero{background:linear-gradient(180deg,#DDE3EB 0,#EEF1F5 14%,#F8F3EC 15%,#F1E9DE 62%,#D8DEE6 62%,#C3CBD5 100%)}
+
+/* ---------- the title card: a work order clipped to the board ---------- */
+.ixw--sol-tech .ixw-copy{position:relative;max-width:500px;margin-top:20px;padding:36px 30px 26px;border-radius:6px 6px 16px 16px;background:var(--mk-paper);
+  box-shadow:0 0 0 2px var(--mk-ink),7px 9px 0 var(--mk-ink),0 40px 70px -30px rgba(40,30,10,.4)}
+.ixw--sol-tech .ixw-copy::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;border-radius:6px 6px 0 0;background:var(--mk-hazard)}
+.ixw--sol-tech .ixw-copy::after{content:"WORK ORDER · TN-TECH-01";position:absolute;right:18px;top:-15px;padding:7px 11px;border-radius:6px;background:var(--mk-ink);color:var(--mk-yel);
+  font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;box-shadow:0 3px 0 #000}
+.ixw--sol-tech .ixw-copy h1{max-width:17ch;font-size:clamp(2rem,3.1vw,2.8rem)}
+.ixw--sol-tech .ixw-copy .hand{color:#B9720F}
+.ixw--sol-tech .ixw-hint .ic{color:var(--mk-amber)}
+.ixw--sol-tech .ixw-hint{margin-top:16px}
+/* the three services as bench tags */
+.mkg-pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.mkg-pill{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px 0 6px;border-radius:7px;background:#FFFFFF;border:2px solid var(--mk-ink);box-shadow:0 3px 0 var(--mk-ink);
+  font:800 12.5px/1 var(--font-display);color:var(--mk-ink);text-decoration:none;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.mkg-pill .ic{width:20px;height:20px;padding:3px;border-radius:5px;background:var(--c);color:#FFFFFF}
+.mkg-pill:hover{translate:0 -2px;box-shadow:0 5px 0 var(--mk-ink);text-decoration:none;color:var(--mk-ink)}
+.mkg-pill:active{translate:0 2px;box-shadow:0 1px 0 var(--mk-ink)}
+.mkg-pill:focus-visible{outline:3px solid var(--blue-300);outline-offset:3px}
+@media (max-width:767px){.ixw--sol-tech .ixw-copy{padding:30px 20px 22px}.ixw--sol-tech .ixw-copy::after{display:none}.mkg-pills{margin-top:14px}}
+
+/* ---------- the caption: a label-maker tape on the bench ---------- */
+.ixw--sol-tech .ixw-cap{border-radius:12px;background:var(--mk-paper);box-shadow:0 0 0 2px var(--mk-ink),5px 6px 0 var(--mk-ink),0 26px 44px -22px rgba(40,30,10,.35)}
+.ixw--sol-tech .ixw-cap::before{content:"\25C9  ON THE BENCH";position:absolute;left:18px;top:-13px;padding:6px 11px 5px;border-radius:3px;background:var(--mk-ink);color:#FFFFFF;
+  font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.16em;transform:rotate(-1.5deg);box-shadow:0 2px 0 #000}
+.ixw--sol-tech .ixw-cap-who b{color:#B9720F}.ixw--sol-tech .ixw-cap-txt b{color:var(--blue)}
+.ixw--sol-tech .ixw-cap-rec{background:#FFF6DE;border:1.5px dashed #E8B54A;color:#6B4A0E}
+.ixw--sol-tech .ixw-cap-av{box-shadow:inset 0 0 0 2px #fff,0 0 0 2px var(--mk-ink)}
+
+/* ---------- buttons: machine keys that press down ---------- */
+.ixw--sol-tech main :is(.btn-primary,.btn-ghost,.mkg-door .btn-white,.mkg-door .btn-outline-white){border:2px solid var(--mk-ink);border-radius:10px;box-shadow:0 5px 0 var(--mk-ink);
+  transition:translate .16s ease,box-shadow .16s ease,background-color .2s ease}
+.ixw--sol-tech main .btn-primary,.ixw--sol-tech main .btn-primary:hover{color:#FFFFFF;background:var(--blue)}
+.ixw--sol-tech main .btn-primary .ic{color:var(--mk-yel)}
+.ixw--sol-tech main .btn-ghost,.ixw--sol-tech main .btn-ghost:hover{color:var(--mk-ink);background:var(--mk-yel)}
+.ixw--sol-tech main .btn-ghost::before{display:none}
+.ixw--sol-tech main :is(.btn-primary,.btn-ghost,.mkg-door .btn-white,.mkg-door .btn-outline-white):hover{translate:0 -2px;box-shadow:0 7px 0 var(--mk-ink)}
+.ixw--sol-tech main :is(.btn-primary,.btn-ghost,.mkg-door .btn-white,.mkg-door .btn-outline-white):active{translate:0 4px;box-shadow:0 1px 0 var(--mk-ink);transition-duration:.05s}
+.ixw--sol-tech main :is(.btn-primary,.btn-ghost):focus-visible{outline:3px solid var(--mk-amber);outline-offset:4px}
+.ixw--sol-tech .ixw-ibtn{border:2px solid var(--mk-ink);border-radius:10px;box-shadow:0 3px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-ibtn--play,.ixw--sol-tech .ixw-ibtn--play:hover{background:var(--mk-yel);color:var(--mk-ink)}
+.ixw--sol-tech .ixw-dots button.is-on{background:var(--mk-amber);box-shadow:0 0 0 1.5px var(--mk-ink)}
+.ixw--sol-tech .ixw-peek{border-radius:10px}.ixw--sol-tech .ixw-peek[aria-pressed="true"]{background:var(--mk-yel)}
+
+/* ---------- the glance strip: a strip of pegboard with tool tags ---------- */
+.ixw--sol-tech .mkg-strip{border-radius:14px;padding-top:18px;box-shadow:0 0 0 2px var(--mk-ink),5px 6px 0 var(--mk-ink);
+  background:radial-gradient(rgba(120,80,40,.3) 1.3px,transparent 1.5px) 6px 4px/12px 12px repeat-x,linear-gradient(var(--mk-peg),var(--mk-peg)) 0 0/100% 12px no-repeat,#FFFFFF}
+.ixw--sol-tech .mkg-strip dt .ic{width:22px;height:22px;padding:4px;border-radius:6px;background:var(--mk-yel);color:var(--mk-ink)}
+.ixw--sol-tech .mkg-strip>div{position:relative}
+@media (min-width:1101px){.ixw--sol-tech .mkg-strip>div::before{content:"";position:absolute;left:10px;top:-6px;width:8px;height:8px;border-radius:50%;background:var(--mk-steel);box-shadow:inset 0 0 0 2px #8A96A8}}
+
+/* ---------- the end card: the roll-up door ---------- */
+.ixw--sol-tech main .mkg-door{background:repeating-linear-gradient(180deg,rgba(255,255,255,.07) 0 3px,transparent 3px 18px),linear-gradient(120deg,#1E4691,#3167CA 70%);
+  border:2px solid var(--mk-ink);box-shadow:7px 9px 0 var(--mk-ink);padding-bottom:70px}
+.ixw--sol-tech main .mkg-door::before{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--mk-hazard)}
+.ixw--sol-tech main .mkg-door::after{right:-80px;top:-80px;background:rgba(255,201,60,.16)}
+.ixw--sol-tech main .mkg-door .hand{color:var(--mk-yel)}
+.ixw--sol-tech main .mkg-door .btn-white,.ixw--sol-tech main .mkg-door .btn-white:hover{background:var(--mk-yel);color:var(--mk-ink)}
+.ixw--sol-tech main .mkg-door .btn-outline-white,.ixw--sol-tech main .mkg-door .btn-outline-white:hover{background:#FFFFFF;color:var(--mk-ink)}
+
+/* ============================== below the hero ============================== */
+.ixw--sol-tech main .sec-head .hand{display:inline-block;padding:4px 10px 3px;border-radius:3px;background:var(--mk-ink);color:var(--mk-yel);font-size:1.05rem;transform:rotate(-1.5deg);margin-bottom:10px}
+.ixw--sol-tech main .mkg-door .hand,.ixw--sol-tech main .ixw-copy .hand{background:none;padding:0;transform:none}
+
+/* the one-paragraph answer: a work order on a clipboard */
+.ixw--sol-tech .mkg-brief{position:relative;max-width:980px;margin-top:22px;padding:34px 34px 26px 44px;border:0;border-radius:14px;
+  background:repeating-linear-gradient(180deg,transparent 0 27px,rgba(49,103,202,.1) 27px 28px) 0 54px/100% 100% no-repeat,var(--mk-paper);
+  box-shadow:0 0 0 2px var(--mk-ink),0 0 0 12px #C98E55,0 0 0 14px var(--mk-ink),0 30px 50px -30px rgba(40,30,10,.5)}
+.ixw--sol-tech .mkg-brief::before{content:"";position:absolute;left:16px;top:16px;bottom:16px;width:2px;background:rgba(224,69,107,.35)}
+.mkg-clip{position:absolute;left:50%;top:-26px;width:96px;height:34px;margin-left:-48px;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,#D6DCE5,#9AA6BC);box-shadow:0 0 0 2px var(--mk-ink),0 4px 0 var(--mk-ink)}
+.mkg-clip::after{content:"";position:absolute;left:34px;top:6px;width:28px;height:10px;border-radius:6px;background:var(--mk-ink)}
+.mkg-stamp{position:absolute;right:22px;bottom:-16px;display:grid;place-items:center;padding:7px 12px;border:2.5px solid #C0392B;border-radius:6px;background:var(--mk-paper);color:#C0392B;
+  font:800 10px/1.15 ui-monospace,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-6deg)}
+.mkg-stamp b{font-size:12.5px;letter-spacing:.08em}
+.ixw--sol-tech .mkg-brief .answer-h{background:var(--mk-yel);color:var(--mk-ink);border-radius:4px}
+.ixw--sol-tech .mkg-brief p:not(.answer-h){font-size:15.5px;line-height:28px;color:#2E3550}
+@media (max-width:640px){.ixw--sol-tech .mkg-brief{padding:30px 18px 30px 30px}.mkg-stamp{right:12px}}
+
+/* the demo on the test bench: a pegboard backdrop, screws, a label tape, three LEDs, the bench lip */
+.ixw--sol-tech .mkg-demo-sec{background:linear-gradient(180deg,#FFFFFF,#F7F2EA)}
+.mkg-bench{position:relative;padding:16px 18px 0;border-radius:22px 22px 8px 8px;
+  background:radial-gradient(rgba(120,80,40,.3) 1.5px,transparent 1.7px) 4px 4px/16px 16px,var(--mk-peg);box-shadow:0 0 0 2px var(--mk-ink),0 40px 70px -40px rgba(60,40,10,.5)}
+.mkg-bench::before,.mkg-bench::after{content:"";position:absolute;top:12px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,#5C6B7A 2px,#AEB8C6 2.5px);box-shadow:0 0 0 1.5px var(--mk-ink)}
+.mkg-bench::before{left:12px}.mkg-bench::after{right:12px}
+.mkg-bench-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 18px 14px}
+.mkg-tape{padding:7px 12px 6px;border-radius:3px;background:var(--mk-ink);color:#FFFFFF;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1deg);box-shadow:0 2px 0 #000}
+.mkg-leds{display:flex;gap:8px;padding:6px 10px;border-radius:999px;background:var(--mk-ink)}
+.mkg-leds i{width:9px;height:9px;border-radius:50%;background:#2BB673;box-shadow:0 0 6px #2BB673;animation:mkgLed 1.8s steps(2,start) infinite}
+.mkg-leds i:nth-child(2){background:var(--mk-yel);box-shadow:0 0 6px var(--mk-yel);animation-delay:.6s}.mkg-leds i:nth-child(3){background:#3FA9E0;box-shadow:0 0 6px #3FA9E0;animation-delay:1.2s}
+@keyframes mkgLed{50%{opacity:.35}}
+.ixw--sol-tech .mkg-bench .dm{border-radius:14px;box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-bench-lip{position:relative;height:22px;margin:16px -18px 0;border-radius:6px;background:linear-gradient(180deg,#E3B57A,#C98E55);box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-bench-lip i{position:absolute;top:22px;width:14px;height:26px;background:var(--mk-steel);box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-bench-lip i:first-child{left:40px}.mkg-bench-lip i:last-child{right:40px}
+.ixw--sol-tech .mkg-demo-sec .dm-note{margin-top:44px}
+.ixw--sol-tech .tfl-st{border-radius:12px}
+.ixw--sol-tech .tfl-ic{border-radius:10px;background:#FFF4DC;color:#B9720F}
+@media (max-width:640px){.mkg-bench{padding:12px 10px 0}.mkg-bench-top{padding:2px 8px 10px}.mkg-leds{display:none}.mkg-bench-lip{margin:12px -10px 0}}
+@media (prefers-reduced-motion:reduce){.mkg-leds i{animation:none}}
+
+/* the services: three tool cases with a handle, latches and a bench tag */
+.mkg-cases{gap:30px;padding-top:22px}
+.ixw--sol-tech .mkg-case{display:flex;flex-direction:column;padding:42px 26px 26px;border:0;border-radius:18px;background:#FFFFFF;box-shadow:0 0 0 2px var(--mk-ink),6px 7px 0 var(--mk-ink);transition:translate .3s var(--w-spring),box-shadow .3s ease}
+.ixw--sol-tech .mkg-case::before{content:"";position:absolute;left:0;right:0;top:0;height:20px;border-radius:18px 18px 0 0;background:var(--c);box-shadow:inset 0 -2px 0 var(--mk-ink)}
+.ixw--sol-tech .mkg-case::after{content:"";position:absolute;left:50%;top:-20px;width:92px;height:24px;margin-left:-46px;border:5px solid var(--mk-ink);border-bottom:0;border-radius:14px 14px 0 0;transition:translate .3s var(--w-spring)}
+.mkg-case-latch{position:absolute;top:12px;left:22px;right:22px;height:14px;pointer-events:none}
+.mkg-case-latch::before,.mkg-case-latch::after{content:"";position:absolute;top:0;width:22px;height:14px;border-radius:3px;background:#D6DCE5;box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-case-latch::before{left:0}.mkg-case-latch::after{right:0}
+.mkg-case-tag{align-self:flex-start;margin:0 0 14px;padding:5px 9px 4px;border-radius:3px;background:var(--mk-ink);color:#FFFFFF;font:800 10.5px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}
+.ixw--sol-tech .mkg-case .card-ic{width:58px;height:58px;justify-content:center;border-radius:14px;background:var(--c);color:#FFFFFF;box-shadow:0 0 0 2px var(--mk-ink),0 4px 0 var(--mk-ink)}
+.ixw--sol-tech .mkg-case .card-ic .ic{width:28px;height:28px}
+.ixw--sol-tech .mkg-case .btn-link{margin-top:auto;padding-top:16px;color:var(--cd)}
+.ixw--sol-tech .mkg-case:hover{transform:none;translate:0 -6px;box-shadow:0 0 0 2px var(--mk-ink),8px 13px 0 var(--mk-ink)}
+.ixw--sol-tech .mkg-case:hover::after{translate:0 -6px}
+.ixw--sol-tech .mkg-case:focus-visible{outline:3px solid var(--mk-amber);outline-offset:6px}
+@media (max-width:960px){.mkg-cases{gap:44px 24px}}
+
+/* why one team: three modules wired in a row */
+.mkg-wired{position:relative;gap:34px}
+.mkg-wired::before{content:"";position:absolute;left:4%;right:4%;top:50%;height:8px;margin-top:-4px;border-radius:4px;background:repeating-linear-gradient(90deg,#3167CA 0 22px,#FFC93C 22px 44px,#F07C2A 44px 66px);box-shadow:0 0 0 2px var(--mk-ink);
+  background-size:200% 100%;animation:mkgWire 6s linear infinite}
+@keyframes mkgWire{to{background-position:-66px 0}}
+.ixw--sol-tech .mkg-mod{position:relative;z-index:1;padding:30px 26px 26px;border:0;border-radius:16px;background:#FFFFFF;box-shadow:0 0 0 2px var(--mk-ink),0 8px 0 #D8DEE6,0 8px 0 2px var(--mk-ink)}
+.ixw--sol-tech .mkg-mod:hover{transform:translateY(-4px);box-shadow:0 0 0 2px var(--mk-ink),0 12px 0 #D8DEE6,0 12px 0 2px var(--mk-ink)}
+.mkg-port{position:absolute;top:50%;width:22px;height:30px;margin-top:-15px;border-radius:6px;background:#2A3142;box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-port::after{content:"";position:absolute;left:6px;top:8px;width:10px;height:14px;border-radius:2px;background:#111827;box-shadow:inset 0 3px 0 #FFC93C}
+.mkg-port--l{left:-13px}.mkg-port--r{right:-13px}
+.mkg-mod-n{position:absolute;right:18px;top:16px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--mk-brick);color:var(--mk-ink);font:800 13px/1 ui-monospace,Consolas,monospace;box-shadow:inset 0 0 0 2px var(--mk-ink)}
+.ixw--sol-tech .mkg-mod .card-ic{color:var(--blue)}
+@media (max-width:960px){.mkg-wired::before{left:50%;right:auto;top:2%;bottom:2%;width:8px;height:auto;margin:0 0 0 -4px;background:repeating-linear-gradient(180deg,#3167CA 0 22px,#FFC93C 22px 44px,#F07C2A 44px 66px)}.mkg-port{display:none}}
+@media (prefers-reduced-motion:reduce){.mkg-wired::before{animation:none}}
+
+/* how we work: job tickets clipped to a wire */
+.ixw--sol-tech .mkg-rail{gap:22px;padding-top:30px}
+.ixw--sol-tech .mkg-rail::before{top:10px;left:-8px;right:-8px;height:4px;background:#8A96A8;border-radius:2px;box-shadow:0 2px 0 rgba(27,36,51,.18)}
+.ixw--sol-tech .mkg-ticket{padding:30px 20px 22px;border-radius:4px 4px 12px 12px;background:var(--mk-paper);box-shadow:0 0 0 2px var(--mk-ink),0 18px 26px -18px rgba(40,30,10,.5);
+  transform:rotate(var(--rot,-1.2deg));transform-origin:50% 0;transition:transform .45s var(--w-spring)}
+.ixw--sol-tech .mkg-ticket:nth-child(even){--rot:1.4deg}
+.ixw--sol-tech .mkg-ticket.reveal.is-in{transform:rotate(var(--rot,-1.2deg))}
+.ixw--sol-tech .mkg-ticket:hover{transform:rotate(0) translateY(4px)}
+.ixw--sol-tech .mkg-ticket::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:10px;border-radius:0 0 12px 12px;background:radial-gradient(circle at 6px 10px,var(--mk-brick) 5px,transparent 5.5px) 0 0/12px 10px repeat-x}
+.mkg-pin{position:absolute;left:50%;top:-26px;width:26px;height:34px;margin-left:-13px;border-radius:5px 5px 3px 3px;background:linear-gradient(180deg,#D6DCE5,#8A96A8);box-shadow:0 0 0 2px var(--mk-ink)}
+.mkg-pin::before{content:"";position:absolute;left:8px;top:-12px;width:10px;height:14px;border:2px solid var(--mk-ink);border-bottom:0;border-radius:6px 6px 0 0}
+.ixw--sol-tech .mkg-ticket .step-n{width:46px;height:46px;border:2.5px solid #C0392B;border-radius:8px;background:transparent;color:#C0392B;font:800 18px/1 ui-monospace,Consolas,monospace;transform:rotate(-8deg);box-shadow:none}
+.ixw--sol-tech .mkg-ticket:hover .step-n{background:#C0392B;color:#FFFFFF;transform:rotate(0) scale(1.06)}
+.ixw--sol-tech .mkg-ticket:nth-child(1){--tk:#F2A93B}.ixw--sol-tech .mkg-ticket:nth-child(2){--tk:#3167CA}.ixw--sol-tech .mkg-ticket:nth-child(3){--tk:#14A38B}.ixw--sol-tech .mkg-ticket:nth-child(4){--tk:#F07C2A}
+.ixw--sol-tech .mkg-ticket h3{display:flex;align-items:center;gap:8px}
+.ixw--sol-tech .mkg-ticket h3::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--tk)}
+@media (max-width:960px){.ixw--sol-tech .mkg-rail{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:46px}.ixw--sol-tech .mkg-rail::before{display:none}}
+@media (max-width:640px){.ixw--sol-tech .mkg-rail{grid-template-columns:1fr}}
+
+/* the FAQ: parts drawers in a steel cabinet */
+.ixw--sol-tech .mkg-qa{align-items:start;gap:40px}
+.mkg-cabinet{display:grid;gap:6px;width:180px;margin-top:26px;padding:10px;border-radius:10px;background:#AEB8C6;box-shadow:0 0 0 2px var(--mk-ink),5px 6px 0 var(--mk-ink)}
+.mkg-cabinet i{position:relative;height:30px;border-radius:5px;background:#E8ECF2;box-shadow:inset 0 -3px 0 #C9D1DC,0 0 0 1.5px var(--mk-ink)}
+.mkg-cabinet i::before{content:"";position:absolute;left:12px;top:8px;width:46px;height:12px;border-radius:2px;background:#FFFFFF;box-shadow:0 0 0 1.5px #8A96A8}
+.mkg-cabinet i::after{content:"";position:absolute;right:16px;top:12px;width:40px;height:6px;border-radius:3px;background:var(--mk-steel)}
+.mkg-cabinet i:nth-child(2){translate:14px 0;transition:translate .4s var(--w-spring)}
+.ixw--sol-tech .mkg-drawers{gap:12px;max-width:none}
+.ixw--sol-tech .mkg-drawers details{border:0;border-radius:10px;background:#E8ECF2;box-shadow:0 0 0 2px var(--mk-ink),0 5px 0 #AEB8C6,0 5px 0 2px var(--mk-ink);transition:translate .3s var(--w-spring),box-shadow .25s ease}
+.ixw--sol-tech .mkg-drawers details:hover{translate:6px 0}
+.ixw--sol-tech .mkg-drawers details[open]{background:#FFFFFF;translate:10px 0;box-shadow:0 0 0 2px var(--mk-ink),-10px 6px 0 var(--mk-peg),-10px 6px 0 2px var(--mk-ink)}
+.ixw--sol-tech .mkg-drawers summary{padding:16px 18px}
+.ixw--sol-tech .mkg-drawers summary::before{content:"?";display:grid;place-items:center;width:34px;height:26px;flex:none;border-radius:3px;background:#FFFFFF;color:var(--mk-ink);font:800 13px/1 ui-monospace,Consolas,monospace;box-shadow:0 0 0 1.5px #8A96A8;transform:none}
+.ixw--sol-tech .mkg-drawers details[open] summary::before{content:"OK";background:var(--mk-yel);color:var(--mk-ink);box-shadow:0 0 0 1.5px var(--mk-ink);transform:none}
+.ixw--sol-tech .mkg-drawers summary .ic{width:46px;height:14px;padding:0;border-radius:7px;background:var(--mk-steel);color:transparent}
+.ixw--sol-tech .mkg-drawers details[open] summary .ic{transform:none;background:var(--mk-amber)}
+.ixw--sol-tech .mkg-drawers .faq-a{padding-left:70px}
+@media (max-width:960px){.mkg-cabinet{display:none}}
+@media (max-width:767px){.ixw--sol-tech .mkg-drawers .faq-a{padding-left:18px}.ixw--sol-tech .mkg-drawers details[open]{translate:0 0}}
+
+/* other practices: shop signs hanging from the beam */
+.mkg-signs{gap:30px;padding-top:46px;background:linear-gradient(#8A96A8,#8A96A8) 0 8px/100% 6px no-repeat}
+.ixw--sol-tech .mkg-sign{border:0;border-radius:14px;background:#FFFFFF;box-shadow:0 0 0 2px var(--mk-ink),inset 0 8px 0 var(--c),0 18px 30px -20px rgba(40,30,10,.45);transform-origin:50% -38px;transition:rotate .5s var(--w-spring)}
+.ixw--sol-tech .mkg-sign::before,.ixw--sol-tech .mkg-sign::after{content:"";position:absolute;top:-40px;width:4px;height:40px;background:repeating-linear-gradient(180deg,#5C6B7A 0 5px,transparent 5px 8px)}
+.ixw--sol-tech .mkg-sign::before{left:24%}.ixw--sol-tech .mkg-sign::after{right:24%}
+.ixw--sol-tech .mkg-sign:hover{transform:none;rotate:-2.5deg}
+.ixw--sol-tech .mkg-sign:nth-child(2):hover{rotate:2.5deg}
+.ixw--sol-tech .mkg-sign .card-ic .ic{color:var(--c)}
+@media (max-width:960px){.mkg-signs{background:none;padding-top:40px;row-gap:56px}}
+
+/* ============================== audit round: hero controls, the kitting corner, spacing ============================== */
+/* CTA keys: one height, icon chips aligned, a lit edge on hover, a hard press */
+.ixw--sol-tech .ixw-copy .actions{gap:14px;margin-top:24px}
+.ixw--sol-tech .ixw-copy .actions .btn{height:50px;padding:0 22px;font-size:15.5px;font-weight:700;overflow:visible}
+.ixw--sol-tech .ixw-copy .btn-primary .ic{width:24px;height:24px;padding:4px;margin-right:-6px;border-radius:7px;background:rgba(255,255,255,.18);transition:translate .2s var(--w-spring)}
+.ixw--sol-tech .ixw-copy .btn-primary:hover .ic{translate:3px 0}
+.ixw--sol-tech .ixw-copy .btn-ghost{background-image:linear-gradient(180deg,#FFD866,#FFC93C)}
+.ixw--sol-tech .ixw-copy .btn-primary:hover{background:#2A5DBB}
+/* bench tags */
+.ixw--sol-tech .mkg-pill{height:32px}
+/* caption controls: keys with a yellow lit state, hover lift, focus ring */
+.ixw--sol-tech .ixw-ibtn{background:#FFFFFF;color:var(--mk-ink);transition:translate .16s ease,box-shadow .16s ease,background-color .2s ease}
+.ixw--sol-tech .ixw-ibtn:hover{translate:0 -2px;border-color:var(--mk-ink);color:var(--mk-ink);background:#FFF6DE;box-shadow:0 5px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-ibtn:focus-visible,.ixw--sol-tech .ixw-dots button:focus-visible,.ixw--sol-tech .ixw-peek:focus-visible{outline:3px solid var(--mk-amber);outline-offset:3px}
+.ixw--sol-tech .ixw-ibtn--play,.ixw--sol-tech .ixw-ibtn--play:hover{background:var(--mk-yel);border-color:var(--mk-ink);box-shadow:0 3px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-ibtn--play:hover{box-shadow:0 5px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-dots{gap:6px}
+.ixw--sol-tech .ixw-dots button{height:9px;border-radius:3px;background:#D9CBB4;box-shadow:inset 0 0 0 1px rgba(27,36,51,.18);transition:width .3s var(--w-spring),background-color .2s ease,translate .2s ease}
+.ixw--sol-tech .ixw-dots button:hover{background:var(--mk-amber);translate:0 -2px}
+.ixw--sol-tech .ixw-dots button.is-on{width:24px;background:var(--mk-amber);box-shadow:0 0 0 1.5px var(--mk-ink)}
+/* "View the scene": a machine key like the CTAs, a hazard edge when the text is hidden */
+.ixw--sol-tech .ixw-peek{height:40px;padding:0 16px 0 13px;border:2px solid var(--mk-ink);border-radius:10px;background:#FFFFFF;color:var(--mk-ink);font-weight:800;box-shadow:0 4px 0 var(--mk-ink);transition:translate .16s ease,box-shadow .16s ease,background-color .2s ease}
+.ixw--sol-tech .ixw-peek:hover{translate:0 -2px;box-shadow:0 6px 0 var(--mk-ink);background:#FFF6DE}
+.ixw--sol-tech .ixw-peek:active{translate:0 3px;box-shadow:0 1px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-peek[aria-pressed="true"]{background:var(--mk-yel);box-shadow:0 4px 0 var(--mk-ink)}
+.ixw--sol-tech .ixw-peek[aria-pressed="true"]::after{content:"";position:absolute;left:8px;right:8px;bottom:-11px;height:5px;border-radius:0 0 4px 4px;background:var(--mk-hazard);background-size:14px 14px}
+/* the kitting corner's technician only answers when the title card is out of the way */
+@media (min-width:1200px){.ixw--sol-tech .ixw-hero:not(.is-peek) .mkg-side{visibility:hidden}}
+/* the answer clipboard: square with the container, clear of the glance strip */
+.ixw--sol-tech .mkg-brief{max-width:none;margin:46px 14px 0}
+.ixw--sol-tech main h2{text-wrap:balance}
+.mkg-nw{white-space:nowrap}
+@media (max-width:767px){.ixw--sol-tech .ixw-copy .actions .btn{height:50px}.ixw--sol-tech .mkg-brief{margin:40px 12px 0}}
+/* ============ fix round: nothing floats alone ============ */
+/* the FAQ: heading and the parts cabinet share a compact header row; the drawers run full width, two by two */
+.ixw--sol-tech .mkg-qa{grid-template-columns:1fr;gap:30px}
+.ixw--sol-tech .mkg-qa .sec-head{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:48px;align-items:center;max-width:none;margin-bottom:0}
+.ixw--sol-tech .mkg-qa .sec-head>:not(.mkg-cabinet){grid-column:1;justify-self:start}
+.ixw--sol-tech .mkg-qa .mkg-cabinet{grid-column:2;grid-row:1/span 3;margin-top:0;width:200px}
+.ixw--sol-tech .mkg-drawers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px;align-items:start}
+@media (max-width:960px){.ixw--sol-tech .mkg-qa .sec-head{grid-template-columns:1fr}.ixw--sol-tech .mkg-drawers{grid-template-columns:1fr}}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the workshop. One amber accent.
+   Themed touches kept: the coloured case lid + "Bench 0x" tag on the three services, the A/B/C module letters, the
+   slim "test bench" bar over the demo, the colour key on the four steps.
+   =================================================================================================================== */
+.ixw--sol-tech{--calm-accent:#D98A1E;--calm-accent-ink:#A8650C;--calm-accent-line:#EFD7B4;--calm-accent-wash:#FAF9F6;--calm-wash:#FAF9F6}
+html body.ixw--sol-tech main .mkg-brief{max-width:900px!important;margin:0!important;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-tech main .mkg-brief::before,html body.ixw--sol-tech main .mkg-brief::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-brief p{color:var(--body)!important}
+/* demo */
+html body.ixw--sol-tech main .mkg-bench{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-tech main .mkg-bench::before,html body.ixw--sol-tech main .mkg-bench::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-bench-top{padding:12px 18px!important;background:#FBF3E6!important;border-bottom:1px solid var(--calm-line)}
+html body.ixw--sol-tech main .mkg-tape{background:none!important;box-shadow:none!important;transform:none!important;rotate:none!important;padding:0!important;color:var(--calm-accent-ink)!important;font:700 12px/1 var(--font-body)!important;letter-spacing:.08em;text-transform:uppercase}
+html body.ixw--sol-tech main .mkg-bench .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* the three services: a thin coloured lid and the bench tag */
+html body.ixw--sol-tech main .mkg-case{padding:26px!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;border-top:4px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;translate:none!important;transform:none!important}
+html body.ixw--sol-tech main .mkg-case::before,html body.ixw--sol-tech main .mkg-case::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-case:hover{translate:0 -2px!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-tech main .mkg-case-tag{background:color-mix(in srgb,var(--c) 14%,#fff)!important;color:var(--cd)!important;box-shadow:none!important;transform:none!important}
+html body.ixw--sol-tech main .mkg-case .card-ic{box-shadow:none!important;border:0!important}
+/* why one team: plain cards, the module letter stays */
+html body.ixw--sol-tech main .mkg-mod{border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-tech main .mkg-mod-n{box-shadow:none!important;border:1px solid var(--calm-line)!important;background:#FBF3E6!important;color:var(--calm-accent-ink)!important}
+/* steps: plain cards, no hanging rail */
+html body.ixw--sol-tech main .mkg-rail{padding-top:0!important}
+html body.ixw--sol-tech main .mkg-rail::before{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-ticket{padding:24px 22px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important;rotate:none!important}
+html body.ixw--sol-tech main .mkg-ticket::before,html body.ixw--sol-tech main .mkg-ticket::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-ticket .step-n{border:0!important;box-shadow:none!important;background:#FBF3E6!important;color:var(--calm-accent-ink)!important;border-radius:50%!important}
+/* FAQ: two columns of plain rows */
+html body.ixw--sol-tech main .mkg-drawers details{box-shadow:none!important}
+html body.ixw--sol-tech main .mkg-drawers details::before,html body.ixw--sol-tech main .mkg-drawers details::after,html body.ixw--sol-tech main .mkg-drawers summary::after{content:none!important;display:none!important}
+/* related */
+html body.ixw--sol-tech main .mkg-signs::before,html body.ixw--sol-tech main .mkg-signs::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-sign{border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;transform:none!important}
+html body.ixw--sol-tech main .mkg-sign::before,html body.ixw--sol-tech main .mkg-sign::after{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-sign:hover{translate:0 -2px;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-tech main .mkg-wired::before{content:none!important;display:none!important}
+html body.ixw--sol-tech main .mkg-drawers details,html body.ixw--sol-tech main .mkg-drawers details[open]{translate:none!important;background:#fff!important}
+html body.ixw--sol-tech main .mkg-drawers summary::before,html body.ixw--sol-tech main .mkg-drawers details[open] summary::before{content:"?"!important;width:28px!important;height:24px!important;border-radius:6px!important;background:#FBF3E6!important;color:var(--calm-accent-ink)!important;box-shadow:none!important;border:0!important;font:700 12px/24px var(--font-body)!important}
+html body.ixw--sol-tech main .mkg-drawers summary .ic,html body.ixw--sol-tech main .mkg-drawers details[open] summary .ic{width:28px!important;height:28px!important;padding:6px!important;border-radius:50%!important;background:#F6F7FA!important;color:var(--calm-accent-ink)!important}
+html body.ixw--sol-tech main .mkg-signs{background:none!important;padding-top:0!important;row-gap:24px!important}

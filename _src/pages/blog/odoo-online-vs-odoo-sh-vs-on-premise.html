@@ -1,0 +1,79 @@
+<!--meta {"title": "Odoo Online vs Odoo.sh vs on-premise: which fits?", "desc": "Odoo Online, Odoo.sh or on-premise? TechNext compares hosting, custom code, upgrades and plans, and explains which option suits which kind of company.", "out": "blog/odoo-online-vs-odoo-sh-vs-on-premise.html", "nav": "company", "article": {"h1": "Odoo Online, Odoo.sh or on-premise: which hosting fits?", "cat": "technext-odoo", "date": "2026-09-27", "order": 3, "lede": "Odoo runs in three ways: in Odoo's cloud, on Odoo's developer platform, or on servers you control. The right choice depends on one question more than any other: will you need custom code?", "card": "Who hosts it, whether custom modules are allowed, how upgrades work, and which plan each option needs.", "cover": "icons:icon:globe,icon:code,icon:database"}, "scripts": ["assets/js/demo-kit.js", "assets/js/demo-hosting.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-hosting.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<div class="post-key">
+  <p class="post-key-h">The short answer</p>
+  <ul>
+    <li><strong>Odoo Online</strong> suits most first phases: Odoo hosts everything, and there is no custom code.</li>
+    <li><strong>Odoo.sh</strong> is for companies that need custom modules or code-level integrations, with staging branches built in.</li>
+    <li><strong>On-premise</strong> is for companies whose IT policy or data rules require their own servers.</li>
+  </ul>
+</div>
+
+<p>Choosing where Odoo runs is one of the first decisions in any project, and it is easy to get wrong in either direction: paying for infrastructure you don't need, or picking a setup that can't take the customisation you will need next year. TechNext implements Odoo on all three options, so here is how they compare in practice.</p>
+
+<h2>Odoo Online: Odoo's cloud</h2>
+<p>Odoo Online is Odoo's software-as-a-service. Odoo hosts the database, handles servers, backups and security, and runs version upgrades through its own upgrade service. You can configure everything Odoo offers, and on the Custom plan you can use Odoo Studio to add fields, views and automations without code.</p>
+<p>What you cannot do is install <strong>custom Python modules</strong> or third-party modules outside what Odoo provides. For many companies that is fine: standard Odoo plus configuration covers far more than people expect. Odoo's One App Free and Standard plans run on Odoo Online.</p>
+
+<h2>Odoo.sh: Odoo's platform for custom code</h2>
+<p>Odoo.sh is Odoo's cloud platform for projects that need code. It connects to a GitHub repository, so custom modules are developed, reviewed and deployed like any software, and it gives you <strong>development and staging branches</strong> that copy production data for testing. Odoo still runs the infrastructure; you or your partner own the code. Odoo.sh needs the Custom plan, and hosting is billed on top of the subscription.</p>
+
+<h2>On-premise: your own servers</h2>
+<p>On-premise means running Odoo on your own servers or your own cloud account. You get full control of the environment, and full responsibility for it: hosting, backups, security patches, monitoring and upgrades. For Odoo Enterprise it needs the Custom plan, billed yearly. It makes sense when data-residency rules or internal IT policy require it, or when a company already runs its own infrastructure team.</p>
+
+<figure class="hc-fig" aria-label="Interactive: choose between Odoo Online, Odoo.sh and on-premise">
+  <div class="dm dm-hosting reveal" data-demo="hosting">
+    <div class="dm-head">
+      <div class="dm-title"><b>Odoo Online, Odoo.sh or on-premise?</b><small>Four questions from this guide</small></div>
+      <button class="dm-btn" type="button" data-reset>{{icon:refresh}}Start over</button>
+    </div>
+    <div class="hc-qs" role="group" aria-label="Your requirements"></div>
+    <div class="hc-cards" role="group" aria-label="The three hosting options">
+      <span class="hc-slide" aria-hidden="true"></span>
+      <div class="hc-card" data-o="online">{{icon:globe}}<b>Odoo Online</b><small data-best></small><em data-fit></em></div>
+      <div class="hc-card" data-o="sh">{{icon:code}}<b>Odoo.sh</b><small data-best></small><em data-fit></em></div>
+      <div class="hc-card" data-o="prem">{{icon:database}}<b>On-premise</b><small data-best></small><em data-fit></em></div>
+    </div>
+    <div class="hc-out">
+      <div class="hc-why"><p class="hc-h">Why</p><ul aria-live="polite"></ul></div>
+      <div class="hc-who"><p class="hc-h">Who runs what <span><i>Odoo</i><i>You or your partner</i></span></p><div class="hc-layers"></div></div>
+    </div>
+    <div class="dm-static">
+      <p>Start on Odoo Online if standard apps and configuration cover your processes. Choose Odoo.sh as soon as a requirement needs custom code. Go on-premise only for a concrete reason, such as a regulator, a group IT policy or existing infrastructure.</p>
+    </div>
+  </div>
+  <figcaption class="dm-note">{{icon:check}} Follows this guide's rule of thumb; the matching column lights up in the comparison table below.</figcaption>
+</figure>
+
+
+<h2>Side by side</h2>
+<div class="table-wrap" data-hc-table><table>
+  <thead><tr><th></th><th>Odoo Online</th><th>Odoo.sh</th><th>On-premise</th></tr></thead>
+  <tbody>
+    <tr><td>Who runs the servers</td><td>Odoo</td><td>Odoo</td><td>You</td></tr>
+    <tr><td>Custom Python modules</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Studio (no-code changes)</td><td>Custom plan</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Staging copies for testing</td><td>Database duplicates</td><td>Built in (branches)</td><td>You set them up</td></tr>
+    <tr><td>Version upgrades</td><td>Odoo's upgrade service</td><td>Planned, with your code</td><td>Planned, fully yours</td></tr>
+    <tr><td>Plans</td><td>One App Free, Standard, Custom</td><td>Custom, hosting extra</td><td>Custom, yearly</td></tr>
+    <tr><td>Best for</td><td>Most first phases</td><td>Custom modules, integrations</td><td>Strict IT or data rules</td></tr>
+  </tbody>
+</table></div>
+<p>Plan names and what they include change from time to time; check <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener">odoo.com/pricing</a> for the current terms in your country.</p>
+
+<h2>How TechNext helps clients choose</h2>
+<p>We decide hosting during <a href="{{ROOT}}odoo/discovery.html">discovery</a>, once we know what the first phase needs. Our rule of thumb:</p>
+<ol>
+  <li><strong>Start on Odoo Online</strong> if standard apps and configuration cover your processes. It is the simplest to run and the cheapest to start.</li>
+  <li><strong>Choose Odoo.sh</strong> as soon as a requirement needs custom code: a bespoke integration, a module Odoo does not have, or logic Studio cannot express.</li>
+  <li><strong>Go on-premise</strong> only for a concrete reason, such as a regulator, a group IT policy or existing infrastructure, because it moves the whole operations burden to you.</li>
+</ol>
+<p>A company can move later. An Odoo Online database can be moved to Odoo.sh or on-premise when custom code becomes necessary, and we plan that move like a small project, tested on a copy first.</p>
+
+<h2>Common questions</h2>
+<div class="faq">
+  <details><summary>Can we install custom modules on Odoo Online? {{icon:chevron}}</summary><div class="faq-a"><p>No. Odoo Online supports configuration and, on the Custom plan, Odoo Studio. Custom Python modules need Odoo.sh or an on-premise installation.</p></div></details>
+  <details><summary>Which Odoo hosting option is cheapest? {{icon:chevron}}</summary><div class="faq-a"><p>Usually Odoo Online, because hosting is included in the subscription. Odoo.sh adds hosting fees on top of the Custom plan, and on-premise adds your own infrastructure and operations costs.</p></div></details>
+  <details><summary>Can we move from Odoo Online to Odoo.sh later? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. A database can move from Odoo Online to Odoo.sh or on-premise when you need custom code. TechNext plans and tests the move on a copy before switching.</p></div></details>
+  <details><summary>Which hosting does TechNext recommend? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo Online for most first phases, Odoo.sh when a requirement needs custom code, and on-premise only when IT policy or data rules require it.</p></div></details>
+</div>

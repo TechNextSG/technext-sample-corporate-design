@@ -1,0 +1,307 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-rag (/solutions/ai-knowledge) — a RAG knowledge assistant as a grand reading room. Walnut shelves, parchment,
+   library green leather with gold tooling, oxblood for what is restricted, a blue citation mark. The title card is a book's
+   title page with its green spine and a ribbon bookmark; the caption is a reading slip; buttons are green leather tooled in
+   gold; the glance strip is a row of books on a shelf; below: an ex-libris bookplate, the demo bound in leather beside a call
+   slip, six books on a shelf, the card catalogue's drawers, a library card of privileges, the librarian's desk and see-also
+   catalogue cards. Classes: .lbr-* */
+.ixw--sol-rag{--ow-c:#1F6B52;--lbr-ink:#1F2A2E;--lbr-wood:#7A5236;--lbr-wood-d:#563820;--lbr-wood-l:#A9774E;--lbr-parch:#FBF4E2;--lbr-parch-d:#EFE3C4;--lbr-grn:#1F6B52;--lbr-grn-d:#154A39;--lbr-grn-l:#E1EFE7;
+  --lbr-gold:#C8A24A;--lbr-gold-d:#9A7A2C;--lbr-gold-l:#F0D98C;--lbr-oxb:#8E2C3A;--lbr-blue:#3167CA;--lbr-txt:#4A3F30;
+  --w-alt:#F8F1E1;--w-dot:rgba(200,162,74,.16);--w-hand:#1F6B52;--lab-bg:#FBF4E2;--lab-bd:2px solid #1F6B52;--lab-lip:#C8A24A;--lab-tail:#1F6B52;--lab-r:4px;
+  
+  --ii-bg:linear-gradient(160deg,#FBF4E2,#EFE3C4 60%,#E1EFE7);--ii-ink:#1F2A2E;--ii-b:#1F6B52;--ii-accent:#C8A24A;--ii-lip:#2A1B10;--ii-ep-bg:#1F6B52;--ii-ep-fg:#FFFFFF}
+.ixw--sol-rag .ixw-hero{background:linear-gradient(180deg,#EADDC0 0,#F4EBD6 16%,#7A5236 30%,#6B4527 62%,#D9B98C 62%,#C9A473 100%)}
+
+/* ---------- the title card: a book's title page, green spine, gold rules, a ribbon bookmark ---------- */
+.ixw--sol-rag .ixw-copy{position:relative;max-width:520px;margin-top:24px;padding:34px 32px 26px 46px;border-radius:4px 12px 12px 4px;background:var(--lbr-parch);
+  box-shadow:inset 14px 0 0 var(--lbr-grn),inset 16px 0 0 var(--lbr-gold),inset 19px 0 0 var(--lbr-grn-d),0 0 0 1.5px #E3D3AE,6px 6px 0 -1px #EFE3C4,6px 6px 0 .5px #D9C69E,0 40px 70px -30px rgba(70,45,15,.45)}
+.ixw--sol-rag .ixw-copy::before{content:"";position:absolute;inset:12px 12px 12px 30px;border:1.5px solid var(--lbr-gold);border-radius:4px;box-shadow:inset 0 0 0 3px var(--lbr-parch),inset 0 0 0 4px rgba(200,162,74,.6);pointer-events:none}
+.ixw--sol-rag .ixw-copy::after{content:"";position:absolute;right:36px;top:-8px;width:20px;height:78px;background:linear-gradient(90deg,#7A2230,#A33D4E 50%,#7A2230);clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%);filter:drop-shadow(0 3px 2px rgba(60,20,20,.3))}
+.ixw--sol-rag .ixw-copy h1{max-width:15ch;color:var(--lbr-ink)}
+.ixw--sol-rag .ixw-copy .hand{color:var(--lbr-grn)}
+.ixw--sol-rag .ixw-copy .lead{color:var(--lbr-txt)}
+.ixw--sol-rag .lbr-badges{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0}
+.ixw--sol-rag .lbr-badges span{display:inline-flex;align-items:center;gap:6px;height:27px;padding:0 11px 0 9px;border-radius:4px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px var(--lbr-gold),0 2px 0 #E3D3AE;font:800 11.5px/1 var(--font-body);color:var(--lbr-ink)}
+.ixw--sol-rag .lbr-badges span:first-child::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lbr-gold);box-shadow:0 0 0 2.5px rgba(200,162,74,.25)}
+.ixw--sol-rag .lbr-badges .ic{width:14px;height:14px}
+.ixw--sol-rag .lbr-badges .lbr-ok{color:var(--lbr-grn)}.ixw--sol-rag .lbr-badges .lbr-lock{color:var(--lbr-oxb)}
+.ixw--sol-rag .ixw-copy .actions{margin-top:22px}
+.ixw--sol-rag .ixw-hint{margin-top:18px}.ixw--sol-rag .ixw-hint .ic{color:var(--lbr-gold-d)}
+.ixw--sol-rag :is(.ixwi-card,.hxs-card)::after{display:none}
+@media (max-width:767px){.ixw--sol-rag .ixw-copy{padding:30px 20px 22px 34px}.ixw--sol-rag .ixw-copy::before{left:24px}.ixw--sol-rag .ixw-copy::after{right:22px;height:60px}}
+
+/* ---------- the caption: a reading slip ---------- */
+.ixw--sol-rag .ixw-cap{border-radius:10px;background:var(--lbr-parch);box-shadow:0 0 0 2px var(--lbr-grn),0 5px 0 2px var(--lbr-grn-d),0 26px 44px -22px rgba(60,35,10,.5)}
+.ixw--sol-rag .ixw-cap::before{content:"\00A7  QUOTED FROM THE PAGE";position:absolute;left:18px;top:-14px;padding:6px 11px;border-radius:4px;background:var(--lbr-grn);color:var(--lbr-gold-l);font:800 10.5px/1 var(--font-body);letter-spacing:.12em;box-shadow:inset 0 0 0 1px var(--lbr-gold),0 0 0 2px var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-cap-av{box-shadow:inset 0 0 0 2px #FFFFFF,0 0 0 2px var(--lbr-gold)}
+.ixw--sol-rag .ixw-cap-who b{color:var(--lbr-grn)}.ixw--sol-rag .ixw-cap-txt b{color:var(--lbr-oxb)}
+.ixw--sol-rag .ixw-cap-rec{background:#FFFFFF;border:1px dashed var(--lbr-gold);color:#5C4A2A}
+
+/* ---------- buttons: green leather tooled in gold; parchment for the second ---------- */
+.ixw--sol-rag main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:6px;border:0;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-rag main .btn-primary,.ixw--sol-rag main .btn-primary:hover{color:#FFFFFF;background:var(--lbr-grn);box-shadow:inset 0 0 0 3px var(--lbr-grn),inset 0 0 0 4.5px var(--lbr-gold-l),0 4px 0 var(--lbr-grn-d)}
+.ixw--sol-rag main .btn-primary .ic{color:var(--lbr-gold-l)}
+.ixw--sol-rag main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--sol-rag main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--lbr-ink);background:var(--lbr-parch);box-shadow:inset 0 0 0 2px var(--lbr-grn),0 4px 0 var(--lbr-grn-d)}
+.ixw--sol-rag main .btn-ghost::before{display:none}.ixw--sol-rag main .btn-ghost .ic{color:var(--lbr-grn)}
+.ixw--sol-rag main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--sol-rag main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;transition-duration:.06s}
+.ixw--sol-rag .ixw-cta .btn-outline-white,.ixw--sol-rag .ixw-cta .btn-outline-white:hover{color:var(--lbr-ink);background:var(--lbr-gold-l);box-shadow:inset 0 0 0 2px var(--lbr-gold-d),0 4px 0 var(--lbr-gold-d)}
+.ixw--sol-rag main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--lbr-gold);outline-offset:4px}
+.ixw--sol-rag .ixw-ibtn{border:2px solid var(--lbr-grn-d);box-shadow:0 3px 0 var(--lbr-grn-d);color:var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-ibtn--play,.ixw--sol-rag .ixw-ibtn--play:hover{background:var(--lbr-grn);color:#FFFFFF}
+.ixw--sol-rag .ixw-dots button.is-on{background:var(--lbr-oxb)}
+.ixw--sol-rag .ixw-peek{border-color:var(--lbr-grn-d);box-shadow:0 3px 0 var(--lbr-grn-d)}.ixw--sol-rag .ixw-peek[aria-pressed="true"]{background:var(--lbr-grn-l)}
+.ixw--sol-rag .ixw-hot-lab .ic{color:var(--lbr-grn)}
+
+/* ---------- the glance strip: books on a shelf ---------- */
+.ixw--sol-rag .ow-strip{position:relative;padding:20px 22px 34px;gap:0 14px;border-radius:10px;background:linear-gradient(180deg,#5C3B22,#7A5236 70%);box-shadow:inset 0 0 0 3px #4A2F1A,0 24px 44px -30px rgba(60,35,10,.55)}
+.ixw--sol-rag .ow-strip::after{content:"";position:absolute;left:10px;right:10px;bottom:12px;height:12px;border-radius:2px;background:linear-gradient(180deg,#C08A58,#8A5E3C);box-shadow:0 3px 0 #3A2616}
+.ixw--sol-rag .ow-strip>div{position:relative;z-index:1;padding:14px 12px 14px 26px;border-radius:3px 7px 7px 3px;background:var(--lbr-parch);rotate:-.5deg;box-shadow:0 8px 10px -8px rgba(0,0,0,.5)}
+.ixw--sol-rag .ow-strip>div:nth-child(even){rotate:.6deg}
+.ixw--sol-rag .ow-strip>div::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;border-radius:3px 0 0 3px;background:linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 10px/100% 2px no-repeat,linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 calc(100% - 12px)/100% 2px no-repeat,var(--c,#1F6B52)}
+.ixw--sol-rag .ow-strip>div:nth-child(1){--c:#1F6B52}.ixw--sol-rag .ow-strip>div:nth-child(2){--c:#8E2C3A}.ixw--sol-rag .ow-strip>div:nth-child(3){--c:#2F4A7A}.ixw--sol-rag .ow-strip>div:nth-child(4){--c:#9A7A2C}.ixw--sol-rag .ow-strip>div:nth-child(5){--c:#6B4A8A}
+.ixw--sol-rag .ow-strip>div+div{border-left:0}
+.ixw--sol-rag .ow-strip dt{font:800 11px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#7A5A2E}.ixw--sol-rag .ow-strip dt .ic{color:var(--c)}
+.ixw--sol-rag .ow-strip dd{color:var(--lbr-ink)}
+
+/* ---------- sections: parchment, gold and the section sign ---------- */
+.ixw--sol-rag .section--alt{background-color:#F8F1E1;background-image:radial-gradient(rgba(200,162,74,.18) 1.4px,transparent 1.6px),radial-gradient(rgba(200,162,74,.10) 1.4px,transparent 1.6px);background-size:28px 28px;background-position:0 0,14px 14px}
+.ixw--sol-rag :is(.lbr-head,.demo-sec .sec-head,.lbr-get-copy,.lbr-faq-side) h2{color:var(--lbr-ink)}
+.ixw--sol-rag :is(.lbr-head,.demo-sec .sec-head,.lbr-get-copy,.lbr-faq-side) .hand::before{content:"\00A7";display:inline-block;margin-right:8px;font:800 17px/1 Georgia,serif;color:var(--lbr-gold-d)}
+.ixw--sol-rag :is(.lbr-head,.demo-sec .sec-head) h2::after{content:"";display:block;width:120px;height:8px;margin-top:14px;background:linear-gradient(var(--lbr-gold),var(--lbr-gold)) 0 1px/100% 1.5px no-repeat,linear-gradient(var(--lbr-gold),var(--lbr-gold)) 0 5.5px/100% 1.5px no-repeat,radial-gradient(circle,var(--lbr-oxb) 3px,transparent 3.5px) 50% 50%/10px 8px no-repeat}
+
+/* the ex-libris bookplate */
+.ixw--sol-rag .answer-sec{padding-top:46px}
+.ixw--sol-rag .lbr-plate{position:relative;display:block;max-width:940px;padding:28px 34px 26px 124px;border:0;border-radius:6px;background:var(--lbr-parch);
+  box-shadow:0 0 0 1.5px var(--lbr-gold),0 0 0 7px var(--lbr-parch),0 0 0 8.5px var(--lbr-gold-d),0 22px 40px -28px rgba(60,35,10,.5)}
+.ixw--sol-rag .lbr-plate::before{content:"EX\A LIBRIS";white-space:pre;position:absolute;left:24px;top:50%;translate:0 -50%;display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:var(--lbr-grn);color:var(--lbr-gold-l);
+  font:800 11px/1.25 Georgia,serif;letter-spacing:.14em;text-align:center;box-shadow:inset 0 0 0 3px var(--lbr-grn),inset 0 0 0 4.5px var(--lbr-gold-l)}
+.ixw--sol-rag .lbr-plate .answer-h{display:block;margin:0 0 8px;padding:0;background:transparent;color:var(--lbr-oxb);letter-spacing:.14em}
+.ixw--sol-rag .lbr-plate p:not(.answer-h){font-size:15px;line-height:1.65;color:#3A3226}
+@media (max-width:640px){.ixw--sol-rag .lbr-plate{padding:104px 20px 22px}.ixw--sol-rag .lbr-plate::before{top:18px;translate:0 0}}
+
+/* the demo bound in leather, beside a call slip */
+.ixw--sol-rag .lbr-demo-sec{background:linear-gradient(180deg,#FFFFFF,#FBF4E2)}
+.ixw--sol-rag .lbr-demo-top{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:48px;align-items:center;margin-bottom:34px}
+.ixw--sol-rag .lbr-demo-top .sec-head{margin-bottom:0;max-width:none}
+.ixw--sol-rag .lbr-slip{position:relative;padding:0 22px 64px;border-radius:4px;background:linear-gradient(transparent 31px,rgba(49,103,202,.12) 31px 32px) 0 46px/100% 32px,var(--lbr-parch);rotate:-1.3deg;box-shadow:0 0 0 1.5px #E3D3AE,0 18px 30px -18px rgba(60,35,10,.5)}
+.ixw--sol-rag .lbr-slip-h{display:flex;justify-content:space-between;align-items:baseline;margin:0 -22px 10px;padding:14px 22px 12px;border-radius:4px 4px 0 0;background:var(--lbr-grn);color:var(--lbr-gold-l)}
+.ixw--sol-rag .lbr-slip-h b{font:800 1.1rem/1 Georgia,serif;letter-spacing:.04em}.ixw--sol-rag .lbr-slip-h span{font:800 10px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.ixw--sol-rag .lbr-slip-f{display:grid;gap:0;margin:0}
+.ixw--sol-rag .lbr-slip-f div{display:grid;grid-template-columns:82px minmax(0,1fr);align-items:baseline;gap:10px;padding:8px 0;border-bottom:1.5px dotted #D9C69E}
+.ixw--sol-rag .lbr-slip-f dt{font:800 10.5px/1.2 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#9A7A2C}
+.ixw--sol-rag .lbr-slip-f dd{display:flex;align-items:center;gap:6px;margin:0;font:700 14px/1.35 var(--font-body);color:var(--lbr-ink)}.ixw--sol-rag .lbr-slip-f dd .ic{width:15px;height:15px;color:var(--lbr-grn)}
+.ixw--sol-rag .lbr-slip-stamp{position:absolute;right:16px;bottom:16px;padding:6px 10px;border:2.5px solid var(--lbr-oxb);border-radius:6px;rotate:-12deg;font:800 10px/1.15 var(--font-body);letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--lbr-oxb);opacity:.85;background:rgba(251,244,226,.8)}
+.ixw--sol-rag .lbr-demo-sec .dm{border:0;border-radius:14px;box-shadow:0 0 0 1.5px #D9C69E,0 0 0 9px var(--lbr-grn),0 0 0 10.5px var(--lbr-gold),0 0 0 13px var(--lbr-grn-d),0 40px 70px -40px rgba(40,25,10,.55)}
+.ixw--sol-rag .lbr-demo-sec .dm-head{background:linear-gradient(180deg,#FFFDF6,#F6EDD6);box-shadow:inset 0 -1.5px 0 #E3D3AE}
+.ixw--sol-rag .lbr-demo-sec .dm-note{margin-top:28px}.ixw--sol-rag .lbr-demo-sec .dm-note .ic{color:var(--lbr-grn)}
+
+/* what's included: six books on a shelf */
+.ixw--sol-rag .lbr-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 22px;padding-bottom:16px}
+.ixw--sol-rag .lbr-book{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:26px 24px 26px 40px;border-radius:4px 10px 10px 4px;background:var(--lbr-parch);
+  box-shadow:0 0 0 1.5px #E3D3AE,5px 5px 0 -1px #EFE3C4,5px 5px 0 .5px #D9C69E,0 18px 26px -18px rgba(60,35,10,.5);transition:translate .35s cubic-bezier(.34,1.56,.64,1),rotate .35s cubic-bezier(.34,1.56,.64,1),opacity .38s ease-out,transform .38s ease-out}
+.ixw--sol-rag .lbr-book::before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;border-radius:4px 0 0 4px;background:linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 16px/100% 2.5px no-repeat,linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 22px/100% 1.2px no-repeat,linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 calc(100% - 18px)/100% 2.5px no-repeat,var(--c)}
+.ixw--sol-rag .lbr-book::after{content:"";position:absolute;left:-12px;right:-12px;bottom:-24px;height:14px;border-radius:2px;background:linear-gradient(180deg,#C08A58,#8A5E3C);box-shadow:0 4px 0 #563820,0 10px 14px -6px rgba(60,35,10,.4)}
+.ixw--sol-rag .lbr-book:hover{translate:0 -8px;rotate:-1.2deg}
+.ixw--sol-rag .lbr-book-no{position:absolute;right:16px;top:16px;padding:4px 8px;border-radius:3px;background:linear-gradient(180deg,var(--lbr-gold-l),var(--lbr-gold));font:800 10px/1 var(--font-body);letter-spacing:.12em;color:#5C4A2A}
+.ixw--sol-rag .lbr-book-ic{display:grid;place-items:center;width:50px;height:50px;margin-bottom:16px;border-radius:50%;background:#FFFFFF;color:var(--c);box-shadow:inset 0 0 0 2px var(--c),0 0 0 4px var(--lbr-parch),0 0 0 5.5px var(--lbr-gold)}
+.ixw--sol-rag .lbr-book-ic .ic{width:22px;height:22px}
+.ixw--sol-rag .lbr-book h3{margin:0 0 8px;font-size:1.08rem;color:var(--lbr-ink)}
+.ixw--sol-rag .lbr-book p{margin:0;font-size:14.5px;line-height:1.6;color:var(--lbr-txt)}
+
+/* how it works: the card catalogue's drawers, each index card slides out */
+.ixw--sol-rag .lbr-cab-sec .container{position:relative}
+.ixw--sol-rag .lbr-cab-sign{position:absolute;right:24px;top:0;display:grid;justify-items:center;gap:5px;width:230px;padding:16px 18px 14px;border-radius:6px;background:linear-gradient(180deg,#FFF6D8,#F0D98C);rotate:-1.5deg;box-shadow:inset 0 0 0 2px var(--lbr-gold-d),inset 0 0 0 5px #FFF6D8,inset 0 0 0 6px var(--lbr-gold),0 14px 22px -14px rgba(60,35,10,.5)}
+.ixw--sol-rag .lbr-cab-sign::before,.ixw--sol-rag .lbr-cab-sign::after{content:"";position:absolute;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFF6D8,#9A7A2C)}
+.ixw--sol-rag .lbr-cab-sign::before{left:8px}.ixw--sol-rag .lbr-cab-sign::after{right:8px}
+.ixw--sol-rag .lbr-cab-sign b{font:800 10.5px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:#7A5A2E}
+.ixw--sol-rag .lbr-cab-sign span{font:800 1.5rem/1.1 Georgia,serif;color:#3A2616}
+.ixw--sol-rag .lbr-cab-sign i{display:inline-flex;align-items:center;gap:5px;font:italic 600 12.5px/1.2 Georgia,serif;color:var(--lbr-oxb)}.ixw--sol-rag .lbr-cab-sign .ic{width:13px;height:13px}
+.ixw--sol-rag .lbr-cabinet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;padding:18px;list-style:none;border-radius:12px;background:linear-gradient(180deg,#8A5E3C,#6B4527);box-shadow:inset 0 0 0 3px #563820,0 6px 0 #3A2616,0 30px 50px -30px rgba(60,35,10,.6)}
+.ixw--sol-rag .lbr-drawer{position:relative;display:flex;flex-direction:column}
+.ixw--sol-rag .lbr-drawer-f{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 12px 12px;border-radius:6px;background:linear-gradient(180deg,#D19A64,#B07A4A);box-shadow:inset 0 0 0 2px #C08A58,inset 0 -3px 0 rgba(0,0,0,.15),0 4px 6px -2px rgba(0,0,0,.35)}
+.ixw--sol-rag .lbr-drawer-l{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:3px;background:linear-gradient(180deg,#FFF6D8,#F0D98C);box-shadow:inset 0 0 0 1.5px var(--lbr-gold-d);font:800 13px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#4A3418}
+.ixw--sol-rag .lbr-drawer-l b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--c);color:#FFFFFF;font-size:12px}
+.ixw--sol-rag .lbr-drawer-f i{width:46px;height:12px;border-radius:0 0 12px 12px;background:linear-gradient(180deg,var(--lbr-gold-l),var(--lbr-gold-d));box-shadow:0 2px 2px rgba(0,0,0,.3)}
+.ixw--sol-rag .lbr-drawer-c{position:relative;z-index:1;flex:1;margin:0 8px;padding:20px 18px 20px;border-radius:0 0 6px 6px;background:linear-gradient(#FFFFFF,#FFFFFF) 0 0/100% 96px no-repeat,linear-gradient(transparent 27px,rgba(49,103,202,.13) 27px 28px) 0 96px/100% 28px,#FFFFFF;
+  box-shadow:inset 0 3px 0 #E2553D,0 10px 16px -10px rgba(0,0,0,.45);translate:0 -40px;opacity:0;transition:translate .75s cubic-bezier(.34,1.45,.64,1),opacity .4s ease-out;transition-delay:calc(var(--i) * 160ms + .2s)}
+.ixw--sol-rag .lbr-cabinet.is-in .lbr-drawer-c{translate:0 0;opacity:1}
+.ixw--sol-rag .lbr-drawer-ic{display:grid;place-items:center;width:34px;height:34px;margin-bottom:10px;border-radius:8px;background:var(--c);color:#FFFFFF}
+.ixw--sol-rag .lbr-drawer-ic .ic{width:17px;height:17px}
+.ixw--sol-rag .lbr-drawer-c h3{margin:0 0 6px;font-size:1.02rem;color:var(--lbr-ink)}
+.ixw--sol-rag .lbr-drawer-c p{margin:0;font-size:14.2px;line-height:28px;color:var(--lbr-txt)}
+
+/* what you get: the front doors, and a library card of privileges */
+.ixw--sol-rag .lbr-get{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:56px;align-items:center}
+.ixw--sol-rag .lbr-doors{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.ixw--sol-rag .lbr-doors li{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:20px 20px 6px 6px;background:var(--lbr-parch);box-shadow:inset 0 0 0 1.5px var(--lbr-grn),0 3px 0 var(--lbr-grn-d);font:800 13px/1 var(--font-body);color:var(--lbr-ink)}
+.ixw--sol-rag .lbr-doors .ic,.ixw--sol-rag .lbr-doors .oi{width:18px;height:18px;color:var(--lbr-grn)}
+.ixw--sol-rag .lbr-card{position:relative;padding:0 0 18px;border-radius:10px;background:linear-gradient(transparent 39px,rgba(49,103,202,.16) 39px 40px) 0 66px/100% 40px,#FFFDF6;box-shadow:inset 0 66px 0 var(--lbr-grn),0 0 0 1.5px #E3D3AE,0 30px 50px -30px rgba(60,35,10,.5)}
+.ixw--sol-rag .lbr-card-pocket{position:absolute;right:22px;top:-18px;display:grid;gap:3px;padding:10px 14px 12px;border-radius:2px 2px 10px 10px;background:linear-gradient(180deg,#E9CFA0,#D9B98C);rotate:3deg;box-shadow:0 8px 12px -6px rgba(60,35,10,.4);text-align:center}
+.ixw--sol-rag .lbr-card-pocket b{font:800 11px/1 var(--font-body);letter-spacing:.16em;color:#5C3B22}.ixw--sol-rag .lbr-card-pocket i{font:italic 600 11px/1 Georgia,serif;color:#7A5A2E}
+.ixw--sol-rag .lbr-card-h{display:flex;align-items:center;gap:14px;height:66px;margin:0;padding:0 28px;color:var(--lbr-gold-l)}
+.ixw--sol-rag .lbr-card-h span{font:800 1.15rem/1 Georgia,serif;letter-spacing:.02em}
+.ixw--sol-rag .lbr-card-h b{display:none}
+.ixw--sol-rag .lbr-priv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px;margin:0;padding:0 28px;list-style:none}
+.ixw--sol-rag .lbr-priv li{display:flex;gap:10px;align-items:center;min-height:40px;padding:4px 0;font-size:14px;line-height:1.35;color:var(--lbr-txt)}
+.ixw--sol-rag .lbr-priv li .ic{width:24px;height:24px;padding:4px;border-radius:50%;flex:none;color:var(--lbr-grn);background:transparent;box-shadow:inset 0 0 0 2px var(--lbr-grn);rotate:-12deg}
+.ixw--sol-rag .lbr-priv li:nth-child(3n+2) .ic{color:var(--lbr-oxb);box-shadow:inset 0 0 0 2px var(--lbr-oxb);rotate:8deg}.ixw--sol-rag .lbr-priv li:nth-child(3n) .ic{color:var(--lbr-blue);box-shadow:inset 0 0 0 2px var(--lbr-blue);rotate:-4deg}
+
+/* questions: the librarian's desk, questions on catalogue cards */
+.ixw--sol-rag .lbr-faq-wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
+.ixw--sol-rag .lbr-faq-side{position:sticky;top:110px}
+.ixw--sol-rag .lbr-desk{display:grid;place-items:center;margin:22px 0 14px;padding:14px 0 8px;border-radius:16px;background:radial-gradient(circle at 50% 85%,#FFFFFF,#EFE3C4 75%);box-shadow:0 0 0 1.5px #E3D3AE}
+.ixw--sol-rag .lbr-desk svg{max-width:100%;height:auto}
+.ixw--sol-rag .lbr-bot{animation:lbrBob 3.2s ease-in-out infinite}
+@keyframes lbrBob{0%,100%{translate:0 0}50%{translate:0 5px}}
+.ixw--sol-rag .lbr-faq-more{margin:0;font:600 14px/1.4 var(--font-body);color:var(--muted)}
+.ixw--sol-rag .lbr-faq-more a{display:inline-flex;align-items:center;gap:4px;font-weight:800;color:var(--lbr-grn)}.ixw--sol-rag .lbr-faq-more a .ic{width:15px;height:15px}
+.ixw--sol-rag .lbr-faq{max-width:none;counter-reset:q}
+.ixw--sol-rag .lbr-faq details{position:relative;border:0;border-radius:4px 10px 10px 4px;background:#FFFFFF;box-shadow:inset 0 3px 0 #E2553D,0 0 0 1.5px #E3D3AE,0 10px 22px -18px rgba(60,35,10,.4);counter-increment:q}
+.ixw--sol-rag .lbr-faq details[open]{box-shadow:inset 4px 0 0 var(--lbr-grn),inset 0 3px 0 #E2553D,0 0 0 1.5px #BFD9CB,0 18px 30px -20px rgba(31,107,82,.35)}
+.ixw--sol-rag .lbr-faq summary{padding-left:66px}
+.ixw--sol-rag .lbr-faq summary::before{content:"Q" counter(q);position:absolute;left:16px;top:18px;display:grid;place-items:center;width:36px;height:24px;border-radius:3px;background:linear-gradient(180deg,#FFF6D8,#F0D98C);box-shadow:inset 0 0 0 1.5px var(--lbr-gold-d);font:800 11px/1 var(--font-body);color:#5C3B22}
+.ixw--sol-rag .lbr-faq details[open] summary::before{background:var(--lbr-grn);color:var(--lbr-gold-l);box-shadow:none}
+.ixw--sol-rag .lbr-faq summary .ic{color:var(--lbr-grn)}
+.ixw--sol-rag .lbr-faq .faq-a{padding-left:66px}
+
+/* related: see-also catalogue cards, punched for the rod */
+.ixw--sol-rag .lbr-see{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.ixw--sol-rag .lbr-xref{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:24px 24px 40px;border-radius:4px;color:inherit;text-decoration:none;
+  background:radial-gradient(circle at 50% calc(100% - 16px),#F8F1E1 7px,#D9C69E 7.5px 8.5px,transparent 9px),linear-gradient(transparent 31px,rgba(49,103,202,.12) 31px 32px) 0 56px/100% 32px,#FFFFFF;
+  box-shadow:inset 0 3px 0 #E2553D,0 0 0 1.5px #E3D3AE,0 20px 30px -22px rgba(60,35,10,.5);rotate:calc((var(--i) - 1) * .8deg);transition:translate .3s cubic-bezier(.34,1.56,.64,1),rotate .3s ease,box-shadow .3s ease,opacity .38s ease-out,transform .38s ease-out}
+.ixw--sol-rag .lbr-xref:hover{translate:0 -6px;rotate:0deg;text-decoration:none;color:inherit;box-shadow:inset 0 3px 0 #E2553D,0 0 0 1.5px var(--c),0 28px 36px -22px rgba(60,35,10,.55)}
+.ixw--sol-rag .lbr-xref-k{margin-bottom:14px;font:italic 600 14px/1 Georgia,serif;color:#7A5A2E}.ixw--sol-rag .lbr-xref-k b{margin-left:4px;padding:3px 7px;border-radius:3px;background:var(--c);font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.1em;color:#FFFFFF}
+.ixw--sol-rag .lbr-xref-ic{position:absolute;right:20px;top:18px;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:var(--c);box-shadow:inset 0 0 0 2px var(--c)}
+.ixw--sol-rag .lbr-xref-ic .ic{width:20px;height:20px}
+.ixw--sol-rag .lbr-xref h3{margin:0 0 8px;font-size:1.1rem;color:var(--lbr-ink)}
+.ixw--sol-rag .lbr-xref p{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:var(--lbr-txt)}
+.ixw--sol-rag .lbr-xref .btn-link{margin-top:auto;color:var(--c);font-weight:800}
+
+/* the end card: green leather, gold tooling, a row of books */
+.ixw--sol-rag main .lbr-cta{background:radial-gradient(circle at 15% -20%,rgba(240,217,140,.25),transparent 45%),linear-gradient(120deg,#154A39,#1F6B52 60%,#27805F);box-shadow:inset 0 0 0 8px #154A39,inset 0 0 0 9.5px var(--lbr-gold),0 30px 60px -30px rgba(20,60,45,.6)}
+.ixw--sol-rag main .lbr-cta .hand{color:var(--lbr-gold-l)}
+.ixw--sol-rag .lbr-cta-books{position:absolute;left:44px;top:-60px;display:flex;align-items:flex-end;gap:3px;height:70px;pointer-events:none}
+.ixw--sol-rag .lbr-cta-books i{width:18px;height:var(--h);border-radius:2px;background:linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 8px/100% 2px no-repeat,linear-gradient(var(--lbr-gold-l),var(--lbr-gold-l)) 0 calc(100% - 10px)/100% 2px no-repeat,var(--c);rotate:var(--r,0deg);transform-origin:0 100%;box-shadow:inset -3px 0 0 rgba(0,0,0,.18)}
+.ixw--sol-rag .lbr-cta-books i:last-child{animation:lbrLean 4s ease-in-out infinite}
+@keyframes lbrLean{0%,100%{rotate:-14deg}50%{rotate:-8deg}}
+
+@media (max-width:1100px){.ixw--sol-rag .lbr-demo-top,.ixw--sol-rag .lbr-get{grid-template-columns:1fr;gap:28px}.ixw--sol-rag .lbr-slip{max-width:420px}
+  .ixw--sol-rag .lbr-shelf,.ixw--sol-rag .lbr-see{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--sol-rag .lbr-cabinet{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .ixw--sol-rag .lbr-cab-sign{display:none}.ixw--sol-rag .lbr-faq-wrap{grid-template-columns:1fr;gap:28px}.ixw--sol-rag .lbr-faq-side{position:static}.ixw--sol-rag .lbr-desk{display:none}}
+@media (max-width:767px){.ixw--sol-rag .lbr-slip{display:none}.ixw--sol-rag .lbr-shelf,.ixw--sol-rag .lbr-see,.ixw--sol-rag .lbr-cabinet,.ixw--sol-rag .lbr-priv{grid-template-columns:1fr}
+  .ixw--sol-rag .lbr-cabinet{padding:12px}.ixw--sol-rag .lbr-card-h{padding:0 20px}.ixw--sol-rag .lbr-card-pocket{right:12px;top:-26px}.ixw--sol-rag .lbr-priv{padding:0 20px}
+  .ixw--sol-rag .lbr-cta-books{left:24px}.ixw--sol-rag .ow-strip{padding:18px 14px 30px;gap:12px 10px}.ixw--sol-rag .lbr-xref{rotate:0deg}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-rag .lbr-drawer-c{transition:none;translate:0 0;opacity:1}.ixw--sol-rag :is(.lbr-bot,.lbr-cta-books i){animation:none}}
+
+/* ---------- audit round: hero buttons as tooled leather (50px CTAs, gold chip icons, lift + glow, press, focus) ---------- */
+.ixw--sol-rag .ixw-copy .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.ixw--sol-rag .ixw-copy .actions .btn{height:50px;padding:0 22px;border-radius:8px;font:800 15.5px/1 var(--font-display);gap:10px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .22s ease,background-color .2s ease,color .2s ease}
+.ixw--sol-rag .ixw-copy .actions .btn-primary,.ixw--sol-rag .ixw-copy .actions .btn-primary:hover{padding-right:10px;color:#FFFFFF;background:linear-gradient(180deg,#27805F,#1F6B52 58%,#1A5C46)}
+.ixw--sol-rag .ixw-copy .actions .btn-primary{box-shadow:inset 0 0 0 2px #1A5C46,inset 0 0 0 3.5px rgba(240,217,140,.85),0 4px 0 #154A39,0 14px 22px -14px rgba(21,74,57,.65)}
+.ixw--sol-rag .ixw-copy .actions .btn-primary .ic{width:30px;height:30px;padding:7px;margin:0;border-radius:6px;background:linear-gradient(180deg,#F6E3A4,#E3C474);color:#154A39;box-shadow:inset 0 0 0 1px rgba(154,122,44,.6)}
+.ixw--sol-rag .ixw-copy .actions .btn-primary:hover{translate:0 -2px;box-shadow:inset 0 0 0 2px #1A5C46,inset 0 0 0 3.5px #F0D98C,0 6px 0 #154A39,0 0 0 4px rgba(240,217,140,.35),0 20px 28px -14px rgba(21,74,57,.7)}
+.ixw--sol-rag .ixw-copy .actions .btn-primary:hover .ic{transform:translateX(3px);background:#FFF1C2}
+.ixw--sol-rag .ixw-copy .actions .btn-ghost,.ixw--sol-rag .ixw-copy .actions .btn-ghost:hover{color:var(--lbr-ink);background:var(--lbr-parch)}
+.ixw--sol-rag .ixw-copy .actions .btn-ghost{border:0;box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px var(--lbr-parch),inset 0 0 0 5px rgba(200,162,74,.6),0 4px 0 var(--lbr-grn-d),0 14px 22px -16px rgba(60,35,10,.45)}
+.ixw--sol-rag .ixw-copy .actions .btn-ghost .ic{width:18px;height:18px;color:var(--lbr-grn)}
+.ixw--sol-rag .ixw-copy .actions .btn-ghost:hover{translate:0 -2px;color:var(--lbr-grn-d);background:#FFFDF6;box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px #FFFDF6,inset 0 0 0 5px var(--lbr-gold),0 6px 0 var(--lbr-grn-d),0 0 0 4px rgba(240,217,140,.3)}
+.ixw--sol-rag .ixw-copy .actions .btn:active{translate:0 3px;transition-duration:.07s}
+.ixw--sol-rag .ixw-copy .actions .btn-primary:active{box-shadow:inset 0 0 0 2px #1A5C46,inset 0 0 0 3.5px #F0D98C,0 1px 0 #154A39}
+.ixw--sol-rag .ixw-copy .actions .btn-ghost:active{box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px var(--lbr-parch),inset 0 0 0 5px var(--lbr-gold),0 1px 0 var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-copy .actions .btn:focus-visible{outline:3px solid var(--lbr-gold);outline-offset:4px}
+.ixw--sol-rag .lbr-badges{gap:8px}
+.ixw--sol-rag .lbr-badges span{height:28px;padding:0 12px 0 10px;font-size:12px;letter-spacing:.01em;border-radius:5px;box-shadow:inset 0 0 0 1.5px var(--lbr-gold),inset 0 0 0 3px #FFFFFF,inset 0 0 0 3.5px rgba(200,162,74,.35),0 2px 0 #E3D3AE}
+/* the caption controls: parchment roundels tooled in gold, the play button in green leather with a gold halo */
+.ixw--sol-rag .ixw-ibtn{background:var(--lbr-parch);border:2px solid var(--lbr-grn);color:var(--lbr-grn-d);box-shadow:inset 0 0 0 2px var(--lbr-parch),inset 0 0 0 3px rgba(200,162,74,.7),0 3px 0 var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-ibtn:hover{translate:0 -2px;background:#FFFFFF;border-color:var(--lbr-grn);color:var(--lbr-grn);box-shadow:inset 0 0 0 2px #FFFFFF,inset 0 0 0 3px var(--lbr-gold),0 5px 0 var(--lbr-grn-d),0 10px 16px -8px rgba(200,162,74,.7)}
+.ixw--sol-rag .ixw-ibtn:active{translate:0 2px;box-shadow:inset 0 0 0 2px var(--lbr-parch),inset 0 0 0 3px var(--lbr-gold),0 1px 0 var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-ibtn:focus-visible,.ixw--sol-rag .ixw-dots button:focus-visible{outline:3px solid var(--lbr-gold);outline-offset:3px}
+.ixw--sol-rag .ixw-ibtn--play,.ixw--sol-rag .ixw-ibtn--play:hover{width:48px;height:48px;border:0;color:var(--lbr-gold-l);background:radial-gradient(circle at 50% 28%,#2E8A68,#1F6B52 58%,#154A39)}
+.ixw--sol-rag .ixw-ibtn--play{box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px var(--lbr-gold-l),0 3px 0 #0F3A2C,0 10px 18px -10px rgba(21,74,57,.7)}
+.ixw--sol-rag .ixw-ibtn--play:hover{box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px #FFF1C2,0 5px 0 #0F3A2C,0 0 0 4px rgba(240,217,140,.35)}
+.ixw--sol-rag .ixw-ibtn--play:active{box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px var(--lbr-gold-l),0 1px 0 #0F3A2C}
+.ixw--sol-rag .ixw-ibtn--play.is-on{animation:lbrHalo 2.4s ease-out infinite}
+@keyframes lbrHalo{0%{box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px var(--lbr-gold-l),0 3px 0 #0F3A2C,0 0 0 0 rgba(200,162,74,.45)}70%,100%{box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px var(--lbr-gold-l),0 3px 0 #0F3A2C,0 0 0 12px rgba(200,162,74,0)}}
+.ixw--sol-rag .ixw-dots{gap:6px}
+.ixw--sol-rag .ixw-dots button{width:9px;height:9px;background:#EFE3C4;box-shadow:inset 0 0 0 1.5px rgba(154,122,44,.55)}
+.ixw--sol-rag .ixw-dots button:hover{background:var(--lbr-gold-l);box-shadow:inset 0 0 0 1.5px var(--lbr-gold-d)}
+.ixw--sol-rag .ixw-dots button.is-on{width:24px;background:var(--lbr-oxb);box-shadow:inset 0 0 0 1.5px #6A1D29}
+/* "View the scene": a parchment label with a green-leather rim; pressed, it turns to leather */
+.ixw--sol-rag .ixw-peek{height:40px;padding:0 16px 0 13px;border:0;border-radius:8px;background:var(--lbr-parch);color:var(--lbr-grn-d);font-weight:800;
+  box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px var(--lbr-parch),inset 0 0 0 5px rgba(200,162,74,.75),0 3px 0 var(--lbr-grn-d),0 12px 20px -12px rgba(60,35,10,.5)}
+.ixw--sol-rag .ixw-peek:hover{translate:0 -2px;background:#FFFDF6;box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px #FFFDF6,inset 0 0 0 5px var(--lbr-gold),0 5px 0 var(--lbr-grn-d),0 0 0 4px rgba(240,217,140,.4)}
+.ixw--sol-rag .ixw-peek:active{translate:0 2px;box-shadow:inset 0 0 0 2px var(--lbr-grn),inset 0 0 0 4px var(--lbr-parch),inset 0 0 0 5px var(--lbr-gold),0 1px 0 var(--lbr-grn-d)}
+.ixw--sol-rag .ixw-peek:focus-visible{outline:3px solid var(--lbr-gold);outline-offset:3px}
+.ixw--sol-rag .ixw-peek[aria-pressed="true"]{background:var(--lbr-grn);color:var(--lbr-gold-l);box-shadow:inset 0 0 0 2px #154A39,inset 0 0 0 3.5px var(--lbr-gold-l),0 3px 0 #0F3A2C,0 12px 20px -12px rgba(21,74,57,.6)}
+@media (max-width:767px){.ixw--sol-rag .ixw-copy .actions{gap:10px}.ixw--sol-rag .ixw-copy .actions .btn{width:100%}}
+
+/* ---------- audit round: sections ---------- */
+.ixw--sol-rag main :is(h2,h3){text-wrap:balance}
+.ixw--sol-rag .lbr-plate{max-width:none}
+.ixw--sol-rag .lbr-cab-sign{width:258px}.ixw--sol-rag .lbr-cab-sign i{white-space:nowrap}
+.ixw--sol-rag .lbr-card{background:linear-gradient(transparent 55px,rgba(49,103,202,.16) 55px 56px) 0 74px/100% 56px,#FFFDF6;padding:0 0 18px}
+.ixw--sol-rag .lbr-card-h{margin:0 0 8px}
+.ixw--sol-rag .lbr-priv{grid-auto-rows:56px;gap:0 30px}
+.ixw--sol-rag .lbr-priv li{min-height:0;height:56px;padding:0;gap:12px}
+.ixw--sol-rag .lbr-doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:440px}
+.ixw--sol-rag .lbr-doors li{justify-content:flex-start;height:44px;transition:translate .25s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease}
+.ixw--sol-rag .lbr-doors li:hover{translate:0 -3px;box-shadow:inset 0 0 0 1.5px var(--lbr-grn),inset 0 0 0 3.5px var(--lbr-parch),inset 0 0 0 4.5px var(--lbr-gold),0 5px 0 var(--lbr-grn-d)}
+.ixw--sol-rag .lbr-drawer{transition:translate .3s cubic-bezier(.34,1.56,.64,1)}
+.ixw--sol-rag .lbr-drawer:hover{translate:0 -6px}
+.ixw--sol-rag .lbr-drawer:hover .lbr-drawer-f i{background:linear-gradient(180deg,#FFF1C2,var(--lbr-gold))}
+@media (max-width:767px){.ixw--sol-rag .lbr-doors{grid-template-columns:repeat(2,minmax(0,1fr))}.ixw--sol-rag .lbr-priv{grid-auto-rows:auto}.ixw--sol-rag .lbr-priv li{height:auto;min-height:52px}.ixw--sol-rag .lbr-card{background:#FFFDF6}.ixw--sol-rag .lbr-priv li+li{border-top:1px solid rgba(49,103,202,.14)}}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+.ixw--sol-rag .ixw-credits-wrap + .section{padding-top:14px!important}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the reading room. One library-green accent.
+   Themed touches kept: a coloured book spine on each "RAG · 0x" card, the call slip beside the demo, labelled drawer
+   tabs on the four steps, the library-card header on what you get.
+   =================================================================================================================== */
+.ixw--sol-rag{--calm-accent:#1F6B52;--calm-accent-ink:#1F6B52;--calm-accent-line:#C4DCCF;--calm-accent-wash:#F6F9F6;--calm-wash:#F6F9F6}
+html body.ixw--sol-rag main .lbr-plate{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-rag main .lbr-plate::before,html body.ixw--sol-rag main .lbr-plate::after{content:none!important;display:none!important}
+html body.ixw--sol-rag main .lbr-plate p{color:var(--body)!important}
+/* demo: plain panel; the call slip becomes a small white side card */
+html body.ixw--sol-rag main .lbr-slip{rotate:none!important;transform:none!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-rag main .lbr-slip-f div{background:none!important;border-bottom:1px solid var(--calm-line)!important}
+html body.ixw--sol-rag main .lbr-demo-sec .dm{border:1px solid var(--calm-line)!important;border-radius:18px!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-rag main .lbr-demo-sec .dm-head{background:#FBFCFB!important}
+/* what's included: white cards, a slim coloured spine on the left, no shelf planks */
+html body.ixw--sol-rag main .lbr-shelf{gap:24px!important;padding-bottom:0!important}
+html body.ixw--sol-rag main .lbr-book{padding:26px 24px 26px 30px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:5px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;rotate:none!important;translate:none!important}
+html body.ixw--sol-rag main .lbr-book:hover{translate:0 -2px!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-rag main .lbr-book::before,html body.ixw--sol-rag main .lbr-book::after{content:none!important;display:none!important}
+html body.ixw--sol-rag main .lbr-book-no{background:#EEF4F0!important;color:var(--calm-accent)!important;border-radius:6px!important}
+html body.ixw--sol-rag main .lbr-book-ic{box-shadow:none!important;background:color-mix(in srgb,var(--c) 10%,#fff)!important;width:46px!important;height:46px!important}
+html body.ixw--sol-rag main .lbr-book p{color:var(--body)!important}
+/* how it works: four step cards with a labelled drawer tab on top; the wooden cabinet goes */
+html body.ixw--sol-rag main .lbr-cabinet{padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important;gap:20px!important}
+html body.ixw--sol-rag main .lbr-drawer{border:1px solid var(--calm-line);border-radius:16px;background:#fff;box-shadow:var(--calm-shadow);overflow:hidden}
+html body.ixw--sol-rag main .lbr-drawer-f{align-items:flex-start!important;padding:16px 18px 0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+html body.ixw--sol-rag main .lbr-drawer-f i{display:none!important}
+html body.ixw--sol-rag main .lbr-drawer-l{background:#F6F1E3!important;box-shadow:none!important;border-radius:8px!important}
+html body.ixw--sol-rag main .lbr-drawer-c{margin:0!important;padding:16px 18px 22px!important;background:#fff!important;box-shadow:none!important;translate:none!important;opacity:1!important;border-radius:0!important}
+html body.ixw--sol-rag main .lbr-drawer-c p{line-height:1.6!important;color:var(--body)!important}
+/* what you get: the library card keeps its green header; plain rows; the front doors as calm chips */
+html body.ixw--sol-rag main .lbr-card{background:#fff!important;border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-rag main .lbr-card-h{background:var(--calm-accent)!important;color:#fff!important}
+html body.ixw--sol-rag main .lbr-card-h span{font:700 1.05rem/1 var(--font-display)!important;color:#fff!important}
+html body.ixw--sol-rag main .lbr-priv{padding-top:8px!important}
+html body.ixw--sol-rag main .lbr-priv li{border-bottom:1px solid var(--calm-line);color:var(--body)!important}
+html body.ixw--sol-rag main .lbr-priv li .ic{rotate:none!important;box-shadow:none!important;background:#EEF4F0!important;color:var(--calm-accent)!important}
+html body.ixw--sol-rag main .lbr-doors li{background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:none!important;border-radius:10px!important;rotate:none!important;transform:none!important;color:var(--ink)!important}
+/* FAQ */
+html body.ixw--sol-rag main .lbr-faq-side{position:static!important}
+html body.ixw--sol-rag main .lbr-faq details{box-shadow:none!important;border-radius:14px!important}
+html body.ixw--sol-rag main .lbr-faq summary::before{background:#EEF4F0!important;color:var(--calm-accent)!important;box-shadow:none!important;border-radius:8px!important;font:700 12px/1 var(--font-body)!important}
+html body.ixw--sol-rag main .lbr-faq details[open] summary::before{background:var(--calm-accent)!important;color:#fff!important}
+/* related: white cards with a coloured top rule; no punched holes, no tilt */
+html body.ixw--sol-rag main .lbr-xref{padding:24px 24px 26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+html body.ixw--sol-rag main .lbr-xref:hover{translate:0 -2px!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-rag main .lbr-xref-k{font:600 13px/1 var(--font-body)!important;color:var(--muted)!important}
+html body.ixw--sol-rag main .lbr-xref-ic{box-shadow:none!important;background:color-mix(in srgb,var(--c) 10%,#fff)!important}
+html body.ixw--sol-rag main .lbr-faq summary{padding-left:22px!important}
+html body.ixw--sol-rag main .lbr-faq .faq-a{padding-left:22px!important}

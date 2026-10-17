@@ -1,0 +1,84 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Odoo 20: what's new (blog): area chips, animated feature cards and the upgrade helper (demo-o20.js) */
+.ox-fig{margin:1.8em 0 2.2em;font:500 12px/1.4 var(--font-body)}
+.ox-fig ul,.ox-fig ol{margin:0;padding:0;list-style:none}
+.ox-fig li{margin:0}
+.ox-fig p{margin:0}
+.ox-legend{gap:5px 10px;font-size:10px}
+.ox-chips{position:relative;display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px 4px}
+.ox-chip{position:relative;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 6px 0 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 11.5px/1 var(--font-body);color:var(--body);cursor:pointer;white-space:nowrap;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.ox-chip small{display:grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--alt);font:700 10px/1 var(--font-body);color:var(--muted)}
+.ox-chip:hover{border-color:var(--blue-300);color:var(--ink)}
+.ox-chip[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.ox-chip[aria-selected="true"] small{background:rgba(255,255,255,.18);color:#fff}
+.ox-chip:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.ox-flag{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#D97B12;box-shadow:0 0 0 2px #fff;opacity:0;transform:scale(.3);transition:opacity .25s ease,transform .35s var(--spring)}
+.ox-chip.has-flag .ox-flag{opacity:1;transform:none}
+.ox-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px 14px 14px;min-height:170px;align-content:start}
+.ox-card{position:relative;display:grid;gap:4px;align-content:start;padding:10px 12px 11px;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:inset 3px 0 0 var(--c)}
+.ox-tag{justify-self:start;padding:3px 7px;border-radius:999px;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c);font:700 9.5px/1 var(--font-body);letter-spacing:.04em;text-transform:uppercase}
+.ox-card b{font:700 12.5px/1.3 var(--font-display);color:var(--ink)}
+.ox-card small{font:500 11px/1.45 var(--font-body);color:var(--body)}
+.ox-you{display:none;justify-self:start;margin-top:2px;padding:3px 8px;border-radius:999px;background:var(--amber-050);color:#7A4E00;font:700 10px/1.2 var(--font-body);font-style:normal}
+.ox-card.is-you{border-color:#EBC98A;background:#FFFCF5}
+.ox-card.is-you .ox-you{display:inline-block}
+.ox-cards.is-in .ox-card{animation:oxIn .5s var(--spring) both;animation-delay:calc(var(--k) * 55ms)}
+@keyframes oxIn{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.ox-up{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;padding:14px;border-top:1px solid var(--line);background:rgba(250,249,251,.8)}
+.ox-in{display:grid;gap:8px;align-content:start}
+.ox-h{display:flex;align-items:center;gap:7px;font:800 13.5px/1.25 var(--font-display);color:var(--ink)}
+.ox-h .ic{width:16px;height:16px;color:var(--blue);flex:none}
+.ox-l{font:700 10px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.ox-host{justify-self:start}
+.ox-uses{display:flex;flex-wrap:wrap;gap:5px}
+.ox-use{display:inline-flex;align-items:center;gap:7px;min-height:28px;padding:4px 10px 4px 6px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 11px/1.2 var(--font-body);color:var(--body);cursor:pointer;text-align:left;transition:border-color .2s ease,background-color .2s ease}
+.ox-use i{position:relative;flex:none;width:15px;height:15px;border-radius:5px;border:1.5px solid #CFCBD6;background:#fff;transition:background-color .2s ease,border-color .2s ease}
+.ox-use i::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);transition:transform .3s var(--spring)}
+.ox-use[aria-pressed="true"]{border-color:#EBC98A;background:var(--amber-050);color:#7A4E00}
+.ox-use[aria-pressed="true"] i{background:#D97B12;border-color:#D97B12}
+.ox-use[aria-pressed="true"] i::after{transform:rotate(45deg) scale(1)}
+.ox-use:hover{border-color:var(--blue-300)}
+.ox-use:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.ox-out{display:grid;gap:8px;align-content:start}
+.ox-route{display:grid;gap:2px;padding:9px 12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.ox-route small{font:700 9.5px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ox-route b{font:800 14px/1.25 var(--font-display);color:var(--ink)}
+.ox-route span{font:500 11px/1.4 var(--font-body);color:var(--body)}
+.ox-route--svc{box-shadow:inset 3px 0 0 var(--ok)}
+.ox-route--plan{box-shadow:inset 3px 0 0 #D97B12}
+.ox-sum{font:500 11.5px/1.3 var(--font-body);color:var(--body)}
+.ox-sum b{font-weight:800;color:var(--ink)}
+.ox-checks{display:grid;gap:5px}
+.ox-checks li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:9px;align-items:start;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.ox-checks li>i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;font:800 10px/1 var(--font-display);font-style:normal}
+.ox-checks li span{display:grid;gap:1px}
+.ox-checks li b{font:700 11.5px/1.3 var(--font-display);color:var(--ink)}
+.ox-checks li small{font:500 10.5px/1.4 var(--font-body);color:var(--body)}
+.ox-checks .is-todo{border-color:#EBC98A;background:#FFFCF5}
+.ox-checks .is-todo>i{background:#D97B12;color:#fff}
+.ox-checks .is-clear>i{background:var(--ok-050);color:var(--ok)}
+.ox-checks .is-clear b{color:var(--body)}
+.ox-foot{font:600 11px/1.4 var(--font-body);color:var(--blue-700)}
+.ox-out.is-in>*{animation:oxIn .45s var(--spring) both}
+.ox-out.is-in .ox-checks li{animation:oxIn .45s var(--spring) both;animation-delay:calc(var(--k) * 50ms + 60ms)}
+@media (max-width:640px){
+  .ox-legend{display:none}
+  .ox-chips{flex-wrap:nowrap;overflow-x:auto;padding:10px 12px 6px;scrollbar-width:none}
+  .ox-chips::-webkit-scrollbar{display:none}
+  .ox-chip{flex:none}
+  .ox-cards{grid-template-columns:minmax(0,1fr);padding:8px 12px 12px}
+  .ox-up{grid-template-columns:minmax(0,1fr);padding:12px}
+}
+@media (prefers-reduced-motion:reduce){.ox-cards.is-in .ox-card,.ox-out.is-in>*,.ox-out.is-in .ox-checks li{animation:none}.ox-flag,.ox-use i::after{transition:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .ox-legend,
+  .ox-chip small,
+  .ox-tag,
+  .ox-you,
+  .ox-l,
+  .ox-route small,
+  .ox-checks li>i,
+  .ox-checks li small{font-size:11px}
+}

@@ -1,0 +1,164 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /employee-hub: the TechNext ID station (noindex). The team as employee ID cards (built in the browser from _src/team.py's
+   list by assets/js/employee-cards.js: front, back, flip, vCard), the anatomy of a card, and the three offices that sit
+   on every card back. The hero world's own skin lives in assets/css/worlds/team.css. */
+.th-sec{padding:76px 0;position:relative}
+.th-sec .sec-head{margin-bottom:34px}
+.ixw--team .th-sec::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(49,103,202,.08) 1.2px,transparent 1.6px) 0 0/22px 22px;-webkit-mask:linear-gradient(180deg,#000,transparent 50%);mask:linear-gradient(180deg,#000,transparent 50%)}
+
+/* section heads: a card-room job ticket on the right, a yellow-edged kicker */
+.ixw--team .th-head{position:relative}
+.ixw--team .th-head .hand{display:inline-flex;align-items:center;height:30px;padding:0 14px;margin-bottom:12px;border-radius:6px;background:#FFFFFF;border:1.5px solid #1B2350;box-shadow:inset -8px 0 0 #FFD84A;color:#1B2350;font-size:1.15rem}
+.ixw--team .sec-head.th-head{max-width:780px}
+.ixw--team .th-head::after{content:attr(data-file);position:absolute;right:-170px;top:4px;padding:6px 10px;border:2px dashed #3167CA;border-radius:6px;font:800 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#3167CA;rotate:4deg}
+@media (max-width:1200px){.ixw--team .th-head::after{right:0;top:-30px}}
+@media (max-width:767px){.ixw--team .th-head::after{display:none}}
+
+/* the glance strip: four cards fanned on a tray */
+.ixw--team .th-strip{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:16px;border-radius:18px;background:linear-gradient(180deg,#C9D2DE,#B9C3D1);box-shadow:inset 0 6px 0 #A9B4C4,0 30px 50px -30px rgba(27,35,80,.45)}
+.ixw--team .th-strip>div{padding:16px 18px 14px;border-radius:8px;background:#FFFDF8;box-shadow:inset 0 -6px 0 #3167CA,0 3px 0 rgba(0,0,0,.12)}
+.ixw--team .th-strip>div:nth-child(2){rotate:.8deg}.ixw--team .th-strip>div:nth-child(3){rotate:-.6deg}.ixw--team .th-strip>div:nth-child(4){box-shadow:inset 0 -6px 0 #FFD84A,0 3px 0 rgba(0,0,0,.12)}
+.ixw--team .th-strip dt{font:800 11px/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#5C6B7A}
+.ixw--team .th-strip dt .ic{color:#3167CA}
+.ixw--team .th-strip dd{font-weight:800;color:#1B2350}
+@media (max-width:991px){.ixw--team .th-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:479px){.ixw--team .th-strip{grid-template-columns:1fr;padding:12px;gap:10px}.ixw--team .th-strip>div{rotate:0deg!important}}
+
+/* ---------- the business cards ---------- */
+.bc-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:0 0 26px}
+.bc-flipall{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:8px;border:2px solid #1B2350;background:#FFFFFF;color:#1B2350;font:800 .92rem/1 var(--font-body);cursor:pointer;box-shadow:inset -8px 0 0 #FFD84A,0 3px 0 #1B2350;transition:translate .2s ease}
+.bc-flipall:hover{translate:0 -2px}.bc-flipall[aria-pressed="true"]{background:#1B2350;color:#FFFFFF}
+.bc-flipall .ic{width:18px;height:18px}
+.bc-flipall:focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.bc-tip{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:#5C6B7A}.bc-tip .ic{color:#E8B500;width:16px;height:16px}
+html:not(.bc-on) .bc-src{display:grid}
+.bc-src[hidden]{display:none!important}
+
+/* the plain list (no JS): the employee sheets from build.py, kept simple */
+.th-people{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:26px}
+.ef-sheet{position:relative;padding:0;border-radius:10px;background:#FFFFFF;border:1.5px solid #D9DEE8}
+.ef-tab,.ef-stamp{display:none}
+.ef-head{display:flex;align-items:center;gap:10px;margin:0;padding:12px 18px;border-bottom:1.5px solid #DCE3EE;font:800 11px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#1B2350}
+.ef-head .th-plane{width:22px;height:auto}.ef-head b{margin-left:auto}
+.ef-body{display:grid;grid-template-columns:90px minmax(0,1fr);gap:18px;padding:18px}
+.ef-photo .th-ini{display:grid;place-items:center;width:90px;height:90px;border-radius:50%;font:800 28px/1 var(--font-display);color:#FFFFFF;background:linear-gradient(150deg,var(--c1),var(--c2))}
+.th-tone-0{--c1:#3167CA;--c2:#6FA0F5}.th-tone-1{--c1:#14A38B;--c2:#6BD6C2}.th-tone-2{--c1:#E07B12;--c2:#FFB46B}.th-tone-3{--c1:#714B67;--c2:#B58AAA}
+.ef-fields{display:grid;margin:0}.ef-fields dt{font:800 10.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#8A96A8}.ef-fields dd{margin:0 0 8px}.ef-fields h3{margin:0;font-size:1.1rem}
+.ef-foot{margin:0;padding:0 18px 16px;font-size:13px;color:#5C6B7A}
+
+/* ---------- anatomy of a card: front and back, numbered callouts, a legend ---------- */
+.bc-n{position:absolute;left:var(--x);top:var(--y);display:grid;place-items:center;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#E2453C;color:#FFFFFF;font:800 .82rem/1 var(--font-body);box-shadow:0 0 0 3px #FFFFFF,0 4px 8px rgba(0,0,0,.25);animation:bcPing 2.6s ease-in-out infinite}
+@keyframes bcPing{50%{scale:1.12}}
+.bc-anat-list{grid-column:1/-1;list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:an}
+.bc-anat-list li{counter-increment:an;position:relative;display:flex;flex-direction:column;gap:4px;padding:16px 18px 16px 56px;border-radius:12px;background:#FFFFFF;border:1.5px solid #DCE3EE;box-shadow:inset -6px 0 0 #FFD84A}
+.bc-anat-list li::before{content:counter(an);position:absolute;left:16px;top:16px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#E2453C;color:#FFFFFF;font:800 .86rem/1 var(--font-body)}
+.bc-anat-list b{color:#1B2350}.bc-anat-list span{font-size:.9rem;color:#5C6B7A}
+
+/* ---------- the offices: card-back panels in navy with a big country code ---------- */
+.th-offices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-top:10px}
+.th-office{position:relative;padding:26px 24px 22px;border-radius:14px;background:linear-gradient(135deg,#1B2350,#24306A);color:#FFFFFF;box-shadow:0 24px 44px -30px rgba(27,35,80,.6);overflow:hidden;transition:translate .3s cubic-bezier(.34,1.45,.64,1)}
+.th-office:hover{translate:0 -5px}
+.th-office::after{position:absolute;right:12px;bottom:6px;font:800 84px/.8 var(--font-display);letter-spacing:-.04em;color:#FFFFFF;opacity:.07;pointer-events:none}
+.th-office[data-o="sg"]::after{content:"SG"}.th-office[data-o="ph"]::after{content:"PH"}.th-office[data-o="vn"]::after{content:"VN"}
+.th-cc{display:inline-grid;place-items:center;height:24px;padding:0 10px;margin-bottom:12px;border-radius:6px;background:#FFD84A;font:800 11.5px/1 var(--font-body);letter-spacing:.14em;color:#1B2350}
+.th-office h3{margin:0 0 6px;font-size:1.1rem;color:#FFFFFF}
+.th-office p{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.85)}
+.th-office address{font-style:normal;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.7)}
+.th-office::before{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,#3167CA 0 74%,#FFD84A 74%)}
+@media (max-width:960px){.th-offices{grid-template-columns:1fr}}
+
+/* ---------- the end card ---------- */
+.ixw--team main .th-cta{background:radial-gradient(circle at 85% 20%,rgba(255,216,74,.25),transparent 45%),linear-gradient(120deg,#1E3A6E,#3167CA)}
+.ixw--team main .th-cta .hand{color:#FFD84A}
+@media (prefers-reduced-motion:reduce){.bc-n{animation:none}}
+
+/* R9 mobile audit: the directory's e-mail links get a 40 px tall tap area (invisible; the row keeps its height) */
+.th-mail{position:relative}
+.th-mail::after{content:"";position:absolute;left:0;right:0;top:50%;height:40px;transform:translateY(-50%)}
+
+/* ====================================================================== the TechNext ID cards on the lanyard rack */
+.idc-rack{position:relative;padding:70px 30px 34px;border-radius:20px;background:linear-gradient(180deg,#F3E2C6,#ECD6B3);box-shadow:inset 0 0 0 6px #D9B48A,0 30px 50px -34px rgba(90,60,30,.4)}
+.idc-rail{position:absolute;left:24px;right:24px;top:26px;height:12px;border-radius:6px;background:linear-gradient(180deg,#B9C3D1,#8A96AA);box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.idc-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 46px}
+.idc{--w:300px;position:relative;width:var(--w);margin:0;padding-top:96px;perspective:1400px}
+/* the lanyard: a blue strap in a V from the rail hook down to the clip */
+.idc-strap{position:absolute;left:50%;top:-44px;width:120px;height:138px;margin-left:-60px;pointer-events:none;
+  background:linear-gradient(60deg,transparent 47%,#3167CA 47% 53%,transparent 53%) left/50% 100% no-repeat,linear-gradient(-60deg,transparent 47%,#3167CA 47% 53%,transparent 53%) right/50% 100% no-repeat}
+.idc-strap::before{content:"";position:absolute;left:50%;top:-8px;width:20px;height:20px;margin-left:-10px;border-radius:50%;border:4px solid #5C6B7A}
+.idc-clip{position:absolute;left:50%;top:84px;z-index:2;width:30px;height:20px;margin-left:-15px;border-radius:5px;background:linear-gradient(180deg,#C9D2DE,#9AA6BC);box-shadow:inset 0 -5px 0 #7A869C}
+.idc-swing{transform-origin:50% -60px;animation:idcSwing 5s ease-in-out infinite;animation-delay:calc(var(--i,0) * -1.3s)}
+@keyframes idcSwing{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
+.idc:hover .idc-swing{animation-duration:2.4s}
+.idc-card{position:relative;aspect-ratio:5/7.2;cursor:pointer;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.3,1.3,.5,1)}
+.idc-card.is-flipped{transform:rotateY(180deg)}
+.idc-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;border-radius:18px;overflow:hidden;background:#FFFFFF;border:5px solid #1E2F5C;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  box-shadow:0 3px 0 rgba(0,0,0,.08),0 30px 44px -26px rgba(27,35,80,.6)}
+.idc-slot{position:absolute;left:50%;top:10px;width:46px;height:9px;margin-left:-23px;border-radius:5px;background:#E6ECF6;box-shadow:inset 0 2px 2px rgba(0,0,0,.2);z-index:2}
+.idc-band{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:30px 16px 18px;background:#3167CA;color:#FFFFFF}
+.idc-band b{font:800 1.35rem/1 var(--font-display)}
+.idc-band small{position:absolute;left:0;right:0;bottom:-11px;margin:0 auto;width:max-content;padding:4px 10px;border-radius:999px;background:#FFD84A;color:#1B2350;font:800 .64rem/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase}
+.idc-plane{width:26px;height:26px}
+.idc-photo{display:grid;place-items:center;width:44%;aspect-ratio:5/6;margin:24px 0 10px;border-radius:12px;overflow:hidden;border:3px solid #C9D6EE;background:linear-gradient(150deg,var(--c1,#3167CA),var(--c2,#6FA0F5));color:#FFFFFF;font:800 2.4rem/1 var(--font-display)}
+.idc-photo img{width:100%;height:100%;object-fit:cover}
+.idc-front h3{margin:0;padding:0 14px;text-align:center;font-size:1.25rem;line-height:1.15;color:#1B2350}
+.idc-role{margin-top:4px;font-weight:700;color:#5C6B7A;font-size:.92rem}
+.idc-meta{display:flex;gap:8px;margin:10px 0 0;padding:0}
+.idc-meta>div{padding:5px 10px;border-radius:8px;background:#EEF2F9;text-align:center}
+.idc-meta dt{font:800 .56rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#8A96A8}
+.idc-meta dd{margin:3px 0 0;font:800 .78rem/1.1 ui-monospace,Consolas,monospace;color:#1B2350}
+.idc-bar{position:absolute;left:0;right:0;bottom:0;height:40px;border-top:5px solid #3167CA;background:repeating-linear-gradient(90deg,#1B2350 0 2px,transparent 2px 4px,#1B2350 4px 7px,transparent 7px 9px,#1B2350 9px 10px,transparent 10px 13px) center 9px/70% 18px no-repeat,#FFFFFF}
+.idc-back{transform:rotateY(180deg);align-items:stretch;padding:30px 20px 50px;background:linear-gradient(180deg,#FFFFFF,#F4F7FC)}
+.idc-k{margin:10px 0 2px;font:800 .62rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#3167CA}
+.idc-mail{margin:0;font:800 .95rem/1.25 var(--font-body);color:#1B2350;word-break:break-all}
+.idc-offices{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px;font-size:.74rem;line-height:1.3;color:#5C6B7A}
+.idc-offices b{display:block;color:#1B2350;font-size:.8rem}
+.idc-prop{margin:auto 0 0;padding-top:8px;border-top:1px dashed #C9D2DE;font:700 .7rem/1.35 var(--font-body);color:#5C6B7A}
+.idc-valid{position:absolute;right:14px;bottom:96px;padding:5px 12px;border:3px solid #1E9E6A;border-radius:8px;color:#1E9E6A;font:800 1rem/1 var(--font-display);letter-spacing:.2em;text-transform:uppercase;rotate:-12deg;opacity:.85}
+.idc-bar--b{height:34px;background-size:60% 14px}
+.idc-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0 0}
+.idc-btn{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 13px;border-radius:8px;border:2px solid #1B2350;background:#FFFFFF;color:#1B2350;font:800 .84rem/1 var(--font-body);text-decoration:none;cursor:pointer;box-shadow:0 3px 0 #1B2350;transition:translate .18s ease}
+.idc-btn .ic{width:16px;height:16px}.idc-btn:hover{translate:0 -2px;color:#1B2350}
+.idc-btn--v{background:#3167CA;color:#FFFFFF}.idc-btn--v:hover{color:#FFFFFF}
+.idc-btn--f[aria-pressed="true"]{background:#FFD84A}
+.idc-btn:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+@media (max-width:539px){.idc-rack{padding:56px 10px 26px;border-radius:16px}.idc-grid{flex-direction:column;align-items:center;gap:34px}.idc{--w:min(300px,84vw)}.idc-rail{left:12px;right:12px}}
+@media (prefers-reduced-motion:reduce){.idc-swing{animation:none}.idc-card{transition:none}}
+
+/* anatomy: a front and a back ID side by side, numbered, and the legend */
+.ida{display:grid;grid-template-columns:repeat(2,minmax(0,280px)) 1fr;gap:30px 40px;align-items:start}
+.ida-card{position:relative;margin:0;display:flex;flex-direction:column;align-items:center;aspect-ratio:5/7.2;border-radius:18px;border:5px solid #1E2F5C;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 44px -26px rgba(27,35,80,.5);rotate:-2deg}
+.ida-card--back{align-items:stretch;padding:30px 20px 20px;background:linear-gradient(180deg,#FFFFFF,#F4F7FC);rotate:2deg;margin-top:30px}
+.ida-band{width:100%;padding:24px 10px 16px;background:#3167CA;color:#FFFFFF;text-align:center}.ida-band b{font:800 1.2rem/1 var(--font-display)}.ida-band small{display:block;margin-top:6px;color:#FFD84A;font:800 .6rem/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase}
+.ida-photo{display:grid;place-items:center;width:44%;aspect-ratio:5/6;margin:22px 0 10px;border-radius:12px;background:linear-gradient(150deg,#3167CA,#6FA0F5);color:#FFFFFF;font:800 2rem/1 var(--font-display)}
+.ida-name{font:800 1.1rem/1.2 var(--font-display);color:#1B2350}.ida-role{font-weight:700;color:#5C6B7A;font-size:.88rem}
+.ida-no{margin-top:8px;padding:4px 10px;border-radius:8px;background:#EEF2F9;font:800 .78rem/1 ui-monospace,Consolas,monospace;color:#1B2350}
+.ida-bar{position:absolute;left:0;right:0;bottom:0;height:38px;border-top:5px solid #3167CA;background:repeating-linear-gradient(90deg,#1B2350 0 2px,transparent 2px 4px,#1B2350 4px 7px,transparent 7px 10px) center 9px/66% 16px no-repeat}
+.ida-k{font:800 .6rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#3167CA;margin-top:12px}.ida-mail{font-weight:800;color:#1B2350;margin-top:3px}
+.ida-off{display:grid;gap:4px;margin-top:4px;font-size:.84rem;color:#1B2350}
+.ida-prop{margin-top:auto;padding-top:8px;border-top:1px dashed #C9D2DE;font-size:.72rem;color:#5C6B7A}
+.ida .idc-valid{bottom:84px}
+.ida .bc-anat-list{grid-column:auto;grid-template-columns:1fr;gap:10px;margin:0}
+@media (max-width:1099px){.ida{grid-template-columns:repeat(2,minmax(0,280px));justify-content:center}.ida .bc-anat-list{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.ida{grid-template-columns:minmax(0,280px)}.ida-card--back{margin-top:0}.ida .bc-anat-list{grid-template-columns:1fr}}
+
+/* the end card: two IDs on lanyards */
+.th-cta-ids{position:absolute;right:250px;top:-30px;width:120px;height:110px}
+.th-cta-ids i{position:absolute;top:30px;width:52px;height:74px;border-radius:8px;border:3px solid #1E2F5C;background:linear-gradient(180deg,#3167CA 0 26%,#FFFFFF 26%);box-shadow:0 12px 20px -8px rgba(0,0,0,.4);rotate:-8deg}
+.th-cta-ids i::before{content:"";position:absolute;left:50%;top:-32px;width:3px;height:32px;margin-left:-1.5px;background:#FFD84A}
+.th-cta-ids i+i{left:56px;rotate:7deg;top:22px}
+@media (max-width:1099px){.th-cta-ids{display:none}}
+
+/* ============================== CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the ID station ==============================
+   Accent: the ID's yellow, kept to the country chips and a thin rule. Themed touches kept: the lanyard rail and straps over a
+   light rack, the numbered anatomy pins, the office codes on white card-back panels. Station file tags are gone. */
+body.ixw--team{--calm-accent:#3167CA;--calm-accent-ink:#1E4691;--calm-accent-line:#C9D7F1;--calm-accent-wash:#F7F9FD}
+body.ixw--team .th-head::after{display:none!important}
+body.ixw--team .idc-rack{background:#F7F9FD;box-shadow:none;border:1px solid var(--calm-line)}
+body.ixw--team .idc-rail{box-shadow:none}
+body.ixw--team .th-office{background:#FFFFFF;color:var(--ink);border:1px solid var(--calm-line);box-shadow:var(--calm-shadow)}
+body.ixw--team .th-office:hover{translate:0 -2px}
+body.ixw--team .th-office::after{color:#3167CA;opacity:.06}
+body.ixw--team .th-office::before{height:3px}
+body.ixw--team .th-office h3{color:var(--ink)}
+body.ixw--team .th-office p{color:var(--body)}
+body.ixw--team .th-office address{color:var(--muted)}

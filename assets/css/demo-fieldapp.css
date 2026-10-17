@@ -1,0 +1,135 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* App development page demo (demo-fieldapp.js): a field app on iOS, Android or the web, and the Odoo job it fills. */
+.fap-play .ic:nth-of-type(2){display:none}
+.dm-fap.is-paused .fap-play .ic:nth-of-type(1){display:none}
+.dm-fap.is-paused .fap-play .ic:nth-of-type(2){display:inline-block}
+.dm-fap.is-static .fap-play{display:none}
+.fap-wrap{position:relative;display:grid;grid-template-columns:minmax(0,340px) minmax(36px,80px) minmax(0,1fr);padding:18px 16px 16px;align-items:start}
+.fap-dev{grid-column:1;display:grid;gap:12px;justify-items:center}
+.fap-odoo{grid-column:3;align-self:center;position:relative;z-index:1;display:grid;gap:12px;padding:14px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.fap-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.fap-wire{fill:none;stroke:var(--edge);stroke-width:2;stroke-dasharray:5 6}
+.fap-pkt{fill:#714B67;stroke:#fff;stroke-width:2}
+
+/* the device */
+.fap-phone{position:relative;width:250px;height:480px;border-radius:38px;background:#1F1F3D;padding:9px;box-shadow:0 26px 50px -28px rgba(31,31,61,.65)}
+.fap-chrome{position:absolute;z-index:3;left:50%;top:9px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center}
+.fap-cam{display:block;background:#1F1F3D}
+.fap-url{display:none}
+.fap-phone[data-pf="ios"] .fap-cam{width:84px;height:22px;border-radius:0 0 14px 14px}
+.fap-phone[data-pf="android"]{border-radius:28px}
+.fap-phone[data-pf="android"] .fap-screen{border-radius:20px}
+.fap-phone[data-pf="android"] .fap-chrome{top:19px}
+.fap-phone[data-pf="android"] .fap-cam{width:11px;height:11px;border-radius:50%}
+.fap-phone[data-pf="web"]{width:100%;max-width:290px;height:480px;border-radius:14px;padding:0;background:#EEF1F7;border:1px solid var(--line);box-shadow:0 22px 44px -30px rgba(31,31,61,.5)}
+.fap-phone[data-pf="web"] .fap-chrome{position:static;transform:none;justify-content:flex-start;gap:8px;height:34px;padding:0 10px;border-bottom:1px solid var(--line)}
+.fap-phone[data-pf="web"] .fap-chrome::before{content:"";flex:none;width:32px;height:8px;background:radial-gradient(circle,#CDD4E3 3.4px,transparent 3.8px) 0 0/11px 8px repeat-x}
+.fap-phone[data-pf="web"] .fap-cam{display:none}
+.fap-phone[data-pf="web"] .fap-url{display:block;flex:1;min-width:0;height:22px;padding:0 9px;border-radius:7px;background:#fff;font:500 10.5px/22px var(--font-body);color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.fap-phone[data-pf="web"] .fap-screen{height:calc(100% - 34px);border-radius:0 0 14px 14px}
+.fap-phone[data-pf="web"] .fap-top{padding-top:12px}
+.fap-screen{position:relative;height:100%;border-radius:30px;background:#F6F7FB;overflow:hidden;display:flex;flex-direction:column}
+.fap-top{display:grid;gap:2px;padding:36px 16px 10px;background:#fff;border-bottom:1px solid var(--line)}
+.fap-top b{font:800 15px/1.2 var(--font-display);color:var(--ink)}
+.fap-top small{min-height:14px;font:500 11px/1.3 var(--font-body);color:var(--muted)}
+.fap-view{flex:1;display:flex;flex-direction:column;gap:8px;padding:12px;overflow:hidden}
+.fap-view>*{animation:fapIn .45s var(--spring) both}
+.fap-view>:nth-child(2){animation-delay:.08s}
+.fap-view>:nth-child(3){animation-delay:.16s}
+@keyframes fapIn{from{opacity:0;transform:translateY(10px)}}
+
+/* screens */
+.fap-job{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:8px;align-items:center;padding:10px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.fap-job i{font:700 11px/1 var(--font-body);font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
+.fap-job b{display:block;font:700 12.5px/1.2 var(--font-display);color:var(--ink)}
+.fap-job small{font:500 11px/1.3 var(--font-body);color:var(--muted)}
+.fap-job em{font:700 10px/1 var(--font-body);font-style:normal;padding:4px 7px;border-radius:999px;background:var(--blue);color:#fff}
+.fap-job.is-next{border-color:var(--blue-300);box-shadow:0 0 0 3px var(--blue-050)}
+.fap-map{position:relative;height:160px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(90deg,rgba(49,103,202,.07) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(rgba(49,103,202,.07) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(160deg,#EAF0FB,#F8FAFE)}
+.fap-map::before{content:"";position:absolute;left:12%;right:20%;top:58%;height:8px;border-radius:8px;background:#fff;transform:rotate(-8deg);box-shadow:0 0 0 1px #E1E7F2}
+.fap-pin{position:absolute;left:52%;top:46%;width:22px;height:22px;margin:-22px 0 0 -11px;border-radius:50% 50% 50% 0;background:var(--blue);transform:rotate(-45deg);animation:fapPin .6s var(--spring) both .1s}
+.fap-pin::after{content:"";position:absolute;left:7px;top:7px;width:8px;height:8px;border-radius:50%;background:#fff}
+.fap-map::after{content:"";position:absolute;left:52%;top:46%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:2px solid var(--blue);opacity:0;animation:fapRing 1.6s ease-out infinite .4s}
+@keyframes fapPin{from{opacity:0;transform:translateY(-14px) rotate(-45deg)}}
+@keyframes fapRing{0%{opacity:.6;transform:scale(.3)}100%{opacity:0;transform:scale(1.2)}}
+.fap-okline{display:grid;gap:2px;margin:2px 0 0;padding:10px 12px;border-radius:12px;background:var(--ok-050)}
+.fap-okline b{font:700 13px/1.2 var(--font-display);color:var(--ok)}
+.fap-okline small{font:500 11px/1.3 var(--font-body);color:var(--body)}
+.fap-list{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.fap-list li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:9px;align-items:center;padding:10px;border-radius:11px;background:#fff;border:1px solid var(--line);font:600 12px/1.3 var(--font-body);color:var(--ink)}
+.fap-list li i{position:relative;width:18px;height:18px;border-radius:6px;border:2px solid #C9D2E4;transition:background-color .25s ease,border-color .25s ease}
+.fap-list li i::after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);transition:transform .3s var(--spring)}
+.fap-list li.is-done i{background:var(--ok);border-color:var(--ok)}
+.fap-list li.is-done i::after{transform:rotate(45deg) scale(1)}
+.fap-list li.is-done span{color:var(--muted)}
+.fap-shots{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fap-shot{position:relative;margin:0;aspect-ratio:1;border-radius:12px;opacity:0;transform:scale(.7);transition:opacity .3s ease,transform .45s var(--spring);background:linear-gradient(150deg,#DCE6F7,#B8C9EA)}
+.fap-shot0{grid-column:1 / -1;aspect-ratio:2/1;background:linear-gradient(150deg,#E5EDF9,#C3D3EF)}
+.fap-shot2{background:linear-gradient(150deg,#D9F0E4,#B2DCC6)}
+.fap-shot::before{content:"";position:absolute;left:50%;top:44%;width:22px;height:16px;margin:-8px 0 0 -11px;border-radius:4px;border:2px solid rgba(31,31,61,.35)}
+.fap-shot.is-in{opacity:1;transform:none}
+.fap-shot figcaption{position:absolute;left:8px;bottom:6px;font:700 10px/1 var(--font-body);color:rgba(31,31,61,.6)}
+.fap-pad{position:relative;padding:18px 12px 30px;border-radius:12px;background:#fff;border:1px dashed #C9D2E4}
+.fap-pad svg{display:block;width:100%;height:auto}
+.fap-pad path{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fap-wipe{position:absolute;left:8px;right:8px;top:12px;bottom:26px;background:#fff;transform-origin:right center}
+.fap-pad.is-signed .fap-wipe{transform:scaleX(0);transition:transform 1.3s cubic-bezier(.45,0,.4,1)}
+.fap-pad small{position:absolute;left:12px;right:12px;bottom:9px;padding-top:5px;border-top:1.5px dashed #C9D2E4;font:500 10.5px/1 var(--font-body);color:var(--muted)}
+.fap-done{display:grid;justify-items:center;gap:6px;padding:26px 10px 8px;text-align:center}
+.fap-done i{position:relative;width:56px;height:56px;border-radius:50%;background:var(--ok);animation:fapPop .55s var(--spring) both}
+.fap-done i::after{content:"";position:absolute;left:21px;top:13px;width:12px;height:22px;border:solid #fff;border-width:0 3.5px 3.5px 0;transform:rotate(45deg)}
+.fap-done b{font:800 16px/1.2 var(--font-display);color:var(--ink)}
+.fap-done small{font:500 11.5px/1.35 var(--font-body);color:var(--muted)}
+.fap-sync{display:flex;justify-content:center;margin:4px 0 0}
+.fap-sync span{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;background:#F4ECF2;font:700 11.5px/1 var(--font-body);color:#714B67}
+.fap-sync span::before{content:"";width:7px;height:7px;border-radius:50%;background:#714B67}
+@keyframes fapPop{from{opacity:0;transform:scale(.4)}}
+.fap-rail{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:0;padding:0;list-style:none}
+.fap-rail button{height:25px;padding:0 8px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 11px/1 var(--font-body);color:var(--muted);cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.fap-rail button:hover{border-color:var(--blue-300);color:var(--ink)}
+.fap-rail button.is-done{background:var(--ok-050);border-color:#CDEBD9;color:var(--ok)}
+.fap-rail button.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
+.fap-rail button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* the Odoo job */
+.fap-oh{display:flex;align-items:center;gap:8px;margin:0}
+.fap-oh .oi{width:22px;height:22px}
+.fap-oh b{font:700 13.5px/1.2 var(--font-display);color:var(--ink)}
+.fap-oh small{margin-left:auto;font:600 11.5px/1 var(--font-body);color:var(--muted);font-variant-numeric:tabular-nums}
+.fap-rec{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.fap-rec>div{position:relative;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#FAFBFD;transition:background-color .3s ease,border-color .3s ease}
+.fap-rec>div::after{content:"";position:absolute;inset:-1px;border-radius:inherit;border:2px solid #714B67;opacity:0;pointer-events:none}
+.fap-rec>div.is-new::after{animation:fapFlash 1.2s ease-out}
+.fap-rec dt{font:600 9.5px/1.25 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fap-rec dd{margin:3px 0 0;font:700 12.5px/1.3 var(--font-display);color:var(--muted)}
+.fap-rec .is-set{background:#fff;border-color:#D7DDEB}
+.fap-rec .is-set dd{color:var(--ink)}
+.fap-rec .is-done dd{color:var(--ok)}
+@keyframes fapFlash{0%{opacity:.95}100%{opacity:0}}
+.fap-log{min-height:100px;align-content:start}
+.fap-kpis{padding:0 16px 16px}
+@media (max-width:960px){
+  .fap-wrap{grid-template-columns:minmax(0,1fr);gap:16px}
+  .fap-dev,.fap-odoo{grid-column:auto}
+  .fap-wires{display:none}
+}
+@media (max-width:640px){
+  .fap-wrap{padding:12px}
+  .fap-rec{grid-template-columns:1fr}
+  .fap-kpis{padding:0 12px 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .fap-view>*,.fap-pin,.fap-done i{animation:none}
+  .fap-map::after{display:none}
+  .fap-pad .fap-wipe{display:none}
+  .fap-shot{opacity:1;transform:none;transition:none}
+}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .fap-phone[data-pf="web"] .fap-url,
+  .fap-job em,
+  .fap-shot figcaption,
+  .fap-pad small,
+  .fap-rec dt{font-size:11px}
+}

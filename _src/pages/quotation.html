@@ -1,0 +1,138 @@
+<!--meta {"title": "Odoo Implementation Cost — get a written quote", "desc": "Tell us which Odoo apps, how many users and which services you need. We reply with a written quotation from sales@technext.asia.", "out": "quotation.html", "nav": "", "scripts": ["assets/js/quote.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/page-calm.css?v={ASSET_V}\">"} -->
+
+<section class="page-hero page-hero--stage page-hero--plain" data-stage-hero>
+  {{STAGE_BG}}
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Quotation</span></nav>
+    <h1><span class="hand h1-hand">odoo implementation cost</span>Get a written Odoo quotation.</h1>
+    <p class="lead">Pick the apps, users and services. We turn it into a quotation and send it from <a href="mailto:sales@technext.asia">sales@technext.asia</a>. Nothing here commits you to anything.</p>
+    <div class="actions"><a class="btn btn-primary btn-lg" href="#quote-form">Start with your apps {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="mailto:sales@technext.asia">{{icon:mail}}Email sales</a></div>
+  </div>
+</section>
+
+<section class="section section--tight answer-sec">
+  <div class="container"><div class="answer-box reveal"><p class="answer-h">In one paragraph</p><p>An Odoo project has two costs: Odoo subscription licences, priced per user per month by Odoo, and TechNext's implementation work, quoted separately. The implementation quote depends on the apps, number of users, data to migrate, integrations, custom modules and training. Pick them below and we reply with a written quotation.</p></div></div>
+</section>
+
+
+<section class="section section--tight">
+  <div class="container">
+    <form class="form qb" id="quote-form" novalidate data-endpoint="/api/lead" data-before-send="tnQuoteBeforeSend">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="Quotation builder">
+      <textarea id="q-summary" name="scope_summary" hidden aria-hidden="true" tabindex="-1"></textarea>
+
+      <div>
+        <!-- 1 apps -->
+        <div class="card card--static qb-step">
+          <div class="card-kicker"><i>1</i> Odoo apps</div>
+          <h2 class="step-title">Which apps do you need?</h2>
+          <p>Accounting, Sales and Inventory are where most companies start. Pick as many as apply.</p>
+          <div class="choices">
+            <div class="choice choice--core"><input type="checkbox" id="a1" name="apps" data-mod="accountant" value="Accounting" checked><label for="a1">{{odoo:accountant:28}}<span>Accounting<small>Journals, bank, tax, reports</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice choice--core"><input type="checkbox" id="a2" name="apps" data-mod="sale" value="Sales"><label for="a2">{{odoo:sale:28}}<span>Sales<small>Quotations and orders</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice choice--core"><input type="checkbox" id="a3" name="apps" data-mod="stock" value="Inventory"><label for="a3">{{odoo:stock:28}}<span>Inventory<small>Stock and warehouses</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a4" name="apps" data-mod="account" value="Invoicing"><label for="a4">{{odoo:account:28}}<span>Invoicing<small>Bill and collect online</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a5" name="apps" data-mod="crm" value="CRM"><label for="a5">{{odoo:crm:28}}<span>CRM<small>Leads and pipeline</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a6" name="apps" data-mod="purchase" value="Purchase"><label for="a6">{{odoo:purchase:28}}<span>Purchase<small>RFQs and vendor bills</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a7" name="apps" data-mod="point_of_sale" value="Point of Sale"><label for="a7">{{odoo:point_of_sale:28}}<span>Point of Sale<small>Shop or restaurant</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a8" name="apps" data-mod="website_sale" value="eCommerce"><label for="a8">{{odoo:website_sale:28}}<span>eCommerce<small>Online store</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a9" name="apps" data-mod="mrp" value="Manufacturing"><label for="a9">{{odoo:mrp:28}}<span>Manufacturing<small>BoMs and work orders</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a10" name="apps" data-mod="project" value="Project & Timesheets"><label for="a10">{{odoo:project:28}}<span>Project &amp; Timesheets<small>Tasks and billable time</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a11" name="apps" data-mod="hr" value="HR (Employees, Time Off, Payroll)"><label for="a11">{{odoo:hr:28}}<span>HR<small>Employees, leave, payroll</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a12" name="apps" data-mod="helpdesk" value="Helpdesk"><label for="a12">{{odoo:helpdesk:28}}<span>Helpdesk<small>Tickets and SLAs</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a13" name="apps" data-mod="website" value="Website"><label for="a13">{{odoo:website:28}}<span>Website<small>Odoo Website builder</small></span><span class="ck">{{icon:check}}</span></label></div>
+            <div class="choice"><input type="checkbox" id="a14" name="apps" value="Other / not sure"><label for="a14"><span>Other / not sure<small>Tell us in the message</small></span><span class="ck">{{icon:check}}</span></label></div>
+          </div>
+        </div>
+
+        <!-- 2 users -->
+        <div class="card card--static qb-step">
+          <div class="card-kicker"><i>2</i> Users</div>
+          <h2 class="step-title">How many people will log in?</h2>
+          <p>Count everyone who needs a screen — finance, sales, warehouse, management.</p>
+          <div class="range">
+            <label for="q-users" class="sr-only">Number of users</label>
+            <input type="range" id="q-users" name="users" min="1" max="100" step="1" value="10" aria-describedby="q-users-out">
+            <output id="q-users-out" for="q-users">10</output>
+          </div>
+        </div>
+
+        <!-- 3 hosting -->
+        <div class="card card--static qb-step">
+          <div class="card-kicker"><i>3</i> Hosting</div>
+          <h2 class="step-title">Where should Odoo run?</h2>
+          <p>We'll advise if you're unsure — it depends on customisation and data requirements.</p>
+          <div class="choices">
+            <div class="choice choice--radio"><input type="radio" id="h1" name="hosting" value="Odoo Online (SaaS)" checked><label for="h1"><span class="ck">{{icon:check}}</span><span>Odoo Online<small>Odoo's cloud, standard apps</small></span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="h2" name="hosting" value="Odoo.sh"><label for="h2"><span class="ck">{{icon:check}}</span><span>Odoo.sh<small>Cloud with custom modules</small></span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="h3" name="hosting" value="On-premise / own cloud"><label for="h3"><span class="ck">{{icon:check}}</span><span>On-premise<small>Your servers or your cloud</small></span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="h4" name="hosting" value="Advise me"><label for="h4"><span class="ck">{{icon:check}}</span><span>Advise me<small>Not sure yet</small></span></label></div>
+          </div>
+        </div>
+
+        <!-- 4 services -->
+        <div class="card card--static qb-step">
+          <div class="card-kicker"><i>4</i> Services</div>
+          <h2 class="step-title">What should TechNext do?</h2>
+          <div class="choices">
+            <div class="choice"><input type="checkbox" id="s1" name="services" value="Discovery & scoping" checked><label for="s1"><span class="ck">{{icon:check}}</span><span>Discovery &amp; scoping</span></label></div>
+            <div class="choice"><input type="checkbox" id="s2" name="services" value="Configuration & setup" checked><label for="s2"><span class="ck">{{icon:check}}</span><span>Configuration &amp; setup</span></label></div>
+            <div class="choice"><input type="checkbox" id="s3" name="services" value="Data migration"><label for="s3"><span class="ck">{{icon:check}}</span><span>Data migration</span></label></div>
+            <div class="choice"><input type="checkbox" id="s4" name="services" value="Training"><label for="s4"><span class="ck">{{icon:check}}</span><span>Training</span></label></div>
+            <div class="choice"><input type="checkbox" id="s5" name="services" value="Integrations"><label for="s5"><span class="ck">{{icon:check}}</span><span>Integrations</span></label></div>
+            <div class="choice"><input type="checkbox" id="s6" name="services" value="Custom development"><label for="s6"><span class="ck">{{icon:check}}</span><span>Custom development</span></label></div>
+            <div class="choice"><input type="checkbox" id="s7" name="services" value="Ongoing support plan"><label for="s7"><span class="ck">{{icon:check}}</span><span>Ongoing support plan</span></label></div>
+            <div class="choice"><input type="checkbox" id="s8" name="services" value="Website / social media"><label for="s8"><span class="ck">{{icon:check}}</span><span>Website / social media</span></label></div>
+            <div class="choice"><input type="checkbox" id="s9" name="services" value="IoT, apps or networks"><label for="s9"><span class="ck">{{icon:check}}</span><span>IoT, apps or networks</span></label></div>
+          </div>
+        </div>
+
+        <!-- 5 timeline -->
+        <div class="card card--static qb-step">
+          <div class="card-kicker"><i>5</i> Timeline</div>
+          <h2 class="step-title">When do you want to go live?</h2>
+          <div class="choices">
+            <div class="choice choice--radio"><input type="radio" id="t1" name="timeline" value="As soon as possible"><label for="t1"><span class="ck">{{icon:check}}</span><span>As soon as possible</span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="t2" name="timeline" value="Within 3 months" checked><label for="t2"><span class="ck">{{icon:check}}</span><span>Within 3 months</span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="t3" name="timeline" value="3–6 months"><label for="t3"><span class="ck">{{icon:check}}</span><span>3–6 months</span></label></div>
+            <div class="choice choice--radio"><input type="radio" id="t4" name="timeline" value="Just exploring"><label for="t4"><span class="ck">{{icon:check}}</span><span>Just exploring</span></label></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- summary + contact -->
+      <aside class="card card--static qb-summary">
+        <h2 class="step-title">Your scope <span class="tag" data-sum="count">1 app</span></h2>
+        <dl class="sum-list">
+          <div><dt>Apps</dt><dd data-sum="apps"></dd></div>
+          <div><dt>Users</dt><dd data-sum="users"></dd></div>
+          <div><dt>Hosting</dt><dd data-sum="hosting"></dd></div>
+          <div><dt>Services</dt><dd data-sum="services"></dd></div>
+          <div><dt>Go-live</dt><dd data-sum="timeline"></dd></div>
+        </dl>
+        <div class="form-row">
+          <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="field"><label for="q-company">Company</label><input id="q-company" name="company" type="text" required autocomplete="organization"></div>
+        </div>
+        <div class="field"><label for="q-email">Work email</label><input id="q-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="field"><label for="q-msg">Anything else <span class="opt">optional</span></label><textarea id="q-msg" name="message" rows="3"></textarea></div>
+        <div class="form-foot">
+          <button class="btn btn-primary btn-lg" type="submit" style="width:100%"><span class="btn-label">Request quotation</span><span class="btn-busy" aria-hidden="true"></span></button>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <div class="form-sent"><h3>Request received.</h3><p>Your scope is on its way to sales@technext.asia. We'll reply from that address with a written quotation and any questions we need answered first.</p></div>
+        <p class="small muted" style="margin-top:14px">Sent to sales@technext.asia. We use your details only to reply — see the <a href="{{ROOT}}privacy.html">privacy policy</a>.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">common questions</span><h2>Odoo pricing, answered.</h2></div>
+    <div class="faq reveal"><details><summary>How much does Odoo cost? {{icon:chevron}}</summary><div class="faq-a"><p>Odoo licences are priced per user per month by Odoo, with a free plan for a single app. Prices differ by country and currency, so check odoo.com/pricing for your market.</p></div></details><details><summary>What does an Odoo implementation cost? {{icon:chevron}}</summary><div class="faq-a"><p>It depends on the scope: which apps, how many users, how much data to migrate, which integrations and custom modules, and how much training. TechNext quotes the implementation in writing once the scope is clear.</p></div></details><details><summary>What is included in a TechNext quotation? {{icon:chevron}}</summary><div class="faq-a"><p>The implementation work for the scope you choose: configuration, data migration, training and integration, with support options for after go-live. The quotation states what is included and what is not.</p></div></details><details><summary>Can we start small? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Most companies start with Accounting, Sales and Inventory, then add apps on the same database once the first phase is running.</p></div></details></div>
+  </div>
+</section>
+

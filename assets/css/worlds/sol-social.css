@@ -1,0 +1,303 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: sol-social (/solutions/social-media) — "The Post Bakery". Strawberry, butter cream, cocoa and pistachio, with the
+   three channel colours. The title card is a cake box under a striped awning with a FRESH DAILY sticker; the caption is
+   an order ticket; buttons are glazed buns with a cocoa base; the glance strip hangs under an awning. Below the hero:
+   a recipe card, the display case for the demo, six pastry tags, the oven-timer line, a till receipt, order tickets on a
+   rail for the FAQ, three cake boxes with ribbons and a shopfront end card. Prefix: .bky- */
+.ixw--sol-social{--bk-straw:#F0627E;--bk-straw-d:#C9405E;--bk-straw-l:#FFE3E9;--bk-butter:#FFD36E;--bk-butter-d:#E0A93A;--bk-cocoa:#7A4B33;--bk-cocoa-d:#55331F;--bk-cream:#FFF6EA;--bk-cream-2:#FFEFD9;--bk-mint:#5FB38E;--bk-mint-l:#E4F5EC;
+  --bk-li:#0A66C2;--bk-fb:#1877F2;--bk-ig:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF);
+  --w-alt:#FFF8EE;--lab-bg:#FFFDF8;--lab-bd:2px solid #55331F;--lab-lip:#55331F;--lab-tail:#55331F;--lab-r:10px;
+  
+  --ii-bg:linear-gradient(160deg,#FFF6EA,#FFE3E9 58%,#FFF1C9);--ii-ink:#55331F;--ii-b:#F0627E;--ii-accent:#FFD36E;--ii-lip:#55331F;--ii-ep-bg:#F0627E;--ii-ep-fg:#FFFFFF}
+.ixw--sol-social .ixw-hero{background:linear-gradient(180deg,#9FD8F7 0,#EAF7FD 18%,#FFF8EE 19%,#FFF2DE 62%,#E4E8EC 62%,#D3D9DF 100%)}
+
+/* ---------- the title card: a cake box under a striped awning ---------- */
+.ixw--sol-social .ixw-copy{position:relative;max-width:500px;margin-top:22px;padding:52px 30px 24px;border-radius:16px;background:#FFFDF8;
+  box-shadow:0 0 0 2px #F2DCC4,0 6px 0 #EBCBA9,0 40px 70px -32px rgba(120,60,30,.4)}
+.ixw--sol-social .ixw-copy::before{content:"";position:absolute;left:-8px;right:-8px;top:-6px;height:44px;border-radius:12px 12px 0 0;
+  background:radial-gradient(circle at 12px 0,var(--bk-straw) 11.5px,transparent 12px) 0 32px/24px 12px repeat-x,repeating-linear-gradient(90deg,var(--bk-straw) 0 24px,#FFFFFF 24px 48px) 0 0/100% 32px no-repeat;
+  filter:drop-shadow(0 4px 0 rgba(201,64,94,.25))}
+.ixw--sol-social .ixw-copy::after{content:"FRESH\A DAILY";white-space:pre;position:absolute;right:18px;top:44px;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;
+  background:radial-gradient(circle,var(--bk-butter) 0 29px,#FFFFFF 29.5px 31px,var(--bk-butter) 31.5px);box-shadow:0 0 0 2px var(--bk-cocoa-d),0 4px 0 var(--bk-cocoa-d);
+  font:800 11px/1.15 var(--font-display);letter-spacing:.08em;text-align:center;color:var(--bk-cocoa-d);transform:rotate(12deg);animation:bkSticker 6s ease-in-out infinite}
+@keyframes bkSticker{0%,100%{transform:rotate(12deg)}50%{transform:rotate(4deg) scale(1.04)}}
+.ixw--sol-social .ixw-copy h1{max-width:15ch}
+.ixw--sol-social .ixw-copy .hand{color:var(--bk-straw-d)}
+.ixw--sol-social .ixw-copy .crumbs{padding-right:70px}
+.ixw--sol-social .ixw-ep-tag{background:var(--bk-cocoa-d);box-shadow:0 3px 0 #2E1A0E}
+.ixw--sol-social .ixw-hint .ic{color:var(--bk-straw)}
+.ixw--sol-social .bky-pills{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.ixw--sol-social .bky-pills span{display:inline-flex;align-items:center;gap:5px;height:25px;padding:0 9px 0 7px;border-radius:999px;background:var(--bk-cream);box-shadow:inset 0 0 0 1.5px #F0D9BD;font:800 11.5px/1 var(--font-body);color:var(--bk-cocoa)}
+.ixw--sol-social .bky-pills .ic{width:14px;height:14px;color:var(--bk-straw)}
+.ixw--sol-social .ixw-copy .ixw-hint{margin-top:14px}
+.ixw--sol-social .bky-pills span:nth-child(1) .ic{color:var(--bk-li)}.ixw--sol-social .bky-pills span:nth-child(2) .ic{color:#DD2A7B}.ixw--sol-social .bky-pills span:nth-child(3) .ic{color:var(--bk-fb)}
+@media (max-width:767px){.ixw--sol-social .ixw-copy{padding:54px 20px 24px}.ixw--sol-social .ixw-copy::after{width:58px;height:58px;font-size:9.5px;top:40px;right:12px}.ixw--sol-social .bky-pills{display:none}}
+
+/* ---------- the caption: an order ticket ---------- */
+.ixw--sol-social .ixw-cap{border-radius:14px;background:#FFFDF8;box-shadow:0 0 0 2px #F2DCC4,0 5px 0 #EBCBA9,0 26px 44px -22px rgba(120,60,30,.4)}
+.ixw--sol-social .ixw-cap::before{content:"ORDER UP";position:absolute;left:18px;top:-13px;padding:5px 10px 5px 24px;border-radius:999px;background:var(--bk-cocoa-d);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.14em}
+.ixw--sol-social .ixw-cap::after{content:"";position:absolute;left:26px;top:-7px;width:9px;height:9px;border-radius:50%;background:var(--bk-butter);box-shadow:0 0 0 2px rgba(255,211,110,.35);animation:bkBlink 1.6s ease-in-out infinite}
+@keyframes bkBlink{50%{opacity:.35}}
+.ixw--sol-social .ixw-cap-who b{color:var(--bk-straw-d)}.ixw--sol-social .ixw-cap-txt b{color:var(--bk-cocoa)}
+.ixw--sol-social .ixw-cap-rec{background:var(--bk-cream);border:1px dashed #E8C9A6;color:var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-cap-av{box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #F2DCC4}
+
+/* ---------- buttons: glazed buns on a cocoa base ---------- */
+.ixw--sol-social main :is(.btn-primary,.btn-ghost,.bky-cta .btn-white,.bky-cta .btn-outline-white){border:0;border-radius:999px;transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--sol-social main .btn-primary,.ixw--sol-social main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#F57C94 0,var(--bk-straw) 55%);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 4px 0 var(--bk-cocoa-d)}
+.ixw--sol-social main .btn-ghost,.ixw--sol-social main .btn-ghost:hover{color:var(--bk-cocoa-d);background:var(--bk-cream);box-shadow:inset 0 0 0 2px #EBCBA9,0 4px 0 var(--bk-cocoa-d)}
+.ixw--sol-social main .btn-ghost::before{display:none}
+.ixw--sol-social main :is(.btn-primary,.btn-ghost,.bky-cta .btn-white,.bky-cta .btn-outline-white):hover{translate:0 -2px}
+.ixw--sol-social main :is(.btn-primary,.btn-ghost,.bky-cta .btn-white,.bky-cta .btn-outline-white):active{translate:0 3px;box-shadow:0 1px 0 var(--bk-cocoa-d);transition-duration:.06s}
+.ixw--sol-social main :is(.btn-primary,.btn-ghost,.bky-cta .btn-white,.bky-cta .btn-outline-white):focus-visible{outline:3px solid var(--bk-butter);outline-offset:4px}
+.ixw--sol-social .ixw-ibtn{border:2px solid var(--bk-cocoa-d);box-shadow:0 3px 0 var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-ibtn--play,.ixw--sol-social .ixw-ibtn--play:hover{background:var(--bk-straw);color:#FFFFFF}
+.ixw--sol-social .ixw-dots button.is-on{background:var(--bk-straw);box-shadow:0 0 0 1.5px var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-peek{border-color:var(--bk-cocoa-d);box-shadow:0 3px 0 var(--bk-cocoa-d)}.ixw--sol-social .ixw-peek[aria-pressed="true"]{background:var(--bk-butter)}
+
+/* ---------- the glance strip: hung under the shop's awning ---------- */
+.ixw--sol-social .bky-strip{position:relative;padding-top:30px;border-radius:14px;box-shadow:0 0 0 2px #F2DCC4,0 5px 0 #EBCBA9,0 26px 44px -30px rgba(120,60,30,.35);
+  background:radial-gradient(circle at 10px 0,#FFFFFF 9.5px,transparent 10px) 0 14px/20px 9px repeat-x,repeating-linear-gradient(90deg,var(--bk-straw) 0 20px,#FFFFFF 20px 40px) 0 0/100% 14px no-repeat,#FFFDF8}
+.ixw--sol-social .bky-strip dt{color:var(--bk-cocoa)}
+.ixw--sol-social .bky-strip dt .ic{color:var(--bk-straw)}
+.ixw--sol-social .bky-strip>div{position:relative}
+.ixw--sol-social .bky-strip>div+div::before{content:"";position:absolute;left:-18px;top:22px;bottom:4px;border-left:2px dotted #EBCBA9}
+
+/* ============================== below the hero ============================== */
+.ixw--sol-social main .section--alt{background-color:var(--w-alt)}
+.ixw--sol-social .sec-head .hand{color:var(--bk-straw-d)}
+
+/* the one-paragraph answer: a recipe card pinned to the wall */
+.ixw--sol-social .bky-recipe-sec{padding-top:56px}
+.ixw--sol-social .bky-recipe{display:block;max-width:960px;padding:30px 32px 28px 92px;border:0;border-radius:6px;
+  background:linear-gradient(90deg,transparent 70px,rgba(240,98,126,.5) 70px 72px,transparent 72px),repeating-linear-gradient(180deg,#FFFDF8 0 27px,#D8E7F5 27px 28px) 0 18px,#FFFDF8;
+  box-shadow:0 0 0 1.5px #F0E0CC,0 24px 40px -28px rgba(120,60,30,.4);transform:rotate(-.4deg)}
+.ixw--sol-social .bky-recipe .answer-h{display:inline-block;margin-bottom:8px;background:var(--bk-straw-l);color:var(--bk-straw-d)}
+.ixw--sol-social .bky-recipe p:not(.answer-h){font-size:16px;line-height:28px;color:#3D3540}
+.ixw--sol-social .bky-pin{position:absolute;left:50%;top:-12px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF9DB4,var(--bk-straw-d));box-shadow:0 4px 6px -2px rgba(0,0,0,.35)}
+.ixw--sol-social .bky-recipe-tab{position:absolute;left:12px;top:30px;writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 5px;border-radius:6px;background:var(--bk-cocoa);color:#FFF6EA;font:800 10px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:640px){.ixw--sol-social .bky-recipe{padding:24px 18px 22px 56px;background:linear-gradient(90deg,transparent 42px,rgba(240,98,126,.5) 42px 44px,transparent 44px),repeating-linear-gradient(180deg,#FFFDF8 0 27px,#D8E7F5 27px 28px) 0 18px,#FFFDF8}.ixw--sol-social .bky-recipe-tab{left:8px;font-size:9px}}
+
+/* the demo: the bakery's display case, a cocoa counter with a brass rail and the five approval states as price cards */
+.ixw--sol-social .bky-demo-sec{background-color:#FFFFFF;background-image:radial-gradient(circle,rgba(240,98,126,.14) 2px,transparent 2.5px),radial-gradient(circle,rgba(95,179,142,.14) 2px,transparent 2.5px);background-size:46px 46px,46px 46px;background-position:0 0,23px 23px}
+.ixw--sol-social .bky-case{position:relative;padding:12px 12px 16px;border-radius:26px 26px 18px 18px;background:linear-gradient(180deg,#8E5A3E,var(--bk-cocoa));box-shadow:0 0 0 3px #B88A5E,0 10px 0 var(--bk-cocoa-d),0 50px 80px -44px rgba(80,40,20,.6)}
+.ixw--sol-social .bky-case::before{content:"";position:absolute;left:30px;right:30px;bottom:-26px;height:16px;border-radius:0 0 10px 10px;background:repeating-linear-gradient(90deg,var(--bk-cocoa-d) 0 12px,#6B4129 12px 24px)}
+.ixw--sol-social .bky-case-top{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;padding:6px 10px 14px;color:#FFF6EA;font:800 12.5px/1 var(--font-display);letter-spacing:.04em;text-transform:uppercase}
+.ixw--sol-social .bky-case-name::before{content:"";display:inline-block;width:9px;height:9px;margin-right:8px;border-radius:50%;background:var(--bk-butter);box-shadow:0 0 0 3px rgba(255,211,110,.25);vertical-align:1px;animation:bkBlink 1.6s ease-in-out infinite}
+.ixw--sol-social .bky-case-steps{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.ixw--sol-social .bky-case-steps i{position:relative;padding:6px 11px 6px 18px;border-radius:4px 999px 999px 4px;background:#FFF6EA;color:var(--bk-cocoa-d);font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.04em;text-transform:none}
+.ixw--sol-social .bky-case-steps i::before{content:"";position:absolute;left:6px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:var(--bk-cocoa)}
+.ixw--sol-social .bky-case-steps i:last-child{background:var(--bk-butter)}
+.ixw--sol-social .bky-case .dm{border-radius:16px;box-shadow:none}
+@media (max-width:767px){.ixw--sol-social .bky-case{padding:8px 8px 12px;border-radius:20px 20px 14px 14px}.ixw--sol-social .bky-case-steps{display:none}}
+
+/* what's included: six pastry tags on strings, scalloped like a doily */
+.ixw--sol-social .bky-menu-sec{background:linear-gradient(180deg,#FFFFFF 0,var(--bk-cream) 100%)}
+.ixw--sol-social .bky-menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 26px;padding-top:14px}
+.ixw--sol-social .bky-tag{position:relative;padding:58px 26px 26px;border-radius:2px 2px 18px 18px;background:#FFFFFF;box-shadow:inset 0 -5px 0 color-mix(in srgb,var(--c) 22%,#FFFFFF);
+  filter:drop-shadow(0 0 1px #E6CBAE) drop-shadow(0 18px 16px rgba(120,60,30,.12));transform-origin:50% -30px;transition:transform .5s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-social .bky-tag::after{content:"";position:absolute;left:0;right:0;top:-9px;height:10px;background:radial-gradient(circle at 10px 10px,#FFFFFF 9.5px,transparent 10px) 0 0/20px 10px repeat-x}
+.ixw--sol-social .bky-tag:hover{transform:rotate(-2deg) translateY(-4px)}
+.ixw--sol-social .bky-tag:nth-child(even):hover{transform:rotate(2deg) translateY(-4px)}
+.ixw--sol-social .bky-tag::before{content:"";position:absolute;left:26px;right:26px;top:22px;height:8px;border-radius:999px;background:repeating-linear-gradient(90deg,var(--c) 0 10px,color-mix(in srgb,var(--c) 30%,#FFFFFF) 10px 20px);opacity:.8}
+.ixw--sol-social .bky-tag-no{position:absolute;right:22px;top:40px;font:600 1.15rem/1 var(--font-hand);color:var(--c)}
+.ixw--sol-social .bky-tag .card-ic{display:grid;place-items:center;width:58px;height:58px;margin:0 0 16px;border-radius:50%;background:radial-gradient(circle,#FFFFFF 0 20px,color-mix(in srgb,var(--c) 14%,#FFFFFF) 20.5px);box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 30%,#FFFFFF),0 6px 0 -2px color-mix(in srgb,var(--c) 25%,#FFFFFF);color:var(--c)}
+.ixw--sol-social .bky-tag .card-ic .ic{width:24px;height:24px}
+.ixw--sol-social .bky-tag h3{margin:0 0 8px;font-size:1.14rem}
+.ixw--sol-social .bky-tag p{margin:0;font-size:15px;line-height:1.6;color:#55505E}
+@media (max-width:960px){.ixw--sol-social .bky-menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.ixw--sol-social .bky-menu{grid-template-columns:minmax(0,1fr);gap:22px}}
+
+/* how a month runs: the oven line — a belt with rollers, four oven-timer dials that fill a quarter more each step */
+.ixw--sol-social .bky-bake-sec{background-color:#FFF8EE;background-image:linear-gradient(rgba(190,150,110,.14) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(190,150,110,.14) 1.5px,transparent 1.5px);background-size:68px 34px,68px 34px}
+.ixw--sol-social .bky-line{position:relative;padding-top:44px}
+.ixw--sol-social .bky-belt{position:absolute;left:2%;right:2%;top:24px;height:22px;border-radius:999px;background:radial-gradient(circle,#B9C2CC 5px,#8A94A8 5.5px 7px,transparent 7.5px) 0 50%/34px 22px repeat-x,#5C6B7A;box-shadow:0 6px 0 #3E4A59,inset 0 2px 0 rgba(255,255,255,.2);animation:bkBelt 2.4s linear infinite}
+@keyframes bkBelt{to{background-position:34px 50%,0 0}}
+.ixw--sol-social .bky-steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.ixw--sol-social .bky-step{position:relative;padding:94px 22px 24px;border-radius:20px;background:#FFFFFF;box-shadow:0 0 0 2px #F2DCC4,0 5px 0 #EBCBA9;text-align:center;transition:transform .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-social .bky-step:hover{transform:translateY(-5px)}
+.ixw--sol-social .bky-dial{position:absolute;left:50%;top:-34px;width:96px;height:96px;margin-left:-48px;border-radius:50%;
+  background:radial-gradient(circle,#FFFFFF 0 30px,transparent 30.5px),conic-gradient(var(--bk-straw) calc((var(--i) + 1) * 25%),#FFE3E9 0);box-shadow:0 0 0 6px #FFFFFF,0 0 0 8px #F2DCC4,0 10px 0 2px #EBCBA9}
+.ixw--sol-social .bky-dial::before{content:"";position:absolute;left:50%;top:-12px;width:16px;height:12px;margin-left:-8px;border-radius:5px 5px 2px 2px;background:var(--bk-cocoa)}
+.ixw--sol-social .bky-dial b{position:absolute;inset:0;display:grid;place-items:center;font:800 28px/1 var(--font-display);color:var(--bk-cocoa-d)}
+.ixw--sol-social .bky-step.is-in .bky-dial{animation:bkDial 1s cubic-bezier(.34,1.45,.64,1) both;animation-delay:calc(var(--i) * .15s)}
+@keyframes bkDial{from{transform:rotate(-120deg) scale(.7);opacity:0}}
+.ixw--sol-social .bky-when{display:inline-block;margin:0 0 10px;padding:4px 10px;border-radius:999px;background:var(--bk-cream);box-shadow:inset 0 0 0 1.5px #F0D9BD;font:600 1rem/1 var(--font-hand);color:var(--bk-straw-d)}
+.ixw--sol-social .bky-step h3{margin:0 0 8px;font-size:1.14rem}
+.ixw--sol-social .bky-step p{margin:0;font-size:14.5px;line-height:1.6;color:#55505E}
+.ixw--sol-social .bky-step:not(:last-child)::after{content:"";position:absolute;right:-20px;top:22px;width:16px;height:16px;border-top:3px solid var(--bk-straw);border-right:3px solid var(--bk-straw);transform:rotate(45deg);z-index:1}
+@media (max-width:960px){.ixw--sol-social .bky-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:64px}.ixw--sol-social .bky-belt{display:none}.ixw--sol-social .bky-step::after{display:none}}
+@media (max-width:640px){.ixw--sol-social .bky-steps{grid-template-columns:minmax(0,1fr)}}
+
+/* what you get: the copy beside a till receipt with zig-zag edges */
+.ixw--sol-social .bky-order-sec{background:#FFFFFF}
+@media (min-width:961px){.ixw--sol-social .bky-order{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}}
+.ixw--sol-social .bky-order-copy h2{max-width:16ch}
+.ixw--sol-social .bky-chans{display:flex;gap:14px;margin-top:30px}
+.ixw--sol-social .bky-ch{position:relative;display:grid;place-items:center;width:78px;height:96px;padding-bottom:16px;border-radius:14px 14px 40px 40px;background:var(--c,var(--bk-li));color:#FFFFFF;font:800 26px/1 var(--font-display);box-shadow:0 5px 0 rgba(0,0,0,.18);animation:bkBob 3.2s ease-in-out infinite}
+.ixw--sol-social .bky-ch small{position:absolute;left:0;right:0;bottom:12px;font:800 9.5px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;text-align:center;opacity:.92}
+.ixw--sol-social .bky-ch--fb{--c:var(--bk-fb);animation-delay:.4s}.ixw--sol-social .bky-ch--ig{background:var(--bk-ig);animation-delay:.8s}
+@keyframes bkBob{50%{transform:translateY(-6px)}}
+.ixw--sol-social .bky-rc-wrap{filter:drop-shadow(0 0 1.5px #E6D6C2) drop-shadow(0 24px 22px rgba(120,60,30,.14))}
+.ixw--sol-social .bky-receipt{position:relative;padding:34px 34px 30px;background:#FFFFFF;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 51% repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/16px 51% repeat-x;
+  mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 51% repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/16px 51% repeat-x}
+.ixw--sol-social .bky-rc-h{display:flex;flex-direction:column;align-items:center;gap:4px;margin:4px 0 18px;padding-bottom:16px;border-bottom:2px dashed #E6D6C2;text-align:center}
+.ixw--sol-social .bky-rc-h b{font:800 1.15rem/1.1 var(--font-display);color:var(--bk-cocoa-d)}
+.ixw--sol-social .bky-rc-h small{font:700 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:#9A8A7A}
+.ixw--sol-social .bky-rc-list{margin:0;columns:2;column-gap:30px}
+.ixw--sol-social .bky-rc-list li{font-size:14.5px;color:#3D3540;padding-bottom:10px;margin-bottom:10px;border-bottom:1px dotted #EBDDCB}
+.ixw--sol-social .bky-rc-list li .ic{width:20px;height:20px;padding:3px;margin-top:0;border-radius:50%;background:var(--bk-straw-l);color:var(--bk-straw-d)}
+.ixw--sol-social .bky-rc-list li:nth-child(4) .ic,.ixw--sol-social .bky-rc-list li:nth-child(12) .ic{background:var(--bk-mint-l);color:#2E7D5B}
+.ixw--sol-social .bky-rc-total{display:flex;justify-content:space-between;align-items:baseline;margin:8px 0 6px;padding-top:14px;border-top:2px solid var(--bk-cocoa-d);font:700 12px/1 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#7A6A5A}
+.ixw--sol-social .bky-rc-total b{font:800 15px/1 var(--font-display);letter-spacing:0;text-transform:none;color:var(--bk-cocoa-d)}
+.ixw--sol-social .bky-rc-foot{margin:14px 0 0;text-align:center;font:700 11px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--bk-straw-d)}
+.ixw--sol-social .bky-rc-foot::before{content:"";display:block;height:26px;margin:0 auto 10px;width:70%;background:repeating-linear-gradient(90deg,#3D3540 0 2px,transparent 2px 4px,#3D3540 4px 7px,transparent 7px 9px,#3D3540 9px 10px,transparent 10px 13px);opacity:.75}
+@media (max-width:640px){.ixw--sol-social .bky-rc-list{columns:1}.ixw--sol-social .bky-receipt{padding:30px 20px 26px}.ixw--sol-social .bky-ch{width:66px;height:84px;font-size:22px}}
+
+/* the FAQ: order tickets clipped to a brass rail, on the tiled wall */
+.ixw--sol-social .bky-faq-sec{background-color:#FFFCF6;background-image:linear-gradient(rgba(190,150,110,.13) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(190,150,110,.13) 1.5px,transparent 1.5px);background-size:44px 22px,44px 22px}
+.ixw--sol-social .bky-faq{position:relative;counter-reset:q;max-width:900px;padding-top:28px;gap:14px}
+.ixw--sol-social .bky-faq::before{content:"";position:absolute;left:-16px;right:-16px;top:0;height:12px;border-radius:999px;background:linear-gradient(180deg,#F2D48A,#C9962E);box-shadow:0 4px 0 #9A7020}
+.ixw--sol-social .bky-faq details{counter-increment:q;position:relative;border-radius:4px 4px 14px 14px;background:#FFFFFF;box-shadow:0 0 0 1.5px #EBD3B8,0 4px 0 #EBD3B8}
+.ixw--sol-social .bky-faq details::after{content:"";position:absolute;left:30px;top:-18px;width:14px;height:22px;border-radius:3px;background:linear-gradient(180deg,#C9D1DA,#9AA6BC);box-shadow:0 2px 0 #7A869C}
+.ixw--sol-social .bky-faq details[open]{box-shadow:0 0 0 2px var(--bk-straw),0 5px 0 var(--bk-straw-d),0 22px 34px -24px rgba(120,60,30,.4)}
+.ixw--sol-social .bky-faq summary::before{content:"No." counter(q,decimal-leading-zero);width:auto;height:28px;padding:0 9px;border-radius:6px;background:var(--bk-cream);color:var(--bk-cocoa);font:800 11.5px/28px ui-monospace,Consolas,monospace;letter-spacing:.04em;box-shadow:inset 0 0 0 1.5px #F0D9BD}
+.ixw--sol-social .bky-faq details[open] summary::before{content:"No." counter(q,decimal-leading-zero);background:var(--bk-straw);color:#FFFFFF;box-shadow:none;transform:none}
+.ixw--sol-social .bky-faq summary .ic{color:var(--bk-straw-d);background:var(--bk-cream)}
+.ixw--sol-social .bky-faq .faq-a{padding-left:92px}
+.ixw--sol-social .bky-faq .faq-a a{color:var(--bk-straw-d);font-weight:700}
+@media (max-width:640px){.ixw--sol-social .bky-faq .faq-a{padding-left:22px}.ixw--sol-social .bky-faq::before{left:-6px;right:-6px}}
+
+/* related services: three cake boxes, ribbon and bow; the lid lifts on hover */
+.ixw--sol-social .bky-boxes-sec{background:linear-gradient(180deg,#FFFFFF,#FFF8EE)}
+.ixw--sol-social .bky-boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding-top:26px}
+.ixw--sol-social .bky-box{position:relative;display:block;padding:62px 28px 28px;border-radius:12px;background:linear-gradient(90deg,transparent calc(50% - 6px),color-mix(in srgb,var(--c) 70%,#FFFFFF) calc(50% - 6px) calc(50% + 6px),transparent calc(50% + 6px)) 0 0/100% 30px no-repeat,#FFFFFF;
+  box-shadow:0 0 0 2px #F2DCC4,0 6px 0 #EBCBA9,0 26px 40px -30px rgba(120,60,30,.4);color:inherit;text-decoration:none;transition:transform .4s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--sol-social .bky-box::before{content:"";position:absolute;left:-6px;right:-6px;top:-4px;height:30px;border-radius:10px 10px 4px 4px;background:linear-gradient(90deg,transparent calc(50% - 6px),rgba(255,255,255,.85) calc(50% - 6px) calc(50% + 6px),transparent calc(50% + 6px)),var(--c);box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-social .bky-bow{position:absolute;left:50%;top:-20px;width:44px;height:22px;margin-left:-22px;z-index:1;transition:transform .45s cubic-bezier(.34,1.45,.64,1)}
+.ixw--sol-social .bky-bow::before,.ixw--sol-social .bky-bow::after{content:"";position:absolute;top:2px;width:22px;height:16px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#FFFFFF;box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--c) 40%,#FFFFFF)}
+.ixw--sol-social .bky-bow::before{left:0;transform:rotate(-18deg)}.ixw--sol-social .bky-bow::after{right:0;transform:rotate(18deg)}
+.ixw--sol-social .bky-box:hover{transform:translateY(-6px);text-decoration:none}
+.ixw--sol-social .bky-box:hover::before,.ixw--sol-social .bky-box:hover .bky-bow{transform:translateY(-10px) rotate(-3deg)}
+.ixw--sol-social .bky-box .card-ic{display:grid;place-items:center;width:52px;height:52px;margin:0 0 14px;border-radius:14px;background:color-mix(in srgb,var(--c) 12%,#FFFFFF);color:var(--c)}
+.ixw--sol-social .bky-box .card-ic .ic{width:26px;height:26px}
+.ixw--sol-social .bky-box h3{margin:0 0 8px;font-size:1.12rem;color:var(--ink)}
+.ixw--sol-social .bky-box p{margin:0;font-size:15px;line-height:1.6;color:#55505E}
+.ixw--sol-social .bky-box .btn-link{margin-top:16px;color:var(--c);font-size:14px}
+@media (max-width:960px){.ixw--sol-social .bky-boxes{grid-template-columns:minmax(0,1fr);gap:40px;max-width:560px}}
+
+/* the end card: the shopfront, awning on top, sprinkles drifting */
+.ixw--sol-social .bky-cta{padding-top:84px;overflow:hidden;background:radial-gradient(circle at 88% 30%,rgba(255,211,110,.4),transparent 42%),linear-gradient(120deg,var(--bk-straw-d),var(--bk-straw) 60%,#F57C94)}
+.ixw--sol-social .bky-awn{position:absolute;left:0;right:0;top:0;height:46px;background:radial-gradient(circle at 15px 0,#FFFFFF 14.5px,transparent 15px) 0 30px/30px 16px repeat-x,repeating-linear-gradient(90deg,#FFFFFF 0 30px,var(--bk-butter) 30px 60px) 0 0/100% 30px no-repeat}
+.ixw--sol-social .bky-cta::before{content:"";position:absolute;inset:46px 0 0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.35) 2.2px,transparent 2.6px),radial-gradient(circle,rgba(255,211,110,.5) 2px,transparent 2.4px);background-size:38px 38px,52px 52px;background-position:0 0,19px 26px;animation:bkDrift 14s linear infinite}
+@keyframes bkDrift{to{background-position:0 38px,19px 78px}}
+.ixw--sol-social .bky-cta .hand{color:#FFE7A6}
+.ixw--sol-social .bky-cta .btn-white,.ixw--sol-social .bky-cta .btn-white:hover{color:var(--bk-cocoa-d);background:#FFFFFF;box-shadow:0 4px 0 var(--bk-cocoa-d)}
+.ixw--sol-social .bky-cta .btn-outline-white,.ixw--sol-social .bky-cta .btn-outline-white:hover{color:var(--bk-cocoa-d);background:var(--bk-butter);box-shadow:0 4px 0 var(--bk-cocoa-d)}
+@media (max-width:767px){.ixw--sol-social .bky-cta{padding-top:72px}}
+@media (prefers-reduced-motion:reduce){.ixw--sol-social .ixw-copy::after,.ixw--sol-social .bky-belt,.ixw--sol-social .bky-ch,.ixw--sol-social .bky-cta::before,.ixw--sol-social .ixw-cap::after,.ixw--sol-social .bky-case-name::before,.ixw--sol-social .bky-step.is-in .bky-dial{animation:none}}
+.ixw--sol-social .ixwi-card::after{display:none}
+
+/* ---------- hero buttons (audit round): glazed buns — 52px, a butter icon dot, sprinkle hover, cocoa press ---------- */
+.ixw--sol-social .ixw-copy .actions{align-items:center;gap:12px}
+.ixw--sol-social .ixw-copy .actions .btn-lg{height:52px;gap:10px;font-size:15px;overflow:visible}
+.ixw--sol-social .ixw-copy .actions .btn-lg::after{border-radius:inherit}
+.ixw--sol-social .ixw-copy .btn-primary{padding:0 9px 0 22px}
+.ixw--sol-social .ixw-copy .btn-primary .ic{width:32px;height:32px;padding:8px;border-radius:50%;background:var(--bk-butter);color:var(--bk-cocoa-d);box-shadow:inset 0 -2px 0 var(--bk-butter-d,#E0A93A)}
+.ixw--sol-social main .ixw-copy .btn-primary:hover{box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 6px 0 var(--bk-cocoa-d),0 0 0 7px rgba(240,98,126,.16)}
+.ixw--sol-social .ixw-copy .btn-ghost{padding:0 22px 0 18px}
+.ixw--sol-social .ixw-copy .btn-ghost .ic{width:20px;height:20px;color:var(--bk-straw)}
+.ixw--sol-social main .ixw-copy .btn-ghost:hover{background:#FFF1DE;box-shadow:inset 0 0 0 2px #E6B98A,0 6px 0 var(--bk-cocoa-d)}
+.ixw--sol-social main .ixw-copy .btn-ghost:hover .ic{transform:rotate(-8deg)}
+.ixw--sol-social .bky-pills{gap:7px}
+.ixw--sol-social .bky-pills span{height:28px;padding:0 12px 0 8px;transition:translate .2s ease,box-shadow .2s ease}
+.ixw--sol-social .bky-pills span:hover{translate:0 -2px;box-shadow:inset 0 0 0 1.5px #E6B98A,0 3px 0 #F0D9BD}
+.ixw--sol-social .ixw-cap .ixw-ibtn{background:#FFFFFF;color:var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-cap .ixw-ibtn:hover{background:var(--bk-cream);color:var(--bk-straw-d);border-color:var(--bk-cocoa-d);box-shadow:0 5px 0 var(--bk-cocoa-d),0 0 0 4px rgba(255,211,110,.35)}
+.ixw--sol-social .ixw-cap .ixw-ibtn:active{translate:0 2px;box-shadow:0 1px 0 var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-cap .ixw-ibtn--play,.ixw--sol-social .ixw-cap .ixw-ibtn--play:hover{border:0;background:radial-gradient(circle at 40% 30%,#F8869C,var(--bk-straw) 62%);color:#FFFFFF;box-shadow:0 0 0 2px var(--bk-cocoa-d),0 4px 0 2px var(--bk-cocoa-d)}
+.ixw--sol-social .ixw-cap .ixw-ibtn--play:hover{box-shadow:0 0 0 2px var(--bk-cocoa-d),0 6px 0 2px var(--bk-cocoa-d),0 0 0 7px rgba(255,211,110,.4)}
+.ixw--sol-social .ixw-cap .ixw-ibtn:focus-visible,.ixw--sol-social .ixw-peek:focus-visible{outline:3px solid var(--bk-butter);outline-offset:3px}
+.ixw--sol-social .ixw-dots{gap:6px}
+.ixw--sol-social .ixw-dots button{width:9px;height:9px;background:#F3D9C6;box-shadow:inset 0 0 0 1.5px rgba(85,51,31,.18)}
+.ixw--sol-social .ixw-dots button:hover{background:#F7B7C4}
+.ixw--sol-social .ixw-dots button.is-on{width:26px;background:repeating-linear-gradient(90deg,var(--bk-straw) 0 5px,#FFFFFF 5px 7px,var(--bk-butter) 7px 12px,#FFFFFF 12px 14px)}
+/* "View the scene" sits top-left over the bunting, clear of the shop sign and the bake plan */
+.ixw--sol-social .ixw-peek{right:auto;left:max(24px,calc((100vw - 1200px) / 2 + 25px));height:40px;padding:0 18px 0 14px;border:2px solid var(--bk-cocoa-d);background:var(--bk-cream);color:var(--bk-cocoa-d);font-weight:800;box-shadow:0 4px 0 var(--bk-cocoa-d),0 14px 22px -14px rgba(120,60,30,.55)}
+.ixw--sol-social .ixw-peek:hover{background:#FFF1DE;box-shadow:0 6px 0 var(--bk-cocoa-d),0 0 0 4px rgba(240,98,126,.18)}
+.ixw--sol-social .ixw-peek[aria-pressed="true"]{background:var(--bk-butter)}
+@media (max-width:640px){.ixw--sol-social .ixw-copy .actions{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.ixw--sol-social .ixw-copy .actions .btn{width:100%;justify-content:center}}
+
+/* ---------- below the hero (audit round) ---------- */
+/* the FAQ beside its heading and a cake on its stand (no empty half at desktop widths) */
+@media (min-width:1000px){.ixw--sol-social .bky-faq-sec .container{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:56px;align-items:start}
+  .ixw--sol-social .bky-faq-sec .sec-head{position:sticky;top:120px;margin:0;padding-bottom:150px}
+  .ixw--sol-social .bky-faq-sec .sec-head::after{content:"";position:absolute;left:0;bottom:0;width:170px;height:136px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 136'%3E%3Cellipse cx='85' cy='128' rx='60' ry='6' fill='%237A4B33' opacity='.15'/%3E%3Cpath d='M80 92h10v32H80z' fill='%23C98E5A'/%3E%3Cellipse cx='85' cy='124' rx='30' ry='5' fill='%23C98E5A'/%3E%3Cellipse cx='85' cy='92' rx='62' ry='8' fill='%23FFFFFF' stroke='%23E8D3B0' stroke-width='2'/%3E%3Crect x='38' y='48' width='94' height='42' rx='8' fill='%23FFD3DE'/%3E%3Cpath d='M38 60 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 14 0 V52 a6 6 0 0 0 -6 -6 H44 a6 6 0 0 0 -6 6z' fill='%23FFFFFF'/%3E%3Crect x='38' y='72' width='94' height='6' fill='%23F0627E' opacity='.6'/%3E%3Crect x='62' y='22' width='46' height='24' rx='4' fill='%23FFFFFF' stroke='%23F0627E' stroke-width='2'/%3E%3Crect x='66' y='26' width='38' height='10' rx='2' fill='%23BFE3FF'/%3E%3Ccircle cx='100' cy='40' r='3' fill='%23DD2A7B'/%3E%3Ccircle cx='52' cy='44' r='3' fill='%23FFD36E'/%3E%3Ccircle cx='120' cy='42' r='3' fill='%235FB38E'/%3E%3Ccircle cx='85' cy='14' r='5' fill='%23F0627E'/%3E%3C/svg%3E") 0 100%/contain no-repeat}
+  .ixw--sol-social .bky-faq{max-width:none}}
+.ixw--sol-social .bky-faq summary:focus-visible{outline:3px solid var(--bk-butter);outline-offset:3px}
+/* the channel tins: the INSTAGRAM label fits the smaller phone tin */
+@media (max-width:640px){.ixw--sol-social .bky-ch small{font-size:7.6px;letter-spacing:.02em}}
+
+/* fix round: FAQ in one column — heading row with its drawing on the right, questions full width below (nothing under the side tabs) */
+@media (min-width:1000px){.ixw--sol-social .bky-faq-sec .container{display:block}
+  .ixw--sol-social .bky-faq-sec .sec-head{position:relative;top:auto;max-width:920px;margin:0 0 30px;padding:0 170px 0 0;min-height:110px}
+  .ixw--sol-social .bky-faq-sec .sec-head::after{left:auto;right:0;bottom:-8px;width:140px;height:110px}
+  .ixw--sol-social .bky-faq{max-width:920px}}
+/* "what you get": the copy is centred against the receipt, the channel tins stand on a display shelf (no blank block under them) */
+@media (min-width:961px){.ixw--sol-social .bky-order{align-items:center}}
+.ixw--sol-social .bky-chans{position:relative;justify-content:space-around;max-width:420px;margin-top:30px;padding:22px 22px 30px;border-radius:18px 18px 6px 6px;background:linear-gradient(180deg,var(--bk-cream) 0,#FFF1DE 100%);box-shadow:inset 0 0 0 1.5px #F0D9BD}
+.ixw--sol-social .bky-chans::after{content:"";position:absolute;left:-8px;right:-8px;bottom:-6px;height:14px;border-radius:4px;background:linear-gradient(180deg,#C98E5A,#A8724A);box-shadow:0 6px 12px -6px rgba(85,51,31,.5)}
+.ixw--sol-social .bky-chans::before{content:"ON THE COUNTER · YOUR ACCOUNTS";position:absolute;left:50%;top:-11px;translate:-50% 0;padding:5px 12px;border-radius:999px;background:var(--bk-cocoa-d);color:#FFFFFF;font:800 9.5px/1 var(--font-body);letter-spacing:.12em;white-space:nowrap}
+@media (max-width:640px){.ixw--sol-social .bky-chans{padding:22px 10px 26px;gap:8px}}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+.ixw--sol-social .ixw-credits-wrap + .section{padding-top:14px!important}
+
+/* ===================================================================================================================
+   CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the post bakery. One raspberry accent.
+   Themed touches kept: "No. 0x" on the six service tags, the bakery verbs (mix, decorate, bake, weigh) on the steps,
+   the "TechNext Post Bakery" order receipt, the slim cocoa bar over the demo.
+   =================================================================================================================== */
+.ixw--sol-social{--calm-accent:#D9506E;--calm-accent-ink:#B23A57;--calm-accent-line:#F1CCD5;--calm-accent-wash:#FCF8F6;--calm-wash:#FCF8F6}
+html body.ixw--sol-social main .bky-recipe-sec{padding-top:64px!important}
+html body.ixw--sol-social main .bky-recipe{max-width:900px;padding:24px 28px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-left:4px solid var(--calm-accent)!important;box-shadow:var(--calm-shadow)!important}
+html body.ixw--sol-social main .bky-recipe::before,html body.ixw--sol-social main .bky-recipe::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-recipe p{color:var(--body)!important}
+/* demo */
+html body.ixw--sol-social main .bky-case{padding:0!important;border-radius:18px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;overflow:hidden}
+html body.ixw--sol-social main .bky-case::before,html body.ixw--sol-social main .bky-case::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-case-top{padding:12px 18px!important;background:#7A4B33!important}
+html body.ixw--sol-social main .bky-case .dm{border:0!important;border-radius:0!important;box-shadow:none!important}
+/* six services: plain cards, number in the card colour */
+html body.ixw--sol-social main .bky-tag{padding:26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important;rotate:none!important}
+html body.ixw--sol-social main .bky-tag:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-social main .bky-tag::before,html body.ixw--sol-social main .bky-tag::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-tag-no{top:26px!important;right:24px!important;font:700 13px/1 var(--font-body)!important;letter-spacing:.06em}
+html body.ixw--sol-social main .bky-tag p{color:var(--body)!important}
+/* steps: plain cards; number + the bakery verb */
+html body.ixw--sol-social main .bky-step{padding:24px 22px!important;text-align:left!important;border-radius:16px!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-social main .bky-step::before,html body.ixw--sol-social main .bky-step::after,html body.ixw--sol-social main .bky-dial::before,html body.ixw--sol-social main .bky-dial::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-dial{position:static!important;margin:0 0 12px!important;width:34px!important;height:34px!important;display:grid!important;place-items:center;border-radius:50%!important;background:#FBE7EC!important;box-shadow:none!important}
+html body.ixw--sol-social main .bky-dial b{background:none!important;box-shadow:none!important;color:var(--calm-accent-ink)!important;font:700 15px/1 var(--font-display)!important;width:auto!important;height:auto!important;position:static!important}
+html body.ixw--sol-social main .bky-when{display:block!important;width:fit-content;margin:0 0 6px!important;background:none!important;box-shadow:none!important;padding:0!important;color:var(--calm-accent-ink)!important;font:600 12px/1.2 var(--font-body)!important;letter-spacing:.08em;text-transform:uppercase}
+html body.ixw--sol-social main .bky-step p{color:var(--body)!important}
+/* receipt: keep it, clean */
+html body.ixw--sol-social main .bky-rc-wrap{filter:none!important}
+html body.ixw--sol-social main .bky-receipt{border:1px solid var(--calm-line)!important;border-radius:16px!important;box-shadow:var(--calm-shadow)!important;-webkit-mask:none!important;mask:none!important}
+html body.ixw--sol-social main .bky-rc-foot::before{content:none!important;display:none!important}
+/* FAQ */
+html body.ixw--sol-social main .bky-faq-sec{background:var(--calm-wash)!important;background-image:none!important}
+html body.ixw--sol-social main .bky-faq{max-width:860px!important;padding-top:0!important}
+html body.ixw--sol-social main .bky-faq::before,html body.ixw--sol-social main .bky-faq::after,html body.ixw--sol-social main .bky-faq details::before,html body.ixw--sol-social main .bky-faq details::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-faq details{box-shadow:none!important}
+/* related: plain cards with a coloured top rule */
+html body.ixw--sol-social main .bky-boxes-sec{background:#fff!important}
+html body.ixw--sol-social main .bky-boxes{padding-top:0!important;gap:24px!important}
+html body.ixw--sol-social main .bky-box{padding:26px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;border-top:3px solid var(--c)!important;box-shadow:var(--calm-shadow)!important;transform:none!important}
+html body.ixw--sol-social main .bky-box::before,html body.ixw--sol-social main .bky-box::after{content:none!important;display:none!important}
+html body.ixw--sol-social main .bky-box:hover{transform:translateY(-2px)!important;box-shadow:var(--calm-shadow-h)!important}
+html body.ixw--sol-social main .bky-line{padding-top:0!important}
+
+@media (max-width:480px){html body.ixw--sol-social main .ixw-copy .actions{flex-wrap:wrap}html body.ixw--sol-social main .ixw-copy .actions .btn{white-space:normal;flex:1 1 auto;min-width:0;justify-content:center;text-align:center}}

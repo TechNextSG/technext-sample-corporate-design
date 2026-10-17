@@ -1,0 +1,80 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This code is not licensed for copying, reuse or AI training. */
+/* Networks page demo (demo-netsim.js): an office network map with live traffic and switchable safeguards. */
+.nsm-play .ic:nth-of-type(2){display:none}
+.dm-net.is-paused .nsm-play .ic:nth-of-type(1){display:none}
+.dm-net.is-paused .nsm-play .ic:nth-of-type(2){display:inline-block}
+.dm-net.is-static .nsm-play{display:none}
+.nsm-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:14px;padding:16px;align-items:start}
+.nsm-map{position:relative;height:410px;border-radius:16px;border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(90deg,rgba(49,103,202,.05) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(rgba(49,103,202,.05) 1px,transparent 1px) 0 0/28px 28px,#FBFCFE}
+.nsm-map::before{content:"Outside";position:absolute;left:0;top:0;bottom:0;width:21%;padding:10px 12px;border-right:1px dashed #D6DCE8;background:rgba(31,31,61,.035);font:700 10px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.nsm-map::after{content:"Office";position:absolute;right:12px;top:10px;font:700 10px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.nsm-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.nsm-e{fill:none;stroke:#C6D1E6;stroke-width:2;stroke-linecap:round}
+.nsm-e--vpn{stroke:#6FBF95;stroke-dasharray:6 6}
+.nsm-e--vpn.is-off{stroke:#D6DCE8}
+.nsm-p{stroke:#fff;stroke-width:2}
+.nsm-nodes{position:absolute;inset:0}
+.nsm-n{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:8px;padding:8px 11px 8px 9px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 22px -16px rgba(31,31,61,.5);font:inherit;text-align:left;white-space:nowrap;cursor:pointer;transition:border-color .25s ease,background-color .25s ease}
+.nsm-n:hover{border-color:var(--blue-300)}
+.nsm-n:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.nsm-n .ic{flex:none;width:18px;height:18px;color:var(--blue)}
+.nsm-n b{display:block;font:700 12px/1.2 var(--font-display);color:var(--ink)}
+.nsm-n small{display:block;margin-top:1px;font:500 10.5px/1.25 var(--font-body);color:var(--muted)}
+.nsm-n--core{background:var(--ink);border-color:var(--ink)}
+.nsm-n--core b{color:#fff}
+.nsm-n--core small{color:#C9D3EA}
+.nsm-n--core .ic{color:#fff}
+.nsm-n.is-risk{border-color:#E9B95E;background:#FFF8EC}
+.nsm-n.is-risk small{color:var(--amber);font-weight:700}
+.nsm-n--core.is-risk{background:#8A5A00;border-color:#8A5A00}
+.nsm-n--core.is-risk small{color:#FFE2B0}
+.nsm-n::after{content:"";position:absolute;inset:-5px;border-radius:15px;border:2px solid transparent;opacity:0;pointer-events:none}
+.nsm-n.is-hit::after{border-color:#D2433B;animation:nsmFlash .75s ease-out}
+.nsm-n.is-warn::after{border-color:#E0A43A;animation:nsmFlash .75s ease-out}
+.nsm-n.is-ping::after{border-color:var(--blue-300);animation:nsmFlash .6s ease-out}
+@keyframes nsmFlash{0%{opacity:1;transform:scale(.94)}100%{opacity:0;transform:scale(1.12)}}
+.nsm-side{display:grid;gap:10px;align-content:start}
+.nsm-card{padding:12px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.nsm-h{display:flex;align-items:center;gap:8px;margin:0 0 10px}
+.nsm-h b{font:700 13px/1.2 var(--font-display);color:var(--ink)}
+.nsm-h small{margin-left:auto;font:600 11.5px/1 var(--font-body);color:var(--muted);font-variant-numeric:tabular-nums}
+.nsm-h .ic{width:16px;height:16px;color:var(--blue)}
+.nsm-tg{display:grid;gap:6px}
+.nsm-tg button{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;padding:9px 10px;border-radius:11px;border:1px solid var(--line);background:#fff;font:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background-color .2s ease}
+.nsm-tg button:hover{border-color:var(--blue-300)}
+.nsm-tg button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.nsm-tg i{position:relative;width:34px;height:20px;border-radius:20px;background:#CBD3E2;transition:background-color .2s ease}
+.nsm-tg i::after{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(31,31,61,.25);transition:transform .25s var(--spring)}
+.nsm-tg [aria-pressed="true"] i{background:var(--ok)}
+.nsm-tg [aria-pressed="true"] i::after{transform:translateX(14px)}
+.nsm-tg [aria-pressed="false"]{border-color:#F0D29C;background:#FFFBF2}
+.nsm-tg b{display:block;font:700 12.5px/1.2 var(--font-display);color:var(--ink)}
+.nsm-tg small{display:block;margin-top:2px;font:500 11px/1.3 var(--font-body);color:var(--muted)}
+.nsm-log{min-height:150px;align-content:start}
+.nsm-kpis{padding:0 16px 16px}
+.nsm-vert .nsm-map{height:460px}
+.nsm-vert .nsm-map::before{right:0;bottom:auto;width:auto;height:19%;padding:8px 10px;border-right:0;border-bottom:1px dashed #D6DCE8}
+.nsm-vert .nsm-map::after{top:auto;bottom:8px}
+@media (max-width:960px){
+  .nsm-wrap{grid-template-columns:minmax(0,1fr)}
+  .nsm-log{min-height:0}
+}
+@media (max-width:640px){
+  .nsm-wrap{padding:12px}
+  .nsm-map::before{font-size:9px}
+  .nsm-n{gap:5px;padding:6px 7px}
+  .nsm-n .ic{width:15px;height:15px}
+  .nsm-n b{font-size:10.5px}
+  .nsm-n small{display:none}
+  .nsm-kpis{padding:0 12px 12px}
+}
+@media (prefers-reduced-motion:reduce){.nsm-n::after{animation:none}}
+
+/* R9 sweep: phone labels: nothing in this demo is drawn under 11px on a phone (same selectors, later in the file) */
+@media (max-width:640px){
+  .nsm-map::before,
+  .nsm-map::after,
+  .nsm-n small,
+  .nsm-n b{font-size:11px}
+}

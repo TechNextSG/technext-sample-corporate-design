@@ -1,0 +1,334 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: discovery (/odoo/discovery) — step 1 of 4, drawn as a bright daytime CASE ROOM. Cork, manila and index-card
+   paper; brand blue for the facts, marker red for the clues, sticky-note yellow for the notes. The title card is a case
+   folder with its tab and a paper clip; the caption is a taped sticky note; buttons are whiteboard markers with their caps;
+   the glance strip is the case-file label. Below the hero every section is part of the file: a case summary on a ruled
+   index card, Exhibit A pinned to cork, six evidence cards joined by red string, the investigation as a string of numbered
+   evidence markers, the case folder with its typed sheet and the SCOPE WRITTEN stamp, the interview transcript (FAQ), the
+   next files (related) and a pinned end card. */
+.ixw--discovery{--ow-c:#3167CA;--dc-ink:#1B1F3B;--dc-y:#FFE27A;--dc-red:#E2453C;--dc-red-d:#9E2A23;--dc-al:#C9D2DE;--dc-cork:#D8AC74;--dc-cork-d:#B88752;
+  --dc-kraft:#EBCB94;--dc-kraft-d:#C9A06A;--dc-paper:#FFFDF7;--dc-rule:rgba(49,103,202,.13);--dc-mono:ui-monospace,"Cascadia Mono","Consolas","SFMono-Regular",monospace;
+  --w-alt:#F7F2E8;--lab-bd:2px solid #1B1F3B;--lab-lip:#1B1F3B;--lab-tail:#1B1F3B;--lab-r:6px;
+  
+  --ii-bg:linear-gradient(160deg,#FBF8F1,#F3E6CC 60%,#FFF4C8);--ii-ink:#1B1F3B;--ii-b:#3167CA;--ii-accent:#E2453C;--ii-lip:#1B1F3B;--ii-ep-bg:#3167CA;--ii-ep-fg:#FFFFFF}
+.ixw--discovery .ixw-hero{background:linear-gradient(180deg,#F5F1E8 0,#FBF8F1 18%,#F1EADC 62%,#EAD7B6 62%,#D8BE93 100%)}
+.ixw--discovery .section--alt{background:var(--w-alt)}
+
+/* ---------- the title card: a case folder (manila edge, a tab, a paper clip) ---------- */
+.ixw--discovery .ixw-copy{position:relative;max-width:520px;margin-top:26px;padding:30px 30px 24px;border-radius:4px 10px 10px 10px;background:var(--dc-paper);
+  box-shadow:0 0 0 8px var(--dc-kraft),0 0 0 9.5px var(--dc-kraft-d),0 40px 70px -30px rgba(90,60,20,.45)}
+.ixw--discovery .ixw-copy::before{content:"CASE FILE 01 · DISCOVERY";position:absolute;left:-8px;top:-36px;height:30px;padding:0 18px;border-radius:10px 10px 0 0;background:var(--dc-kraft);
+  box-shadow:inset 0 1.5px 0 var(--dc-kraft-d),inset 1.5px 0 0 var(--dc-kraft-d),inset -1.5px 0 0 var(--dc-kraft-d);font:800 10.5px/30px var(--dc-mono);letter-spacing:.12em;color:#7A5A30}
+.ixw--discovery .ixw-copy::after{content:"";position:absolute;right:34px;top:-18px;width:16px;height:52px;border:3px solid #9AA6BC;border-radius:9px;border-bottom-color:transparent;transform:rotate(8deg);
+  box-shadow:inset 0 0 0 3px transparent;background:linear-gradient(#9AA6BC,#9AA6BC) 50% 14px/3px 30px no-repeat}
+.ixw--discovery .ixw-copy h1{max-width:16ch}
+.ixw--discovery .ixw-copy .hand{color:var(--dc-red)}
+.ixw--discovery .ixw-hint .ic{color:var(--dc-red)}
+@media (max-width:767px){.ixw--discovery .ixw-copy{margin-top:40px;padding:26px 20px 22px;box-shadow:0 0 0 6px var(--dc-kraft),0 30px 50px -30px rgba(90,60,20,.4)}.ixw--discovery .ixw-copy::before{left:-6px;top:-32px;height:28px;line-height:28px;font-size:9.5px}}
+
+/* ---------- the caption: a taped sticky note ---------- */
+.ixw--discovery .ixw-cap{border-radius:3px;border:0;background:var(--dc-y);rotate:-.6deg;box-shadow:0 2px 0 rgba(0,0,0,.06),0 26px 40px -22px rgba(60,50,10,.5)}
+.ixw--discovery .ixw-cap::before{content:"";position:absolute;left:50%;top:-10px;width:90px;height:20px;margin-left:-45px;background:rgba(255,255,255,.55);rotate:2deg;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.ixw--discovery .ixw-cap-who b{color:var(--dc-ink)}.ixw--discovery .ixw-cap-who small{color:#6B5A1A}
+.ixw--discovery .ixw-cap-txt{color:#2A2510}.ixw--discovery .ixw-cap-txt b{color:#B3261E}
+.ixw--discovery .ixw-cap-rec{background:rgba(255,255,255,.6);border:1px dashed #C9A21A;color:#5A4600}
+.ixw--discovery .ixw-cap-av{background:#FFFFFF}
+
+/* ---------- buttons: whiteboard markers with their caps ---------- */
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white){position:relative;border-radius:999px 10px 10px 999px;border:0;padding-right:40px;
+  transition:translate .22s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white)::after{content:"";position:absolute;right:0;top:0;bottom:0;width:24px;border-radius:4px 10px 10px 4px;background:rgba(0,0,0,.22);box-shadow:inset 3px 0 0 rgba(255,255,255,.35)}
+.ixw--discovery main .btn-primary,.ixw--discovery main .btn-primary:hover{color:#FFFFFF;background:#3167CA;box-shadow:0 4px 0 #1E4691}
+.ixw--discovery main :is(.btn-ghost,.cta .btn-white),.ixw--discovery main :is(.btn-ghost,.cta .btn-white):hover{color:#FFFFFF;background:#E2453C;box-shadow:0 4px 0 #9E2A23}
+.ixw--discovery main .btn-ghost::before{display:none}.ixw--discovery main .btn-ghost .ic{color:#FFFFFF}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.cta .btn-white,.cta .btn-outline-white):hover{translate:-3px -2px}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.cta .btn-white,.cta .btn-outline-white):active{translate:0 3px;box-shadow:none;transition-duration:.06s}
+.ixw--discovery .cta .btn-outline-white,.ixw--discovery .cta .btn-outline-white:hover{color:#1B1F3B;background:var(--dc-y);box-shadow:0 4px 0 #C9A21A}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.cta .btn-white,.cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--discovery .ixw-ibtn{border:2px solid #1B1F3B;box-shadow:0 3px 0 #1B1F3B}
+.ixw--discovery .ixw-ibtn--play,.ixw--discovery .ixw-ibtn--play:hover{background:#FFFFFF;color:#1B1F3B}
+.ixw--discovery .ixw-dots button.is-on{background:#E2453C;box-shadow:0 0 0 1.5px #1B1F3B}
+.ixw--discovery .ixw-peek{border-color:#1B1F3B;box-shadow:0 3px 0 #1B1F3B}.ixw--discovery .ixw-peek[aria-pressed="true"]{background:var(--dc-y)}
+
+/* ---------- the glance strip: the case-file label ---------- */
+.ixw--discovery .ow-strip{border-radius:4px;background:var(--dc-paper);box-shadow:0 0 0 1.5px #E2CFA9,0 0 0 7px var(--dc-kraft),0 0 0 8.5px var(--dc-kraft-d),0 24px 44px -30px rgba(90,60,20,.45)}
+.ixw--discovery .ow-strip>div{position:relative}
+.ixw--discovery .ow-strip>div+div::before{content:"";position:absolute;left:-17px;top:18px;bottom:2px;border-left:1.5px dashed #E2CFA9}
+.ixw--discovery .ow-strip dt{font:800 10.5px/1.2 var(--dc-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dc-red-d)}
+.ixw--discovery .ow-strip dt .ic{color:var(--dc-red)}
+.ixw--discovery .ow-strip dd{font-weight:700;color:var(--dc-ink)}
+
+/* ---------- shared: the section tags (a typed label on manila, a little askew) ---------- */
+.ixw--discovery .dc-tag{display:inline-flex;align-items:center;gap:8px;width:fit-content;margin:0 0 16px;padding:7px 12px 7px 10px;border-radius:3px;background:var(--dc-paper);border:1.5px dashed var(--dc-kraft-d);
+  font:800 11px/1 var(--dc-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dc-red-d);rotate:-1.2deg;box-shadow:0 2px 0 rgba(120,80,30,.12)}
+.ixw--discovery .dc-tag .ic{width:14px;height:14px;color:var(--dc-red)}
+.ixw--discovery .dc-tag--rec i{width:9px;height:9px;border-radius:50%;background:var(--dc-red);box-shadow:0 0 0 3px rgba(226,69,60,.18);animation:dcRec 1.3s steps(2) infinite}
+@keyframes dcRec{50%{opacity:.2}}
+.ixw--discovery .sec-head .dc-tag+.hand{margin-top:2px}
+
+/* ---------- in one paragraph: the case summary on a ruled index card ---------- */
+.ixw--discovery .dc-answer{padding-top:38px}
+.ixw--discovery .dc-answer .answer-box{grid-template-columns:minmax(0,1fr);gap:10px;max-width:980px;margin:0 auto;padding:30px 34px 24px 82px;border:0;border-radius:3px;rotate:-.35deg;
+  background:linear-gradient(90deg,transparent 60px,rgba(226,69,60,.38) 60px 62px,transparent 62px),repeating-linear-gradient(180deg,transparent 0 25px,var(--dc-rule) 25px 26px) 0 58px/100% calc(100% - 58px) no-repeat,var(--dc-paper);
+  box-shadow:0 1px 0 #E9DEC8,0 24px 40px -28px rgba(90,60,20,.5)}
+.ixw--discovery .dc-answer .answer-box::before{content:"";position:absolute;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF9B92,#E2453C 70%);box-shadow:0 3px 4px rgba(0,0,0,.25)}
+.ixw--discovery .dc-answer .answer-h{justify-self:start;padding:5px 12px;border:2px solid var(--dc-red);border-radius:4px;background:none;color:var(--dc-red);font:800 11px/1.2 var(--dc-mono);letter-spacing:.16em;rotate:-3deg;opacity:.9}
+.ixw--discovery .dc-answer .answer-box p:not(.answer-h){font-size:15px;line-height:26px;color:#2E3450}
+@media (max-width:640px){.ixw--discovery .dc-answer .answer-box{padding:26px 18px 20px 40px;background:linear-gradient(90deg,transparent 24px,rgba(226,69,60,.38) 24px 26px,transparent 26px),repeating-linear-gradient(180deg,transparent 0 25px,var(--dc-rule) 25px 26px) 0 58px/100% calc(100% - 58px) no-repeat,var(--dc-paper)}}
+
+/* ---------- Exhibit A: the process map, pinned to cork ---------- */
+.ixw--discovery .dc-exhibit{background:linear-gradient(180deg,#FFFFFF,#FBF7EF)}
+.ixw--discovery .dc-cork{position:relative;padding:24px;border-radius:14px;background-color:var(--dc-cork);
+  background-image:radial-gradient(rgba(140,90,40,.32) 1px,transparent 1.5px),radial-gradient(rgba(255,240,210,.55) 1px,transparent 1.5px),radial-gradient(rgba(140,90,40,.2) 1.4px,transparent 2px);
+  background-size:9px 9px,13px 13px,23px 23px;background-position:0 0,5px 7px,11px 3px;
+  box-shadow:inset 0 0 0 9px var(--dc-cork-d),inset 0 0 0 11px #A7774A,0 34px 60px -36px rgba(90,60,20,.6)}
+.ixw--discovery .dc-pin{position:absolute;top:10px;z-index:3;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF9B92,#E2453C 70%);box-shadow:0 4px 5px rgba(0,0,0,.3)}
+.ixw--discovery .dc-pin--l{left:46px}.ixw--discovery .dc-pin--r{right:46px;background:radial-gradient(circle at 35% 35%,#8FB6FF,#3167CA 70%)}
+.ixw--discovery .demo-sec .dc-cork .dm{border-radius:8px;box-shadow:0 2px 0 rgba(90,60,20,.18),0 14px 30px -16px rgba(60,30,10,.55)}
+.ixw--discovery .dc-exhibit .dm-note{color:#7A5A30}
+@media (max-width:640px){.ixw--discovery .dc-cork{padding:14px;border-radius:10px;box-shadow:inset 0 0 0 6px var(--dc-cork-d),0 24px 40px -30px rgba(90,60,20,.6)}.ixw--discovery .dc-pin{top:4px;width:14px;height:14px}}
+
+/* ---------- what discovery covers: six evidence cards on red string ---------- */
+.ixw--discovery .dc-ev-sec{background-color:#FBF7EF;background-image:linear-gradient(90deg,rgba(160,130,80,.05) 2px,transparent 2px);background-size:26px 100%}
+.ixw--discovery .dc-evidence{position:relative;gap:40px 34px;counter-reset:ex;padding-top:8px}
+.ixw--discovery .dc-strings{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.ixw--discovery .dc-strings path{fill:none;stroke:#E2453C;stroke-width:2;vector-effect:non-scaling-stroke;opacity:.6;stroke-dasharray:3200;stroke-dashoffset:3200;transition:stroke-dashoffset 2.4s cubic-bezier(.2,.8,.2,1) .3s}
+.ixw--discovery .dc-evidence:has(.card.is-in) .dc-strings path{stroke-dashoffset:0}
+.ixw--discovery .dc-evidence .card{z-index:1;counter-increment:ex;border:0;border-radius:3px;padding:40px 26px 24px;rotate:var(--rot,0deg);
+  background:linear-gradient(180deg,var(--ec,#3167CA) 0 7px,transparent 7px),repeating-linear-gradient(180deg,transparent 0 25px,var(--dc-rule) 25px 26px) 0 80px/100% calc(100% - 80px) no-repeat,var(--dc-paper);
+  box-shadow:0 1px 0 #E9DEC8,0 22px 36px -24px rgba(90,60,20,.5);transition:rotate .45s cubic-bezier(.34,1.45,.64,1),translate .35s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--discovery .dc-evidence .card::before{content:"";position:absolute;left:50%;top:-8px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FF9B92,#E2453C 70%);box-shadow:0 3px 4px rgba(0,0,0,.28)}
+.ixw--discovery .dc-evidence .card::after{content:"EXHIBIT " counter(ex,decimal-leading-zero);position:absolute;right:16px;top:18px;padding:3px 7px;border:1.5px solid currentColor;border-radius:3px;font:800 9.5px/1 var(--dc-mono);letter-spacing:.14em;color:var(--dc-red);rotate:4deg;opacity:.85}
+.ixw--discovery .dc-evidence .card:nth-of-type(1){--rot:-1.1deg;--ec:#3167CA}.ixw--discovery .dc-evidence .card:nth-of-type(2){--rot:.8deg;--ec:#3167CA}.ixw--discovery .dc-evidence .card:nth-of-type(3){--rot:-.5deg;--ec:#14A38B}
+.ixw--discovery .dc-evidence .card:nth-of-type(4){--rot:.9deg;--ec:#714B67}.ixw--discovery .dc-evidence .card:nth-of-type(5){--rot:-.8deg;--ec:#E2453C}.ixw--discovery .dc-evidence .card:nth-of-type(6){--rot:.5deg;--ec:#F2A33A}
+.ixw--discovery .dc-evidence .card:hover{rotate:0deg;translate:0 -6px;transform:none;box-shadow:0 1px 0 #E9DEC8,0 30px 44px -24px rgba(90,60,20,.55)}
+.ixw--discovery .dc-evidence .card-ic{width:52px;height:52px;min-height:0;justify-content:center;border-radius:50%;background:#F6EAD2;color:var(--ec,#3167CA);box-shadow:inset 0 0 0 2px #EBD8B4}
+.ixw--discovery .dc-evidence .card-ic .ic{width:26px;height:26px}
+.ixw--discovery .dc-evidence .card h3{font-size:1.15rem}
+.ixw--discovery .dc-evidence .card p{line-height:26px;margin:0}
+@media (max-width:640px){.ixw--discovery .dc-strings{display:none}.ixw--discovery .dc-evidence{gap:30px}}
+
+/* ---------- how discovery runs: the investigation, four evidence markers on a red string ---------- */
+.ixw--discovery .dc-steps{gap:30px}
+.ixw--discovery .dc-steps::before{top:38px;left:30px;right:calc(25% - 30px);height:0;border-top:2.5px solid var(--dc-red);background:none;opacity:.75}
+.ixw--discovery .dc-steps .step-n{width:58px;height:50px;margin-bottom:22px;border:0;border-radius:0;background:linear-gradient(180deg,#FFE27A,#FFD13D);color:var(--dc-ink);font:800 19px/1 var(--font-display);padding-top:14px;
+  clip-path:polygon(28% 0,72% 0,100% 100%,0 100%);box-shadow:none;filter:drop-shadow(0 3px 0 #C9A21A)}
+.ixw--discovery .section--alt .dc-steps .step-n{box-shadow:none}
+.ixw--discovery .dc-steps .step:hover .step-n{background:linear-gradient(180deg,#FFE27A,#FFD13D);color:var(--dc-ink);transform:translateY(-4px) rotate(-4deg)}
+.ixw--discovery .dc-steps .step>div:not(.step-n){position:relative;padding:22px 20px 20px;border-radius:3px;background:var(--dc-paper);box-shadow:0 1px 0 #E9DEC8,0 18px 30px -22px rgba(90,60,20,.5);rotate:var(--rot,0deg);transition:rotate .4s cubic-bezier(.34,1.45,.64,1)}
+.ixw--discovery .dc-steps .step:nth-child(odd)>div:not(.step-n){--rot:-.8deg}.ixw--discovery .dc-steps .step:nth-child(even)>div:not(.step-n){--rot:.8deg}
+.ixw--discovery .dc-steps .step:hover>div:not(.step-n){rotate:0deg}
+.ixw--discovery .dc-steps .step>div:not(.step-n)::before{content:"";position:absolute;left:50%;top:-14px;width:2.5px;height:16px;background:var(--dc-red);opacity:.75}
+.ixw--discovery .dc-step-ic{display:grid;place-items:center;width:38px;height:38px;margin-bottom:12px;border-radius:50%;background:#FBE3E1;color:var(--dc-red)}
+.ixw--discovery .dc-step-ic .ic{width:19px;height:19px}
+@media (max-width:640px){.ixw--discovery .dc-steps .step{border-bottom:0;padding:12px 0}.ixw--discovery .dc-steps .step .step-n{width:44px;height:38px;padding-top:12px;font-size:15px}
+  .ixw--discovery .dc-steps .step>div:not(.step-n)::before{display:none}}
+
+/* ---------- you leave with: the case folder, the typed sheet and the stamp ---------- */
+.ixw--discovery .dc-dossier{position:relative;margin-top:30px;padding:46px 44px 44px;border-radius:4px 18px 18px 18px;background:linear-gradient(160deg,#F1D6A6,var(--dc-kraft));
+  box-shadow:inset 0 0 0 1.5px var(--dc-kraft-d),0 36px 60px -40px rgba(90,60,20,.6)}
+.ixw--discovery .dc-dossier::before{content:"CASE FILE 01 · SCOPE";position:absolute;left:0;top:-32px;height:34px;padding:0 22px;border-radius:12px 12px 0 0;background:#F1D6A6;box-shadow:inset 1.5px 1.5px 0 var(--dc-kraft-d),inset -1.5px 0 0 var(--dc-kraft-d);
+  font:800 11px/34px var(--dc-mono);letter-spacing:.14em;color:#7A5A30}
+.ixw--discovery .dc-flap{position:relative}
+.ixw--discovery .dc-flap .dc-tag{background:#FFF7E6}
+.ixw--discovery .dc-flap .lead{color:#4A3A22}
+.ixw--discovery .dc-stamp{display:inline-grid;place-items:center;margin:26px 0 0;padding:12px 22px;border:4px double var(--dc-red);border-radius:8px;color:var(--dc-red);font:800 22px/1.05 var(--dc-mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;
+  rotate:-9deg;opacity:.88;mix-blend-mode:multiply;transform-origin:left center}
+.ixw--discovery .dc-dossier.reveal .dc-stamp,.ixw--discovery .dc-flap.reveal .dc-stamp{scale:1.6;opacity:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1) .5s,opacity .3s ease .5s}
+.ixw--discovery .dc-flap.reveal.is-in .dc-stamp{scale:1;opacity:.88}
+.ixw--discovery .dc-sheet{position:relative;padding:34px 30px 22px 30px!important;border-radius:3px;rotate:.7deg;column-gap:34px;
+  background:repeating-linear-gradient(180deg,transparent 0 31px,var(--dc-rule) 31px 32px) 0 28px/100% calc(100% - 28px) no-repeat,var(--dc-paper);box-shadow:0 1px 0 #E9DEC8,0 26px 40px -26px rgba(60,40,10,.55)}
+.ixw--discovery .dc-sheet::before{content:"";position:absolute;left:28px;top:-16px;width:14px;height:46px;border:3px solid #9AA6BC;border-radius:8px;border-bottom-color:transparent;rotate:-6deg}
+.ixw--discovery .dc-sheet li{font:500 14.5px/1.45 var(--font-body);color:#2E3450;margin-bottom:14px}
+.ixw--discovery .dc-sheet li .ic{width:20px;height:20px;padding:3px;margin-top:0;border:1.5px solid #9AA6BC;border-radius:3px;background:#FFFFFF;color:#1E9E6A}
+@media (max-width:960px){.ixw--discovery .dc-dossier{padding:40px 22px 26px}}
+@media (max-width:640px){.ixw--discovery .dc-sheet{rotate:0deg;padding:28px 18px 14px 18px!important}.ixw--discovery .dc-stamp{font-size:17px}}
+
+/* ---------- FAQ: the interview transcript ---------- */
+.ixw--discovery .dc-faq{max-width:900px}
+.ixw--discovery .dc-faq details{border-radius:3px;background:var(--dc-paper);box-shadow:0 1px 0 #E9DEC8,0 14px 26px -22px rgba(90,60,20,.5);border-left:4px solid transparent;transition:border-color .2s ease,translate .3s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease}
+.ixw--discovery .dc-faq details[open]{border-left-color:var(--dc-red);background:linear-gradient(90deg,transparent 64px,rgba(226,69,60,.25) 64px 65.5px,transparent 65.5px),var(--dc-paper)}
+.ixw--discovery .dc-faq summary{font-family:var(--font-display)}
+.ixw--discovery .dc-faq summary::before{content:"Q";border-radius:4px;background:#FBE3E1;color:var(--dc-red);font:800 14px/1 var(--dc-mono)}
+.ixw--discovery .dc-faq details[open] summary::before{content:"A";background:var(--dc-red);color:#FFFFFF;rotate:0deg;transform:none}
+.ixw--discovery .dc-faq .faq-a p{font-family:var(--font-body);color:#2E3450}
+
+/* ---------- related: the next case files (manila folders with tabs) ---------- */
+.ixw--discovery .dc-rel-sec .sec-head{margin-bottom:62px}
+.ixw--discovery .dc-folders{isolation:isolate;gap:44px 30px}
+.ixw--discovery .dc-folders .card{border:0;border-radius:4px 16px 16px 16px;padding:34px 26px 26px;background:linear-gradient(170deg,#F5DFB6,#EBCB94);box-shadow:inset 0 0 0 1.5px #D9B57C,0 22px 36px -26px rgba(90,60,20,.55);transition:translate .35s cubic-bezier(.34,1.45,.64,1),box-shadow .3s ease}
+.ixw--discovery .dc-folders .card::before{content:"";position:absolute;left:16px;right:22px;top:-12px;height:30px;z-index:-1;border-radius:3px;background:#FFFFFF;box-shadow:0 0 0 1px #E9DEC8;transition:translate .35s cubic-bezier(.34,1.45,.64,1)}
+.ixw--discovery .dc-folders .card:hover{transform:none;translate:0 -5px;box-shadow:inset 0 0 0 1.5px #D9B57C,0 30px 44px -26px rgba(90,60,20,.6)}
+.ixw--discovery .dc-folders .card:hover::before{translate:0 -10px}
+.ixw--discovery .dc-ftab{position:absolute;left:0;top:-26px;height:28px;padding:0 16px;border-radius:10px 10px 0 0;background:#F5DFB6;box-shadow:inset 1.5px 1.5px 0 #D9B57C,inset -1.5px 0 0 #D9B57C;font:800 10px/28px var(--dc-mono);letter-spacing:.14em;text-transform:uppercase;color:#7A5A30}
+.ixw--discovery .dc-folders .card-ic{color:#7A5A30}
+.ixw--discovery .dc-folders .card p{color:#4A3A22}
+.ixw--discovery .dc-folders .btn-link{color:#9E2A23}
+
+/* ---------- the end card: pinned evidence on the blue board ---------- */
+.ixw--discovery main .cta{grid-template-columns:minmax(0,1.2fr) auto;background:radial-gradient(circle at 88% 18%,rgba(255,226,122,.3),transparent 42%),linear-gradient(120deg,#1E3A6E,#3167CA)}
+.ixw--discovery main .cta::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.12) 1.5px,transparent 2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 70%);mask-image:linear-gradient(90deg,transparent,#000 70%)}
+.ixw--discovery .dc-cta-art{position:absolute;right:24px;top:-38px;width:210px;height:auto;pointer-events:none;z-index:0;overflow:visible}
+.ixw--discovery .dc-cta-str{fill:none;stroke:#FF7A70;stroke-width:3;stroke-linecap:round}
+.ixw--discovery .dc-cta-note rect{fill:#FFE27A;transform-origin:194px 76px;rotate:6deg}
+.ixw--discovery .dc-cta-note path{stroke:#C9A21A;stroke-width:3;stroke-linecap:round;rotate:6deg;transform-origin:194px 76px}
+.ixw--discovery .dc-cta-lens circle{fill:rgba(255,255,255,.14);stroke:#FFFFFF;stroke-width:7}
+.ixw--discovery .dc-cta-lens path{stroke:#E8C996;stroke-width:12;stroke-linecap:round}
+.ixw--discovery .dc-cta-lens{transform-origin:70px 118px;animation:dcLens 6s ease-in-out infinite}
+@keyframes dcLens{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-14px,-10px) rotate(-8deg)}}
+.ixw--discovery .dc-cta-pin{fill:#E2453C;stroke:#FFFFFF;stroke-width:2}
+.ixw--discovery main .cta>div,.ixw--discovery main .cta .actions{position:relative;z-index:1}
+@media (min-width:1100px){.ixw--discovery main .cta{padding-right:260px}.ixw--discovery .dc-cta-art{top:50%;right:28px;translate:0 -50%;width:220px}}
+@media (max-width:1099px){.ixw--discovery .dc-cta-art{width:150px;top:-50px;right:12px;opacity:.85}}
+@media (max-width:640px){.ixw--discovery .dc-cta-art{width:110px;top:-40px}}
+@media (prefers-reduced-motion:reduce){.ixw--discovery .dc-cta-lens,.ixw--discovery .dc-tag--rec i{animation:none}.ixw--discovery .dc-strings path{transition:none;stroke-dashoffset:0}}
+@media (max-width:767px){.ixw--discovery .ixw-credits-wrap{margin-top:-6px}}
+
+/* ---------- decorations beside the section heads (wide screens only): a pinned photo, the evidence bag, footprints, the tape recorder ---------- */
+.ixw--discovery :is(.dc-exhibit,.dc-ev-sec,.dc-time-sec,.dc-faq-sec)>.container{position:relative}
+.ixw--discovery .dc-deco{position:absolute;right:8px;top:-18px;width:300px;pointer-events:none;z-index:0}
+.ixw--discovery .dc-deco svg{display:block;width:100%;height:auto;overflow:visible}
+.ixw--discovery .dc-deco--map{top:-24px;width:290px;rotate:2deg;filter:drop-shadow(0 18px 22px rgba(90,60,20,.22))}
+.ixw--discovery .dc-deco--lens{top:-30px;width:280px}
+.ixw--discovery .dc-deco--lens svg>circle,.ixw--discovery .dc-deco--lens svg>g:last-of-type,.ixw--discovery .dc-deco--lens svg>path{animation:dcSweep 7s ease-in-out infinite;transform-origin:196px 118px}
+@keyframes dcSweep{0%,100%{translate:0 0}50%{translate:-30px 14px}}
+.ixw--discovery .dc-deco--trail{top:10px;width:330px}
+.ixw--discovery .dc-deco--rec{top:150px;right:0;width:250px}
+.ixw--discovery .dc-reel{transform-box:fill-box;transform-origin:center;animation:dcReel 2.4s linear infinite}
+.ixw--discovery .dc-reel--2{animation-duration:3.1s}
+@keyframes dcReel{to{rotate:360deg}}
+.ixw--discovery .dc-recdot{animation:dcRec 1.3s steps(2) infinite}
+.ixw--discovery .dc-exhibit .sec-head,.ixw--discovery .dc-ev-sec .sec-head,.ixw--discovery .dc-time-sec .sec-head,.ixw--discovery .dc-faq-sec .sec-head{position:relative;z-index:1}
+@media (max-width:1099px){.ixw--discovery .dc-deco{display:none}}
+@media (prefers-reduced-motion:reduce){.ixw--discovery .dc-reel,.ixw--discovery .dc-recdot,.ixw--discovery .dc-deco--lens *{animation:none!important}}
+
+/* ---------- audit round: hero controls. The marker caps show again (the shared sheen's transform hid them), one 52px
+   height, the play key's lip and halo in the case-room ink and red, hover/press/focus on every control, and the peek key
+   becomes a second folder tab on the case file, so it no longer covers the app line-up screen ---------- */
+.ixw--discovery .ixw-copy .actions{gap:14px}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white)::after{left:auto;transform:none;transition:width .25s cubic-bezier(.34,1.45,.64,1)}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.cta .btn-white,.cta .btn-outline-white):hover::after{transform:none;width:28px}
+.ixw--discovery .ixw-copy .actions .btn{height:52px}
+.ixw--discovery .ow-rail a{transition:background-color .2s ease,color .2s ease,translate .2s ease}
+.ixw--discovery .ow-rail a:hover{translate:0 -1px;background:var(--dc-y);color:#1B1F3B}
+.ixw--discovery .ow-rail a:focus-visible,.ixw--discovery .ixw-ep-tag:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--discovery .ixw-ibtn{transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease,color .2s ease,background-color .2s ease}
+.ixw--discovery .ixw-ibtn:not(.ixw-ibtn--play):hover{border-color:#1B1F3B;color:var(--dc-red);background:#FFFDF7;box-shadow:0 5px 0 #1B1F3B}
+.ixw--discovery .ixw-ibtn:active{box-shadow:0 1px 0 #1B1F3B}
+.ixw--discovery .ixw-ibtn--play{box-shadow:0 3px 0 #1B1F3B}
+.ixw--discovery .ixw-ibtn--play:hover{box-shadow:0 5px 0 #1B1F3B;color:var(--dc-red)}
+.ixw--discovery .ixw-ibtn--play.is-on{animation:dcHalo 2.4s ease-out infinite}
+@keyframes dcHalo{0%{box-shadow:0 3px 0 #1B1F3B,0 0 0 0 rgba(226,69,60,.45)}70%,100%{box-shadow:0 3px 0 #1B1F3B,0 0 0 12px rgba(226,69,60,0)}}
+.ixw--discovery :is(.ixw-ibtn,.ixw-dots button):focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.ixw--discovery .ixw-dots button:not(.is-on):hover{background:#C9A21A}
+.ixw--discovery .ixw-peek{top:calc(var(--header-box) + 30px);right:auto;left:calc(max(0px, (100vw - 1200px) / 2) + 318px);height:32px;padding:0 15px 0 12px;border:0;border-radius:10px 10px 0 0;
+  background:var(--dc-kraft);box-shadow:inset 0 1.5px 0 var(--dc-kraft-d),inset 1.5px 0 0 var(--dc-kraft-d),inset -1.5px 0 0 var(--dc-kraft-d);font:800 11px/1 var(--dc-mono);letter-spacing:.08em;text-transform:uppercase;color:#7A5A30}
+.ixw--discovery .ixw-peek::before{width:16px;height:16px;background:var(--dc-red)}
+.ixw--discovery .ixw-peek:hover{translate:0 -3px;background:#F3D9A6;box-shadow:inset 0 1.5px 0 var(--dc-kraft-d),inset 1.5px 0 0 var(--dc-kraft-d),inset -1.5px 0 0 var(--dc-kraft-d),0 -4px 10px -4px rgba(90,60,20,.35)}
+.ixw--discovery .ixw-peek:active{translate:0 1px}
+.ixw--discovery .ixw-peek:focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.ixw--discovery .ixw-peek[aria-pressed="true"]{background:var(--dc-y);border-radius:10px;box-shadow:inset 0 0 0 1.5px #C9A21A,0 4px 0 #C9A21A}
+@media (prefers-reduced-motion:reduce){.ixw--discovery .ixw-ibtn--play.is-on{animation:none}}
+/* audit round, below the hero: the glance strip keeps each process name whole and gives the long cells room; the clip on
+   the scope sheet no longer sits on the first line on phones */
+.ixw--discovery .ow-strip .ow-nb{white-space:nowrap}
+@media (min-width:1101px){.ixw--discovery .ow-strip{grid-template-columns:.62fr 1.3fr 1.2fr 1fr 1.08fr}}
+@media (max-width:640px){.ixw--discovery .dc-sheet{padding-top:44px!important}}
+
+/* fix round: the four evidence markers stand in one clean row. The red string runs through the middle of every marker, each
+   marker drops its own string straight down to the pin of its card, and nothing tilts at rest (hover only lifts) */
+.ixw--discovery .dc-steps::before{top:27px;left:29px;right:calc((100% - 90px) / 4 - 29px);border-top-width:2.5px;opacity:.8}
+.ixw--discovery .dc-steps .step-n{position:relative;z-index:1;display:grid;place-items:center;padding:12px 0 0;margin-bottom:26px;line-height:1;transform:none;transition:transform .25s cubic-bezier(.34,1.45,.64,1)}
+.ixw--discovery .dc-steps .step:hover .step-n{transform:translateY(-4px)}
+.ixw--discovery .dc-steps .step>div:not(.step-n),.ixw--discovery .dc-steps .step:nth-child(n)>div:not(.step-n){--rot:0deg;rotate:0deg}
+.ixw--discovery .dc-steps .step>div:not(.step-n)::before{left:28px;top:-26px;height:26px;opacity:.8}
+.ixw--discovery .dc-steps .step>div:not(.step-n)::after{content:"";position:absolute;left:23.5px;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--dc-red);box-shadow:0 0 0 2.5px #FFFFFF,0 2px 3px rgba(60,30,10,.3)}
+@media (max-width:1100px){.ixw--discovery .dc-steps::before{display:none}}
+@media (max-width:640px){.ixw--discovery .dc-steps .step .step-n{padding-top:10px;margin-bottom:14px}.ixw--discovery .dc-steps .step>div:not(.step-n)::after{display:none}}
+
+/* fix round: the marker buttons. The cap is a deliberate part of each marker: the same hue one shade darker, a light collar
+   line where it meets the barrel, a rounded end and a soft highlight on its round end (the barrel's left radius was 999px, which made the browser scale every corner down to
+   nearly square, hence the broken block); it no longer reads as a grey block on yellow */
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white){border-radius:26px 14px 14px 26px;padding-right:44px}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white)::after{left:auto;right:0;top:0;bottom:0;width:26px;border-radius:0 14px 14px 0;transform:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.6) 0 2px,transparent 2px 5px,var(--cap,#1E4691) 5px),linear-gradient(var(--cap,#1E4691),var(--cap,#1E4691));background-size:100% 100%,100% 100%;box-shadow:inset -6px 0 0 -3px rgba(255,255,255,.22)}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white,.cta .btn-white,.cta .btn-outline-white)::after{background:radial-gradient(circle at 100% 50%,rgba(255,255,255,.16) 0 9px,transparent 9.5px),linear-gradient(90deg,rgba(255,255,255,.6) 0 2px,rgba(0,0,0,.18) 2px 4px,var(--cap,#1E4691) 4px)}
+.ixw--discovery main :is(.btn-primary,.btn-ghost,.cta .btn-white,.cta .btn-outline-white):hover::after{width:30px}
+.ixw--discovery main .btn-primary{--cap:#1E4691}
+.ixw--discovery main :is(.btn-ghost,.cta .btn-white){--cap:#B3261E}
+.ixw--discovery .cta .btn-outline-white{--cap:#C9A21A}
+/* fix round: the FAQ's tape recorder no longer floats alone in an empty column; it sits in a proper side card (the
+   "interview tape" label, a short line and a Talk to us link) that fills the column beside the questions */
+.ixw--discovery .dc-deco--rec.dc-ask{top:150px;right:0;width:330px;padding:18px 24px 24px;border-radius:6px;pointer-events:auto;z-index:1;background:var(--dc-paper);
+  box-shadow:0 0 0 1.5px #E2CFA9,0 0 0 7px var(--dc-kraft),0 0 0 8.5px var(--dc-kraft-d),0 30px 50px -30px rgba(90,60,20,.45);rotate:1deg}
+.ixw--discovery .dc-ask::before{content:"";position:absolute;left:50%;top:-12px;width:90px;height:22px;margin-left:-45px;background:rgba(255,255,255,.7);rotate:-2deg;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.ixw--discovery .dc-ask-art{display:block;width:210px;margin:-6px auto 4px}
+.ixw--discovery .dc-ask-art svg{display:block;width:100%;height:auto}
+.ixw--discovery .dc-ask-k{margin:0 0 6px;font:800 10.5px/1 var(--dc-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dc-red-d)}
+.ixw--discovery .dc-ask-t{margin:0 0 6px;font:800 1.25rem/1.2 var(--font-display);color:var(--dc-ink)}
+.ixw--discovery .dc-ask-p{margin:0 0 12px;font:500 14.5px/1.5 var(--font-body);color:#4A4F66}
+.ixw--discovery .dc-ask .btn-link{color:var(--dc-red-d)}
+.ixw--discovery .dc-deco--trail svg g{opacity:1}
+.ixw--discovery .dc-faq-sec .dc-faq{max-width:calc(100% - 380px)}
+@media (max-width:1099px){.ixw--discovery .dc-faq-sec .dc-faq{max-width:none}}
+.ixw--discovery .dc-ask .btn-link{display:inline-flex;align-items:center;gap:6px}.ixw--discovery .dc-ask .btn-link svg{display:inline-block;width:16px;height:16px;flex:none}.ixw--discovery .dc-deco--rec.dc-ask{top:170px}
+/* fix round: the end card stacks on tablets and phones (its two-column grid had no small-screen override, which squeezed the
+   text into a one-word column on phones) */
+@media (max-width:1099px){.ixw--discovery main .cta{grid-template-columns:minmax(0,1fr)}}
+
+/* R9: no empty band under the glance strip, the next section starts right below it */
+.ixw--discovery .ixw-credits-wrap + .section{padding-top:14px!important}
+
+/* ==================================================================================================== CALM ROUND (9 Oct 2026)
+   CALM_BALANCE: 50% TechNext base (calm.css), 50% the case-board theme: a kraft/red accent, a thin red thread on the
+   steps, a kraft frame round the process map, a folder tab on the scope sheet and on the related cards. No pins, no
+   tilts, no stamps, no exhibit stickers. */
+.ixw--discovery{--calm-accent:#C8473D;--calm-accent-ink:#8E3128;--calm-accent-line:#E6CFAE;--calm-accent-wash:#FBF7F0;--calm-card-rule:0 solid transparent}
+/* process map: a thin kraft frame instead of the cork board */
+body.ixw--discovery main .dc-cork{padding:10px!important;border-radius:20px!important;background:#F3E6D0!important;background-image:none!important;box-shadow:inset 0 0 0 1px #E6CFAE!important}
+body.ixw--discovery main .demo-sec .dc-cork .dm{border-radius:14px!important;box-shadow:0 1px 2px rgba(31,31,61,.05),0 14px 32px -24px rgba(90,60,20,.35)!important}
+/* evidence cards: white kit cards, kraft icon disc kept, no pins / exhibit labels */
+body.ixw--discovery main .dc-evidence{gap:24px!important;padding-top:0!important}
+body.ixw--discovery main .dc-evidence .card{padding:28px 26px 26px!important}
+body.ixw--discovery main .dc-evidence .card::before,body.ixw--discovery main .dc-evidence .card::after{content:none!important;display:none!important}
+body.ixw--discovery main .dc-evidence .card-ic{width:48px!important;height:48px!important;background:#F6EAD2!important;box-shadow:none!important;color:var(--calm-accent)!important}
+/* steps: accent number discs on one thin red thread */
+body.ixw--discovery main .dc-steps::before{top:22px!important;border-top:1.5px solid #E7B4AE!important;opacity:1!important}
+body.ixw--discovery main .dc-steps .step-n{width:44px!important;height:44px!important;padding:0!important;margin-bottom:18px!important;border-radius:50%!important;background:#fff!important;border:1.5px solid var(--calm-accent)!important;color:var(--calm-accent)!important;font:700 16px/1 var(--font-display)!important;box-shadow:none!important;transform:none!important}
+body.ixw--discovery main .dc-steps .step:hover .step-n{background:#fff!important;color:var(--calm-accent)!important;transform:none!important}
+body.ixw--discovery main .dc-steps .step>div:not(.step-n){padding:22px 20px!important;border-radius:16px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;rotate:none!important}
+body.ixw--discovery main .dc-steps .step>div:not(.step-n)::before{content:none!important;display:none!important}
+body.ixw--discovery main .dc-step-ic{background:#F6EAD2!important;color:var(--calm-accent)!important;box-shadow:none!important}
+/* the scope: a light kraft folder with one tab, the checklist a white sheet */
+body.ixw--discovery main .dc-dossier{padding:44px 40px!important;border-radius:6px 20px 20px 20px!important;background:#FBF4E8!important;background-image:none!important;box-shadow:inset 0 0 0 1px #EAD7B8!important;margin-top:24px!important}
+body.ixw--discovery main .dc-dossier::before{content:""!important;display:block!important;position:absolute;left:0;top:-22px;width:150px;height:23px;border-radius:12px 12px 0 0;background:#FBF4E8!important;box-shadow:inset 1px 1px 0 #EAD7B8,inset -1px 0 0 #EAD7B8!important}
+body.ixw--discovery main .dc-dossier::after{content:none!important}
+body.ixw--discovery main .dc-flap .lead{color:var(--body)!important}
+body.ixw--discovery main .dc-sheet{rotate:none!important;padding:28px 28px 14px!important;border-radius:14px!important;background:#fff!important;border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important}
+body.ixw--discovery main .dc-sheet::before{content:none!important;display:none!important}
+body.ixw--discovery main .dc-sheet li .ic{color:var(--calm-accent)!important;border-color:#E6CFAE!important}
+/* FAQ: kit accordion, the Q/A badge in the accent */
+body.ixw--discovery main .dc-faq details{background:#fff!important;border-left:1px solid var(--calm-line)!important}
+body.ixw--discovery main .dc-faq details[open]{background:#fff!important;background-image:none!important;border-color:#E6CFAE!important;border-left:3px solid var(--calm-accent)!important}
+/* related: white cards with a small kraft folder tab */
+body.ixw--discovery main .dc-folders{gap:40px 24px!important}
+body.ixw--discovery main .dc-folders .card{padding:30px 26px 26px!important;background:#fff!important;overflow:visible!important}
+body.ixw--discovery main .dc-folders .card::before{content:none!important;display:none!important}
+body.ixw--discovery main .dc-folders .dc-ftab{display:block!important;top:-24px!important;left:18px!important;height:24px!important;padding:0 14px!important;border-radius:10px 10px 0 0!important;background:#F6EAD2!important;box-shadow:inset 1px 1px 0 #E6CFAE,inset -1px 0 0 #E6CFAE!important;font:700 10.5px/24px var(--font-body)!important;letter-spacing:.1em!important;color:#7A5A30!important;transform:none!important}
+body.ixw--discovery main .dc-folders .card-ic{color:var(--calm-accent)!important}
+body.ixw--discovery main .dc-folders .card p{color:var(--body)!important}
+body.ixw--discovery main .dc-folders .btn-link{color:var(--blue)!important}
+@media (max-width:767px){body.ixw--discovery main .dc-dossier{padding:30px 18px 20px!important}body.ixw--discovery main .dc-steps::before{display:none!important}}
+body.ixw--discovery main .dc-steps .step-n::before,body.ixw--discovery main .dc-steps .step-n::after,body.ixw--discovery main .dc-steps .step>div:not(.step-n)::after{content:none!important;display:none!important}
+body.ixw--discovery main .dc-faq{max-width:860px!important}
+
+/* calm round: the one-paragraph answer as a quiet ruled paragraph (kept for its facts and for answer engines) */
+body.ixw--discovery main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.ixw--discovery main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;background-image:none!important;border:0!important;border-left:3px solid var(--calm-accent)!important;border-radius:0!important;box-shadow:none!important;rotate:none!important;transform:none!important;clip-path:none!important;min-height:0!important}
+body.ixw--discovery main .answer-sec .answer-box::before,body.ixw--discovery main .answer-sec .answer-box::after,body.ixw--discovery main .answer-sec .answer-h::before,body.ixw--discovery main .answer-sec .answer-h::after{content:none!important;display:none!important}
+body.ixw--discovery main .answer-sec .answer-box > :not(p){display:none!important}
+body.ixw--discovery main .answer-sec .answer-h{display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--calm-accent-ink)!important;rotate:none!important;transform:none!important;position:static!important}
+body.ixw--discovery main .answer-sec .answer-box p:not(.answer-h){max-width:none!important;margin:0!important;padding:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important;background:none!important}
+@media (max-width:767px){body.ixw--discovery main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+/* calm round: the end CTA stacks on phones (calm.css's body[class*="ixw--"] .cta grid outranks its own phone rule) */
+@media (max-width:480px){html body.ixw--discovery main .cta .actions .btn,html body.ixw--discovery .ixw-hero .ixw-copy .actions .btn{flex:1 1 100%!important}}

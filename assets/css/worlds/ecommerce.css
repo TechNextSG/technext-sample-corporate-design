@@ -1,0 +1,258 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: ecommerce (Parcel Lane, a sample online shop). Kraft, violet and mint in a packing room: the copy is taped to a
+   box, the caption is a tracking card, the workflow stops ride a conveyor as parcels, the three problems are parcels on a
+   pallet, the apps are shipping labels, before/after is a tracking timeline, the video plays on a laptop, Odoo 20 is a
+   packing slip, the rollout goes packed, shipped, delivered, the FAQ is a support chat and the end card is a parcel with
+   its label. Loaded after industry-world.css; scoped to body.ixw--ecommerce. */
+.ixw--ecommerce{--w-vwall:#F1EEF8;--w-vwains:#DDD6EF;--w-vfloor:#E7E3EF;--w-vbase:#B8AED6;--w-alt:#F6F3FB;--w-dot:rgba(109,91,208,.10);--w-hand:#5443B5;
+  --e-violet:#6D5BD0;--e-violet-d:#5443B5;--e-violet-l:#E7E3FA;--e-mint:#3CCFAE;--e-mint-d:#22A88A;--e-kraft:#C99A6B;--e-kraft-d:#A87A4C;--e-kraft-l:#F4E6D2;--e-ink:#2B2350;--e-orange:#F08A5D;
+  --e-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,monospace;
+  --e-tape:linear-gradient(180deg,rgba(226,196,150,.92),rgba(206,170,120,.92))}
+.ixw--ecommerce .ixw-vg .f-violet{fill:#6D5BD0}.ixw--ecommerce .ixw-vg .f-violet-l{fill:#E7E3FA}.ixw--ecommerce .ixw-vg .f-mint{fill:#3CCFAE}.ixw--ecommerce .ixw-vg .f-mint-d{fill:#22A88A}
+.ixw--ecommerce .ixw-vg .f-orange{fill:#F08A5D}.ixw--ecommerce .ixw-vg .f-lilac{fill:#F1EEF8}.ixw--ecommerce .ixw-vg .f-kraft{fill:#C99A6B}.ixw--ecommerce .ixw-vg .f-kraft-d{fill:#A87A4C}
+.ixw--ecommerce .ixw-vg .f-tape{fill:rgba(255,240,210,.5)}.ixw--ecommerce .ixw-vg .t-violet{fill:#5443B5}.ixw--ecommerce .ixw-vg .t-orange{fill:#C9612F}
+
+/* ---------- the hero: the packing room; the copy is taped onto a box ---------- */
+.ixw--ecommerce .ixw-hero{background:linear-gradient(180deg,#F4F1FA 0%,#EAE5F5 64%,#E7E3EF 64%,#D4CEE2 100%)}
+.ixw--ecommerce .ixw-copy{position:relative;max-width:468px;padding:56px 28px 22px;border-radius:10px;background:#FFFDF9;
+  box-shadow:inset 0 0 0 10px var(--e-kraft-l),inset 0 0 0 11px #E3CDAE,0 3px 0 #E3D9EE,0 34px 64px -34px rgba(60,40,110,.45)}
+.ixw--ecommerce .ixw-copy::before{content:"";position:absolute;left:50%;top:-14px;width:150px;height:46px;margin-left:-75px;background:var(--e-tape);transform:rotate(-2.2deg);
+  box-shadow:0 2px 3px rgba(80,50,20,.12)}
+.ixw--ecommerce .ixw-copy::after{content:"";position:absolute;right:22px;top:16px;width:44px;height:30px;border:2px solid #A87A4C;border-radius:4px;opacity:.75;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 30'%3E%3Cpath d='M14 24V8M9 13l5-5 5 5M30 24V8M25 13l5-5 5 5' fill='none' stroke='%23A87A4C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--ecommerce .ixw-credits dt .ic{color:var(--e-violet)}
+/* the caption: a tracking card with its progress line */
+.ixw--ecommerce .ixw-cap{border-radius:16px;padding-top:34px;box-shadow:inset 6px 0 0 var(--e-violet),0 2px 0 #E3D9EE,0 22px 44px -22px rgba(60,40,110,.45)}
+.ixw--ecommerce .ixw-cap::before{content:"TRACKING \00B7  PL1042SG";position:absolute;left:20px;top:11px;font:700 10px/1 var(--e-mono);letter-spacing:.12em;color:var(--e-violet-d);pointer-events:none}
+.ixw--ecommerce .ixw-cap::after{content:"";position:absolute;left:190px;right:22px;top:15px;height:4px;border-radius:4px;pointer-events:none;
+  background:radial-gradient(circle,var(--e-mint-d) 3.5px,transparent 4px) 0 50%/33.33% 10px repeat-x,linear-gradient(90deg,var(--e-mint) 0 70%,#E3DDF2 70%)}
+.ixw--ecommerce .ixw-cap-who b,.ixw--ecommerce .ixw-cap-txt b{color:var(--e-violet-d)}
+.ixw--ecommerce .ixw-caret{background:var(--e-violet)}
+@media (max-width:767px){.ixw--ecommerce .ixw-cap::after{left:180px}}
+
+/* ---------- Nexi's paragraph: a support chat bubble ---------- */
+.ixw--ecommerce .ixw-say{background:#FFFFFF;box-shadow:inset 0 0 0 2px #E3DDF2,var(--w-card);border-radius:22px 22px 22px 6px}
+.ixw--ecommerce .ixw-say .ix-intro-h{background:var(--e-violet-l);color:var(--e-violet-d)}
+
+/* ---------- the workflow: parcels ride a conveyor ---------- */
+.ixw--ecommerce .ixw-flow-sec{background:linear-gradient(180deg,#FFFFFF 0%,#F6F3FB 100%)}
+.ixw--ecommerce .ixw-scenes{background:#F1EEF8;box-shadow:0 3px 0 #E3D9EE,0 30px 60px -36px rgba(60,40,110,.45)}
+.ixw--ecommerce .ixw-scene-tag{color:var(--e-violet-d)}
+.ixw--ecommerce .ixw-road{top:110px;height:14px;margin-top:0;border-radius:7px;background:repeating-linear-gradient(90deg,#3A3358 0 10px,#4A4370 10px 13px);box-shadow:0 4px 0 #8A82AA}
+.ixw--ecommerce .ixw-road i{border-radius:7px;background:repeating-linear-gradient(90deg,var(--e-mint) 0 10px,var(--e-mint-d) 10px 13px)}
+.ixw--ecommerce .ixw-pin{width:58px;height:50px;border-radius:5px;border:0;background:linear-gradient(var(--e-kraft-d),var(--e-kraft-d)) top/100% 10px no-repeat,linear-gradient(90deg,transparent 24px,rgba(255,240,210,.55) 24px 34px,transparent 34px),var(--e-kraft);
+  box-shadow:0 4px 0 #8A6240}
+.ixw--ecommerce .ixw-pin .oi,.ixw--ecommerce .ixw-pin .ix-ic{padding:3px;border-radius:6px;background:#FFFFFF}
+.ixw--ecommerce .ixw-pin i{border-radius:5px;background:var(--e-ink)}
+.ixw--ecommerce .ixw-stop:hover .ixw-pin{border:0;box-shadow:0 7px 0 #8A6240}
+.ixw--ecommerce .ixw-stop.is-done .ixw-pin{border:0;box-shadow:0 4px 0 #8A6240}
+.ixw--ecommerce .ixw-stop.is-done .ixw-pin i{background:var(--e-mint-d)}
+.ixw--ecommerce .ixw-stop.is-on .ixw-pin{border:0;background:linear-gradient(#4A3A9E,#4A3A9E) top/100% 10px no-repeat,linear-gradient(90deg,transparent 24px,rgba(255,255,255,.3) 24px 34px,transparent 34px),var(--e-violet);
+  box-shadow:0 6px 0 var(--e-violet-d),0 16px 26px -12px rgba(84,67,181,.6);animation:eBump .6s var(--w-spring)}
+.ixw--ecommerce .ixw-stop.is-on .ixw-pin i{background:var(--e-mint);color:var(--e-ink)}
+@keyframes eBump{0%{translate:0 0}40%{translate:0 -12px}100%{translate:0 -4px}}
+.ixw--ecommerce .ixw-panel{box-shadow:inset 0 6px 0 var(--e-violet),0 3px 0 #E3D9EE,0 30px 60px -36px rgba(60,40,110,.4)}
+.ixw--ecommerce .ixw-panel-meta>div{background:#F6F3FB}
+.ixw--ecommerce .ixw-panel-who b{color:var(--e-violet-d)}
+.ixw--ecommerce .ixw-rec{border-color:#D6CEEE;font-family:var(--e-mono);font-size:12px}
+.ixw--ecommerce .ixw-pick-l::before{content:"";width:18px;height:18px;background:var(--e-violet);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 3 7v10l9 5 9-5V7zm0 2.3L18.6 8 12 11.6 5.4 8z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 3 7v10l9 5 9-5V7zm0 2.3L18.6 8 12 11.6 5.4 8z'/%3E%3C/svg%3E") center/contain no-repeat}
+.ixw--ecommerce .ixw-stop-t{margin-top:8px}
+@media (max-width:767px){.ixw--ecommerce .ixw-road{top:44px}}
+
+/* ---------- the three problems: parcels on a pallet, each with its shipping label ---------- */
+.ixw--ecommerce .ixw-board{background:repeating-linear-gradient(180deg,#D9B98E 0 30px,#C9A577 30px 34px);box-shadow:inset 0 -14px 0 #B08A5C,0 24px 50px -34px rgba(90,60,20,.5)}
+.ixw--ecommerce .ixw-board .card{padding:44px 24px 24px;border-radius:6px;background:#FFFFFF;transform:rotate(var(--rot,-1deg))}
+.ixw--ecommerce .ixw-board .card:nth-child(n){background:#FFFFFF;box-shadow:0 0 0 12px var(--e-kraft),0 0 0 14px var(--e-kraft-d),0 24px 30px -12px rgba(70,40,10,.55)}
+.ixw--ecommerce .ixw-board .card::before,.ixw--ecommerce .ixw-board .card:nth-child(n)::before{left:-14px;right:-14px;top:auto;bottom:auto;width:auto;height:18px;margin:0;top:-14px;border-radius:0;background:var(--e-tape);box-shadow:none}
+.ixw--ecommerce .ixw-board .card::after{content:"";position:absolute;right:16px;top:14px;width:58px;height:20px;opacity:.85;background:repeating-linear-gradient(90deg,#2B2350 0 2px,transparent 2px 4px,#2B2350 4px 5px,transparent 5px 8px,#2B2350 8px 11px,transparent 11px 13px)}
+.ixw--ecommerce .ixw-board .card:hover{transform:rotate(0) translateY(-6px)}
+.ixw--ecommerce .ixw-board .card-ic{color:var(--e-violet-d)}
+.ixw--ecommerce .ixw-board .card h3{font-family:var(--font-display)}
+.ixw--ecommerce .ixw-board{gap:44px;padding:44px}
+
+/* ---------- the apps: shipping labels ---------- */
+.ixw--ecommerce .sc-tab{border:2px solid #E3DDF2;border-radius:8px;box-shadow:0 3px 0 #E3DDF2;padding-right:44px;
+  background:repeating-linear-gradient(90deg,#2B2350 0 2px,transparent 2px 4px,#2B2350 4px 5px,transparent 5px 7px) right 12px center/20px 26px no-repeat,#FFFFFF}
+.ixw--ecommerce .sc-tab:hover{border-color:#CFC6EC;box-shadow:0 5px 0 #CFC6EC}
+.ixw--ecommerce .sc-tab.is-active{border-color:var(--e-violet);box-shadow:0 4px 0 var(--e-violet);background-color:#F4F1FD}
+.ixw--ecommerce .sc-tab::after{background:var(--e-violet)}
+.ixw--ecommerce .sc-panel::before{background:#ECE8F5 radial-gradient(circle at 20px 18px,#F08A5D 5.5px,transparent 6px) no-repeat,radial-gradient(circle at 38px 18px,#FFD84A 5.5px,transparent 6px) no-repeat}
+.ixw--ecommerce .sc-panel::after{background:var(--e-mint)}
+
+/* ---------- before / after: a tracking timeline ---------- */
+.ixw--ecommerce .ix-ba{position:relative;gap:10px;padding:46px 16px 16px 46px;border-radius:20px;background:#FFFFFF;box-shadow:0 3px 0 #E3D9EE,0 30px 60px -36px rgba(60,40,110,.45)}
+.ixw--ecommerce .ix-ba::before{content:"TRACKING \00B7  TODAY \2192  WITH ODOO";position:absolute;left:20px;top:17px;font:700 11px/1 var(--e-mono);letter-spacing:.14em;color:var(--e-violet-d)}
+.ixw--ecommerce .ix-ba::after{content:"";position:absolute;left:26px;top:52px;bottom:30px;width:3px;background:repeating-linear-gradient(180deg,#CFC6EC 0 6px,transparent 6px 11px)}
+.ixw--ecommerce .ix-row{position:relative;border:0;border-radius:12px;background:#F6F3FB;box-shadow:none}
+.ixw--ecommerce .ix-row::before{content:"";position:absolute;left:-26px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#FFFFFF;box-shadow:0 0 0 3px var(--e-orange);transition:box-shadow .3s ease,background-color .3s ease}
+.ixw--ecommerce .ix-ba.is-js[data-state="after"] .ix-row{box-shadow:none;background:#EEFAF6}
+.ixw--ecommerce .ix-ba.is-js[data-state="after"] .ix-row::before{background:var(--e-mint-d);box-shadow:0 0 0 3px #BDEFE2}
+.ixw--ecommerce .ix-task{font:700 12.5px/1.35 var(--e-mono);letter-spacing:.02em;color:var(--e-ink)}
+.ixw--ecommerce .ix-before .ic{background:#FDE7DC;color:#C9612F}
+.ixw--ecommerce .ix-after .ic{background:#D7F4EC;color:var(--e-mint-d)}
+
+/* ---------- media: the video plays on a laptop ---------- */
+.ixw--ecommerce .ix-video{position:relative;padding-bottom:22px}
+.ixw--ecommerce .ix-video .yt{border:14px solid #2B2350;border-bottom-width:20px;border-radius:18px 18px 6px 6px;box-shadow:0 30px 50px -30px rgba(40,30,80,.55)}
+.ixw--ecommerce .ix-video::after{content:"";position:absolute;left:-5%;right:-5%;bottom:6px;height:16px;border-radius:2px 2px 14px 14px;background:linear-gradient(180deg,#C9C3DE,#9C95B8);box-shadow:0 10px 18px -8px rgba(40,30,80,.4)}
+.ixw--ecommerce .ix-video::before{content:"";position:absolute;left:50%;bottom:16px;width:80px;height:5px;margin-left:-40px;border-radius:0 0 6px 6px;background:#8A82AA;z-index:1}
+.ixw--ecommerce .yt-play{background:var(--e-violet);box-shadow:0 5px 0 var(--e-violet-d),0 18px 34px -10px rgba(84,67,181,.7)}
+.ixw--ecommerce .ix-shots .shot img,.ixw--ecommerce .ix-shot img{border-radius:10px;box-shadow:0 0 0 6px #FFFFFF,0 0 0 8px #E3DDF2}
+
+/* ---------- new in Odoo 20: a packing slip ---------- */
+.ixw--ecommerce .ix-new{border-radius:10px;background:#FFFFFF linear-gradient(90deg,transparent 33px,rgba(240,138,93,.35) 33px 35px,transparent 35px)}
+.ixw--ecommerce .ix-new-head{background:#FFFFFF;border-bottom:2px dashed #CFC6EC}
+.ixw--ecommerce .ix-new-head h2{color:var(--e-ink)}
+.ixw--ecommerce .ix-new-head .hand{color:var(--e-violet-d)}
+.ixw--ecommerce .ix-new-head .oi{background:var(--e-violet-l)}
+.ixw--ecommerce .ix-new-head::after{content:"PACKING SLIP \00B7  ODOO 20";margin-left:auto;padding:6px 10px;border:2px solid var(--e-ink);border-radius:4px;font:700 10.5px/1 var(--e-mono);letter-spacing:.12em;color:var(--e-ink);transform:rotate(3deg)}
+.ixw--ecommerce .ix-new .checks .ic{border-radius:4px;background:#FFFFFF;color:var(--e-mint-d);box-shadow:inset 0 0 0 2px var(--e-mint-d)}
+@media (max-width:767px){.ixw--ecommerce .ix-new-head::after{display:none}}
+
+/* ---------- rollout: packed, shipped, delivered ---------- */
+.ixw--ecommerce .ix-phases::before{height:12px;top:41px;border-radius:6px;background:repeating-linear-gradient(90deg,#3A3358 0 10px,#4A4370 10px 13px);opacity:1}
+.ixw--ecommerce .ix-ph-n{border-radius:6px;background:var(--e-kraft);color:#FFFFFF;box-shadow:0 3px 0 #8A6240,0 0 0 6px var(--w-alt)}
+.ixw--ecommerce .ix-ph-n::after{content:"\00B7  packed";margin-left:5px;font-weight:600;opacity:.9}
+.ixw--ecommerce .ix-phase:nth-child(2) .ix-ph-n{background:var(--e-violet);box-shadow:0 3px 0 var(--e-violet-d),0 0 0 6px var(--w-alt)}
+.ixw--ecommerce .ix-phase:nth-child(2) .ix-ph-n::after{content:"\00B7  shipped"}
+.ixw--ecommerce .ix-phase:nth-child(3) .ix-ph-n{background:var(--e-mint-d);box-shadow:0 3px 0 #178069,0 0 0 6px var(--w-alt)}
+.ixw--ecommerce .ix-phase:nth-child(3) .ix-ph-n::after{content:"\00B7  delivered"}
+.ixw--ecommerce .ix-phase:hover{box-shadow:0 6px 0 #DCD3F2,0 30px 50px -30px rgba(60,40,110,.45)}
+
+/* ---------- FAQ: the support chat; integrations: barcode stickers ---------- */
+.ixw--ecommerce .faq details{border-radius:18px 18px 18px 6px}
+.ixw--ecommerce .faq details[open]{border-radius:18px 18px 6px 18px;box-shadow:0 3px 0 #CFC6EC,0 20px 36px -22px rgba(60,40,110,.4)}
+.ixw--ecommerce .faq summary::before{border-radius:50%;background:var(--e-violet-l);color:var(--e-violet-d)}
+.ixw--ecommerce .faq details[open] summary::before{background:var(--e-mint-d);color:#FFFFFF}
+.ixw--ecommerce .faq summary .ic{color:var(--e-violet-d)}
+.ixw--ecommerce .ix-chip{position:relative;padding-left:30px;border-radius:6px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #DCD3F2}
+.ixw--ecommerce .ix-chip::before{content:"";position:absolute;left:9px;top:50%;width:14px;height:14px;margin-top:-7px;background:repeating-linear-gradient(90deg,#2B2350 0 1.6px,transparent 1.6px 3px,#2B2350 3px 3.8px,transparent 3.8px 5.5px)}
+.ixw--ecommerce .ix-chip .ic{color:var(--e-violet-d)}
+
+/* ---------- the end card: a parcel with its shipping label ---------- */
+.ixw--ecommerce .ixw-cta{background:linear-gradient(120deg,#4A3A9E,#6D5BD0 60%,#8C7BE6)}
+.ixw--ecommerce .ixw-cta::before{background-image:radial-gradient(rgba(255,255,255,.14) 2px,transparent 2.2px)}
+.ixw--ecommerce .ixw-cta::after{content:"";display:block;position:absolute;left:0;right:0;top:50%;height:30px;width:auto;margin-top:-15px;z-index:-1;background:var(--e-tape);opacity:.55;transform:rotate(-1.5deg)}
+.ixw--ecommerce .ixw-cta .hand{color:#BDF3E4}
+.ixw--ecommerce .ixw-cta>div:first-of-type{position:relative;padding:20px 22px 20px 108px;border-radius:12px;background:#FFFFFF;box-shadow:0 6px 0 rgba(0,0,0,.14)}
+.ixw--ecommerce .ixw-cta>div:first-of-type h2{color:var(--e-ink)}
+.ixw--ecommerce .ixw-cta>div:first-of-type p{color:#4E4A66}
+.ixw--ecommerce .ixw-cta>div:first-of-type .hand{color:var(--e-violet-d)}
+.ixw--ecommerce .ixw-cta>div:first-of-type::before{content:"SHIP TO";position:absolute;left:20px;top:22px;font:700 10px/1 var(--e-mono);letter-spacing:.14em;color:#6B6B84}
+.ixw--ecommerce .ixw-cta>div:first-of-type::after{content:"";position:absolute;left:20px;top:40px;bottom:22px;width:66px;border-radius:4px;
+  background:repeating-linear-gradient(90deg,#2B2350 0 3px,transparent 3px 5px,#2B2350 5px 6px,transparent 6px 9px,#2B2350 9px 13px,transparent 13px 15px)}
+@media (max-width:767px){
+  .ixw--ecommerce .ixw-cta>div:first-of-type{padding:56px 18px 18px}
+  .ixw--ecommerce .ixw-cta>div:first-of-type::after{left:auto;right:18px;top:16px;bottom:auto;height:28px}
+}
+
+/* ---------- buttons: tape, labels and bubble wrap ----------
+   Like Nexi Explains' comic buttons (an ink outline and a hard lip you press the button onto), packed in the shipping
+   room: the primary is a violet parcel whose taped flap holds the arrow, the secondary is a shipping label with its barcode,
+   the controls are bubble-wrap bubbles, the switches ride a conveyor. */
+.ixw--ecommerce{--lab-bd:2px solid var(--e-ink);--lab-lip:var(--e-ink);--lab-tail:var(--e-ink);--lab-r:7px}
+.ixw--ecommerce .ixw-hot-lab{padding-left:26px}
+.ixw--ecommerce .ixw-hot-lab::before{content:"";position:absolute;left:8px;top:50%;width:12px;height:14px;margin-top:-7px;background:repeating-linear-gradient(90deg,#2B2350 0 1.6px,transparent 1.6px 3px,#2B2350 3px 3.8px,transparent 3.8px 5px)}
+.ixw--ecommerce main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border:2.5px solid var(--e-ink);border-radius:9px;box-shadow:0 5px 0 var(--e-ink)}
+.ixw--ecommerce main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{border-color:var(--e-ink);translate:0 -2px;box-shadow:0 7px 0 var(--e-ink)}
+.ixw--ecommerce main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 4px;transition-duration:.07s;box-shadow:0 1px 0 var(--e-ink)}
+.ixw--ecommerce main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid var(--e-mint);outline-offset:4px}
+/* the parcel: violet card, a strip of kraft tape over the flap holds the arrow */
+.ixw--ecommerce main :is(.btn-primary,.ixw-cta .btn-white){gap:14px;padding-right:0}
+.ixw--ecommerce main .btn-primary,.ixw--ecommerce main .btn-primary:hover{color:#FFFFFF;
+  background:var(--e-tape) right/50px 100% no-repeat,linear-gradient(rgba(43,35,80,.35),rgba(43,35,80,.35)) right 50px top/2px 100% no-repeat,linear-gradient(180deg,#7E6DDC,#6D5BD0 70%)}
+.ixw--ecommerce main .ixw-cta .btn-white,.ixw--ecommerce main .ixw-cta .btn-white:hover{color:var(--e-ink);
+  background:var(--e-tape) right/50px 100% no-repeat,linear-gradient(rgba(43,35,80,.25),rgba(43,35,80,.25)) right 50px top/2px 100% no-repeat,#FFFFFF}
+.ixw--ecommerce main :is(.btn-primary,.ixw-cta .btn-white) .ic{width:50px;height:100%;margin:0;padding:0 15px;border-radius:0;background:none;color:var(--e-ink);transition:transform .35s var(--w-spring)}
+.ixw--ecommerce main :is(.btn-primary,.ixw-cta .btn-white):hover .ic{transform:translateX(3px);background:none}
+.ixw--ecommerce main :is(.btn-primary,.ixw-cta .btn-white):hover{animation:eWobble .5s var(--w-spring)}
+@keyframes eWobble{30%{rotate:-1.5deg}65%{rotate:1deg}}
+/* the shipping label: white, a dashed border inside, a barcode on the left */
+.ixw--ecommerce main :is(.btn-ghost,.ixw-cta .btn-outline-white){padding-left:44px;outline:1.5px dashed rgba(109,91,208,.55);outline-offset:-7px}
+.ixw--ecommerce main .btn-ghost,.ixw--ecommerce main .btn-ghost:hover{color:var(--e-ink);background:repeating-linear-gradient(90deg,#2B2350 0 2px,transparent 2px 4px,#2B2350 4px 5px,transparent 5px 7px) 14px 50%/18px 22px no-repeat,#FFFFFF}
+.ixw--ecommerce main .btn-ghost::before{background:#F4F1FD}
+.ixw--ecommerce main .btn-ghost .ic{color:var(--e-violet-d)}
+.ixw--ecommerce main .ixw-cta .btn-outline-white,.ixw--ecommerce main .ixw-cta .btn-outline-white:hover{color:#FFFFFF;outline-color:rgba(255,255,255,.6);
+  background:repeating-linear-gradient(90deg,#FFFFFF 0 2px,transparent 2px 4px,#FFFFFF 4px 5px,transparent 5px 7px) 14px 50%/18px 22px no-repeat,rgba(255,255,255,.12)}
+.ixw--ecommerce main .ixw-cta .btn-outline-white::before{background:rgba(255,255,255,.14)}
+/* the controls: bubble-wrap bubbles; play is the violet one */
+.ixw--ecommerce .ixw-ibtn{border:2.5px solid var(--e-ink);color:var(--e-ink);background:radial-gradient(circle at 34% 28%,#FFFFFF 0 16%,rgba(220,236,250,.95) 34%,#C9DDF3 100%);box-shadow:0 3px 0 var(--e-ink)}
+.ixw--ecommerce .ixw-ibtn:hover{border-color:var(--e-ink);color:var(--e-violet-d);box-shadow:0 5px 0 var(--e-ink)}
+.ixw--ecommerce .ixw-ibtn:active{box-shadow:0 1px 0 var(--e-ink);scale:.92}
+.ixw--ecommerce .ixw-ibtn--play,.ixw--ecommerce .ixw-ibtn--play:hover{color:#FFFFFF;background:radial-gradient(circle at 34% 26%,#B3A7F2 0 14%,#7E6DDC 42%,#5443B5 100%)}
+.ixw--ecommerce .ixw-ibtn--play.is-on{animation:ePulse 2.4s ease-out infinite}
+@keyframes ePulse{0%{box-shadow:0 3px 0 var(--e-ink),0 0 0 0 rgba(109,91,208,.4)}70%,100%{box-shadow:0 3px 0 var(--e-ink),0 0 0 12px rgba(109,91,208,0)}}
+.ixw--ecommerce .ixw-dots button{background:#D6CEEE}
+.ixw--ecommerce .ixw-dots button.is-on{width:14px;height:12px;border-radius:2px;background:linear-gradient(90deg,transparent 5px,rgba(255,240,210,.7) 5px 9px,transparent 9px),var(--e-kraft);margin-top:-2px}
+/* the episode tag: a tracking tag */
+.ixw--ecommerce .ixw-ep-tag{border-radius:7px;background:var(--e-ink);box-shadow:0 3px 0 #160F33}
+.ixw--ecommerce .ixw-ep-tag:hover{box-shadow:0 4px 0 #160F33}
+.ixw--ecommerce .ixw-ep-tag .ic{border-radius:5px;background:var(--e-mint);color:var(--e-ink)}
+/* switches and view toggles: a conveyor carries a parcel across */
+.ixw--ecommerce :is(.ix-switch,.ix-views){border:2.5px solid var(--e-ink);border-radius:10px;background:repeating-linear-gradient(90deg,#3A3358 0 10px,#4A4370 10px 13px);box-shadow:0 4px 0 var(--e-ink)}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button{border-radius:6px;color:#D6CEEE;white-space:nowrap}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button[aria-pressed="true"]{color:var(--e-ink)}
+.ixw--ecommerce .ix-switch::before{border-radius:6px;background:linear-gradient(90deg,transparent calc(50% - 6px),rgba(255,240,210,.6) calc(50% - 6px) calc(50% + 6px),transparent 0),#E3DDF2;box-shadow:0 3px 0 #160F33}
+.ixw--ecommerce .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:linear-gradient(90deg,transparent calc(50% - 6px),rgba(255,240,210,.7) calc(50% - 6px) calc(50% + 6px),transparent 0),var(--e-kraft);box-shadow:0 3px 0 #160F33}
+.ixw--ecommerce .ix-views button[aria-pressed="true"]{background:var(--e-mint);box-shadow:0 2px 0 #160F33}
+/* the sample picker: shipping labels */
+.ixw--ecommerce .ixw-pick-b{border:2.5px solid var(--e-ink);border-radius:12px;box-shadow:0 4px 0 var(--e-ink)}
+.ixw--ecommerce .ixw-pick-b button{border-radius:7px}
+.ixw--ecommerce .ixw-pick-b button:hover{color:var(--e-violet-d);background:#F4F1FD}
+.ixw--ecommerce .ixw-pick-b button[aria-pressed="true"]{background:var(--e-violet);color:#FFFFFF;box-shadow:0 3px 0 var(--e-violet-d)}
+.ixw--ecommerce .sc-tab.is-active b{color:var(--e-violet-d)}
+/* other industries: barcode stickers */
+.ixw--ecommerce .ix-others a{position:relative;padding-left:34px;border:2px solid var(--e-ink);border-radius:8px;box-shadow:0 3px 0 var(--e-ink)}
+.ixw--ecommerce .ix-others a::before{content:"";position:absolute;left:10px;top:50%;width:14px;height:16px;margin-top:-8px;background:repeating-linear-gradient(90deg,#2B2350 0 1.6px,transparent 1.6px 3px,#2B2350 3px 3.8px,transparent 3.8px 5.5px)}
+.ixw--ecommerce .ix-others a:hover{border-color:var(--e-ink);box-shadow:0 5px 0 var(--e-ink)}
+.ixw--ecommerce .ix-others a:active{box-shadow:0 1px 0 var(--e-ink)}
+.ixw--ecommerce .ix-others a .ic{color:var(--e-violet-d)}
+/* text links: the delivery route runs under them */
+.ixw--ecommerce main .btn-link{color:var(--e-violet-d);padding-bottom:9px;background:linear-gradient(90deg,var(--e-mint-d) 50%,transparent 0) 0 100%/12px 3px repeat-x}
+.ixw--ecommerce main .btn-link::after{display:none}
+.ixw--ecommerce main .btn-link:hover{color:var(--e-ink);animation:eRoute .8s linear infinite}
+@keyframes eRoute{to{background-position:24px 100%}}
+@media (prefers-reduced-motion:reduce){.ixw--ecommerce .ixw-ibtn--play.is-on,.ixw--ecommerce main .btn-link:hover,.ixw--ecommerce main :is(.btn-primary,.ixw-cta .btn-white):hover,.ixw--ecommerce .ixw-stop.is-on .ixw-pin{animation:none}}
+
+/* wide screens: the scene sits a little higher, so the tracking card clears the credits card */
+/* the side tabs and the header's Contact Us in this world's colours */
+.ixw--ecommerce{}
+/* the entry intro in this world's colours */
+.ixw--ecommerce{--ii-bg:#F2EFFA;--ii-pattern:linear-gradient(rgba(109,91,208,.09) 2px,transparent 2px) 0 0/72px 36px,linear-gradient(90deg,rgba(109,91,208,.09) 2px,transparent 2px) 0 0/72px 72px;--ii-ink:#2B2350;--ii-b:#6D5BD0;--ii-accent:#3CCFAE;--ii-bar:#6D5BD0;--ii-lip:#2B2350;--ii-ep-bg:#2B2350;--ii-ep-fg:#FFFFFF;--ii-pill-r:7px}
+/* "View the scene": a shipping label with a barcode strip; pressed, mint */
+.ixw--ecommerce .ixw-peek{border:2px solid var(--e-ink);border-radius:7px;color:var(--e-ink);box-shadow:0 3px 0 var(--e-ink);padding-right:40px;
+  background:repeating-linear-gradient(90deg,#2B2350 0 2px,transparent 2px 4px,#2B2350 4px 5px,transparent 5px 7px) calc(100% - 10px) 50%/20px 18px no-repeat,#FFFFFF}
+.ixw--ecommerce .ixw-peek:hover{box-shadow:0 5px 0 var(--e-ink)}.ixw--ecommerce .ixw-peek:active{box-shadow:0 1px 0 var(--e-ink)}
+.ixw--ecommerce .ixw-peek[aria-pressed="true"]{background:repeating-linear-gradient(90deg,#2B2350 0 2px,transparent 2px 4px,#2B2350 4px 5px,transparent 5px 7px) calc(100% - 10px) 50%/20px 18px no-repeat,#9FEBD8}
+@media (min-width:1500px){.ixw--ecommerce .ixw-set{bottom:162px}}
+
+/* phones: the order-router demo's labels stay readable */
+@media (max-width:767px){
+  .ixw--ecommerce .dm-router .omr-nh b,.ixw--ecommerce .dm-router dt,.ixw--ecommerce :is(.omr-nd small,.omr-st,.omr-sh small,.omr-sg,.omr-sf,.omr-sr,.omr-snet,.omr-last,.omr-s,.omr-av,.omr-cap,.omr-bankd){font-size:11px}
+}
+
+/* audit round: hero CTAs at 52px on desktop, matching the caption controls' rhythm */
+@media (min-width:768px){.ixw--ecommerce .ixw-copy .btn-lg{height:52px}}
+/* audit round: before/after, the intro and switch stay in view beside the tall board instead of floating mid-way */
+@media (min-width:1024px){.ixw--ecommerce .ix-ba-wrap{align-items:start}.ixw--ecommerce .ix-ba-wrap>div:first-child{position:sticky;top:120px;padding-top:24px}}
+/* audit round: tablets, the glance strip clears the typed caption however long the line runs */
+@media (min-width:768px) and (max-width:1023px){.ixw--ecommerce .ixw-credits{margin-top:48px}}
+
+/* fix round: segmented switches (Today / With Odoo, and the dashboard's view toggle). Two equal halves, the active
+   pill sits fully inside with the same 4px inset on every side and a concentric radius, its lip drawn inside it,
+   labels centred; the slide eases without overshoot. */
+.ixw--ecommerce :is(.ix-switch,.ix-views){display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none;align-items:stretch;position:relative;padding:4px;border-radius:10px;overflow:hidden;isolation:isolate}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-width:0;margin:0;padding:0 20px;text-align:center;border-radius:calc(10px - 4px);background:transparent;box-shadow:none;transition:color .25s ease,background-color .25s ease}
+.ixw--ecommerce .ix-switch button{height:42px}
+.ixw--ecommerce .ix-views button{height:34px;padding:0 16px}
+.ixw--ecommerce .ix-switch::before{top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:calc(10px - 4px);z-index:0;transition:transform .42s cubic-bezier(.32,.72,.24,1),background-color .3s ease;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--ecommerce .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{transform:translateX(100%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--ecommerce .ix-switch button[aria-pressed="true"]{background:transparent}
+.ixw--ecommerce .ix-views button[aria-pressed="true"]{box-shadow:inset 0 -3px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button[aria-pressed="false"]:hover{background:rgba(127,127,127,.12)}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button:active{transform:translateY(1px)}
+.ixw--ecommerce :is(.ix-switch,.ix-views) button:focus-visible{outline:2px solid currentColor;outline-offset:-6px}
+@media (prefers-reduced-motion:reduce){.ixw--ecommerce .ix-switch::before{transition:none}}
+/* fix round: the parcel tape sits at the pill's left end, clear of the label */
+.ixw--ecommerce .ix-switch::before{background:linear-gradient(90deg,transparent 10px,rgba(255,240,210,.6) 10px 20px,transparent 20px),#E3DDF2}
+.ixw--ecommerce .ix-switch:has([data-ba="after"][aria-pressed="true"])::before{background:linear-gradient(90deg,transparent 10px,rgba(255,240,210,.7) 10px 20px,transparent 20px),var(--e-kraft)}

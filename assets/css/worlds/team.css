@@ -1,0 +1,52 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: team (/employee-hub) — the TechNext ID station on a bright morning. Brand blue, navy, paper white and a yellow
+   edge. The title card is a print proof (crop marks at the corners, a blue band with a yellow end); the caption is a
+   badge log card (two punched slots, a ruled face); buttons are card-shaped (a yellow edge on the right). */
+.ixw--team{--tm-ink:#1B2350;--tm-blue:#3167CA;--tm-y:#FFD84A;--tm-paper:#FFFDF8;--tm-line:#DCE3EE;
+  --w-alt:#F2F5FB;--lab-bd:2px solid #1B2350;--lab-lip:#1B2350;--lab-tail:#1B2350;--lab-r:6px;
+  
+  --ii-bg:linear-gradient(160deg,#F6F8FD,#E6ECF6 55%,#FFF1BF);--ii-ink:#1B2350;--ii-b:#3167CA;--ii-accent:#FFD84A;--ii-lip:#1B2350;--ii-ep-bg:#3167CA;--ii-ep-fg:#FFFFFF}
+.ixw--team .ixw-hero{background:linear-gradient(180deg,#FFFFFF 0,#F6F8FD 16%,#E6ECF6 52%,#DCE6F6 62%,#E4E8F0 62%,#CDD4E2 100%)}
+
+/* ---------- the title card: a print proof with crop marks ---------- */
+.ixw--team .ixw-copy{position:relative;max-width:510px;margin-top:34px;padding:34px 32px 40px;border-radius:10px;background:var(--tm-paper);
+  box-shadow:0 0 0 1.5px var(--tm-line),0 40px 70px -30px rgba(27,35,80,.45);
+  background-image:linear-gradient(90deg,var(--tm-blue) 0 78%,var(--tm-y) 78%);background-size:100% 12px;background-position:0 100%;background-repeat:no-repeat}
+.ixw--team .ixw-copy::before{content:"";position:absolute;inset:-16px;pointer-events:none;
+  background:linear-gradient(#1B2350,#1B2350) 0 15px/12px 1.5px,linear-gradient(#1B2350,#1B2350) 15px 0/1.5px 12px,
+    linear-gradient(#1B2350,#1B2350) 100% 15px/12px 1.5px,linear-gradient(#1B2350,#1B2350) calc(100% - 15px) 0/1.5px 12px,
+    linear-gradient(#1B2350,#1B2350) 0 calc(100% - 15px)/12px 1.5px,linear-gradient(#1B2350,#1B2350) 15px 100%/1.5px 12px,
+    linear-gradient(#1B2350,#1B2350) 100% calc(100% - 15px)/12px 1.5px,linear-gradient(#1B2350,#1B2350) calc(100% - 15px) 100%/1.5px 12px;background-repeat:no-repeat;opacity:.55}
+.ixw--team .ixw-copy::after{content:"PROOF \00B7  ID STATION";position:absolute;right:22px;top:-13px;padding:6px 10px;border-radius:4px;background:var(--tm-ink);color:var(--tm-y);font:800 10.5px/1 var(--font-body);letter-spacing:.16em}
+.ixw--team .ixw-copy h1{max-width:14ch}
+.ixw--team .ixw-copy .hand{color:var(--tm-blue)}
+.ixw--team .ixw-copy .lead{border-top:1px solid #E3E8EF;padding-top:14px}
+.ixw--team .ixw-ep-tag{box-shadow:0 3px 0 #1E4691}
+.ixw--team .ixw-hint .ic{color:#E8B500}
+@media (max-width:767px){.ixw--team .ixw-copy{padding:30px 20px 34px}.ixw--team .ixw-copy::before{inset:-10px}}
+
+/* ---------- the caption: a rolodex card ---------- */
+.ixw--team .ixw-cap{border-radius:10px;border:2px solid var(--tm-ink);background:repeating-linear-gradient(180deg,#FFFFFF 0 27px,#EEF2F9 27px 28px);box-shadow:0 6px 0 var(--tm-ink),0 26px 44px -22px rgba(10,15,40,.45)}
+.ixw--team .ixw-cap::before{content:"";position:absolute;left:50%;bottom:-11px;width:120px;height:14px;margin-left:-60px;background:radial-gradient(circle,var(--tm-ink) 5px,transparent 5.5px) 0 50%/40px 14px space;opacity:.9}
+.ixw--team .ixw-cap::after{content:"BADGE LOG";position:absolute;left:18px;top:-13px;padding:5px 10px;border-radius:4px;background:var(--tm-blue);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.16em}
+.ixw--team .ixw-cap-who b{color:var(--tm-ink)}.ixw--team .ixw-cap-txt b{color:#2756B0}
+.ixw--team .ixw-cap-rec{background:#FFF8D9;border:1px dashed #E8B500;color:#5A4600}
+
+/* ---------- buttons: cards with a yellow edge ---------- */
+.ixw--team main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){border-radius:8px;border:2px solid var(--tm-ink);box-shadow:inset -10px 0 0 var(--tm-y),0 4px 0 var(--tm-ink);padding-right:30px;
+  transition:translate .2s cubic-bezier(.34,1.45,.64,1),box-shadow .2s ease,rotate .2s ease}
+.ixw--team main .btn-primary,.ixw--team main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA)}
+.ixw--team main :is(.btn-ghost,.ixw-cta .btn-white),.ixw--team main :is(.btn-ghost,.ixw-cta .btn-white):hover{color:var(--tm-ink);background:var(--tm-paper)}
+.ixw--team main .btn-ghost::before{display:none}.ixw--team main .btn-ghost .ic{color:var(--tm-blue)}
+.ixw--team main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{translate:0 -2px;rotate:-1deg;box-shadow:inset -14px 0 0 var(--tm-y),0 6px 0 var(--tm-ink)}
+.ixw--team main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 3px;rotate:0deg;box-shadow:inset -10px 0 0 var(--tm-y),0 1px 0 var(--tm-ink);transition-duration:.06s}
+.ixw--team .ixw-cta .btn-outline-white,.ixw--team .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:transparent;border-color:#FFFFFF;box-shadow:inset -10px 0 0 var(--tm-y),0 4px 0 rgba(0,0,0,.3)}
+.ixw--team main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+.ixw--team .ixw-copy .actions{gap:14px}
+.ixw--team .ixw-ibtn{border:2px solid var(--tm-ink);border-radius:8px;box-shadow:0 3px 0 var(--tm-ink)}
+.ixw--team .ixw-ibtn--play,.ixw--team .ixw-ibtn--play:hover{background:var(--tm-y);color:var(--tm-ink)}
+.ixw--team .ixw-dots button.is-on{background:var(--tm-blue);box-shadow:0 0 0 1.5px var(--tm-ink)}
+.ixw--team .ixw-dots button{border-radius:2px}
+.ixw--team .ixw-peek{border-color:var(--tm-ink);box-shadow:0 3px 0 var(--tm-ink)}.ixw--team .ixw-peek[aria-pressed="true"]{background:var(--tm-y)}
+.ixw--team :is(.ixw-ibtn,.ixw-dots button,.ixw-peek):focus-visible{outline:3px solid #3167CA;outline-offset:3px}
+.ixw--team .ixwi-card::after{display:none}

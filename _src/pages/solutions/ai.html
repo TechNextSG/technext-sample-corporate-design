@@ -1,0 +1,233 @@
+<!--meta {"title": "AI Solutions for Business — Singapore & Philippines", "desc": "AI solutions for business in Singapore and the Philippines: assistants, chatbots and automation built and run by TechNext, so you don't hire an AI team.", "out": "solutions/ai.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-aimap.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-ai.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-aimap.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-ai.css?v={ASSET_V}\">", "body": "ixw ixw--sol-ai sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-ai" data-home="300,-76" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>AI Solution</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>AI Solution</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">ai solutions for business</span>AI your team actually uses, and that asks before it matters.</h1>
+      <p class="lead"><span class="m-full">We build four kinds of AI system: assistants that answer from your own documents, AI working inside Odoo, agents that run multi-step workflows, and chatbots for customers — each grounded in your data, each with a person approving anything that moves money or commitments.</span><span class="m-short">Four kinds of AI system, each grounded in your data, with a person approving anything that moves money or commitments.</span></p>
+      <div class="ixw-badges msm-badges"><p class="msm-cred"><span>Claude Partner</span><span>Odoo Ready Partner</span></p><p class="msm-exh"><b>Visit</b><a href="{{ROOT}}solutions/ai-knowledge.html" style="--c:#0E9384">{{icon:database}}Knowledge</a><a href="{{ROOT}}solutions/ai-automation.html" style="--c:#D97B12">{{icon:zap}}Automation</a><a href="{{ROOT}}solutions/ai-chatbots.html" style="--c:#3167CA">{{icon:bot}}Chatbots</a></p></div>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap an exhibit twice to open its page, or tap anyone in the hall.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-hot" type="button" data-hot="know" data-href="{{ROOT}}solutions/ai-knowledge.html" data-nx="420,-74" data-pose="point-left" data-rec="Exhibit 01 · knowledge assistant · cites Expense policy §4.2" data-say="Exhibit 01, **knowledge assistants**: ask in plain language, and the answer comes from your own documents, with the source lit up." style="--x:262;--y:150;--w:168;--h:200" aria-pressed="false"><span class="ixw-hot-lab">{{icon:database}}<b>Knowledge</b><i>tap again to visit</i></span></button>
+      <button class="ixw-hot" type="button" data-hot="odoo" data-href="{{ROOT}}odoo/ai-integration.html" data-nx="290,-76" data-pose="point-right" data-rec="Exhibit 02 · AI inside Odoo · vendor bill read and matched to PO00123" data-say="Exhibit 02, **AI inside Odoo**: bills read and matched, replies drafted and lookups done, right in your records." style="--x:446;--y:140;--w:156;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:ai_app:18}}<b>AI in Odoo</b><i>tap again to visit</i></span></button>
+      <button class="ixw-hot" type="button" data-hot="auto" data-href="{{ROOT}}solutions/ai-automation.html" data-nx="890,-76" data-pose="point-left" data-rec="Exhibit 03 · workflow agent · classify, look up, prepare, route, follow up" data-say="Exhibit 03, **workflow agents**: every marble is a task. The agent runs the steps; at the flap, **a person decides**." style="--x:734;--y:122;--w:150;--h:180" aria-pressed="false"><span class="ixw-hot-lab">{{icon:zap}}<b>Agents</b><i>tap again to visit</i></span></button>
+      <button class="ixw-hot" type="button" data-hot="chat" data-href="{{ROOT}}solutions/ai-chatbots.html" data-nx="760,-76" data-pose="point-right" data-rec="Exhibit 04 · AI chatbot · web, WhatsApp, in-app, handed to a person" data-say="Exhibit 04, **AI chatbots**: customers get answers on the web, WhatsApp and in-app, and **a person** when it matters." style="--x:892;--y:180;--w:96;--h:290" aria-pressed="false"><span class="ixw-hot-lab">{{icon:bot}}<b>Chatbots</b><i>tap again to visit</i></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="data" data-nx="400,-96" data-pose="point-right" data-rec="Your data · documents, records and policies" data-say="One globe feeds every exhibit: **your data**. Documents, records and policies, and the AI sees only what each task needs." style="--x:590;--y:-84;--w:128;--h:128" aria-pressed="false"><span class="ixw-hot-lab">{{icon:shield}}<b>Your data</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="gate" data-nx="790,-70" data-pose="point-left" data-rec="Approval gate · anything that moves money or commitments" data-say="The **approval gate**: anything that moves money or a commitment drops down the chute, and **a person stamps it**." style="--x:590;--y:150;--w:100;--h:124" aria-pressed="false"><span class="ixw-hot-lab">{{icon:usercheck}}<b>A person approves</b></span></button>
+
+      <button class="ixw-cast" type="button" data-cast="doc" data-near="420,-74" data-who="TechNext docent" data-role="TechNext · Answer Archive · illustration" data-say="Every answer comes with **its page**. Watch: I pull the binder, and the kiosk quotes it." style="--x:216;--y:352;--w:84;--h:236" aria-label="Say hi to the docent at the Answer Archive (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Docent</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="eng" data-near="290,-76" data-who="TechNext engineer" data-role="TechNext · AI inside Odoo · illustration" data-say="The bill fills itself in. I check the fields, and it still **waits for a person** to approve." style="--x:486;--y:366;--w:88;--h:210" aria-label="Say hi to the Odoo engineer at the console (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="app" data-near="790,-70" data-who="Finance approver" data-role="Client team · the approval gate · illustration" data-say="Money and commitments come to **me**. The AI prepares; I stamp it, or I don't." style="--x:614;--y:352;--w:60;--h:236" aria-label="Say hi to the approver at the gate (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Approver</b><i>client team</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="mec" data-near="890,-76" data-who="TechNext engineer" data-role="TechNext · the Agent Machine · illustration" data-say="I keep the agent running: **every step logged**, and the flap stays shut until a person says yes." style="--x:790;--y:350;--w:86;--h:240" aria-label="Say hi to the engineer at the Agent Machine (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="vis" data-near="760,-76" data-who="Visitor" data-role="Customer · at the Talking Booth · illustration" data-say="I asked about my order on **WhatsApp**, then a person picked up the chat. No repeating myself!" style="--x:962;--y:354;--w:80;--h:232" aria-label="Say hi to the visitor at the Talking Booth (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Visitor</b><i>chatting</i></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="lever" data-near="890,-76" data-pose="wow" data-say="Clunk! **Three tasks** at once: classified, looked up, prepared, and each one **waits for a person** at the flap." style="--x:668;--y:300;--w:36;--h:60" aria-label="Pull the Agent Machine's lever"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Pull the lever</b></span></button>
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="bell" data-near="760,-76" data-pose="celebrate" data-say="Ding! The bot **hands over to a person**, with the whole chat so far." style="--x:884;--y:318;--w:40;--h:32" aria-label="Ring the hand-off bell"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Hand-off bell</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:300;--ny:-76" data-reacts="wow::Four exhibits, **one source**: your data!|love::The AI prepares, **people decide**. Love it.|celebrate::Stamped and **approved**. Yay!|think::Hmm… which task costs your team the **most hours** each week?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-ai}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **AI Discovery Hall**: four hands-on exhibits, all fed from your data, with a person at the gate." data-outro="Four disciplines, one source: **your data**, and a person approving what matters. Start with the exhibit that saves the most hours.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-ai}}<b data-for="doc" style="--c:#0E9384">D</b><b data-for="eng" style="--c:#714B67">E</b><b data-for="app" style="--c:#1E9E6A">A</b><b data-for="mec" style="--c:#D97B12">M</b><b data-for="vis" style="--c:#E0456B">V</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="your guide · AI Discovery Hall">your guide · AI Discovery Hall</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>AI Discovery Hall</b>: four hands-on exhibits, all fed from your data, with a person at the gate.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: knowledge assistants"></button><button type="button" data-ixw-dot aria-label="Stop 3: AI inside Odoo"></button><button type="button" data-ixw-dot aria-label="Stop 4: workflow agents"></button><button type="button" data-ixw-dot aria-label="Stop 5: AI chatbots"></button><button type="button" data-ixw-dot aria-label="Stop 6: your data"></button><button type="button" data-ixw-dot aria-label="Stop 7: a person approves"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:grid}}Disciplines</dt><dd>4 AI disciplines</dd></div><div><dt>{{icon:database}}Grounding</dt><dd>Your own data, with sources</dd></div><div><dt>{{icon:usercheck}}Control</dt><dd>Human approval where it matters</dd></div><div><dt>{{icon:globe}}Deploy</dt><dd>Web · WhatsApp · in-app · Odoo</dd></div><div><dt>{{icon:pin}}Reach</dt><dd>Singapore HQ · Philippines · Vietnam</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec">
+  <div class="container"><div class="answer-box msm-note reveal"><p class="answer-h">In one paragraph</p><p>TechNext builds four kinds of enterprise AI system: knowledge assistants that answer from your own documents with sources, AI working inside Odoo, agents that run multi-step workflows, and chatbots for customers. Each one is grounded in your data, and a person approves anything that moves money or makes a commitment.</p></div></div>
+</section>
+
+<section class="section demo-sec msm-demo-sec" id="ai-use-cases">
+  <div class="container">
+    <div class="msm-demo-top">
+      <div class="sec-head reveal"><span class="hand">where ai pays back first</span><h2>Enterprise AI use cases, mapped by value and effort.</h2><p class="lead">TechNext scores each candidate use case on business value, the effort to build and run it, and how many items it handles a month, then sequences them: quick wins first, then the shared data and knowledge they build on, then scale. Filter by department, switch to the roadmap, or open a bubble to see how it runs in Odoo, from trigger to human checkpoint to write-back.</p></div>
+      <div class="msm-label reveal" aria-hidden="true">
+        <p class="msm-label-k">Hands-on exhibit</p>
+        <p class="msm-label-t">The use-case matrix</p>
+        <p class="msm-label-m">Bubbles, filters and a roadmap · touch to explore</p>
+        <ul class="msm-label-key"><li style="--c:#0E9384">{{icon:target}}Quick wins first</li><li style="--c:#714B67">{{icon:layers}}Then the foundations</li><li style="--c:#D97B12">{{icon:trend}}Then scale</li></ul>
+        
+      </div>
+    </div>
+    <div class="dm dm-aimap reveal" data-demo="aimap">
+      <div class="dm-head">
+        <div class="dm-title"><b>AI use-case matrix</b><small>16 sample use cases · bubble size = items a month</small></div>
+        <div class="dm-seg" role="group" aria-label="Filter by department">
+          <button type="button" data-dept="all" aria-pressed="true">All</button>
+          <button type="button" data-dept="fin" aria-pressed="false"><i class="dm-sw" style="--c:#0E9384"></i>Finance</button>
+          <button type="button" data-dept="sal" aria-pressed="false"><i class="dm-sw" style="--c:#3167CA"></i>Sales</button>
+          <button type="button" data-dept="svc" aria-pressed="false"><i class="dm-sw" style="--c:#7447D6"></i>Service</button>
+          <button type="button" data-dept="ops" aria-pressed="false"><i class="dm-sw" style="--c:#D97B12"></i>Operations</button>
+          <button type="button" data-dept="hr" aria-pressed="false"><i class="dm-sw" style="--c:#C2417A"></i>HR</button>
+        </div>
+        <div class="dm-seg" role="group" aria-label="Choose a view">
+          <button type="button" data-view="matrix" aria-pressed="true">{{icon:grid}}Matrix</button>
+          <button type="button" data-view="road" aria-pressed="false">{{icon:layers}}Roadmap</button>
+        </div>
+      </div>
+      <div class="umx-wrap">
+        <div class="umx-plot" role="group" aria-label="AI use cases by business value and effort. Select one to open its workflow.">
+          <svg class="umx-grid" aria-hidden="true" focusable="false"></svg>
+          <div class="umx-lanes" aria-hidden="true"></div>
+          <svg class="umx-deps" aria-hidden="true" focusable="false"><defs><marker id="umx-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0.8 7 4 0 7.2z" fill="#6F8FD6"/></marker></defs></svg>
+          <span class="umx-q" data-q="0">Quick wins</span><span class="umx-q" data-q="1">Strategic bets</span><span class="umx-q" data-q="2">Fill-ins</span><span class="umx-q" data-q="3">Rethink</span>
+          <span class="umx-ax umx-ax--x">Effort to build and run</span><span class="umx-ax umx-ax--y">Business value</span>
+          <span class="umx-tick" data-t="x0">Low</span><span class="umx-tick" data-t="x1">High</span><span class="umx-tick" data-t="y0">Low</span><span class="umx-tick" data-t="y1">High</span>
+        </div>
+        <div class="umx-side">
+          <div class="umx-intro">
+            <p class="umx-h">{{icon:target}}How to read it</p>
+            <p class="umx-p">Higher means more business value; further right means more effort to build and run. Bigger bubbles handle more items a month. Colour is the department, the icon is the AI discipline.</p>
+            <dl class="dm-kpis umx-kpis">
+              <div><dt>Use cases</dt><dd data-k="n">16</dd></div>
+              <div><dt>Items a month</dt><dd data-k="vol">0</dd></div>
+              <div><dt>Quick wins</dt><dd data-k="qw">0</dd></div>
+              <div class="dm-ok"><dt>Human checkpoint</dt><dd data-k="hu">16 of 16</dd></div>
+            </dl>
+            <p class="umx-h">Roadmap mix</p>
+            <div class="umx-mix" aria-hidden="true"><span><b>8</b>Quick wins</span><span><b>5</b>Foundations</span><span><b>3</b>Scale</span></div>
+            <p class="umx-h">Items a month (sample)</p>
+            <div class="umx-sizes" aria-hidden="true"><span data-v="100"><i></i>100</span><span data-v="1000"><i></i>1,000</span><span data-v="10000"><i></i>10,000</span></div>
+            <p class="umx-h">AI disciplines</p>
+            <ul class="umx-discs"><li>{{icon:database}}Knowledge assistant</li><li>{{icon:cpu}}AI inside Odoo</li><li>{{icon:zap}}Workflow agent</li><li>{{icon:bot}}AI chatbot</li></ul>
+            <p class="umx-hint">{{icon:arrow}}Select a bubble to open its workflow.</p>
+          </div>
+          <aside class="umx-drawer" id="umx-drawer" aria-label="Use-case workflow" tabindex="-1"></aside>
+        </div>
+      </div>
+      <template class="umx-ico"><span data-i="database">{{icon:database}}</span><span data-i="cpu">{{icon:cpu}}</span><span data-i="zap">{{icon:zap}}</span><span data-i="bot">{{icon:bot}}</span><span data-i="sparkle">{{icon:sparkle}}</span><span data-i="usercheck">{{icon:usercheck}}</span><span data-i="file">{{icon:file}}</span><span data-i="mail">{{icon:mail}}</span><span data-i="shield">{{icon:shield}}</span><span data-i="check">{{icon:check}}</span><span data-i="x">{{icon:x}}</span><span data-i="clock">{{icon:clock}}</span></template>
+      <div class="dm-static">
+        <p><b>Finance:</b> vendor bill capture, collections reminders, expense receipt coding, month-end variance notes.</p>
+        <p><b>Sales:</b> lead scoring, quote drafting, meeting summaries. <b>Service:</b> ticket triage, knowledge answers for agents, WhatsApp order status.</p>
+        <p><b>Operations:</b> demand forecast, stock anomaly alerts, supplier date updates. <b>HR:</b> CV screening, policy Q&amp;A, onboarding plans.</p>
+        <p>Every use case runs the same way: a trigger, the Odoo records, documents and emails it reads, an AI step, a human checkpoint, and a write-back into Odoo. The roadmap puts quick wins first, then foundations (clean CRM history, a knowledge index, trusted stock data), then the use cases that scale on them.</p>
+      </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample data. Scores and volumes are illustrative: in discovery we score your own use cases with the people who run them.</p>
+  </div>
+</section>
+
+
+<section class="section msm-gal-sec">
+  <div class="container">
+    <div class="sec-head msm-head reveal">
+      <span class="hand">what's included</span>
+      <h2>Four disciplines. Pick the one that removes the most manual work.</h2>
+    </div>
+    <div class="msm-gals">
+      <a class="msm-gal reveal" style="--i:0;--c:#0E9384;--l:#DDF2EE" href="{{ROOT}}solutions/ai-knowledge.html"><span class="msm-gal-n">Gallery 01</span><span class="msm-gal-ic">{{icon:database}}</span><h3>RAG knowledge assistants</h3><p>Ask in plain language and get answers from your policies, manuals, contracts and records — with the source cited on every answer.</p><span class="btn-link">Knowledge assistants {{icon:arrow}}</span></a>
+      <a class="msm-gal reveal" style="--i:1;--c:#714B67;--l:#F3E8F0" href="{{ROOT}}odoo/ai-integration.html"><span class="msm-gal-n">Gallery 02</span><span class="msm-gal-ic">{{icon:cpu}}</span><h3>AI inside Odoo</h3><p>Vendor bills read and matched, replies drafted, records summarised and lookups answered — right inside the ERP we implement.</p><span class="btn-link">Odoo + AI {{icon:arrow}}</span></a>
+      <a class="msm-gal reveal" style="--i:2;--c:#D97B12;--l:#FCEBD5" href="{{ROOT}}solutions/ai-automation.html"><span class="msm-gal-n">Gallery 03</span><span class="msm-gal-ic">{{icon:zap}}</span><h3>Workflow automation agents</h3><p>Multi-step tasks triggered by an event — classify, look up, prepare, route, follow up — with approval steps and an audit trail.</p><span class="btn-link">Automation {{icon:arrow}}</span></a>
+      <a class="msm-gal reveal" style="--i:3;--c:#3167CA;--l:#E3ECFB" href="{{ROOT}}solutions/ai-chatbots.html"><span class="msm-gal-n">Gallery 04</span><span class="msm-gal-ic">{{icon:bot}}</span><h3>AI chatbots</h3><p>Assistants for web, WhatsApp and in-app that answer from your knowledge base, capture leads and hand off cleanly to a person.</p><span class="btn-link">Chatbots {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt msm-route-sec">
+  <div class="container">
+    <div class="sec-head msm-head reveal">
+      <span class="hand">how we deliver</span>
+      <h2>Grounded, approved, measured — every time.</h2>
+    </div>
+    <ol class="msm-route" data-ixw-in>
+      <li class="msm-stop" style="--i:0;--c:#0E9384"><span class="msm-stop-k"><b>1</b><i>{{icon:target}}</i></span><div><p class="msm-stop-t">Tour stop 1</p><h3>Scope the task</h3><p>We pick the repetitive work that costs the most hours, name the data it needs and the decision that must stay with a person.</p></div></li>
+      <li class="msm-stop" style="--i:1;--c:#714B67"><span class="msm-stop-k"><b>2</b><i>{{icon:database}}</i></span><div><p class="msm-stop-t">Tour stop 2</p><h3>Ground it in your data</h3><p>We connect the documents, records and tools the task touches, and set exactly what the AI is allowed to see.</p></div></li>
+      <li class="msm-stop" style="--i:2;--c:#D97B12"><span class="msm-stop-k"><b>3</b><i>{{icon:shield}}</i></span><div><p class="msm-stop-t">Tour stop 3</p><h3>Set the guardrails</h3><p>We decide with you what the AI may do alone and what waits for approval, and log every action for audit.</p></div></li>
+      <li class="msm-stop" style="--i:3;--c:#3167CA"><span class="msm-stop-k"><b>4</b><i>{{icon:pulse}}</i></span><div><p class="msm-stop-t">Tour stop 4</p><h3>Launch and measure</h3><p>We deploy where your team already works, then report what was handled and what was handed over.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section msm-get-sec">
+  <div class="container">
+    <div class="msm-get">
+      <div class="msm-get-copy reveal">
+        <span class="hand">what you get</span>
+        <h2>One partner for the whole AI stack.</h2>
+        <p class="lead">TechNext builds all four disciplines and connects them to the systems you already run — delivered for 11+ enterprise clients transformed across 10+ countries, from a team that also implements Odoo.</p>
+      </div>
+      <div class="msm-ticket reveal">
+        <p class="msm-ticket-h"><span>Admission includes</span><b>All four galleries</b></p>
+        <ul class="msm-incl">
+          <li>{{icon:check}}Answers and actions grounded in your own data</li>
+          <li>{{icon:check}}Sources cited so people can verify</li>
+          <li>{{icon:check}}Human approval before anything irreversible</li>
+          <li>{{icon:check}}A full action log on every task</li>
+          <li>{{icon:check}}Deployment on web, WhatsApp, in-app and inside Odoo</li>
+          <li>{{icon:check}}Access scoped to what each task needs</li>
+          <li>{{icon:check}}Private-cloud or on-premise models where data can't leave</li>
+          <li>{{icon:check}}Built by a team that also implements Odoo</li>
+          <li>{{icon:check}}One roadmap across all four disciplines</li>
+          <li>{{icon:check}}A monthly review of what to improve</li>
+          <li>{{icon:check}}Support after launch, not just at go-live</li>
+          <li>{{icon:check}}Clear pricing on quotation</li>
+        </ul>
+        <p class="msm-ticket-foot" aria-hidden="true"><span>AI DISCOVERY HALL</span><span>{{icon:usercheck}}A person approves what matters</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt msm-faq-sec">
+  <div class="container">
+    <div class="msm-faq-wrap">
+      <aside class="msm-faq-side reveal">
+        <span class="hand">questions</span>
+        <h2>What teams ask before they start.</h2>
+        <p class="msm-faq-more">Your question isn't here? <a href="#talk">Ask at the information desk {{icon:arrow}}</a></p>
+      </aside>
+      <div class="faq msm-faq reveal">
+        <details><summary>Which of the four should we start with? {{icon:chevron}}</summary><div class="faq-a"><p>Start with the task that removes the most manual hours each week. Tell us the work; we'll say which discipline fits and what a first version takes.</p></div></details>
+        <details><summary>Will the AI make things up? {{icon:chevron}}</summary><div class="faq-a"><p>Answers are grounded in your own sources and cite them. When your documents don't cover a question, the system says so and can route it to a person rather than guess.</p></div></details>
+        <details><summary>Do we have to be on Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>No. The knowledge assistants, automation agents and chatbots work with the tools you already use. AI inside Odoo is for teams already running the ERP.</p></div></details>
+        <details><summary>Where does our data go? {{icon:chevron}}</summary><div class="faq-a"><p>It stays in your environment. Where data can't leave, we deploy private-cloud or on-premise models and choose hosting for your requirements.</p></div></details>
+        <details><summary>Can a person stay in control? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Anything that moves money, commitments or customer data waits for human approval, and every action is logged against the record it touched.</p></div></details>
+        <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to the task and the data involved. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll come back with a written scope.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section msm-cta-sec">
+  <div class="container">
+    <div class="cta ixw-cta msm-cta reveal" data-ixw-burst>
+      <div>
+        <span class="hand">next step</span>
+        <h2>Start with one repetitive task.</h2>
+        <p>Name the task that costs the most hours each week. We'll say which of the four fits and what a first version takes.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /odoo/vietnam: the counterpart of /odoo/philippines (odoo-ph.css), same calm base. Its one quiet theme is a lacquer red,
+   used on the step numbers, the form codes on the hero board and a thin rule on the localisation cards. */
+.vn-page{--calm-accent:#B42318;--calm-accent-ink:#8F1D14;--calm-accent-line:#F3CDC8;--calm-accent-wash:#FFF6F5}
+body.vn-page main .answer-sec{padding:0 0 8px!important;background:#fff!important}
+body.vn-page main .answer-sec .answer-box{display:block!important;max-width:880px!important;margin:44px 0 0!important;padding:2px 0 2px 22px!important;background:none!important;border:0!important;border-left:3px solid #D9473A!important;border-radius:0!important;box-shadow:none!important}
+body.vn-page main .answer-sec .answer-box::before,body.vn-page main .answer-sec .answer-box::after{content:none!important;display:none!important}
+body.vn-page main .answer-sec .answer-h{display:block!important;margin:0 0 8px!important;padding:0!important;background:none!important;border:0!important;font:700 12px/1.3 var(--font-body)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#8F1D14!important}
+body.vn-page main .answer-sec .answer-box p:not(.answer-h){margin:0!important;font:400 1.02rem/1.7 var(--font-body)!important;color:var(--body)!important}
+body.vn-page main .grid-2 > .card{border-top:3px solid #EBA39B!important}
+body.vn-page main .apply-steps .apply-n{background:#FDECEA!important;color:#8F1D14!important;box-shadow:inset 0 0 0 1.5px #D9473A!important}
+body.vn-page .ph-forms li b{color:#8F1D14}
+body.vn-page .vn-rule-meta{margin:14px 0 0;font:500 12.5px/1.5 var(--font-body);color:var(--muted)}
+body.vn-page .vn-rule-meta a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media (max-width:767px){body.vn-page main .answer-sec .answer-box{margin-top:32px!important;padding-left:16px!important}}
+@media (max-width:480px){html body.vn-page main .cta .actions .btn{flex:1 1 100%!important}}

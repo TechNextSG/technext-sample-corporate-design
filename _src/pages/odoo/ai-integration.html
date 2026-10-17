@@ -1,0 +1,202 @@
+<!--meta {"title": "Odoo AI Integration — AI Agents Inside Your ERP", "desc": "Odoo AI integration by TechNext: AI agents and assistants inside your Odoo, working on your own data, for companies in Singapore and the Philippines.", "out": "odoo/ai-integration.html", "nav": "odoo", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-recordai.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/ai-odoo.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-recordai.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/ai-odoo.css?v={ASSET_V}\">", "body": "ixw ixw--ai-odoo ow-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="ai-odoo" data-home="760,70" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Odoo</span><span>Customization</span><span>AI Integration</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>Odoo + AI</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">odoo ai integration</span>AI that works inside your Odoo, on your data.</h1>
+      <p class="lead"><span class="m-full">Vendor bills read and matched, customer replies drafted, questions answered from your own records. TechNext builds AI agents, knowledge systems and assistants, and connects them to the Odoo we implement.</span><span class="m-short">Bills read and matched, replies drafted, questions answered from your own Odoo records.</span></p>
+      <div class="ixw-badges"><span>Odoo Ready Partner</span><span>Claude Partner</span></div>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">{{icon:chat}}Talk to us</a></div>
+      <p class="ixw-hint">{{icon:sparkle}}<span>Tap the team, the AI sous-chef, the bell or the scanner.</span></p>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="fin" data-near="940,100" data-who="Finance lead" data-role="Client team · head chef at the pass · illustration" data-say="The AI preps the bill. I check the plate and **approve** it. Nothing leaves the pass without me." style="--x:724;--y:292;--w:90;--h:150" aria-label="Say hi to the head chef from finance (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Head chef</b><i>finance approves</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="agt" data-near="760,70" data-who="Support agent" data-role="Client team · expediter · illustration" data-say="The reply is drafted for me. I **edit** it and send it out." style="--x:830;--y:300;--w:84;--h:150" aria-label="Say hi to the expediter from support (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Expediter</b><i>support sends</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="eng" data-near="760,70" data-who="TechNext AI engineer" data-role="Odoo + AI · tastes the sauce · illustration" data-say="I taste before it's served: it's **measured on your data** before it runs unattended." style="--x:626;--y:358;--w:90;--h:230" aria-label="Say hi to the AI engineer (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>AI engineer</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="lb" data-near="300,150" data-who="TechNext AI engineer" data-role="pantry clerk · illustration" data-say="Every jar gets a label: the AI only reaches the **records its task needs**. Scoped!" style="--x:-220;--y:330;--w:96;--h:180" aria-label="Say hi to the pantry clerk labelling the shelves (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Pantry clerk</b><i>TechNext</i></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="capture" data-nx="760,70" data-pose="point-left" data-rec="Document capture · paper bill → Odoo fields" data-say="**Document capture**: a paper or PDF bill goes in, and the AI sous-chef fills its fields in Odoo." style="--x:496;--y:17;--w:264;--h:96" aria-pressed="false"><span class="ixw-hot-lab">{{icon:file}}<b>Capture</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="match" data-nx="760,70" data-pose="point-left" data-rec="PO match · PO00123" data-say="The bill is **matched** to its purchase order, PO00123, from your own pantry of records." style="--x:496;--y:84;--w:264;--h:34" aria-pressed="false"><span class="ixw-hot-lab">{{icon:search}}<b>PO match</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="approve" data-nx="940,100" data-pose="point-left" data-rec="Control · people approve, the AI prepares" data-say="At **the pass**, anything that posts, pays or commits waits for a person to approve it." style="--x:740;--y:376;--w:150;--h:36" aria-pressed="false"><span class="ixw-hot-lab">{{icon:check}}<b>A person approves</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="log" data-nx="760,70" data-pose="wow" data-rec="Every action · logged on the record" data-say="Every AI step is **clipped to the record**, like tickets on the rail, next to who approved it." style="--x:678;--y:-105;--w:636;--h:62" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layers}}<b>Logged</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="draft" data-nx="760,70" data-pose="point-right" data-rec="Helpdesk · reply drafted, agent sends" data-say="Customer **replies drafted** from the order and its history, for your agent to edit and send." style="--x:941;--y:303;--w:114;--h:134" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:helpdesk:18}}<b>Drafts</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="ask" data-nx="760,70" data-pose="point-left" data-rec="Ask · answered from your records, with the source" data-say="Questions **answered from your own records**, straight from the pantry, with the source quoted." style="--x:260;--y:20;--w:168;--h:320" aria-pressed="false"><span class="ixw-hot-lab">{{icon:chat}}<b>Ask</b></span></button>
+
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="scanner" data-near="760,70" data-pose="wow" data-say="Whirr! A bill goes **in**, the fields come out." style="--x:396;--y:332;--w:88;--h:60" aria-label="Scan a bill"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Scan a bill</b></span></button>
+      <button class="ixw-toy ixw-hot--below" type="button" data-toy="bell" data-near="940,100" data-pose="celebrate" data-say="Ding! **Approved by a person**, so it can leave the pass." style="--x:858;--y:368;--w:44;--h:32" aria-label="Ring the service bell"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Ring the bell</b></span></button>
+      <button class="ixw-toy" type="button" data-toy="bot" data-near="760,70" data-pose="wow" data-say="The AI sous-chef: prep done, three plates up. **A person** still approves each one." style="--x:520;--y:232;--w:100;--h:150" aria-label="Wave at the AI sous-chef"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>AI sous-chef</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:760;--ny:110" data-reacts="wow::Four fields, **prepped**!|love::The AI preps, **people decide**. Love it.|celebrate::Approved at the pass. **Yay!**|think::Hmm… which task costs your team the **most hours**?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:ai-odoo}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **kitchen**: the AI preps inside Odoo, and a person approves every plate." data-outro="Your own ingredients, every ticket logged, **approved by people**. That's Odoo + AI.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:ai-odoo}}<b data-for="fin" style="--c:#1E9E6A">F</b><b data-for="agt" style="--c:#E0456B">S</b><b data-for="eng" style="--c:#7B5CD6">A</b><b data-for="lb" style="--c:#1E9BB0">L</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · the Odoo kitchen">assistant · the Odoo kitchen</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>kitchen</b>: the AI preps inside Odoo, and a person approves every plate.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: capture"></button><button type="button" data-ixw-dot aria-label="Stop 3: PO match"></button><button type="button" data-ixw-dot aria-label="Stop 4: a person approves"></button><button type="button" data-ixw-dot aria-label="Stop 5: logged"></button><button type="button" data-ixw-dot aria-label="Stop 6: drafts"></button><button type="button" data-ixw-dot aria-label="Stop 7: ask"></button><button type="button" data-ixw-dot aria-label="Stop 8: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:database}}Works in</dt><dd>Your Odoo records</dd></div><div><dt>{{icon:sparkle}}Discipline</dt><dd>AI inside Odoo</dd></div><div><dt>{{icon:layers}}Every action</dt><dd>Logged on the record</dd></div><div><dt>{{icon:check}}Control</dt><dd>People approve; the AI prepares</dd></div><div><dt>{{icon:users}}Built by</dt><dd>A team that also implements Odoo</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec">
+  <div class="container"><div class="answer-box reveal"><p class="answer-h">In one paragraph</p><p>Odoo AI integration from TechNext puts AI inside the Odoo records your team already uses: vendor bills read and matched to purchase orders, customer replies drafted, and questions answered from your own data. Anything that posts, pays or commits waits for a person to approve it, and every step is logged on the record.</p></div></div>
+</section>
+
+<section class="section demo-sec" id="ai-in-a-record">
+  <div class="container">
+    <div class="ai-demo-top">
+    <div class="sec-head reveal">
+      <span class="hand">try it on a record</span>
+      <h2>Odoo AI integration, one record at a time.</h2>
+      <p class="lead">Pick a record and run its AI actions in order. Each one lights up the fields it reads and writes its result. Anything that posts, sends or commits stops at a gate until a person approves, and every step is logged on the record. This is how TechNext builds AI inside the Odoo we implement.</p>
+    </div>
+    </div>
+    <div class="dm dm-recordai reveal" data-demo="recordai">
+      <div class="dm-head">
+        <div class="dm-title"><b>AI inside an Odoo record</b><small>Sample records · the AI prepares, people approve</small></div>
+        <div class="dm-seg" role="group" aria-label="Choose a record">
+          <button type="button" data-rec="bill" aria-pressed="true">{{odoo:accountant:16}}Vendor bill</button>
+          <button type="button" data-rec="ticket" aria-pressed="false">{{odoo:helpdesk:16}}Helpdesk ticket</button>
+          <button type="button" data-rec="lead" aria-pressed="false">{{odoo:crm:16}}CRM opportunity</button>
+        </div>
+      </div>
+      <div class="dra-wrap">
+        <div class="dra-rec">
+          <p class="dra-rh">{{odoo:ai_app:26}}<span class="dra-rt">Vendor bill · Draft</span></p>
+          <p class="dra-scope">{{icon:lock}}<span>Can read: vendor bills, purchase orders, receipts</span></p>
+          <div class="dra-form" aria-live="polite"></div>
+        </div>
+        <div class="dra-side">
+          <p class="dra-h">AI actions, in order</p>
+          <div class="dra-acts"></div>
+          <div class="dra-gate" hidden role="group" aria-label="Approval">
+            <p>{{icon:shield}}<span class="dra-gq">Needs a person</span></p>
+            <div><button type="button" data-yes>Approve</button><button type="button" data-no>Send back</button></div>
+          </div>
+          <p class="dra-h">Logged on the record</p>
+          <ol class="dra-log" aria-live="polite"></ol>
+        </div>
+      </div>
+      <div class="dm-static"><p>Vendor bill: the AI reads the PDF, matches the purchase order, codes the lines, and a person approves the posting. Helpdesk ticket: it summarises the thread, routes it, drafts a reply, and a person sends it. CRM opportunity: it looks up last year's quotation with the source shown, suggests the next step, drafts a follow-up, and a person sends the quotation.</p></div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample records. Access is scoped to the records each task needs, and accuracy is measured on your own data before anything runs unattended.</p>
+  </div>
+</section>
+
+
+<section class="section ai-menu-sec">
+  <div class="container">
+    <div class="ai-menu reveal">
+      <header class="ai-menu-head"><span class="hand">what's included</span><h2>Where AI pays back inside an ERP.</h2><p class="ai-menu-sub"><span>Prepped by AI</span><i aria-hidden="true">·</i><span>approved by a person</span></p></header>
+      <div class="ai-dishes">
+        <article class="ai-dish reveal" style="--i:0;--c:#E9A23B"><span class="ai-plate">{{odoo:documents}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 1</p><h3>Document capture</h3><p>Vendor bills, receipts and delivery notes read with OCR, coded and matched to purchase orders — ready for approval, not posted on their own.</p></div></article>
+        <article class="ai-dish reveal" style="--i:1;--c:#E0456B"><span class="ai-plate">{{icon:chat}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 2</p><h3>Draft replies</h3><p>Quotation follow-ups, helpdesk answers and payment reminders drafted from the record, reviewed by a person before they send.</p></div></article>
+        <article class="ai-dish reveal" style="--i:2;--c:#3167CA"><span class="ai-plate">{{icon:file}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 3</p><h3>Summaries</h3><p>Long email threads, helpdesk tickets and customer histories summarised on the record, so the next person is up to speed fast.</p></div></article>
+        <article class="ai-dish reveal" style="--i:3;--c:#3FA66B"><span class="ai-plate">{{odoo:knowledge}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 4</p><h3>Knowledge and lookups</h3><p>"What did we quote this customer last year?" answered from Odoo and your documents — with the source shown.</p></div></article>
+        <article class="ai-dish reveal" style="--i:4;--c:#7B5CD6"><span class="ai-plate">{{icon:target}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 5</p><h3>Smart routing and next-best-action</h3><p>Incoming records classified and routed to the right team, with the sensible next step suggested on the record.</p></div></article>
+        <article class="ai-dish reveal" style="--i:5;--c:#714B67"><span class="ai-plate">{{icon:lock}}</span><div class="ai-dish-b"><p class="ai-dish-n">No. 6</p><h3>Private deployment</h3><p>On-premise or private-cloud models where data can't leave your environment, with model and hosting chosen for your requirements.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt ai-line-sec">
+  <div class="container">
+    <div class="sec-head ai-head reveal"><span class="hand">how we build one</span><h2>Pick a task, connect it, prove it, gate it.</h2><p class="lead">Four stations on the line, from the first order to service.</p></div>
+    <ol class="ai-line" data-ixw-in>
+      <li class="ai-ticket" style="--i:0;--c:#E9A23B"><p class="ai-ticket-top"><b>#1</b><span>Order</span>{{icon:target}}</p><h3>Pick one task</h3><p>Bills, replies or lookups — we start with the repetitive work inside Odoo that costs the most hours.</p></li>
+      <li class="ai-ticket" style="--i:1;--c:#3167CA"><p class="ai-ticket-top"><b>#2</b><span>Mise en place</span>{{icon:plug}}</p><h3>Connect to Odoo</h3><p>Scoped access to just the records the task needs, using the Odoo we implement and support.</p></li>
+      <li class="ai-ticket" style="--i:2;--c:#7B5CD6"><p class="ai-ticket-top"><b>#3</b><span>Tasting</span>{{icon:pulse}}</p><h3>Measure on your data</h3><p>Proven on your own documents and records before it's allowed to run without someone watching.</p></li>
+      <li class="ai-ticket" style="--i:3;--c:#1E9E6A"><p class="ai-ticket-top"><b>#4</b><span>The pass</span>{{icon:shield}}</p><h3>Go live with a gate</h3><p>People approve postings, sends and commitments; every action is logged against the Odoo record.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section ai-rules-sec">
+  <div class="container">
+    <div class="ai-rules">
+      <div class="ai-rules-copy reveal">
+        <span class="hand">what you get</span>
+        <h2>People approve; the AI prepares.</h2>
+        <p class="lead">Anything that posts a journal entry, sends money or contacts a customer goes through a person until the accuracy is proven on your data — and it's built by the same team that implements your Odoo.</p>
+        <p class="ai-chain" aria-hidden="true"><span class="ai-chip ai-chip--ai">{{icon:sparkle}}The AI prepares</span><i></i><span class="ai-chip ai-chip--ok">{{icon:check}}A person approves</span><i></i><span class="ai-chip ai-chip--log">{{icon:layers}}Logged on the record</span></p>
+      </div>
+      <div class="ai-boards">
+        <div class="ai-board reveal" style="--i:0;--c:#7B5CD6"><p class="ai-board-h">{{icon:sparkle}}<span>On the menu</span></p>
+          <ul><li>{{icon:check}}Vendor bills read with OCR and matched to orders</li><li>{{icon:check}}Replies and follow-ups drafted from the record</li><li>{{icon:check}}Records, threads and tickets summarised</li><li>{{icon:check}}Lookups across Odoo and documents, with the source shown</li><li>{{icon:check}}Smart routing and next-best-action on records</li></ul></div>
+        <div class="ai-board reveal" style="--i:1;--c:#1E9E6A"><p class="ai-board-h">{{icon:shield}}<span>Kitchen rules</span></p>
+          <ul><li>{{icon:check}}Access limited to the Odoo records the task needs</li><li>{{icon:check}}Every action logged against the record in Odoo</li><li>{{icon:check}}Human approval on postings, sends and commitments</li><li>{{icon:check}}Measured on your data before it runs unattended</li></ul></div>
+        <div class="ai-board reveal" style="--i:2;--c:#714B67"><p class="ai-board-h">{{icon:lock}}<span>Where it runs</span></p>
+          <ul><li>{{icon:check}}Private-cloud or on-premise where data can't leave</li><li>{{icon:check}}Model and hosting chosen for your data requirements</li><li>{{icon:check}}Built by your Odoo implementer, priced on quotation</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt ai-faq-sec">
+  <div class="container">
+    <div class="ai-faq-wrap">
+      <aside class="ai-faq-side reveal">
+        <span class="hand">questions</span>
+        <h2>What teams ask before they start.</h2>
+      </aside>
+      <div class="faq ai-faq reveal">
+        <details><summary>Will it post to the ledger on its own? {{icon:chevron}}</summary><div class="faq-a"><p>No. The AI prepares — it reads and matches bills, drafts entries and suggests actions — but a person approves anything that posts, sends money or contacts a customer.</p></div></details>
+        <details><summary>What can it see in Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>Only the records the task needs. Access is scoped up front, and every action it takes is logged against the record in Odoo for audit.</p></div></details>
+        <details><summary>Do you implement Odoo as well? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. As an Odoo Partner we implement the ERP and build the AI that runs inside it, so both are handled by the same team.</p></div></details>
+        <details><summary>How do we know it's accurate? {{icon:chevron}}</summary><div class="faq-a"><p>It's measured on your own documents and records before it's allowed to run unattended, and lookups show the source so people can verify.</p></div></details>
+        <details><summary>Can our data stay in our environment? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Where data can't leave, we deploy on-premise or private-cloud models, and choose the model and hosting for your data requirements.</p></div></details>
+        <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to the task and your Odoo setup. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ai-spec-sec">
+  <div class="container">
+    <div class="sec-head ai-head reveal"><span class="hand">related services</span><h2>Pairs well with these.</h2></div>
+    <div class="ai-specials">
+      <a class="ai-special reveal" style="--i:0;--c:#9FC4FF" href="{{ROOT}}solutions/odoo-erp.html"><span class="ai-special-tag">Today's special</span><span class="ai-special-ic">{{icon:layout}}</span><h3>Odoo ERP</h3><p>The implementation the AI runs on — Accounting, Sales and Inventory, configured around how you work.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="ai-special reveal" style="--i:1;--c:#FFE7A3" href="{{ROOT}}solutions/ai-automation.html"><span class="ai-special-tag">Chef's pick</span><span class="ai-special-ic">{{icon:zap}}</span><h3>Workflow automation</h3><p>Multi-step agents that carry a task across Odoo and your other tools, with approval steps.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="ai-special reveal" style="--i:2;--c:#C9B8FF" href="{{ROOT}}solutions/ai.html"><span class="ai-special-tag">On the side</span><span class="ai-special-ic">{{icon:sparkle}}</span><h3>AI overview</h3><p>See how AI inside Odoo fits alongside the other three AI disciplines.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt ai-cta-sec">
+  <div class="container">
+    <div class="cta ixw-cta ai-cta reveal" data-ixw-burst>
+      <div>
+        <span class="hand">next step</span>
+        <h2>Start with one repetitive task.</h2>
+        <p>Bills, replies or lookups — pick the one that costs the most hours and we'll scope it.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}free-website-with-odoo.html">Get your free website</a>
+        <a class="btn btn-outline-white btn-lg" href="#talk">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>

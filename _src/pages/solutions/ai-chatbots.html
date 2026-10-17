@@ -1,0 +1,243 @@
+<!--meta {"title": "AI Chatbot Development — Singapore & Philippines", "desc": "AI chatbot development in Singapore and the Philippines for websites, WhatsApp and Odoo: answers from your content and a clean hand-off to your team.", "out": "solutions/ai-chatbots.html", "nav": "solution", "scripts": ["assets/js/demo-kit.js", "assets/js/demo-inbox.js", "assets/js/industry-world.js", "assets/js/company/react.js", "assets/js/company/office.js", "assets/js/worlds/sol-chat.js"], "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-kit.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/demo-inbox.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/industry-world.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/odoo-walk.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/worlds/sol-chat.css?v={ASSET_V}\">", "body": "ixw ixw--sol-chat sol-page"} -->
+
+<section class="ixw-hero" data-ixw-hero data-world="sol-chat" data-home="950,40" aria-labelledby="ixw-h1">
+  <canvas class="ixw-cv" data-ixw-cv aria-hidden="true"></canvas>
+  <div class="container ixw-hero-in">
+    <div class="ixw-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ROOT}}index.html">Home</a><span>Solution</span><span>AI Solution</span><span>AI Chatbots</span></nav>
+      <p class="ixw-ep"><a class="ixw-ep-tag" href="{{ROOT}}nexi-explains.html">{{icon:play}}Nexi Explains</a><span>AI Chatbots</span></p>
+      <h1 id="ixw-h1"><span class="hand h1-hand">ai chatbots · singapore · philippines</span>A chatbot that answers like your best staff, and knows when to hand over.</h1>
+      <p class="lead"><span class="m-full">Customer and staff assistants that answer from your own content, look up orders, bookings and invoices, qualify leads — and pass the conversation to a person with the full context when it matters.</span><span class="m-short">Assistants that answer from your content, look up orders and bookings, and hand over to a person with context.</span></p>
+      <div class="actions"><a class="btn btn-primary btn-lg" href="{{ROOT}}quotation.html">Get a quotation {{icon:arrow}}</a><a class="btn btn-ghost btn-lg" href="#talk">Talk to us</a></div>
+      <div class="cnc-pills"><span class="tag">Claude Partner</span><span class="tag">{{icon:whatsapp}} WhatsApp · Live Chat</span><span class="tag">{{icon:globe}} Multilingual</span></div>
+    </div>
+  </div>
+  <div class="ixw-set" data-ixw-set>
+    <div class="ixw-front" data-ixw-front>
+      <button class="ixw-cast" type="button" data-cast="tn" data-near="190,40" data-who="TechNext consultant" data-role="TechNext · illustration" data-say="We load **your content** first: your site, your documents and, where it helps, Odoo. The assistant answers from nothing else." style="--x:364;--y:362;--w:72;--h:222" aria-label="Say hi to the TechNext consultant (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Consultant</b><i>TechNext</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="g1" data-near="250,30" data-who="Guest on WhatsApp" data-role="A customer · illustration" data-say="I asked on **WhatsApp** and got the answer, then the booking, in one chat." style="--x:440;--y:362;--w:80;--h:222" aria-label="Say hi to the guest on WhatsApp (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:whatsapp}}<b>Guest</b><i>WhatsApp</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="g2" data-near="780,30" data-who="Guest in the app" data-role="A customer · illustration" data-say="It answered me in **Filipino**, and the invoice came straight to the app." style="--x:624;--y:362;--w:80;--h:222" aria-label="Say hi to the guest using the app (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:layout}}<b>Guest</b><i>in-app</i></span></button>
+      <button class="ixw-cast" type="button" data-cast="dm" data-near="700,40" data-who="Duty manager" data-role="Client team · illustration" data-say="When it hands over, I get the **transcript, the order and the customer record**. No one repeats themselves." style="--x:846;--y:318;--w:86;--h:120" aria-label="Say hi to the duty manager (illustration)"><span class="ixw-hot-lab" aria-hidden="true">{{icon:smile}}<b>Duty manager</b><i>client team</i></span></button>
+
+      <button class="ixw-hot" type="button" data-hot="channels" data-nx="300,-14" data-pose="point-left" data-rec="Channels · website widget, WhatsApp, in-app" data-say="Guests come in on the **web**, on **WhatsApp** or **in your app**. The same assistant and the same knowledge meet them at every door." style="--x:186;--y:296;--w:92;--h:348" aria-pressed="false"><span class="ixw-hot-lab">{{icon:globe}}<b>Channels</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="answers" data-nx="190,20" data-pose="point-right" data-rec="Answer · from the delivery policy, source logged" data-say="It answers from **your own content**: services, prices, hours and policies from your site and documents. Not guesswork." style="--x:300;--y:250;--w:60;--h:160" aria-pressed="false"><span class="ixw-hot-lab">{{icon:file}}<b>Your content</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="lookups" data-nx="300,-10" data-pose="point-right" data-rec="Lookup · sales order, read live from Odoo" data-say="Where's my order, when's my booking, what does my invoice say: **read live** from your records." style="--x:532;--y:97;--w:256;--h:116" aria-pressed="false"><span class="ixw-hot-lab">{{icon:search}}<b>Lookups</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="flows" data-nx="900,30" data-pose="point-left" data-rec="Guided flow · book a delivery slot" data-say="**Guided flows** walk guests through the common journeys, so they reach the right answer or the right person." style="--x:732;--y:116;--w:100;--h:116" aria-pressed="false"><span class="ixw-hot-lab">{{icon:layout}}<b>Guided flows</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="leads" data-nx="940,200" data-pose="point-left" data-rec="CRM lead · bulk order enquiry, transcript attached" data-say="It asks the right questions and writes the **lead into your CRM**, with the full transcript attached." style="--x:734;--y:392;--w:74;--h:150" aria-pressed="false"><span class="ixw-hot-lab">{{odoo:crm:18}}<b>Lead capture</b></span></button>
+      <button class="ixw-hot" type="button" data-hot="handoff" data-nx="960,110" data-pose="point-left" data-rec="Hand-off · to Sales in Live Chat, with the chat" data-say="On request, on doubt or when it has no approved answer, it **rings for a person** and passes the whole conversation along." style="--x:846;--y:177;--w:118;--h:44" aria-pressed="false"><span class="ixw-hot-lab">{{icon:users}}<b>Hand-off</b></span></button>
+      <button class="ixw-hot ixw-hot--below" type="button" data-hot="languages" data-nx="250,10" data-pose="point-right" data-rec="Language · Filipino in, Filipino out" data-say="It answers in **the guest's language** while your content stays in one, so you maintain it once." style="--x:530;--y:-30;--w:292;--h:46" aria-pressed="false"><span class="ixw-hot-lab">{{icon:globe}}<b>Multilingual</b></span></button>
+
+      <button class="ixw-toy" type="button" data-toy="bell" data-near="700,40" data-pose="celebrate" data-say="Ding! **A person, please.** The bell is how the assistant hands a guest to your team." style="--x:556;--y:368;--w:32;--h:26" aria-label="Ring the desk bell"><span class="ixw-hot-lab" aria-hidden="true">{{icon:sparkle}}<b>Ring the bell</b></span></button>
+
+      <div class="ixw-nexi" data-ixw-nexi style="--nx:950;--ny:40" data-reacts="wow::Three doors, **one assistant**!|love::It knows when to say **I don't know**. Love that.|celebrate::Lead saved, **chat attached**!|think::Hmm… what are your **top twenty** questions?">
+        <div class="ixw-nexi-y"><button class="ixw-nexi-b" type="button" aria-label="Say hi to Nexi"><span class="ixw-nexi-bob"><span class="ixw-aura" aria-hidden="true"></span>{{IXW_NEXI:sol-chat}}</span></button></div>
+      </div>
+    </div>
+    <div class="ixw-cap" data-ixw-cap data-intro="Hi! I'm **Nexi**. Welcome to the **lobby**: the assistant at the desk answers every guest from your content, and rings for a person when it matters." data-outro="Answers from your content, lookups, guided flows, leads, languages and a **clean hand-off**. That's an AI chatbot.">
+      <span class="ixw-cap-av" data-ixw-av data-av="nexi" aria-hidden="true">{{IXW_AV:sol-chat}}<b data-for="tn" style="--c:#3167CA">C</b><b data-for="g1" style="--c:#25D366">G</b><b data-for="g2" style="--c:#F0715A">G</b><b data-for="dm" style="--c:#6B3F63">M</b></span>
+      <div class="ixw-cap-body">
+        <p class="ixw-cap-who"><b data-ixw-who>Nexi</b><small data-ixw-role data-default="assistant · AI chatbots">assistant · AI chatbots</small></p>
+        <p class="ixw-cap-txt" aria-hidden="true"><span data-ixw-type>Hi! I'm <b>Nexi</b>. Welcome to the <b>lobby</b>: the assistant at the desk answers every guest from your content, and rings for a person when it matters.</span><i class="ixw-caret"></i></p>
+        <p class="sr-only" aria-live="polite" data-ixw-live></p>
+        <p class="ixw-cap-rec" data-ixw-rec aria-hidden="true"></p>
+      </div>
+      <div class="ixw-cap-side">
+        <div class="ixw-cap-ctl">
+          <button class="ixw-ibtn ixw-ibtn--prev" type="button" data-ixw-prev aria-label="Previous stop">{{icon:chevron}}</button>
+          <button class="ixw-ibtn ixw-ibtn--play is-on" type="button" data-ixw-play aria-pressed="true" aria-label="Pause the tour">{{icon:pause}}{{icon:play}}</button>
+          <button class="ixw-ibtn ixw-ibtn--next" type="button" data-ixw-next aria-label="Next stop">{{icon:chevron}}</button>
+        </div>
+        <div class="ixw-dots"><button type="button" data-ixw-dot aria-label="Stop 1: welcome"></button><button type="button" data-ixw-dot aria-label="Stop 2: channels"></button><button type="button" data-ixw-dot aria-label="Stop 3: your content"></button><button type="button" data-ixw-dot aria-label="Stop 4: lookups"></button><button type="button" data-ixw-dot aria-label="Stop 5: guided flows"></button><button type="button" data-ixw-dot aria-label="Stop 6: lead capture"></button><button type="button" data-ixw-dot aria-label="Stop 7: hand-off"></button><button type="button" data-ixw-dot aria-label="Stop 8: languages"></button><button type="button" data-ixw-dot aria-label="Stop 9: summary"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container ixw-credits-wrap">
+  <h2 class="sr-only">At a glance</h2>
+  <dl class="glance glance--ind ixw-credits ow-strip"><div><dt>{{icon:bot}}Discipline</dt><dd>AI chatbot</dd></div><div><dt>{{icon:chat}}Channels</dt><dd>Web · WhatsApp · in-app</dd></div><div><dt>{{icon:database}}Grounding</dt><dd>Your knowledge base and records</dd></div><div><dt>{{icon:users}}Hand-off</dt><dd>Clean pass to a person, with context</dd></div><div><dt>{{icon:usercheck}}Also does</dt><dd>Lead capture and lookups</dd></div></dl>
+</div>
+
+<section class="section section--tight answer-sec cnc-say-sec">
+  <div class="container"><div class="answer-box cnc-say reveal"><div class="cnc-say-b"><p class="answer-h">In one paragraph</p><p>An AI chatbot from TechNext answers customers and staff from your own content, on your website, on WhatsApp or inside your apps. It can look up orders, bookings and invoices, qualify leads, and pass the conversation to a person with the full context when a question needs one.</p></div></div></div>
+</section>
+
+<section class="section demo-sec cnc-desk-sec" id="omnichannel-inbox">
+  <div class="container">
+    <div class="sec-head reveal"><span class="hand">one inbox, three channels</span><h2>An AI chatbot on WhatsApp, web chat and email, in one inbox.</h2><p class="lead">Watch a TechNext chatbot work a shared inbox: it reads each message, routes it by intent, answers from Odoo records such as the sales order, and hands the conversation to a person, with everything attached, when it should. Filter by channel, start a conversation from any intent, or make the customer ask for a human.</p></div>
+    <div class="cnc-desk">
+      <div class="cnc-desk-top" aria-hidden="true"><span class="cnc-desk-bell"></span><b>Front desk</b><i>one inbox · sample conversations</i><span class="cnc-desk-ch"><i style="--c:#25D366"></i><i style="--c:#3167CA"></i><i style="--c:#F0715A"></i></span></div>
+    <div class="dm dm-inbox reveal" data-demo="inbox">
+      <div class="dm-head">
+        <div class="dm-title"><b>Omnichannel inbox</b><small>Sample conversations · answers read from Odoo</small></div>
+        <div class="dm-seg" role="group" aria-label="Filter by channel">
+          <button type="button" data-ch="all" aria-pressed="true">All</button>
+          <button type="button" data-ch="wa" aria-pressed="false">{{icon:whatsapp}}WhatsApp</button>
+          <button type="button" data-ch="web" aria-pressed="false">{{icon:globe}}Website chat</button>
+          <button type="button" data-ch="mail" aria-pressed="false">{{icon:mail}}Email</button>
+        </div>
+        <button class="dm-btn dm-btn--primary" type="button" data-human>{{icon:users}}Customer asks for a human</button>
+      </div>
+      <div class="obx-wrap">
+        <div class="obx-list">
+          <p class="obx-h">{{icon:layers}}<b>Inbox</b><small data-k="open">0 open</small></p>
+          <div class="obx-items" role="group" aria-label="Conversations"></div>
+        </div>
+        <div class="obx-mid">
+          <div class="obx-phone" data-ch="wa">
+            <div class="obx-ph">
+              <span class="obx-pav" data-p="av">DL</span>
+              <span class="obx-pn"><b data-p="name">Daniel Lim</b><small data-p="sub">WhatsApp</small></span>
+              <span class="obx-pch" data-p="ch"></span>
+            </div>
+            <div class="obx-msgs" role="log" aria-live="off" aria-label="Conversation"></div>
+            <div class="obx-comp" aria-hidden="true"><span data-p="comp">Message</span><i>{{icon:send}}</i></div>
+          </div>
+        </div>
+        <div class="obx-side">
+          <p class="obx-h">{{icon:target}}<b>Intent routing</b><small>pick one to start a chat</small></p>
+          <div class="obx-tree">
+            <div class="obx-root"><span>{{icon:chat}}Incoming message</span><i></i><span>{{icon:sparkle}}Understand intent and details</span></div>
+            <ol class="obx-br" aria-label="Intents">
+              <li data-in="order"><button type="button" class="obx-leaf" data-start="order">Order status</button><span>Look up the sales order, answer</span><em class="is-bot">Bot</em><i class="obx-n"></i></li>
+              <li data-in="quote"><button type="button" class="obx-leaf" data-start="quote">Quotation request</button><span>Qualify, create the CRM lead</span><em>To Sales</em><i class="obx-n"></i></li>
+              <li data-in="support"><button type="button" class="obx-leaf" data-start="support">Support issue</button><span>Knowledge answer, else a ticket</span><em class="is-bot">Bot, then ticket</em><i class="obx-n"></i></li>
+              <li data-in="booking"><button type="button" class="obx-leaf" data-start="booking">Booking</button><span>Read free slots, book, remind</span><em class="is-bot">Bot</em><i class="obx-n"></i></li>
+              <li data-in="other"><button type="button" class="obx-leaf" data-start="other">Other</button><span>No approved answer: a person</span><em>To a person</em><i class="obx-n"></i></li>
+              <li data-in="human" class="obx-br--h"><span class="obx-leaf">Asks for a person</span><span>Hand-off at any point, with context</span><em>To a person</em><i class="obx-n"></i></li>
+            </ol>
+          </div>
+          <div class="obx-meter" aria-label="Containment against hand-off">
+            <p class="obx-h">{{icon:pulse}}<b>Containment</b><small data-k="pct">0%</small></p>
+            <div class="obx-bar"><i class="is-bot"></i><i class="is-hand"></i></div>
+            <ul class="obx-leg"><li><i class="is-bot"></i><b data-k="bot">0</b>answered by the bot</li><li><i class="is-hand"></i><b data-k="hand">0</b>handed to a person</li></ul>
+          </div>
+          <dl class="dm-kpis obx-kpis">
+            <div><dt>With the bot now</dt><dd data-k="live">0</dd></div>
+            <div><dt>Waiting for a person</dt><dd data-k="wait">0</dd></div>
+            <div class="dm-ok"><dt>Bot first reply</dt><dd data-k="fbot">–</dd></div>
+            <div><dt>Agent first reply</dt><dd data-k="fag">–</dd></div>
+          </dl>
+        </div>
+      </div>
+      <template class="obx-ico"><span data-i="wa">{{icon:whatsapp}}</span><span data-i="web">{{icon:globe}}</span><span data-i="mail">{{icon:mail}}</span><span data-i="bot">{{icon:bot}}</span><span data-i="users">{{icon:users}}</span><span data-i="check">{{icon:check}}</span><span data-i="search">{{icon:search}}</span><span data-i="clock">{{icon:clock}}</span><span data-i="file">{{icon:file}}</span></template>
+      <div class="dm-static">
+        <p>WhatsApp, website chat and email arrive in one inbox. The bot understands the intent and details of each message and routes it: order status (answered from the sales order and its delivery in Odoo), quotation request (qualified, then a CRM lead for Sales), support issue (an approved knowledge answer, else a Helpdesk ticket), booking (free slots read and booked) or other (passed to a person).</p>
+        <p>When a customer asks for a person, or the bot has no approved answer, the conversation is handed to an agent with the transcript, intent, order and customer record attached, and a reply-time target starts. The meter shows how many conversations the bot answered against how many went to a person.</p>
+      </div>
+    </div>
+    </div>
+    <p class="dm-note">{{icon:check}} Sample conversations and names, sped up. Channels, hand-off rules and reply-time targets are set with your team.</p>
+  </div>
+</section>
+
+
+<section class="section cnc-hang-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">what's included</span>
+      <h2>The questions that arrive at all hours.</h2>
+    </div>
+    <div class="cnc-hangers">
+      <article class="cnc-hanger reveal" style="--i:0;--c:#3167CA"><span class="cnc-tag" aria-hidden="true">Please ask</span><div class="card-ic">{{icon:chat}}</div><h3>Answers from your content</h3><p>Services, prices, opening hours and policies — from your site and documents, grounded in your knowledge base, not guesswork.</p></article>
+      <article class="cnc-hanger reveal" style="--i:1;--c:#C9A24A"><span class="cnc-tag" aria-hidden="true">This way</span><div class="card-ic">{{icon:layout}}</div><h3>Guided flows</h3><p>Structured conversations for common journeys, so customers reach the right answer or the right person without wandering.</p></article>
+      <article class="cnc-hanger reveal" style="--i:2;--c:#14A38B"><span class="cnc-tag" aria-hidden="true">Looked up</span><div class="card-ic">{{icon:search}}</div><h3>Order and booking lookups</h3><p>Where is my order, when is my appointment, what does my invoice say — read live from your records.</p></article>
+      <article class="cnc-hanger reveal" style="--i:3;--c:#714B67"><span class="cnc-tag" aria-hidden="true">Signed in</span><div class="card-ic">{{icon:usercheck}}</div><h3>Lead capture</h3><p>Asks the right questions, captures the details and creates the CRM lead with the full transcript attached.</p></article>
+      <article class="cnc-hanger reveal" style="--i:4;--c:#F0715A"><span class="cnc-tag" aria-hidden="true">Ring for a person</span><div class="card-ic">{{icon:users}}</div><h3>Clean hand-off</h3><p>Passes the conversation, context and customer record to your team in Live Chat or WhatsApp, mid-conversation.</p></article>
+      <article class="cnc-hanger reveal" style="--i:5;--c:#6B3F63"><span class="cnc-tag" aria-hidden="true">Hello · Halo · Xin chào</span><div class="card-ic">{{icon:globe}}</div><h3>Multilingual</h3><p>Answers in the customer's language while your content stays in one, so you maintain it once.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cnc-lift-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">how we build one</span>
+      <h2>Load, design, connect, review.</h2>
+    </div>
+    <div class="cnc-lift reveal">
+      <ol class="cnc-floors">
+        <li class="cnc-floor reveal" style="--i:0"><span class="cnc-btn">1</span><h3>Load your knowledge</h3><p>We connect the content and records the bot may use — your site, documents and, where relevant, Odoo.</p></li>
+        <li class="cnc-floor reveal" style="--i:1"><span class="cnc-btn">2</span><h3>Design the flows</h3><p>We map the common journeys, the questions to ask, and exactly when the bot should hand over to a person.</p></li>
+        <li class="cnc-floor reveal" style="--i:2"><span class="cnc-btn">3</span><h3>Connect the channels</h3><p>The same assistant goes live on your website widget, on WhatsApp and in-app — one knowledge base behind each.</p></li>
+        <li class="cnc-floor reveal" style="--i:3"><span class="cnc-btn">4</span><h3>Launch and review</h3><p>Unanswered questions and hand-offs are reviewed so the content and flows keep improving after go-live.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section cnc-folio-sec">
+  <div class="container">
+    <div class="two two--top cnc-folio-wrap">
+      <div class="reveal cnc-folio-l">
+        <span class="hand">what you get</span>
+        <h2>Says "I don't know" and calls a person.</h2>
+        <p class="lead">The bot answers only from approved content, never promises prices or dates it can't read from a record, and escalates on request or on doubt — with the whole transcript saved to the customer record.</p>
+      </div>
+      <div class="cnc-folio reveal">
+        <p class="cnc-folio-h" aria-hidden="true"><b>Guest folio</b><span>The Lobby · AI chatbot</span></p>
+        <ul class="cnc-items">
+          <li>{{icon:check}}<span>Answers grounded in approved content, sources logged</span></li>
+          <li>{{icon:check}}<span>Guided flows for your common journeys</span></li>
+          <li>{{icon:check}}<span>Order, booking and invoice lookups from your records</span></li>
+          <li>{{icon:check}}<span>Lead qualification and capture into CRM</span></li>
+          <li>{{icon:check}}<span>Clean hand-off with the full conversation context</span></li>
+          <li>{{icon:check}}<span>Live on web, WhatsApp and in-app</span></li>
+          <li>{{icon:check}}<span>Answers in the customer's language</span></li>
+          <li>{{icon:check}}<span>No commitments made without a person</span></li>
+          <li>{{icon:check}}<span>Escalation on request, sentiment or uncertainty</span></li>
+          <li>{{icon:check}}<span>Transcript saved to the customer record</span></li>
+          <li>{{icon:check}}<span>A monthly review of unanswered questions</span></li>
+          <li>{{icon:check}}<span>Clear pricing on quotation</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cnc-faq-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">questions</span>
+      <h2>What teams ask before they start.</h2>
+    </div>
+    <div class="faq cnc-faq reveal">
+      <details><summary>Will it promise something it can't deliver? {{icon:chevron}}</summary><div class="faq-a"><p>No. It answers only from approved content and reads prices and dates from your records, so it won't invent a commitment. Anything binding waits for a person.</p></div></details>
+      <details><summary>What channels does it run on? {{icon:chevron}}</summary><div class="faq-a"><p>A website widget styled to your brand, WhatsApp through the Business API, and in-app assistants — the same knowledge and hand-off rules on each.</p></div></details>
+      <details><summary>Can it hand over to a real person? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. It passes the conversation, context and customer record to your team in Live Chat or WhatsApp, and escalates on request, sentiment or uncertainty.</p></div></details>
+      <details><summary>Does it capture leads? {{icon:chevron}}</summary><div class="faq-a"><p>It asks qualifying questions, captures the details and creates the CRM lead with the full transcript attached, so your team picks up with context.</p></div></details>
+      <details><summary>Which languages does it handle? {{icon:chevron}}</summary><div class="faq-a"><p>It answers in the customer's language while your content stays in one, so you maintain a single source and still serve people in theirs.</p></div></details>
+      <details><summary>What does it cost? {{icon:chevron}}</summary><div class="faq-a"><p>Pricing is on quotation, scoped to your channels and content. <a href="{{ROOT}}quotation.html">Request a quotation</a> and we'll return a written scope.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section cnc-fob-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="hand">related services</span>
+      <h2>Pairs well with these.</h2>
+    </div>
+    <div class="grid-3 cnc-fobs">
+      <a class="card cnc-fob reveal" style="--i:0;--c:#3167CA" href="{{ROOT}}solutions/ai-knowledge.html"><span class="cnc-room" aria-hidden="true">101</span><div class="card-ic">{{icon:database}}</div><h3>RAG knowledge assistants</h3><p>The grounded knowledge base behind a chatbot — answers from your documents, with sources cited.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card cnc-fob reveal" style="--i:1;--c:#C9A24A" href="{{ROOT}}solutions/ai-automation.html"><span class="cnc-room" aria-hidden="true">102</span><div class="card-ic">{{icon:zap}}</div><h3>Workflow automation</h3><p>Turn a conversation into action — bookings, tickets and follow-ups prepared with approval steps.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+      <a class="card cnc-fob reveal" style="--i:2;--c:#6B3F63" href="{{ROOT}}solutions/ai.html"><span class="cnc-room" aria-hidden="true">103</span><div class="card-ic">{{icon:sparkle}}</div><h3>AI overview</h3><p>See how chatbots fit alongside the other three AI disciplines.</p><span class="btn-link">Learn more {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt cnc-end-sec" id="chat">
+  <div class="container">
+    <div class="cta cnc-cta reveal">
+      <div>
+        <span class="hand">next step</span>
+        <h2>Try Nexi, our own AI companion, then let's build yours.</h2>
+        <p>Send us your top twenty customer questions. We'll build a first version on your content and show you the hand-off.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white btn-lg" href="{{ROOT}}nexi#full">{{icon:bot}} Ask Nexi</a>
+        <a class="btn btn-outline-white btn-lg" href="{{ROOT}}quotation.html">Get a quotation</a>
+      </div>
+    </div>
+  </div>
+</section>

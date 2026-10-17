@@ -1,0 +1,412 @@
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* World: company (/company) — TechNext's own office floor across Singapore, Taguig City and Ho Chi Minh City. The family is
+   TechNext's own: brand blue, an ink outline and a hard lip, plus the three office colours (Singapore blue, Taguig teal,
+   Ho Chi Minh City orange) running through everything. The skins come from the office itself: a visitor pass on a lanyard
+   (title card), the team chat (caption), keyboard keycaps (buttons), the TechNext Line metro map (workflow), framed wall
+   posters (rules), office doors (industries), a lobby directory board (offices), help-desk tickets (FAQ) and the meeting
+   room's booking panel (end card). Everything is scoped to .ixw--company. */
+.ixw--company{--co-blue:#3167CA;--co-blue-d:#1E4691;--co-ink:#1B1F3B;--co-sg:#3167CA;--co-ph:#14A38B;--co-vn:#F08A24;--co-vn-d:#B85F0E;--co-paper:#F6F9FE;
+  --co-tri:linear-gradient(90deg,var(--co-sg) 0 33.3%,var(--co-ph) 33.3% 66.6%,var(--co-vn) 66.6% 100%);
+  --w-vwall:#EEF4FE;--w-vwains:#DCE7FB;--w-vfloor:#E4EAF3;--w-vbase:#C9D6EE;--w-alt:#F3F7FE;--w-dot:rgba(49,103,202,.09);--w-teal:#14A38B;--w-teal-l:#DDF4EE;--w-teal-d:#0E7A68;
+  --lab-bd:2px solid var(--co-ink);--lab-lip:var(--co-ink);--lab-tail:var(--co-ink);--lab-r:10px}
+.ixw--company .ixw-hero{background:linear-gradient(180deg,#DCEBFF 0%,#EEF5FF 60%,#E4EAF3 60%,#D3DCE9 100%)}
+
+/* ---------- vignette paint ---------- */
+.ixw--company .ixw-vg .f-sg{fill:var(--co-sg)}.ixw--company .ixw-vg .f-ph{fill:var(--co-ph)}.ixw--company .ixw-vg .f-vn{fill:var(--co-vn)}.ixw--company .ixw-vg .f-vn-l{fill:#FDEBD8}
+.ixw--company .ixw-vg .f-sale{fill:#3167CA}.ixw--company .ixw-vg .f-stock{fill:#14A38B}.ixw--company .ixw-vg .f-acc{fill:#714B67}.ixw--company .ixw-vg .f-buy{fill:#F2B233}.ixw--company .ixw-vg .f-odoo{fill:#714B67}
+.ixw--company .ixw-vg .f-note-y{fill:#FFE680}.ixw--company .ixw-vg .f-note-p{fill:#FFC2D1}.ixw--company .ixw-vg .f-note-g{fill:#B8EBD3}.ixw--company .ixw-vg .f-note-b{fill:#C4DAFB}.ixw--company .ixw-vg .f-none{fill:none}
+.ixw--company .ixw-vg .t-xs{font-size:11.5px}
+
+/* ---------- the side tabs, the header's Contact Us (three offices, three colours) and the entry intro ---------- */
+.ixw--company{}
+.ixw--company{--ii-bg:linear-gradient(160deg,#F3F8FF,#DCE9FD);--ii-pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cpath d='M0 48h96M48 0v96' stroke='%233167CA' stroke-opacity='.08' stroke-width='2'/%3E%3Cpath d='M38 52.5 58 45l-4.4 19.6-5-6.8-3.9 4.3.4-6z' fill='%233167CA' fill-opacity='.12'/%3E%3C/svg%3E");
+  --ii-ink:#1B1F3B;--ii-b:#3167CA;--ii-accent:#3167CA;--ii-lip:#1B1F3B;--ii-ep-bg:#1B1F3B;--ii-ep-fg:#FFFFFF}
+
+/* ============================== buttons: keyboard keycaps ==============================
+   An ink outline, a deep keycap skirt (the lip you press onto) and a bevel on top; each key carries a small legend in its
+   corner like a real keycap (↵ on the primary, ⇥ on the ghost). The controls are small square keys; the dots are the
+   keyboard's indicator lights; text links get highlighted like selected text. */
+.ixw--company main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white){position:relative;border:2.5px solid var(--co-ink);border-radius:14px;
+  box-shadow:0 6px 0 var(--co-ink),inset 0 -5px 0 rgba(27,31,59,.14),inset 0 2px 0 rgba(255,255,255,.35)}
+.ixw--company main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):hover{border-color:var(--co-ink);translate:0 -2px;box-shadow:0 8px 0 var(--co-ink),inset 0 -5px 0 rgba(27,31,59,.14),inset 0 2px 0 rgba(255,255,255,.4)}
+.ixw--company main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):active{translate:0 5px;transition-duration:.06s;box-shadow:0 1px 0 var(--co-ink),inset 0 -2px 0 rgba(27,31,59,.14)}
+.ixw--company main .btn-primary,.ixw--company main .btn-primary:hover{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA 70%)}
+.ixw--company main .btn-ghost,.ixw--company main .btn-ghost:hover{color:var(--co-ink);background:linear-gradient(180deg,#FFFFFF,#EEF3FB)}
+.ixw--company main .btn-ghost::before{display:none}
+.ixw--company main .btn-ghost .ic{color:var(--co-blue)}
+/* the keycap legends */
+.ixw--company main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white)::after{content:"\21B5";position:absolute;left:8px;top:4px;font:700 10px/1 var(--font-body);opacity:.55;pointer-events:none}
+.ixw--company main .btn-ghost::after{content:"\21E5"}
+.ixw--company .ixw-cta .btn-white,.ixw--company .ixw-cta .btn-white:hover{color:var(--co-ink);background:linear-gradient(180deg,#FFFFFF,#E9F0FC)}
+.ixw--company .ixw-cta .btn-outline-white,.ixw--company .ixw-cta .btn-outline-white:hover{color:#FFFFFF;background:linear-gradient(180deg,#2C3560,#20264A);border-color:#0D1028;box-shadow:0 6px 0 #0D1028}
+.ixw--company main :is(.btn-primary,.btn-ghost,.ixw-cta .btn-white,.ixw-cta .btn-outline-white):focus-visible{outline:3px solid #FFC94A;outline-offset:4px}
+/* the round tour controls become square keys; play is the blue key with its own LED */
+.ixw--company .ixw-ibtn{border:2.5px solid var(--co-ink);border-radius:11px;background:linear-gradient(180deg,#FFFFFF,#EDF2FA);color:var(--co-ink);box-shadow:0 4px 0 var(--co-ink),inset 0 -3px 0 rgba(27,31,59,.1)}
+.ixw--company .ixw-ibtn:hover{border-color:var(--co-ink);color:var(--co-blue);box-shadow:0 6px 0 var(--co-ink),inset 0 -3px 0 rgba(27,31,59,.1)}
+.ixw--company .ixw-ibtn:active{box-shadow:0 1px 0 var(--co-ink)}
+.ixw--company .ixw-ibtn--play,.ixw--company .ixw-ibtn--play:hover{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA 70%)}
+.ixw--company .ixw-ibtn--play::after{content:"";position:absolute;right:5px;top:5px;width:5px;height:5px;border-radius:50%;background:#C9D3E3}
+.ixw--company .ixw-ibtn--play{position:relative}
+.ixw--company .ixw-ibtn--play.is-on::after{background:#7FFFD4;box-shadow:0 0 6px #7FFFD4}
+.ixw--company .ixw-ibtn--play.is-on{animation:coHalo 2.4s ease-out infinite}
+@keyframes coHalo{0%{box-shadow:0 4px 0 var(--co-ink),0 0 0 0 rgba(49,103,202,.4)}70%,100%{box-shadow:0 4px 0 var(--co-ink),0 0 0 12px rgba(49,103,202,0)}}
+.ixw--company .ixw-dots{gap:4px}
+.ixw--company .ixw-dots button{width:10px;height:6px;border-radius:2px;background:#D5DEEC}
+.ixw--company .ixw-dots button.is-on{width:22px;background:var(--co-tri);box-shadow:0 0 0 1.5px var(--co-ink)}
+/* text links: highlighted like selected text, with a blinking caret */
+.ixw--company main .btn-link{color:var(--co-blue-d);border-radius:4px;padding:2px 4px;margin:-2px -4px;transition:background-color .2s ease,color .2s ease}
+.ixw--company main .btn-link:hover{background:#D6E4FB;color:var(--co-ink);text-decoration:none}
+/* the episode tag; "View the scene" is the space bar */
+.ixw--company .ixw-ep-tag{border-radius:8px;box-shadow:0 3px 0 #000}
+.ixw--company .ixw-ep-tag .ic{background:#7FE3FF}
+.ixw--company .ixw-peek{min-width:190px;justify-content:center;border:2.5px solid var(--co-ink);border-radius:12px;background:linear-gradient(180deg,#FFFFFF,#EDF2FA);box-shadow:0 5px 0 var(--co-ink),inset 0 -4px 0 rgba(27,31,59,.1)}
+.ixw--company .ixw-peek:hover{box-shadow:0 7px 0 var(--co-ink),inset 0 -4px 0 rgba(27,31,59,.1)}
+.ixw--company .ixw-peek:active{box-shadow:0 1px 0 var(--co-ink)}
+.ixw--company .ixw-peek[aria-pressed="true"]{color:#FFFFFF;background:linear-gradient(180deg,#4A80E2,#3167CA 70%)}
+.ixw--company .ixw-hot-lab{height:32px}
+.ixw--company .ixw-hot-lab .ic{color:var(--co-blue)}
+
+/* ============================== the title card: a visitor pass on a lanyard ============================== */
+.ixw--company .ixw-copy{position:relative;max-width:480px;margin-top:22px;padding:62px 30px 24px;border-radius:24px;background:#FFFFFF;
+  box-shadow:0 0 0 2.5px var(--co-ink),0 8px 0 2.5px var(--co-ink),0 44px 70px -30px rgba(20,40,90,.55)}
+/* the header band: VISITOR, the punched slot, a strip of barcode */
+.ixw--company .ixw-copy::before{content:"VISITOR PASS \00B7  INSIDE TECHNEXT";position:absolute;left:0;right:0;top:0;height:44px;display:flex;align-items:center;padding-left:24px;border-radius:21.5px 21.5px 0 0;
+  background:repeating-linear-gradient(90deg,#FFFFFF 0 2px,transparent 2px 4px,#FFFFFF 4px 5px,transparent 5px 9px) right 22px center/64px 18px no-repeat,linear-gradient(90deg,#3167CA,#2756B0);
+  font:800 11px/1 var(--font-body);letter-spacing:.18em;color:#FFFFFF}
+/* the lanyard: a strap rising off the top of the card to a clip in the slot */
+.ixw--company .ixw-copy::after{content:"";position:absolute;left:50%;top:-62px;width:28px;height:74px;margin-left:-14px;border-radius:0 0 6px 6px;pointer-events:none;
+  background:linear-gradient(180deg,#D3DAE5,#8E99AC) bottom/100% 16px no-repeat,repeating-linear-gradient(180deg,rgba(255,255,255,.16) 0 2px,transparent 2px 10px),linear-gradient(90deg,#1E4691,#3167CA 50%,#1E4691);
+  -webkit-mask:linear-gradient(180deg,transparent,#000 30px);mask:linear-gradient(180deg,transparent,#000 30px)}
+.ixw--company .ixw-copy .crumbs{position:relative;z-index:1}
+.ixw--company .ixw-copy h1{max-width:none;font-size:clamp(2rem,3.2vw,2.9rem)}
+.ixw--company .ixw-copy .lead{font-size:1rem;line-height:1.55;max-width:none}
+.ixw--company .co-pills{margin-top:22px}
+.ixw--company .ixw-hint{margin-top:20px;padding-top:16px;border-top:2px dashed #D5DEEC}
+.ixw--company .ixw-hint .ic{color:var(--co-vn)}
+@media (max-width:1199px){.ixw--company .ixw-copy{max-width:640px;margin-top:34px}}
+@media (max-width:767px){
+  .ixw--company .ixw-copy{padding:58px 20px 22px;margin-top:40px}
+  .ixw--company .ixw-copy::before{font-size:9.5px;letter-spacing:.12em;padding-left:18px;background:linear-gradient(90deg,#3167CA,#2756B0)}
+  .ixw--company .ixw-copy::after{top:-70px;height:84px}
+}
+
+/* ============================== the caption: a message in the team chat ============================== */
+.ixw--company .ixw-cap{border:2.5px solid var(--co-ink);border-radius:18px;padding-top:12px;box-shadow:0 6px 0 var(--co-ink),0 26px 44px -22px rgba(20,40,90,.5)}
+.ixw--company .ixw-cap::before{content:"# team-technext";position:absolute;left:18px;top:-30px;height:28px;display:flex;align-items:center;gap:8px;padding:0 12px 0 34px;border:2.5px solid var(--co-ink);border-bottom:0;
+  border-radius:10px 10px 0 0;background:radial-gradient(circle at 12px 50%,var(--co-sg) 3.5px,transparent 4px),radial-gradient(circle at 21px 50%,var(--co-ph) 3.5px,transparent 4px),radial-gradient(circle at 30px 50%,var(--co-vn) 3.5px,transparent 4px),#FFFFFF;
+  background-size:auto;background-position:-4px 0,-4px 0,-4px 0,0 0;background-repeat:no-repeat;font:800 12px/1 var(--font-display);color:var(--co-ink)}
+.ixw--company .ixw-cap-av{border-radius:14px;box-shadow:0 0 0 2px var(--co-ink)}
+.ixw--company .ixw-cap-av b{border-radius:12px}
+.ixw--company .ixw-cap-who b{color:var(--co-ink)}
+.ixw--company .ixw-cap-who b::after{content:"";display:inline-block;width:7px;height:7px;margin:0 0 1px 6px;border-radius:50%;background:#2BC48A;box-shadow:0 0 0 2px #DDF6EC}
+.ixw--company .ixw-cap-txt b{color:var(--co-blue)}
+/* the sample record is a shared file in the chat */
+.ixw--company .ixw-cap-rec{border-radius:10px;border:1.5px solid #DCE3EE;border-left:4px solid var(--co-blue);background:#F6F9FE}
+@media (max-width:767px){.ixw--company .ixw-cap::before{left:12px}}
+
+/* ============================== the company details: a registration slip ============================== */
+.ixw--company .co-reg{grid-template-columns:repeat(6,minmax(0,1fr));gap:0 22px;border:2.5px solid var(--co-ink);border-radius:18px;padding:4px 22px 18px 22px;box-shadow:0 6px 0 var(--co-ink),0 26px 50px -30px rgba(20,40,90,.4);
+  background:linear-gradient(90deg,var(--co-sg) 0 33.3%,var(--co-ph) 33.3% 66.6%,var(--co-vn) 66.6%) top/100% 6px no-repeat,#FFFFFF}
+.ixw--company .co-reg>div{padding-top:18px}
+.ixw--company .co-reg dt{font-size:12px;letter-spacing:.02em}
+.ixw--company .co-reg dt .ic{color:var(--co-blue)}
+.ixw--company .co-reg dd{font-size:13.5px}
+@media (max-width:1199px){.ixw--company .co-reg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:767px){.ixw--company .co-reg{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px;padding:2px 16px 14px}}
+
+/* Nexi's paragraph: a pinned message */
+.ixw--company .ixw-say{border:2.5px solid var(--co-ink);box-shadow:0 6px 0 var(--co-ink),0 26px 50px -30px rgba(20,40,90,.4)}
+.ixw--company .ixw-say::before{display:none}
+.ixw--company .ixw-say .ix-intro-h{background:#E3ECFC;color:var(--co-blue-d)}
+.ixw--company .ixw-say .ix-intro-h::before{content:"\1F4CC  ";}
+.ixw--company .ixw-av{border-radius:14px}
+
+/* ============================== the figures: plaques on the office wall ============================== */
+.co-plaques{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.co-plaque{position:relative;display:grid;align-content:center;justify-items:start;gap:6px;min-height:118px;padding:22px 24px;border-radius:16px;background:linear-gradient(160deg,#FFFFFF,#F1F5FC);
+  border:2.5px solid var(--co-ink);box-shadow:0 6px 0 var(--co-ink),0 24px 40px -28px rgba(20,40,90,.45)}
+/* four brushed standoffs hold the plaque to the wall */
+.co-plaque::before{content:"";position:absolute;inset:9px;pointer-events:none;
+  background:radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 0 0/100% 100% no-repeat,radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 100% 0/9px 9px no-repeat,
+  radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 0 100%/9px 9px no-repeat,radial-gradient(circle,#C9D1DD 3px,#8E99AC 3.6px,transparent 4.4px) 100% 100%/9px 9px no-repeat}
+.co-plaque::before{background-size:9px 9px}
+.co-plaque b{font:800 2.6rem/1 var(--font-display);letter-spacing:-.03em;color:var(--co-ink)}
+.co-plaque b::after{content:"";display:block;width:54px;height:5px;margin-top:8px;border-radius:3px;background:var(--co-tri)}
+.co-plaque span{display:flex;align-items:center;gap:7px;font:700 14px/1.35 var(--font-display);color:var(--body)}
+.co-plaque span .ic{width:17px;height:17px;flex:none;color:var(--co-blue)}
+.co-plaque--odoo{background:linear-gradient(160deg,#FFFFFF,#F7F1F6)}
+.co-plaque--odoo img{height:40px;width:auto}
+.co-plaque--odoo small{font:600 12.5px/1.35 var(--font-body);color:var(--muted)}
+@media (max-width:991px){.co-plaques{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){.co-plaques{gap:12px}.co-plaque{min-height:104px;padding:18px}.co-plaque b{font-size:2.1rem}}
+
+/* ============================== five tools → one Odoo: on a monitor on the desk ============================== */
+.ixw--company .co-desk{overflow:visible;margin-bottom:46px;border:12px solid #2A3550;border-radius:20px;box-shadow:0 0 0 2.5px var(--co-ink),0 30px 50px -30px rgba(20,40,90,.5)}
+.ixw--company .co-desk::after{content:"";position:absolute;left:50%;top:calc(100% + 12px);width:120px;height:40px;margin-left:-60px;pointer-events:none;
+  background:linear-gradient(#2A3550,#2A3550) center top/26px 26px no-repeat,linear-gradient(#2A3550,#2A3550) center bottom/120px 12px no-repeat;border-radius:0 0 8px 8px}
+/* the four services: room doors with their number plates */
+.ixw--company .co-rooms .card{border:2.5px solid var(--co-ink);border-radius:16px;box-shadow:0 6px 0 var(--co-ink);padding-top:44px;transition:translate .25s var(--w-spring),box-shadow .25s ease}
+.ixw--company .co-rooms .card::before{content:attr(data-room);position:absolute;right:16px;top:14px;padding:5px 9px;border-radius:6px;background:var(--co-ink);color:#FFFFFF;font:800 10.5px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.ixw--company .co-rooms .card::after{content:"";position:absolute;left:24px;top:20px;width:30px;height:5px;border-radius:3px;background:var(--co-blue)}
+.ixw--company .co-rooms .card:nth-child(2)::after{background:var(--co-vn)}.ixw--company .co-rooms .card:nth-child(3)::after{background:#E0456B}.ixw--company .co-rooms .card:nth-child(4)::after{background:var(--co-ph)}
+.ixw--company .co-rooms .card:hover{transform:none;translate:0 -4px;border-color:var(--co-ink);box-shadow:0 10px 0 var(--co-ink)}
+
+/* ============================== the workflow: the TechNext Line ============================== */
+.ixw--company .ixw-flow-sec{background:linear-gradient(180deg,#FFFFFF 0%,#EEF4FE 100%)}
+.ixw--company .ixw-scenes{border:12px solid #20264A;border-radius:24px;background:#EEF4FE;box-shadow:0 0 0 2.5px var(--co-ink),0 30px 60px -36px rgba(20,40,90,.5)}
+.ixw--company .ixw-scene-note .ic{color:var(--co-vn)}
+.ixw--company .ixw-panel{border:2.5px solid var(--co-ink);box-shadow:0 6px 0 var(--co-ink),0 30px 60px -36px rgba(20,40,90,.4);border-top-width:10px}
+.ixw--company .ixw-panel:nth-child(1),.ixw--company .ixw-panel:nth-child(5){border-top-color:var(--co-sg)}
+.ixw--company .ixw-panel:nth-child(2),.ixw--company .ixw-panel:nth-child(3){border-top-color:var(--co-ph)}
+.ixw--company .ixw-panel:nth-child(4){border-top-color:var(--co-vn)}
+.ixw--company .ixw-panel:nth-child(6){border-image:linear-gradient(90deg,var(--co-sg) 0 33.3%,var(--co-ph) 33.3% 66.6%,var(--co-vn) 66.6%) 10 0 0 0 / 10px 0 0 0;border-radius:0 0 26px 26px}
+.ixw--company .ixw-panel-meta>div.ixw-in{background:#EEF4FE}
+.ixw--company .ixw-panel-meta dd a{color:var(--co-blue-d);font-weight:800}
+.ixw--company .ixw-panel-meta dd .ix-ic{display:grid;place-items:center;border-radius:7px;background:var(--co-blue);color:#FFFFFF}
+.ixw--company .ixw-panel-meta dd .ix-ic .ic{width:14px;height:14px}
+.ixw--company .ixw-rec{border-color:#C9D6EE}
+/* the line: a thick metro line in the three office colours; stations are white roundels with a coloured ring */
+.ixw--company .ixw-track::before{content:"TechNext Line";position:absolute;left:0;bottom:-46px;display:inline-flex;align-items:center;height:28px;padding:0 12px 0 34px;border-radius:8px;background:var(--co-ink);color:#FFFFFF;
+  font:800 12px/1 var(--font-display);letter-spacing:.04em;background-image:radial-gradient(circle at 17px 50%,#FFFFFF 7px,transparent 7.5px),radial-gradient(circle at 17px 50%,var(--co-blue) 10px,transparent 10.5px)}
+/* the line keeps its colours by office (Singapore, Taguig City, Ho Chi Minh City, Singapore again); the ridden part lights up */
+.ixw--company .ixw-road{height:14px;margin-top:-7px;border-radius:8px;--seg:linear-gradient(90deg,var(--co-sg) 0 20%,var(--co-ph) 20% 60%,var(--co-vn) 60% 80%,var(--co-sg) 80% 100%);background:var(--seg);opacity:1}
+.ixw--company .ixw-road::before{content:"";position:absolute;inset:0;border-radius:8px;background:rgba(255,255,255,.68)}
+.ixw--company .ixw-road i{border-radius:8px;background:var(--seg);transform:none;clip-path:inset(0 calc((1 - var(--p,0)) * 100%) 0 0 round 8px);transition:clip-path .9s cubic-bezier(.5,.1,.25,1)}
+.ixw--company .ixw-pin{width:56px;height:56px;border:6px solid var(--o,#3167CA);background:#FFFFFF;box-shadow:0 4px 0 var(--co-ink),0 0 0 2.5px var(--co-ink)}
+.ixw--company .ixw-stop[data-office="sg"]{--o:var(--co-sg)}.ixw--company .ixw-stop[data-office="ph"]{--o:var(--co-ph)}.ixw--company .ixw-stop[data-office="vn"]{--o:var(--co-vn)}
+.ixw--company .ixw-stop[data-office="all"] .ixw-pin{border-color:transparent;background:linear-gradient(#FFFFFF,#FFFFFF) padding-box,conic-gradient(var(--co-sg) 0 33%,var(--co-ph) 33% 66%,var(--co-vn) 66%) border-box}
+.ixw--company .ixw-pin .ix-ic .ic{width:22px;height:22px;color:var(--co-ink)}
+.ixw--company .ixw-pin i{border-radius:6px;background:var(--co-ink)}
+.ixw--company .ixw-stop:hover .ixw-pin{border-color:var(--o,#3167CA);box-shadow:0 7px 0 var(--co-ink),0 0 0 2.5px var(--co-ink)}
+.ixw--company .ixw-stop.is-done .ixw-pin{border-color:var(--o,#3167CA);box-shadow:0 4px 0 var(--co-ink),0 0 0 2.5px var(--co-ink)}
+.ixw--company .ixw-stop.is-done .ixw-pin i{background:var(--o,var(--co-ph))}
+.ixw--company .ixw-stop.is-on .ixw-pin{background:var(--o,#3167CA);border-color:#FFFFFF;box-shadow:0 6px 0 var(--co-ink),0 0 0 2.5px var(--co-ink),0 0 0 9px color-mix(in srgb,var(--o,#3167CA) 22%,transparent)}
+.ixw--company .ixw-stop[data-office="all"].is-on .ixw-pin{background:conic-gradient(var(--co-sg) 0 33%,var(--co-ph) 33% 66%,var(--co-vn) 66%)}
+.ixw--company .ixw-stop.is-on .ixw-pin .ix-ic .ic,.ixw--company .ixw-stop.is-on .ixw-pin .ix-ic{color:#FFFFFF}
+.ixw--company .ixw-stop.is-on .ixw-pin .oi{filter:brightness(0) invert(1)}
+.ixw--company .ixw-stop.is-on .ixw-pin i{background:#FFC94A;color:var(--co-ink)}
+.ixw--company .ixw-stop-t{font-weight:800}
+.ixw--company .ixw-pin .ix-ic{background:none}
+@media (max-width:767px){.ixw--company .ixw-track::before{display:none}}
+
+/* ============================== the rules: framed posters on the office wall ============================== */
+.ixw--company .co-rules{gap:30px}
+.ixw--company .co-rules .card{margin-top:22px;padding:30px 26px 28px;border:12px solid var(--co-ink);border-radius:6px;background:#FFFFFF;box-shadow:inset 0 0 0 10px #F4F1EA,0 26px 40px -24px rgba(20,30,60,.55);
+  transform:rotate(var(--rot,-.8deg));transition:transform .4s var(--w-spring)}
+.ixw--company .co-rules .card:nth-child(2){--rot:.9deg}.ixw--company .co-rules .card:nth-child(3){--rot:-.4deg}
+/* the picture wire and its hook */
+.ixw--company .co-rules .card::before{content:"";position:absolute;left:50%;top:-40px;width:90px;height:30px;margin-left:-45px;pointer-events:none;
+  background:linear-gradient(to top right,transparent calc(50% - 1.5px),#7A869C calc(50% - 1px),#7A869C calc(50% + 1px),transparent calc(50% + 1.5px)) left/50% 100% no-repeat,
+  linear-gradient(to top left,transparent calc(50% - 1.5px),#7A869C calc(50% - 1px),#7A869C calc(50% + 1px),transparent calc(50% + 1.5px)) right/50% 100% no-repeat}
+.ixw--company .co-rules .card::after{content:"";position:absolute;left:50%;top:-46px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#AAB4C4;box-shadow:inset 0 0 0 3px #7A869C}
+.ixw--company .co-rules .card:hover{transform:rotate(0) translateY(-4px)}
+.ixw--company .co-rules .card-ic{width:52px;height:52px;border-radius:14px;background:var(--co-blue);color:#FFFFFF}
+.ixw--company .co-rules .card:nth-child(2) .card-ic{background:var(--co-ph)}.ixw--company .co-rules .card:nth-child(3) .card-ic{background:var(--co-vn)}
+.ixw--company .co-rules h3{font-size:1.3rem}
+
+/* ============================== industries: a door into each of Nexi's worlds ==============================
+   Eight tall doors along the office corridor, each in its world's colour: a casing, a panelled leaf with a little window,
+   a brass knob and a room number. Behind every leaf is the world itself (its illustrated backdrop) and Nexi in that world's
+   costume; pointing at a door (or focusing it) swings the leaf open on its hinge and Nexi steps up to say hello. The name
+   plate under the door carries the industry icon, the name and the scene. Touch screens show the doors ajar. 4 → 2 → 1. */
+.co-doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 26px;padding-top:6px}
+.co-door{position:relative;display:flex;flex-direction:column;gap:16px;text-decoration:none;color:var(--co-ink);-webkit-tap-highlight-color:transparent}
+.co-door:hover{text-decoration:none;color:var(--co-ink)}
+/* the doorway: an ink outline, a casing in the world's tint, a lintel */
+.co-door-way{position:relative;display:block;aspect-ratio:5/7.6;border-radius:16px 16px 6px 6px;overflow:hidden;isolation:isolate;perspective:900px;
+  background:#EEF3FB;border:2.5px solid var(--co-ink);box-shadow:inset 0 0 0 9px color-mix(in srgb,var(--d) 22%,#FFFFFF),inset 0 0 0 11px color-mix(in srgb,var(--d) 55%,#FFFFFF),0 7px 0 var(--co-ink),0 30px 40px -28px rgba(20,40,90,.5);
+  transition:translate .35s var(--w-spring),box-shadow .3s ease}
+.co-door-way::after{content:"";position:absolute;left:0;right:0;bottom:0;height:11px;z-index:4;background:color-mix(in srgb,var(--d) 55%,#FFFFFF);box-shadow:inset 0 3px 0 rgba(255,255,255,.4)}
+/* the world behind the leaf */
+.co-door-world{position:absolute;inset:11px;width:calc(100% - 22px);height:calc(100% - 22px);object-fit:cover;object-position:50% 100%;z-index:0;scale:1.12;transition:scale .8s cubic-bezier(.2,.8,.2,1)}
+.co-door-way::before{content:"";position:absolute;inset:11px;z-index:1;pointer-events:none;background:radial-gradient(ellipse 80% 40% at 50% 100%,color-mix(in srgb,var(--d) 30%,transparent),transparent 70%),linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(255,255,255,.35))}
+.co-door-nexi{position:absolute;left:50%;bottom:11px;z-index:2;width:72%;height:auto;translate:-50% 18%;scale:.86;opacity:0;filter:drop-shadow(0 10px 12px rgba(20,40,90,.25));transition:translate .6s var(--w-spring) .12s,scale .6s var(--w-spring) .12s,opacity .3s ease .12s}
+/* the leaf: panels, a small window, a knob, the room number; it swings on its left hinge */
+.co-door-leaf{position:absolute;inset:11px;z-index:3;transform-origin:0 50%;border-radius:6px 6px 2px 2px;
+  background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 8%,transparent 92%,rgba(0,0,0,.1)),linear-gradient(160deg,color-mix(in srgb,var(--d) 78%,#FFFFFF),var(--d));
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.18);transition:transform .75s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease}
+.co-door-leaf::before,.co-door-leaf::after{content:"";position:absolute;left:14%;right:14%;border-radius:6px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 2px rgba(255,255,255,.22),inset 0 6px 10px -6px rgba(0,0,0,.25)}
+.co-door-leaf::before{top:34%;height:28%}
+.co-door-leaf::after{top:66%;height:24%}
+.co-door-win{position:absolute;left:22%;right:22%;top:9%;height:19%;border-radius:999px 999px 8px 8px;background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(220,235,255,.55));box-shadow:inset 0 0 0 3px rgba(255,255,255,.55),inset 0 -6px 10px -4px rgba(30,60,110,.25)}
+.co-door-win::after{content:"";position:absolute;left:18%;top:16%;width:22%;height:62%;border-radius:6px;background:rgba(255,255,255,.65);rotate:18deg}
+.co-door-knob{position:absolute;right:9%;top:52%;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFF4C8,#E0B44A 55%,#9C7A26);box-shadow:0 3px 4px -1px rgba(0,0,0,.35)}
+.co-door-no{position:absolute;left:50%;top:30%;translate:-50% 0;padding:4px 9px;border-radius:5px;background:linear-gradient(180deg,#F1D58A,#C9A040);color:#3A2A08;font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.12em;box-shadow:0 2px 0 #9C7A26}
+/* open */
+.co-door:hover .co-door-leaf,.co-door:focus-visible .co-door-leaf{transform:rotateY(-74deg);box-shadow:inset 0 0 0 2px rgba(255,255,255,.18),18px 0 30px -8px rgba(0,0,0,.35)}
+.co-door:hover .co-door-nexi,.co-door:focus-visible .co-door-nexi{translate:-50% 0;scale:1;opacity:1}
+.co-door:hover .co-door-world,.co-door:focus-visible .co-door-world{scale:1.02}
+.co-door:hover .co-door-way,.co-door:focus-visible .co-door-way{translate:0 -4px;box-shadow:inset 0 0 0 9px color-mix(in srgb,var(--d) 22%,#FFFFFF),inset 0 0 0 11px var(--d),0 11px 0 var(--co-ink),0 36px 46px -28px rgba(20,40,90,.55)}
+.co-door:focus-visible{outline:none}
+.co-door:focus-visible .co-door-way{outline:3px solid #FFC94A;outline-offset:5px}
+/* the name plate */
+.co-door-plate{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:#FFFFFF;
+  border:2px solid var(--co-ink);box-shadow:0 4px 0 var(--co-ink);transition:box-shadow .25s ease,translate .3s var(--w-spring)}
+.co-door-plate .ic-ind{grid-row:1/3;width:42px;height:42px;border-radius:12px;filter:drop-shadow(0 3px 0 var(--co-ink));transition:transform .4s var(--w-spring)}
+.co-door-plate b{font:800 1.02rem/1.15 var(--font-display);align-self:end}
+.co-door-plate small{font:600 12.5px/1.3 var(--font-body);color:var(--muted);align-self:start}
+.co-door-plate em{position:absolute;right:12px;top:-12px;padding:5px 9px;border-radius:999px;background:var(--d);color:#FFFFFF;font:800 10.5px/1 var(--font-body);font-style:normal;letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:0 0 0 2px var(--co-ink);opacity:0;translate:0 6px;transition:opacity .25s ease,translate .3s var(--w-spring)}
+.co-door-plate em::after{content:" \2192"}
+.co-door:hover .co-door-plate em,.co-door:focus-visible .co-door-plate em{opacity:1;translate:0 0}
+.co-door:hover .co-door-plate .ic-ind{transform:rotate(-8deg) scale(1.08)}
+/* touch: the doors stand ajar so the world shows */
+@media (hover:none){.co-door-leaf{transform:rotateY(-30deg)}.co-door-nexi{opacity:1;translate:-50% 6%;scale:.92}.co-door-world{scale:1.04}.co-door-plate em{opacity:1;translate:0 0}}
+@media (max-width:1199px){.co-doors{gap:30px 20px}.co-door-plate{padding:10px 12px}.co-door-plate .ic-ind{width:36px;height:36px}}
+@media (max-width:991px){.co-doors{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 26px}.co-door-way{aspect-ratio:5/6.4}}
+@media (max-width:560px){.co-doors{grid-template-columns:minmax(0,1fr);gap:18px}
+  .co-door{display:grid;grid-template-columns:118px minmax(0,1fr);align-items:center;gap:16px}
+  .co-door-way{aspect-ratio:auto;height:172px}
+  .co-door-plate{padding:14px}.co-door-plate em{top:auto;bottom:-11px;right:14px}}
+@media (prefers-reduced-motion:reduce){.co-door-leaf,.co-door-nexi,.co-door-world,.co-door-way,.co-door-plate em,.co-door-plate .ic-ind{transition:none}}
+
+/* ============================== where we are: the lobby directory board ============================== */
+.ixw--company .co-directory .office-list{gap:0;padding:20px 22px 22px;border-radius:18px;border:2.5px solid var(--co-ink);box-shadow:0 6px 0 var(--co-ink),0 30px 50px -30px rgba(20,30,60,.6);
+  background:repeating-linear-gradient(180deg,#232846 0 7px,#1D2240 7px 8px),#1D2240}
+.ixw--company .co-dir-h{margin:0 0 10px;padding:0 0 12px;border-bottom:2px solid rgba(255,255,255,.14);font:800 12px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:#C9D6EE}
+.ixw--company .co-directory .office{padding:16px 0;border:0;border-bottom:1px dashed rgba(255,255,255,.18);border-radius:0;background:none;color:#FFFFFF;box-shadow:none}
+.ixw--company .co-directory .office:last-child{border-bottom:0}
+.ixw--company .co-directory .office::before{left:-22px;top:16px;bottom:16px;width:4px;background:var(--o,#3167CA)}
+.ixw--company .co-directory .office:nth-of-type(1){--o:var(--co-sg)}.ixw--company .co-directory .office:nth-of-type(2){--o:var(--co-ph)}.ixw--company .co-directory .office:nth-of-type(3){--o:var(--co-vn)}
+.ixw--company .co-directory .office-cc{border-radius:8px;background:rgba(255,255,255,.1);color:#FFFFFF;font-family:var(--font-body)}
+.ixw--company .co-directory .office.is-on .office-cc{background:var(--o,#3167CA);color:#FFFFFF}
+.ixw--company .co-directory .office h3{color:#FFFFFF;letter-spacing:.01em}
+.ixw--company .co-directory .office-top p{color:#C9D3E6}
+.ixw--company .co-directory .office address{color:#E9EEF8}
+.ixw--company .co-directory .office .btn-link{color:#9FC4FF}
+.ixw--company .co-directory .office .btn-link:hover{background:rgba(255,255,255,.12);color:#FFFFFF}
+.ixw--company .co-directory .office-show{border:2px solid #0D1028;border-radius:10px;background:linear-gradient(180deg,#FFFFFF,#E9EFF9);color:var(--co-ink);box-shadow:0 4px 0 #0D1028;transition:translate .2s var(--w-spring),box-shadow .2s ease}
+.ixw--company .co-directory .office-show:hover{translate:0 -2px;box-shadow:0 6px 0 #0D1028;color:var(--co-blue-d)}
+.ixw--company .co-directory .office-show:active{translate:0 3px;box-shadow:0 1px 0 #0D1028}
+.ixw--company .co-directory .office-show[aria-pressed="true"]{background:var(--o,#3167CA);color:#FFFFFF}
+.ixw--company .co-directory .office-show[aria-pressed="true"] .ic{color:#FFFFFF}
+.ixw--company .co-directory .map{border:2.5px solid var(--co-ink);border-radius:18px;box-shadow:0 6px 0 var(--co-ink)}
+.ixw--company .reach>a{border:2.5px solid var(--co-ink);border-radius:14px;box-shadow:0 5px 0 var(--co-ink);transition:translate .25s var(--w-spring),box-shadow .25s ease}
+.ixw--company .reach>a:hover{transform:none;translate:0 -3px;border-color:var(--co-ink);box-shadow:0 8px 0 var(--co-ink)}
+.ixw--company .reach-ic{border-radius:10px;background:var(--co-ink);color:#FFFFFF}
+
+/* ============================== FAQ: help-desk tickets ============================== */
+.ixw--company .co-tickets{counter-reset:tk;gap:14px}
+.ixw--company .co-tickets details{counter-increment:tk;border:2.5px solid var(--co-ink);border-left-width:10px;border-radius:14px;box-shadow:0 5px 0 var(--co-ink)}
+.ixw--company .co-tickets details:nth-child(3n+1){border-left-color:var(--co-sg)}.ixw--company .co-tickets details:nth-child(3n+2){border-left-color:var(--co-ph)}.ixw--company .co-tickets details:nth-child(3n){border-left-color:var(--co-vn)}
+.ixw--company .co-tickets summary{justify-content:flex-start}
+.ixw--company .co-tickets summary::before{content:"#00" counter(tk, decimal-leading-zero);display:inline-flex;width:auto;height:auto;flex:none;padding:6px 8px;border-radius:6px;background:#EEF2F8;font:800 11.5px/1 var(--font-body);letter-spacing:.06em;color:#5C6478;transform:none}
+.ixw--company .co-tickets summary .ic{margin-left:auto}
+.ixw--company .co-tickets details[open] summary::before{content:"#00" counter(tk, decimal-leading-zero);background:#DDF6EC;color:#0E7A50;transform:none}
+.ixw--company .co-tickets .faq-a{padding-left:96px}
+@media (max-width:767px){.ixw--company .co-tickets .faq-a{padding-left:22px}}
+.ixw--company .co-tickets details[open]{box-shadow:0 7px 0 var(--co-ink)}
+
+/* ============================== the end card: the meeting room's booking panel ============================== */
+.ixw--company .co-room{background:linear-gradient(135deg,#20264A,#2A3366 70%,#33407A);border:2.5px solid #0D1028;box-shadow:inset 10px 0 0 #2BE09A,0 8px 0 #0D1028,0 40px 60px -30px rgba(20,30,60,.6);padding-top:76px}
+.ixw--company .co-room::before{background-image:radial-gradient(rgba(255,255,255,.08) 1.6px,transparent 1.8px)}
+.ixw--company .co-room>div:first-of-type::before{content:"DISCOVERY ROOM \00B7  AVAILABLE NOW";position:absolute;left:56px;top:26px;display:inline-flex;align-items:center;height:30px;padding:0 14px 0 30px;border-radius:999px;
+  background:radial-gradient(circle at 15px 50%,#2BE09A 5px,transparent 5.5px),rgba(43,224,154,.14);font:800 11px/1 var(--font-body);letter-spacing:.16em;color:#9FF2CF}
+.ixw--company .co-room .hand{color:#9FC4FF}
+@media (max-width:767px){.ixw--company .co-room{padding-top:70px}.ixw--company .co-room>div:first-of-type::before{left:24px;top:22px;font-size:10px;letter-spacing:.1em}}
+
+
+@media (prefers-reduced-motion:reduce){.ixw--company .ixw-ibtn--play.is-on{animation:none}.ixw--company .co-rules .card{transition:none}}
+
+/* ============================== more of the office below the hero ==============================
+   The workflow's head gets the TechNext Line's route sign beside it; the office postcards are stamped and postmarked,
+   "greetings from" each city; the plaques hang on a wall band. */
+@media (min-width:1100px){
+  .ixw--company .ixw-flow-sec .container{position:relative}
+  .ixw--company .ixw-flow-sec .container::before{content:"";position:absolute;right:24px;top:6px;width:420px;height:170px;pointer-events:none;border-radius:18px;background:#FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 170'%3E%3Cg font-family='Plus Jakarta Sans,Inter,sans-serif' font-weight='800'%3E%3Ctext x='24' y='36' font-size='12' letter-spacing='2.4' fill='%231B1F3B'%3ETECHNEXT LINE%3C/text%3E%3Cpath d='M300 24.5 316 18.6 312.5 34.2 308.6 28.8 305.4 32.2 305.7 27.4z' fill='%233167CA'/%3E%3Cpath d='M40 92H150' stroke='%233167CA' stroke-width='12' stroke-linecap='round'/%3E%3Cpath d='M150 92H270' stroke='%2314A38B' stroke-width='12'/%3E%3Cpath d='M270 92H380' stroke='%23F08A24' stroke-width='12' stroke-linecap='round'/%3E%3Cg fill='%23FFFFFF' stroke-width='6'%3E%3Ccircle cx='60' cy='92' r='13' stroke='%233167CA'/%3E%3Ccircle cx='210' cy='92' r='13' stroke='%2314A38B'/%3E%3Ccircle cx='360' cy='92' r='13' stroke='%23F08A24'/%3E%3C/g%3E%3Cg font-size='12.5' fill='%231B1F3B' text-anchor='middle'%3E%3Ctext x='60' y='132'%3ESingapore%3C/text%3E%3Ctext x='210' y='132'%3ETaguig City%3C/text%3E%3Ctext x='360' y='132'%3EHo Chi Minh City%3C/text%3E%3C/g%3E%3Cg font-size='10' font-weight='700' fill='%235C6478' text-anchor='middle'%3E%3Ctext x='60' y='149'%3EHQ %C2%B7 discovery%3C/text%3E%3Ctext x='210' y='149'%3Ebuild %C2%B7 consult%3C/text%3E%3Ctext x='360' y='149'%3EAI engineering%3C/text%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat;
+    box-shadow:0 0 0 2.5px var(--co-ink),0 6px 0 2.5px var(--co-ink),0 30px 50px -30px rgba(20,40,90,.45);rotate:1.2deg}
+}
+.ixw--company .co-cities-sec{background:radial-gradient(circle at 100% 0,rgba(240,138,36,.08),transparent 40%),radial-gradient(circle at 0 100%,rgba(20,163,139,.08),transparent 40%),#FFFFFF}
+.ixw--company .co-cities{gap:30px}
+.ixw--company .co-city{border-radius:14px;rotate:-.7deg;transition:translate .3s cubic-bezier(.34,1.45,.64,1),box-shadow .25s ease,rotate .35s ease}
+.ixw--company .co-city:nth-child(2){rotate:.6deg}.ixw--company .co-city:nth-child(3){rotate:-.3deg}
+.ixw--company .co-city:hover{rotate:0deg}
+.ixw--company .co-city-art{height:166px}
+/* the postmark: a round cancel with wavy lines across the sky */
+.ixw--company .co-city-art::before{content:"";position:absolute;left:26%;top:14px;width:118px;height:49px;pointer-events:none;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 62'%3E%3Cg fill='none' stroke='%231B1F3B' stroke-width='2'%3E%3Ccircle cx='31' cy='31' r='26'/%3E%3Ccircle cx='31' cy='31' r='19' stroke-dasharray='2 4'/%3E%3Cpath d='M62 16q11-6 22 0t22 0 22 0 22 0M62 31q11-6 22 0t22 0 22 0 22 0M62 46q11-6 22 0t22 0 22 0 22 0'/%3E%3C/g%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+/* the stamp: perforated, in the office colour, with the paper plane */
+.ixw--company .co-city-art::after{content:"";position:absolute;right:16px;bottom:14px;width:46px;height:56px;border:2px dashed rgba(255,255,255,.95);border-radius:3px;rotate:6deg;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Cpath d='M-10.5-2.2 10.5-10 5.9 10.4.7 3.3-3.4 7.8-3 1.5z' fill='%23FFFFFF'/%3E%3C/svg%3E") center 40%/24px 24px no-repeat,var(--o);box-shadow:0 0 0 3px #FFFFFF,0 6px 10px -4px rgba(20,30,60,.4)}
+.ixw--company .co-city-h::before{content:"greetings from";display:block;margin-bottom:2px;font:600 1rem/1.1 var(--font-hand);color:var(--o)}
+@media (prefers-reduced-motion:reduce){.ixw--company .co-city{transition:none}}
+
+/* ============================== hero controls (audit round): one keyboard ==============================
+   The CTAs are full-size keycaps (52px, a mini key for the arrow), the tags are small keycaps, the tour controls are the
+   arrow keys and the play key, "View the scene" is the space bar. Every key lifts on hover, sinks on press and shows a
+   yellow focus ring. */
+.ixw--company .ixw-copy .actions{gap:16px;margin-top:26px}
+.ixw--company .ixw-copy .actions .btn-lg{height:52px;padding:0 22px 0 26px;font:800 16px/1 var(--font-display);letter-spacing:-.005em;overflow:visible}
+.ixw--company .ixw-copy .actions .btn-primary .ic{width:30px;height:30px;padding:7px;margin:0 -10px 0 2px;border-radius:9px;background:rgba(255,255,255,.18);box-shadow:inset 0 -3px 0 rgba(13,16,40,.22),0 0 0 1.5px rgba(255,255,255,.35)}
+.ixw--company .ixw-copy .actions .btn-primary:hover .ic{background:#FFC94A;color:var(--co-ink);transform:translateX(2px)}
+.ixw--company .ixw-copy .actions .btn-ghost .ic{width:20px;height:20px}
+.ixw--company .co-pills{gap:10px}
+.ixw--company .co-pills .tag{height:32px;padding:0 13px;border:2px solid var(--co-ink);border-radius:9px;background:linear-gradient(180deg,#FFFFFF,#EEF3FB);color:var(--co-ink);font:700 12.5px/1 var(--font-body);
+  box-shadow:0 3px 0 var(--co-ink);transition:translate .2s var(--w-spring),box-shadow .2s ease,background-color .2s ease}
+.ixw--company .co-pills .tag .ic{width:15px;height:15px;color:var(--co-blue)}
+.ixw--company .co-pills .tag--odoo{background:linear-gradient(180deg,#FFFFFF,#F5EDF3);color:#5A3A52}
+.ixw--company .co-pills .tag--odoo::before{content:"";width:9px;height:9px;border-radius:50%;background:#714B67;box-shadow:inset 0 0 0 2.5px #F5EDF3,0 0 0 1.5px #714B67}
+.ixw--company .co-pills a.tag:hover{translate:0 -2px;box-shadow:0 5px 0 var(--co-ink);color:var(--co-blue-d);text-decoration:none;transform:none}
+.ixw--company .co-pills a.tag:active{translate:0 2px;box-shadow:0 1px 0 var(--co-ink)}
+.ixw--company .co-pills a.tag:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--company .ixw-ep-tag{height:30px;padding-right:12px}
+.ixw--company .ixw-cap .ixw-ibtn{width:40px;height:40px}
+.ixw--company .ixw-cap .ixw-ibtn--play{width:46px;height:46px}
+.ixw--company .ixw-ibtn{transition:translate .2s var(--w-spring),box-shadow .2s ease,color .2s ease}
+.ixw--company .ixw-ibtn:hover{translate:0 -2px}
+.ixw--company .ixw-ibtn:active{translate:0 3px;transition-duration:.06s}
+.ixw--company .ixw-ibtn:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+.ixw--company .ixw-dots button{transition:width .3s var(--w-spring),background-color .2s ease}
+.ixw--company .ixw-dots button:hover{background:#AFC0DD}
+.ixw--company .ixw-dots button:focus-visible{outline:2px solid var(--co-blue);outline-offset:3px}
+/* the space bar: wide, low, a key legend in the corner */
+.ixw--company .ixw-peek{height:44px;min-width:212px;padding:0 18px;font-size:13.5px;gap:9px}
+.ixw--company .ixw-peek::after{content:"space";position:absolute;right:10px;bottom:5px;font:700 8.5px/1 var(--font-body);letter-spacing:.06em;opacity:.45;pointer-events:none}
+.ixw--company .ixw-peek{position:absolute}
+.ixw--company .ixw-peek:hover{translate:0 -2px}
+.ixw--company .ixw-peek:active{translate:0 4px}
+.ixw--company .ixw-peek:focus-visible{outline:3px solid #FFC94A;outline-offset:3px}
+@media (max-width:767px){.ixw--company .ixw-copy .actions .btn-lg{height:50px;font-size:15.5px}.ixw--company .co-pills .tag{height:30px;font-size:12px}}
+
+/* ---------- section join (fix round): Nexi's answer box sits whole above the next section, with room under it ---------- */
+.ixw--company .ix-intro-sec{position:relative;z-index:2;padding-bottom:24px}
+@media (max-width:767px){.ixw--company .ix-intro-sec{padding-bottom:20px}}
+
+/* ============================== CALM BALANCE (9 Oct 2026): 50% TechNext base, 50% the office floor ==============================
+   The company page IS TechNext, so the accent stays brand blue; the office's three city colours (SG blue, Taguig teal, HCMC
+   orange) come back only as thin rules. Themed touches kept: the room number on the service cards, the hanging-frame wire on
+   the rules, the doorways into each world (short, no Nexi), the directory board. Selectors carry body. so they beat calm-gen. */
+body.ixw--company{--calm-accent:#3167CA;--calm-accent-ink:#1E4691;--calm-accent-line:#C9D7F1;--calm-accent-wash:#F3F7FE}
+body.ixw--company .ixw-hero .ixw-frame{border-bottom:4px solid transparent;border-image:var(--co-tri) 1;border-image-slice:0 0 1 0}
+/* rooms: white cards, a city-colour rule and a quiet room number */
+body.ixw--company .co-rooms .card{border:1px solid var(--calm-line)!important;box-shadow:var(--calm-shadow)!important;padding-top:44px}
+body.ixw--company .co-rooms .card::before{background:#EEF3FB;color:#5C6784;border-radius:999px;font-weight:700;letter-spacing:.1em}
+body.ixw--company .co-rooms .card:hover{box-shadow:var(--calm-shadow-h)!important;translate:none}
+body.ixw--company .co-rooms .card .tag{margin-top:10px;align-self:flex-start}
+/* rules: a framed print hanging on a thin wire, no heavy frame */
+body.ixw--company .co-rules .card{border:1px solid var(--calm-line)!important;border-top:3px solid var(--co-sg)!important;border-radius:14px!important;box-shadow:var(--calm-shadow)!important;margin-top:26px;rotate:none;transform:none}
+body.ixw--company .co-rules .card:nth-child(2){border-top-color:var(--co-ph)!important}
+body.ixw--company .co-rules .card:nth-child(3){border-top-color:var(--co-vn)!important}
+body.ixw--company .co-rules .card::before{top:-30px;height:24px;opacity:.55}
+body.ixw--company .co-rules .card::after{top:-34px;width:8px;height:8px;margin-left:-4px;box-shadow:none}
+body.ixw--company .co-rules .card-ic{width:44px;height:44px;border-radius:12px;background:#EEF3FB!important;color:var(--co-sg)!important;display:grid;place-items:center}
+body.ixw--company .co-rules .card:nth-child(2) .card-ic{background:#E3F5F0!important;color:var(--co-ph)!important}
+body.ixw--company .co-rules .card:nth-child(3) .card-ic{background:#FDEEDD!important;color:var(--co-vn-d)!important}
+body.ixw--company .co-rules .card-ic .ic{width:22px;height:22px;color:inherit!important}
+body.ixw--company .co-rules h3{font-size:1.15rem}
+/* industries: short doorways that show each world; the leaf and Nexi stay out */
+body.ixw--company .co-doors{gap:22px 20px}
+body.ixw--company .co-door{gap:10px}
+body.ixw--company .co-door-way{aspect-ratio:16/10;border-radius:14px 14px 6px 6px;border:1px solid var(--calm-line)!important;box-shadow:inset 0 0 0 6px color-mix(in srgb,var(--d) 30%,#FFFFFF),0 14px 28px -22px rgba(20,40,90,.45)!important;translate:none!important}
+body.ixw--company .co-door-way::after{height:5px;background:var(--d)}
+body.ixw--company .co-door-way::before{inset:6px}
+body.ixw--company .co-door-world{inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);scale:1.04}
+body.ixw--company .co-door-leaf,body.ixw--company .co-door-nexi{display:none!important}
+body.ixw--company .co-door:hover .co-door-world{scale:1.1}
+body.ixw--company .co-door:hover .co-door-way{box-shadow:inset 0 0 0 6px color-mix(in srgb,var(--d) 55%,#FFFFFF),0 18px 32px -22px rgba(20,40,90,.5)!important}
+body.ixw--company .co-door-plate{border-radius:12px;box-shadow:none!important}
+@media (max-width:767px){body.ixw--company .co-doors{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}}
+
+/* route: the line runs through the stop centres (desktop: the 6px column gaps counted; phone: first stop centre 60px in, centres 54px down) */
+.ixw--company .ixw-road{top:98px;left:calc((100% - (var(--n) - 1) * 6px) / (2 * var(--n)));right:calc((100% - (var(--n) - 1) * 6px) / (2 * var(--n)))}
+@media (max-width:767px){.ixw--company .ixw-road{top:54px;left:60px;right:auto}}

@@ -1,0 +1,224 @@
+<!--meta {"title": "Free Website & Brand Design with Your Odoo | TechNext", "desc": "Start your Odoo with TechNext and your website and brand design come with it, connected to your CRM, sales and stock. You don't need to hire your own team.", "out": "free-website-with-odoo.html", "nav": "", "body": "gs-page fw-page", "head": "<link rel=\"stylesheet\" href=\"{ROOT}assets/css/get-started.css?v={ASSET_V}\"><link rel=\"stylesheet\" href=\"{ROOT}assets/css/free-website.css?v={ASSET_V}\">"} -->
+
+<section class="gs-hero">
+  <div class="container gs-hero-grid">
+    <div class="gs-copy">
+      <span class="hand">free with your Odoo</span>
+      <h1>Your website and brand, built free. <em>You don't need to hire your own team.</em></h1>
+      <p class="lead">Start Odoo with TechNext and we build your website and brand kit inside it, connected to your CRM, sales and stock. After go-live, we stay on as your team.</p>
+      <ul class="gs-ticks">
+        <li>{{icon:check}} Website and brand design, on us</li>
+        <li>{{icon:check}} Built in Odoo, so every enquiry lands in your CRM</li>
+        <li>{{icon:check}} Odoo Ready Partner · Singapore, Philippines, Vietnam</li>
+      </ul>
+    </div>
+
+    <form class="form gs-form card card--static" id="gs-form" novalidate data-endpoint="/api/lead">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="Free website with Odoo page">
+      <h2 class="gs-form-h">Claim your free website</h2>
+      <p class="gs-form-sub">We'll book a short call and show you a first idea for your homepage.</p>
+      <div class="form-row">
+        <div class="field"><label for="gs-name">Name</label><input id="gs-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="gs-company">Company</label><input id="gs-company" name="company" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="gs-email">Work email</label><input id="gs-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="gs-phone">Phone</label><input id="gs-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="gs-country">Country</label>
+          <select id="gs-country" name="country" required>
+            <option value="">Choose one</option>
+            <option>Singapore</option>
+            <option>Philippines</option>
+            <option>Vietnam</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="gs-site">Website today</label>
+          <select id="gs-site" name="current_website" required>
+            <option value="">Choose one</option>
+            <option>No website yet</option>
+            <option>Have one, needs a refresh</option>
+            <option>Have one, happy with it</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="gs-msg">How do you run sales, stock and invoices today? <span class="opt">(optional)</span></label><textarea id="gs-msg" name="message" rows="3" placeholder="e.g. Excel and Xero, 12 staff, 2 outlets"></textarea></div>
+      <div class="form-foot">
+        <button class="btn btn-primary btn-lg gs-submit" type="submit"><span class="btn-label">Claim my free website</span><span class="btn-busy" aria-hidden="true"></span></button>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <div class="form-sent"><h3>Thanks, we have it.</h3><p>It's on its way to sales@technext.asia. We'll reply from that address to book your call.</p></div>
+      <p class="small muted gs-privacy">We use your details only to reply. See the <a href="{{ROOT}}privacy.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">what's free</span><h2>Two things you'd normally pay for.</h2><p class="lead">Both come with your Odoo, designed by the same team that sets it up.</p></div>
+    <div class="fw-free">
+      <article class="card card--static fw-free-card reveal" style="--i:0">
+        <span class="card-ic">{{icon:sol-brand}}</span>
+        <h3>Brand kit</h3>
+        <p>A clean, consistent look your team can use every day.</p>
+        <ul class="fw-list">
+          <li>{{icon:check}} Logo clean-up for web, print and social</li>
+          <li>{{icon:check}} Brand colours and fonts</li>
+          <li>{{icon:check}} Social media post templates</li>
+          <li>{{icon:check}} Business card and email signature design</li>
+        </ul>
+      </article>
+      <article class="card card--static fw-free-card reveal" style="--i:1">
+        <span class="card-ic">{{icon:sol-web}}</span>
+        <h3>Website, built in Odoo</h3>
+        <p>Your company website on Odoo's own website builder, set up by us.</p>
+        <ul class="fw-list">
+          <li>{{icon:check}} Home, services or products, about and contact pages</li>
+          <li>{{icon:check}} Enquiry and quote forms that create leads in Odoo CRM</li>
+          <li>{{icon:check}} Works on phones, with basic SEO set up</li>
+          <li>{{icon:check}} Your team can edit text and photos themselves</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="two fw-why">
+      <div class="reveal">
+        <span class="hand">why build it in Odoo</span>
+        <h2>One system behind your website and your business.</h2>
+        <p class="lead">A website on its own is a brochure. Built in Odoo, it becomes part of how you sell.</p>
+      </div>
+      <ol class="fw-flow reveal" aria-label="What happens when a customer fills in your website form">
+        <li><span class="fw-flow-ic">{{icon:globe}}</span><b>A customer fills in your website form</b><small>Website</small></li>
+        <li><span class="fw-flow-ic">{{icon:target}}</span><b>A lead appears in Odoo CRM, assigned to your salesperson</b><small>CRM</small></li>
+        <li><span class="fw-flow-ic">{{icon:file}}</span><b>The quotation is sent from the same record</b><small>Sales</small></li>
+        <li><span class="fw-flow-ic">{{icon:receipt}}</span><b>Stock is reserved and the invoice is ready</b><small>Inventory · Accounting</small></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">you don't need to hire your own team</span><h2>One team instead of four hires.</h2><p class="lead">Most growing companies end up looking for an ERP admin, a web designer, a developer and an IT person. TechNext covers all of it.</p></div>
+    <div class="fw-compare reveal">
+      <div class="fw-col fw-col--diy">
+        <h3>Hiring your own</h3>
+        <ul>
+          <li>{{icon:x}} Recruit, train and keep several specialists</li>
+          <li>{{icon:x}} Work stops when one person is on leave or quits</li>
+          <li>{{icon:x}} Website, ERP and IT done by different people who don't talk</li>
+          <li>{{icon:x}} You manage the tech yourself</li>
+        </ul>
+      </div>
+      <div class="fw-col fw-col--tn">
+        <h3>TechNext as your team</h3>
+        <ul>
+          <li>{{icon:check}} Odoo, website, brand, AI and networks from one team</li>
+          <li>{{icon:check}} The people who set up your system support it</li>
+          <li>{{icon:check}} One channel for every request, tracked to done</li>
+          <li>{{icon:check}} Offices in Singapore, the Philippines and Vietnam</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="care">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">after go-live</span><h2>TechNext Care: your team, every month.</h2><p class="lead">A monthly plan that keeps Odoo, your website and your tech running. Sized to your users and apps.</p></div>
+    <div class="grid-3 fw-care">
+      <article class="card card--static fw-tier reveal" style="--i:0">
+        <p class="fw-tier-name">Essentials</p>
+        <h3>Keep it running</h3>
+        <ul class="fw-list">
+          <li>{{icon:check}} Odoo fixes and month-end help</li>
+          <li>{{icon:check}} Website updates and small edits</li>
+          <li>{{icon:check}} Odoo version upgrades, tested first</li>
+        </ul>
+      </article>
+      <article class="card card--static fw-tier fw-tier--pick reveal" style="--i:1">
+        <p class="fw-tier-name">Growth <span>most picked</span></p>
+        <h3>Keep improving</h3>
+        <ul class="fw-list">
+          <li>{{icon:check}} Everything in Essentials</li>
+          <li>{{icon:check}} New reports, automations and small features</li>
+          <li>{{icon:check}} New website pages and SEO checks</li>
+          <li>{{icon:check}} An AI chatbot on your website or WhatsApp</li>
+        </ul>
+      </article>
+      <article class="card card--static fw-tier reveal" style="--i:2">
+        <p class="fw-tier-name">Full team</p>
+        <h3>Your whole tech team</h3>
+        <ul class="fw-list">
+          <li>{{icon:check}} Everything in Growth</li>
+          <li>{{icon:check}} Office networks and Wi-Fi</li>
+          <li>{{icon:check}} Devices, IoT and apps connected to Odoo</li>
+          <li>{{icon:check}} A quarterly review and roadmap</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section gs-how">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">how it works</span><h2>Four steps.</h2></div>
+    <ol class="gs-steps fw-steps">
+      <li class="reveal" style="--i:0"><span class="gs-n">1</span><h3>Tell us</h3><p>Send the form. We book a short call about how you sell, stock and invoice today.</p></li>
+      <li class="reveal" style="--i:1"><span class="gs-n">2</span><h3>See your homepage</h3><p>On the call we show a first idea for your new homepage and the Odoo apps to start with.</p></li>
+      <li class="reveal" style="--i:2"><span class="gs-n">3</span><h3>Go live together</h3><p>Odoo, website and brand kit launch together, with your team trained.</p></li>
+      <li class="reveal" style="--i:3"><span class="gs-n">4</span><h3>We stay on</h3><p>TechNext Care keeps everything running and improving every month.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="sec-head sec-head--center reveal"><span class="hand">common questions</span><h2>The offer, answered.</h2></div>
+    <div class="faq reveal fw-faq">
+      <details><summary>Is the website really free? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. Start your Odoo with TechNext and your website and brand design come with it, set up by the same team.</p></div></details>
+      <details><summary>Who can claim it? {{icon:chevron}}</summary><div class="faq-a"><p>Companies in Singapore, the Philippines and Vietnam that run their Odoo with TechNext. We confirm the details on the first call.</p></div></details>
+      <details><summary>Why build the website in Odoo? {{icon:chevron}}</summary><div class="faq-a"><p>Because the website then shares one database with your CRM, sales, stock and accounting. Website enquiries become leads, and online orders reserve stock, without copying anything between systems.</p></div></details>
+      <details><summary>We already have a website. Can we still join? {{icon:chevron}}</summary><div class="faq-a"><p>Yes. We can rebuild it in Odoo with your current content, or keep your site and connect its forms to Odoo. We'll suggest the better option on the call.</p></div></details>
+      <details><summary>We are claiming a government grant. Does that change anything? {{icon:chevron}}</summary><div class="faq-a"><p>Grant rules can limit free items. Tell us on the first call and we'll keep your claim within the scheme's rules.</p></div></details>
+      <details><summary>What is TechNext Care? {{icon:chevron}}</summary><div class="faq-a"><p>Our monthly plan after go-live. It covers Odoo support and upgrades, website updates and, on larger plans, improvements, AI chatbots, networks and devices. It is sized to your users and apps.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta reveal">
+      <div><span class="hand">ready when you are</span><h2>Get your website free with Odoo.</h2><p>Fill out the short form. It takes about a minute, and we reply from sales@technext.asia.</p></div>
+      <div class="actions"><a class="btn btn-white btn-lg" href="#gs-form" data-to-form>Claim my free website {{icon:arrow}}</a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* © TechNext Pte. Ltd. (technext.asia). All rights reserved. This design and code are not licensed for copying, reuse or AI training. */
+/* /free-website-with-odoo: "Claim my free website" scrolls up to the form and puts the cursor in the first field. */
+(function () {
+  var form = document.getElementById('gs-form');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-to-form]');
+    if (!t || !form) return;
+    e.preventDefault();
+    form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(function () {
+      var f = form.querySelector('#gs-name'); if (f) f.focus({ preventScroll: true });
+      form.classList.remove('is-flash'); void form.offsetWidth; form.classList.add('is-flash');
+    }, reduce ? 0 : 600);
+  });
+})();
+</script>
