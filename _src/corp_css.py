@@ -26,8 +26,11 @@ CSS = ROOT / "assets" / "css"
 OUT = CSS / "corp"
 WORLDS = ["construction", "ecommerce", "fnb", "health-wellness", "manufacturing", "medical", "retail", "travel",
           "sol-ai", "sol-app", "sol-auto", "sol-brand", "sol-chat", "sol-enterprise", "sol-erp", "sol-iot", "sol-mkt",
-          "sol-net", "sol-rag", "sol-social", "sol-tech", "sol-web", "company", "careers", "blog"]
-SOURCES = (["industry-world.css", "industry.css", "industries-calm.css", "company.css", "odoo-walk.css", "calm.css", "demo-kit.css"]
+          "sol-net", "sol-rag", "sol-social", "sol-tech", "sol-web", "company", "careers", "blog",
+          "discovery", "training", "integration", "support", "crm-dev", "custom", "app-all", "ai-odoo",
+          "app-acc", "app-sales", "app-stock", "office-sg", "office-ph", "office-vn", "events", "life"]
+SOURCES = (["industry-world.css", "industry.css", "industries-calm.css", "company.css", "odoo-walk.css", "calm.css", "demo-kit.css",
+            "page-calm.css", "odoo-ph.css", "odoo-vn.css"]
            + ["worlds/%s.css" % w for w in WORLDS])
 KEEP_COLOUR = {"demo-kit.css"}   # the demo widgets keep their own product-UI colours (statuses, charts)
 
