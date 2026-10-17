@@ -321,7 +321,7 @@ LAYOUT = '''<!doctype html>
 <link rel="apple-touch-icon" href="{ROOT}assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{ROOT}assets/css/site.css?v={ASSET_V}">
 <link rel="stylesheet" href="{ROOT}assets/css/stage.css?v={ASSET_V}">
 {INTRO_HEAD}{HEAD_EXTRA}
