@@ -40,7 +40,7 @@ COMPANY = {
     "odoo_listing": "https://www.odoo.com/partners/technext-pte-ltd-28073844",
     "careers_email": "career@technext.asia",
     # Odoo Appointments: "Discovery Call with TechNext", 30 min online, hosted by Sky (the side tab links here)
-    "meeting_link": "https://technext.odoo.com/book/c82cf8a9",
+    "meeting_link": "https://technext.odoo.com/appointment/discovery-call-with-technext-2?invite_token=914012541b1242c1ae832faa66a6efdc&filter_appointment_type_ids=%5B2%5D&",
 }
 
 # Offices, as TechNext lists them (and on Google Maps). `key` matches the map entries in

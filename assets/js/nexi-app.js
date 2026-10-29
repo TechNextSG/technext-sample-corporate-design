@@ -17,7 +17,7 @@ var BOT_NAME = "Nexi";
 var GREETING = "Hi there! I'm " + BOT_NAME + ", TechNext's little helper robot. Ask me anything about Odoo, AI, websites or pricing (typos welcome!), or tap the buttons under me to visit Singapore, the beach, space and more!";
 var SITE_URL = "/";
 var WA = "https://wa.me/6588396998";
-var MEET = "https://technext.odoo.com/book/c82cf8a9";
+var MEET = "https://technext.odoo.com/appointment/discovery-call-with-technext-2?invite_token=914012541b1242c1ae832faa66a6efdc&filter_appointment_type_ids=%5B2%5D&";
 
 var QUESTIONS = [
   { id:"about", label:"What does TechNext do?", short:"Services",
